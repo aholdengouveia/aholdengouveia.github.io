@@ -24,12 +24,70 @@ layout: AdvSec
                 <li>A way to separate your network from the WWW (World Wide Web)</li>
             </ul>
         <li>How are firewalls different on different operating systems?</li>
-        <li>What kinds of firewalls are there?</li>
+            <ul>
+                <li>Different Operating Systems use different types of firewalls and have different ways to interact with the firewall</li>
+                <li>Some examples include: UFW (Ubuntu) Firewalld (Red Hat) and Windows Defender Firewall (Microsoft)</li>
+            </ul>
+        <li>What kinds of firewalls are there and how do we sort them?</li>
+            <ul>
+                <li>Hardware vs Software</li>
+                <li>Stateful vs Stateless</li>
+                <li>Network vs Host</li>
+                <li>Static vs Dynamic</li>
+            </ul>
         <li>Allow all vs deny all</li>
+            <ul>
+                <li>Firewalls that work with packets have rules</li>
+                <li>Rules must have a default if no other rules apply</li>
+                <li>Deny All</li>
+                    <ul>
+                        <li>More Secure​</li>
+                        <li>Needs more work to keep up to date</li>
+                        <li>Used in places like governments and secure R&D where security is more needed</li>
+                    </ul>
+                <li>Allow All</li>
+                    <ul>
+                        <li>Less secure</li>
+                        <li>Needs less hands-on watching</li>
+                        <li>Used in places where you don't need as much protection such as small businesses</li>
+                    </ul>
+            </ul>
         <li>What firewalls are NOT good at</li>
+            <ul>
+                <li>Any Social Engineering threats</li>
+                <li>If you don't know the issue is coming you can't tell the firewall to protect you from it</li>
+                <li>They are reactive not proactive</li>  
+            </ul>
         <li>What firewalls are good protection for</li>
+            <ul>
+                <li>Prevents some unauthorized remote access</li>
+                    <ul>
+                        <li>Not all!  Scammers can get through on Browsers still</li>
+                        <li>Social Engineering and viruses can still give up access</li>
+                    </ul>
+                <li>Extra layer of protection for legacy systems</li>
+                <li>Can be used to Block access to specific sites from within the network such as social media</li>    
+                <li>Can give extra info in logs of ingress/egress on network</li>    
+            </ul>
         <li>Ok, but why do I care for security</li>
+            <ul>
+                <li>Hardening of the system</li>
+                    <ul>
+                        <li>In security we need to protect systems by knowing where our vulnerabilities are to mitigate them</li>
+                        <li>Blue Team</li>
+                    </ul>
+                <li>Testing limits of the system</li>
+                    <ul>
+                        <li>Pen testing</li>
+                        <li>Red Team</li>
+                    </ul>
+            </ul>
         <li>What do most companies do with firewalls?</li>
+            <ul>
+                <li>Layered approach</li>
+                <li>Multiple vendors (Swiss cheese model)</li>
+                <li>DMZ</li>
+            </ul>
     </ul>
 </p>
 <p>Suggested Activities and Discussion Topics:
