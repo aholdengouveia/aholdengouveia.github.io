@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 
-    <title>Introduction to Security</title>
+    <title>Firewalls and Security</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
 
@@ -119,69 +119,126 @@
     <div class="col-4 col-md-3">
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li class="sidebar-brand"><a href="/introinfosec.html">Overview</a>
+                <li class="sidebar-brand"><a href="/AdvSec.html">Overview</a>
                 </li>
-                <li><a href="/InfoSec/InfoSecWk1.html">Intro to Security</a>
+                <li><a href="#">Pen Testing and Recon</a></li>
+                <li><a href="#">Enumeration</a>
                 </li>
-                <li><a href="#">Risk Management</a>
+                <li><a href="#">The Other Side</a>
                 </li>
-                <li><a href="#">Identifying threats</a>
+                <li><a href="#">Exploitation</a> </li>
+                <li><a href="#">Web Exploitation</a> </li>
+                <li><a href="/AdvInfoSec/Firewalls.html">Firewalls</a>
                 </li>
-                <li><a href="#">Social Engineering</a>
+                <li><a href="#">CSIRT/CERT</a>
                 </li>
-                <li><a href="#">Privacy and Paranoia</a>
+                <li><a href="#">Disaster Recovery</a> </li>
+                <li><a href="#">Security Audits</a> </li>
+                <li><a href="#">Security Frame Works</a> </li>
+                <li><a href="#">Incident Recovery</a> </li>
+                <li><a href="#">Hardening</a> </li>
+                <li><a href="#">Where to go next</a>
                 </li>
-                <li><a href="#">Network Security</a>
-                </li>
-                <li><a href="#">Cryptography</a>
-                </li>
-                <li><a href="#">Web Security</a>
-                </li>
-                <li><a href="#">Platform and physical Security</a>
-                </li>
-                <li><a href="#">Policy and Compliance</a>
-                </li>
-                <li><a href="#">Cloud Security</a>
-                </li>
-                <li><a href="#">Digital Forensics</a>
-                </li>
-                <li><a href="#">Detecting and Managing Infections</a>
-                </li>
+
 
             </ul>
         </div>
     </div>
     <div class="col">
         <br><br>
-        <h2>Information Security for Everyone</h2>
+        <h3>Firewalls and Security</h3>
+<p>Learning outcomes
+    <ul>
+        <li>Define the purpose of a firewall
+        </li>
+        <li>Describe how the order of the rules affects a firewall</li>
+        <li>Demonstrate the difference between a base of deny any vs. allow any</li>
+        <li>Describe the threats firewalls protect against</li>
+    </ul>
+</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qSuK0F3bJ_E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <p>
-The goal of this course is to provide students with a fundamental understanding of information security principles. Students will learn about the types of attacks and malicious code that may be used against a computer, the threats and countermeasures for e-mail, Web, wireless, and identity theft. Further, they will learn about spyware, viruses, and firewalls. In addition, security policies, disaster recovery, and home networks are covered. There will be a variety of hands-on and case project assignments that reinforce the concepts covered in each chapter.
-
-<h5> Learning Objectives</h5>
-<ul>
-  <li>Explain and Identify top threats to a computer network such as DDOS, password crackers, Spyware and Malware, and how to prevent them.</li>
-  <li>Explain how to avoid online fraud and identity theft </li>
-  <li>Compare and contrast perimeter and layered approaches to network security using best practices</li>
-  <li>Explain and demonstrate how to guard against malware, including viruses, worms and trojan horses and how they propagate, and understand how virus scanners operate.</li>
-  <li>Describe related legal aspects to computer crimes, including cyber stalking </li>
-  <li>Explain security protocols and principles, such as CIA triad </li>
-  <li>Describe key terms such as assurance, authenticity,  cracker and firewall</li>
-  <li>Explain the basics of modern cryptographic concepts and methods; encryption, digital signatures and certificates </li>
-  <li>Describe the basics of privacy, including the function of VPNs, browser settings and anonymity</li>
-  <li>Describe how to implement usable security  such as passwords, authentication and physical security </li>
-  <li>Describe how to protect yourself against social engineering threats </li>
-</ul> 
+    <ul>
+        <li>What is a firewall?</li>
+            <ul>
+                <li>Monitor traffic</li>
+                <li>Ingress and Egress (in and out) traffic can be monitored and controlled</li>
+                <li>A way to separate your network from the WWW (World Wide Web)</li>
+            </ul>
+        <li>How are firewalls different on different operating systems?</li>
+            <ul>
+                <li>Different Operating Systems use different types of firewalls and have different ways to interact with the firewall</li>
+                <li>Some examples include: UFW (Ubuntu) Firewalld (Red Hat) and Windows Defender Firewall (Microsoft)</li>
+            </ul>
+        <li>What kinds of firewalls are there and how do we sort them?</li>
+            <ul>
+                <li>Hardware vs Software</li>
+                <li>Stateful vs Stateless</li>
+                <li>Network vs Host</li>
+                <li>Static vs Dynamic</li>
+            </ul>
+        <li>Allow all vs deny all</li>
+            <ul>
+                <li>Firewalls that work with packets have rules</li>
+                <li>Rules must have a default if no other rules apply</li>
+                <li>Deny All</li>
+                    <ul>
+                        <li>More Secure​</li>
+                        <li>Needs more work to keep up to date</li>
+                        <li>Used in places like governments and secure R&D where security is more needed</li>
+                    </ul>
+                <li>Allow All</li>
+                    <ul>
+                        <li>Less secure</li>
+                        <li>Needs less hands-on watching</li>
+                        <li>Used in places where you don't need as much protection such as small businesses</li>
+                    </ul>
+            </ul>
+        <li>What firewalls are NOT good at</li>
+            <ul>
+                <li>Any Social Engineering threats</li>
+                <li>If you don't know the issue is coming you can't tell the firewall to protect you from it</li>
+                <li>They are reactive not proactive</li>  
+            </ul>
+        <li>What firewalls are good protection for</li>
+            <ul>
+                <li>Prevents some unauthorized remote access</li>
+                    <ul>
+                        <li>Not all!  Scammers can get through on Browsers still</li>
+                        <li>Social Engineering and viruses can still give up access</li>
+                    </ul>
+                <li>Extra layer of protection for legacy systems</li>
+                <li>Can be used to Block access to specific sites from within the network such as social media</li>    
+                <li>Can give extra info in logs of ingress/egress on network</li>    
+            </ul>
+        <li>Ok, but why do I care for security</li>
+            <ul>
+                <li>Hardening of the system</li>
+                    <ul>
+                        <li>In security we need to protect systems by knowing where our vulnerabilities are to mitigate them</li>
+                        <li>Blue Team</li>
+                    </ul>
+                <li>Testing limits of the system</li>
+                    <ul>
+                        <li>Pen testing</li>
+                        <li>Red Team</li>
+                    </ul>
+            </ul>
+        <li>What do most companies do with firewalls?</li>
+            <ul>
+                <li>Layered approach</li>
+                <li>Multiple vendors (Swiss cheese model)</li>
+                <li>DMZ</li>
+            </ul>
+    </ul>
 </p>
-<br><br> 
-
-
-
-<p>Would you like to see some more classes?  
-<a href="/classes.html">Click here </a>
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <li>How could you use a Firewall to prevent a DDOS attack</li>
+        <li>Work as a group to come up with 3 Firewall rules for your company including explanations of why those rules are helpful</li>
+    </ul>
 </p>
-
-
 
     </div>
 </div>

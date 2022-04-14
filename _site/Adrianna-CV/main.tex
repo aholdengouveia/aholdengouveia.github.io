@@ -4,6 +4,7 @@
 % Choose bibliography style for formatting list of publications
 \usepackage[style=ieee,url=false,doi=false,maxbibnames=99,sorting=ydnt,dashed=false]{biblatex}
 \usepackage[symbol]{footmisc}
+\usepackage{fontawesome}
 \bibliography{papers}
 
 % Choose theme, e.g. black, RedViolet, ForestGreen, MidnightBlue
@@ -22,10 +23,12 @@
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 % Heading
 \headinginline{Adrianna Holden-Gouveia}{
-    Website: \website{example.com} \\ 
-    Email: \email{admin@website} \\
-    LinkedIn: \linkedin{aholdengouveia} \\
-    GitHub: \github{aholdengouveia}
+    Website: \website{https://aholdengouveia.name} \\ 
+    Email: \email{admin@aholdengouveia.name} \\
+    \faLinkedin{: aholdengouveia} \\
+    \faGithub {: aholdengouveia} \\
+    \faTwitter {:aholdengouveia} \\
+    %\faIcon{youtube} {: https://www.youtube.com/channel/UCebdI1gT84U7PBtJFUTrIQA}
 }
 
 % \headingphoto{Name Surname}{
@@ -36,11 +39,11 @@
 % }{photo.jpg}
 
 % Page One
-\import{sections/}{experience.tex}%done as of oct 27
-\import{sections/}{education.tex} %done as of oct 27
-\import{sections/}{curriculumDev.tex}%done as of oct 27
-\import{sections/}{initiatives.tex}%done as of oct 27
-\import{sections/}{workshops.tex}
+\import{sections/}{experience.tex}%done as of apr 14 2022
+\import{sections/}{education.tex} %done as of apr 14 2022
+\import{sections/}{curriculumDev.tex}%done as of apr 14 2022
+\import{sections/}{initiatives.tex}%done as of apr 14 2022
+\import{sections/}{workshops.tex}%done as of apr 14 2022
 
 
 %\import{sections/}{publications.tex}
