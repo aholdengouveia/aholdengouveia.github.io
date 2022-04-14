@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 
-    <title>Introduction to Security</title>
+    <title>CERT/CSIRT</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
 
@@ -119,50 +119,126 @@
     <div class="col-4 col-md-3">
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li class="sidebar-brand"><a href="/introinfosec.html">Overview</a>
+                <li class="sidebar-brand"><a href="/AdvSec.html">Overview</a>
                 </li>
-                <li><a href="/InfoSec/InfoSecWk1.html">Intro to Security</a>
+                <li><a href="#">Pen Testing and Recon</a></li>
+                <li><a href="#">Enumeration</a>
                 </li>
-                <li><a href="#">Risk Management</a>
+                <li><a href="#">The Other Side</a>
                 </li>
-                <li><a href="#">Identifying threats</a>
+                <li><a href="#">Exploitation</a> </li>
+                <li><a href="#">Web Exploitation</a> </li>
+                <li><a href="/AdvInfoSec/Firewalls.html">Firewalls</a>
                 </li>
-                <li><a href="#">Social Engineering</a>
+                <li><a href="/AdvInfoSec/cert.html">CSIRT/CERT</a>
                 </li>
-                <li><a href="#">Privacy and Paranoia</a>
+                <li><a href="#">Disaster Recovery</a> </li>
+                <li><a href="#">Security Audits</a> </li>
+                <li><a href="#">Security Frame Works</a> </li>
+                <li><a href="#">Incident Recovery</a> </li>
+                <li><a href="#">Hardening</a> </li>
+                <li><a href="#">Where to go next</a>
                 </li>
-                <li><a href="#">Network Security</a>
-                </li>
-                <li><a href="#">Cryptography</a>
-                </li>
-                <li><a href="#">Web Security</a>
-                </li>
-                <li><a href="#">Platform and physical Security</a>
-                </li>
-                <li><a href="#">Policy and Compliance</a>
-                </li>
-                <li><a href="#">Cloud Security</a>
-                </li>
-                <li><a href="#">Digital Forensics</a>
-                </li>
-                <li><a href="#">Detecting and Managing Infections</a>
-                </li>
+
 
             </ul>
         </div>
     </div>
     <div class="col">
         <br><br>
-        <h3>Introduction to Security and Information Assurance</h3>
+        <!--Learning Outcomes-->
+<h3>CERT/CSIRT</h3>
 <p>Learning outcomes
     <ul>
-        <li>Be able to understand and explain the basic CIA principles</li>
-        <li>Explain and impliment basic safe handling of information including data transfer and PII laws</li>
-        <li>Assess value of data sets and the risks involved with them</li>
-        <li>Explain authentication, two-factor authentication and access control.</li>
+        <li>Describe the function of CERT/CSIRT teams</li>
+        <li>Describe the common structure for a CERT/CSIRT team</li>
+        <li>Describe the pre-planning and primary concerns of a CERT/CSIRT team</li>
+        <li>List the typical steps in an incident handling process</li>       
     </ul>
 </p>
- 
+
+<!--embeded Youtube video-->
+
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>What is CERT/CSIRT?</li>
+            <ul>
+                <li>Computer Emergency Response Team (CERT)</li>
+                <li>Computer Security Incident Response Team (CSIRT)</li>
+                <li>Went from CERT to CSIRT to panic people less</li>
+                <li>CSIRT is usually housed/run by the SOC (Security Operations Center)</li>
+            </ul>
+        <li>Types of CSIRT you might see</li> 
+            <ul>
+                <li>National CSIRT</li>
+                    <ul>
+                        <li>US-CERT run by DHS (the Cyber Security Division</li>
+                        <li>CERT-CC combo of DARPA and Carnegie Mellon</li>
+                        <li>FIRST Forum of Incident Response and Security Teams</li>
+                    </ul>
+                <li>More Local CSIRT</li>
+                    <ul>
+                        <li>Companies need them too</li>
+                        <li>Every company no matter how small should have a plan</li>
+                    </ul>
+            </ul>
+        <li>Security Operations Center(SOC)</li> 
+            <ul>
+                <li>Larger companies might have a CSIRT and a SOC.</li>
+                <li>Smaller companies with dedicated IT might have only a NOC (Network Operations Center) that does double duty as a SOC</li>
+                <li>A SOC is for detection, containment and remediation of threats will happen.</li>
+                <li>A SOC is created when there is a lot of sensitive data is being handled, or because of industry or government that says you need one</li>
+                <li>Some SOCs are 24/7 some are regular 9-5, some have on call options, totally dependent on the company and its needs</li>
+                <li>Government branches will generally have a SOC because of the threats and scale of the threats they deal with</li>
+            </ul>
+        <li>How to decide who's on a CSIRT?</li> 
+            <ul>
+                <li>You need people from ALL parts of the company</li>
+                <li>C-Suite (A.K.A. authority to make the tough calls)</li>
+                <li>IT</li>
+                <li>Sales</li>
+                <li>Accounting and Finance</li>
+                <li>If you don't have someone on the team to speak to what each group does, the tools they need, and the planning they have things will be missed</li>
+            </ul>
+        <li>Communication and Planning within a CSIRT</li> 
+            <ul>
+                <li>Need backup communication.  If the company servers are down relying on company email and VoIP isn't going to go well in an emergency</li>
+                    <ul>
+                        <li>Outsourced servers, phones and emails</li>
+                    </ul>
+                 <li>Everything needs to be updated</li>   
+                 <ul>
+                    <li>Is everyone on the team still working for the company? In the same role? Are we missing any departments? Are we missing any new info or situations that have changed?</li>
+                </ul>
+                <li>Everyone talks and agrees what should be done in the event of an emergency</li>
+                <li>Regular meetings are needed,Both for planning, but also because you need to trust your team.  Trust they are doing their part.  That goes better when you know them</li>
+                <li>Checklists are the best way to plan, don't assume logical thoughts in an emergency</li>
+            </ul>
+        <li>Things to think about</li>  
+            <ul>
+                <li>What assets does the company have?</li>
+                <li>Threat assessment, including risk assessment of the company</li>
+                <li>Public statements, pre-write these and have several ready to go for different contingency plans</li>
+                <li>What is your backup plan?</li>
+                <li>What logs are you keeping? For how long? When do you go through them?</li>
+                <li>What information is shared when? (legal disclosure obligations), think of sharing in house, shareholders, stakeholders, public and when those things should happen</li>
+            </ul>
+        <li>TEST</li>    
+            <ul>
+                <li>Everything will go wrong.  You don't know there's an issue until you test</li>
+                <li>Don't aim for perfect.  Aim to do better than last year</li>
+                <li>Schedule REGULAR tests</li>
+            </ul>
+    </ul>   
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <li>Pick a recent cybersecurity incident from the news in the last 6 months. Say 5 things they did correctly, and 5 things they could work on according to  <a href="https://www.cisa.gov/sites/default/files/publications/Federal_Government_Cybersecurity_Incident_and_Vulnerability_Response_Playbooks_508C.pdf">this checklist</a> </li>
+
+        <li>In small groups, discuss what's missing from my things to think about list.  What else might a company need to consider when planning for an incident?</li>
+    </ul>
+</p>
     </div>
 </div>
 </div>
