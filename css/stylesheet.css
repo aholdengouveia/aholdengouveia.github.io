@@ -169,19 +169,19 @@ body {
   padding: 20px;
 }
 
-/*add in arrows for directional reading*/
-.arrow {
-  border: solid black;
-  border-width: 0 6px 6px 0;
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 3px;
+/*video wrapper to try and get video embed to work on mobile devices*/
+.video-wrapper{
+  overflow:hidden; 
+  padding-bottom:56.25%; 
+  position:relative; 
+  height:0;
 }
-
-.down {
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
+.video-wrapper iframe{
+  left:0; 
+  top:0; 
+  height:100%; 
+  width:100%; 
+  position:absolute;
 }
 
 /*Sticky footer*/
