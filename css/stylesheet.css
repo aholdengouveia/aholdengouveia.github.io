@@ -148,6 +148,34 @@ body {
     color: #040404;
 }
 
+/*Change background of paragraphs to make it easier to parse them*/
+
+#one{
+  background-color: #b3b5bb;
+  border-radius: 25px;
+  padding: 20px;
+}
+#two{
+  background-color: #c4c1cc;
+  border-radius: 25px;
+  padding: 20px;
+}
+
+/*add in arrows for directional reading*/
+.arrow {
+  border: solid black;
+  border-width: 0 6px 6px 0;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3px;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
 /*Sticky footer*/
 .footer {
     position: fixed;
