@@ -9,7 +9,8 @@ body {
 
   /* unvisited link */
   a:link {
-    color: #726192;
+    color: #5b4d74 ;
+    font-weight: bold;
   }
   /* visited link */
   a:visited {
@@ -17,7 +18,10 @@ body {
   }
   /* mouse over link */
   a:hover {
-    color: #cdfff9;
+    color: #e7e6ef;
+    background-color: #a1a2a8;
+    border-radius: 25px;
+    padding: 5px;
   }
   /* selected link */
   a:active {
@@ -124,6 +128,7 @@ body {
     color: #040404;
     display: block;
     text-decoration: none;
+    font-weight: normal;
   }
   
   .sidebar-nav li a:hover {
