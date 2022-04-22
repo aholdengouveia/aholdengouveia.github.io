@@ -1,0 +1,125 @@
+---
+title: Disaster Recovery
+layout: AdvSec
+---
+<!--Learning Outcomes for this topic-->
+<h3>Disaster Recovery</h3>
+<p>Learning outcomes:
+    <ul>
+        <li>Describe the need for disaster planning
+        </li>
+        <li>List concerns and prioritize
+        </li>
+        <li>Describe disaster planning testing processes
+        </li>
+        <li>Describe the responsibilities of the various roles in a disaster planning team
+        </li>
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/-nGEyx07dpE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="/AdvInfoSec/CIS215 Week 9 - Disaster Recovery.pptx"> Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>What is Disaster Recovery</li>
+            <ul>
+                <li>Disasters such as accidents, acts of nature etc. Need to have a plan in place to recovery from that
+                </li>
+                <li>Assume nothing will work, you can't rely on your current system, communication, phone or anything
+                </li>    
+                <li>Think about natural disasters such as snow storms, hurricanes and what the plan is if your company is in the path of that</li>
+            </ul>
+        <li>Who Makes this plan</li> 
+        <ul>
+            <li>C Suite people
+            <li>IT people</li>
+            <li>Sales</li>
+            <li>Accounting and finance</li>
+            <li>Basically everyone from every place you picked for a CERT team you'll need here</li>
+            <li>Including an alternate (just like for CERT) in case of emergencies, to have a backup and make sure there are no bottlenecks of knowledge</li>
+        </ul>
+        <li>What's on the plan</li> 
+        <ul>
+            <li>Hardware</li>
+                <ul>
+                    <li>What if the hardware disappears (fire, flood, etc)</li>
+                    <li>Onsite vs Offsite</li>
+                    <li>Rentable disaster recovery hardware
+                    <li>Companies making agreements with other companies as backups
+                    </li>
+                </ul>
+            <li>Software</li>
+            <ul>
+                <li>Backing up of software and programs not just the data</li>
+                <li>Byte by byte backups vs incremental backups</li>
+                <li>Different backups at different times</li>
+                    <ul>
+                        <li>Such as once a day back up new data, once a week back up new data and programs, once a month back up everything byte by byte.</li>
+                        <li>Backup what you're not willing to lose and set your backup to happen as often as you are willing to redo work (you're willing to redo a day of work? Backup once a day, willing to lose an hours' worth? Back up every hour</li>
+                    </ul>
+            </ul>
+            <li>Backups</li>
+                <ul>
+                    <li>What medium are you using for the backup?</li>
+                    <li>How long does that medium last?</li>
+                    <li>How long do you need to keep your backup?</li>
+                    <li>How is it protected/encrypted?</li>
+                    <li>Who has access?</li>
+                    <li>How is it verified and tested?</li>
+                    <li>Do you back up your backups?
+                    </li>
+                    <li>On site vs offsite backups</li>
+                    <li>Third party vs in house backups</li>
+                </ul>
+            <li>Testing</li>
+            <li>Who watches the watchers?</li>
+        </ul>
+        <li><b>Note: We can have issues if everything isn't documented well and the person/people who made the agreements and pplans aren't there or forget to pass along the message</b></li>
+        <li>People</li> 
+        <ul>
+            <li>Never have 1 person in charge of so much they are the single point of failure.  Your plan should <b>never</b> be "that person"</li>
+            <li>Need info on each of the systems</li>
+            <li>Need passwords, who knows them? Who's the backup? Where are they written down? How often is the backup updated (Spoiler: Should be updated whenever the password or plan changes)</li>
+            <li>Need someone that knows the infrastructure</li>
+            <li>What's your business continuity plan?</li>
+        </ul>
+        <li>Business Continuity planning</li> 
+        <ul>
+            <li> <a href="https://web.archive.org/web/20220421151228/https://www.ready.gov/business-continuity-plan"> Read an example of how to do a Business Continuity Plan here</a></li>
+        </ul>
+        <li>Testing</li> 
+        <ul>
+            <li>We need to run simulations and war games.  We don't know if our plan works unless we test it</li>
+                <ul>
+                    <li>Example: We put our whole plan in a binder in a locked safe that we can all get to. Yay? What if there is a fire and we evacuate the building(s).  Where is our backup of the plan? Who knows what we do next?</li>
+                </ul>
+                <li>When we find errors we need to update the plan AND the documentation of the plan</li>
+            <li>We should test once a year at minimum.</li>
+        </ul>
+        <li>Checklists</li>
+        <ul>
+            <li> <a href="https://web.archive.org/web/20220120170010/http://www.cisco.com/en/US/technologies/collateral/tk869/tk769/white_paper_c11-453495.pdf">Example of Disaster Recovery Best practices from Cisco </a></li>
+            <li><a href="https://web.archive.org/web/20220421150822/https://www.ibm.com/docs/en/i/7.2?topic=procedures-disaster-action-checklist"> Example of Disaster Recovery Checklist from IBM</a></li>
+        </ul>
+    </ul>   
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <li>In a group of 2-4 Come up with a Disaster Recovery plan for a local small Business following the documentation and best practices provided.</li>
+        <li>As a small group read pick a recent (within the last year) company disaster of some variety and discuss how they did in relation to the Cisco Best Practices Example</li>
+        <li>Write a Disaster Recovery Plan for yourself and your household.  Remember to include <em>all</em> your assets and risks. This is likely to look different then a large company so you are going to have a shorter plan and no teams, but you can still put together a small checklist and plan for yourself/household</li>
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">Click here </a>
+</p>
