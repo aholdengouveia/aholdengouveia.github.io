@@ -11,21 +11,23 @@ body {
   a:link {
     color: #5b4d74 ;
     font-weight: bold;
+    text-decoration: underline
   }
   /* visited link */
   a:visited {
-    color: #7c8982;
+    color: #4a524d;
   }
   /* mouse over link */
   a:hover {
-    color: #e7e6ef;
-    background-color: #a1a2a8;
+    color: #5b4d74 ;
+    background-color: #c5c6ca;
     border-radius: 10px;
     padding: 8px;
   }
   /* selected link */
   a:active {
-    color: #8d9e6d;
+    color: #545e41;
+    text-decoration: underline
   }
 
   /*buttons both primary and secondary */
