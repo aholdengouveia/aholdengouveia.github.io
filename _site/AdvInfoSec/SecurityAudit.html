@@ -17,7 +17,7 @@
   gtag('config', 'G-Q9SWNFD6DB');
 </script>
 
-    <title>CERT/CSIRT</title>
+    <title>Security Audits</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
 
@@ -156,103 +156,123 @@
     </div>
     <div class="col">
         <br><br>
-        <!--Learning Outcomes-->
-<h3>CERT/CSIRT</h3>
-<p>Learning outcomes
+        <!--Learning Outcomes for this topic-->
+<h3>Security Audits</h3>
+<p>Learning outcomes:
     <ul>
-        <li>Describe the function of CERT/CSIRT teams</li>
-        <li>Describe the common structure for a CERT/CSIRT team</li>
-        <li>Describe the pre-planning and primary concerns of a CERT/CSIRT team</li>
-        <li>List the typical steps in an incident handling process</li>       
+        <li>Understand what a security audit is</li>
+        <li>Describe some things a security audits is good for</li>
+        <li>Describe the basic procedures of how to do a security audit</li>
     </ul>
 </p>
 
-<!--embeded Youtube video-->
+<!--embed Youtube video here-->
 <div class="video-wrapper">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/NIT70S51hLk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <!--Paste youTube embed code here-->
 </div>
+
 <!--Download PowerPoint-->
 <p>
-    <a href="/AdvInfoSec/CIS215 Week 8 - CERT and CSIRT.pptx">Would you like to download my PowerPoint to folllow along?</a>
+    <a href="/AdvInfoSec/CIS215 Week 10 - Security Audits.pptx">Would you like to download my PowerPoint to folllow along?</a>
 </p>
 <!--Outline Of lecture notes/powerpoint for the topic-->
 <p>
     <ul>
-        <li>What is CERT/CSIRT?</li>
+        <li>What is a Security Audit</li>
             <ul>
-                <li>Computer Emergency Response Team (CERT)</li>
-                <li>Computer Security Incident Response Team (CSIRT)</li>
-                <li>Went from CERT to CSIRT to panic people less</li>
-                <li>CSIRT is usually housed/run by the SOC (Security Operations Center)</li>
+                <li>Security audits go through the current policies and procedures and see if there are holes or things that need updating</li>
+                <li>They need internal access to the company.</li>
+                <li>Everyone should have a security policy, the audit goes through that policy with a fine tooth comb</li>
             </ul>
-        <li>Types of CSIRT you might see</li> 
-            <ul>
-                <li>National CSIRT</li>
-                    <ul>
-                        <li>US-CERT run by DHS (the Cyber Security Division</li>
-                        <li>CERT-CC combo of DARPA and Carnegie Mellon</li>
-                        <li>FIRST Forum of Incident Response and Security Teams</li>
-                    </ul>
-                <li>More Local CSIRT</li>
-                    <ul>
-                        <li>Companies need them too</li>
-                        <li>Every company no matter how small should have a plan</li>
-                    </ul>
-            </ul>
-        <li>Security Operations Center(SOC)</li> 
-            <ul>
-                <li>Larger companies might have a CSIRT and a SOC.</li>
-                <li>Smaller companies with dedicated IT might have only a NOC (Network Operations Center) that does double duty as a SOC</li>
-                <li>A SOC is for detection, containment and remediation of threats will happen.</li>
-                <li>A SOC is created when there is a lot of sensitive data is being handled, or because of industry or government that says you need one</li>
-                <li>Some SOCs are 24/7 some are regular 9-5, some have on call options, totally dependent on the company and its needs</li>
-                <li>Government branches will generally have a SOC because of the threats and scale of the threats they deal with</li>
-            </ul>
-        <li>How to decide who's on a CSIRT?</li> 
-            <ul>
-                <li>You need people from ALL parts of the company</li>
-                <li>C-Suite (A.K.A. authority to make the tough calls)</li>
-                <li>IT</li>
-                <li>Sales</li>
-                <li>Accounting and Finance</li>
-                <li>If you don't have someone on the team to speak to what each group does, the tools they need, and the planning they have things will be missed</li>
-            </ul>
-        <li>Communication and Planning within a CSIRT</li> 
-            <ul>
-                <li>Need backup communication.  If the company servers are down relying on company email and VoIP isn't going to go well in an emergency</li>
-                    <ul>
-                        <li>Outsourced servers, phones and emails</li>
-                    </ul>
-                 <li>Everything needs to be updated</li>   
-                 <ul>
-                    <li>Is everyone on the team still working for the company? In the same role? Are we missing any departments? Are we missing any new info or situations that have changed?</li>
+        <li>Audit vs Pen Test</li> 
+        <ul>
+            <li>Penetration tests tell you what's seen from the outside. </li>
+                <ul>
+                    <li>Your digital footprint</li>
+                    <li>You don't need cooperation from the company, just the right authorizations</li>
                 </ul>
-                <li>Everyone talks and agrees what should be done in the event of an emergency</li>
-                <li>Regular meetings are needed,Both for planning, but also because you need to trust your team.  Trust they are doing their part.  That goes better when you know them</li>
-                <li><a href="https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-61r2.pdf">Checklists are the best way to plan </a>, don't assume logical thoughts in an emergency</li> 
-            </ul>
-        <li>Things to think about</li>  
-            <ul>
-                <li>What assets does the company have?</li>
-                <li>Threat assessment, including risk assessment of the company</li>
-                <li>Public statements, pre-write these and have several ready to go for different contingency plans</li>
-                <li>What is your backup plan?</li>
-                <li>What logs are you keeping? For how long? When do you go through them?</li>
-                <li>What information is shared when? (legal disclosure obligations), think of sharing in house, shareholders, stakeholders, public and when those things should happen</li>
-            </ul>
-        <li>TEST</li>    
-            <ul>
-                <li>Everything will go wrong.  You don't know there's an issue until you test</li>
-                <li>Don't aim for perfect.  Aim to do better than last year</li>
-                <li>Schedule REGULAR tests</li>
-            </ul>
+            <li>Audits are what's on the inside. </li>
+                <ul>
+                    <li>From the internals of the company are there any holes or vulnerabilities that might be concerning.</li>
+                    <li>You need cooperation form the company so that you can see what they are doing, and help them make it better</li>
+                </ul>
+        </ul>
+        <li>Physical Enviornment</li> 
+        <ul>
+            <li>Part of an audit is a walkthrough of the company</li>
+            <li>How's the heat? Humidity? Location</li>
+            <li>Who has access? Type of access control. How often does that change? Who's the backup</li>
+            <li>Are people leaving sensitive data out?</li>
+            <li>Post-its with passwords on monitors or under keyboard?</li>
+            <li>Pages left in printers or fax machines</li>
+            <li>Are people getting up and leaving computers unlocked?</li>
+            <li>What's the shredding policy?</li>
+        </ul>
+        <li>People</li> 
+        <ul>
+            <li>What are the password policies and how are they enforced. Are people getting around them?</li>
+                <ul>
+                    <li>Ex. New password every 90 days? Summer2019-->Fall2019 -->spring2020 or password22 --> password23--> password24</li>
+                </ul>
+            <li>Does the company use knowledge based answers? Common information like hometown, pets's names etc?</li>
+            <li>What about Multi Factor Authentication.(MFA)</li>
+            <li>How are you protecting data?</li>
+                <ul>
+                    <li>Encryption? Whole disk vs files vs multiple partitions</li>
+                    <li>Third party encryption? Or PGP? Or in house roll your own (<b>BAD idea!</b>)</li>
+                    <li>How about USB drives?</li> 
+                    <li>Cloud storage?</li> 
+                    <li>Backups?</li>
+                    
+                </ul>
+            <li> Don't forget about remote workers!</li>    
+        </ul>
+        <li>Servers</li> 
+        <ul>
+            <li>What's the configurations?</li>
+            <li>How's it documented? How often is it updated? And who does that?</li>
+            <li>How are you dealing with accounts? dead accounts? Guest accounts?</li>
+            <li>What's the policy on applications and updates for the system?</li>
+            <li>How do you do patch management? Testing?</li>
+            <li>Who's responsible? What about cross training and backups?</li>
+            <li>Are there different policies for different areas of the company? Such as dev has one set of policies and one for sales?</li>
+            <li>What's the firewall setup?</li>
+                <ul>
+                    <li>Blocked or Allowed list? (Formally known as whitelists and blacklists)</li>
+                    <li>Baysean filtering?</li>
+                </ul>
+        </ul>
+        <li>Types of Audits</li> 
+        <ul>
+            <li>Is the company doing a self audit?</li>
+            <li>Hiring an outside consultant?</li>
+            <li>Who are you talking to about compliance? Just management? Workers? Are you observing what people actually do or what they say they do?</li>
+            <li>Is this audit for compliance or laws? Or just because the company thinks it's useful</li>
+        </ul>
+        <li>Antivirus</li> 
+        <ul>
+            <li>Is there a global antivirus firewall policy</li>
+            <li>Security appliance from a vendor? Or Are there multiple appliances from multiple vendors</li>
+            <li>What about backups, who's in charge of them?</li>
+            <li>Are you worried about APTs and targeted viruses? Or just general threats?</li>
+        </ul>
+        <li>Policies</li> 
+        <ul>
+            <li>Do you do something different for desktops vs other hardware? Again, don't forget remote workers!</li>
+            <li>What's the log management policy</li>
+            <li>Copies? Archives? What's automated?</li>
+            <li>Who's in charge of whatand who's the alternate</li>
+            <li>What's the red flag policy? What sets off red flags? Who checks? What records them?</li>
+            <li>Who is checking to see if your policies are being followed?</li>
+            <li>If they aren't being followed, what are you doing about it?</li>
+        </ul>
     </ul>   
 <!--Discussions and activities for the topic-->
 <p>Suggested Activities and Discussion Topics:
     <ul>
-        <li>Pick a recent cybersecurity incident from the news in the last 6 months. Say 5 things they did correctly, and 5 things they could work on according to  <a href="https://www.cisa.gov/sites/default/files/publications/Federal_Government_Cybersecurity_Incident_and_Vulnerability_Response_Playbooks_508C.pdf">this checklist</a> </li>
-
-        <li>In small groups, discuss what's missing from my things to think about list.  What else might a company need to consider when planning for an incident?</li>
+        <li>In pairs, discuss one example of a policy such as password rules, or computer timeouts at your job or school, discuss what the policy is, how it's enforced, how people get around it, and what you would change about it.</li>
+        <li>In pairs, discuss how you would perform a security audit at your job. If you haven't had a job before, talk about it for your school.</li>
+        <li>In a small group of 2-4 discuss one industry's audit policy, first think about what you think it should be as a group, then research together what laws/regulations are actually in place.  Share with the class what you've found and if you think it's ok or should be changed.</li>
     </ul>
 </p>
 
