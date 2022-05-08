@@ -1,0 +1,62 @@
+
+\documentclass[letterpaper,11pt]{article}
+
+% Choose bibliography style for formatting list of publications
+\usepackage[style=ieee,url=false,doi=false,maxbibnames=99,sorting=ydnt,dashed=false]{biblatex}
+\usepackage[symbol]{footmisc}
+\usepackage{fontawesome}
+\bibliography{papers}
+
+% Choose theme, e.g. black, RedViolet, ForestGreen, MidnightBlue
+\def\theme{black}
+
+% More predefined colors can be found in 
+% https://en.wikibooks.org/wiki/LaTeX/Colors
+% Example photograph taken from Wikimedia Commons
+% https://commons.wikimedia.org/wiki/File:Kiara_Krit_passport.jpg
+
+\usepackage{simplecv}
+
+%\boldname{Holden-Gouveia}{Adrianna}
+
+\begin{document}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+% Heading
+\headinginline{Adrianna Holden-Gouveia}{
+    Website: \website{https://aholdengouveia.name} \\ 
+    Email: \email{admin@aholdengouveia.name} \\
+    \faLinkedin{: aholdengouveia} \\
+    \faGithub {: aholdengouveia} \\
+    \faTwitter {:aholdengouveia} \\
+    %\faIcon{youtube} {: https://www.youtube.com/channel/UCebdI1gT84U7PBtJFUTrIQA}
+}
+
+% \headingphoto{Name Surname}{
+%     Website: \website{example.com} \\ 
+%     Email: \email{example@example.edu} \\
+%     LinkedIn: \linkedin{name-surname} \\
+%     GitHub: \github{example}
+% }{photo.jpg}
+
+% Page One
+\import{sections/}{experience.tex}%done as of apr 14 2022
+\import{sections/}{education.tex} %done as of apr 14 2022
+\import{sections/}{curriculumDev.tex}%done as of apr 14 2022
+\import{sections/}{initiatives.tex}%done as of apr 14 2022
+\import{sections/}{workshops.tex}%done as of apr 14 2022
+
+
+%\import{sections/}{publications.tex}
+
+%\pagebreak
+
+% Page Two
+%\import{sections/}{teaching.tex}
+%\sidebyside
+%    {\import{sections/}{skills.tex}}
+%    {\import{sections/}{languages.tex}}
+%\import{sections/}{projects.tex}
+%\import{sections/}{awards.tex}
+%\import{sections/}{extracurricular.tex}
+
+\end{document}
