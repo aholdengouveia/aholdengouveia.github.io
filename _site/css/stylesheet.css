@@ -45,7 +45,7 @@ body {
 }
 
 
-  /*jumbotron is the wide header being used on the courses and materials page
+  /*jumbotron is the wide header used to call out page titles and blurbs
   */
 .jumbotron {
     padding-top: 6rem;
@@ -184,6 +184,19 @@ body {
   height:100%; 
   width:100%; 
   position:absolute;
+}
+
+.image-overlay{
+  background: rgba(255, 255, 255, 0.5);
+  padding: 10px; 
+  border-radius: 25px;
+
+}
+.dk-image-overlay{
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px; 
+  border-radius: 25px;
+
 }
 
 /*Sticky footer*/
