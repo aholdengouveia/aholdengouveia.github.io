@@ -17,7 +17,7 @@
   gtag('config', 'G-Q9SWNFD6DB');
 </script>
 
-    <title>Security Audits</title>
+    <title>Reconnaissance</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
 
@@ -169,122 +169,130 @@
     <div class="col">
         <br><br>
         <!--Learning Outcomes for this topic-->
-<h3>Security Audits</h3>
+<h3>Reconnaissance</h3>
 <p>Learning outcomes:
     <ul>
-        <li>Understand what a security audit is</li>
-        <li>Describe some things a security audits is good for</li>
-        <li>Describe the basic procedures of how to do a security audit</li>
+        <li>Define and discuss OSINT in relation to pen testing</li>
+        <li>List some ways to detect recon activities</li>
+        <li>List some reporting tools and compare their functionality</li>
+        <li>Discuss the tools and steps to aquire a target's footprint</li>
+        <li>List and Discuss the importance of hardware tools such as scrapers and harvesters</li>
     </ul>
 </p>
 
 <!--embed Youtube video here-->
 <div class="video-wrapper">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/2hyYHDlKC0Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Sx8Jx9vxfv0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 <!--Download PowerPoint-->
 <p>
-    <a href="/AdvInfoSec/CIS215 Week 10 - Security Audits.pptx">Would you like to download my PowerPoint to folllow along?</a>
+    <a href="/AdvInfoSec/CIS215 Week 2 - Recon.pptx">Would you like to download my PowerPoint to folllow along?</a>
 </p>
 <!--Outline Of lecture notes/powerpoint for the topic-->
 <p>
     <ul>
-        <li>What is a Security Audit</li>
+        <li>Gathering Information</li>
             <ul>
-                <li>Security audits go through the current policies and procedures and see if there are holes or things that need updating</li>
-                <li>They need internal access to the company.</li>
-                <li>Everyone should have a security policy, the audit goes through that policy with a fine tooth comb</li>
+                <li>Work from non-invasive (OSINT) up to more invasive tools (PING)</li>
+                <li>What sources are useful?</li>
+                <li>Cached pages and web archived information</li>
+                <li>Keywords, site specific and file specific (passwords, RSA token, *PDF etc.)</li>
+                <li>Think about not just your Google-Fu but also what's shared on social media from company and employees</li>
+                <li>What pieces of data are we looking for?</li>
+                <li>Think high level before you deep dive</li>
             </ul>
-        <li>Audit vs Pen Test</li> 
+        <li>Footprint</li> 
+            <ul>
+                <li>DNS Nameservers</li>
+                <li>IP Ranges</li>
+                <li>Banners</li>
+                <li>Operating Systems</li>
+                <li>IDS/IPS and other security systems</li>
+                <li>Network Devices</li>
+                <li>Other Devices</li>
+                <li>Job postings (New and old!)</li>
+                <li>Mobile Opportunities</li>
+                <li>Social Media</li>
+                <li>Forgotten devices, or even old listserves can be treasure troves of info</li>
+                <li>Unsecured buckets of data</li>
+            </ul>
+        <li>What are we looking for?</li> 
+            <ul>
+                <li>Names</li>
+                <li>Jobs</li>
+                <li>Emails</li>
+                <li>Personal info</li>
+                <li>Documents</li>
+                <li>Financials, company structure</li>
+            </ul>
+        <li>*CAUTION*More invasive options *CAUTION*</li> 
+            <ul>
+                <li>DNS</li>
+                <li>Servers</li>
+                <li>Automated Collections of data and web scraping</li>
+                <li>Metadata</li>
+                    <ul>
+                        <li>Documents Posted? Who wrote them</li>
+                        <li>Pictures posted? Who took them and where?</li>
+                        <li>Jobs listed? What tools/services are used?</li>
+                    </ul>
+            </ul>
+        <li>DNS</li>
+            <ul>
+                <li>Dig - domain information groper</li>
+                <li>fierce - Brute force approach</li>
+                <li>Nslookup - less info, but almost always available</li>
+                <li>Nameservers</li>
+                <li>wildcard sub-domains, word lists for sub-domains</li>
+                <li>Alternate Nameservers</li>
+                <li>What DNSSEC might there be? What does DNSSEC cover? what doesn't it cover?</li>
+            </ul>
+        <li>Traps</li>
         <ul>
-            <li>Penetration tests tell you what's seen from the outside. </li>
+            <li>Honey traps (Older term was HoneyPot, can offend people)</li>
                 <ul>
-                    <li>Your digital footprint</li>
-                    <li>You don't need cooperation from the company, just the right authorizations</li>
+                    <li>Example: Email only seen by scraper can be monitored to detect activity</li>
+                    <li>Fake Social Media Accounts for "Employees"</li>
                 </ul>
-            <li>Audits are what's on the inside. </li>
+            <li>Junk info to detect scraping</li>
+            <ul>
+                <li>White text on white background</li>
+                <li>Small text hidden in places humans are unlikly to look</li>
+                <li>Be careful of Accessibility!  Screenreaders and bots can look similar</li>
+            </ul>
+            <li>How to defeat scrapers</li>
                 <ul>
-                    <li>From the internals of the company are there any holes or vulnerabilities that might be concerning.</li>
-                    <li>You need cooperation form the company so that you can see what they are doing, and help them make it better</li>
+                    <li>Jane@doe.com vs Jane at doe dot com</li>
+                    <li>Limit how many searches can be done on employee lists</li>
+                    <li>Have anonymous emails for postions like CEO at Acme dot com or HR at Acme dot com</li>
+                    <li>Web scrapers are bots, they have regular activity and timing</li>
+                    <li>Limit requests from single IP address, or have wait times</li>
+                    <li>Work with user agent detection (mobile vs Desktop vs headless browsers</li>
                 </ul>
         </ul>
-        <li>Physical Enviornment</li> 
+        <li>Reporting</li> 
         <ul>
-            <li>Part of an audit is a walkthrough of the company</li>
-            <li>How's the heat? Humidity? Location</li>
-            <li>Who has access? Type of access control. How often does that change? Who's the backup</li>
-            <li>Are people leaving sensitive data out?</li>
-            <li>Post-its with passwords on monitors or under keyboard?</li>
-            <li>Pages left in printers or fax machines</li>
-            <li>Are people getting up and leaving computers unlocked?</li>
-            <li>What's the shredding policy?</li>
-        </ul>
-        <li>People</li> 
-        <ul>
-            <li>What are the password policies and how are they enforced. Are people getting around them?</li>
+            <li>Reports are the least fun and most needed part of the job</li>
+            <li>Shows what worked, what didn't, and samples of data that was found</li>
+            <li>Open Office can be used, but doesn't like strange file types (such as PCAP) and awful at large volume</li>
+            <li>Magic Tree</li>
                 <ul>
-                    <li>Ex. New password every 90 days? Summer2019-->Fall2019 -->spring2020 or password22 --> password23--> password24</li>
+                    <li>Uses a tree structure for organizing data</li>
                 </ul>
-            <li>Does the company use knowledge based answers? Common information like hometown, pets's names etc?</li>
-            <li>What about Multi Factor Authentication.(MFA)</li>
-            <li>How are you protecting data?</li>
+            <li>Dradis</li>
                 <ul>
-                    <li>Encryption? Whole disk vs files vs multiple partitions</li>
-                    <li>Third party encryption? Or PGP? Or in house roll your own (<b>BAD idea!</b>)</li>
-                    <li>How about USB drives?</li> 
-                    <li>Cloud storage?</li> 
-                    <li>Backups?</li>
-                    
+                    <li>Uses Nodes (in place of folders for organization)</li>
+                    <li>Issues are the vulnerabilities that were found</li>
+                    <li>Methodoloties means checklists and time lines, think of project management</li>
+                    <li>Uses an IP address or website so it's easier to share with a whole team</li>
                 </ul>
-            <li> Don't forget about remote workers!</li>    
-        </ul>
-        <li>Servers</li> 
-        <ul>
-            <li>What's the configurations?</li>
-            <li>How's it documented? How often is it updated? And who does that?</li>
-            <li>How are you dealing with accounts? dead accounts? Guest accounts?</li>
-            <li>What's the policy on applications and updates for the system?</li>
-            <li>How do you do patch management? Testing?</li>
-            <li>Who's responsible? What about cross training and backups?</li>
-            <li>Are there different policies for different areas of the company? Such as dev has one set of policies and one for sales?</li>
-            <li>What's the firewall setup?</li>
-                <ul>
-                    <li>Blocked or Allowed list? (Formally known as whitelists and blacklists)</li>
-                    <li>Baysean filtering?</li>
-                </ul>
-        </ul>
-        <li>Types of Audits</li> 
-        <ul>
-            <li>Is the company doing a self audit?</li>
-            <li>Hiring an outside consultant?</li>
-            <li>Who are you talking to about compliance? Just management? Workers? Are you observing what people actually do or what they say they do?</li>
-            <li>Is this audit for compliance or laws? Or just because the company thinks it's useful</li>
-        </ul>
-        <li>Antivirus</li> 
-        <ul>
-            <li>Is there a global antivirus firewall policy</li>
-            <li>Security appliance from a vendor? Or Are there multiple appliances from multiple vendors</li>
-            <li>What about backups, who's in charge of them?</li>
-            <li>Are you worried about APTs and targeted viruses? Or just general threats?</li>
-        </ul>
-        <li>Policies</li> 
-        <ul>
-            <li>Do you do something different for desktops vs other hardware? Again, don't forget remote workers!</li>
-            <li>What's the log management policy</li>
-            <li>Copies? Archives? What's automated?</li>
-            <li>Who's in charge of whatand who's the alternate</li>
-            <li>What's the red flag policy? What sets off red flags? Who checks? What records them?</li>
-            <li>Who is checking to see if your policies are being followed?</li>
-            <li>If they aren't being followed, what are you doing about it?</li>
         </ul>
     </ul>   
 <!--Discussions and activities for the topic-->
 <p>Suggested Activities and Discussion Topics:
     <ul>
-        <li>In pairs, discuss one example of a policy such as password rules, or computer timeouts at your job or school, discuss what the policy is, how it's enforced, how people get around it, and what you would change about it.</li>
-        <li>In pairs, discuss how you would perform a security audit at your job. If you haven't had a job before, talk about it for your school.</li>
-        <li>In a small group of 2-4 discuss one industry's audit policy, first think about what you think it should be as a group, then research together what laws/regulations are actually in place.  Share with the class what you've found and if you think it's ok or should be changed.</li>
+        <li>Find one <strong> PASSIVE</strong> tool that wasn't mentioned here, what is it? How does it work? Why is it considered passive not active or invasive? What info does it give? How might that help us do recon?</li>
+        <li>In pairs start working on a mind map for the footprint of a well known company.  <strong>OSINT ONLY</strong> Make sure you're thinking about what is valuable data and what you can do beyond just Googling the company</li>
     </ul>
 </p>
 

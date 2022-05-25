@@ -1,0 +1,136 @@
+---
+title: Reconnaissance 
+layout: AdvSec
+---
+<!--Learning Outcomes for this topic-->
+<h3>Reconnaissance</h3>
+<p>Learning outcomes:
+    <ul>
+        <li>Define and discuss OSINT in relation to pen testing</li>
+        <li>List some ways to detect recon activities</li>
+        <li>List some reporting tools and compare their functionality</li>
+        <li>Discuss the tools and steps to aquire a target's footprint</li>
+        <li>List and Discuss the importance of hardware tools such as scrapers and harvesters</li>
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Sx8Jx9vxfv0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="/AdvInfoSec/CIS215 Week 2 - Recon.pptx">Would you like to download my PowerPoint to folllow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>Gathering Information</li>
+            <ul>
+                <li>Work from non-invasive (OSINT) up to more invasive tools (PING)</li>
+                <li>What sources are useful?</li>
+                <li>Cached pages and web archived information</li>
+                <li>Keywords, site specific and file specific (passwords, RSA token, *PDF etc.)</li>
+                <li>Think about not just your Google-Fu but also what's shared on social media from company and employees</li>
+                <li>What pieces of data are we looking for?</li>
+                <li>Think high level before you deep dive</li>
+            </ul>
+        <li>Footprint</li> 
+            <ul>
+                <li>DNS Nameservers</li>
+                <li>IP Ranges</li>
+                <li>Banners</li>
+                <li>Operating Systems</li>
+                <li>IDS/IPS and other security systems</li>
+                <li>Network Devices</li>
+                <li>Other Devices</li>
+                <li>Job postings (New and old!)</li>
+                <li>Mobile Opportunities</li>
+                <li>Social Media</li>
+                <li>Forgotten devices, or even old listserves can be treasure troves of info</li>
+                <li>Unsecured buckets of data</li>
+            </ul>
+        <li>What are we looking for?</li> 
+            <ul>
+                <li>Names</li>
+                <li>Jobs</li>
+                <li>Emails</li>
+                <li>Personal info</li>
+                <li>Documents</li>
+                <li>Financials, company structure</li>
+            </ul>
+        <li>*CAUTION*More invasive options *CAUTION*</li> 
+            <ul>
+                <li>DNS</li>
+                <li>Servers</li>
+                <li>Automated Collections of data and web scraping</li>
+                <li>Metadata</li>
+                    <ul>
+                        <li>Documents Posted? Who wrote them</li>
+                        <li>Pictures posted? Who took them and where?</li>
+                        <li>Jobs listed? What tools/services are used?</li>
+                    </ul>
+            </ul>
+        <li>DNS</li>
+            <ul>
+                <li>Dig - domain information groper</li>
+                <li>fierce - Brute force approach</li>
+                <li>Nslookup - less info, but almost always available</li>
+                <li>Nameservers</li>
+                <li>wildcard sub-domains, word lists for sub-domains</li>
+                <li>Alternate Nameservers</li>
+                <li>What DNSSEC might there be? What does DNSSEC cover? what doesn't it cover?</li>
+            </ul>
+        <li>Traps</li>
+        <ul>
+            <li>Honey traps (Older term was HoneyPot, can offend people)</li>
+                <ul>
+                    <li>Example: Email only seen by scraper can be monitored to detect activity</li>
+                    <li>Fake Social Media Accounts for "Employees"</li>
+                </ul>
+            <li>Junk info to detect scraping</li>
+            <ul>
+                <li>White text on white background</li>
+                <li>Small text hidden in places humans are unlikly to look</li>
+                <li>Be careful of Accessibility!  Screenreaders and bots can look similar</li>
+            </ul>
+            <li>How to defeat scrapers</li>
+                <ul>
+                    <li>Jane@doe.com vs Jane at doe dot com</li>
+                    <li>Limit how many searches can be done on employee lists</li>
+                    <li>Have anonymous emails for postions like CEO at Acme dot com or HR at Acme dot com</li>
+                    <li>Web scrapers are bots, they have regular activity and timing</li>
+                    <li>Limit requests from single IP address, or have wait times</li>
+                    <li>Work with user agent detection (mobile vs Desktop vs headless browsers</li>
+                </ul>
+        </ul>
+        <li>Reporting</li> 
+        <ul>
+            <li>Reports are the least fun and most needed part of the job</li>
+            <li>Shows what worked, what didn't, and samples of data that was found</li>
+            <li>Open Office can be used, but doesn't like strange file types (such as PCAP) and awful at large volume</li>
+            <li>Magic Tree</li>
+                <ul>
+                    <li>Uses a tree structure for organizing data</li>
+                </ul>
+            <li>Dradis</li>
+                <ul>
+                    <li>Uses Nodes (in place of folders for organization)</li>
+                    <li>Issues are the vulnerabilities that were found</li>
+                    <li>Methodoloties means checklists and time lines, think of project management</li>
+                    <li>Uses an IP address or website so it's easier to share with a whole team</li>
+                </ul>
+        </ul>
+    </ul>   
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <li>Find one <strong> PASSIVE</strong> tool that wasn't mentioned here, what is it? How does it work? Why is it considered passive not active or invasive? What info does it give? How might that help us do recon?</li>
+        <li>In pairs start working on a mind map for the footprint of a well known company.  <strong>OSINT ONLY</strong> Make sure you're thinking about what is valuable data and what you can do beyond just Googling the company</li>
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">Click here </a>
+</p>

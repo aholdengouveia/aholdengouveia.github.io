@@ -1,0 +1,133 @@
+---
+title: Introduction to Ethical Hacking
+layout: AdvSec
+---
+<!--Learning Outcomes for this topic-->
+<h3>Ethical Hacking</h3>
+<p>Learning outcomes:
+    <ul>
+        <li>Explain the use of penetration testing in security assessments</li>
+        <li>Define the steps and planning stages to a penetration test</li>
+        <li>Explain the limitations of penetration testing</li>
+        <li>List the rules of engagement and explain their importance</li>
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/foMPySxcihk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="/AdvInfoSec/CIS215 Week 1 - Introduction, Threat Analysis.pptx">Would you like to download my PowerPoint to folllow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>Ethical Hacking</li>
+            <ul>
+                <li><a href="https://www.eccouncil.org/ethical-hacking">Ethical Hacking and Certified Ethical Hacker Certification</a></li>
+                <li>Security+ vs Certified Ethical Hacking</li>
+                <li>Why have Ethical Hacking?</li>
+                <li>Why we need to see from a Black Hat point of view to protect</li>
+            </ul>
+        <li><a href="https://web.archive.org/web/20220512145925/https://lensdump.com/i/iYmQum">Certification Options in the Industry</a></li> 
+        <ul>
+            <li>Security Implementation</li>
+            <li>Security Architecture</li>
+            <li>Security Management</li>
+            <li>Security Analysis</li>
+            <li>Defensive Operations</li>
+            <li>Offensive Opperations</li>
+            <li>Where to start?</li>
+        </ul>
+        <li>Vulnerabilities</li>
+        <ul>
+            <li>Information gathering and non-intrusive</li>
+            <li>Threat assessment, how serious is the threat?</li>
+            <li>What can be lost if it's exposed? (Trade secrets? Unimportant info?</li>
+            <li>How likely is the threat to be exposed? What data might be exposed?</li>
+            <li>Different vulnerabilities are exposed in different ways, red/blue team vs outside pen test vs Security Audit</li>
+            <li>Threat assessment is large scope, non-intrusive, and only a starting point</li>
+        </ul>
+        <li> Red, Blue, and Purple</li>
+        <ul>
+            <li>Red Team</li>
+            <ul>
+                <li>Pretends to be the Adversary</li>
+                <li>Will use all the tools a hacker would including OSINT, tools and phishing</li>
+                <li>Can use things like card cloners, taking over security cams, depploying sniffers and loggers, or even Social Engineer employees</li>
+            </ul>
+            <li>Blue Team</li>
+            <ul>
+                <li>The people protecting the company from inside</li>
+                <li>Will do risk assessments, scans, and  monitoring</li>
+                <li>Takes the plan and information gathered to work on a protection plan for the company</li>
+                <li>Will install, deploy and maintain security controls on the internal systems</li>
+            </ul>
+            <li>Purple Team</li>
+            <ul>
+                <li>Blue and Red teams can be opposing forces and therefore not get along well</li>
+                <li>Purple team job is to bring them together</li>
+            </ul>
+        </ul>
+        <li>Security Audits</li>
+        <ul>
+            <li>Looking through security policies for vulnerabilities</li>
+            <li>Usually with internal cooperation</li>
+            <li>Looks at best practices</li>
+            <li>Documentation of policies, teams and behaviors</li>
+            <li><a href="/AdvInfoSec/SecurityAudit.html">More on Security Audits</a> </li>
+        </ul>
+        <li>Pen Testing Overview</li>
+        <ul>
+            <li>Penetration test is from the outside in, usually an outside third party</li>
+            <li>Snapshot in time, Vulnerabilities found aren't guaranteed to always be there, just what was found when testing was done</li>
+            <li>Re-Assessments usually needed, can be yearly</li>
+            <li>Needs authorization, paperwork and proper signatures</li>
+            <li>Can have Legal Issues! Very important to follow rules</li>
+        </ul>
+        <li> Pen Testing Scope and Rules of Engagement</li>
+        <ul>
+            <li>Rules of Engagement</li>
+            <ul>
+                <li>Who can say yes? Under who's authority is this being undertaken?</li>
+                <li>Is the scope VERY clearly spelled out?</li>
+                <li>When is the test?</li>
+                <li>Who is doing the test, what info can be shared, and what is turned in at the end?</li>
+                <li>Who needs to be notified of the test?</li>
+                <li>Location matters, how do we handle out of state? out of country? Information in the Cloud?</li>
+                <ul>
+                    <li>How does the cloud affect this?</li>
+                    <li>What laws apply?</li>
+                    <li>If the company is in California, with branches in 4 other states, pen tester comes from Mass, which laws from which states apply?</li>
+                </ul>
+                <li><a href="/web/20220512155342/https://arstechnica.com/information-technology/2019/11/how-a-turf-war-and-a-botched-contract-landed-2-pentesters-in-iowa-jail/" >Why you need a get out of jail free card to perform a pen test</a> </li>
+            </ul>
+            <li>Scope</li>
+            <ul>
+                <li>Time frame of the test?</li>
+                <li>Which tools are allowed (DDOS? Social Engineering? Physical access?)</li>
+                <li>Do you have cooperation from IT?</li>
+                <li>How is the data gathered handled? Who can see it? How are you covering tracks? NDA?</li>
+                <li>What is being tested?</li>
+                <li>IP address ranges allowed? (what about things like external websites if they sub contract out?)</li>
+                <li>Physical Locations, some? All? None?</li>
+                <li>Cloud?</li>
+            </ul>
+        </ul>
+    </ul>   
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <li>As you go about your Pen test of a company, you notice a massive breach for both customers and employees.  You find significant data is out on Pastebin including SS# for a couple employees, do you stop the pen test to inform the company? Keep going because you know you'll find more and the good of many out weighs the few?</li>
+        <li>Should there be different rules for pen testing different areas?  For example, should infrastructure like power grids and water treatment systems have specialized rules for who can perform the test and how pen testing works? What about health systems, and wearables?  For example what about smart devices that mesure heart rate? Or sugar levels? Or period trackers?</li>
+        <li>Automated vulnerability testing, should researchers be allowed to do automated vulnerability testing? Does it make a difference if it's more or less invasive? What about when the system isn't reasonably security (small business, hospital, education etc)? What precautions should be taken to make this better?</li>
+        <li>CISO and personal risk, should CISOs (Chief Information Security Officers) take personal responsibility for companies that are breeched or hacked? As in, should a CISO go to jail for security negligence? Should they be fired if a breech/hack happens? How does corporate organizational deficiencies (Not following the outlined procedures, not documenting, not following best practices, etc) affect this?</li>
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">Click here </a>
+</p>
