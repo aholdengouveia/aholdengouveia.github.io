@@ -1,0 +1,116 @@
+---
+title: Enumeration
+layout: AdvSec
+---
+<!--Learning Outcomes for this topic-->
+<h3>Enumeration</h3>
+<p>Learning outcomes:
+    <ul>
+        <li>Explain how to choose targets for the enumeration process</li>
+        <li>Explain the purpose of Social Engineering using Phishing and Spearphishing as examples</li>
+        <li>List techniques for avoiding detection during the enumeration processes</li>
+        <li>List some of the tools used for recording data gathered from enumeration including baselines</li>
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/FqHfCFmhl_I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="/AdvInfoSec/CIS215 Week 3 - Enumeration.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>What is enumeration</li>
+            <ul>
+                <li>This is where we use the info gathered during the Recon process</li>
+                <li>Enumeration is capturing and tracking info on to help us make the battle plan</li>
+                <li>The data that is gathered is used during the next phase of the process, exploitation</li>
+            </ul>
+        <li>Choosing Targets</li> 
+        <ul>
+            <li>Jobs (CFO, CEO, VP...)</li>
+            <li>Servers</li>
+            <li>Devices</li>
+            <li>People</li>
+            <li>Examples of Information we might gather</li>
+                <ul>
+                    <li>Usernames</li>
+                    <li>Hostnames</li>
+                    <li>IPtables and routing rules</li>
+                    <li>Services, settings, configurations</li>
+                </ul>
+        </ul>
+        <li>Layers of a battle plan</li> 
+        <ul>
+            <li>We don't want to put all our "eggs" in one basket</li>
+            <li>Prioritize based on liklihood of detection and work from least likely to be detected</li>
+            <li>Including time in your plan</li>
+            <li>The deeper we go into the systems the more info is gathered</li>
+            <li>It's important to look at what we're going after, how we're going after it, and how we cover our tracks along the way</li>
+        </ul>
+        <li>People targets: Social Engineering</li> 
+        <ul>
+            <li>Phishing emails</li>
+                <ul>
+                    <li>Emails can focus on a specific person (hobbies, interests etc)</li>
+                    <li>Emails can focus on company wide concerns, ISO cert warnings, sales quotas, or things like health care plan updates.  Pick things people are likely to click on</li>
+                </ul>
+            <li>Vishing</li>   
+                <ul>
+                    <li>Mumble attack (mumble and hope they give extra info)</li>
+                    <li>Technical Jargon to convince you're ok</li>
+                </ul>
+            <li>Social media</li>
+                <ul>
+                    <li>People are unlikely to expect  attacks on their personal social media</li>
+                    <li>It's easy to overshare on social media</li>
+                    <li>Attack surface mapper and Social Attacker by Jacob Wilkin (Written in Python)</li>
+                </ul>
+        </ul>
+        <li>Hardware/Software Targets</li> 
+        <ul>
+            <li>Servers</li>
+                <ul>
+                    <li>Mapping</li>
+                    <li>Ping and open ports (nmap and zenmap</li>
+                </ul>
+            <li>Operating Systems</li>
+                <ul>
+                    <li>Name and version of systems</li>
+                    <li>Think beyond desktops, routers, printers, IoT, etc</li>
+                    <li>Banners - info about system, services and open ports.</li>  <li>Version of application and OS that's being run</li>
+                    <li>Commonly open ports (such as 80, 21, 22, 25, etc)</li>
+                </ul>
+            <li>Location of hardware</li>   
+            <li>Network structure vs desktop vulnerabilities</li> 
+            <li>Forgotten hardware (Printers, fax, unauthorized workarounds)</li>
+        </ul>
+        <li>Avoiding detection</li> 
+        <ul>
+            <li>Stealth mode and idle scanning</li>
+                <ul>
+                    <li>Nmap is LOUD has stealth options</li>
+                    <li>Syn/ack vs fin packets</li>
+                </ul>
+            <li>Spoofing and Zombies</li>
+            <li>Forged packets</li>
+            <li>Decoys and distractions</li>
+            <li>Volume attacks</li>
+            <li>Identify systems, triggers, and traps</li>
+        </ul>
+    </ul>   
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <li>In pairs pick 2 people, jobs, devices or other items and give an evaluation of if they are a good target.  Make sure to include both pros and cons. </li>
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">Click here </a>
+</p>
