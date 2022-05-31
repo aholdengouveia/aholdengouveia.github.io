@@ -170,6 +170,30 @@ body {
   border-radius: 25px;
   padding: 20px;
 }
+#three {
+  background-color: #dbd9e0;
+  border-radius: 25px;
+  padding: 20px;
+}
+
+/*Added to make code shown on page look nicer*/
+figcaption {
+  /*position: absolute;*/
+  top: 1.3rem;
+  left: 2.5rem;
+  text-align: center;
+  text-decoration: underline
+
+}
+pre > code {
+  padding-top: 3rem;
+}
+
+/*Change the text on section headers to stand out more*/
+h3 {
+  text-align: center;
+
+}
 
 /*video wrapper to try and get video embed to work on mobile devices*/
 .video-wrapper{

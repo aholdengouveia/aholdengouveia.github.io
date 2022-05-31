@@ -1,0 +1,131 @@
+---
+title: Magic Mirror
+layout: default
+---
+
+<main role="main">
+    <!--Jumbotron for the page header  including project title and blurb-->
+    <div class="jumbotron" style="background: url(/images/mirror-reflection.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+        <div class="container image-overlay">
+          <h1 class="jumbotron-heading">Magic Mirror</h1>
+            <p class="lead">The Magic Mirror project is useful all over a smart home, you can have everything from your calendar, to the weather, to information about your home at your fingertips. </p>
+            </p>
+        </div>
+    </div>    
+ <br><br>
+<!--Tutorial Link to the original Builder of the project   --> 
+<div class="container">
+    <p>        
+        This project has a small amount of setup for the Raspberry Pi, and higher cost of materials then others.  But I would consider this a beginner friendly project because of the amount of support and documentation for it online.  There are numerous tutorials, videos, and examples of lots of people at different skill levels working on each step of this setup.     
+    </p>
+    <p>
+        If you would like to take a class at NECC to help, our <a href="https://iq2prod1.smartcatalogiq.com/en/Catalogs/Northern-Essex-Community-College/2018-2019/Catalog/Courses/CIS-Computer-Information-Sciences/100/CIS117">Introduction to Linux (CIS117)</a> class is great! By the end of that class you'll be comfortable on the command prompt for Linux, able to use several text editors, and create shell scripts. Those are all the skills you need to easily do this project including all my recommended upgrades. 
+    </p>
+
+</div>  
+
+<!--Rating of the project in terms of difficulty, cost, and if I recommend for beginner-->
+<div class="container"> 
+    <h3>Rating</h3>
+        <ul style="list-style: none;">
+            <li>Difficulty of Project:Easy <span class="fa-solid fa-splotch"></span>
+            </li>
+            <li>Cost: <span class="fa-solid fa-piggy-bank"></span><span class="fa-solid fa-piggy-bank"></span><span class="fa-solid fa-piggy-bank"></span></li>
+            <li>Recommendation skill level: Beginner<span class="fa-solid fa-hat-wizard"></span> </li>
+        </ul>
+</div>
+
+<!--Skills needed for This project make sure to include links on how to get those skills-->
+<div class="container">
+    <h3>Skills and assumed supplies</h3>
+        <ul style="list-style-type:disc;">
+            <li>Computer with administrative access and Internet</li>
+            <li>Mouse and keyboard that can connect to the Raspberry Pi</li>
+        </ul>  
+</div>
+
+<!--Supplies and Cost of the project-->
+<div class="container">
+    <h3>Supplies (that stay with the project)</h3>
+        <ul style="list-style-type:disc;">
+            <li>Raspberry Pi (2/3/4) with power cord</li>
+            <li>Flat Screen Monitor with power Cord</li>
+            <li>Frame that fits around your One way glass or Monitor</li>
+            <li>Piece of one-way glass</li>
+        </ul>  
+</div>
+
+<!--How the project went and what I thought about as I was working on it-->
+<div class="container">
+    <h3>Project Set up</h3>
+    <p>
+        The first thing that needs to happen is getting your Raspberry Pi setup which means putting an Operating System on your SD card.  <a href="https://www.raspberrypi.com/documentation/computers/getting-started.html">There is some great documentation with a step-by-step guide </a> where you can find all your files, troubleshoot issues, and get instructions on how to setup the pi from lots of systems.  <a href="https://youtu.be/ntaXWS8Lk34">They even made a video to show you how the installer works, it's only 45seconds! </a> 
+    </p>
+    <p>
+        To get your pi setup and ready for the mirror, you'll need to load the Operating System onto an SD card, while this might sound scary it's got a wizard to help you, so you can follow the steps outlined to copy your files over using their installer. If you're nervous don't worry they have both written down steps and a video so you can follow allow.  I use Linux so my install process was a little more complicated, but if you run Windows it should be as easy as downloading the .exe file and double clicking to install. Once you have your installer set up you'll need to load the Operating System onto your SD card. I chose the top option, Full Install Raspberry Pi OS.  
+    </p>
+    <p>
+        Once you have your Raspberry pi setup with the operating system you're ready to start doing your mirror!  I used <a href="https://magicmirror.builders/"> these setup instructions</a> they have documentation and a community of people that are interested in this project so there is a lot of support. <a href="https://docs.magicmirror.builders/">The documentation and instructions are really good </a>and they have a getting started guide and how to make your mirror show exactly what you want it to. 
+    </p>
+    <p id="three">
+        I recommend reading through the whole installation once before trying it, don't worry if it doesn't make totally sense what's going on, just reading through the installation can give you some ideas on what to expect. I also recommend making sure to read everything on the screen carefully. If you get an error or warning usually there will be instructions on what the issues are and how to fix them if you read the errors carefully. 
+    </p>
+    <h5>Issues I ran into</h5>
+    <ul>
+        <li>Issue with my raspberry pi running slowly (it's an older one, I used a raspberry pi 3 model B) and needing to reboot it a couple times. Don't worry if this happens to you too, sometimes a reboot or two will fix your problems. It's also likely to be pretty slow on start up and reboot, so don't panic if you feel like you're sitting and waiting a lot, that's pretty normal. Also don't forget this is running on a raspberry pi, these have significantly less power and resources then what you might be used to on phones or laptops. Don't expect the same speed in response time or having lots of things happening easily on this machine. Remember this is a $35 computer, not a $1000 computer and will need patience.</li>
+        <li>Issue where I got a warning that says "1 high severity vulnerability" but right after it says that, there are instructions on how to fix it by rubbing "npm audit fix" so it's really good to make sure you read what's happening on the screen. But don't be surprised if you have to run "npm audit fix" as well and it takes quite a while.</li>
+    </ul>
+ 
+    <h3>Magic Mirror Set up</h3>
+    <p>
+        I started with having the base magic mirror build, I recommend you start there too. <a href="https://docs.magicmirror.builders/getting-started/installation.html#manual-installation">Follow the instructions </a> and after you're done with that you have a magic mirror! Now, if you want more things added to your mirror (which I do!) You'll need to pick some modules to add. Once you have the pattern down for how to add modules it's generally straightforward, but the different modules will have different levels of support, so be ready for not all of them to work perfectly. 
+    </p>
+        One of the things that you are probably going to want to do after you have tried starting your magic mirror, is look at the config file. One of the steps that you did was copying the config sample over into just a config file. This configuration file you can edit so you can either add more modules or take modules away, you can also customize the modules that are in here. For example there is a weather module, and you are probably going to want to get your weather module working and on your current location, and to do that you will need to make a couple of changes to the weather portion of the config file. <a href="https://docs.magicmirror.builders/modules/weather.html#example">Instructions for the file</a> can look complicated, but if you look at the examples you'll probably be able to see what you need to do. But if you're nervous,  that's ok! You can also check out places like YouTube to see lots of videos on how to make the changes you want to make if you prefer video to reading. 
+    </p>
+    <p>
+        Now that your mirror is working, enjoy your project! If you want to make changes later you can. If you want to just enjoy it for now you can do that too. It's really up to you!
+    </p>
+    
+</div>
+
+<!--Recommended upgrades and suggestions-->
+<div class="container">
+    <p>
+        <h3>Recommended Upgrades</h3>
+        <ul>
+            <li>If you want to try something a little more complex you could consider following another set of instructions such as the ones <a href="https://khassel.gitlab.io/magicmirror/faq/">for how to install a mirror using a docker image. </a> This will have less documentation and videos available, so it isn't beginner friendly, but it's another option if you're interested in playing with new things and don't mind needing to troubleshoot and get further into the system </li>
+            <li>Consider different sizes of mirror and monitors so you can try this in different places. You can also play with things like small inexpensive monitors in a corner of a mirror, or different shapes of mirrors to really customize what it looks like and what information is offered. </li>
+            <li>Consider having your mirror shut off at night to save power. You don't want to have to turn your monitor off and on every day, so instead we can tell the computer how to do it for us! <a href="https://raspberrypi.stackexchange.com/questions/67991/raspbian-put-monitor-to-sleep-at-night-and-wake-in-morning">Instructions can be found on stack Exchange for Raspberry Pi</a>  you'll see instructions on how to set up a cronjob. Basically at the terminal you say "crontab -e" and then option 1 for new one in nano (text editor) and then put the following at the bottom of the file. Hit Ctrl and the X key to save, press y to confirm, and you're set.
+                <figure> <!--Thank you https://websemantics.uk/articles/displaying-code-in-web-pages/ for your code display-->
+                    <figcaption>Cronjob to turn mirror off at night</figcaption>
+                    <pre>
+                      <code contenteditable spellcheck="false">
+                        0 22  *   *   *   DISPLAY=:0 xset dpms force off
+                        0   7   *   *   *   DISPLAY=:0 xset dpms force on
+                      </code>
+                    </pre>
+                  </figure>    
+                   
+            </li>
+            <li>Consider making some small changes to the default modules. For example the weather module has a current weather and forecasted weather, and you've likely already changed that to be your local city. But you can also include multiple weather modules, so if for example you live somewhere like New England and you drive a couple of hours you know the weather is going to change drastically so you could have the weather for multiple towns or cities. If you have family somewhere you could also have a weather listing for your city and your family city if that's something that's interesting to you as well. You could also quickly change the source for the need articles, it defaults to New York Times, but you could add world wide news such as BBC, The Economist, or even hyper local news from your local news source. 
+            </li>
+            <li>Consider making a small change so that your mirror boots automatically. <a href="https://docs.magicmirror.builders/configuration/autostart.html#using-pm2">The instructions on how to set this up</a>, and if you do this it'll automatically start up your mirror whenever your pi is running. So for example if you lost power you wouldn't have to connect to the pi to start it up again with "npm run start" you could just leave it and it would start up on it's own. 
+            </li>
+        </ul>
+        The possibilities are endless! 
+
+    </p>
+</div>
+
+<!--Suggestions on how to save Money-->
+<div class="container">
+    <p>
+        <h3>Ideas for how to save some Money</h3>
+        <ul>
+            <li>You could pick a different raspberry pi. You'll need one with wi-fi so you can't use the Pico, but you could pick an earlier version of the pi and get one for less money. You can also get a used one and save some money that way. Or even get a bulk order of several raspberry pi computers and split the cost with friends, make a party of creating magic mirrors together. </li>
+            <li>Get a smaller monitor. Monitor prices can vary a lot depending on size, location and quality. You don't need a fancy monitor or HD or 4K anything, this is just showing some simple text and images. Frame rate and refresh rate do not matter here.</li>
+            <li>Look on places like Craigslist or Facebook marketplace for inexpensive monitors. Almost any monitor can work for this, and 12-15 inch monitors go up on free stuff pretty frequently. You could also get one used or wait for a sale to save some money that way. Just make sure it's a working monitor not listed "for parts" or "as-is" that's usually code for "doesn't work". You might also find a monitor without Power Cable and those cables are usually $10-$15.</li>
+        </ul>
+    </p>
+</div>
+

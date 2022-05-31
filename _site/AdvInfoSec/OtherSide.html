@@ -83,8 +83,7 @@
          <a class="dropdown-item" href="/introdata.html">Introduction to Data</a>
          <a class="dropdown-item" href="/intropython.html">Introduction to Python</a>
          --><a class="dropdown-item" href="/AdvSec.html">Advanced Security</a>
-         <!--<a class="dropdown-item" href="/advlinux.html">Linux Administration</a>
-         -->
+         <a class="dropdown-item" href="/advlinux.html">Linux Administration</a>
         </div>
      </li>
 
@@ -172,41 +171,158 @@
 <h3>The Other Side</h3>
 <p>Learning outcomes:
     <ul>
-        <li>Outcome 1</li>
-        <li>Outcome 2</li>
-        <li>Outcome 3</li>
-        <li>Outcome 4</li>
+        <li>Describe what tools can detect scanning</li>
+        <li>Describe typical preparation for detection systems</li>
+        <li>Describe the differences between IDS and IPS </li>    
+        <li>List training for staff to vaccinate against phishing</li>
+        <li>Describe how to hide information and give some examples of traps and trigger systems</li>
     </ul>
 </p>
 
 <!--embed Youtube video here-->
 <div class="video-wrapper">
-    <!--Paste youTube embed code here-->
-</div>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Q0UIrpKDswM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 <!--Download PowerPoint-->
 <p>
-    <a href="#">Would you like to download my PowerPoint to folllow along?</a>
+    <a href="/AdvInfoSec/CIS215 Week 4 - The Other Side.pptx">Would you like to download my PowerPoint to follow along?</a>
 </p>
 <!--Outline Of lecture notes/powerpoint for the topic-->
 <p>
     <ul>
-        <li>Topic subtopic 1</li>
+        <li>Detecting Scans</li>
             <ul>
-                <li>Thing 1</li>
-                <li>Thing 2</li>
+                <li>IDS vs IPS</li>
+                <li>Scripts - is this Hacker vs legitimate user vs search engine spider </li>
+                <li>Snapshots - Checks of what is on the system at a specific point in time</li>
+                <li>Traps and triggers such as <a href="/web/20220527142453/https://phase3.net/blogs/tech-bytes/how-to-create-a-honeypot-to-catch-a-hacker">Honeytrap</a> or <a href="/web/20220527142834/https://hackercombat.com/how-to-use-canary-tokens-for-threat-detection/">Canary</a></li>
             </ul>
-        <li>Topic Subtopic 2</li> 
+        <li>Examples of traps</li> 
         <ul>
-            <li>Thing 1</li>
-            <li>Thing 2</li>
+            <li>Too small for a human to read text</li>
+            <li>Honeytoken - Like a trip wire, seems valuable but isn't</li>
+            <li>Fake admin login info in plain text</li>
+            <li>White on white text</li>
+            <li>Crawler traps (be mindful of SEO)</li>
+            <li>Be careful of accessability!</li>
         </ul>
+        <li>How to hide emails, employee lists and other info</li> 
+            <ul>
+                <li>Email</li>
+                    <ul>
+                        <li>Image of email or @ symbol</li>
+                        <li>Replace mailto with script or use code to disguise the email</li>
+                            <ul>
+                                <li>Bonus: if you use an email only scripts/bots can read, it becomes a honeytrap!</li>
+                            </ul>
+                        <li>Write out email - Username AT myURL DOT com</li>
+                        <li>CAPTCHA before email is given</li>
+                        <li>Contact form to request an email rather than posting the email publicly</li>
+                        <li>Keep in mind, anything you do that is abnormal can be difficult for accessible websites and software</li>
+                    </ul>           
+                <li>Company wide Name Policies</li>
+                    <ul>
+                        <li>Server names such as email03 easy to guess other 2 email servers even if some are "hidden"</li>
+                        <li>Are the policies posted online?</li>
+                        <li>Do they follow an obvious naming scheme? If yes, do you publish your employee list?</li>
+                        <li>Email address - Example Jane Doe Jane@company.com jdoe@comapny.com jane.doe@company.com are all very common policies and easy to guess (and generate with a short command) with an employee list</li>
+                        <li>Consider using generic emails CEO@acmecorp.com​
+                        </li>
+                    </ul> 
+                <li>Job descriptions, do you list the products you use?</li>
+                <li>Do you list your AV and networking needs in your job postings? If yes it's easy to guess your setup</li>    
+            </ul>        
+
+        <li>DNS</li> 
+            <ul>
+                <li>Split DNS for public and private access</li>
+                    <ul>
+                        <li>Public should only show public facing servers</li>
+                        <li>Private should show ONLY what's in network</li>
+                    </ul>
+                <li>Disable Zone transfers - Zone transfer means you replicate the DNS database across a set of DNS servers.  BIG NO NO to allow this</li>    
+            </ul>
+        <li>How to secure the wetware (people)</li> 
+            <ul>
+                <li>Social engineering</li>
+                    <ul>
+                        <li>Do you have training to prevent social engineering?</li>
+                        <li>Are your employees aware this is a concern?</li>
+                        <li>Role Play to show what it looks like and how to prevent it</li>
+                    </ul>
+                <li>Security procedures and policies</li>   
+                    <ul>
+                        <li>Are you employees aware of the policies?</li>
+                        <li>Are they following the policies?</li>
+                        <li>If they aren't, why not? Is it a you problem? Or a them problem?</li>
+                        <li>As a company you shouldn't use PII as authentication</li>
+                            <ul>
+                                <li>Mother's maiden name isn't good proof you are you</li>
+                                <li> Knowledge Based Answers are not good proof of ID,, think of all the social media quizzes "10 things you should know about me!" and how many answers are posted publicly.</li>
+                            </ul>
+                        <li>Mission critical systems should have extra layers of protection</li>    
+                        <li>Think about doing air locked systems for the most sensitive of data</li>
+                        <li>Do you educate your employees on what is public about them regularly?</li>
+                        <li>Do they google themselves? Do you have google alerts set up? What does your employee education system look like?</li>
+                    </ul>
+        </ul>
+        <li>In depth: Phishing/Vishing/smishing Training</li> 
+            <ul>
+                <li>Phishing training</li>
+                    <ul>
+                        <li>Show sample phishing emails</li>
+                        <li>Phishing email campaign with an invite for more training</li>
+                        <li>Spoofed email addresses</li>
+                        <li>Dangerous links, shortened links and attachments</li>
+                    </ul>
+                <li>Vishing</li>    
+                    <ul>
+                        <li>Vishing training for all employees with publicly search able numbers or those that interact with the public regularly (help desk, sales)</li>
+                        <li>Threats or coercive language is common</li>
+                            <ul>
+                                <li>The IRS will SUE YOU if you don't respond right now with this information</li>
+                            </ul>
+                        <li>Time Pressures are common</li> 
+                            <ul>
+                                <li>Please I really need this by 4pm today or I will be fired (call is placed at 3:50)</li>
+                                <li>Calls before long weekends, or when people are about to get off work and just want to go home</li>
+                            </ul>
+                    </ul>
+        
+            </ul>
+        <li>Reduce your Digital footprint tips</li> 
+            <ul>
+                <li>What are your employees saying about the company online? Even on private social media? What are they sharing about themselves? Do you have a policy on info sharing and IP?</li>
+                <li>Are you deleting old info? Old social media? Old job postings? What has been archived(If anything)?</li>
+                <li>Following breadcrumbs - Are you linked to old accounts? How much public data is available about your employees? Are they aware of what's available?</li>
+            </ul>
+        <li>System Hardening</li> 
+            <ul>
+                <li>Ports - What's open? Is that still needed?</li>
+                <li>Services - What's running? Is that still needed? Can you get rid of it? Any extras on the system is one more potential vulnerability for a hacker to find</li>
+                <li>Patch Management - What is your update cycle? Patch cycle? How often do you audit your systems?</li>
+                <li>Security checkups - Examples like Lynis for Linux</li>
+                <li>Firewalls</li>
+                    <ul>
+                        <li>Firewalls are used to direct traffic</li>
+                        <li>The default options are accept, deny (drop no response) or redirect</li>
+                        <li>Packet inspection vs Deep packet inspection</li>
+                    </ul>
+            </ul>
+        <li>Policies and Procedures</li>  
+            <ul>
+                <li>Security Audits - Frequent security audits to make sure everything is still in date and valid.  For example, if you haven't had a winXP machine in 10yrs do you still need them running? Are they controlling anything?</li>
+                <li>Devices - Are you keeping a running log of changes to the infrastructure and devices</li>
+                <li>Devices - BYOD? Are there rules such as lockers for all devices before getting on the campus?</li>
+                <li>Passwords - What's your password policy? What about shared passwords? Who holds master passwords?  How do you backup the passwords? Who updates the backups?</li>
+                <li>Is your plan and backup and backup of the backup a single person? What if any one or two aren't in? Then what?</li>
+            </ul>
     </ul>   
 <!--Discussions and activities for the topic-->
 <p>Suggested Activities and Discussion Topics:
     <ul>
-        <li>Discussion 1</li>
-        <li>Activity 1</li>
+        <li>As pairs, discuss 1 thing that wasn't already mentioned on how to hide info, hide email addresses, or a trap you think is valuable for a company to have set up. Be ready to share</li>
+        <li>Now that you know about digital footprints.  What's yours? What can you find about yourself online? What alerts do you have set up? <a href="https://web.archive.org/web/20220527150552/https://tryhackme.com/resources/blog/google-fu">Remember to do more then just google your name</a>, think of all the things you learned in OSINT and apply them here</li>
     </ul>
 </p>
 
