@@ -17,7 +17,7 @@
   gtag('config', 'G-Q9SWNFD6DB');
 </script>
 
-    <title>Resources</title>
+    <title>Awk</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
 
@@ -154,64 +154,86 @@
         <!--Main content of the page will fill in here-->
         <div class="col">
             <br><br>
-            <h3>Links to Resources</h3>
-<!--Some general documentation links for servers-->
-<div class="container">
-    <h5>General Server FAQ</h5>
-        <ul>
-            <li><a href="http://bhami.com/rosetta.html">Sysadmin's Unixersal Translator (ROSETTA STONE) </a></li>
-            <li>Videos: <a href="https://www.youtube.com/playlist?list=PLQOmuLC45eoQlIMH7oCNL6yFP7kWQubBo">Adrianna's TLDR series on YouTube for Linux Administration</a></li>
-            <li><a href="https://web.archive.org/web/20220804144021/https://www.cs.cmu.edu/~shaoml/linux_quickref.pdf">Linux administration quick reference PDF</a></li>
-            <li><a href="https://web.archive.org/web/20220804144222/http://www.yolinux.com/TUTORIALS/LinuxTutorialSysAdmin.html">Linux System Administration and Configuration includes tutorials</a></li>
-            <li><a href="https://web.archive.org/web/20220804150708/https://www.networkworld.com/article/3387154/working-with-variables-on-linux.html">Working with variables on Linux machines</a></li>
-        </ul>  
+            <!--Learning Outcomes for this topic-->
+<h3>Awk</h3>
+<!--<p>Learning outcomes:
+    <ul>
+        <li>Be Able to name the most common types of servers
+    </ul>
+</p>-->
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/4HpWO_RAMq4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-<div class="container">
-    <h5>Linux tips, tricks and ways to help you do things faster</h5>
+<!--Download PowerPoint
+<p>
+    <a href="#">Would you like to download my PowerPoint to follow along?</a>
+</p>-->
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>What is Awk?</li>
+            <ul>
+                <li>A basic scripting language that can be used on the command prompt or in an actual awk script</li>
+                <li>Awk can support one line programs and is considered turing complete</li>
+                <li>Awk can do regular expressions</li>
+            </ul>
+        <li>What is Awk good at?</li> 
         <ul>
-            <li><a href="https://web.archive.org/web/20220804144558/https://www.endpointdev.com/blog/2015/11/favourite-unix-command-line-tools/">15 useful command line tools and tricks</a></li>
-            <li><a href="https://web.archive.org/web/20220804144703/https://www.tecmint.com/cool-linux-commandline-tools-for-terminal/">10 command line tools</a></li>
-            <li><a href="https://web.archive.org/web/20220804150444/https://www.networkworld.com/article/3284105/linux-control-sequence-tricks.html">Linux Control Sequence tricks</a></li>
-            <li><a href="https://web.archive.org/web/20220804150549/https://www.networkworld.com/article/3305811/linux-tricks-that-even-you-can-love.html">Tricks to help you master the command line on Linux</a></li>
-            <li><a href="https://web.archive.org/web/20220804150326/https://www.networkworld.com/article/3268768/finding-what-you-re-looking-for-on-linux.html">7 commands to help you find things on Linux</a></li>
-            <li><a href="https://web.archive.org/web/20220804151142/https://www.networkworld.com/article/3219684/half-a-dozen-clever-linux-command-line-tricks.html">6 command line tricks to do less work</a></li>
+            <li>Data manipulation</li>
+            <li>Filtering out information to match a pattern</li>
+            <li>Getting a report of information from a file</li>
+            <li>String manipulations such as printing parts of strings</li>
         </ul>
-</div>
-
-<div class="container">
-    <h5>Tool/Command specific help</h5>
+        <li>What is Awk not so good at?</li> 
         <ul>
-            <li>Video: <a href="https://www.computerworld.com/video/94367/how-to-run-command-loops-linux-tip">How to run command loops </a></li>
-            <li>Video: <a href="https://www.computerworld.com/video/89095/linux-tip-how-to-use-the-find-command">How to use the find command</a></li>
-            <li>Video: <a href="https://www.computerworld.com/video/88397/2-minute-linux-tip-how-to-use-the-top-command">How to use the top command</a></li>
-            <li>Video: <a href="https://www.computerworld.com/video/86820/2-minute-linux-tip-learn-how-to-use-the-alias-command">How to use the alias command</a></li>
-            <li>Video: <a href="https://www.computerworld.com/video/86695/2-minute-linux-tip-learn-how-to-use-the-history-command">How to use the history command</a></li>
-            <li>Video: <a href="https://www.networkworld.com/video/97227/how-to-use-the-wc-command-2-minute-linux-tips">How to use the wc command</a></li>
-            <li>Video: <a href="https://www.computerworld.com/video/86896/2-minute-linux-tip-how-to-terminate-processes">How to terminate a process</a></li>
-            <li>Video: <a href="https://www.computerworld.com/video/95669/how-to-use-the-nslookup-command-2-minute-linux-tip">How to use the nslookup command</a></li>
-            <li><a href="https://web.archive.org/web/20220804150150/https://www.networkworld.com/article/3256279/linux-command-history-choosing-what-to-remember-and-how.html">Linux Command line history</a></li>
-
-            <li><a href="https://web.archive.org/web/20220804151016/https://opensource.com/article/19/7/master-ls-command">How to use the ls command</a></li>
+            <li>Speed/efficiency awk scans line by line so it's not going to enjoy millions of lines, and is not a replacement for things like SQL</li>
+            <li>Complex programs and GUIs</li>
         </ul>
-</div>
+        <li>Some examples of how to use awk as shown in the video </li>  
+            <ul>
+                <li>Let's say we want to change how a file is being formatted we could do things like this:</li>
+                    <ul>
+                        <li> awk '{print $1}' filename </li>
+                        <li> awk '{print $1 "\t" $5}' filename</li>
+                    </ul>
+                <li>Let's say we want to use awk for pattern matching</li>
+                    <ul>
+                        <li>To search for MA: awk '/MA/ {print $2 "\t" $5}' filename</li>
+                    </ul>
+                <li>We can also play with delimiters in multiple ways</li>    
+                    <ul>
+                        <li>awk -F: '/MA/ {print $1 "\t" $2}' filename </li>
+                        <li>awk -v FS=: '/MA/ {print $1 "\t" $2}' filename</li>
+                        <li>awk  '/MA/ {print $1 "\t" $2}' FS=: filename</li>
+                        <li>awk  'BEGIN{FS=":"} /MA/ {print $1 "\t" $2}'  datebook</li>
+                    </ul>
+            </ul>
+        <li>Some Awk Resources</li>
+            <ul>
+                <li><a href="https://flylib.com/books/en/4.356.1.52/1/">An older text on how to use awk, formatting has some issues on smaller screens </a></li>
+                <li><a href="https://www.grymoire.com/Unix/Awk.html">The Grymoire on Awk</a></li>
+                <li><a href="https://web.archive.org/web/20220706010420/https://www.grymoire.com/Unix/Awk.html">Backup on web archive of the awk section of the Grymoire</a></li>
+            </ul>
 
-<div class="container">
-    <h5>Other references that might be helpful</h5>
-        <ul>
-            <li><a href="https://web.archive.org/web/20220804143819/https://www.maketecheasier.com/dev-null-in-linux/">What is /dev/null ? </a></li>
-            <li>Video: <a href="https://www.networkworld.com/video/96227/how-to-use-dev-null-2-minute-linux-tips">How to use /dev/null</a></li>
-            <li><a href="https://twitter.com/i/events/1026078161115729920"> Comics by @b0rk to help explain things in a more visual way.</a></li>
-        </ul>
-</div>
 
-<div class="container">
-    <h5>Linux Challenges</h5>
-        <ul>
-            <li>Needs free registration: <a href="https://www.hackerrank.com/domains/shell">Hacker Rank Challenges</a></li>
-            <li><a href="https://linuxjourney.com/">Free tutorials and challenges, includes easy to challenging options from Linux Journey</a></li>
-        </ul>
-</div>
+            
+    </ul>   
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Exercises:
+    <ul>
+        <li>Download the AwkLab File by clicking <a href="/LinuxAdmin/labexcercises/AwkLab.data"> right clicking Here </a>and saving your file onto your Linux machine</li>
+        <li>Complete the problem sets that are found on <a href="/LinuxAdmin/labexcercises/awklab.pdf">This PDF</a> using the awklab.data file you downloaded from above.  Make sure you are paying attention to file location and your paths</li>
+        <li><a href="https://www.computerworld.com/video/96527/how-to-use-the-awk-command-2-minute-linux-tips">Here</a> is another video on how to use awk</li>
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">Click here </a>
+</p>
         </div>
     </div>
 </div>

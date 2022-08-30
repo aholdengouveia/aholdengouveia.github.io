@@ -1,0 +1,84 @@
+---
+title: Awk
+layout: AdvLinux
+---
+<!--Learning Outcomes for this topic-->
+<h3>Awk</h3>
+<!--<p>Learning outcomes:
+    <ul>
+        <li>Be Able to name the most common types of servers
+    </ul>
+</p>-->
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/4HpWO_RAMq4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<!--Download PowerPoint
+<p>
+    <a href="#">Would you like to download my PowerPoint to follow along?</a>
+</p>-->
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>What is Awk?</li>
+            <ul>
+                <li>A basic scripting language that can be used on the command prompt or in an actual awk script</li>
+                <li>Awk can support one line programs and is considered turing complete</li>
+                <li>Awk can do regular expressions</li>
+            </ul>
+        <li>What is Awk good at?</li> 
+        <ul>
+            <li>Data manipulation</li>
+            <li>Filtering out information to match a pattern</li>
+            <li>Getting a report of information from a file</li>
+            <li>String manipulations such as printing parts of strings</li>
+        </ul>
+        <li>What is Awk not so good at?</li> 
+        <ul>
+            <li>Speed/efficiency awk scans line by line so it's not going to enjoy millions of lines, and is not a replacement for things like SQL</li>
+            <li>Complex programs and GUIs</li>
+        </ul>
+        <li>Some examples of how to use awk as shown in the video </li>  
+            <ul>
+                <li>Let's say we want to change how a file is being formatted we could do things like this:</li>
+                    <ul>
+                        <li> awk '{print $1}' filename </li>
+                        <li> awk '{print $1 "\t" $5}' filename</li>
+                    </ul>
+                <li>Let's say we want to use awk for pattern matching</li>
+                    <ul>
+                        <li>To search for MA: awk '/MA/ {print $2 "\t" $5}' filename</li>
+                    </ul>
+                <li>We can also play with delimiters in multiple ways</li>    
+                    <ul>
+                        <li>awk -F: '/MA/ {print $1 "\t" $2}' filename </li>
+                        <li>awk -v FS=: '/MA/ {print $1 "\t" $2}' filename</li>
+                        <li>awk  '/MA/ {print $1 "\t" $2}' FS=: filename</li>
+                        <li>awk  'BEGIN{FS=":"} /MA/ {print $1 "\t" $2}'  datebook</li>
+                    </ul>
+            </ul>
+        <li>Some Awk Resources</li>
+            <ul>
+                <li><a href="https://flylib.com/books/en/4.356.1.52/1/">An older text on how to use awk, formatting has some issues on smaller screens </a></li>
+                <li><a href="https://www.grymoire.com/Unix/Awk.html">The Grymoire on Awk</a></li>
+                <li><a href="https://web.archive.org/web/20220706010420/https://www.grymoire.com/Unix/Awk.html">Backup on web archive of the awk section of the Grymoire</a></li>
+            </ul>
+
+
+            
+    </ul>   
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Exercises:
+    <ul>
+        <li>Download the AwkLab File by clicking <a href="/LinuxAdmin/labexcercises/AwkLab.data"> right clicking Here </a>and saving your file onto your Linux machine</li>
+        <li>Complete the problem sets that are found on <a href="/LinuxAdmin/labexcercises/awklab.pdf">This PDF</a> using the awklab.data file you downloaded from above.  Make sure you are paying attention to file location and your paths</li>
+        <li><a href="https://www.computerworld.com/video/96527/how-to-use-the-awk-command-2-minute-linux-tips">Here</a> is another video on how to use awk</li>
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">Click here </a>
+</p>
