@@ -1,0 +1,71 @@
+---
+title: Sed
+layout: AdvLinux
+---
+<!--Learning Outcomes for this topic-->
+<h3>Sed</h3>
+<!--<p>Learning outcomes:
+    <ul>
+        <li>Be Able to </li> 
+
+    </ul>
+</p>-->
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/YMqOocY0ovs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<!--Download PowerPoint
+<p>
+    <a href="#">Would you like to download my PowerPoint to follow along?</a>
+</p>-->
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>What is Sed?</li>
+            <ul>
+                <li>Sed is a stream editor</li>
+                <li>Most popular use is substitutions</li>
+                <li>Sed can support Regular Expressions (regex)</li>
+                <li>Sed is considered non-destructive, that means be default it doesn't change the original file</li>
+            </ul>
+        <li>What is Sed good at?</li> 
+        <ul>
+            <li>Substitutions</li>
+            <li>Seeing what a file can look like without damaging the original</li>
+
+        </ul>
+        <li>What is Sed not so good at?</li> 
+        <ul>
+            <li>Sorting the file</li>
+            <li>Easy to understand error messages, it's also not as well documented as it could be</li>
+        </ul>
+        <li>Some examples of how to use sed as shown in the video</li>  
+            <ul>
+                <li>sed s/originalTerm/NewTerm/ filename</li>
+                <li>You can also put the results in a file if you don't want to show them on screen only using append (>>) and Redirect (>) sed s/originalTerm/NewTerm/ filename >> newFileWithChanges</li>
+                <li>sed</li>
+                <li>To have a global substitution instead of first instance only, you add the g at the end "sed s/o/0/g filename"</li>
+                <li>We can make sed print lines matching the pattern instead of substitutions by doing "sed -n '/MA/ p' filename"</li>
+                <li>We can have multiple instances of sed as well by doing something like "sed s/0/o/g filename | sed s/3/s/g"</li>
+            </ul>
+        <li>Some Sed Resources</li>
+            <ul>
+                <li><a href="https://flylib.com/books/en/4.356.1.40/1/">An older text on how to use sed, formatting has some issues on smaller screens </a></li>
+                <li><a href="https://www.grymoire.com/Unix/Sed.html">The Grymoire on Sed</a></li>
+                <li><a href="https://web.archive.org/web/20220816210438/https://www.grymoire.com/Unix/Sed.html">Backup on web archive of the sed section of the Grymoire</a></li>
+            </ul>
+    </ul>   
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Exercises:
+    <ul>
+        <li>Download the sedLab File by clicking <a href="/LinuxAdmin/labexcercises/SedLab"> right clicking Here</a>and saving your file onto your Linux machine</li>
+        <li>Complete the problem sets that are found on <a href="/LinuxAdmin/labexcercises/sedlab.pdf">This PDF</a> using the sedlab file you downloaded from above.  Make sure you are paying attention to file location and your paths</li>
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">Click here </a>
+</p>

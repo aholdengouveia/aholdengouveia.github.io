@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1661871861 "/home/aholdengouveia/aholdengouveia.github.io/LinuxAdmin/labexcercises/sedlab.tex" "sedlab.pdf" "sedlab" 1661871861
+["pdflatex"] 1661875651 "/home/aholdengouveia/aholdengouveia.github.io/LinuxAdmin/labexcercises/sedlab.tex" "sedlab.pdf" "sedlab" 1661875651
   "/etc/texmf/web2c/texmf.cnf" 1659374508 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/aholdengouveia/aholdengouveia.github.io/LinuxAdmin/labexcercises/sedlab.tex" 1661871861 2762 411e4d745f948031815fff200947c0e6 ""
+  "/home/aholdengouveia/aholdengouveia.github.io/LinuxAdmin/labexcercises/sedlab.tex" 1661875650 2722 9b55e51f6d2804b8603c14658d3697ec ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomethree.enc" 1463430686 2437 443c81fb50993bacedc5f9a206c322b0 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc" 1463430686 2679 32dd8ae231bf4a0752b98f62dc097183 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -63,9 +63,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1659374618 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1659374637 2800226 63a2243d130116927e03ed2382fe3772 ""
-  "sedlab.aux" 1661871861 686 4ce905362b6645b598ea182482e9aeed "pdflatex"
-  "sedlab.out" 1661871861 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "sedlab.tex" 1661871861 2762 411e4d745f948031815fff200947c0e6 ""
+  "sedlab.aux" 1661875651 686 4ce905362b6645b598ea182482e9aeed "pdflatex"
+  "sedlab.out" 1661875651 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "sedlab.tex" 1661875650 2722 9b55e51f6d2804b8603c14658d3697ec ""
   (generated)
   "sedlab.aux"
   "sedlab.log"

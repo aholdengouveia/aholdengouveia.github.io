@@ -17,7 +17,7 @@
   gtag('config', 'G-Q9SWNFD6DB');
 </script>
 
-    <title>Grep</title>
+    <title>Sed</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
 
@@ -155,18 +155,17 @@
         <div class="col">
             <br><br>
             <!--Learning Outcomes for this topic-->
-<h3>Grep</h3>
+<h3>Sed</h3>
 <!--<p>Learning outcomes:
     <ul>
-        <li>Be Able to explain what grep is used for</li> 
-        <li>Be able to use grep </li>
+        <li>Be Able to </li> 
 
     </ul>
 </p>-->
 
 <!--embed Youtube video here-->
 <div class="video-wrapper">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/Iif-DjWYoWY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/YMqOocY0ovs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 <!--Download PowerPoint
@@ -176,44 +175,45 @@
 <!--Outline Of lecture notes/powerpoint for the topic-->
 <p>
     <ul>
-        <li>What is Grep?</li>
+        <li>What is Sed?</li>
             <ul>
-                <li>grep is a pattern matching tool</li>
-                <li>grep can be used as a search tool</li>
-                <li>grep can use Regular Expressions (regex) to help find more complex patterns</li>
-                <li>grep can be used with pipe or by itself to search the contents of files</li>
-                <li>There are different forms of grep, so it's important to make sure you know which one you're using and why</li>
+                <li>Sed is a stream editor</li>
+                <li>Most popular use is substitutions</li>
+                <li>Sed can support Regular Expressions (regex)</li>
+                <li>Sed is considered non-destructive, that means be default it doesn't change the original file</li>
             </ul>
-        <li>What is Grep good at?</li> 
+        <li>What is Sed good at?</li> 
+        <ul>
+            <li>Substitutions</li>
+            <li>Seeing what a file can look like without damaging the original</li>
+
+        </ul>
+        <li>What is Sed not so good at?</li> 
+        <ul>
+            <li>Sorting the file</li>
+            <li>Easy to understand error messages, it's also not as well documented as it could be</li>
+        </ul>
+        <li>Some examples of how to use sed as shown in the video</li>  
             <ul>
-                <li>Pattern matching</li>
-                <li>Pattern matching using plain text or regex</li>
-                <li>Finding things that either match a pattern, or everything that doesn't match a pattern</li>
+                <li>sed s/originalTerm/NewTerm/ filename</li>
+                <li>You can also put the results in a file if you don't want to show them on screen only using append (>>) and Redirect (>) sed s/originalTerm/NewTerm/ filename >> newFileWithChanges</li>
+                <li>sed</li>
+                <li>To have a global substitution instead of first instance only, you add the g at the end "sed s/o/0/g filename"</li>
+                <li>We can make sed print lines matching the pattern instead of substitutions by doing "sed -n '/MA/ p' filename"</li>
+                <li>We can have multiple instances of sed as well by doing something like "sed s/0/o/g filename | sed s/3/s/g"</li>
             </ul>
-        <li>What is Grep not so good at?</li> 
+        <li>Some Sed Resources</li>
             <ul>
-                <li>Reading minds, grep is very literal and will find exactly what you tell it to even if "that's not really what you meant"</li>
-                <li>Anything that isn't pattern matching, so grep is not good at replacements, substitutions, sorting or anything like that</li>
-            </ul>
-        <li>Some examples of how to use grep as shown in the video</li>  
-            <ul>
-                <li> cat file | grep pattern</li>
-                <li>grep file pattern</li>
-                <li>grep file option pattern</li>
-                <li>grep pattern file | grep secondPattern</li>
-            </ul>
-        <li>Some Grep Resources</li>
-            <ul>
-                <li><a href="https://flylib.com/books/en/4.356.1.25/1/">An older text on how to use grep, formatting has some issues on smaller screens </a></li>
-                <li><a href="https://www.grymoire.com/Unix/Grep.html">The Grymoire on Grep</a></li>
-                <li><a href="https://web.archive.org/web/20220804143349/https://www.grymoire.com/Unix/Grep.html">Backup on web archive of the grep section of the Grymoire</a></li>
+                <li><a href="https://flylib.com/books/en/4.356.1.40/1/">An older text on how to use sed, formatting has some issues on smaller screens </a></li>
+                <li><a href="https://www.grymoire.com/Unix/Sed.html">The Grymoire on Sed</a></li>
+                <li><a href="https://web.archive.org/web/20220816210438/https://www.grymoire.com/Unix/Sed.html">Backup on web archive of the sed section of the Grymoire</a></li>
             </ul>
     </ul>   
-<!--Exercises and Resources-->
-<p>Suggested Resources and Exercises:
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Exercises:
     <ul>
-        <li>Download the GrepLab File by clicking <a href="/LinuxAdmin/labexcercises/GrepLab"> right clicking Here </a>and saving your file onto your Linux machine</li>
-        <li>Complete the problem sets that are found on <a href="/LinuxAdmin/labexcercises/greplab.pdf">This PDF</a> using the GrepLab file you downloaded from above.  Make sure you are paying attention to file location and your paths</li>
+        <li>Download the sedLab File by clicking <a href="/LinuxAdmin/labexcercises/SedLab"> right clicking Here</a>and saving your file onto your Linux machine</li>
+        <li>Complete the problem sets that are found on <a href="/LinuxAdmin/labexcercises/sedlab.pdf">This PDF</a> using the sedlab file you downloaded from above.  Make sure you are paying attention to file location and your paths</li>
     </ul>
 </p>
 
