@@ -138,28 +138,18 @@
         <div class="col-4 col-md-3">
             <div id="sidebar-wrapper">
                 <ul class="sidebar-nav">
-                    <li class="sidebar-brand"><a href="AdvLinux.html">Overview</a>
-                    </li>
-                    <li>
-                        <a href="/LinuxAdmin/IntroServers.html">Intro to Servers</a></li>
-                    <li>
-                        <a href="#">User Management</a>
-                    </li>
-                    <li>
-                        <a href="#">Regular Expressions</a>
-                    </li>
-                    <li>
-                        <a href="#">Grep</a> 
-                    </li>
-                    <li>
-                        <a href="#">Awk</a> 
-                    </li>
-                    <li>
-                        <a href="#">Sed</a>
-                    </li>    
-                    <li>
-                        <a href="/LinuxAdmin/Resources.html">Resources</a>
-                    </li>  
+                    <li class="sidebar-brand"><a href="/advlinux.html">Overview</a></li>
+                    <li><a href="/LinuxAdmin/IntroServers.html">Intro to Servers</a></li>
+                    <!--<li><a href="#">User Management</a></li>
+                    
+                    -->
+
+                    <li><a href="/LinuxAdmin/Grep.html">Grep</a> </li>
+                    <li><a href="/LinuxAdmin/Awk.html">Awk</a> </li>
+                    <li><a href="/LinuxAdmin/Sed.html">Sed</a></li>   
+                    <li><a href="/LinuxAdmin/Regex.html">Regular Expressions</a></li>
+                    <li><a href="/LinuxAdmin/Documentation.html">Documentation</a></li> 
+                    <li><a href="/LinuxAdmin/Resources.html">Resources</a></li>  
                 </ul>
             </div>
         </div>
@@ -171,8 +161,7 @@
 <p>Learning outcomes:
     <ul>
         <li>Be Able to name the most common types of servers</li> 
-        <li>Able to articulate why we have different kinds of servers including single use what the  
-            advantages of Linux for servers are</li>
+        <li>Able to articulate why we have different kinds of servers including single use what the advantages of Linux for servers are</li>
         <li>Articulate differences in the most commonly used distributions for servers</li>
     </ul>
 </p>
@@ -184,27 +173,129 @@
 
 <!--Download PowerPoint-->
 <p>
-    <a href="#">Would you like to download my PowerPoint to follow along?</a>
+    <a href="/LinuxAdmin/CIS245 Week 1.pptx">Would you like to download my PowerPoint to follow along?</a>
 </p>
 <!--Outline Of lecture notes/powerpoint for the topic-->
 <p>
     <ul>
-        <li>Topic subtopic 1</li>
+        <li>What is a server</li>
             <ul>
-                <li>Thing 1</li>
-                <li>Thing 2</li>
+                <li>A computer or computer program which manages access to a centralized resource or service in a network.    -Oxford English Dictionary</li>
+                <li>A way we can have a computer that's set up to give information.</li>
+                <li>Think about it like you're at a restaurant, you request poutine from the waitstaff (you're the client) the waitstaff will then bring you a plate of poutine (Waitstaff is the server) You can have one server for multiple clients, and each client might want something different, maybe you wanted poutine, but the next booth over is craving Arepas, the server can bring you each what you want and get the orders to the correct people.</li>
+                <li><a href="https://web.archive.org/web/20220831175509/https://arstechnica.com/gadgets/2019/08/unix-at-50-it-starts-with-a-mainframe-a-gator-and-three-dedicated-researchers/"></a>A short history of Linux from Unix to Android</li>
             </ul>
-        <li>Topic Subtopic 2</li> 
-        <ul>
-            <li>Thing 1</li>
-            <li>Thing 2</li>
-        </ul>
+        <li>Why do we have servers?</li> 
+            <ul>
+                <li>Can serve multiple clients</li>
+                <li>More powerful than traditional client computers</li>
+                <li>Can have different functionalities (I.e. Web vs DHCP)</li>
+                <li>Can share resources or services</li>
+            </ul>
+        <li>How servers are different then other computers</li> 
+            <ul>
+                <li>More Powerful</li>
+                <li>Not always enabled with a GUI</li>
+                <li>May not have a monitor attached</li>
+                <li>Likely to Have Networking capabilities and SSH</li>
+                <li>Must be more fault tolerant</li>
+                <li>Must have more reliability and uptime</li>
+                <li>Mission Critical systems run on servers or Mainframes</li>
+                <li>Often lives in a Rack, maybe even a data center</li>
+                <li>Must have more powerful cooling</li>
+                <li>Likely to need to be able to run without reboot for long periods of time by doing things <a href="https://web.archive.org/web/20220831180726/https://www.networkworld.com/article/3391362/looking-into-linux-modules.html">Like adding in modules</a></li>
+            </ul>
+        <li>Clusters</li> 
+            <ul>
+                <li>Servers can also reside in a cluster or server farm</li>
+                <li>Modern data centers are often clusters</li>
+            </ul>
+        <li>Sometimes we might have dedicated servers for special use cases (more examples and detail in later modules)</li> 
+            <ul>
+                <li>Email</li>
+                <li>Web</li>
+                <li>DNS</li>
+                <li>DHCP</li>
+            </ul>
+        <li>Different kinds of server Types</li> 
+            <ul>
+                <li>Testing (Automated or not automated)</li>
+                <li>Staging (Resembles production environment as close as possible)</li>
+                <li>Production (Live server *Here be Dragons* for dev)</li>
+                <li>Application (Host web apps)</li>
+                <li>Database (Database hosting)</li>
+                <li>File (File hosting)</li>
+                <li>Proxy (Intermediary between clients and other servers)</li>
+                <li>Game (MMORPG)</li>
+                <li>Print (Share a printer)</li>
+                <li>Catalog (such as directory or name servers)</li>
+                <li>Communications (telecommunications and Endpoints)</li>
+                <li>Media (Plex)</li>
+                <li><a href="https://web.archive.org/web/20220831174949/http://dcjtech.info/topic/types-of-linux-servers/">More examples of Server types including details on what each type means</a></li>
+            </ul>
+        <li>Most popular Server Operating Systems</li> 
+            <ul>
+                <li>Nginix</li>
+                <li>Red Hat/CentOS/Rocky</li>
+                <li>Ubuntu Server</li>
+                <li>Debian</li>
+                <li>Some companies will also use one of these as a base and then create an in house flavour</li>
+            </ul>
+        <li>Single vs Multi server Architecture</li> 
+            <ul>
+                <li>Single task can do 1 thing at once</li>
+                    <ul>
+                        <li>Pros: Simplicity, easier configuration, works on low powered servers</li>
+                        <li>Cons: Scaling, upgrades and speed</li>
+                    </ul>
+                <li>Multi task uses time sharing to do multiple things</li>
+                    <ul>
+                        <li>Pros: specialization can lead to efficiency and optimization, scaling is easier</li>
+                        <li>Cons: Set up can be more challenging. More configs to worry about</li>
+                    </ul>
+                <li>Multi User systems</li> 
+                <li>Distributed Operating Systems</li>
+            </ul>
+        <li>Physical Servers</li>   
+            <ul>
+                <li>Harder to manage remotely </li>
+                <li>May be lower Power/resources</li>
+                <li>Can have security issues with sandboxing and access</li>
+                <li>Can get expensive</li>
+            </ul>
+        <li>Virtual Servers</li>
+            <ul>
+                <li>Easier to manage remotely</li>
+                <li>Easier to spin up another VM</li>
+                <li>Easier to sandbox each server away from each other</li>
+                <li>Needs more specialized skills beyond server management</li>
+                <li>More portable</li>
+                <li>Easier to scale</li>
+                <li>Easier to do Disaster recovery and backups</li>
+                <li>More fault tolerant</li>
+            </ul>
+        <li>Cloud services</li>
+            <ul>
+                <li>Cloud Server Providers</li>
+                    <ul>
+                        <li>AWS</li>
+                        <li>Azure</li>
+                        <li>Google Cloud Platform</li>
+                    </ul>
+                <li>Cloud server software can also be used to set up a cloud just for an enterprise situation, an example is VMWare cloud</li>    
+                <li>Data centers are getting very popular as well</li>
+                    <ul>
+                        <li>Can pay based on usage of bandwidth, or storage space</li>
+                    </ul>
+                <li>All of these might need to follow protocols/regulations based on industry (for example, HIPAA certified)</li>    
+            </ul>
     </ul>   
 <!--Discussions and activities for the topic-->
 <p>Suggested Activities and Discussion Topics:
     <ul>
-        <li>Discussion 1</li>
-        <li>Activity 1</li>
+        <li>In pairs, discuss at least 3 use cases for servers at companies.  <a href="https://web.archive.org/web/20220830232747/https://opensource.com/article/18/5/what-linux-server">Some examples of why you want Linux Servers in general. </a>Pick one company each to see if you can find what that company is running as their server.  <a href="https://web.archive.org/web/20220830232828/https://www.nas.nasa.gov/hecc/support/kb/operating-system_114.html">For example: NASA runs Linux on their desktops and Servers</a></li>
+        <li>Complete the lab that is found on <a href="/LinuxAdmin/labexcercises/ServerSetup.pdf">This PDF</a> Make sure you are paying careful attention to the requirements</li>
+
     </ul>
 </p>
 

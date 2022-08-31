@@ -17,7 +17,7 @@
   gtag('config', 'G-Q9SWNFD6DB');
 </script>
 
-    <title>Grep</title>
+    <title>Regular Expressions</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
 
@@ -157,65 +157,57 @@
         <div class="col">
             <br><br>
             <!--Learning Outcomes for this topic-->
-<h3>Grep</h3>
-<!--<p>Learning outcomes:
+<h3>Regular Expressions (regex)</h3>
+<p>Learning outcomes:
     <ul>
-        <li>Be Able to explain what grep is used for</li> 
-        <li>Be able to use grep </li>
-
+        <li>Be able to identify when Regular Expressions are appropriate to use</li> 
+        <li>Able to use Regular Expressions where appropriate</li>
+        <li>Able to understand and parse some Regular Expressions others have written</li>
     </ul>
-</p>-->
+</p>
 
 <!--embed Youtube video here-->
 <div class="video-wrapper">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/Iif-DjWYoWY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/GNQbLbxXcdI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-<!--Download PowerPoint
+<!--Download PowerPoint-->
 <p>
-    <a href="#">Would you like to download my PowerPoint to follow along?</a>
-</p>-->
+    <a href="/LinuxAdmin/CIS245 Regex refresh.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
 <!--Outline Of lecture notes/powerpoint for the topic-->
 <p>
     <ul>
-        <li>What is Grep?</li>
+        <li>What are Regular Expressions?</li>
             <ul>
-                <li>grep is a pattern matching tool</li>
-                <li>grep can be used as a search tool</li>
-                <li>grep can use Regular Expressions (regex) to help find more complex patterns</li>
-                <li>grep can be used with pipe or by itself to search the contents of files</li>
-                <li>There are different forms of grep, so it's important to make sure you know which one you're using and why</li>
+                <li>Text string used for searching, matching or even managing your information in text</li>
+                <li>Similar to wildcards (like * or ?) but way more powerful</li>
+                <li></li>
             </ul>
-        <li>What is Grep good at?</li> 
+        <li>What are Regular Expressions used for?</li> 
             <ul>
-                <li>Pattern matching</li>
-                <li>Pattern matching using plain text or regex</li>
-                <li>Finding things that either match a pattern, or everything that doesn't match a pattern</li>
+                <li>Can be used in languages like Perl, PHP, Java or even Python (with the appropriate module)</li>
+                <li>Useful to use for both less lines of code, less debug time and to be more efficient </li>
             </ul>
-        <li>What is Grep not so good at?</li> 
+        <li><b>Downside</b>, if the person reading your code doesn't know Regex, it won't be more clear.  But if they do! Much easier to use, can take lots (20) lines of code and condense it into a single line for pattern matching or string validation (such as input validation, text searching etc.)</li>
+        <li>Some examples of tools that use Regular Expressions</li>
             <ul>
-                <li>Reading minds, grep is very literal and will find exactly what you tell it to even if "that's not really what you meant"</li>
-                <li>Anything that isn't pattern matching, so grep is not good at replacements, substitutions, sorting or anything like that</li>
-            </ul>
-        <li>Some examples of how to use grep as shown in the video</li>  
-            <ul>
-                <li> cat file | grep pattern</li>
-                <li>grep file pattern</li>
-                <li>grep file option pattern</li>
-                <li>grep pattern file | grep secondPattern</li>
-            </ul>
-        <li>Some Grep Resources</li>
-            <ul>
-                <li><a href="https://flylib.com/books/en/4.356.1.25/1/">An older text on how to use grep, formatting has some issues on smaller screens </a></li>
-                <li><a href="https://www.grymoire.com/Unix/Grep.html">The Grymoire on Grep</a></li>
-                <li><a href="https://web.archive.org/web/20220804143349/https://www.grymoire.com/Unix/Grep.html">Backup on web archive of the grep section of the Grymoire</a></li>
-            </ul>
+                <li>Sed</li>
+                <li>Awk</li>
+                <li>Grep</li>
+                <li>VIM</li>
+                <li>Emacs</li>
+            </ul>    
     </ul>   
-<!--Exercises and Resources-->
-<p>Suggested Resources and Exercises:
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Resources:
     <ul>
-        <li>Download the GrepLab File by clicking <a href="/LinuxAdmin/labexcercises/GrepLab"> right clicking Here </a>and saving your file onto your Linux machine</li>
-        <li>Complete the problem sets that are found on <a href="/LinuxAdmin/labexcercises/greplab.pdf">This PDF</a> using the GrepLab file you downloaded from above.  Make sure you are paying attention to file location and your paths</li>
+        <li><a href="https://regexone.com/">Start with a beginner Regex Interactive Tutorial</a></li>
+        <li><a href="https://www.rexegg.com/">Go through The World's Most Tyrannosaurical Regex Tutorial</a></li>
+        <li><a href="https://alf.nu/RegexGolf">Play a game of Regex Golf!</a></li>
+        <li><a href="https://regexcrossword.com/">Play a game of Regex Crossword</a></li>
+        <li><a href="https://regexr.com/">Try out Regexr and see if you can follow how it's working on expressions</a></li>
+        <li>In pairs, try and put together a Regular Expression to find email addresses. Use <a href="https://www.debuggex.com/">This link to see if your Regular Expression works</a>  Your Regular Expressions should match <a href="/LinuxAdmin/RegexMatch.txt">this data </a>and Should NOT match <a href="/LinuxAdmin/RegexNoMatch.txt">this data</a></li>
     </ul>
 </p>
 
