@@ -1,0 +1,148 @@
+---
+title: User Management
+layout: AdvLinux
+---
+<!--Learning Outcomes for this topic-->
+<h3>User Management</h3>
+<p>Learning outcomes:
+    <ul>
+        <li>Able to create scripts to do user management including add/delete users and password resets </li>
+        <li>Able to securely manage users</li>
+        <li> Able to create Control groups (add/remove/add members/set defaults), set defaults for new users set common  scripts/aliases Monitor disk usage, use sudo,  use/sudo edit/wheel group kill user processes 
+        </li> 
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+<!--Youtube code goes here-->
+</div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="/LinuxAdmin/CIS245 Week 2.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>General guidelines on best practices</li>
+            <ul>
+                <li>When someone is hired/fire, what is the procedure? Make a script</li>
+                <li>Document EVERYTHING and keep your <a href="/LinuxAdmin/Documentation.html">documentation</a> up to date</li>
+                <li>Lock admin/root accounts unless absolutely needed (sudo instead)</li>
+                <li>Allow remote access on an as needed basis</li>
+                <li>Backup everything! (onsite vs offsite options)</li>
+                <li>Single sign on (SSO) vs multiple accounts/passwords</li>
+                <li>Use Multi Factor authentication</li>
+            </ul>
+        <li>User Security and Least Privilege</li> 
+            <ul>
+                <li>The principle of Least Privilege</li>
+                    <ul>
+                        <li>Better stability and security</li>
+                        <li>Be careful and polite, can lead to antagonistic encounters with users</li>
+                    </ul>
+                <li>Root vs sudo</li>
+                <li>Disk usage, Is the user using an odd amount for their needs?</li>
+                <li>Tools like fail2ban, Bans login after unsuccessful attempts</li>
+            </ul>
+        <li>Password Management</li>
+            <ul>
+                <li>Multi factor authentication is recommended for all access</li>
+                <li>When having users set passwords, consider things like:</li>
+                    <ul>
+                        <li>How long is the password? 12? 16? 20? Characters?</li>
+                        <li>Should you require special characters like % * or @ as part of your password</li>
+                        <li>Check to see if the password has already been stolen before allowing it to be set on places like <a href="https://haveibeenpwned.com/">Have I been Pwned</a></li>
+                        <li>Should you restrict the reuse of old passwords?</li>
+                        <li>Do you have your passwords required to change every X amount of days (No longer recommended)</li>
+                    </ul>
+                <li>You can also consider things like calculating how long it would take to break a password before allowing it's use on somewhere like <a href="https://web.archive.org/web/20210518064200/http://www.mandylionlabs.com/PRCCalc/BruteForceCalc.htm">This Brute Force Calculator</a></li>    
+            </ul>    
+        <li>Types of Accounts on servers</li>   
+            <ul>
+                <li>System accounts such as Apache (web) or Daemons (Background processes)</li>
+                <li>User accounts</li>
+                <li>Admin and root accounts</li>
+                <li>These accounts can be <a href="https://web.archive.org/web/20220822022922/https://www.tutorialspoint.com/linux_admin/linux_admin_user_management.htm">managed and disabled</a> and there are lots of <a href="https://web.archive.org/web/20220527231947/https://www.linux.com/topic/desktop/how-manage-users-groups-linux/">tutorials</a> to <a href="https://web.archive.org/web/20210806032523/https://www.linuxtechi.com/linux-commands-to-manage-local-accounts/">help</a> you <a href="https://web.archive.org/web/20220709003024/https://www.pluralsight.com/guides/user-and-group-management-linux">learn</a> how <a href="https://web.archive.org/web/20211025210424/https://www.maketecheasier.com/manager-users-linux-command-line/">to</a> manage  them <a href="https://web.archive.org/web/20210917061914/https://www.computernetworkingnotes.com/linux-tutorials/linux-user-management-explained-with-examples.html">including examples</a> even some <a href="https://www.youtube.com/watch?v=zRw0SKaXSfI">Videos</a></li>
+            </ul>
+        <li><a href="https://web.archive.org/web/20210125165649/https://www.networkworld.com/article/3225109/managing-users-on-linux-systems.html">Users</a> and <a href="https://web.archive.org/web/20210927154200/https://www.networkworld.com/article/3409781/mastering-user-groups-on-linux.html">Groups</a></li>  
+            <ul>
+                <li>Users identified by UID</li>
+                <li>Group by GUID</li>
+                <li>Both GID and UID default to sequential numbering</li>
+                <li>User names and why names are important to think about</li>
+                <li>How do we keep track of users? <a href="https://web.archive.org/web/20220902180733/https://www.networkworld.com/article/3431864/keeping-track-of-linux-users-when-do-they-log-in-and-for-how-long.html">When did a user login last?</a></li>
+                <li>Why we use groups on Servers</li>
+                <li>Home directory (Where is yours? Is everyone's the same? How are they setup?)</li>
+                <li>What shell is being used? Can you change it? How is that decided?</li>
+                <li>Passwords move to /etc/shadow</li>
+                    <ul>
+                        <li>Special symbols in the password file</li>
+                        <li>*= nologin account</li>
+                        <li>!= dissallows login</li>
+                        <li>Can also use a false shell or nologin to prevent access without deleting accounts</li>
+                    </ul>
+            </ul>
+        <li>Admin accounts and access</li>  
+            <ul>
+                <li>Sudo</li>
+                    <ul>
+                        <li>Sudo Su will switch user to root</li>
+                        <li>Sudo can run single command with root privilege</li>
+                        <li>!! will run previous command, so "sudo !!" will run previous command with sudo without retyping the whole thing</li>
+                        <li>Generally it's recommended you use sudo instead of logging in as root for safety</li>
+                    </ul>
+                <li>Wheel group vs sudoers</li>
+                    <ul>
+                        <li>Legacy option, not recommended - Wheel is as if you have root access</li>
+                        <li>Sudoers  you can add to group to give access</li>
+                        <li>Sudoers has more control</li>
+                    </ul>
+                <li>Root is the actual administrative account on the system and has full unrestricted access.  Lots of places actually don't allow remote root login for security purposes</li>    
+            </ul>
+        <li>Examples of common and useful scripts you might see on servers</li>
+            <ul>
+                <li>Bulk add users</li>
+                <li>Bulk delete users (With  or without file clean up)</li>
+                <li>Disk usage monitoring</li>
+                <li>Listing accounts that never logged in</li>
+                <li>List files taken off the server (exfiltration)</li>
+            </ul>
+        <li>Important Files in your system NOTE: Your files may be located in other places and called other things, you MUST check your own system and get to know where things are</li> 
+            <ul>
+                <li>/etc/passwd - user acct info : user:password:UID:GID:comment:shell</li>
+                <li>/etc/shadow - encrypted passwords (* for system nonlogin, ! for no login like root)</li>
+                <li>/etc/group - Groups and their users (wheel special group)</li>
+                <li>/etc/login.defs - (defaults for users)</li>
+                <li>/etc/adduser.conf - (systems using adduser instead of useradd)</li>
+                <li>/etc/sudoers - the list of people in the sudoers group</li>
+                <li>/etc/motd (login message) <a href="https://web.archive.org/web/20220623004829/https://www.networkworld.com/article/3219736/how-to-use-the-motd-file-to-get-linux-users-to-pay-attention.html">Message of the Day </a></li>
+                <li>/etc/skel (Starting directory setup)</li>
+            </ul>
+        <li>Commonly used Commands</li> 
+            <ul>
+                <li>useradd command is used to create new accounts in Linux</li>
+                <li>usermod command used to modify the existing accounts in Linux</li>
+                <li>userdel command is used to delete local account in Linux</li>
+                <li>passwd command used assign password to local accounts or users.</li>
+                <li>change command is used to view & modify users password expiry information</li>
+                <li>groups username #shows groups for a user</li>
+                <li>lastlog to see last login of users (including never logged in</li>
+                <li>chpasswd for group password changes (chpasswd < passchangefile #username:password)</li>
+            </ul>
+    </ul>   
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities:
+    <ul>
+        <li>On each of your servers try and find the key files, make a note of where they are located, what they are called (if different then the list) and make sure you look at the format so you're familiar with them</li>
+        <li>On each of your servers try the common commands.  Make sure you can successfully add users, change groups, change access, and login as the user</li>
+        <li>In pairs, choose one (or more!) of the common and useful scripts, discuss what should go into the script and try putting together the script in a language of your choice</li>
+        <li>In pairs, work together to create a script to add users to your server from a list of names.  Try your scripts on <a href="/LinuxAdmin/UserNamesLvl1.txt">level 1</a> and <a href="/LinuxAdmin/UserNamesLvl2.txt">level 2</a> names</li>
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">Click here </a>
+</p>

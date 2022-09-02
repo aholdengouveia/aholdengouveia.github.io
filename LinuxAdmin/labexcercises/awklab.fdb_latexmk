@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1661871901 "/home/aholdengouveia/aholdengouveia.github.io/LinuxAdmin/labexcercises/awklab.tex" "awklab.pdf" "awklab" 1661871901
+["pdflatex"] 1662143985 "/home/aholdengouveia/aholdengouveia.github.io/LinuxAdmin/labexcercises/awklab.tex" "awklab.pdf" "awklab" 1662143986
   "/etc/texmf/web2c/texmf.cnf" 1659374508 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/aholdengouveia/aholdengouveia.github.io/LinuxAdmin/labexcercises/awklab.tex" 1661871901 4029 dc2910455cede2c114be471668c085aa ""
+  "/home/aholdengouveia/aholdengouveia.github.io/LinuxAdmin/labexcercises/awklab.tex" 1662143985 4146 f9132d624a80bfc49120d3e8771acae6 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomethree.enc" 1463430686 2437 443c81fb50993bacedc5f9a206c322b0 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc" 1463430686 2679 32dd8ae231bf4a0752b98f62dc097183 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -66,9 +66,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1659374618 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1659374637 2800226 63a2243d130116927e03ed2382fe3772 ""
-  "awklab.aux" 1661871901 686 470fdebd29f279999e89f3533b8c7bc8 "pdflatex"
-  "awklab.out" 1661871901 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "awklab.tex" 1661871901 4029 dc2910455cede2c114be471668c085aa ""
+  "awklab.aux" 1662143986 686 470fdebd29f279999e89f3533b8c7bc8 "pdflatex"
+  "awklab.out" 1662143986 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "awklab.tex" 1662143985 4146 f9132d624a80bfc49120d3e8771acae6 ""
   (generated)
   "awklab.aux"
   "awklab.log"
