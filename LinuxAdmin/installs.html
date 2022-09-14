@@ -1,0 +1,165 @@
+---
+title: Installs and updates
+layout: AdvLinux
+---
+<!--Learning Outcomes for this topic-->
+<h3>Installs, updates, repositories and the file system</h3>
+<p>Learning outcomes:
+    <ul>
+        <li>Able to install and update a server and needed applications</li>
+        <li>Able to explain how a repo works and why we have them </li>
+        <li>Able to describe what the default configurations and file systems for some basic setups</li>
+    </ul>
+
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/F5x7z9F13Mg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="/LinuxAdmin/CIS245 Week 3.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li><a href="https://web.archive.org/web/20220216203056/https://opensource.com/article/19/8/linux-permissions-101">Permission Review</a></li>
+            <ul>
+                <li>Directory access</li>
+                    <ul>
+                        <li>X for directories will allow us to control who can go inside the directory, R would be to read contents of directory</li>
+                        <li>An example of use case might be for things such as hiding directories on websites</li>
+                    </ul>
+                <li><a href="https://web.archive.org/web/20220804151028/https://opensource.com/article/19/6/understanding-linux-permissions">File permission</a></li>
+                    <ul>
+                        <li>Owner, Group, World</li>
+                        <li>Read, Write, Execute (RWX)</li>
+                        <li>chmod using octal (0-7) or +rwx </li>
+                    </ul>
+                <li>Hidden files (.hiddenFile)</li>  
+                <li>What it means when ls -l shows characters at beginning of line</li>  
+                    <ul>
+                        <li> Files start with "-"</li>
+                        <li>Directories start with d</li>
+                        <li>Symbolic links start with l</li>
+                    </ul>
+            </ul>
+        <li>File access Commands</li> 
+            <ul>
+                <li><a href="https://web.archive.org/web/20220823190256/https://linuxize.com/post/chmod-command-in-linux/">Chmod</a> - change file permissions</li>
+                <li><a href="https://web.archive.org/web/20220823190314/https://linuxize.com/post/linux-chown-command/">Chown</a> - change file owner/group</li>
+                <li><a href="https://web.archive.org/web/20220522012338/https://linuxize.com/post/chgrp-command-in-linux/">Chgrp</a> - Regular users can change group membership of a file</li>
+            </ul>
+        <li>Repositories</li> 
+            <ul>
+                <li>What is a Repository (repo)</li>
+                    <ul>
+                        <li>A way to collect and organize software</li>
+                        <li>Also known as a way to collect packages</li>
+                        <li>Personal Package Archive (PPA)</li>
+                        <li>Source of software compatible with your system</li>
+                    </ul>
+                <li>Why do we have them</li>
+                    <ul>
+                        <li>Easy way to organize software</li>
+                        <li>Can split software by version, or kernel, etc.</li>
+                        <li>Helps keep you using compatible software</li>
+                        <li>Can also host OS updates</li>
+                    </ul>
+                <li>Some common repos you might see and use</li>
+                    <ul>
+                        <li>Standard and non-standard repositories</li>
+                            <ul>
+                                <li>Standard comes with the machine (should work without issue)</li>
+                                <li>Non-standard must be added separately (Who knows?)</li>
+                            </ul>
+                        <li>Ubuntu has some extras/different vocab</li>    
+                            <ul>
+                                <li>Universe (community maintained and open source)</li>
+                                <li>Multiverse (Restricted by copyright/legal)</li>
+                                <li>Main repository - supported programs</li>
+                                <li>Restricted - propriety, may include device drivers</li>
+                            </ul>        
+                    </ul>
+                <li>How to <a href="https://web.archive.org/web/20220115224353/https://www.networkworld.com/article/3305810/how-to-list-repositories-on-linux.html">add a repository</a> (needs sudo)</li>
+                    <ul>
+                        <li>CentOS https://wiki.centos.org/AdditionalResources/Repositories</li>
+                        <li>OpenSuse - zypper addrepo</li>
+                        <li>Mandriva - urpmi.addmedia</li>
+                        <li>Debian or Ubuntu - open and edit "/etc/apt/sources.list"</li>
+                        <li>Fedora -"/etc/yum.repos.d/"</li>
+                    </ul>
+            </ul>
+        <li>Repository Safety</li> 
+            <ul>
+                <li>Adding unknown repositories represent a safety risk because they can install things on your system and update/change your OS</li>
+                <li>Equivalent of saying yes please give randomprogram full admin rights</li>
+                <li>Do you trust the person hosting the repo/PPA?</li>
+                <li>How many people have (safely) used this repo/PPA before you?</li>
+                <li>How up  to date is this repo/PPA?</li>
+                <li>Can you troubleshoot when something goes wrong?</li>
+                <li>Is this repo/PPA still in testing, or production ready?</li>
+            </ul>
+        <li>Patches, updates and upgrades</li> 
+            <ul>
+                <li>Testing! Oh so much testing must be done!</li>
+                <li>A patch fixes a critical error generally in a specific spot</li>
+                <li>Update gets the latest version but doesn't install (do this first)</li>
+                <li>Upgrade installs newest version</li>
+                <li>Install package-name installs or updates to latest version</li>
+                <li>Server Admins usually test updates and patches before sending them company wide</li>
+                    <ul>
+                        <li>Windows Patch Tuesday disasters</li>
+                        <li>Can break your system and be incompatible with programs you have installed</li>
+                        <li>Not unheard of for patches/updates to cripple a system</li>
+                    </ul>
+                <li>There are many resources with examples on how to do installs at the command prompt such as <a href="https://web.archive.org/web/20220902132356/https://www.control-escape.com/linux/lx-swinstall.html">Example 1</a> <a href="https://web.archive.org/web/20220616153302/https://opensource.com/article/18/8/how-install-software-linux-command-line">Example 2</a> and <a href="https://web.archive.org/web/20220906202310/https://www.linux.com/training-tutorials/how-install-software-linux-introduction/">Example 3</a></li>    
+            </ul>                  
+        <li><a href="https://web.archive.org/web/20210506180338/https://www.thegeekstuff.com/2010/09/linux-file-system-structure/?utm_source=tuicool">System Files</a> and special files</li> 
+            <ul>
+                <li>/        The directory called “root.” It is the starting point for the file system hierarchy. 
+                    <ul>
+                        <li>NOTE: that this is not related to the root, or superuser, account. root tree does not imply physical location parts of the tree can be on different partitions and even separate devices (within the network sort of like onedrive)</li>
+                    </ul>
+                <li>/bin     Binaries and other executable programs</li> 
+                <li>/etc     System configuration files</li>   
+                <li>/home    Home directories of users</li>
+                <li>/opt     Optional or third party software</li>
+                <li>/tmp     Temporary space, typically cleared on reboot</li>
+                <li>/usr     User related programs</li>
+                <li>/usr/bin and /usr/sbin (for admins)</li>
+                <li>/var     Variable data, web sites (webroot) and log files <a href="https://web.archive.org/web/20210804200252/https://www.networkworld.com/article/3333784/linux-systems-scraping-up-information-about-apt-updates.html">which can include apt</a></li>
+                <li>Special Files</li>
+                    <ul>
+                        <li>/dev/null</li>
+                            <ul>
+                                <li>Immediately discards info and returns end of file (EOF)</li>
+                                <li>Also known as bit-bucket or blackhole</li>
+                                <li>> /dev/null 2>&1 can be used to dump everything to /dev/null not just stout</li>
+                            </ul>
+                        <li>/proc</li>
+                            <ul>
+                                <li>Illusionary filesystem in memory, Kind of like task manager</li>
+                                <li>Has some <a href="https://web.archive.org/web/20220913152134/https://www.networkworld.com/article/3227929/making-good-use-of-the-files-in-proc.html">good use cases</a></li>
+                            </ul>
+                    </ul>
+            </ul>
+
+    </ul>   
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <li>On your own server, Make a bunch of files and folders, then try to create a group, add a user to the system then add the user to your group.  Make sure to check the user can login.  Now try each of the chmod, chgrp, chown commands</li>
+        <li>On both of your servers, go find the system files and special files and make note of thier location and if they have any differences to the list above, such as name, location, or function.</li>
+        <li>Try creating a script for your server to Backup using <a href="https://web.archive.org/web/20220425112234/https://www.networkworld.com/article/3328840/working-with-tarballs-on-linux.html">tar</a> (<a href="https://www.youtube.com/watch?v=x0EK6PmKRCU">Adrianna's video on how to use tar</a>).</li>
+        <li>Go through both of your servers and make notes on What repositories are already on your system, where you found your list of repositories, and why you might want to add a repository to your system</li>
+        <li>Try creating a script to <a href="https://web.archive.org/web/20220607232203/https://www.networkworld.com/article/3330497/linux-commands-for-measuring-disk-activity.html">monitor disk activity</a> on your system for all users and another for some users.</li>
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">Click here </a>
+</p>
