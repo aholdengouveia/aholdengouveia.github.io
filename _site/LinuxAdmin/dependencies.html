@@ -142,7 +142,9 @@
                     <li><a href="/LinuxAdmin/IntroServers.html">Intro to Servers</a></li>
                     <li><a href="/LinuxAdmin/Usermgmt.html">User Management</a></li>
                     <li><a href="/LinuxAdmin/installs.html">Installs and Updates</a></li>
-                    <!--<li><a href="/LinuxAdmin/dependencies.html">Dependencies, configs, and Troubleshooting</a></li>-->
+                    <li><a href="/LinuxAdmin/dependencies.html">Dependencies, configs, and Troubleshooting</a></li>
+                    <li><a href="/LinuxAdmin/networking.html">Networking</a></li>
+
                     <!--
                         <li><a href="#">Topic</a></li>
                     -->
@@ -165,18 +167,18 @@
         <li>Able to use and troubleshoot dependencies</li>
         <li>Able to use and troubleshoot gems and drivers</li>
         <li>Able to find and modify config files, as well as know when/how not to modify config files</li>
-        <li>Able to explain what init.d and sys.d are for and why we use them (boot levels)/li>
+        <li>Able to explain what init.d and system.d are for and why we use them</li>
     </ul>
 </p>
 
 <!--embed Youtube video here-->
 <div class="video-wrapper">
-    <!--Paste youTube embed code here-->
-</div>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ssWtPWkW-og" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
 
 <!--Download PowerPoint-->
 <p>
-    <a href="#">Would you like to download my PowerPoint to follow along?</a>
+    <a href="/LinuxAdmin/CIS245 Week 4.pptx">Would you like to download my PowerPoint to follow along?</a>
 </p>
 <!--Outline Of lecture notes/powerpoint for the topic-->
 <p>
@@ -184,43 +186,141 @@
         <li>Dependencies</li>
             <ul>
                 <li>What is a dependency</li>
+                    <ul>
+                        <li>When one thing (such as a program) relies on another thing (such as a second program</li>
+                        <li>A way to point elsewhere for information you're using rather then copy the info</li>
+                    </ul>
                 <li>Why do we have them</li>
+                    <ul>
+                        <li>Dependencies happen for saving space and sharing code</li>
+                        <li>They can be a way to save space</li>
+                        <li>A way to make applications without reinventing the wheel</li>
+                        <li>Should get warnings if uninstalling packages that are dependencies</li>
+                            <ul>
+                                <li>We can <a href="https://web.archive.org/web/20210802154911/https://ostechnix.com/list-dependencies-package-linux/">check what dependencies are used</a> with <a href="https://web.archive.org/web/20220516005405/https://www.techrepublic.com/article/how-to-check-package-dependencies-with-apt-rdepends/">different programs</a></li>
+                            </ul>
+                    </ul>
                 <li>Some examples of dependencies</li>
+                    <ul>
+                        <li>Version Dependency</li>
+                            <ul>
+                                <li>Example: Python 2 vs Python 3</li>
+                            </ul>
+                        <li>Package dependency</li>
+                            <ul>
+                                <li>Example: OpenSSH has a package dependency of LibSSL</li>
+                                <li>A ton of programs assume you have C libraries installed</li>
+                            </ul>
+                    </ul>
+                <li>Dependencies and security</li>
+                    <ul>
+                        <li>Who manages the chain of what you're working on?</li>
+                        <li>Who maintains the code? or Repository?</li>
+                    </ul>        
             </ul>
         <li>Package management</li> 
             <ul>
-                <li>Thing 1</li>
-                <li>Thing 2</li>
+                <li>Sometimes you download unpacked source code and will need to compile before install because it's not coming from repo</li>
+                    <ul>
+                        <li>The INSTALL file that includes instructions on how to install the package (Common in projects in C compiled projects)</li>
+                        <li>Other languages will have required libraries</li>
+                    </ul>
+                <li>Example Gems:</li>   
+                    <ul>
+                        <li><a href="https://web.archive.org/web/20220126180857/https://www.linuxjournal.com/article/8967">RubyGems</a> is the package manager for Ruby</li>
+                        <li>Standard format for distributing programs and libraries</li>
+                            <ul>
+                                <li>A Gem is supposed to be self-contained format (Gem is the Ruby term for Libraries)</li>
+                                <li>Has a public repo to hold RubyGems</li>
+                                <li>Public Repo is Supposed to help find gems and resolve dependencies</li>
+                            </ul>
+                        <li>Each Gem should have the code, the <a href="https://guides.rubygems.org/rubygems-basics/">documentation</a> and the spec</li>
+                    </ul>
             </ul>
         <li>Configuration files (configs)</li> 
             <ul>
-                <li>Thing 1</li>
-                <li>Thing 2</li>
+                <li>What is a Configuration(or <a href="https://web.archive.org/web/20220822225441/https://developer.ibm.com/articles/l-config/">config</a>) file</li>
+                    <ul>
+                        <li>These files are used to set the initial settings and parameters for programs/system</li>
+                        <li>Usually have an extension of .cnf .conf or .ini but could also be .cfg or .cf</li>
+                        <li>There are some <a href="https://web.archive.org/web/20220601112600/https://www.linuxtopia.org/online_books/introduction_to_linux/linux_The_most_important_configuration_files.html">common config files</a> you can look at for examples such as <a href="https://web.archive.org/web/20220902175743/https://linuxize.com/post/using-the-ssh-config-file/">SSH config file</a></li>
+                    </ul>
+                <li>Configuration editing</li>    
+                    <ul>
+                        <li>Typically config files are plain text and editable in any text editor for easy checking remotely</li>
+                        <li>Almost all allow comments, comments can be used to enable/disable settings and for documentation</li>
+                        <li>Can be modified (Should create backup if you modify!)</li>
+                        <li>Some config files are human readable, some aren't</li>
+                        <li>Some configs have GUIs to help modify (not commonly used)</li>
+                    </ul>
+                <li>When config files checked</li>  
+                    <ul>
+                        <li>Common convention says rc in the name means it runs on startup</li>
+                            <ul>
+                                <li>Example: .bashrc runs on startup</li>
+                                <li>Example: /etc/hosts checked frequently</li>
+                            </ul>
+                        <li>Some configs can be reloaded on command once you've made changes</li>
+                            <ul>
+                                <li>Example:  /sbin/service httpd reload</li>
+                            </ul>    
+                    </ul>
             </ul>
-        <li>init.d and sys.d</li> 
+        <li>init.d and system.d</li> 
             <ul>
-                <li>Thing 1</li>
-                <li>Thing 2</li>
+                <li>Both daemons</li>
+                <li>System.d is the newer version of the init framework</li>
+                <li>Switching from one to the other isn't recommended, and can create errors in your distro</li>
+                <li>System.d is used to work with services if you use the systemctl commands</li>
+                    <ul>
+                        <li>Such as systemctl start to start a service</li>
+                        <li>systemctl stop to stop one</li>
+                    </ul>
+                <li><a href="https://web.archive.org/web/20220811162347/https://www.tecmint.com/systemd-replaces-init-in-linux/">History of issues</a> and bit of a flamewar between the two options.</li>
             </ul>
         <li>Drivers</li> 
             <ul>
-                <li>Thing 1</li>
-                <li>Thing 2</li>
+                <li><a href="https://web.archive.org/web/20220809031650/https://www.oreilly.com/library/view/linux-device-drivers/0596005903/ch01.html">What are drivers</a></li>
+                    <ul>
+                        <li>Piece of software to make hardware work properly.</li>
+                        <li>If working right, they are a black box, they hide the details of how the device works, it just works</li>
+                        <li>Can be built separate from the kernel </li>
+                        <li>Mostly the drivers come with your OS</li>
+                            <ul>
+                                <li>Example: Printer drives come with CUPS (Common Unix Printing System)You can choose printer based on if driver is available or you might need to write one yourself to get your printer working</li>
+                                <li>But you can <a href="https://web.archive.org/web/20220625192354/https://www.howtogeek.com/213488/how-to-install-hardware-drivers-on-linux/">install drivers</a> if you want to</li>
+                            </ul>
+                    </ul>
+                <li>Proprietary drivers</li>
+                    <ul>
+                        <li>Sometimes however the driver doesn't come with the system</li>
+                            <ul>
+                                <li>Example: Nvidia and AMD graphics hardware which can lead to Reduced 3D gaming performance</li>
+                                <li>Example: Wi-FI drivers Which can lead to reputation of "flaky" wifi</li>
+                            </ul>
+                        <li>Some systems have driver managers (Linux Mint)</li>  
+                        <li>Some distros/flavours/developers are against proprietary drivers and make it difficult to use them  on purpose(Fedora)</li>  
+                        <li>If the driver doesn't work easily and can't be found, it might not work at all unless you write a new one yourself</li>
+                    </ul>
             </ul>
-        <li>Boot Levels</li> 
+        <li>RunLevels</li> 
             <ul>
-                <li>Thing 1</li>
-                <li>Thing 2</li>
+                <li>Runlevels are a way to show what subsystems and services are running</li>
+                <li>We can see <a href="https://web.archive.org/web/20220831180300/https://www.geeksforgeeks.org/run-levels-linux/">some examples</a> what runlevels are and <a href="https://web.archive.org/web/20220911004234/https://tldp.org/LDP/sag/html/run-levels-intro.html">how to change them</a></li>
+                <li>We might use this to go into runlevel 1 (single user) if we're running into huge issues on the system and need to kick everyone but admin off</li>
             </ul>
         <li>Troubleshooting basics</li> 
             <ul>
-                <li>Thing 1</li>
-                <li>Thing 2</li>
-            </ul>
-        <li>Topic Subtopic 2</li> 
-            <ul>
-                <li>Thing 1</li>
-                <li>Thing 2</li>
+                <li>Read error messages</li>
+                <li>Check internet access (ingress and egress)</li>
+                <li>Check running services</li>
+                    <ul>
+                        <li>Try looking at what's running using <a href="https://web.archive.org/web/20220703005518/https://www.geeksforgeeks.org/top-command-in-linux-with-examples/">top</a></li>
+                        <li>See what's running <a href="https://www.linuxtopia.org/HowToGuides/services.html">at startup</a></li>
+                    </ul>
+                <li>Check hardware usage like <a href="https://web.archive.org/web/20220721214108/https://www.tecmint.com/how-to-check-disk-space-in-linux/">disk usage</a>, <a href="https://web.archive.org/web/20220915184349/https://www.linuxfoundation.org/blog/blog/classic-sysadmin-linux-101-5-commands-for-checking-memory-usage-in-linux">memory usage</a> and any other available resources</li>    
+                <li>Check your logs! Can be done on <a href="https://web.archive.org/web/20220915184734/https://www.linuxfoundation.org/blog/blog/classic-sysadmin-viewing-linux-logs-from-the-command-line">the command prompt</a></li>
+                <li>Check if others have that issue or it's a common problem(<a href="https://www.google.com/">Google</a>)</li>
             </ul>
     </ul>   
 <!--Discussions and activities for the topic-->
