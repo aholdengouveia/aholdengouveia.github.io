@@ -1,0 +1,134 @@
+---
+title: IP Tables
+layout: AdvLinux
+---
+<!--Learning Outcomes for this topic-->
+<h3>IP Tables</h3>
+<p>Learning outcomes:
+    <ul>
+        <li>Able to set up Restrictions by port, IP, app, and user settings for emergencies </li>
+        <li>Able to add/subtract firewall rules and manage iptables</li>
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/5bNg50dtSts" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="/LinuxAdmin/CIS245 Week 6&7.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>What is a firewall</li>
+            <ul>
+                <li>Firewalls are a first line of defense on your network.</li>
+                <li>The most basic function is to examine packets going into and out of your network</li>
+                <li>They can focus on IPv4 or <a href="https://web.archive.org/web/20211024025205/https://blog.apnic.net/2018/06/08/how-to-linux-firewall-for-ipv6/">IPv6</a> traffic</li>
+                <li>Firewalls can decide where packets go</li>
+                <li>Firewalls can make their path determinations by IP address, Mac address, port or even application</li>
+            </ul>
+        <li>Firewall Basics</li> 
+            <ul>
+                <li><a href="https://web.archive.org/web/20211027104521/https://danielmiessler.com/blog/professional-firewall-iptables/">Firewalls have rules</a> they follow</li>
+                    <ul>
+                        <li>Example: All packets looking for a website in port 80 are sent to the web server</li>
+                        <li>Example: Only one address in a company is allowed to access the greater internet, everyone else is routed around the company's network</li>
+                        <li>Example: All people wanting to access the customer database need to have a pre-approved IP address to ensure access is legit and approved</li>
+                        <li>Example: <a href="https://web.archive.org/web/20220929171933/https://www.linuxnorth.org/five_minute_firewall/">Minecraft Server Setup</a></li>
+                    </ul>
+                <li>What happens to packets that don't fit a rule?</li>
+                    <ul>
+                        <li>We go down list until it finds rule that it fits. </li>
+                        <li>If no rule fits, we default to either allow or deny</li>
+                        <li>Deny all is safer but takes more work to manage because you need to go in every time to add exceptions where appropriate</li>
+                        <li>Allow all has dangers but is easy to manage because you change the firewall less</li>
+                        <li>Choosing allow or deny is based on what you/company needs and how secure you need to be</li>
+                    </ul>
+                <li>IP/MAC are the easiest/quickest to filter; data is the slowest</li>    
+                <li>You can do things like filter by port if the port shouldn't be used by that server</li>
+                    <ul>
+                        <li>Example: DNS server doesn't need ports for web or email</li>
+                        <li>Example: Pings are good for testing connections, but they allow nmap type attacks (ICMP)</li>
+                    </ul>
+            </ul>
+        <li>Stateful vs Stateless Firewalls</li> 
+            <ul>
+                <li>Stateful firewalls filter based on full context</li>
+                    <ul>
+                        <li>Iptables are stateful (technically so is Windows firewall, we just don't care about that right now. Linux rulz! windows drools)</li>
+                        <li>Once the certain traffic is approved it's added to the state table and get more access to the protected network</li>
+                        <li>If it wasn't approved it gets blocked</li>
+                        <li>They can use IPSec (IP security) such as tunnels and encryption</li>
+                        <li>They are better at identifying unauthorized and forged info</li>
+                    </ul>
+                <li>Stateless firewalls work on static information and don't inspect entire packets</li>
+                    <ul>
+                        <li>For example: source and destination is Info stateless might look at</li>
+                        <li>Packet filtering is done with matching conditions</li>
+                        <li>These conditions are pre-approved with corresponding pre-approved actions(Also known as an access control list)</li>
+                        <li>They mainly focuses on packet filtering</li>
+                        <li>Typically faster then stateful</li>
+                    </ul>
+            </ul>
+
+        <li>Firewall Use Case Example: DDOS</li> 
+            <ul>
+                <li>DDOS attacks are very common, and a firewall can be a good first line of defense for them</li>
+                <li>There are also third party services that specialize in DDOS prevention, but we can do something to help prevent DDOS as well. </li>
+                <li>You could for example filter out a range of addresses</li>
+                <li>You can think of use cases for your network, are you a USA based company with no workers or subcontractors elsewhere? Then maybe filter out non-USA IP addresses</li>
+            </ul>
+        <li><a href="https://web.archive.org/web/20220529212045/https://www.linuxtopia.org/Linux_Firewall_iptables/index.html">How does Linux do Firewalls?</a></li> 
+            <ul>
+                <li><a href="https://web.archive.org/web/20220829160045/https://opensource.com/article/18/9/linux-iptables-firewalld">Multiple systems used for firewalls in Linux</a></li>
+                <li>Some are built in to the system, Some are 3rd party</li>
+                <li><a href="https://web.archive.org/web/20220812180628/https://www.howtogeek.com/177621/the-beginners-guide-to-iptables-the-linux-firewall/">IPtable</a>s are the <a href="https://web.archive.org/web/20211128135801/https://likegeeks.com/linux-iptables-firewall-examples/">most common</a> so there are <a href="https://web.archive.org/web/20220126191305/https://www.opensourceforu.com/2015/04/iptables-the-default-linux-firewall/">lots of resources</a> available for <a href="https://web.archive.org/web/20220215012422/https://www.linux.com/topic/networking/building-linux-firewalls-good-old-iptables-part-1/">help</a> for them</li>
+                <li>You might also see others such as <a href="https://web.archive.org/web/20220906050915/https://wiki.nftables.org/wiki-nftables/index.php/Main_Page">nftables</a>, <a href="https://web.archive.org/web/20220828065925/https://www.redhat.com/sysadmin/beginners-guide-firewalld">firewalld</a> and <a href="https://help.ubuntu.com/community/UFW">UFW</a> (uncomplicated Firewall Ubuntu)</li>
+                <li>IPTables don't survive reboot, but other ways of changing the firewall might!  Check your system for what it uses</li>
+                <li>Really common is to have IPTables with something over them for interaction rather then changing the IPTable directly</li>
+            </ul>
+        <li>Firewall Rule Chains</li> 
+            <ul>
+                <li><a href="https://web.archive.org/web/20220803040029/https://www.tecmint.com/linux-iptables-firewall-rules-examples-commands/">Rules</a> are done in a chain format</li>
+                <li>Order matters</li>
+                <li>As rules are examined, if a rule is used the system performs the operation and no further rules are used</li>
+                <li>Allow all or deny all is the last rule in the chain</li>
+                <li>There are multiple chains for different areas like prerouting(as they come in) and postrouting(as they go out)</li>
+                <li>Each chain has the potential for multiple tables, like the "filter" table that decides if we  allow or deny the packet access.</li>
+                <li>Your options are accept, drop or reject packets</li>
+                    <ul>
+                        <li>Drop denies without notification</li>
+                        <li>Reject sends back error</li>
+                    </ul>
+                <li>You can set a script for base rules and to modify rules in case of things like hacking and you need to shut down everything fast, or to set up your IPv6 in the same way as your IPv4</li>    
+            </ul>
+        <li>DMZ and duel Firewalls</li> 
+            <ul>
+                <li>Demilitarized Zone <a href="https://web.archive.org/web/20220929172227/https://danielmiessler.com/study/dmz/">(DMZ)</a></li>
+                <li>DMZ is where the potential problems go, like Web, Email, VoIP and FTP</li>
+                <li>A duel firewall is where you have multiple firewalls at the same company, this is defense in depth and generally a good practice.</li>
+                <li>Example: An external firewall that forwards potential problem packets to DMZ, and an internal firewall  that protects the internal network from the DMZ</li>
+                <li>Example: In industry a lot of companies will also incorporate things like network firewalls and computer firewalls, and have different vendors for each so the same "holes" don't line up</li>
+            </ul>
+
+    </ul>   
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <li>In small groups, work on what you think should happen for a DDOS event for your server.  Make a list of priorities and spec them out like you're creating a script</li>
+        <li>In groups of 3, write a script to to show IPtables rules, IP6tables rules, add some headings and titles so it's clear what you're looking at.</li>
+        <li>In pairs, write a script to shut down everyone on the system except you (Alternative to full shutdown)</li>
+        <li>Individually go through the documentation for one server you are running, and one server you are NOT running and see what the firewall options are, is it a script? Program? GUI? Does it persist on reboot?</li>
+        <li>Complete the lab that is found on <a href="/LinuxAdmin/labexcercises/iptables.pdf">This PDF</a> Make sure you are paying careful attention to the requirements.
+
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">Click here </a>
+</p>

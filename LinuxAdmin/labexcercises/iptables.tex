@@ -1,0 +1,70 @@
+\documentclass[12pt]{article}
+
+\usepackage{fontawesome}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0},
+}
+
+
+\title{IP Tables}
+\author{
+        Adrianna Holden-Gouveia \\
+        Website: \url{https://aholdengouveia.name}\\ 
+        \date{\vspace{-5ex}}
+        %Email: \href{mailto:admin@aholdengouveia.name}{admin@aholdengouveia.name} \\
+        \faLinkedin{: aholdengouveia} \\
+        \faGithub {: aholdengouveia} \\
+        \faTwitter {: aholdengouveia} \\
+        }
+
+%S\date{\today}
+
+
+\begin{document}    
+
+\maketitle
+
+%\begin{abstract}
+%This is a template for Linux Administration Lab work
+%\end{abstract}
+%\tableofcontents
+
+%\section*{Objectives:}
+%\begin{enumerate}
+%    \item Objective 1
+%    \item Objective 2
+%\end{enumerate}
+\section*{Complete the following problems}
+
+References, a video, a PowerPoint and some notes are available at my website
+https://www.aholdengouveia.name/LinuxAdmin/iptables.html
+
+\subsection*{Go through both servers and complete the following problems.  }
+
+Write scripts or statements to modifying firewall rules (IPtables) for specific purposes, make sure you include wireshark screenshots to prove your command/script/statements work. 
+    \begin{enumerate}
+        \item Deal with web server (open needed ports, and forward port 80 traffic to 8080) 
+        \item Deal with MySQL service (open needed ports)
+        \item Deal with SSH service (allow incoming and outgoing SSH, second script to deny SSH)
+        %\item Deal with Email service (Such as allow or block incoming SMTP,POP3...)
+        \item Script to allow/block specific hosts, MAC addresses
+        \item A script/command to block telnet, and another one to block ping
+    \end{enumerate} 
+
+ Write the specs for how you think you could prevent a DDOS attack using IPtables.  Can you write a script for this? Cite your sources!
+\section*{Deliverables}
+Target Market is someone trying to take care of your server that hasn't used IPTables before, assume some technical knowledge but not expertise.  Screenshots are helpful to go with your descriptions. 
+
+Include documents for BOTH servers clearly labeled with what the document is and which server it's for
+
+\begin{itemize}
+    \item  A text document including the answers to each question, (scripts or statements or commands are fine) but explain why you choose what you choose. Include any assumptions made about what you consider "dealing with" as well as the screenshots showing Wireshark to prove your script/statement/command works.  
+    \item Documentation of your IPtables for each of your servers should include a list of changes to the chains you've made including which table you think needs to be changed, when the change was made. Include a copy of your original IPtable and your updated IPtable at the end of this assignment. 
+    \item A short document explaining how you think you could prevent a DDOS attack using IPtables.  Cite at least 2 sources.
+\end{itemize}
+
+
+\end{document}
