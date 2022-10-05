@@ -1,0 +1,140 @@
+---
+title: Home Server Setup
+layout: default
+---
+
+<main role="main">
+    <!--Jumbotron for the page header -->
+    <div class="jumbotron" style="background: url(/images/cloudcomputing.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+        <div class="container image-overlay">
+          <h1 class="jumbotron-heading">Home Server Setup</h1>
+            <p class="lead"> 
+                A home server is a useful piece of equipment to have so you can have more control over your data and an easy way to share information in your household
+            </p> 
+        </div>
+    </div>  
+
+    <br><br>
+<!--Tutorial Link to the original Builder of the project-->    
+<div class="container">
+    <p> 
+        Having a home server setup can make several of these projects a lot easier. Both from the perspective of having a single place where everything is stored for communication, but also as a way to make sure that everything is gathered so that you can find it again easily. For example, you can use your home server as a way of hosting a web page so that you can access all of your smart home devices and all of their information in one spot, either accessible only from the home or authenticated so that only you can access it securely online.         
+    </p>
+    <p>
+        Setting up a server can be easier than you think, it's usually troubleshooting that tends to be more difficult than the setup. It's also something that you can learn as you go, if you are the one doing the setup then you know what you've done. It is of course helpful to do <a href="/LinuxAdmin/Documentation.html">Documentation</a> of what you've done so that you can share with others in your household, but it is a way for you to get some low stakes practice working on a server.
+    </p>
+</div>  
+
+<!--Rating of the project in terms of difficulty, cost, and if I recommend for beginner-->
+<div class="container"> 
+    <div class="ratings">
+    <h3>Rating</h3>
+        <ul style="list-style: none;">
+            <li>Difficulty of Project: Intermediate <span class="fa-solid fa-splotch"></span><span class="fa-solid fa-splotch"></span><span class="fa-solid fa-splotch"></span>
+            </li>
+            <li>Cost: Free or <span class="fa-solid fa-piggy-bank"></span><span class="fa-solid fa-piggy-bank"></span><span class="fa-solid fa-piggy-bank"></span><span class="fa-solid fa-piggy-bank"></span></li>
+            <li>Recommendation skill level: Intermediate<span class="fa-solid fa-hat-wizard"></span><span class="fa-solid fa-hat-wizard"></span><span class="fa-solid fa-hat-wizard"></span> </li>
+        </ul>
+    </div>
+</div>
+
+<!--Skills needed for This project make sure to include links on how to get those skills-->
+<div class="container">
+    <h3>Skills and assumed supplies</h3>
+    <p>
+        If you are interested in a class to help with this, I recommend <a href="https://necc.smartcatalogiq.com/en/2022-2023/Catalog/Courses/CIS-Computer-Information-Sciences/200/CIS245">Linux Administration</a>  you can see the materials I use <a href="https://www.aholdengouveia.name/advlinux.html">here</a>. You don't need to have taken that course to complete this project, but I would recommend the skills from <a href="https://necc.smartcatalogiq.com/en/2022-2023/Catalog/Courses/CIS-Computer-Information-Sciences/100/CIS117">Introduction to Linux</a> so you can be more comfortable on the command prompt. <!--If you would like a refresher on this, I have my materials (here when done) and a <a href="https://youtube.com/playlist?list=PLQOmuLC45eoQy4ZDwPEpPDC1HvrszJbMK">Playlist on my YouTube Channel</a> if you would like to see some examples of what's covered. -->
+    </p>
+        
+    <p>
+            You are going to need:
+            <ul style="list-style-type:disc;">
+                <li>some basic networking knowledge</li>
+                <li>familiarity with Linux</li>
+                <li>patience to troubleshoot issues</li>
+            </ul> 
+             This is a more complex project then some of the others, and will therefore need more skills, so I would consider this an intermediate to advanced project. The actual install of the server isn't difficult if everything goes correctly, the problem is that if it doesn't go correctly you are going to need a little bit of practice, familiarity and patience to be able to fix the problems.
+    </p> 
+</div>
+
+<!--Supplies and Cost of the project-->
+<div class="container">
+    <h3>Supplies and costs </h3>
+        <ul style="list-style-type:disc;">
+            <li>Dedicated Computer</li>
+            <li>USB Drive, 8GB or larger</li>
+            <li>Either a second computer, laptop or desktop, or a monitor so you can interact with your server</li>
+        </ul>  
+</div>
+
+
+<!--Where to Start-->
+<div class="container">
+    <p><h3>Where to start </h3>
+        <p>
+            What I would recommend for your server setup is to pick an old computer that you aren't using anymore, a desktop rather than a laptop style machine is probably going to work better for this. If you pick something that you aren't using anymore, you would be able to just start this for free and all you need to spend is some time. A server is something that is usually left on at all times, so it is better if you have a desktop as it is designed to be powered on at all times. An older machine should be fine for this, if you do not have an old desktop you usually can pick one up relatively inexpensively. 
+        </p>
+        <p>
+            In my particular case we've set up a full server, it is actually surprisingly inexpensive to put together a very high powered server, the components tend to be less expensive because a lot of the cost that you find in computers is making it smaller and servers tend to be a lot larger. For example, a server with the amount of power that is in your phone would be significantly cheaper. Your phone might cost $1,000, you might be able to get a laptop with the same amount of power as your phone for $700, but if you were willing to have the components be bigger you could get that same amount of power in a desktop for maybe $100 to $200. Getting an older desktop from a refurbish place such as <a href="https://www.newegg.com/">Newegg</a> or <a href="https://www.tigerdirect.com/">TigerDirect</a>, or even from a big box retailer like <a href="https://www.walmart.com/">Walmart</a> or <a href="https://www.amazon.com/">Amazon</a>, should be absolutely fine. If you are in an apartment and know you will be moving, moving a server is going to be an unpleasant and heavy experience, but if you know you can just leave it there for a while it's not that big of a deal. Server hardware is usually put together by you, so expect to take a day or two to put it together, whereas if you just buy a desktop you don't have to worry about that.
+        </p>
+        <p>
+            Make sure that your computer, whichever one or type you're using, is completely clear of anything you want to save. We are going to completely wipe the whole thing, so make sure to backup anything on there that you want. We are going to put a completely different operating system on this computer, this will be a server operating system rather than the regular consumer operating system that you are used to. This won't cost anything for the OS, we will be running a Linux server which has quite a few very nice free options, such as either Ubuntu server or Centos server (link here). You will need a thumb drive to put the image of the server on, so that you can copy it over, but 8 GB should be more than enough. For the server hardware, make sure that you have at least 40 GB of hard drive space, 6 GB of RAM and four cores in your processor. While that might seem like a lot, your smartphone probably has twice that, you should be able to get that minimal amount of power for $100-$200. It would be very reasonable to go up quite a bit to allow for growth, however if you wanted to you could even run this off of a raspberry pi, or pi cluster.
+        </p>
+    </p>
+</div>
+
+<!--Begin Setup-->
+<div class="container">
+    <p><h3>Begin the Setup</h3>
+        <p>
+            First you will need to pick your operating system.  Any server Operating System should be fine.  
+        </p>
+        <h4>New to Linux and nervous?</h4>
+        <p id="two">
+            
+            If you're not sure which one you want to try first, I recommend starting with <a href="https://ubuntu.com/download/server">Ubuntu Server</a> because the documentation is usually pretty good, it's very popular so it's easier to find help, if you're really nervous you can use <a href="https://ubuntu.com/download/desktop">Ubuntu Desktop</a> and you can use a Graphic User Interface (GUI)if you want to.  You'll be able to do almost everything you need on the Desktop and it's a great place to start working with Linux.
+            
+            There is a really nice thorough set of documentation on <a href="https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview">The Ubuntu Docs</a> that will take you through how to do the install on your computer step by step.  The first time you're doing this I would budget 2 hours of time. The actual install is likely to take less then 30 minutes of mostly waiting, but if it's your first time installing an operating system that can be scary and you want plenty of time. If you would like to see a video of someone talking you through the install you can <a href="https://www.youtube.com/watch?v=oNEwEQ0uU1Y">Go Here</a> and watch a full walkthrough of the whole process before you start, the video is about 15 minutes.
+        </p>
+        <h4>Used Linux Before?</h4>
+       <p>
+            Download an ISO file from one of the following places <a href="https://ubuntu.com/download/server">Ubuntu Server Download</a> or <a href="https://www.centos.org/download/">CentOS</a> or <a href="https://rockylinux.org/download/">Rocky Linux</a> or <a href="https://www.debian.org/distrib/">Debian</a>.  
+        </p> 
+        <h4> On to the Install!</h4>
+        <p>First we have to create a <a href="https://www.makeuseof.com/tag/10-tools-make-bootable-usb-iso-file/">bootable USB</a> and install on your machine. If you are using a virtual machine for this, which would be perfectly reasonable, create a new virtual machine and point to the iso as it does the install. However, if you are going to be doing this without the virtual machine, which is also perfectly reasonable, take that ISO you just downloaded, and create a <a href="https://www.makeuseof.com/tag/10-tools-make-bootable-usb-iso-file/">bootable USB following these instructions</a>, Boot into the USB and then install on your machine following the instructions on your computer.</p>
+        <p>
+            Now that we have our server installed, what we're going to want to do is make sure that we have the root user locked down, make sure that we have a user that can log into the server, and make sure that we have some security settings set up.  If you have never done any Linux administration before, I have <a href="https://www.aholdengouveia.name/advlinux.html">a course</a> that I created on how to administer a Linux server, all of the materials are freely available if you would like to go through them. This includes videos where I talk about some of the general concepts and link to some reputable tutorials.
+
+        </p>
+    </p>
+</div>
+
+
+<!--How the project went and what I thought about as I was working on it-->
+<div class="container">
+    <p><h3>How it went </h3>
+        <p>
+            The install of a server on a new computer can be straightforward, or it can be a huge challenge, and there are so many variables it can be hard to guess which experience you're going to have.  Because I teach the Linux Administration class I have already made A LOT of the beginner mistakes, seen a lot of the mistakes and have A LOT of practice fixing them.  However, if this wasn't smooth sailing for you please do not be discouraged.  This can be a challenging topic, what to do isn't always obvious, and it can be frustrating when things do not work and you don't know why, I understand and I promise I have been there too.  But don't give up, it does get easier
+        </p>
+    </p>
+</div>
+
+<!--What I would do differently if I did this again, what recommendations I would have for future people-->
+<div class="container">
+    <p>
+        <h3>Recommended Upgrades</h3>
+            <ul>
+                <li>Set a static IP address on your server by going to your router and giving your server a static address, there are lots of <a href="https://web.archive.org/web/20220924083012/https://www.howtogeek.com/184310/ask-htg-should-i-be-setting-static-ip-addresses-on-my-router/">guides online</a> for how to do this, one of the easiest ways is to look for your router brand and "how to set a static IP address" It's usually pretty straightforward.</li>
+                <li>A great first change to your software is to <a href="/SmartHome/Virtualizationsetup.html#Docker">Install Docker</a> on your server</li>
+                <li>Another great early change is to <a href="/SmartHome/Virtualizationsetup.html#Kubernetes">Install Kubernetes</a> on your server. </li>
+                <li>If you are willing to invest a little bit more money into this project I would recommend getting either a server rack or a large server case. A server case can be bought for $100 to $200, and having the ability to upgrade into server hardware will save you money in the long run. There is a larger learning curve because you do need to worry about putting your own hardware into the computer, however I absolutely recommend looking around on YouTube and Google for this because there are a ton of really good videos showing you exactly what you need to do. And if you are willing to do this upgrade you could very reasonably have a very robust Home server for around $1,000. Which does sound like a lot of money and I do understand that, but routinely gaming laptops are $2,000 or $3,000 and this server would have considerably more power than most of those laptops.</li>
+                <li>Another upgrade that I can recommend is fixing up your cooling system. A lot of computers, especially used, come with just a fan and I would recommend updating your fan, cleaning your fan and making sure that enough air is actually getting into the system that the system is cooling off properly. Computers overheating is absolutely a big problem and if you can upgrade your cooling system by adding in extra fans it will extend the life of your hardware. If you wanted to go really crazy you could even do a water cooled system but I will warn you now that there is a lot of issues that can go wrong with that, <b>water + electronics = *danger*</b></li>
+            </ul>
+        <h3>Ideas for how to save some Money</h3>
+        <ul>
+            <li>One thing that you can do to save money is use an older computer that you are no longer using, and because you can use even an older desktop for this the potential cost for this project could be free. </li>
+            <li>If you still wanted or needed a computer, didn't happen to have a spare and none of your friends or family had a spare, another way that you could save money is getting an inexpensive desktop refurbished somewhere and you might be able to spend as little as $200. I would recommend a desktop over a laptop though.</li>
+            <li>Because you're going to be completely rewriting over everything on this computer, another way that you could save money is getting a computer or computers at one of the going out of business sales, hitting up ebay, or looking at some of the government over stock options. A lot of companies will actually switch out their hardware every year or two, they will usually hang on to the hardware for a little bit and then sell it to try to recoup the cost. Any of that should be perfectly fine for a simple server setup.</li>
+            <li>You could try doing this on a very small computer such as a Raspberry Pi or a cluster of raspberry pis. And then you might be able to get the system set up for under $100. This option will allow you to have a server setup, but because the pis tend to have really low end hardware you might not have enough power to do everything that you want all at once, or in some cases enough power to run the project at all depending on the project that you're doing. But it is a great way to get some practice in so that you can become more comfortable with being in charge of your own server</li>
+        </ul>
+    </p>
+</div>

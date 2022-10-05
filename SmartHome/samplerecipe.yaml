@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+#make sure to update the name and namespace if you have a different one then I am using. 
+  name: samplerecipe
+  namespace: smart-home
+  labels:
+    app: samplerecipe
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: samplerecipe
+  template:
+    metadata:
+      labels:
+        app: samplerecipe
+    spec:
+      containers:
+      - name: samplerecipe
+        imagePullPolicy: Always
+        #This is where you put the image you're pulling from, usually you'll see this format for where the image lives
+        image:     ubuntu/apache2:2.4-22.04_beta
+        env:
+          - name: TZ
+          #This is where you change your timezone.  Format is usually Country/City no spaces!
+            value: America/New_York
+        ports:
+          - containerPort: 80
+        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: samplerecipe
+  namespace: smart-home
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+  selector:
+    app: samplerecipe
+  type: LoadBalancer
+---
+

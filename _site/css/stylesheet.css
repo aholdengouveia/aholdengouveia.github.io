@@ -68,7 +68,7 @@ body {
   }
   
 
-  /*being used to work with the layout on the classes page to look like a portfolio
+  /*being used to work with the layout  to look like a portfolio
   */
   .album {
     min-height: 50rem; /* Can be removed; just added for demo purposes */
@@ -176,6 +176,15 @@ body {
   padding: 20px;
 }
 
+/*add in ratings class to make project ratings easier to see*/
+.ratings {
+  padding:15px; 
+  border:solid; 
+  border-color:#c4c1cc; 
+  border-radius:25px; 
+  background-color: #e7e6ef;
+}
+
 /*Added to make code shown on page look nicer*/
 figcaption {
   /*position: absolute;*/
@@ -187,10 +196,26 @@ figcaption {
 }
 pre > code {
   padding-top: 3rem;
+  word-wrap: break-word;
+}
+
+/*make code look pretty*/
+code {
+  font-family: Consolas,"courier new";
+  color: rgb(0, 0, 0);
+  background-color: #dbd9e0;
+  border-radius: 25px;
+  padding:2px;
+  font-size: 105%;
+  word-wrap: break-word;
 }
 
 /*Change the text on section headers to stand out more*/
 h3 {
+  text-align: center;
+
+}
+h4 {
   text-align: center;
 
 }
@@ -209,6 +234,11 @@ h3 {
   width:100%; 
   position:absolute;
 }
+
+
+/*Img work to have the images both be mobile friendly and when larger grey out the rest of the page*/
+
+
 
 .image-overlay{
   background: rgba(255, 255, 255, 0.7);
