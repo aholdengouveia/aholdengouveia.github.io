@@ -1,0 +1,218 @@
+---
+title: CCTV
+layout: default
+---
+
+<main role="main">
+    <!--Jumbotron for the page header -->
+    <div class="jumbotron" style="background: url(/images/cctvsmiling.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+        <div class="container image-overlay">
+          <h1 class="jumbotron-heading">CCTV</h1>
+            <p class="lead">Cameras around your home can be used for watching children or pets, we can have wildlife cams set up, or even cameras for your front door or rooms so you can watch your house while you're away. </p>
+            </p>
+        </div>
+    </div>  
+
+    <br><br>
+<!--Tutorial Link to the original Builder of the project-->    
+<div class="container">
+    <p>For this project, we are using something called <a href="https://zoneminder.com/">ZoneMinder</a>, it runs on a server, and is totally open source, and a mature project that is used all over the world in both home and corporate settings.   We'll be setting it up and connecting the cameras. This project can be done using Docker or Kubernetes, which ever one you choose from <a href="/SmartHome/Virtualizationsetup.html">the Virtualization guide</a> should be fine and I'll go through the setup steps for both options. 
+
+    </p>
+</div>  
+
+<!--Rating of the project in terms of difficulty, cost, and if I recommend for beginner-->
+<div class="container"> 
+    <h3>Rating</h3>
+        <ul style="list-style: none;">
+            <li>Difficulty of Project:Easy <span class="fa-solid fa-splotch"></span>
+            </li>
+            <li>Cost: <span class="fa-solid fa-piggy-bank"></span></li>
+            <li>Recommendation skill level: Beginner<span class="fa-solid fa-hat-wizard"></span> </li>
+            <li>Time commitment: 1 hour <span class="fa-solid fa-clock"></span></li>
+        </ul>
+</div>
+
+<!--Skills needed for This project make sure to include links on how to get those skills-->
+<div class="container">
+    <h3>Skills and assumed supplies</h3>
+        <ul style="list-style-type:disc;">
+            <li>A <a href="/SmartHome/ServerSetup.html">Server</a></li>
+            <li>Either <a href="/SmartHome/Virtualizationsetup.html#Docker">Docker</a> or <a href="/SmartHome/Virtualizationsetup.html#Kubernetes">Kubernetes</a> on your Server</li>
+        </ul>  
+</div>
+
+<!--Supplies and Cost of the project-->
+<div class="container">
+    <h3>Supplies and costs </h3>
+        <ul style="list-style-type:disc;">
+            <li><a href="https://wiki.zoneminder.com/Hardware_Compatibility_List">IP Camera from this list</a>(Compatible with ZoneMinder)</li>
+            <li>Power Supply for the camera (or a PoE setup)</li>
+            <li>Cat5 cable</li>
+        </ul>  
+</div>
+
+<!--How the project went and what I thought about as I was working on it-->
+<div class="container">
+    <p><h3>How to set up ZoneMinder using Docker </h3>
+        The ZoneMinder documentation is written for Docker, so we can follow that.  However the documentation on the website does go to some deprecated repos and dead links. So we want to go to the ZoneMinder repository directly, which lives <a href="https://github.com/ZoneMinder/zmdockerfiles">Here</a> to find what we need. Once you go to the repository, you'll notice the docker image says “zoneminderhq/zoneminder:latest-ubuntu18.04” And this can look concerning since you are unlikely to be running Ubuntu 18, however because we are using docker, that should be ok.  Docker can run a previous version of the OS without you needing to do anything. 
+    </p>
+    <p>
+        A repository is a way for us to share and save code more easily.  It can also be a place where we can share instructions with others on how to complete projects.  If we think back to <a href="/SmartHome/Virtualizationsetup.html">the Virtualization Guide</a> we can remember about containers.  A container is a way to both share projects and keep them contained. I used the analogy of boxes.  We can think of the ZoneMinder repository as a place to see and share the recipe for how to make our box.  
+    </p>
+    <p>
+        First we need to login to our server.  Then we can run the given Docker command 
+        <div class="container">
+            <!--Don't use code tag on multi-line code chunks, makes html mad.-->
+            <pre>docker run -d -t -p 8443:443 
+                -e TZ='America/New_York' 
+                -v /home/user/zoneminder/events:/var/cache/zoneminder/events 
+                -v /home/user/zoneminder/images:/var/cache/zoneminder/images 
+                -v /home/user/zoneminder/mysql:/var/lib/mysql 
+                -v /home/user/zoneminder/logs:/var/log/zm 
+                --shm-size="512m" 
+                --name zoneminder 
+                zoneminderhq/zoneminder:latest-ubuntu18.04</pre>
+            
+                <p>NOTE: You should change "user" to the username you have on your server in the above command. </p>
+    </div>
+            Now one thing to note, you'll see \ on the lines in the documentation, you don't type those in, those are there to indicate that the command continues even though it's on a new line. So when you enter your command it will look like this: <p><img src="/SmartHome/smarthomeimages/Dockerzoneminderrun.png" class="img-fluid" alt ="image of making a folder called kubernetes"></p> but make sure you change both the username and timezone to match what you need. Don't type in what I did because your computer will not have the same path or user. 
+    </p>
+    <p>
+        Make sure you make a note of what IP Address you used.  You'll need to go to <code>http://IPADDRESS/zm</code>   I don't recommend changing the port at this point in time, you can consider doing that later once you've got everything up and running.
+    </p>
+</div>
+
+<!--How the project went and what I thought about as I was working on it-->
+<div class="container">
+    <p><h3>How to set up zoneminder using Kubernetes </h3>
+        If you haven't already set up your namespace, i recommend you do that first.  I have a sample recipe for that <a href="/SmartHome/namespace.yaml">here</a> that will create a namespace called smart-home, you can reference <a href="/SmartHome/Virtualizationsetup.html#Kubectl">how to use kubectl</a> if you want to refresh on how to set that up.  
+        
+        Check to make sure your namespace is up by doing 
+        get namespaces
+    </p>
+    <p>
+        Next we need to setup our Yaml file for zoneminder, a sample is <a href="/SmartHome/zoneminder.yaml">here</a>, you can use this but you MUST change the location of your storage.  I have a comment in there on where to change the yaml, and some notes about how the yaml is put together, but you have to make sure you have a path to where you want your information stored. If you update nothing else in that file, you still HAVE to update the path in BOTH places on the persistent volume areas.
+
+        <p>
+            If you need a reminder on how to use kubectl please go <a href="/SmartHome/Virtualizationsetup.html#Kubectl">check out my kubectl guide here</a> and make sure to run in the correct directory
+        </p>
+    <ul>
+        <li>You should navigate to your kubernetes directory first, making sure to go to the folder that has your yaml files. <pre>cd ~/kubernetes/smarthome</pre></li>
+        <li>Edit your zoneminder yaml, you can use my <a href="/SmartHome/zoneminder.yaml">sample</a> as your base if you like. <pre>nano zoneminder.yaml</pre></li>
+        <li>Apply your yaml so that the changes will start<pre>kubectl apply -f zoneminder.yaml </pre></li>
+        <li>Check to see if your pod is up, make sure to use the correct name space!  If your's isn't smart-home make sure to change that in the command to match<pre>kubectl get pods -n smart-home</pre></li>
+        <li>Last we need to check services to see that everything is running and to get our IP address of the pod <pre>kubectl get services -n smart-home</pre></li>
+    </ul>
+        Now you're set up to start trying out zoneminder.  NOTE: you'll be accessing your zoneminder through a web browser, this browser needs to be on the same network as your server because we're using local addresses.
+    </p>
+</div>
+
+<!--How the project went and what I thought about as I was working on it-->
+<div class="container">
+    <p><h3>How to use Zoneminder</h3>
+        We need to setup our cameras, you can plug your camera in to your power source, and make sure that it is connected to the internet. Now depending on your camera there might be different setup options, in my case for the camera that I've chosen and recommended for beginners, you're going to go to the IP address of that camera, the IP address by default of this hikvision camera is 192.168.1.64 and you're going to put that into the address bar of your browser. Once you do that it should ask you for a login to set up the camera, keeping the user as admin is fine but you will need to choose a strong password. You cannot paste anything in there you have to type it so make sure that the password is both strong and easy to type. 
+    </p>
+    <p>
+        NOTE: when opening up your web browser to go to zone minder you MUST use http://IPADDRESS/zm for this to work, if you don't include the /zm you will end up at a blank apache welcome page which is not what we want. 
+
+
+        Now we need to go to our zoneminder page, create a login and then you'll see the dashboard <p><img src="/SmartHome/smarthomeimages/zonemindersuccess.png" class="img-fluid" alt ="image of empty zoneminder dashboard"></p>
+         Now there are some things that it's strongly recommended you do right away including setting up authentication, that means you'll need to login to see the cameras, you can wait until you've set up your cameras, but as soon as they are setup you're going to want to make sure that they are protected by passwords.
+
+    </p>
+    <p>
+        Now we need to add a camera to our dashboard, The way that we are going to connect it to zone minder is go into the general console, and then hit the add button. <p><img src="/SmartHome/smarthomeimages/zoneminderaddmonitorbutton.png" class="img-fluid" alt ="image of empty zoneminder dashboard focused on the add button"></p>
+    </p>
+    <p>   
+        In the general section we are going to name our camera and then the other defaults are fine except function we are going to switch to modect(motion detection). <p><img src="/SmartHome/smarthomeimages/zoneminderRenameyourcamera.png" class="img-fluid" alt ="image of empty zoneminder changing camera name"></p>
+    </p> 
+    <p>  
+        Next we are going to point to the actual camera, the way that we are going to do that is use a source path which you can find by looking at “source” on the left hand menu., The source path format is <pre>rtsp://user:password@IPAddress:port/somepath</pre>  source type is ffmpeg If you're using the same camera type I am the path is <pre>rtsp://USER:Password@192.168.1.64:554/Streaming/Channels/1?tcp</pre>  and the Capture  resolution is 1280x720.  
+        <p><img src="/SmartHome/smarthomeimages/zoneminderaddsourcepath.png" class="img-fluid" alt ="image of adding the source path to your monitor"></p>
+    </p> 
+    <p>
+        If you are going to be using rtsp make sure that you are using Port 554. If you use any of the other ports the streaming won't work properly. 
+    </p>
+
+    <p>
+        If you are using a different camera, make sure your capture resolution matches, you can find that at the page for your camera which can be accessed by going to the IP address of your camera. And then when you look at the audio/video section you should see a resolution that is two numbers. 
+        <p><img src="/SmartHome/smarthomeimages/hikvisionvideoconfigs.png" class="img-fluid" alt ="image on the audio/video configs for the hikvision camera"></p>
+    </p>    
+    <p>  
+        By default the cameras I bought use the same IP address, so if you have multiple cameras you're going to want to go in and give them all different default addresses. If you log into your camera page, by going to the original default IP address of 192.168.1.64, and then you go into network, and then basic settings, there is a section for ipv4 addresses and you're going to want to update this to have a different static address and make sure that is in your network diagram you've written down what the static address is of each of your cameras.  I recommend picking addresses that won't interfere with other things on your network.  For example, if you have a 192.168.X.X network, consider making a block just for cameras, so you would have 192.168.1.100 until 192.168.1.110 all just cameras. You need to make sure you're sticking to addresses that are <a href="https://whatismyipaddress.com/private-ip">private on your network</a>, you can't just pick numbers at random. 
+        
+    </p>
+    <p>
+        One thing that you might end up needing to do is make some edits in Zoneminder, for example let's say you have to move your camera or change the IP address or you want to add in another camera of this exact same type and you don't want them to get confused with conflicting IP addresses, or something like that, you're going to need to edit what's going on in Zoneminder. The way that you do that is you open up the Zoneminder console, and then you look at the monitor that you want to edit. Let's say it's camera one, the way that you edit the monitor for camera one is you click on the IP address of the camera, if you click on the name of the camera it'll take you to the stream. The most common things that you are likely going to want to edit are going to be the name of the camera, the IP address of the camera, and the stream path for the camera.
+        <p><img src="/SmartHome/smarthomeimages/zonemindercamerasourceforediting.png" class="img-fluid" alt ="image of the zoneminder camera source to indicate IP address"></p>
+
+    </p>
+    <p>
+        I would also recommend going and changing the name of your camera in both ZoneMinder and your camera's firmware, so if you go into the settings on zone minder you can name each of your cameras as you are adding them as shown above. One of the reasons that I would recommend that you do this is so that you know exactly which camera you're looking at and you can keep an accurate map of your system.  This is where you would change the camera name if you're using the same Hikvision camera I am.<p><img src="/SmartHome/smarthomeimages/hikvisioncameraname.png" class="img-fluid" alt ="Image of how to change the camera name on the hikvision"></p>
+    </p>
+    <p>
+        I also recommend that you go in and update the timestamp on the camera system's firmware, if you go into the interface that you were using for the camera, (that's by putting the IP address of the camera into the web browser), you will see that you have the option to either manually set the time on the system, or use a shared server, or use your computer's time. If possible, I recommend that you use the time based off of a server or computer, but you are going to want to make sure that you update the time stamp so that it's accurate  An example of using time.nist.gov for your time settings is here: <p><img src="/SmartHome/smarthomeimages/hikvisioncameratimesettings.png" class="img-fluid" alt ="image of the time settings on the hikvision camera"></p>
+        
+    </p>
+</div>
+
+<!--What I would do differently if I did this again, what recommendations I would have for future people-->
+<div class="container">
+    <p>
+
+        <h3>Recommended Upgrades</h3>
+        <ul>
+            <li>Secure your ZoneMinder by making it require a login and use https, there are <a href="https://github.com/freenas/iocage-plugin-zoneminder">several guides</a> you <a href="http://www.overworkeditguy.com/2017/07/basic-security-with-zoneminder.html">can use</a> to do this. </li>
+            <li>Add a VPN to your server so that you can access your zoneminder dashboard securely while you're away from home</li>
+            <li>Consider changing the motion detection options on your cameras so that it's not all motion, just sustained motion so you don't fill up your hard disk</li>
+        </ul>
+        <h3>Ideas for how to save some Money</h3>
+        <ul>
+            <li>Consider buying used CCTV cameras from a company or reputable reseller</li>
+            <li>Buy in bulk, if you know you want 5-10 cameras buy a bunch so you can get the bulk discounts</li>
+            <li>Consider going to sites that sell over stock, older cameras, or resell from companies like ebay or buy direct from the manufacturer</li>
+            <li>Make your own cables, don't buy them pre-made. A huge box of wire, RJ45s and a crimper can be bought for $200, so if you're going to be needing a lot of cables for projects it's worth considering making them. You can learn how during <a href="https://necc.smartcatalogiq.com/2022-2023/catalog/courses/ctn-computer-technology-networking/200/ctn201">Networks 1</a> if you want to take a beginner course on networking.</li>
+            <li>Set up Power over Ethernet (PoE) in your house so that you can run the cameras off PoE instead of needing the power blocks for each camera</li>
+            <li>Consider buying older cameras, the ones I used in this project are models from 10 years ago because the camera quality was enough for my needs, think about your use cases instead of buying the most expensive cameras you can find because of advertising.  Even much higher quality cameras can be found for as little as $50-$75 per camera</li>
+        </ul>
+    </p>
+</div>
+<h3>Cost breakdown with suggested supplies</h3>
+<p>
+    <div class="container">
+    NOTE:  NO affiliate links of any kind are used. If you want more then one camera, you must have a power supply and Cat5 or Cat6 for each camera. 
+    </div>
+
+<div class="container">    
+<div style="overflow-x:auto;">
+    <table>
+      <tr>
+        <th>Supply Name </th>
+        <th>Cost</th>
+        <th>Weblink</th>
+      </tr>
+      <tr>
+        <td>HIKVISION DS-2CD2012-I 4MM Network Camera, IR Mini Bullet, Day/Night</td>
+        <td>$35</td>
+        <td><a href="https://a.co/d/hbciywI">https://a.co/d/hbciywI</a></td>
+      </tr>
+      <tr>
+        <td>12V 1A Power Supply to match your camera</td>
+        <td>$5</td>
+        <td><a href="https://a.co/d/cuVhpov">https://a.co/d/cuVhpov</a></td>
+      </tr>
+      <tr>
+        <td>Cat 6 Ethernet Cable long enough to go from your router (or wall port) to your camera</td>
+        <td>$10</td>
+        <td><a href="https://a.co/d/cT0GcZb">https://a.co/d/cT0GcZb</a></td>
+      </tr>
+      <tr>
+        <td>Total</td>
+        <td> </td>
+        <td>$50 (per camera setup)</td>
+      </tr>
+      </table>
+      </div>
+    </div>
+</p>

@@ -201,10 +201,10 @@ pre > code {
 
 /*make code look pretty*/
 code {
-  font-family: Consolas,"courier new";
+  /*font-family: Consolas,"courier new";*/
   color: rgb(0, 0, 0);
   background-color: #dbd9e0;
-  border-radius: 25px;
+  border-radius: 15px;
   padding:2px;
   font-size: 105%;
   word-wrap: break-word;
@@ -253,6 +253,21 @@ h4 {
 
 }
 
+.lt-image-overlay{
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px; 
+  border-radius: 25px;
+
+}
+
+
+.darken {
+  background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    )
+}
 
 /*Table*/
 table {
