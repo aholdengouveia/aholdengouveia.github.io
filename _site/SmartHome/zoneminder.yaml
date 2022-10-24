@@ -1,0 +1,116 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+#make sure to update the name and namespace if you have a different one then I am using. 
+  name: zoneminder
+  namespace: smart-home
+  labels:
+    app: zoneminder
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zoneminder
+  template:
+    metadata:
+      labels:
+        app: zoneminder
+    spec:
+      containers:
+      - name: zoneminder
+        imagePullPolicy: Always
+        #This is where you put the image you're pulling from, usually you'll see this format for where the image lives this shouldn't need to be changed
+        image:       zoneminderhq/zoneminder:latest-ubuntu18.04
+
+        env:
+          - name: TZ
+          #This is where you change your timezone.  Format is usually Country/City no spaces!
+            value: America/New_York
+        ports:
+          - containerPort: 80
+        volumeMounts:
+#NOTE this these are different names then the others because this is for the config and content files.  Make sure to include config and content in the name so it's easy to remember what this is later
+        - name: zoneminder-content
+          mountPath: /content
+        - name: zoneminder-config
+          mountPath: /config
+        - name: shm
+          mountPath: /dev/shm
+      volumes:
+      - name: shm
+        emptyDir:
+          medium: Memory
+          #NOTE this is the config and content names again, not the regular names because this is part of the persistant volumns
+      - name: zoneminder-content
+        persistentVolumeClaim:
+          claimName: zoneminder-content
+      - name: zoneminder-config
+        persistentVolumeClaim:
+          claimName: zoneminder-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: zoneminder
+  namespace: smart-home
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+  selector:
+    app: zoneminder
+  type: LoadBalancer
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: zoneminder-config
+  namespace: smart-home
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 500Mi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+#NOTE this is the config name again, not the regular name because this is part of the persistant volumns
+  name: zoneminder-content
+  namespace: smart-home
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Ti 
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+   name: zoneminder-config
+   namespace: smart-home
+spec:
+   capacity:
+     storage: 500Mi
+   accessModes:
+     - ReadWriteOnce
+   hostPath:
+#NOTE:  your path IS NOT my path.  you MUST update this to be your path. You should already have a spot on the server with your kubernetes data, just put in a folder for the homeassistant configs there.
+     path: /Your-Path-HERE/kubernetes-data/zoneminder/config
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+   name: zoneminder-content
+   namespace: smart-home
+spec:
+   capacity:
+     storage: 1Ti
+   accessModes:
+     - ReadWriteOnce
+   hostPath:
+#NOTE:  your path IS NOT my path.  you MUST update this to be your path. You should already have a spot on the server with your kubernetes data, just put in a folder for the homeassistant configs there.
+     path: /Your-Path-HERE/kubernetes-data/zoneminder/content
