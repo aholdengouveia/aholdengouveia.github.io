@@ -17,7 +17,7 @@
   gtag('config', 'G-Q9SWNFD6DB');
 </script>
 
-    <title>Sed</title>
+    <title>Server Security</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
 
@@ -166,64 +166,170 @@
         <div class="col">
             <br><br>
             <!--Learning Outcomes for this topic-->
-<h3>Sed</h3>
-<!--<p>Learning outcomes:
+<h3>Server Security</h3>
+<p>Learning outcomes:
     <ul>
-        <li>Be Able to </li> 
-
+        <li>Able to Monitor users, apps, ports, traffic settings and logs</li>
+        <li>Describe server hardening steps and best practices</li>
+        <li>Able to create and edit scripts for common security concerns </li>
     </ul>
-</p>-->
+</p>
 
 <!--embed Youtube video here-->
 <div class="video-wrapper">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/YMqOocY0ovs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/s5uw5BiKehg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-<!--Download PowerPoint
+<!--Download PowerPoint-->
 <p>
-    <a href="#">Would you like to download my PowerPoint to follow along?</a>
-</p>-->
+    <a href="/LinuxAdmin/CIS245 Week 8.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
 <!--Outline Of lecture notes/powerpoint for the topic-->
 <p>
     <ul>
-        <li>What is Sed?</li>
+        <li>Server Health Monitoring</li>
             <ul>
-                <li>Sed is a stream editor</li>
-                <li>Most popular use is substitutions</li>
-                <li>Sed can support Regular Expressions (regex)</li>
-                <li>Sed is considered non-destructive, that means be default it doesn't change the original file</li>
+                <li>Allow list vs Deny list<a href="https://web.archive.org/web/20220902065934/https://www.ncsc.gov.uk/blog-post/terminology-its-not-black-and-white">Why it's not Black and White</a>)></li>
+                <li>False Positives and False Negatives</li>
+                <li> Examples of what to keep track of</li>
+                    <ul>
+                        <li><a href="https://web.archive.org/web/20221003105756/https://www.networkworld.com/article/3391362/looking-into-linux-modules.html">Subsystems</a></li>
+                        <li><a href="https://web.archive.org/web/20221012133324/https://www.linuxfoundation.org/blog/blog/classic-sysadmin-linux-101-5-commands-for-checking-memory-usage-in-linux">Memory and processes</a></li>
+                        <li><a href="https://web.archive.org/web/20220516044302/https://linuxconfig.org/how-to-check-and-monitor-cpu-utilization-on-linux">CPU</a></li>
+                        <li><a href="https://web.archive.org/web/20220607232203/https://www.networkworld.com/article/3330497/linux-commands-for-measuring-disk-activity.html">Disk usage</a></li>
+                        <li><a href="/LinuxAdmin/networking.html">Network</a></li>
+                        <li><a href="https://web.archive.org/web/20210304040243/https://www.networkworld.com/article/3263752/reviewing-logins-on-linux.html">Users</a></li>
+                    </ul>
             </ul>
-        <li>What is Sed good at?</li> 
+        <li>System Hardening</li> 
         <ul>
-            <li>Substitutions</li>
-            <li>Seeing what a file can look like without damaging the original</li>
-
+            <li>Lock down your hardware (USB booting) and BIOS password lock</li>
+            <li>Check your file system for anomalies (Missing partitions/cmds)</li>
+            <li>Check your repos/PPA, do you still need them all?</li>
+            <li>Check your installed programs/services, are they up to date? Patches? Stil required?</li>
+            <li>Check ports and protocols (SSH access)</li>
+            <li>Root login check (Do you need it enabled?)</li>
+            <li>Is your system up to date and patched?</li>
+            <li>If your system as SELinux, enable it if possible</li>
+            <li>User password rules</li>
+            <li>Log monitoring and auditing</li>
+            <li><a href="/LinuxAdmin/backups.html">Backups</a></li>
+            <li><a href="http://www.chkrootkit.org/">Check for Rootkits</a></li>
+            <li><a href="https://web.archive.org/web/20220616042218/https://linuxhint.com/linux_security_hardening_checklist/">Now with Handy Checklist!</a></li>
         </ul>
-        <li>What is Sed not so good at?</li> 
+        <li><a href="https://csrc.nist.gov/glossary/term/least_privilege">Least Privilege</a></li> 
         <ul>
-            <li>Sorting the file</li>
-            <li>Easy to understand error messages, it's also not as well documented as it could be</li>
+            <li>Policy of least privilege</li>
+                <ul>
+                    <li>What can we do to limit user access?</li>
+                    <li>What should/shouldn't we do as server admins to limit access</li>
+                </ul>
+            <li>Security policies in general</li>
+                <ul>
+                    <li>Patching,  user education, audits, password policies</li>
+                </ul>
+            <li>Security implementation</li>
+                <ul>
+                    <li>How are we enforcing our policy?</li>
+                </ul>
         </ul>
-        <li>Some examples of how to use sed as shown in the video</li>  
-            <ul>
-                <li>sed s/originalTerm/NewTerm/ filename</li>
-                <li>You can also put the results in a file if you don't want to show them on screen only using append (>>) and Redirect (>) sed s/originalTerm/NewTerm/ filename >> newFileWithChanges</li>
-                <li>sed</li>
-                <li>To have a global substitution instead of first instance only, you add the g at the end "sed s/o/0/g filename"</li>
-                <li>We can make sed print lines matching the pattern instead of substitutions by doing "sed -n '/MA/ p' filename"</li>
-                <li>We can have multiple instances of sed as well by doing something like "sed s/0/o/g filename | sed s/3/s/g"</li>
-            </ul>
-        <li>Some Sed Resources</li>
-            <ul>
-                <li><a href="https://flylib.com/books/en/4.356.1.40/1/">An older text on how to use sed, formatting has some issues on smaller screens </a></li>
-                <li><a href="https://www.grymoire.com/Unix/Sed.html">The Grymoire on Sed</a></li>
-                <li><a href="https://web.archive.org/web/20220816210438/https://www.grymoire.com/Unix/Sed.html">Backup on web archive of the sed section of the Grymoire</a></li>
-            </ul>
+        <li>IDS vs IPS</li> 
+        <ul>
+            <li>IDS</li>
+                <ul>
+                    <li>Intrusion Detection System</li>
+                    <li>Detection and Monitoring Tools</li>
+                    <li>NO action taken on their own</li>
+                    <li>Requires human intervention</li>
+                    <li><a href="https://tenor.com/view/wewew-minions-siren-lights-cute-gif-23667918">Equivalent of alarm going off if issue</a></li>
+                </ul>
+            <li>IPS</li>
+                <ul>
+                    <li>Intrusion Protection System</li>
+                    <li>Accepts or rejection of packets based on rule sets, active traffic control</li>
+                    <li>Needs updates based on new threat data</li>
+                    <li>NO humans required to run once it's setup as long as it's updated regularly</li>
+                    <li>Can do an alarm, but can also take down intruders</li>
+                </ul>
+        </ul>
+        <li>Vulnerability Scanning</li> 
+        <ul>
+            <li>Find your attack surface</li>
+            <li>Automate security audits</li>
+            <li>Help create a prioritized list of vulnerabilities</li>
+            <li>Easier to keep up to date and run quickly</li>
+        </ul>
+        <li>End Point Protections</li> 
+        <ul>
+            <li>Goal is to protect enterprise data even in the case of BYOD</li>
+            <li> Endpoint refers to the endpoint of the network, such as things outside the firewall</li>
+            <li>Client-Server model,Can be centrally managed server, or a SaaS (Software-as-a-Service) type solution</li>
+        </ul>
+        <li>Scan types in general beyond server vulnerability scanning</li> 
+        <ul>
+            <li>Realtime vs preset time scans</li>
+            <li>Signature vs behavioral/heuristic</li>
+            <li>Scan inbound/outbound traffic or both</li>
+            <li>Support and uptime requirements must also be taken into consideration when scanning</li>
+        </ul>
+        <li>Logs</li> 
+        <ul>
+            <li>We track things like Application, event, service and system logs</li>
+            <li>How long are the logs kept? And how do we do <a href="https://web.archive.org/web/20220906190311/https://www.networkworld.com/article/3218728/how-log-rotation-works-with-logrotate.html">log rotation</a></li>
+            <li>How and when do we review the logs?</li>
+            <li>Log Analysis scripts vs 3rd party tools</li>
+            <li>Log audits and <a href="/LinuxAdmin/backups.html">backups</a></li>
+            <li>Save on write only media (such CD) or mount to different network (So they'd have to hack 2 networks)</li>
+            <li>Hash log files to check for changes</li>
+            <li><a href="https://web.archive.org/web/20220510004952/https://www.networkworld.com/article/3428361/how-to-manage-logs-in-linux.html">How to check Linux logs</a></li>
+            <li>Some examples of Linux Specific logs:</li>
+                <ul>
+                    <li>/var/log/messages - generic system activity logs</li>
+                    <li>/var/log/auth.log - authentication related logs</li>
+                    <li>/var/log/boot.log - system initialization and boot related info</li>
+                    <li>/var/log/dmesg - Hardware and driver logs</li>
+                    <li>/var/log/kern/log - kernel related logs</li>
+                    <li>/var/log/faillog - failed logins</li>
+                    <li>/var/log/cron - cron job logging</li>
+                    <li>/var/log/yum.log - log of installs</li>
+                    <li>There are also logs for mail services, Apache, MySQL and more.</li>
+                </ul>
+        </ul>
+        <li>Dashboards</li> 
+        <ul>
+            <li>But what happens if we have too much information? That's where Dashboards come in.</li>
+            <li>Know what's happening in real time</li>
+            <li>Get alerts for things you specify</li>
+            <li>Get real time data visualized</li>
+            <li>Collect multiple forms of data</li>
+                <ul>
+                    <li>Pcap</li>
+                    <li>Text</li>
+                    <li>Logs</li>
+                </ul>
+            <li>Files, directories and more</li>
+            <li>Business analytics</li>
+            <li>Troubleshooting</li>
+            <li>Overall view of your server</li>
+        </ul>
+        <li>Best Practices and Checklists</li> 
+        <ul>
+            <li>Checklists are a way to make sure the agreed upon things happen the same way every time no matter who does the work.</li>
+            <li>Checklists reduce errors</li>
+            <li>How often to do checklist?</li>
+            <li>Can any be automated? (cron jobs)</li>
+            <li><a href="https://www.process.st/checklist/server-security-checklist/">Example Checklist</a></li>
+            <li><a href="https://www.nist.gov/cybersecurity">Security in general by NIST</a></li>
+            <li><a href="https://ncp.nist.gov/repository">Checklist repository by NIST</a></li>   
+        </ul>
     </ul>   
 <!--Discussions and activities for the topic-->
-<p>Suggested Activities and Exercises:
+<p>Suggested Activities and Discussion Topics:
     <ul>
-        <li>Download the sedLab File by <a href="/LinuxAdmin/labexcercises/SedLab"> right clicking Here</a>and saving your file onto your Linux machine, and then Complete the problem sets that are found on <a href="/LinuxAdmin/labexcercises/sedlab.pdf">This PDF</a> using the sedlab file you downloaded from above.  Make sure you are paying attention to file location and your paths</li>
+        <li>Login to your server and start trying to monitor the health using some common commands.  Start with the following commands: iostat, nmon, cat /proc/meminfo, mpstat, ps, pstree, tcpdump and uptime.  What are you seeing? Could you turn these into a script? How can you document both your script and the results to share with others? </li>
+        <li>Login to one of your servers and Try Installing OpenVAS.  The <a href="https://github.com/greenbone/openvas-scanner">GitHub Repo for OpenVAS</a> can be used to make the project, there is also a <a href="https://www.greenbone.net/en/testnow">Limited Trial</a> if you prefer that.</li>
+        <li>Complete the lab that is found on <a href="/LinuxAdmin/labexcercises/securitypt1.pdf">This PDF for scripting part 1</a> Make sure you are paying careful attention to the requirements.</li>
+        <li>Complete the lab that is found on <a href="/LinuxAdmin/labexcercises/securitypt2.pdf">This PDF for scripting part 2</a> Make sure you are paying careful attention to the requirements.</li>
     </ul>
 </p>
 

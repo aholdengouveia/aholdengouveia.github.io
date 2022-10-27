@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+
+\usepackage{fontawesome}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0},
+}
+
+
+\title{Scripting for Server Security Part 2}
+\author{
+        Adrianna Holden-Gouveia \\
+        Website: \url{https://aholdengouveia.name}\\ 
+        \date{\vspace{-5ex}}
+        %Email: \href{mailto:admin@aholdengouveia.name}{admin@aholdengouveia.name} \\
+        \faLinkedin{: aholdengouveia} \\
+        \faGithub {: aholdengouveia} \\
+        \faTwitter {: aholdengouveia} \\
+        }
+
+%S\date{\today}
+
+
+\begin{document}    
+
+\maketitle
+
+%\begin{abstract}
+%This is a template for Linux Administration Lab work
+%\end{abstract}
+%\tableofcontents
+
+%\section*{Objectives:}
+%\begin{enumerate}
+%    \item Objective 1
+%    \item Objective 2
+%\end{enumerate}
+\section*{Complete the following problems}
+
+\subsection*{Scripting}
+
+Please include the script, a screenshot showing it works as intended, cite all sources you used, and give a short explanation of how the script works works and why.
+
+    \begin{enumerate}
+        \item Take a snapshot of users every other hour (Use a cron job for this) to see if there is any suspicious adding/removing of users 
+        \item Write a script to backup your most important information and your logs.  Make sure to note what you consider "your most important information" and why you've decided on that.  You should have your script save to a directory you make specifically for backups.  You'll need to compress your files in some way.
+    \end{enumerate}    
+
+    \subsection*{Documentation}
+    \begin{enumerate}   
+        \item Write a document that will show how to control what daemons run on boot and how to change that.  assume your audience is technically inclined, but not an expert.
+        \item Write a one page (or less) document on how to do boot into emergency mode on each server. Include 1 paragraph executive summary on why you might want to. 
+        \item Set up a cron job to run your backup script at specific intervals (daily, weekly, and/or monthly). Document both how you set up the cron job, and make notes on why you've chosen the frequency you have.  Frequency of backup MUST include a source on why that timing is a good practice. 
+
+    \end{enumerate}
+
+
+
+\section*{Deliverables}
+\begin{enumerate}
+    \item Well commented and tested scripts including a link to your GitHub where you've uploaded them.
+    \item You should have 1 document for your CentOS machine and 1 for your other server.
+    \item  Documentation for scripts should include any changes or updates to the system needed for these scripts to run.
+    \item A short document explaining how to set up a cron job, why they are used, and any sources you used for setting them up. Make sure to include a simple sample for someone to follow
+    \item Document for the boot system and emergency boot should be focused on how to do each of those things. Audience is someone technically inclined but not an expert.  Use screenshots as well as descriptions to guide someone through how to control the daemons and emergency boot.
+    \item All Sources used should be noted at the end of each document.  
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,111 @@
+---
+title: DFIR and Backups
+layout: AdvLinux
+---
+<!--Learning Outcomes for this topic-->
+<h3>DFIR and Backups</h3>
+<p>Learning outcomes:
+    <ul>
+        <li>Able to describe and practice some Disaster planning and recovery using best practices </li>
+        <li>Be able to articulate why backups are important and the different kinds of backups</li>
+        <li>Able to describe and practice some Incident Response using best practices including post mortem</li>
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/gKm-Iay7D5I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="/LinuxAdmin/CIS 245 Week 9.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>Disaster Planning </li>
+            <ul>
+                <li><a href="https://web.archive.org/web/20210923113942/https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=904672">DLP (data loss prevention)</a></li>
+                    <ul>
+                        <li>Tools and processes to prevent data from being lost</li>
+                        <li>Can be monitoring, encryption, backups, endpoint activities and more</li>
+                    </ul>
+                <li>Compliance, Laws and regulations, GDPR</li>    
+                <li>Have a plan in place that includes business continuity and business impact analysis. Should include prioritization</li>    
+                <li>Internal recover, 3rd party support</li>
+            </ul>
+        <li>Disaster Recovery</li> 
+        <ul>
+            <li>Journaling systems</li>
+                <ul>
+                    <li>Keeps track of changes not yet committed</li>
+                    <li>System failure or power outage can be an issue with other systems, this will recover faster</li>
+                </ul>
+            <li>Atomic transactions</li>    
+            <li><a href="https://ssd.eff.org/en/module/how-delete-your-data-securely-windows">Deleting Windows files</a> vs <a href="https://ssd.eff.org/en/module/how-delete-your-data-securely-linux">Deleting files on Linux</a></li>
+        </ul>
+        <li><a href="https://csrc.nist.gov/Topics/Security-and-Privacy/security-programs-and-operations/incident-response">Incident Response</a></li> 
+        <ul>
+            <li>Verify incident happened (not just bug)</li>
+            <li>Classify incident type (DDOS, virus, rootkit, etc.) and priority level (critical? Important? Etc.</li>
+            <li>Preserve evidence</li>
+            <li>Recover</li>
+            <li>Post Mortem on incident</li>
+        </ul>
+        <li>After the Incident (Post Mortem)</li> 
+        <ul>
+            <li>High level summary of what happened</li>
+            <li>Root cause analysis</li>
+            <li>What did we do during the incident?</li>
+            <li>What was the time line of the incident?</li>
+            <li>What went well?</li>
+            <li>What didn't go well?</li>
+            <li>Focus should be on culture of learning and improvement, this is NOT a blame game</li>
+        </ul>
+        <li>Backups</li> 
+        <ul>
+            <li>Overview</li>
+                <ul>
+                    <li>Copy of our data/apps/settings/etc</li>
+                    <li>Can be local or offsite</li>
+                    <li>Can be on multiple types of hardware</li>
+                    <li>Third party services that provide backups</li>
+                    <li>Backups are forDisasters (natural and unnatural), Accidents, and Incidents </li>
+                </ul>
+            <li>Types and Guidelines</li>
+                <ul>
+                    <li>Incremental backups - only files since last backup (most frequent)</li>
+                    <li>Full backups - copy of all files (medium frequency)</li>
+                    <li>Forensic Copy (Least frequent)</li>
+                    <li>Frequency is based on company, industry, personal risk profile and what you're willing to lose</li>
+                    <li>Backing up more than just servers, config files, applications, changes, users and more</li>
+                    <li><a href="https://web.archive.org/web/20220513214734/https://www.nccoe.nist.gov/sites/default/files/legacy-files/msp-protecting-data-extended.pdf">Backup Best practices from NIST</a></li>
+                    <li><a href="https://web.archive.org/web/20220901001431/https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-209.pdf"></a>Security Guidelines for storage Infrastructure</li>
+                </ul>
+            <li>Backup auditing</li>
+                <ul>
+                    <li>Is your backup working?</li>
+                    <li>How often do you check the backup happened and works?</li>
+                        <ul>
+                            <li>Such as once a year on May 4th (Star wars days)</li>
+                        </ul>
+                    <li>Where is it stored?</li>    
+                    <li>How is it stored?</li>
+                    <li>Is it documented?</li>
+                    <li>Did we update the documentation?</li>
+                    <li>Review backup policy and what's being backed up frequently (at least once a year)</li>
+                </ul>
+        </ul>
+    </ul>   
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <li>Pick a lab you have finished and write a short report on how your lab went.  Use this <a href="https://web.archive.org/web/20220724194136/https://developers.googleblog.com/2013/05/google-api-infrastructure-outage_3.html">sample report from Google</a> as a template.</li>
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">Click here </a>
+</p>
