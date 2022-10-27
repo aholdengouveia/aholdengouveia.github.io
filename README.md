@@ -5,6 +5,10 @@ Website for Adrianna to host materials from classes she created, her sabbatical 
 
 ***Not for use in Commercial Purposes for ANY reason. Do NOT make money off my hard work.***
 
+[![License: CC BY-NC 4.0](https://licensebuttons.net/l/by-nc/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc/4.0/)
+
+
+
 ## Links
 
 - GitHub repo link for this site: https://github.com/aholdengouveia/aholdengouveia.github.io 
@@ -39,3 +43,5 @@ Website for Adrianna to host materials from classes she created, her sabbatical 
 Contributions, issues, and feature requests are welcome!
 
 Give a ⭐️ if you like this project!
+
+
