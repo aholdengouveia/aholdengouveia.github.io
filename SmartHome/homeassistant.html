@@ -1,0 +1,162 @@
+---
+title: Home Assistant
+layout: default
+---
+
+<main role="main">
+    <!--Jumbotron for the page header -->
+    <div class="jumbotron" style="background: url(/SmartHome/smarthomeimages/homeassistantheader.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+        <div class="container lt-image-overlay">
+          <h1 class="jumbotron-heading">Home Assistant</h1>
+            <p class="lead">Automate your home using Open Source projects. </p>
+            </p>
+        </div>
+    </div>  
+
+    <br><br>
+<!--Tutorial Link to the original Builder of the project-->    
+<div class="container">
+    <p>For this project we are going to be using an Open Source project called <a href="https://www.home-assistant.io/">Home Assistant</a>, there is a Docker install, pi install, and hardware you can buy from them as options.  The project is open source and privacy forward, so by default everything is done locally so you can control your own data.  
+    </p>
+</div>  
+
+<!--Rating of the project in terms of difficulty, cost, and if I recommend for beginner-->
+<div class="container"> 
+    <h3>Rating</h3>
+        <ul style="list-style: none;">
+            <li>Difficulty of Project:Easy <span class="fa-solid fa-splotch"></span>
+            </li>
+            <li>Cost: <span class="fa-solid fa-piggy-bank"></span></li>
+            <li>Recommendation skill level: Beginner<span class="fa-solid fa-hat-wizard"></span> </li>
+            <li>Time commitment: 1-2 Hours depending on setup choice <span class="fa-solid fa-clock"></span></li>
+        </ul>
+</div>
+
+<!--Skills needed for This project make sure to include links on how to get those skills-->
+<div class="container">
+    <h3>Skills and assumed supplies</h3>
+        <ul style="list-style-type:disc;">
+            <li>A <a href="/SmartHome/ServerSetup.html">Server</a></li>
+            <li>Either <a href="/SmartHome/Virtualizationsetup.html#Docker">Docker</a> or <a href="/SmartHome/Virtualizationsetup.html#Kubernetes">Kubernetes</a> on your Server</li>
+            <li>If you choose to use a Pi you'll need one of those</li>
+        </ul>  
+</div>
+
+<!--Supplies and Cost of the project-->
+<div class="container">
+    <h3>Supplies and costs </h3>
+        <ul style="list-style-type:disc;">
+            <li>If you do it on your <a href="/SmartHome/ServerSetup.html">Server</a>, Nothing!</li>
+            <li>Optional: Raspberry Pi including power cord, Ethernet cable, and SD card</li>
+            <li>Optional: Buy their hardware with this already set up</li>
+        </ul>  
+</div>
+
+<!--What I thought about as I was working on it-->
+
+<div class="container">
+    <p><h3>Home Assistant</h3>
+        Home Assistant is an open source project where you can integrate lots of devices and information into one place so you can see a ton of information about your home.  A great example is <a href="https://demo.home-assistant.io/#/lovelace/0">their Demo</a> of a fully featured home assistant setup showing things like energy distribution of a home, cameras, lighting, and even have integrated music.  One of the things that makes this project so interesting is that anyone can develop for it!  So there is a huge library of things we can add, devices we can work with, and even have the option to create our own things if we want to. 
+    </p>
+
+    <p>
+        The way home assistant functions is to have a dashboard that is the base, then we can add things to it as we want them.  So for example, if we wanted to track our energy usage in our home, we can use one of the energy integrations on the base configuration. The base configuration is what we'll be setting up here, and then I'll have some suggested easy integrations in the "Suggested Upgrades" section at the bottom of this page.  And some guides on some of the more involved upgrades such as adding in a floor plan with control for lights, cameras and fans. 
+    </p>
+    <p>
+        <div id="two">Unsure what to pick?  If you already have a Raspberry Pi try that one!  It's the preferred method in their documentation, and this runs great on a Pi.  Already have a home server? Do it on there because you don't need to buy anything new and if you love the project you can always move to a Pi later. </div>
+    </p>
+</div>
+
+<!--Install using Docker-->
+<div class="container">
+    <p><h3>How to set up Home Assistant using Docker </h3>
+        <p>
+            First we need to login to our server.  Then we can run the given Docker command from <a href="https://www.home-assistant.io/installation/odroid">the documentation</a> You'll need to scroll down to the portion that is for container installs. 
+            <div class="container">
+                <!--Don't use code tag on multi-line code chunks, makes html mad.-->
+                <pre>docker run -d 
+                    --name homeassistant 
+                    --privileged 
+                    --restart=unless-stopped 
+                    -e TZ='America/New_York'
+                    -v /PATH_TO_YOUR_CONFIG:/config 
+                    --network=host 
+                    ghcr.io/home-assistant/home-assistant:stable</pre>
+                
+                    <p>NOTE: You should change PATH portion of the config so that it matches your server, for example "/home/user/Homeassistant:/config", you should also change your time zone if you are not on the East Coast of the US.</p>
+        </div>
+                Now one thing to note, you'll see \ on the lines in the documentation, you don't type those in, those are there to indicate that the command continues even though it's on a new line. 
+        </p> 
+    </p>
+</div>
+
+<!--Install using Kubernetes-->
+<div class="container">
+    <p><h3>How to set up Home Assistant using Kubernetes </h3>
+        If you haven't already set up your namespace, I recommend you do that first.  I have a sample recipe for that <a href="/SmartHome/namespace.yaml">here</a> that will create a namespace called smart-home, you can reference <a href="/SmartHome/Virtualizationsetup.html#Kubectl">how to use kubectl</a> if you want to refresh on how to set that up.  
+        
+        Check to make sure your namespace is up by doing 
+        <pre>get namespaces</pre>
+    </p>
+    <p>
+        Next we need to setup our Yaml file for Home Assistant, a sample is <a href="/SmartHome/home-assistant.yaml">here</a>, you can use this but you MUST change the location of your storage.  I have a comment in there on where to change the yaml, and some notes about how the yaml is put together, but you have to make sure you have a path to where you want your information stored. If you update nothing else in that file, you still HAVE to update the path in BOTH places on the persistent volume areas.
+
+        <p>
+            If you need a reminder on how to use kubectl please go <a href="/SmartHome/Virtualizationsetup.html#Kubectl">check out my kubectl guide here</a> and make sure to run in the correct directory
+        </p>
+
+         <ul>
+            <li>You should navigate to your kubernetes directory first, making sure to go to the folder that has your yaml files. <pre>cd ~/kubernetes/smarthome</pre></li>
+            <li>Edit your Home Assistant yaml, you can use my <a href="/SmartHome/home-assistant.yaml">sample</a> as your base if you like. <pre>nano home-assistant.yaml</pre></li>
+            <li>Apply your yaml so that the changes will start<pre>kubectl apply -f home-assistant.yaml </pre></li>
+            <li>Check to see if your pod is up, make sure to use the correct name space!  If your's isn't smart-home make sure to change that in the command to match<pre>kubectl get pods -n smart-home</pre></li>
+            <li>Last we need to check services to see that everything is running and to get our IP address of the pod <pre>kubectl get services -n smart-home</pre></li>
+        </ul>
+            Now you're set up to start trying out Home Assistant.  NOTE: you'll be accessing your Home Assistant through a web browser, this browser needs to be on the same network as your server because we're using local addresses.
+        </p>
+    </div>
+    
+<!--Install using Raspberry Pi-->
+<div class="container">
+    <p><h3>How to set up Home Assistant using a Raspberry Pi </h3>
+    There is actually a great <a href="https://www.home-assistant.io/installation/raspberrypi">guide for installing on a Raspberry Pi</a> right in their documentation.  You'll need a Pi, power supply, SD card and an ethernet cable.  The documentation will take you through how to put the Operating System on the SD card, and then you can start up your Pi and get going.  You will need to know how to see the IP address of your Pi, this can be done <a href="https://pimylifeup.com/raspberry-pi-ip-address/">in several ways</a>, option 1 is logging into your router and checking the address of the Pi, option 2 is logging into the Pi and running <pre>hostname -I</pre>  You're likely to see the address as either <pre>192.168.X.X</pre> or <pre>10.10.X.X</pre>
+    </p>
+</div>
+
+<!--No install, just buy-->
+<div class="container">
+    <p><h3>No install, just buy</h3>
+        One option you can do if none of the above are appealing to you, is buy their hardware with home assistant pre-installed.  You do not have to, but you can if you wish.  It is still the open source version of home assistant, so nothing is changing in the code, it's just a way to get setup very quickly by spending money instead of time.  As of October 2022 they are doing <a href="https://yellow.home-assistant.io/">pre-order for home assistant Yellow</a> and there are three options; standard, kit with power supply, and Kit using Power over Ethernet (PoE).  NOTE: This kit is basically a Raspberry Pi with some fun additions like ZigBee, PoE and a nice case.  This is still Open Source, it's still using Home Assistant, and it's still community driven, what you're paying for is the convenience of having it come to you already set up and basically ready to go.
+    </p>
+</div>
+
+<!--Now let's start up the dashboard-->
+<div class="container">
+    <p><h3>How to use Home Assistant</h3>
+        First we need to open up the dashboard.  You'll need to go to the IP address of your Raspberry Pi, or container in your web browser. <pre>http://IPaddress:8123</pre><p><img src="/SmartHome/smarthomeimages/HAfirstloginforonboarding.png" class="img-fluid" alt ="image of empty homeassistant first login"></p>
+
+        and then we can pick our username and password <p><img src="/SmartHome/smarthomeimages/HAcreaterusername.png" class="img-fluid" alt ="image of  homeassistant creating username"></p>
+    </p>
+    <p>
+        Now, lucky for us the documentation for the setup process is actually pretty good!  So we can go to <a href="https://www.home-assistant.io/getting-started/onboarding/"> Onboarding</a>, and then follow the steps to get our home assistant located on the map
+        <p><img src="/SmartHome/smarthomeimages/HAgetlocation.png" class="img-fluid" alt ="image of  homeassistant getting location"></p> 
+        see if there is anything it can detect as devices it can talk to in your home, and then we are greeted with a dashboard. 
+        <p><img src="/SmartHome/smarthomeimages/HAemptydashboard.png" class="img-fluid" alt ="image of  homeassistant empty dashboard"></p>
+    </p>
+    <p>
+        <b>Congratulations! </b> You are now ready to automate your home as you like!  This is a vibrant community of people and possibilities.   You could get started by doing some home automation <a href="https://www.home-assistant.io/getting-started/automation/">like turning lights on at sunset</a> or maybe you would like to <a href="https://www.home-assistant.io/integrations/#camera">add a camera</a>, there are a huge number of <a href="https://www.home-assistant.io/examples/">examples to choose from</a>, and there is a <a href="https://community.home-assistant.io/">a forum</a> with even more choices.  <b>Have fun!</b>
+    </p>
+</div>
+<!--recommended upgrades and integrations
+<div class="container">
+    <p>
+
+        <h3>Recommended Upgrades</h3>
+        <ul>
+            <li>The first integration that I tried was a <a href="https://www.home-assistant.io/integrations/#weather">weather one</a>, you go into the settings, then into devices and services, and then at the bottom right there is a button that says add integration. When you click on that button you will be able to search what they have available, I chose the national weather service and then was able to update that with my information. Now when I go to the overview console I have the current weather. </li>
+            <li>Add in <a href="https://www.home-assistant.io/integrations/#camera">a camera</a> for your home, you can use the same ones used in the <a href="/SmartHome/CCTV.html">Zoneminder Guide</a></li>
+        </ul>
+        
+    </p>
+</div>-->
+</main>

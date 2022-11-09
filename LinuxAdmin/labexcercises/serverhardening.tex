@@ -1,0 +1,64 @@
+\documentclass[12pt]{article}
+
+\usepackage{fontawesome}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0},
+}
+
+
+\title{Server Hardening}
+\author{
+        Adrianna Holden-Gouveia \\
+        Website: \url{https://aholdengouveia.name}\\ 
+        \date{\vspace{-5ex}}
+        %Email: \href{mailto:admin@aholdengouveia.name}{admin@aholdengouveia.name} \\
+        \faLinkedin{: aholdengouveia} \\
+        \faGithub {: aholdengouveia} \\
+        \faTwitter {: aholdengouveia} \\
+        }
+
+%S\date{\today}
+
+
+\begin{document}    
+
+\maketitle
+
+%\begin{abstract}
+%This is a template for Linux Administration Lab work
+%\end{abstract}
+%\tableofcontents
+
+%\section*{Objectives:}
+%\begin{enumerate}
+%    \item Objective 1
+%    \item Objective 2
+%\end{enumerate}
+%\section*{Complete the following problems}
+ 
+%\subsection*{Please include the command, a screenshot showing it works as intended, cite all sources you used, and give a short explanation of how the command works and why.}
+    \begin{enumerate}
+        \item Download and install Lynis (https://cisofy.com/lynis/) on both your servers and run it.
+        \item Create a short report on the findings (one report for each server) and what you'll do to improve your server setup.
+        \item Write a script to monitor the health of your server using the commands from the PowerPoints on Security, DFIR and Backups as your base. Think about what info you care about, and how to make it easier for you to read or upload to your dashboard.  Data is only good if you're using it for something. 
+    \end{enumerate}
+
+
+
+\section*{Deliverables}
+\subsection*{Scripts with no documentation and no commentary will not be accepted.}
+Audience is a new intern at the company who's first set of jobs is to check the health of all our report servers here at Acme Corp
+    \begin{enumerate}
+        \item Your Lynis reports, including any changes you made to each server and why you made those changes. 
+        \item Health Monitoring Document(s)
+            \begin{enumerate}
+                \item Documentation for this should include a short text file explaining what you choose to include on your health monitor and why.
+                \item Location for where the health report is saved and instructions for how to run your script remotely.
+                \item Make sure to include information about what you picked, why you picked those commands and how they are used.
+                \item Answer the following: Are they different for each server? the same for both?  Are the running instructions any different?
+            \end{enumerate}
+    \end{enumerate}
+\end{document}
