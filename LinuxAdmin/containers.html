@@ -1,0 +1,189 @@
+---
+title: Containers
+layout: AdvLinux
+---
+<!--Learning Outcomes for this topic-->
+<h3>Containers</h3>
+<p>Learning outcomes:
+    <ul>
+        <li>Able to describe the advantages and disadvantages of containers such as Docker</li>
+        <li>Able to identify describe the reasons we might use a container and then implement one</li>
+        <li>Able to implement and use container management software such as Kubernetes (K8)</li>
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/hfAErts79I0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="/LinuxAdmin/CIS245 Week 11 and 12.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>What is a container?</li>
+            <ul>
+                <li>Virtual isolated place on your machine</li>
+                <li>Every time you use Google (Gmail, search, etc) You are using a container</li>
+                <li>Example: Think of shipping, standardized containers to ship goods makes transport easier and cheaper. In this case you don't ship the  OS & the software, you only need to ship the code and the dependencies</li>
+            </ul>
+        <li>Why use containers?</li> 
+            <ul>
+                <li>Developers will use them to know their software will run regardless of where it's sent.</li>
+                <li>Microservices (Instead of a monolithic application) break applications into small parts so many teams can easily work on pieces of a whole project and then put them together quickly</li>
+                <li>Guaranteed reproducibility because you have your container already set up to spec</li>
+                <li>Isolation, by keeping your applications separated (Database, web server, front end etc.) you can save yourself from conflicts and dependency issues</li>
+                <li>Repository gives us well maintained containers pre-made for us to use</li>
+                <li>Easily disposable and quick to boot and stop, in case something goes wrong, containers are cheap and not resource heavy to make and discard</li>
+            </ul>
+        <li>Container vs Virtual machine</li>
+            <ul>
+                <li>Containers virtualize the OS</li>
+                <li>Virtual Machines virtualize the hardware</li>
+            </ul>
+        <li>Container options and <a href="https://web.archive.org/web/20220725155332/https://www.slintel.com/tech/containerization/docker-market-share">some data</a></li>
+            <ul>
+                <li>Docker is the most popular with 81% of the market</li>
+                    <ul>
+                        <li>Currently Docker is used a lot when talking about containers in general.  Think Tissue vs Kleenex, or Band-aid vs plaster or Xerox vs Copy</li>
+                    </ul>
+                <li>Kubernetes with 13% market share</li>
+                <li>CoreOS, Apache Mesos, VMWare Tanzu and others have less then 2% market share per technology</li>
+                <li><a href="https://kubernetes.io/">Official Kubernetes Page</a></li>
+                <li><a href="https://www.docker.com/">Official Docker Page</a></li>
+                <li><a href="https://www.redhat.com/en/topics/containers/whats-a-linux-container">Red Hat on Containers</a></li>
+            </ul>
+        <li>Container image management options</li>
+            <ul>
+                <li>Container Registry is a service to hold  and distribute container images</li>
+                    <ul>
+                        <li>Can be public, private or third party</li>
+                        <li>Examples include Docker Hub, AWS container registry, Google Container Registry, or self-hosted</li>
+                    </ul>
+                <li>Container repository is a collection of related images with the same name and different tags (Providing different versions of an application)</li>
+                    <ul>
+                        <li>Example: <a href="https://hub.docker.com/">Docker Hub is one of the largest</a></li>
+                        <li>Example: <a href="https://hub.docker.com/_/python?tab=tags">Docker Hub Repository for Python Official Image</a></li>
+                        <li>Example: <a href="https://hub.docker.com/_/http">Docker Hub repository for Apache Official Image</a></li>
+                    </ul>
+            </ul>
+        <li>Docker</li>
+            <ul>
+                <li>What is Docker?</li>
+                    <ul>
+                        <li>Container Software</li>
+                        <li>A way to run applications, technically open source but moving more closed</li>
+                        <li>Everything is considered encapsulated (stay in their own area)</li>
+                        <li><a href="https://docker-curriculum.com/">Docker for Beginners</a></li>
+                    </ul>
+                <li>How to Use Docker for pre-built containers</li>
+                    <ul>
+                        <li>Install Docker on Linux box</li>
+                        <li>Run command to start container build</li>
+                        <li>Usually looks like this:</li>
+                        When you enter your command it will look like this: <img src="/SmartHome/smarthomeimages/Dockerzoneminderrun.png" class="img-fluid" alt ="image of making a docker command being run">
+                            
+                        <li>Example: <a href="https://www.aholdengouveia.name/SmartHome/Virtualizationsetup.html#Docker">More detail on Docker with examples from my Smart Home project</a></li>
+                        <li>Example: <a href="https://hackaday.com/2018/09/05/intro-to-docker-why-and-how-to-use-containers-on-any-system/">Intro to Docker from hackaday</a></li>
+                    </ul>
+                <li>Docker Engine vs Docker Desktop</li>
+                    <ul>
+                        <li>Docker Engine - Create an run pieces of docker to create containers</li>
+                        <li> Docker Desktop - GUI options  and  interacts with containers for windows people</li>
+                    </ul>
+            </ul>
+        <li>Container Management software</li>
+            <ul>
+                <li>This is when you organize, add or replace large numbers of containers.  Also referred to as container orchestration engines</li>
+                <li>Useful for scheduling functions, distributing containers among pooled resources, easy health checks, load balancing and high availability</li>
+                <li>Examples:</li>
+                    <ul>
+                        <li>Kubernetes</li>
+                        <li>Docker Swarm (Popular because it's native to docker. YAML based deployment. Doesn't do load balancing or auto-scaling by itself)</li>
+                        <li>Mesosphere (Distributed Approach. Uses multiple masters and uses Zookeeper to keep track of the cluster. Highly scalable (tens of thousands of nodes) used by Twitter, Yelp and eBay)</li>
+                        <li><a href="https://hackernoon.com/kubernetes-vs-docker-swarm-a-complete-comparison-guide-15ba3ac6f750">Kubernetes vs Docker Swarm</a></li>
+                    </ul>
+            </ul>
+        <li>Kubernetes Basics</li>
+            <ul>
+                <li>Also referred to as K8</li>
+                <li>Open source</li>
+                <li>Started by Google, Still used as it's Container as a Service (CaaS). Used and developed by them because of their production use of containers.</li>
+                <li>Runs some of the largest software services by scale. </li>
+                <li>Currently the most popular option.</li>
+                <li>YAML based deployment.</li>
+                <li><a href="https://kubernetes.io/case-studies/">Users include Google, Spotify, Bose, CapitalOne, Comcast, ebay, IBM, Pinterest, Pokemon Go, Spotify, Squarespace and more </a></li>
+                <li><a href="https://kube.academy/">Tutorials from VWare</a></li>
+                <li>Example: <a href="https://www.aholdengouveia.name/SmartHome/Virtualizationsetup.html#Kubernetes">More detail on Kubernetes with examples from my Smart Home project</a></li>
+            </ul>
+        <li>What is Kubernetes and why do we use it</li>
+            <ul>
+                <li>What is Kubernetes?</li>
+                    <ul>
+                        <li>Think of Kubernetes like a magic Robot that helps us build the boxes, so instead of building the boxes ourselves (Docker) we ask the robot to build it for us.  The Magic robot also helps us manage our little boxes. I like to call the Robot Mechi :)</li>
+                        <li><a href="https://www.cncf.io/phippy/the-childrens-illustrated-guide-to-kubernetes/">The Children's Illustrated Guide to Kubernetes</a></li>
+                    </ul>
+                <li>What is Yaml?</li>
+                    <ul>
+                        <li>Human Readable data-serialization Language</li>
+                        <li>YAML ain't Markup Language</li>
+                        <li>YAML is used to write the recipes the magic robot follows to make our boxes.</li>
+                    </ul>
+                <li>How is this different then Docker?</li>
+                    <ul>
+                        <li> If Docker allows us to build little boxes, Kubernetes is a magic robot that builds boxes based on recipes we give it instead of doing it ourselves.</li>
+                    </ul>
+                <li>Kubernetes Vocab</li>    
+                    <ul>
+                        <li>Nodes - Computer we're running Kubernetes on</li>
+                        <li> Control Plane - How we manage the boxes</li>
+                        <li>Pods - Wrapper around the box</li>
+                        <li>Namespace - A way to isolate groups, resources must be uniquely named within a namespace but not everywhere</li>
+                        <li> Think of Kubernetes like a magic robot building boxes for us using recipes (written in yaml).  The name of the ship the robot is using is the namespace, the boxes piled on the ship are the containers that have our items (servers), the pods is the wrapper around our item to protect it, and the control plane is how we can manage our little boxes on the ship as it floats</li>
+                    </ul>
+            </ul>
+        <li>Kubectl</li>
+            <ul>
+                <li>What is Kubectl</li>
+                    <ul>
+                        <li>A way to interact with the Kubernetes cluster from any computer</li>
+                        <li> Can be run on your local machine to talk to Kubernetes (Mechi) on a server elsewhere.</li>
+                        <li>Allows us to interact with the little boxes we've created</li>
+                    </ul>
+                <li>How to use it</li>
+                    <ul>
+                        <li>Install on your machine</li>
+                        <li>Create a folder on your machine and go to it, this is where your files will live</li>
+                        <li> If you haven't already made a namespace that's first, then we create the boxes in the namespace</li>
+                        <li>Then we apply the yaml files, which is like saying "Mechi please go make this box from this recipe for me, thank you."</li>
+                        <li><a href="https://www.aholdengouveia.name/SmartHome/Virtualizationsetup.html#Kubectl">More detail on Kubectl with examples from my Smart Home project</a></li>
+                    </ul>
+            </ul>
+        <li>Kubernetes Vulnerabilities</li>
+            <ul>
+                <li>Increased attack service, each container might have different vulnerabilities to exploit.</li>
+                <li>Because Kubernetes can be difficult to configure right, it's easy to leave holes</li>
+                <li>Services like Shodan make it easy to find places to attack. For example, port 2379 is indexed by Shodan, etcd which Kubernetes uses as it's cluster database listens on port 2379</li>
+                <li>Tesla exposed part of the dashboard for their main Kubernetes API to the internet without authentication  by accident</li>
+                <li>Found a bug? Report it!  Open Source and willing to update, more information on Kubernetes and Security can be found <a href="https://kubernetes.io/docs/reference/issues-security/security/">HERE</a></li>
+                <li><a href="https://kubernetes.io/docs/reference/issues-security/official-cve-feed/">Official CVE feed for Kubernetes</a></li>
+                <li>A compromised container = compromised cluster.  It's turtles all the way down</li>
+            </ul>
+    </ul>   
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <li>Run through <a href="https://docker-curriculum.com/">this tutorial</a> on one of your servers</li>
+        <li>Go through <a href="https://kubernetes.io/docs/tutorials/">this tutorial</a> for Kubernetes Basics. </li>
+        <li>Complete the lab that is found on <a href="/LinuxAdmin/labexcercises/containers.pdf">This PDF</a> Make sure you are paying careful attention to the requirements.
+        </li>  
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">Click here </a>
+</p>

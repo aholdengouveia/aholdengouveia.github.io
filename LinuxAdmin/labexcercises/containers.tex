@@ -1,0 +1,70 @@
+\documentclass[12pt]{article}
+
+\usepackage{fontawesome}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0},
+}
+
+
+\title{Containers}
+\author{
+        Adrianna Holden-Gouveia \\
+        Website: \url{https://aholdengouveia.name}\\ 
+        \date{\vspace{-5ex}}
+        %Email: \href{mailto:admin@aholdengouveia.name}{admin@aholdengouveia.name} \\
+        \faLinkedin{: aholdengouveia} \\
+        \faGithub {: aholdengouveia} \\
+        \faTwitter {: aholdengouveia} \\
+        }
+
+%S\date{\today}
+
+
+\begin{document}    
+
+\maketitle
+
+%\begin{abstract}
+%This is a template for Linux Administration Lab work
+%\end{abstract}
+%\tableofcontents
+
+%\section*{Objectives:}
+%\begin{enumerate}
+%    \item Objective 1
+%    \item Objective 2
+%\end{enumerate}
+
+
+\section*{Complete the following problems}
+
+References, a video, a PowerPoint and some notes are available at my website
+\url {https://www.aholdengouveia.name/LinuxAdmin/containers.html}
+
+\subsection*{Make sure to do all these on both servers unless otherwise noted.}
+    \begin{enumerate}
+        \item Install Docker and Kubernetes on both your servers.
+        \item Install Minikube on both your servers 
+            \subitem Tutorial: \url{https://kubernetes.io/docs/tutorials/hello-minikube/}
+        \item Install Microk8 on both servers
+            \subitem Instructions: \url{https://microk8s.io/}
+        \item Get a basic web server working using Docker \underline{OR} kubernetes on \underline{ONE} of your servers. 
+            \subitem You can grab the docker image from \url{https://hub.docker.com/_/httpd}  
+            \subitem I also have some instructions and sample yaml files available for you on my website \url{https://www.aholdengouveia.name/SmartHome/Virtualizationsetup.html}  
+            \subitem If you would prefer you can substitute another server for Apache such as Home Assistant or ZoneMinder.
+    \end{enumerate}
+
+
+
+\section*{Deliverables}
+\subsection*{Target Market is someone technically inclined but unfamiliar with virtualization. Include screenshots to walk them through the install process, as well as explanations of what you're doing and any troubleshooting that was needed.}
+\begin{enumerate}
+    \item A document on how to install Docker and Kubernetes on both servers.
+    \item A short document describing how the Minikube tutorial went, what gave you trouble (if anything) and how you fixed it. Include screenshots to show how it went and what steps you did.
+    \item A document on how to install Microk8 on both servers.
+    \item An executive summary on what containers are, pro/cons of containers, and why you think Acme corp should or shouldn't consider using them going forward.  Executive summary should be less then 1 page. 
+\end{enumerate}
+\end{document}
