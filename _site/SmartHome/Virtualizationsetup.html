@@ -366,15 +366,15 @@
             </p>
 
             <p>
-                First we need to setup a namespace.  The idea behind a namespace is that we want to name the ship that is carrying our boxes so that our magic robot knows which ship to work on.  A namespace can be called anything you want, for this demo we're going to use "Smart-Home" as our namespace. A yaml file (<a href="/SmartHome/namespace.yaml">Sample Namespace Yaml</a>) like that one can tell the robot how to name our ship and give us easy reference.  You can change the name in the yaml file, but make sure you stay consistent in your naming! You'll want to create a file on your computer (not server) that contains all the yaml files, name it "kubernetes" just to keep everything easy.
+                First we need to setup a namespace.  The idea behind a namespace is that we want to name the ship that is carrying our boxes so that our magic robot knows which ship to work on.  A namespace can be called anything you want, for this demo we're going to use "Smart-Home" as our namespace. A YAML file (<a href="/SmartHome/namespace.yaml">Sample Namespace YAML</a>) like that one can tell the robot how to name our ship and give us easy reference.  You can change the name in the YAML file, but make sure you stay consistent in your naming! You'll want to create a file on your computer (not server) that contains all the YAML files, name it "kubernetes" just to keep everything easy.
             </p>
             <p>
-                Next you'll need to create a yaml file for each box you want your robot to make for you, think of this like a recipe.  A sample yaml file for a simple web server looks like this (<a href="/SmartHome/samplerecipe.yaml">Sample Apache Recipe Yaml</a>).  You've got the first part talking about the deployment instructions (making the box), and then you have the service instructions (which is telling the box how to be balanced on our ship with the other boxes and how we will communicate over which ports).
+                Next you'll need to create a YAML file for each box you want your robot to make for you, think of this like a recipe.  A sample YAML file for a simple web server looks like this (<a href="/SmartHome/samplerecipe.yaml">Sample Apache Recipe YAML</a>).  You've got the first part talking about the deployment instructions (making the box), and then you have the service instructions (which is telling the box how to be balanced on our ship with the other boxes and how we will communicate over which ports).
             </p>
             <p>
                 So!  Let's get started. 
                     <ul>
-                        <li>First we create our folders on our system for kubernetes and then another folder inside that folder for our smarthome yaml files, and then move ourselves to that folder. 
+                        <li>First we create our folders on our system for kubernetes and then another folder inside that folder for our smarthome YAML files, and then move ourselves to that folder. 
                             <div class="container"> <pre>mkdir ~/kuburnetes</pre>
                                 <img src="/SmartHome/smarthomeimages/mkdirkubernetes.png" class="img-fluid" alt ="image of making a folder called kubernetes">
                             </div>
@@ -383,17 +383,17 @@
                             </div>
                             <div class="container"> <pre>cd ~/kuburnetes/smart-home</pre> 
                                 <img src="/SmartHome/smarthomeimages/cdkubernetessmarthome.png" class="img-fluid" alt ="image of  cd into the smart home folder"></div></li>
-                        <li>Next we need to create a namespace, you can copy the file however you like to your server (<a href="/SmartHome/namespace.yaml">Sample Namespace Yaml</a> ) One option is to use "touch" and then paste the code in to the text file using an editor like nano
+                        <li>Next we need to create a namespace, you can copy the file however you like to your server (<a href="/SmartHome/namespace.yaml">Sample Namespace YAML</a> ) One option is to use "touch" and then paste the code in to the text file using an editor like nano
                             <div class="container"><pre>touch ~/kubernetes/smart-home/namespace.yaml</pre>
                                 <img src="/SmartHome/smarthomeimages/touchnamespace.png" class="img-fluid" alt ="image of creating namespace file"></li>
-                        <li>Then we create the yaml file with the recipe for our robot (<a href="/SmartHome/samplerecipe.yaml">Sample Recipe Yaml</a>)<pre>touch ~/kubernetes/smart-home/samplerecipe.yaml</pre>
-                            <img src="/SmartHome/smarthomeimages/touchsamplerecipe.png" class="img-fluid" alt ="image of creating sample recipe"><img src="/SmartHome/smarthomeimages/nanonamespace.png" class="img-fluid" alt ="image of nano into namespace"><img src="/SmartHome/smarthomeimages/nanonamespacediting.png" class="img-fluid" alt ="image of editing yaml"> </div>
+                        <li>Then we create the YAML file with the recipe for our robot (<a href="/SmartHome/samplerecipe.yaml">Sample Recipe YAML</a>)<pre>touch ~/kubernetes/smart-home/samplerecipe.yaml</pre>
+                            <img src="/SmartHome/smarthomeimages/touchsamplerecipe.png" class="img-fluid" alt ="image of creating sample recipe"><img src="/SmartHome/smarthomeimages/nanonamespace.png" class="img-fluid" alt ="image of nano into namespace"><img src="/SmartHome/smarthomeimages/nanonamespacediting.png" class="img-fluid" alt ="image of editing YAML"> </div>
                             <div class="container">The ^ symbol means control, so CTRL and X held down at the same time will trigger an exit and it will ask you to save, you can say "y" for yes on both questions to get back to the command prompt</div></li>
-                        <li>Then we send the instructions to the robot to create our ship (namespace) (apply namespace yaml)<pre>kubectl apply -f ~/kubernetes/smart-home/namespace.yaml</pre>
+                        <li>Then we send the instructions to the robot to create our ship (namespace) (apply namespace YAML)<pre>kubectl apply -f ~/kubernetes/smart-home/namespace.yaml</pre>
                             <img src="/SmartHome/smarthomeimages/applenamespace.png" class="img-fluid" alt ="image of making a applying namespace.yaml"></li>
                         <li>Now we can check that worked by asking Mechi our magic robot to tell us all the ships (namespaces) they are in charge of (get namespaces) NOTE: I'm on my home server so there are lots of namespaces, look at the last one to see the good ship smart-home<pre>kubectl get namespace</pre>
                             <img src="/SmartHome/smarthomeimages/getnamespace.png" class="img-fluid" alt ="image of making sure namespace was created"></li>
-                        <li>Then we send the instructions to the robot to create our new box (apply container yaml)<pre>kubectl apply -f ~/kubernetes/smart-home/samplerecipe.yaml</pre>
+                        <li>Then we send the instructions to the robot to create our new box (apply container YAML)<pre>kubectl apply -f ~/kubernetes/smart-home/samplerecipe.yaml</pre>
                             <img src="/SmartHome/smarthomeimages/kubectlapplysamplerecipe.png" class="img-fluid" alt ="image of applying samplerecipe"></li>
                         <li>Let's make sure the box was put together (get pods)<pre>kubectl get pods -n smart-home</pre>
                             <img src="/SmartHome/smarthomeimages/kubectlgetpodssmarhome.png" class="img-fluid" alt ="image getting pods in smart-home namespace"></li>

@@ -223,15 +223,15 @@
         get namespaces
     </p>
     <p>
-        Next we need to setup our Yaml file for zoneminder, a sample is <a href="/SmartHome/zoneminder.yaml">here</a>, you can use this but you MUST change the location of your storage.  I have a comment in there on where to change the yaml, and some notes about how the yaml is put together, but you have to make sure you have a path to where you want your information stored. If you update nothing else in that file, you still HAVE to update the path in BOTH places on the persistent volume areas.
+        Next we need to setup our YAML file for zoneminder, a sample is <a href="/SmartHome/zoneminder.yaml">here</a>, you can use this but you MUST change the location of your storage.  I have a comment in there on where to change the YAML, and some notes about how the YAML is put together, but you have to make sure you have a path to where you want your information stored. If you update nothing else in that file, you still HAVE to update the path in BOTH places on the persistent volume areas.
 
         <p>
             If you need a reminder on how to use kubectl please go <a href="/SmartHome/Virtualizationsetup.html#Kubectl">check out my kubectl guide here</a> and make sure to run in the correct directory
         </p>
     <ul>
-        <li>You should navigate to your kubernetes directory first, making sure to go to the folder that has your yaml files. <pre>cd ~/kubernetes/smarthome</pre></li>
-        <li>Edit your zoneminder yaml, you can use my <a href="/SmartHome/zoneminder.yaml">sample</a> as your base if you like. <pre>nano zoneminder.yaml</pre></li>
-        <li>Apply your yaml so that the changes will start<pre>kubectl apply -f zoneminder.yaml </pre></li>
+        <li>You should navigate to your kubernetes directory first, making sure to go to the folder that has your YAML files. <pre>cd ~/kubernetes/smarthome</pre></li>
+        <li>Edit your zoneminder YAML, you can use my <a href="/SmartHome/zoneminder.yaml">sample</a> as your base if you like. <pre>nano zoneminder.yaml</pre></li>
+        <li>Apply your YAML so that the changes will start<pre>kubectl apply -f zoneminder.yaml </pre></li>
         <li>Check to see if your pod is up, make sure to use the correct name space!  If your's isn't smart-home make sure to change that in the command to match<pre>kubectl get pods -n smart-home</pre></li>
         <li>Last we need to check services to see that everything is running and to get our IP address of the pod <pre>kubectl get services -n smart-home</pre></li>
     </ul>
