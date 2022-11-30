@@ -1,0 +1,203 @@
+---
+title: Power Over Ethernet (PoE)
+layout: default
+---
+
+<main role="main">
+    <!--Jumbotron for the page header -->
+    <div class="jumbotron" style="background: url(/SmartHome/smarthomeimages/PoEbackgroundoffiberwiresDarkerversion.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+        <div class="container image-overlay">
+          <h1 class="jumbotron-heading">Power Over Ethernet (PoE)</h1>
+            <p class="lead">Power over ethernet or PoE is a way of being able to get power to devices with fewer wires. </p>
+            </p>
+        </div>
+    </div>  
+
+    <br><br>
+<!--Tutorial Link to the original Builder of the project-->    
+<div class="container">
+    <p>The references I found most helpful:
+        <ul>
+            <li><a href="https://dongknows.com/power-over-ethernet-poe-explained/
+                ">Power over Ethernet (PoE) Explained Why It's Your Wi-Fi's Best Friend</a></li>
+                <li><a href="https://stevessmarthomeguide.com/power-over-ethernet/">Power Over Ethernet (POE)- (Beginners Guide) </a></li>
+        </ul>
+             
+
+            
+    </p>
+</div>  
+
+<!--Rating of the project in terms of difficulty, cost, and if I recommend for beginner-->
+<div class="container"> 
+    <h3>Rating</h3>
+        <ul style="list-style: none;">
+            <li>Difficulty of Project:Easy <span class="fa-solid fa-splotch"></span>
+            </li>
+            <li>Cost: <span class="fa-solid fa-piggy-bank"></span><span class="fa-solid fa-piggy-bank"></span><span class="fa-solid fa-piggy-bank"></span></li>
+            <li>Recommendation skill level: Beginner<span class="fa-solid fa-hat-wizard"></span> </li>
+            <li>Time commitment: 1 hour+ depending on home wiring setup and age of home <span class="fa-solid fa-clock"></span></li>
+        </ul>
+</div>
+
+<!--Skills needed for This project make sure to include links on how to get those skills-->
+<div class="container">
+    <h3>Skills and assumed supplies</h3>
+        <ul style="list-style-type:disc;">
+            <li>Ability to plug in Cat5 or Cat6 cables</li>
+            <li>Recommendation: Build your own Cat5 or Cat 6 cables</li>
+        </ul>  
+</div>
+
+<!--Supplies and Cost of the project
+<div class="container">
+    <h3>Supplies and costs </h3>
+        <ul style="list-style-type:disc;">
+            <li>Supply 1</li>
+            <li>Supply 2</li>
+            <li>Supply 3</li>
+        </ul>  
+</div>-->
+
+<!--How the project went and what I thought about as I was working on it-->
+<div class="container">
+    <h3>Power over Ethernet (PoE) in general and why it's cool</h3>
+        <p>
+            Power over ethernet or PoE is a way of being able to get power to devices with fewer wires. So let's say for example you have a device such as a camera, the camera is going to need to get internet so that you can get your camera feed on your server, and it's going to need to get power. Normally you're used to devices that actually have either a wired connection and a wired plug, or a wireless connection and a wired plug. So a lot of the IoT devices that have just a single wire coming from them are actually the power cord and it runs on wi-fi. 
+        </p>
+        <p>
+            Now Wi-Fi is great, and it is really convenient to not have to plug things in, however Wi-Fi has some serious limitations. Doing everything over Wi-Fi means that your Wi-Fi network ends up getting overloaded in some cases. Or if you happen to live in a home or place that has either a lot of other Wi-Fi networks they can interfere with each other, or if you live in a home that has thicker walls or a fireplace or brick that can interfere with your Wi-Fi signals. When you end up having a wired connection you're able to not only get much faster speeds but you're also able to get a much more reliable connection. So rather than having to have a wired connection for the internet and power, what we can do with power over ethernet is actually send the data and the power over the same cord.</p>
+        <p> 
+            Now the cord that we're going to be using for this is thankfully and conveniently a CAT5 or a cat6 cable, which you're used to seeing as a regular plug-in ethernet style cable. So like the cables that you plug into your router or your switch or any machines that you already have in your home, it's actually the exact same cables, they are not only very easy to find and buy, they are also very easy to make your own. 
+        </p>
+        <p>
+            One of the things that's really nice about power over ethernet is you can actually do a lot of the wiring pretty safely yourself, because you are setting up the wires in the same way that you would for making regular cat 5 or cat 6 cables you don't have to do anything different there, the difference is in the hardware that you're plugging it into but you don't need to worry about a lot of the dangers that you would have to deal with if you were trying to for example run electric wires and hook it up to power in your home. The device ends up having some protections so that it's a little bit safer.
+    </p>
+</div>
+
+<!--active vs Passive PoE-->
+<div class="container">
+    <h3>Active vs Passive PoE </h3>
+    <p>
+        <h3>Active</h3>
+        <p>
+            Active PoE ends up performing a power check so it basically says to the device "hey, do you have the ability to get power?"", NOTE: there are some different standards for active PoE and if you go down the route of using active PoE then you now not only have to pay attention to is this PoE capable but does this match the standard that I have. So for example if you wanted to buy an IP camera and you wanted active PoE, you would have to look for an IP camera that is PoE capable and matches the standard that you're using whether that's af, at, or bt. The different standards are from the IEEE and that ends up getting into a more complicated thing that you would have to look for which you are obviously more than welcome to do but that does make it a little bit more complex of a setup. If you do use active PoE you will need to match the PoE standards to the device and all equipment of that standard of any vendor should work and that device should be fine. For example if your camera uses IEEE 802.3af you need to make sure your switch supports standard IEE 802.3af.  You don't have to know exactly what that standard means, but you do need to match standards between the PoE enabled device and the PoE switch/injector.  The standards are in relation to the amount of power, a handy chart can be found <a href="https://web.archive.org/web/20210417222933/https://www.servethehome.com/key-differences-of-poe-vs-poe-vs-poe-switches/handy-sth-power-over-ethernet-poe-type-reference-chart/">Here</a> if you would like to learn more.</p>
+        <h3>Passive</h3>
+        <p>
+            Passive PoE means that it does not use one of the standards but it is going to send electricity to the devices, now one thing to keep in mind is passive PoE can use injectors in the switch, which means you do have to pay attention to how much voltage is actually going. So let's say for example you have passive PoE, that means that every single device that you plug into your switch must be PoE capable or it will burn out the device. It also tends to use a lower amount of power getting sent out, now this means you do need to pay a little bit of attention to what you're plugging in, however only a little bit because most of the devices that you are likely to want to plug in should be just fine with the amount of power that you're getting, so if you are let's say wanting to wire an entire set of IP cameras then it would make sense to use passive because you don't need a lot of power for all of those cameras and it's always going to be sending it and you can just make sure that you buy cameras that are PoE capable. The other bonus to passive PoE is it does tend to be cheaper than active, so you can get a passive PoE switch for under $100 but if you get an active PoE switch then you're probably going to need to spend more money to make sure that it's actually good hardware and software on the switch so that you don't accidentally burn out all of your devices because it got confused on the amount of power that can get sent.
+        </p>
+       
+        <h3>What to pick?</h3>
+        <p>
+            Depending on your setup and trust levels and costs.  Passive means you'll need to pay attention to what you're plugging in, so if you have a large household that may not follow instructions, active might be right for you because that can take care of "whoops didn't realize that I can't use this wall socket. Bye Bye device/money".  However if you aren't worried about that, and are concerned about the active options not being smart enough you can choose passive.   </p>
+        <h5>What I did</h5>
+        <p>
+            For my house we ended up choosing an active PoE.  There was a sale on the device and I was able to find the information on the standards used for both the switch and my cameras.  I will need to make sure going forward I ONLY buy PoE devices that match that standard, but it does make it easy to plug-and-play.</p>
+    </p>
+</div>
+<!--PoE switch vs Injector-->
+<div class="container">
+    <h3>PoE Switch vs PoE Injector</h3>
+    <p>
+        <h3>PoE Switch</h3>
+        <p>
+            A PoE switch literally looks like a regular network switch that you probably already have in your home it's going to be sort of a black box looking thing with a lot of ethernet ports on it, the only difference is that those ports can send electricity. 
+        </p>
+        <p>
+            If you have an active PoE switch that means that it's going to be saying basically "Hey device! do you need power? No? Well then I won't send you power. Hey device, do you need power? Okay, then I'll send you power." If something goes wrong or for example the device gets confused and sends power when it shouldn't, you can very easily burn out your equipment. The easiest way around this is to buy a switch that is always sending power and then whatever you plug into that switch you just have to know that power is going to be sent and you don't plug in anything that is not PoE capable. At this particular moment in time there are a lot of devices that are PoE capable, and they will all be labeled PoE capable, do not just plug random things into this switch that will not go well. Make sure you are checking what you are plugging in. Now one of the bonuses to doing a PoE switch in this style is we can actually bypass needing to do a vlan. so a VLAN or a virtual local area network is a way that we are able to corral our devices so that we don't have to worry about them phoning home or sending data elsewhere. A PoE switch will actually allow us to have not only power going to the devices that we want but also isolate them from the rest of our network. Now all of the devices and systems that we're going to be using for all of the guides that I'm writing are open source and not devices that are going to send information places you don't want it. However that is not always going to be true for every device out there, so having a separate switch for all of your IoT needs can help protect from any of the devices sending data without your express permission.
+        </p>
+        <h3>Managed vs Unmanaged switches</h3>
+        <p>
+            One thing you may see as you are looking at switches is managed and unmanaged.  This is how much you need to do maintenance on your switch, and how many options you have. A managed switch gives more options on network controls, where the data is going. Unmanaged switches are plug-and-play style devices, you can plug your PoE enabled device in and you're done.  Managed means you will need to configure and then manage your network.  Now if this is your only switch in  your home? I could see where you may want that control.  However if this is only being used for PoE devices and everything else in your home runs on another switch having unmanaged may be right for you.
+            <div id="two">What to pick?  If you are excited about having control over the minutia of your network and everything you read about sounds awesome, get managed.  If you want to plug in and forget it's there, unmanaged might be for you.  Because I have other switches and this is only being used for PoE devices (such as my CCTV system) and I am lazy, I picked unmanaged active for my PoE switch.</div>
+        </p>
+        <h3>PoE Injector</h3>
+        <p>
+            A PoE injector actually allows you to plug into a wall socket and you can turn a regular switch or router into a PoE device so that you can send information and data and power in a smaller way.</p>
+        <h3>What to pick?</h3>
+        <p>
+            So if you know you're going to have a lot of devices using PoE seriously consider getting the switch and just running some wires in your home however if you live in an apartment and cannot run wires or you think you're only going to have a couple of devices then the injector might be a good choice for you.  </p>
+        <h5>What I did</h5>
+        <p>
+            I picked a switch because I have already wired my home with Cat5. I have plans for lots of PoE devices and switches are more cost effective for lots of devices.</p>
+    </p>
+</div>
+<!--How to do this-->
+<div class="container">
+    <h3>How to do this</h3>
+        <p>
+        Now the next bit of good news about PoE is that it is incredibly easy to set up once you've bought your hardware. 
+        </p>
+        <p>
+            So for example I bought <a href="https://a.co/d/iTQeqKj">this switch</a>, it is an active unmanaged PoE switch. I chose an active unmanaged PoE switch because I know that I'm going to be putting quite a few IoT devices in my home, and in fact at least five of those ports are going to go to cameras anyway because I have to have one camera for each of my dogs and then I would like to have some cameras for the wildlife outside.  I wanted unmanaged because this is an additional switch in my home, not my only switch, and this switch will only be used for PoE IoT devices, I don't need to be able to control the data flow since it won't matter if the cameras can see the data from other cameras since they are are all on a protected area of my network anyway.  I bought an active one because it was on sale for around the same price as passive, I don't have to worry about the power calculation because I know both my devices and the switch use the same standard, and now that I have it all future devices can be bought to match that standard as well. 
+        </p> 
+        <p>
+            Now after we have our PoE switch and we have our cables, you literally just have to plug them into each other, so you plug the switch into the wall, make sure that it's getting power, and it has an Ethernet cable coming in. Then you plug your ethernet cable from your modem or other switch style device into this switch and then you're done. It is very easy once you have decided on what you're going to be getting, it's the picking of what you want that's the most challenging part. Now, there's a lot more complications that you can absolutely add to this if you would like to, you can start going to look at active managed PoE switches, you can get very fancy with your home networking setup if you want to have more of it around the house. You can start with having PoE injectors in different places if you can't wire your house, or you have a couple weird places that you would like to put things, or you know you don't want a whole switch with lots of ports.  It's really up to you and what's best for your situation. 
+        </p>
+        <p>
+            PoE is a great way to be able to get power places that was really hard to get power before, without needing to pull in an electrician and mess with any of the wiring in your home, and it's also a way for you to have less wires overall because each device is only going to need one wire instead of two.  And now that you have PoE setup it can be great for not only Cameras and IoT style devices, but you can even use it to put more wireless routers around your home so that you can get a better wireless signal in all the places. 
+        </p>
+</div>
+<!--Recommendations I would have for future people-->
+<div class="container">
+    <p>
+
+        <h3>Recommended Upgrades and ways to save money</h3>
+        <ul>
+            <li>Make your own Cables!</li>
+                <ul>
+                    <li><a href="https://matt.might.net/articles/how-to-make-your-own-cat-5-ethernet-cable/">How to make your own cables</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=UFlqNQsjYCs">Video: How to make a Cat5</a></li>
+                    
+                </ul>
+            <li>Run your own wires</li>
+            <ul>
+                <li><a href="https://lifehacker.com/how-to-wire-your-house-with-cat5-or-cat6-ethernet-cable-480020760">How to run your own wires in your home</a></li>
+                <li><a href="https://lazyadmin.nl/home-network/home-ethernet-wiring/">How to setup a home Network</a></li>
+            </ul>
+        </ul>
+    </p>
+</div>
+<h3>Cost breakdown with the supplies I used</h3>
+<p>
+    <div class="container">
+    NOTE:  NO affiliate links of any kind are used. There will be a lot of extra supplies for making more cables, the box and connectors are enough to literally wire a whole house with CAT5 and still have leftovers, and if you get a nicer crimper they last a long time. Pro tip: Don't cheap out on the $5 crimper, it's tempting I know, but it's not worth the hassle.
+    </div>
+
+<div class="container">    
+<div style="overflow-x:auto;">
+    <table>
+      <tr>
+        <th>Supply Name </th>
+        <th>Cost</th>
+        <th>Weblink</th>
+      </tr>
+      <tr>
+        <td>PoE Switch</td>
+        <td>$90</td>
+        <td><a href="https://a.co/d/iTQeqKj">https://a.co/d/iTQeqKj</a></td>
+      </tr>
+      <tr>
+        <td>Box of Cable</td>
+        <td>$70</td>
+        <td><a href="https://a.co/d/bozp9ZI">https://a.co/d/bozp9ZIv</a></td>
+      </tr>
+      <tr>
+        <td>Pack of 100 RJ-45 connectors</td>
+        <td>$14</td>
+        <td><a href="https://a.co/d/6ddtrKQ">https://a.co/d/6ddtrKQ</a></td>
+      </tr>
+      <tr>
+        <td>Crimper</td>
+        <td>$24</td>
+        <td><a href="https://a.co/d/4GgXfEh">https://a.co/d/4GgXfEh</a></td>
+      </tr>
+      <tr>
+        <td>Total (there will be a LOT of extra cabling supplies!)</td>
+        <td> </td>
+        <td>$198 </td>
+      </tr>
+      </table>
+      </div>
+    </div>
+</p>
