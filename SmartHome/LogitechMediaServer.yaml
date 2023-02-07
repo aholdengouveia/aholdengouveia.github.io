@@ -1,0 +1,172 @@
+apiVersion: apps/v1
+kind: Deployment
+#make sure to update the name and namespace if you have a different one then I am using. 
+metadata:
+  name: logitechmediaserver
+  namespace: smart-home
+  labels:
+    app: logitechmediaserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: logitechmediaserver
+  template:
+    metadata:
+      labels:
+        app: logitechmediaserver
+    spec:
+      containers:
+      - name: logitechmediaserver
+        imagePullPolicy: Always
+#This is where you put the image you're pulling from, usually you'll see this format for where the image lives
+        image:         lmscommunity/logitechmediaserver
+        env:
+          - name: TZ
+#This is where you change your timezone.  Format is usually Country/City no spaces!
+            value: America/New_York
+        ports:
+          - containerPort: 9000
+        volumeMounts:
+        #NOTE this is a different name then the others because this is for the configureation files.  Make sure to include config in the name so it's easy to remember what this is later
+        - name: logitechmediaserver-music
+          mountPath: /music
+        - name: logitechmediaserver-config
+          mountPath: /config
+        - name: logitechmediaserver-playlist
+          mountPath: /playlist
+        - name: shm
+          mountPath: /dev/shm
+      volumes:
+      - name: shm
+        emptyDir:
+          medium: Memory
+      - name: logitechmediaserver-config
+        persistentVolumeClaim:
+          claimName: logitechmediaserver-config
+      - name: logitechmediaserver-music
+        persistentVolumeClaim:
+          claimName: logitechmediaserver-music
+      - name: logitechmediaserver-playlist
+        persistentVolumeClaim:
+          claimName: logitechmediaserver-playlist
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: logitechmediaserver
+  namespace: smart-home
+spec:
+  ports:
+  #must use these ports to start, must have names b/c multi ports
+    - name: webinterface
+      port: 9000
+      targetPort: 9000
+      protocol: TCP
+    - name: port2
+      port: 9090
+      targetPort: 9090
+      protocol: TCP
+    - name: controlchannel 
+      port: 3483
+      targetPort: 3483
+      protocol: TCP
+    - name: streamingold
+      port: 3483
+      targetPort: 3483
+      protocol: UDP
+  selector:
+    app: logitechmediaserver
+  type: LoadBalancer
+---
+#persistant volume claim for configs
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+#NOTE this is the config name again, not the regular name because this is part of the persistant volumns
+  name: logitechmediaserver-config
+  namespace: smart-home
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 500Mi
+---
+#persistant volume info for configs
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+#NOTE this is the config name again, not the regular name because this is part of the persistant volumns
+   name: logitechmediaserver-config
+   namespace: smart-home
+spec:
+   capacity:
+     storage: 500Mi
+   accessModes:
+     - ReadWriteMany
+   hostPath:
+   #NOTE:  your path IS NOT my path.  you MUST update this to be your path. You should already have a spot on the server with your kubernetes data, just put in a folder for the homeassistant configs there. 
+     path: /YOUR_PATH/logitechmediaserver/config
+
+---
+#persistant volume claim for music, this should be for your local music,  does not like cloud or non local
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+#NOTE this is the music name again, not the regular name because this is part of the persistant volumns
+  name: logitechmediaserver-music
+  namespace: smart-home
+spec:
+  accessModes:
+    - ReadOnlyMany
+  resources:
+    requests:
+      storage: 500Mi
+---
+#persistant volume of music on local computer, no cloud no network storage LMS no likey.  Just have it point to the HD with your music attached to the computer with this system
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+#NOTE this is the music name again, not the regular name because this is part of the persistant volumns
+   name: logitechmediaserver-music
+   namespace: smart-home
+spec:
+   capacity:
+     storage: 500Mi
+   accessModes:
+     - ReadOnlyMany
+   hostPath:
+   #NOTE:  your path IS NOT my path.  you MUST update this to be your path. You should already have a spot on the server with your kubernetes data, just put in a folder for the homeassistant configs there. 
+     path: /YOUR_PATH_TO_MUSIC/
+---
+#persistant volume claim for playlists data
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+#NOTE this is the playlist name again, not the regular name because this is part of the persistant volumns
+  name: logitechmediaserver-playlist
+  namespace: smart-home
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 500Mi
+---
+#persistant volume info for playlists includes where the data is stored. 
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+#NOTE this is the playlist name again, not the regular name because this is part of the persistant volumns
+   name: logitechmediaserver-playlist
+   namespace: smart-home
+spec:
+   capacity:
+     storage: 500Mi
+   accessModes:
+     - ReadWriteMany
+   hostPath:
+   #NOTE:  your path IS NOT my path.  you MUST update this to be your path. You should already have a spot on the server with your kubernetes data, just put in a folder for the homeassistant configs there. 
+     path: /YOUR_PATH/logitechmediaserver/playlist
+
