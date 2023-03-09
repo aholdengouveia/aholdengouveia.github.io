@@ -1,0 +1,37 @@
+alias: Notify when sensor is offline
+description: Notify when sensor is offline
+trigger:
+  - platform: state
+    entity_id:
+      - sensor.basement_humidity
+      - sensor.basement_pressure
+      - sensor.basement_temperature
+    to: unavailable
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+  - platform: state
+    entity_id:
+      - sensor.basement_humidity
+      - sensor.basement_pressure
+      - sensor.basement_temperature
+    to: unknown
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+  - platform: state
+    entity_id:
+      - sensor.ikea_air_sensor_downstairs_vindriktning_pm2_5
+      - sensor.tasmota
+      - sensor.ikea_air_sensor_upstairs_vindriktning_pm2_5
+    to: unavailable
+condition: []
+action:
+  - device_id: XXXXXXXXXXXXXXXXXXXXXXXXX
+    domain: mobile_app
+    type: notify
+    message: Sensor Is offline
+    title: Sensor Is offline
+mode: single
