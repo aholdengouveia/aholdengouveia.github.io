@@ -1,0 +1,115 @@
+---
+title: Octoprint
+layout: default
+---
+
+<main role="main">
+    <!--Jumbotron for the page header -->
+    <div class="jumbotron" style="background: url(/SmartHome/smarthomeimages/octopus-hacker.png) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+        <div class="container image-overlay">
+          <h1 class="jumbotron-heading">Octoprint</h1>
+            <p class="lead"></p>
+            </p>
+        </div>
+    </div>  
+
+    <br><br>
+
+
+<!--Rating of the project in terms of difficulty, cost, and if I recommend for beginner-->
+<div class="container"> 
+    <h3>Rating</h3>
+        <ul style="list-style: none;">
+            <li>Difficulty of Project:Easy <span class="fa-solid fa-splotch"></span> </li>
+            <li>Cost: <span class="fa-solid fa-piggy-bank"></span><span class="fa-solid fa-piggy-bank"></li>
+            <li>Recommendation skill level: Beginner<span class="fa-solid fa-hat-wizard"></span></li>
+            <li>Time commitment: 1 or less <span class="fa-solid fa-clock"></span></li>
+            <li>As of 2022 the biggest issue is likely supply chain shortages and having trouble getting a Pi at a reasonable price, so there are other options I will include.</li>
+        </ul>
+</div>
+
+<!--Skills needed for This project make sure to include links on how to get those skills-->
+<div class="container">
+    <h3>Skills and assumed supplies</h3>
+        <ul style="list-style-type:disc;">
+            <li>3d Printer</li>
+            <li>Desktop or laptop Computer with administrative access</li>
+        </ul>  
+</div>
+
+<!--Supplies and Cost of the project-->
+<div class="container">
+    <h3>Supplies</h3>
+        <ul style="list-style-type:disc;">
+            <li>Raspberry Pi</li>
+            <li>USB to connect the Pi to the printer</li>
+            <li>Power Supply for the Pi</li>
+            <li>SD card for the Pi</li>
+            <li>Recommended: Camera</li>
+            <li>Optional: cases for the Pi and camera</li>
+        </ul>  
+</div>
+
+<!--How the project went and what I thought about as I was working on it-->
+<div class="container">
+    <h3>3D printers!</h3>
+    <p>
+        You may already have a 3D printer that you like, or maybe you are considering getting one and would like to attach Octoprint.  There is a wide variety of printers out there now, at a wide variety of prices.  I have a Creality Ender 3 Pro.  The reasons I chose this printer, first and foremost was cost, If you wait for a sale which is pretty frequent, you can get an Ender 3 for around $180USD, which is a lot of money, but is on the low end for printers.  Another reason this was chosen was because it's upgradeable, it was easy to put together, and it's considered a "hobbyist" printer, there are a lot of them out in the world, and a lot of people have done a bunch of modifications, documented them in different ways, and shared a lot on how to make this printer work. I will say it wasn't an easy, open the box, now it works experience, but it wasn't that bad, I put it together in about an hour, and it gave a lot of insight into how the printer works which is great for customization and repairs. Which brings us to the next reason I picked this one, 3D printing is still pretty finicky, you're VERY likely to have to fiddle with your machine a lot. It's not as bad as when 3D printing first came out! But it's not always straightforward and printing accidents happen to everyone. 
+    </p>
+    <p>
+        There are some upgrades I would recommend if you are thinking about getting a printer, or have one already and want to modify it.  First and in my opinion the most important is auto bed leveling. There are a number of different options out there, but having the ability to make sure the print will stick to the bed is really important. It can be very frustrating to have part of the print stick and part not and either have a failed print because it comes off the bed, or because it had an issue later in the print. If you have a Bowden tube, I recommend upgrading that to a nicer one, same with the gear shaft, going to an all metal feeder for the filament is a nice upgrade for reliability. 
+    </p>
+    <p>
+        Filament, is another thing you'll need to consider.  I like PLA because it's pretty easy to print with, seems to work reliability and I don't have to worry about it too much.  There are SO many different filaments on the market, but some need extra work for printing that you should be aware of.  For example, some seem to  soak up water even while printing which can leave your print looking like a mess, some need very specific temperature ranges for the extruder or bed, or both!  And this is only FDM printers, we aren't even talking about resin here. 
+    </p>
+    <p>
+        TLDR: Want a Printer?
+        <ul>
+            <li>Article: <a href="https://www.tomshardware.com/best-picks/best-3d-printers">Tom's Hardware on printer comparisons</a></li>
+            <li>Article: <a href="https://www.makersmuse.com/3dprinters">Maker's Muse on which 3D they like the best and why</a></li>
+            <li>YouTube Playlist: <a href="https://youtube.com/playlist?list=PLDJMid0lOOYnkcFhz6rfQ6Uj8x7meNJJx">3D printing Basics from Thomas Sanladerer</a></li>
+            <li>Video: <a href="https://youtu.be/4cj6-z-O1UI">Where to find 3D models</a></li>
+        </ul>
+    </p>
+</div>
+
+<!--How the project went and what I thought about as I was working on it-->
+<div class="container">
+    <h3><a href="https://octoprint.org/">Octoprint!</a></h3>
+    <p>
+        So now you've got your printer home, setup, and you're printing things.  But you really wish your printer was smarter, could be controlled from other places in your home and want to be able to check the prints without leaving the comfort of your chair/couch/floor.  Octoprint is the thing for you!  Octoprint will allow you to control the printer from anywhere on your home network, there are a bunch of plugins to help you customize it, there is a camera for taking photos, timelapses and checking your print, it's got an adorable mascot.  You know you want it.
+    </p>
+    <p>
+        This was BY FAR the easiest thing I have set up all year.  Literally, far and away the smoothest setup, best documentation, and ease of use I have seen for open source projects. <a href="https://docs.octoprint.org/en/master/">The Documentation</a> was clear, well written, easy to follow, there was troubleshooting and FAQ guides, none of which were needed for me, but I LOVE that they were there.  The installation guide is on their <a href="https://octoprint.org/download/">Downloads page</a> and is really straightforward. 
+    </p>
+    <p>
+        I happen to have a Raspberry Pi at home that I used.  I was able to flash Octoprint onto an SD card following their instructions, pop the card into the Pi, and it booted right away, and I was able to follow the configuration instructions.  Even the warnings were useful!  You'll get a warning to change the default Pi login right away, you should listen to that and do it. 
+    </p>
+    <p>
+        But, what if you don't have a Raspberry Pi laying around?  Well, good news! There are other options.  You could take the <a href="/SmartHome/ServerSetup.html">Server you made</a>, and then use the Docker install from the instructions on <a href="https://hub.docker.com/r/octoprint/octoprint">Docker home page for Octoprint</a>.  There is an option for installing on an older windows machine <a href="https://community.octoprint.org/t/setting-up-octoprint-on-windows/383">at this community page</a> so you could do that, or go to <a href="https://github.com/jneilliii/OctoPrint-WindowsInstaller">this GitHub page</a> for a Windows installer wizard. Or maybe you have an older android phone laying around?  <a href="https://github.com/feelfreelinux/octo4a">Here is a way to put Octoprint on your old Android phone</a>, which doesn't even need the extra steps of root access.  
+    </p>
+    <p>
+        Normally on my projects I will list the supplies used and cost breakdown.  For this one, because of the supply shortages for Raspberry Pi (among other things) I don't know what will be reasonable for others to buy or what you might have on hand.  I would NOT recommend paying the exorbitant prices that I have seen around, a Raspberry Pi 4 was supposed to be $35 USD, but as of 2023 I could not find one anywhere for that price.  There are some substitute Pi Options, <a href="https://youtu.be/uJvCVw1yONQ">Linus Tech Tips has a breakdown video here of some options</a>, but unfortunately none are quite a perfect substitute and all seem to cost more money then a pi.  And if you are doing something like an old phone you may be able to set this up for free or nearly free. So instead I will recommend you consider what you have at home, what you could trade a friend for, or what your comfort level is buying used devices.
+    </p>
+</div>
+
+<!--recommendations I would have for future people-->
+<div class="container">
+    <p>
+        <h3>Recommended Upgrades</h3>
+        <ul>
+            <li>Add in a camera!  I got <a href="https://a.co/d/5TwEhji">this one from amazon</a> which is a 4 pack for $15, and also a <a href="https://a.co/d/fO6pxh1">pack of camera ribbons from Amazon</a> so that I could have the camera without worrying about things getting stuck.</li>
+            <li>Set up a timelapse!</li> 
+        </ul>
+<p>
+    For the timelapse, I set mine up with the change on Z so it will look like this:  <p><img src="/SmartHome/smarthomeimages/octoprintTimelapseSettings.jpg" class="img-fluid" alt ="Octoprint timelapse settings"></p> Which will produce a timelapses like these: 
+    <p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/xb13dmnXnPY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </p>
+    
+    <p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/0AKduQL9D5U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </p>
+</p>
+    </p>
+</div>
