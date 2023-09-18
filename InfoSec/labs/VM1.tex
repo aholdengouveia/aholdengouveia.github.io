@@ -1,0 +1,75 @@
+\documentclass[12pt]{article}
+
+\usepackage{fontawesome}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0},
+}
+
+
+\title{Virtual Machines Introduction}
+\author{
+        Adrianna Holden-Gouveia \\
+        Website: \url{https://aholdengouveia.name}\\ 
+        \date{\vspace{-5ex}}
+        %Email: \href{mailto:admin@aholdengouveia.name}{admin@aholdengouveia.name} \\
+        \faLinkedin{: aholdengouveia} \\
+        \faGithub {: aholdengouveia} \\
+        \faTwitter {: aholdengouveia} \\
+        }
+
+%S\date{\today}
+
+
+\begin{document}    
+
+\maketitle
+
+%\begin{abstract}
+%This is a template for Linux Administration Lab work
+%\end{abstract}
+%\tableofcontents
+
+\section*{Objectives:}
+\begin{enumerate}
+    \item Learn how to create Virtual Machines
+\end{enumerate}
+\section*{Complete the following problems}
+
+%References, a video, a PowerPoint and some notes are available at my website
+%\url {https://www.aholdengouveia.name}
+\begin{enumerate}
+    \item Download and install a virtual machine software such as VirtualBox \url {https://www.virtualbox.org/}
+    \item Go to  \url{http://www.linuxmint.com/download.php} and download Mint  any desktop environment is fine.
+    \item Go to \url{http://www.kali.org/downloads/}   and download Kali.
+    \item Open your Virtual Machine software, create virtual machines and install both Mint and Kali.
+    \item Once you have made your new virtual machine and powered it double click on the "Install Mint" icon.  You will need to make a username/password. Do NOT lose! If it's gone it's gone and you will need to re-install the whole machine.
+    \item To install Kali go to \url{https://www.kali.org/docs/installation/} and follow the installation procedure.  There are also instructions for putting it on a thumb drive and doing a persistent boot.  If you don't know what persistent boot is or why you'd want this on a portable drive just install to your virtual machine software.
+    \item You will need screenshots showing you logged in for each virtual machine, showing you can pull up a terminal on each virtual machine,and the properties of each virtual machine.
+    \item If you get an error during the Kali install during the packages and network mirror. Continue the install without the repository or network mirror, once you've finished the install edit your sources /etc/apt/sources.list and add the line "deb http://http.kali.org/kali kali-rolling main contrib non-free"  
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+\section*{Deliverables}
+\subsection*{Please make sure each requested screenshot is in your single document or PDF, individual screenshots are not accepted.  Also, make sure your screenshots are clearly showing what's requested, not just your whole monitor}
+    \begin{enumerate}
+        \item Screenshot of Mint logged in
+        \item Screenshot of Kali logged in as root
+        \item Screenshot of Mint Command window (or terminal)
+        \item Screenshot of Kali Command window (or terminal)
+        \item Open the properties on each virtual machine by right-clicking on the Virtual Machine and going to settings, take a screenshot of each one. I'm specifically looking for the HD to be pointed to auto-detect not the ISO
+
+
+    \end{enumerate}
+
+
+\end{document}
