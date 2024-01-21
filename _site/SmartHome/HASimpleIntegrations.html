@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/images/WomanComputerSilouette.png">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9SWNFD6DB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Q9SWNFD6DB');
+</script>
+
+    <title>Home Assistant integrations, Automations and HACS</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/carousel.css" rel="stylesheet">
+    <link href="/css/stylesheet.css" rel="stylesheet">
+    <link href="/fontawesome-free-6.1.1-web/css/all.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <header>
+
+
+
+      <!-- Why are you looking at my website code?  You might need a hobby.  
+      
+      Come take a class with me! I promise to keep you busy
+    -->
+
+
+
+<!--Nav bar area at the top of the page -->
+    
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #2c365e;">
+  <a class="navbar-brand" href="/index.html">Welcome!</a>
+ <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+   <span class="navbar-toggler-icon"></span>
+ </button>
+       
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <ul class="navbar-nav mr-auto">
+<!--Social Media Menu section of NavBar-->
+      <li class="nav-item dropdown">
+       <a class="nav-link dropdown-toggle" href="/socials.html" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Socials
+       </a>
+       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+         <a class="dropdown-item" href="https://www.youtube.com/channel/UCebdI1gT84U7PBtJFUTrIQA">YouTube</a>
+         <a class="dropdown-item" href="https://github.com/aholdengouveia">GitHub </a>
+         <a class="dropdown-item" href="https://www.thingiverse.com/aholdengouveia/designs">Thingiverse</a>
+         <a class="dropdown-item" href="https://twitter.com/aholdengouveia">Twitter</a>
+         <a class="dropdown-item" rel="me" href="https://fosstodon.org/@aholdengouveia">Mastodon</a>
+         <a class="dropdown-item" href="https://www.linkedin.com/in/aholdengouveia">LinkedIn</a>
+         <a class="dropdown-item" href="https://g.dev/aholdengouveia">Google Developer</a>
+        </div>
+     </li>
+
+<!--Classes menu section of NavBar-->
+     <li class="nav-item dropdown">
+       <a class="nav-link dropdown-toggle" href="/classes.html" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Classes
+       </a>
+       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+         <a class="dropdown-item" href="/introlinux.html">Introduction to Linux</a>
+         <a class="dropdown-item" href="/introdata.html">Introduction to Data</a>
+         <a class="dropdown-item" href="/introinfosec.html">Introduction to Security</a>
+         <!-- <a class="dropdown-item" href="/introit.html">Introduction to IT</a>
+         <a class="dropdown-item" href="/intropython.html">Introduction to Python</a>
+         -->
+         <a class="dropdown-item" href="/AdvSec.html">Advanced Security</a>
+         <a class="dropdown-item" href="/advlinux.html">Linux Administration</a>
+        </div>
+     </li>
+
+     <!--Technical Jobs Section of NavBar-->
+<li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Tech Jobs
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item" href="/techjobs.html">How to Get a job</a>
+        <!--<a class="dropdown-item" href="#">Tips to succeed at your job</a>
+        <a class="dropdown-item" href="#">Documentation</a>
+        -->
+      </div>
+    </li>
+<!--Other things I think are Important to learn-->
+   <!-- <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Other tech stuff
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item" href="#">Shellscripting</a>
+        <a class="dropdown-item" href="#">Linux Power Tools</a>
+        <a class="dropdown-item" href="#">Google-Fu</a>
+      </div>
+    </li> -->
+
+<!--Home Automation Section of NavBar-->
+  <li class="nav-item active">
+    <a class="nav-link" href="/SmartHome/smarthomewelcome.html">Smart Home Project <span class="sr-only">(current)</span></a>
+  </li>
+
+
+<!--About Me Section of NavBar-->
+    <li class="nav-item active">
+      <a class="nav-link" href="/cv.html">About Me <span class="sr-only">(current)</span></a>
+    </li>
+<!--Search Bar Section of NavBar-->
+         </ul>
+         <form class="form-inline mt-2 mt-md-0">
+           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+         </form>
+       </div>
+     </nav>
+   </header>
+
+
+    <main role="main">
+    <!--Jumbotron for the page header -->
+    <div class="jumbotron" style="background: url(/images/bot-simple.png) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+        <div class="container image-overlay">
+          <h1 class="jumbotron-heading">HACS,simple integrations and automations</h1>
+            <p class="lead">Home Assistant simple integrations and automations, and using the community store</p>
+            </p>
+        </div>
+    </div>  
+
+    <br><br>
+
+<!--Rating of the project in terms of difficulty, cost, and if I recommend for beginner-->
+<div class="container"> 
+    <h3>Rating</h3>
+        <ul style="list-style: none;">
+            <li>Difficulty of Project:Easy/Intermediate <span class="fa-solid fa-splotch"></span> - <span class="fa-solid fa-splotch"></span> <span class="fa-solid fa-splotch"></span>
+            </li>
+            <li>Cost: Free!</li>
+            <li>Recommendation skill level: Beginner for Home Assistant<span class="fa-solid fa-hat-wizard"></span> </li>
+            <li>Time commitment: 1 hour <span class="fa-solid fa-clock"></span></li>
+        </ul>
+</div>
+
+<!--Skills needed for This project make sure to include links on how to get those skills-->
+<div class="container">
+    <h3>Skills and assumed supplies</h3>
+        <ul style="list-style-type:disc;">
+            <li>Desktop or laptop computer with administrative access</li>
+            <li><a href="/SmartHome/homeassistant.html">Home Assistant</a> on a server or a Raspberry Pi</li>
+        </ul>  
+</div>
+
+<!--Why automate-->
+<div class="container">
+    <h3>Why use integrations and automations</h3>
+    <p></p>
+</div>
+
+
+
+
+<!--HACS-->
+<div class="container">
+<h3><a style="padding-top: 60px; margin-top: -40px;" id="HACS">Home Assistant Integration using Home Assistant Community Store (HACS)</a></h3>
+    <p>
+        <ul>
+            <li>This example is going to be how I installed the integration for the Logitech Music Server into my Home Assistant using HACS</li>
+            <li>Start home assistant by going to the web portal <pre>http://IPADDRESS:8123</pre></li>
+            <li>Make sure you have HACS installed, if you don't follow <a href="https://peyanski.com/how-to-install-home-assistant-community-store-hacs/">a tutorial to install the Home Assistant Community Store(HACS)</a> I have a container of Home Assistant installed so my process might look different.  It also changes ALOT potentially between versions, so it's worth going through the latest video on how to do this.</li>
+            <li>Go to the HACS section of your home assistant and click on "Explore and get repositories." Find and download the repository called "Music Assistant" <p><img src="/SmartHome/smarthomeimages/HACShowtoaddrepoformusicassistant.png" class="img-fluid" alt ="HACS how to add repo for music assistant"></p></li>
+            <li>Restart your Home Assistant by going to the HACS menu on the left, as shown here: <p><img src="/SmartHome/smarthomeimages/HACSpendingrebootafterrepoinstall.png" class="img-fluid" alt ="HACS pending reboot"></p></li>
+            <li>Then you'll click on the text that says "navigate" which will take you to the Developer Tools page, and you'll hit "Restart" as show here: <p><img src="/SmartHome/smarthomeimages/HACSrestartafteraddingrepo.png" class="img-fluid" alt ="HACS how to restart"></p></li>
+        </div>
+
+
+<!--Automation adding-->
+
+<div class="container">
+    <p>
+        <h4><a style="padding-top: 60px; margin-top: -40px;" id="integrationadding">How to add to Home Assistant</a></h4>
+        We are going to go through how to do a basic automation in Home Assistant.  I'll be using the example from the Ikea Air Quality Sensor. 
+    </p>
+    <p>
+        So what we can actually do is add an integration of the Tasmota as our example.
+        
+        <ul>
+            <li>Start home assistant by going to the web portal <pre>http://IPADDRESS:8123</pre></li>
+            <li>The "Settings" option is on the left menu, you may have to scroll for it, which should bring you to a page that looks like this: <p><img src="/SmartHome/smarthomeimages/settingsoptionsinHA.png" class="img-fluid" alt ="Settings page of Home Assistant"></p></li>
+            <li>Then you'll click on "Devices and Services" to get to a page that will allow you to add integrations.  The button will look something like this:<p><img src="/SmartHome/smarthomeimages/devicesanadserviceshomeassistant.png" class="img-fluid" alt ="devices and services page of Home Assistant"></p> You'll notice I started a search, so you can search for integrations that way, or you can use the large blue button that says "Add Integration" in the lower right corner.  I did the search because my Home Assistant already has a lot of information on there, and you might not and I didn't want the screenshot to get confusing.  </li>
+            <li>Now you can click the button and search for your integration of choice, once you hit the button you'll see a menu that looks like this: <p><img src="/SmartHome/smarthomeimages/addintegrationhomeassistant.png" class="img-fluid" alt ="add integrations options page of Home Assistant"></p></li>
+            <li>Now you can search for your integration of choice!  The example below will be for the Tasmota integration</li>
+        </ul>
+        
+        Home assistant "Settings--> Integrations-->Add Integration" and Search for Tasmota <p><img src="/SmartHome/smarthomeimages/addtasmotaintegrationHA.png" class="img-fluid" alt ="Adding Tasmota to the Home Assistant integrations"></p>   After we have this discovered we can choose what to do next, for example, we could add it to our Center section of our home automation. This is what I ended up choosing to do, because I wanted to have a lot of sensors of different kinds all around my house and the outside of my house and I would like them to be all together and set up.  One of the really interesting things about the Tasmota integration is that this is used for a lot of sensors, such as the <a href="/SmartHome/airquality.html">Ikea Air Quality Sensor Hack</a>, but this can actually discover other Tasmota firmware if you have more in your house automatically which is pretty cool.
+    </p> 
+    <h4><a style="padding-top: 60px; margin-top: -40px;" id="automation">How to Automate things</a></h4>
+    <p>
+        Now that this is all here we can get to the actual automation portion if that's something that you're interested in. One of the things that I ended up trying out was the exact same automation that was shown in his video, which was sending a warning as soon as the air quality dropped into the yellow zone. To do this you'll open your Home Assistant and go to "Settings-->Automations" and then hit the blue button on the lower right that says "Add automation" <p><img src="/SmartHome/smarthomeimages/addautomationsHA.png" class="img-fluid" alt ="Adding a new automation on Home Assistant"></p>        Choose the "Empty Automation" or "Create New Automation" option and then you can start!  
+    </p>
+    
+  
+    <p>
+        The GUI options can be a bit confusing, but let's take the example of notification when the device isn't working.  Our basic idea is we want a notification when the device state changes from working to not working.  Think of it like a notification on your phone when a light is changing from on to off.
+        <ul>
+            <li>Now that you have started your automation, you should be looking at a screen like this: <p><img src="/SmartHome/smarthomeimages/blankautomationhomeassistant.png" class="img-fluid" alt ="new automation choosing a trigger"></p></li>
+            <li>First we want to choose "Add Trigger" at the top of the three options, Then "State" from the drop down which is activated when you click on the "Add Trigger" button, which will look like this: <p><img src="/SmartHome/smarthomeimages/triggerofastateinHA.jpg" class="img-fluid" alt ="new automation choosing a trigger"></p></li>
+            <li>Once you've done that, you should see a page that looks like this:<p><img src="/SmartHome/smarthomeimages/blankautomationtriggerhomeassistant.png" class="img-fluid" alt ="Adding a new automation on Home Assistant blank trigger"></p> </li>
+            <li>The "entity" is the device we are talking about.  This is like saying, when a thing happens I want to know, in this case the thing is the state of the device being unavailable. Then we'll say when it's unavailable we want something to happen.  If you have the Home Assistant app installed you can even have it notify your phone if you want.  The "entities" that you have are going to be things you already have on your home assistant, such as smart light bulbs, or <a href="/SmartHome/octoprint.html">Octoprint</a>, or <a href="/SmartHome/airquality.html">Ikea Air Quality Sensor</a>, or even some cameras, but you are likely to have different options then I do.  You can pick one that shows up under the drop down menu to work with.</li>
+        </ul>
+        <p> 
+            If you instead wanted to try doing this using YAML instead of the GUI you could!   To get to the YAML option, click on the three dots on the upper right side next to the "New Automation." <p><img src="/SmartHome/smarthomeimages/newautomationinYAMLforHA.jpg" class="img-fluid" alt ="Adding a new automation on Home Assistant"></p>
+        </p>
+        
+        For example, I have sensors I installed in my basement, and I want to know if they (or my air quality sensors upstairs) go offline, but because my internet can be flaky I only want to know if they are offline for at least 5 minutes, not just whenever they drop connection for a second or two. The final GUI for that looks like this <p><img src="/SmartHome/smarthomeimages/HAautomatationforsensorsoffline.png" class="img-fluid" alt ="GUI automation for sensors offline"></p> and the final <a href="/SmartHome/automationsample.yaml">YAML looks like this</a>.
+    </p>
+    </p>
+</div>
+
+
+
+
+
+   
+
+        <!-- FOOTER -->
+      <!--  <footer class="container">
+         
+          <p>&copy; 2022 &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        </footer>
+        -->
+         <footer class="footer">
+          <div class="container">
+            <p class="float-left"style="font-size:30%;">
+              <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a> <br>
+              This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">CC Attribution-NonCommercial 4.0 International License</a>
+            </p>
+            <span class="text-muted text-center">
+              Contact me: <a href="mailto:admin@aholdengouveia.name">Email</a>
+             <!-- <a href="#">Email</a>-->
+              <a href="/cv.html">About me </a>
+              
+            
+              <p class="float-right"><a href="#">Back to top</a></p>
+            </span>
+          </div>
+        </footer>
+        
+  </main>
+
+  <!-- Bootstrap core JavaScript
+       ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+    integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+    crossorigin="anonymous"></script>
+  <!-- Always remember to call the above files first before calling the bootstrap.min.js file -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+    integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+    crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/images/WomanComputerSilouette.png">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9SWNFD6DB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Q9SWNFD6DB');
+</script>
+
+    <title>Database keys, Normalization and vocab</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/carousel.css" rel="stylesheet">
+    <link href="/css/stylesheet.css" rel="stylesheet">
+    <link href="/fontawesome-free-6.1.1-web/css/all.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <header>
+
+
+
+      <!-- Why are you looking at my website code?  You might need a hobby.  
+      
+      Come take a class with me! I promise to keep you busy
+    -->
+
+
+
+<!--Nav bar area at the top of the page -->
+    
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #2c365e;">
+  <a class="navbar-brand" href="/index.html">Welcome!</a>
+ <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+   <span class="navbar-toggler-icon"></span>
+ </button>
+       
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <ul class="navbar-nav mr-auto">
+<!--Social Media Menu section of NavBar-->
+      <li class="nav-item dropdown">
+       <a class="nav-link dropdown-toggle" href="/socials.html" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Socials
+       </a>
+       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+         <a class="dropdown-item" href="https://www.youtube.com/channel/UCebdI1gT84U7PBtJFUTrIQA">YouTube</a>
+         <a class="dropdown-item" href="https://github.com/aholdengouveia">GitHub </a>
+         <a class="dropdown-item" href="https://www.thingiverse.com/aholdengouveia/designs">Thingiverse</a>
+         <a class="dropdown-item" href="https://twitter.com/aholdengouveia">Twitter</a>
+         <a class="dropdown-item" rel="me" href="https://fosstodon.org/@aholdengouveia">Mastodon</a>
+         <a class="dropdown-item" href="https://www.linkedin.com/in/aholdengouveia">LinkedIn</a>
+         <a class="dropdown-item" href="https://g.dev/aholdengouveia">Google Developer</a>
+        </div>
+     </li>
+
+<!--Classes menu section of NavBar-->
+     <li class="nav-item dropdown">
+       <a class="nav-link dropdown-toggle" href="/classes.html" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Classes
+       </a>
+       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+         <a class="dropdown-item" href="/introlinux.html">Introduction to Linux</a>
+         <a class="dropdown-item" href="/introdata.html">Introduction to Data</a>
+         <a class="dropdown-item" href="/introinfosec.html">Introduction to Security</a>
+         <!-- <a class="dropdown-item" href="/introit.html">Introduction to IT</a>
+         <a class="dropdown-item" href="/intropython.html">Introduction to Python</a>
+         -->
+         <a class="dropdown-item" href="/AdvSec.html">Advanced Security</a>
+         <a class="dropdown-item" href="/advlinux.html">Linux Administration</a>
+        </div>
+     </li>
+
+     <!--Technical Jobs Section of NavBar-->
+<li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Tech Jobs
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item" href="/techjobs.html">How to Get a job</a>
+        <!--<a class="dropdown-item" href="#">Tips to succeed at your job</a>
+        <a class="dropdown-item" href="#">Documentation</a>
+        -->
+      </div>
+    </li>
+<!--Other things I think are Important to learn-->
+   <!-- <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Other tech stuff
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item" href="#">Shellscripting</a>
+        <a class="dropdown-item" href="#">Linux Power Tools</a>
+        <a class="dropdown-item" href="#">Google-Fu</a>
+      </div>
+    </li> -->
+
+<!--Home Automation Section of NavBar-->
+  <li class="nav-item active">
+    <a class="nav-link" href="/SmartHome/smarthomewelcome.html">Smart Home Project <span class="sr-only">(current)</span></a>
+  </li>
+
+
+<!--About Me Section of NavBar-->
+    <li class="nav-item active">
+      <a class="nav-link" href="/cv.html">About Me <span class="sr-only">(current)</span></a>
+    </li>
+<!--Search Bar Section of NavBar-->
+         </ul>
+         <form class="form-inline mt-2 mt-md-0">
+           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+         </form>
+       </div>
+     </nav>
+   </header>
+
+
+    <!-- Sidebar for the course by topic/week-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4 col-md-3">
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand"><a href="/introdata.html">Overview</a>
+                    </li>
+                    <li><a href="/IntroData/introtodata.html">Intro to Data</a></li>
+                    <li><a href="/IntroData/dataforeveryone.html">Data for Everyone</a></li>
+                    <li><a href="/IntroData/dataintegrity.html">Data Integrity</a></li>
+                    <li><a href="/IntroData/introdatabases.html">Intro to Databases</a></li>
+                    <li><a href="/IntroData/databasekeysandvocab.html">Database Vocab</a></li>
+                    <li><a href="/IntroData/introsql.html">Intro to SQL</a></li>
+ <!--
+                  <li>
+                        <a href="#">Topic 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Topic 3</a>
+                    </li>
+                    <li>
+                        <a href="#">Topic 4</a> 
+                    </li>
+                    <li>
+                        <a href="#">Topic 5</a> 
+                    </li>
+                    
+                    <li>
+                        <a href="#">Topic 6</a>
+                    </li>    
+                    -->  
+                    <li>
+                        <a href="/IntroData/Resources.html">Resources</a>
+                    </li>  
+                </ul>
+            </div>
+        </div>
+        <!--Main content of the page will fill in here-->
+        <div class="col">
+            <br><br>
+            <!--Learning Outcomes for this topic-->
+<h3>Database keys, Normalization and vocab</h3>
+<p>Learning outcomes:
+    <ul>
+        <li>Define terms used in databases such as rows, columns, relation, key</li>
+        <li>Describe the process of normalization</li>
+        <li>List the advantages and disadvantages of normalizing a database</li>
+        <li>Differentiate primary keys form foreign keys</li>
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/vdSnZ0I2ETs?si=1ZRTCju2c5WYVTMI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="CIS 113 - Week 5.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>Normalization</li>
+        <ul>
+            <li>What is Normalization</li>
+                <ul>
+                    <li>Data formatted the same</li>
+                    <li>Organizing the data</li>
+                    <li>Think of functionality not attractiveness of data</li>
+                    <li>Also can be the process of creating the relationship between tables</li>
+                    <li>It's the process of creating or fixing the rules about the database to ensure they are being followed</li>
+                    <li>Will likely take your data and create multiple tables to organize it</li>
+                    <li>Normalization may also reference "Normal Forms" to indicate how well the database has been normalized (note: anything beyond 4NF is unlikely outside academia)</li>
+                    <li><a href="https://web.archive.org/web/20231127094938/https://www.databasestar.com/database-normalization/">Step by step process with examples</a></li>
+                </ul>
+            <li>Why normalization is important</li>
+                <ul>
+                    <li>Database will be more efficient including queries that are run</li>
+                    <li>Makes it easier to reduce duplicate and incorrectly entered information</li>
+                    <li>Makes the database smaller because it helps data to be in one place only</li>
+                    <li>Makes sure the data is updated everywhere it needs to be</li>
+                </ul>
+            <li>Normalization Levels Example</li>
+                <ul>
+                    <li>To get to 1NF: single value per field</li>
+                        <ul>
+                            <li>Example: Library book with 2 authors, you can't have both in the author field, so you'd need another deal with the second author in another way because you can't have more than 1 value in the field</li>
+                        </ul>
+                    <li>To get to 2NF, you must have already completed 1NF, remove duplicate data and also setup a candidate  key</li>
+                        <ul>
+                            <li>Example: If the data with the library books includes location of the book we would split out the location key to another table to ensure it's consistent</li>
+                        </ul>
+                    <li><a href="https://en.wikipedia.org/wiki/Database_normalization">Wikipedia actually has a nice article and table for illustrating this!</a></li>
+                </ul>
+            <li>Example: Authors</li>
+                <ul>
+                    <li>Book authors :</li>
+                        <ul>
+                            <li>JRR Tolkien</li>
+                            <li>J.R.R. Tolkien</li>
+                            <li>JRRTolkein</li>
+                            <li>Tolkien, JRR</li>
+                            <li>Tolkien, J.R.R.</li>
+                        </ul>
+                    <li>Pennames?</li>
+                    <li>Multiple Authors?</li>
+                    <li>How can we split the data about books out to be normalized?</li>
+                    <li>What other data besides Author do you think could get split out?</li>
+                </ul>
+        </ul>
+        <li><a href="https://web.archive.org/web/20231004072344/https://www.techopedia.com/definition/5547/primary-key">Primary Keys</a></li>
+            <ul>
+                <li>Identifier</li>
+                <li>Used to be Numeric only</li>
+                <li>Unique</li>
+                <li>NOT data (i.e not social security numbers)</li>
+                <li>Microsoft refers to primary keys as ID</li>
+                <li>Modern trend has been to make Primary keys guid instead of numeric to make parallelism easier</li>
+                    <ul>
+                        <li>Example of a guid: e2bd848b-3472-49ab-8836-9ff21aaf8c56</li>
+                            <li>Used to make sure if multiple systems are entering in data they don't use the same key</li>
+                            <li>Won't create chokepoint the way incremental key generation might</li>
+                    </ul>
+            </ul>
+        <li><a href="https://web.archive.org/web/20230605103131/https://www.techopedia.com/definition/7272/foreign-key">Foreign keys</a></li>
+            <ul>
+                <li>Also called functionally dependent keys</li>
+                <li>Abbreviated FD</li>
+                <li>Point to table with the data</li>
+                <li>Always point to a primary key</li>
+                <li>In other words is a way to link data between tables in your database</li>
+                <li>Some databases call both foreign key AND primary key the ID (<--BADBAD)</li>
+            </ul>
+        <li>Example:</li>
+            <ul>
+                <li>One table with books, that has author name</li>
+                <li>Normalize that table to make it easier to use (take one column and split into its own table)</li>
+                <li>Also helps data integrity because then you have author name in one place that is called to rather than authors everywhere with different layouts</li>
+                <li>Two tables, one with the books, one with the authors</li>
+                <li>The way to connect them together is the book table has a foreign key to the author table primary key</li>
+            </ul>
+        <li><a href="https://web.archive.org/web/20240118203819/https://www.geeksforgeeks.org/entity-in-dbms/">Entity</a></li>
+            <ul>
+                <li>Each table needs the data for one entity</li>
+                <li>Every entity has attributes (each book has information saved about it such as Authors and Titles)</li>
+                <li>Each table needs the data for one entity (such as authors or Genres)</li>
+                <li>Basic way to split up the data</li>
+                <li>Example: Entity is a book, attributes are author, publisher and title</li>
+            </ul>
+        <li>Entity relationship table</li>
+            <ul>
+                <li>Shows how entities are connected by the foreign key to primary key link</li>
+                <li>Diagram of the stuff in the database</li>
+                <li>If you say book is connected to the author, you're giving a map of the database</li>
+                <li>ER Diagram is the first thing we look at to see the data we have and how it's connected</li>
+                    <ul>
+                        <li>ER is Entity Relationship</li>
+                    </ul>
+                <li>Abstract map of the database</li>
+                    <ul>
+                        <li>What data you have</li>
+                        <li>What tables you have</li>
+                        <li>How they are linked together</li>
+                    </ul>
+                <li><a href="https://web.archive.org/web/20240118203918/https://opentextbc.ca/dbdesign01/chapter/chapter-8-entity-relationship-model/">Entity Relationship Data model Chapter 8 Database Design</a></li>    
+            </ul>
+    </ul>   
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <li>Discussion: Data Normalization.  In pairs or groups please discuss the following questions:</li>
+            <ul>
+                <li>What is the primary objective of data normalization in database management?</li>
+                <li>How does normalization contribute to the efficiency and reliability of databases?</li>
+                <li>How does data normalization influence the design of a database?</li>
+            </ul>
+        <li>Activity: Create an entity relationship diagram for your data. (Some examples of data you could use are books, movies, video games, or a collectable such as Magic The Gathering)</li>
+        <li>Activity:Take the data (Some examples of data you could use are books, movies, video games, or a collectable such as Magic The Gathering) you have collected about your chosen topic and normalize it to be 2NF</li>
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">Click here </a>
+</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+   
+
+        <!-- FOOTER -->
+      <!--  <footer class="container">
+         
+          <p>&copy; 2022 &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        </footer>
+        -->
+         <footer class="footer">
+          <div class="container">
+            <p class="float-left"style="font-size:30%;">
+              <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a> <br>
+              This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">CC Attribution-NonCommercial 4.0 International License</a>
+            </p>
+            <span class="text-muted text-center">
+              Contact me: <a href="mailto:admin@aholdengouveia.name">Email</a>
+             <!-- <a href="#">Email</a>-->
+              <a href="/cv.html">About me </a>
+              
+            
+              <p class="float-right"><a href="#">Back to top</a></p>
+            </span>
+          </div>
+        </footer>
+        
+  </main>
+
+  <!-- Bootstrap core JavaScript
+       ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+    integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+    crossorigin="anonymous"></script>
+  <!-- Always remember to call the above files first before calling the bootstrap.min.js file -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+    integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+    crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

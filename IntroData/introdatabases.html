@@ -1,0 +1,135 @@
+---
+title: Introduction to Databases
+layout: introdata
+---
+<!--Learning Outcomes for this topic-->
+<h3>Introduction to Databases</h3>
+<p>Learning outcomes:
+    <ul>
+        <li>List differences between a spreadsheet and a database</li>
+        <li>List the main characteristics of a database</li>
+        <li>Describe how a database is used differently than a table of data in a word document</li>
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/zWpHISM1dQM?si=1HMXR5ARkicSeXP2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="CIS 113 - Week 4.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>What is a database</li>
+            <ul>
+                <li>A database is a collection of information</li>
+                <li>Databases store and organize data so you can get to it easier</li>
+                <li>Databases are good for larger amounts of data</li>
+                <li>Some examples of where a database might be useful</li>
+                    <ul>
+                        <li>Customer information</li>
+                        <li>Product or store information</li>
+                        <li>Item collection information (Pokémon, Movies, Books)</li>
+                        <li>Patient records</li>
+                        <li>Student records</li>
+                    </ul>
+            </ul>
+        <li>How is a database different then a spreadsheet</li>
+            <ul>
+                <li>Both are tools to store and organize data</li>
+                <li>Spreadsheets are better for calculations and data entry</li>
+                <li>Databases are better for manipulating data, running reports and updating data</li>
+                <li>Databases can also handle larger amounts of data more easily than a spreadsheet</li>
+                <li>Databases are also better if there are multiple people that need access to the data, especially if the access needs are simultaneous</li>
+                <li>SPREADSHEETS ARE NOT DATABASES</li>
+            </ul>
+        <li><a href="https://web.archive.org/web/20231225235633/https://www.ibm.com/blog/structured-vs-unstructured-data/">Structured vs Unstructured data</a></li> 
+            <ul>  
+                <li>Structured Data</li>
+                    <ul>
+                        <li>Organized and formatted</li>
+                        <li>Version control can be applied in multiples ways and over parts of the data</li>
+                        <li>Queries are permitted</li>
+                    </ul>
+                <li>Unstructured Data</li>
+                    <ul>
+                        <li>Not organized or formatted</li>
+                        <li>Version control can only be done as a whole</li>
+                        <li>Only text queries can be used</li>
+                    </ul>
+                <li>Why structured data is important</li>
+                    <ul>
+                        <li>Structured data is typically quantitative and is formatted in specific ways to be more readable for humans and machines.</li>
+                        <li>Structured data is easier to run ML (Machine Learning) Algorithms against</li>
+                        <li>Easier for people to manipulate and analyze the data without needing to understand much about data types</li>
+                        <li>More tools are available for structured data</li>
+                        <li>Structured data is generally found in spreadsheets and databases</li>
+                    </ul>
+            </ul> 
+        <li>What is CSV and why do we use it</li>
+            <ul>
+                <li>CSV means Comma Separate values</li>
+                <li><a href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV by Wikipedia</a></li>
+                <li>There are other ways to sperate out the data such as tab, space, semicolon or colon, the symbol used to separate out the values is called a delimiter</li>
+                <li>It's a text file that allows us to send data in plain text while keeping it organized into tables</li>
+                <li>CSVs are very useful for getting data from one place to another, such as from a spreadsheet into a database</li>
+                <li>CSV is not proprietary so it's also a good way to share data between programs that use proprietary formats</li>
+                <li>Several programs also use CSV for long term data storage as it's fast, readable, and comparatively small</li>
+            </ul>
+        <li>Why we have databases</li>
+            <ul>
+                <li>Databases allow us to store more data easier than other formats, they also allow us to organize the data in lots of ways</li>
+                <li>Organized data allows us to run reports and queries more easily, so we can answer certain questions about our data, such as What is the email address for the customer? How many units did they buy last month? Last year? How much product have we sold last month? Last year?</li>
+                <li>Databases allow us to store and process our data, but also allow multiple simulations other people to also store and process data</li>
+                <li>Centralized locations for data to ensure everyone is using the same data and has access to it allows for better business practices</li>
+            </ul>
+        <li>Examples of <a href="https://web.archive.org/web/20230427112320/https://www.geeksforgeeks.org/types-of-databases/">kinds of databases</a></li>
+            <ul>
+                <li>Relational</li>
+                <li>Non-relational</li>
+                <li>Hierarchical</li>
+                <li>3D</li>
+                <li>Geographic</li>
+                <li>Object Oriented</li>
+            </ul>
+        <li><a href="https://web.archive.org/web/20231208195441/https://www.oracle.com/database/what-is-a-relational-database/">Relational Databases</a></li>
+            <ul>
+                <li>Organizes data in rows and columns to form tables</li>
+                <li>Data is structured across multiple tables</li>
+                <li>Tables are connected (or relate) to each other using primary or foreign keys</li>
+                <li> We can have multiple relationships or connections between the tables</li>
+                <li>For example, if you have a customer table, and a products table, and a sales table, you may be able to ask who purchased what, how much, and when</li>
+                <li>This is where we'll be focusing</li>
+            </ul>
+        <li><a href="https://web.archive.org/web/20240118203009/https://www.geeksforgeeks.org/sql-vs-mysql/">SQL and mySQL</a></li>
+            <ul>
+                <li>SQL or Structured Query Language is how you interact with a relational database</li>
+                <li>SQL is the language</li>
+                <li>MySQL is the database</li>
+                <li>Might hear S Q L</li>
+                <li>Might hear See-quil (or sequel)</li>
+                <li>The language is used to ask questions of your database</li>
+            </ul>
+
+    </ul>   
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <li>Discussion or short paper, explore the practical applications of databases in real-world scenarios. Students will discuss the importance of databases, their role in various industries, and the challenges associated with managing and utilizing databases effectively.In small groups or pairs, Consider the following questions:
+            <ul>
+                <li>Share an example from your own experience or research where a database played a crucial role. It could be a scenario from your workplace, a case study, or a notable application you've come across.</li>
+                <li>Discuss the specific ways in which a well-designed database contributed to efficiency, organization, or decision-making in that context.</li>
+                <li>Consider the evolving landscape of technology and databases. Research and share a current or emerging trend in database management.</li>
+            </ul>
+
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">Click here </a>
+</p>

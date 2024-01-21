@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/images/WomanComputerSilouette.png">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9SWNFD6DB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Q9SWNFD6DB');
+</script>
+
+    <title>Data Integrity and uses</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/carousel.css" rel="stylesheet">
+    <link href="/css/stylesheet.css" rel="stylesheet">
+    <link href="/fontawesome-free-6.1.1-web/css/all.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <header>
+
+
+
+      <!-- Why are you looking at my website code?  You might need a hobby.  
+      
+      Come take a class with me! I promise to keep you busy
+    -->
+
+
+
+<!--Nav bar area at the top of the page -->
+    
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #2c365e;">
+  <a class="navbar-brand" href="/index.html">Welcome!</a>
+ <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+   <span class="navbar-toggler-icon"></span>
+ </button>
+       
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <ul class="navbar-nav mr-auto">
+<!--Social Media Menu section of NavBar-->
+      <li class="nav-item dropdown">
+       <a class="nav-link dropdown-toggle" href="/socials.html" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Socials
+       </a>
+       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+         <a class="dropdown-item" href="https://www.youtube.com/channel/UCebdI1gT84U7PBtJFUTrIQA">YouTube</a>
+         <a class="dropdown-item" href="https://github.com/aholdengouveia">GitHub </a>
+         <a class="dropdown-item" href="https://www.thingiverse.com/aholdengouveia/designs">Thingiverse</a>
+         <a class="dropdown-item" href="https://twitter.com/aholdengouveia">Twitter</a>
+         <a class="dropdown-item" rel="me" href="https://fosstodon.org/@aholdengouveia">Mastodon</a>
+         <a class="dropdown-item" href="https://www.linkedin.com/in/aholdengouveia">LinkedIn</a>
+         <a class="dropdown-item" href="https://g.dev/aholdengouveia">Google Developer</a>
+        </div>
+     </li>
+
+<!--Classes menu section of NavBar-->
+     <li class="nav-item dropdown">
+       <a class="nav-link dropdown-toggle" href="/classes.html" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Classes
+       </a>
+       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+         <a class="dropdown-item" href="/introlinux.html">Introduction to Linux</a>
+         <a class="dropdown-item" href="/introdata.html">Introduction to Data</a>
+         <a class="dropdown-item" href="/introinfosec.html">Introduction to Security</a>
+         <!-- <a class="dropdown-item" href="/introit.html">Introduction to IT</a>
+         <a class="dropdown-item" href="/intropython.html">Introduction to Python</a>
+         -->
+         <a class="dropdown-item" href="/AdvSec.html">Advanced Security</a>
+         <a class="dropdown-item" href="/advlinux.html">Linux Administration</a>
+        </div>
+     </li>
+
+     <!--Technical Jobs Section of NavBar-->
+<li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Tech Jobs
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item" href="/techjobs.html">How to Get a job</a>
+        <!--<a class="dropdown-item" href="#">Tips to succeed at your job</a>
+        <a class="dropdown-item" href="#">Documentation</a>
+        -->
+      </div>
+    </li>
+<!--Other things I think are Important to learn-->
+   <!-- <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Other tech stuff
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item" href="#">Shellscripting</a>
+        <a class="dropdown-item" href="#">Linux Power Tools</a>
+        <a class="dropdown-item" href="#">Google-Fu</a>
+      </div>
+    </li> -->
+
+<!--Home Automation Section of NavBar-->
+  <li class="nav-item active">
+    <a class="nav-link" href="/SmartHome/smarthomewelcome.html">Smart Home Project <span class="sr-only">(current)</span></a>
+  </li>
+
+
+<!--About Me Section of NavBar-->
+    <li class="nav-item active">
+      <a class="nav-link" href="/cv.html">About Me <span class="sr-only">(current)</span></a>
+    </li>
+<!--Search Bar Section of NavBar-->
+         </ul>
+         <form class="form-inline mt-2 mt-md-0">
+           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+         </form>
+       </div>
+     </nav>
+   </header>
+
+
+    <!-- Sidebar for the course by topic/week-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4 col-md-3">
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand"><a href="/introdata.html">Overview</a>
+                    </li>
+                    <li><a href="/IntroData/introtodata.html">Intro to Data</a></li>
+                    <li><a href="/IntroData/dataforeveryone.html">Data for Everyone</a></li>
+                    <li><a href="/IntroData/dataintegrity.html">Data Integrity</a></li>
+                    <li><a href="/IntroData/introdatabases.html">Intro to Databases</a></li>
+                    <li><a href="/IntroData/databasekeysandvocab.html">Database Vocab</a></li>
+                    <li><a href="/IntroData/introsql.html">Intro to SQL</a></li>
+ <!--
+                  <li>
+                        <a href="#">Topic 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Topic 3</a>
+                    </li>
+                    <li>
+                        <a href="#">Topic 4</a> 
+                    </li>
+                    <li>
+                        <a href="#">Topic 5</a> 
+                    </li>
+                    
+                    <li>
+                        <a href="#">Topic 6</a>
+                    </li>    
+                    -->  
+                    <li>
+                        <a href="/IntroData/Resources.html">Resources</a>
+                    </li>  
+                </ul>
+            </div>
+        </div>
+        <!--Main content of the page will fill in here-->
+        <div class="col">
+            <br><br>
+            <!--Learning Outcomes for this topic-->
+<h3>Data Integrity and uses</h3>
+<p>Learning outcomes:
+    <ul>
+        <li>List what data integrity entails</li>
+        <li>List some examples of what might happen with data integrity failure</li>
+        <li>List some approaches to fixing a data base without sufficient integrity</li>
+        <li>List ways to ensure you don't lose data integrity in a database</li>
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/zWpHISM1dQM?si=1HMXR5ARkicSeXP2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="CIS 113 - Week 3.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li><a href="https://web.archive.org/web/20231215133543/https://online.hbs.edu/blog/post/what-is-data-integrity">Data integrity</a></li>
+            <ul>
+                <li>Data integrity can be the accuracy of the data, or making sure that the data you have stored is correct.</li>
+                <li>Integrity can also be the completeness of the data, or making sure that if you are storing information, you are storing all the information</li>
+                <li>Data integrity can also refer to the method of data storage, or making sure that wherever you have the data such as a hard drive, is working properly</li>
+                <li>Data integrity can also be guidelines for data retention, or how long you keep dataData integrity can also be guidelines for data retention, or how long you keep data</li>
+
+            </ul>
+        <li>Examples of Data integrity</li>
+            <ul>
+                <li>Complete Data</li>
+                    <ul>
+                        <li>Tolkien instead of J. R. R. Tolkien</li>
+                        <li>$1000.30 in your account vs $900ish dollars saved somewhere</li>
+                        <li>Heathcare record says there are allergies but doesn't list them</li>
+                        <li>You were awarded some amount of financial aid</li>
+                    </ul>
+                <li>Accurate Data</li>
+                    <ul>
+                        <li>My dude Tolks instead of Tolkien</li>
+                        <li>You're pretty sure you have $1000 in your account vs you KNOW you have $1034.56 in your account</li>
+                        <li>Healthcare record says there is an allergy to pomegranate but it meant penicillin</li>
+                        <li>You were awarded $20,000 in tuition vs $2,000 in tuition</li>
+                    </ul>
+            </ul>
+        <li>Incorrect data vs Badly organized</li>
+            <ul>
+                <li>Incorrect Data</li>
+                    <ul>
+                        <li>Asked for birthday and told colour blue</li>
+                        <li>Wrong allergy written down in heathcare record</li>
+                        <li> Wrong transcript was sent to transfer school</li>
+                        <li>Incorrect amount was put on your credit card for your coffee</li>
+                    </ul>
+                <li>Badly Organized Data</li>
+                    <ul>
+                        <li>Asked for birthday and told dec but meant 12/2/2000</li>
+                        <li>Data that  doesn't correspond to what was asked for, such as sometimes first name is first, sometimes last name is first</li>
+                        <li>Odd organizational methods, such as organizing your library database by wordcount, or book weight</li>
+                    </ul>
+            </ul>
+        <li>Examples of why data more complex than you think</li>
+             <ul>
+                 <li>Names</li>
+                <ul>
+                    <li>Firstname Lastname</li>
+                    <li>Lastname Firstname</li>
+                    <li>Multiple Names For First And Last</li>
+                    <li>Short names(Wu, Li, Fan)</li>
+                    <li>Long Names</li>
+                    <li>Hyphenated names</li>
+                    <li>Names that are a symbol</li>
+                    <li>Names with non-letter characters</li>
+                    <li>Characters not in the English language</li>
+                </ul>
+        <li>Examples of how to collect data well</li>
+            <ul>
+                <li><a href="https://web.archive.org/web/20231009033457/https://online.hbs.edu/blog/post/data-collection-methods">Data collection methods in business</a></li>
+                <li>Make sure you have a clear plan that everyone who is collecting data can see, including identifying what you need and how it's being measured in clear and hard to misinterpret language</li>
+                <li>Decide if you are collecting qualitative (Open ended response such as "I feel good today") or quantitative(numbers such as year you were born) data</li>
+                <li>Have a clear system! Include procedures and tests of the people doing the collecting BEFORE sending them out</li>
+            </ul>
+        <li>How and why to <a href="https://web.archive.org/web/20230301045356/https://www.techtarget.com/searchdatamanagement/definition/data-scrubbing">clean data</a></li>
+            <ul>
+                <li>Data cleaning is fixing data, removing duplicate data, fixing incorrect data and fixing formatting</li>
+                <li>Data cleaning usually removes the data that doesn't belong (Important note!  Keep copy of ORIGINAL data, just in case)</li>
+                <li>Quality and validity matters, make sure your data makes sense</li>
+                <li>We clean data so that when we work with it later, we get better results.</li>
+                    <ul>
+                        <li>For example, we might see both N/A and "non applicable" but they mean the same, so we could group them together</li>
+                        <li>This can include outliers, but be warned!  Outlier isn't the same as incorrect, and your definition of "outlier" might not match someone else's, don't ruin your data for a goal or personal opinion</li>
+                    </ul>
+            </ul>
+        <li>Examples of how data is cleaned</li>
+            <ul>
+                <li>We might clean data by only looking at specific age ranges, or locations, as part of the process to make sure we're looking at the right group of people</li>
+                <li>We might clean data by removing duplicates such as making sure everyone only did the survey once</li>
+                <li>We might clean data by fixing typos, naming conventions, or even just making sure the format is the same for all collected data</li>
+                <li>We might clean data by checking validity such as does this data make sense? We asked for a name and got a date, or we asked for a birthday and got a colour</li>
+            </ul>
+        <li>How AI is used to clean data</li>
+            <ul>
+                <li>Artificial Intelligence is being used to clean data more and more</li>
+                <li>We can use programs to clean data, either the program we used to collect the data, or write out own program to look for specific things.</li>
+                <li>New advances in technology is having AI do this for us automatically! Not always correctly, but automatically! Such as AWS sagemaker or AI validator for Google Sheets</li>
+            </ul>
+        <li>Why data is important to every job</li>
+            <ul>
+                <li>Good data can lead to better choices, bad data isn't helpful</li>
+                <li>All businesses run on data to some extent, even if it's just sales and goods.</li>
+                <li>Some businesses run on data more such as social media and more tech focused companies</li>
+                <li>Data can help make business more efficient, improve quality, and either make more money or help more people depending on the type of company</li>
+            </ul>
+        <li>Examples of how data is used in jobs well</li>
+            <ul>
+                <li>Predicting future sales and stocking of goods</li>
+                <li>Predicating market trends so that the right amount of goods can be produced or ordered on time</li>
+                <li>Healthcare uses data to see failures in the system and fix them to help save more people</li>
+                <li>Data can be used to see trends and either continue or correct them</li>
+            </ul>
+        <li>Examples of how data is used in jobs poorly</li>
+            <ul>
+                <li><a href="https://web.archive.org/web/20240101024820/https://www.seattletimes.com/business/amazon/inside-amazon-warehouses-workers-worry-about-risk-of-unsafe-chemicals/">Amazon warehouse efficiency dangers</a> and drivers peeing in bottles to make time</li>
+                <li>Laying off people because the data says they don't make money, except those were the people making and checking the good produced so the company can't make money in 6 months</li>
+                <li><a href="https://web.archive.org/web/20240108192320/https://science.nasa.gov/mission/mars-climate-orbiter/">Mars Climate Orbiter</a> was unable to perform the test because the software didn't convert data to metric</li>
+                <li><a href="https://web.archive.org/web/20240112104020/https://abcnews.go.com/Business/housing-advocates-forecasted-2008-financial-crisis/story?id=103718982">2008 housing crash</a> was bad data saying pieces of the market were worth more than they actually were, collapsing pieces of the economy when true values were found out</li>
+                <li><a href="https://web.archive.org/web/20240112215713/https://www.ibm.com/blog/the-impact-of-bad-data-and-why-observability-is-now-imperative/">Unity getting bad data</a> for its audience guessing tool and lost $110mil on bad bet</li>
+            </ul>
+
+    </ul>   
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+
+        <li>In small groups or pairs, Consider the following questions:
+                <ul>
+                    <li>How can data-driven decisions lead to better outcomes in various fields, such as healthcare or education?</li>
+                    <li>What are some potential risks and challenges associated with the misuse or mishandling of data?</li>
+                    <li> How does data impact privacy, ethics, and security concerns?</li>
+                    <li>How does Artificial Intelligence and Machine Learning affect the topic of your choice?</li>
+        Include at least 1 article on the topic of data in modern life.  In your discussion posting you should link your article, give a quick (5 sentences or less) summary, and include your opinion on the quality of the article using the CRAAP method as described <a href=" https://academic-englishuk.com/evaluating-sources/">HERE</a></li>
+        <!--
+        <li>Activity: </li>
+        <li>Activity:</li>
+        -->
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">Click here </a>
+</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+   
+
+        <!-- FOOTER -->
+      <!--  <footer class="container">
+         
+          <p>&copy; 2022 &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        </footer>
+        -->
+         <footer class="footer">
+          <div class="container">
+            <p class="float-left"style="font-size:30%;">
+              <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a> <br>
+              This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">CC Attribution-NonCommercial 4.0 International License</a>
+            </p>
+            <span class="text-muted text-center">
+              Contact me: <a href="mailto:admin@aholdengouveia.name">Email</a>
+             <!-- <a href="#">Email</a>-->
+              <a href="/cv.html">About me </a>
+              
+            
+              <p class="float-right"><a href="#">Back to top</a></p>
+            </span>
+          </div>
+        </footer>
+        
+  </main>
+
+  <!-- Bootstrap core JavaScript
+       ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+    integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+    crossorigin="anonymous"></script>
+  <!-- Always remember to call the above files first before calling the bootstrap.min.js file -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+    integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+    crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

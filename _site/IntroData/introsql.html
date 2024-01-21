@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/images/WomanComputerSilouette.png">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9SWNFD6DB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Q9SWNFD6DB');
+</script>
+
+    <title>Introduction to SQL</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/carousel.css" rel="stylesheet">
+    <link href="/css/stylesheet.css" rel="stylesheet">
+    <link href="/fontawesome-free-6.1.1-web/css/all.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <header>
+
+
+
+      <!-- Why are you looking at my website code?  You might need a hobby.  
+      
+      Come take a class with me! I promise to keep you busy
+    -->
+
+
+
+<!--Nav bar area at the top of the page -->
+    
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #2c365e;">
+  <a class="navbar-brand" href="/index.html">Welcome!</a>
+ <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+   <span class="navbar-toggler-icon"></span>
+ </button>
+       
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <ul class="navbar-nav mr-auto">
+<!--Social Media Menu section of NavBar-->
+      <li class="nav-item dropdown">
+       <a class="nav-link dropdown-toggle" href="/socials.html" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Socials
+       </a>
+       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+         <a class="dropdown-item" href="https://www.youtube.com/channel/UCebdI1gT84U7PBtJFUTrIQA">YouTube</a>
+         <a class="dropdown-item" href="https://github.com/aholdengouveia">GitHub </a>
+         <a class="dropdown-item" href="https://www.thingiverse.com/aholdengouveia/designs">Thingiverse</a>
+         <a class="dropdown-item" href="https://twitter.com/aholdengouveia">Twitter</a>
+         <a class="dropdown-item" rel="me" href="https://fosstodon.org/@aholdengouveia">Mastodon</a>
+         <a class="dropdown-item" href="https://www.linkedin.com/in/aholdengouveia">LinkedIn</a>
+         <a class="dropdown-item" href="https://g.dev/aholdengouveia">Google Developer</a>
+        </div>
+     </li>
+
+<!--Classes menu section of NavBar-->
+     <li class="nav-item dropdown">
+       <a class="nav-link dropdown-toggle" href="/classes.html" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Classes
+       </a>
+       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+         <a class="dropdown-item" href="/introlinux.html">Introduction to Linux</a>
+         <a class="dropdown-item" href="/introdata.html">Introduction to Data</a>
+         <a class="dropdown-item" href="/introinfosec.html">Introduction to Security</a>
+         <!-- <a class="dropdown-item" href="/introit.html">Introduction to IT</a>
+         <a class="dropdown-item" href="/intropython.html">Introduction to Python</a>
+         -->
+         <a class="dropdown-item" href="/AdvSec.html">Advanced Security</a>
+         <a class="dropdown-item" href="/advlinux.html">Linux Administration</a>
+        </div>
+     </li>
+
+     <!--Technical Jobs Section of NavBar-->
+<li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Tech Jobs
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item" href="/techjobs.html">How to Get a job</a>
+        <!--<a class="dropdown-item" href="#">Tips to succeed at your job</a>
+        <a class="dropdown-item" href="#">Documentation</a>
+        -->
+      </div>
+    </li>
+<!--Other things I think are Important to learn-->
+   <!-- <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Other tech stuff
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item" href="#">Shellscripting</a>
+        <a class="dropdown-item" href="#">Linux Power Tools</a>
+        <a class="dropdown-item" href="#">Google-Fu</a>
+      </div>
+    </li> -->
+
+<!--Home Automation Section of NavBar-->
+  <li class="nav-item active">
+    <a class="nav-link" href="/SmartHome/smarthomewelcome.html">Smart Home Project <span class="sr-only">(current)</span></a>
+  </li>
+
+
+<!--About Me Section of NavBar-->
+    <li class="nav-item active">
+      <a class="nav-link" href="/cv.html">About Me <span class="sr-only">(current)</span></a>
+    </li>
+<!--Search Bar Section of NavBar-->
+         </ul>
+         <form class="form-inline mt-2 mt-md-0">
+           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+         </form>
+       </div>
+     </nav>
+   </header>
+
+
+    <!-- Sidebar for the course by topic/week-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4 col-md-3">
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand"><a href="/introdata.html">Overview</a>
+                    </li>
+                    <li><a href="/IntroData/introtodata.html">Intro to Data</a></li>
+                    <li><a href="/IntroData/dataforeveryone.html">Data for Everyone</a></li>
+                    <li><a href="/IntroData/dataintegrity.html">Data Integrity</a></li>
+                    <li><a href="/IntroData/introdatabases.html">Intro to Databases</a></li>
+                    <li><a href="/IntroData/databasekeysandvocab.html">Database Vocab</a></li>
+                    <li><a href="/IntroData/introsql.html">Intro to SQL</a></li>
+ <!--
+                  <li>
+                        <a href="#">Topic 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Topic 3</a>
+                    </li>
+                    <li>
+                        <a href="#">Topic 4</a> 
+                    </li>
+                    <li>
+                        <a href="#">Topic 5</a> 
+                    </li>
+                    
+                    <li>
+                        <a href="#">Topic 6</a>
+                    </li>    
+                    -->  
+                    <li>
+                        <a href="/IntroData/Resources.html">Resources</a>
+                    </li>  
+                </ul>
+            </div>
+        </div>
+        <!--Main content of the page will fill in here-->
+        <div class="col">
+            <br><br>
+            <!--Learning Outcomes for this topic-->
+<h3>Introduction to SQL</h3>
+<p>Learning outcomes:
+    <ul>
+        <li>Describe the use of SQL in a database</li>
+        <li>List some advantages of using query languages like SQL</li>
+        <li>Describe the parts of a basic SQL query such as :
+            Select Title from books where PublishingDate = 2001;</li>
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/KrStvYI_srk?si=iKTWlV2JOCO5QtSJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="CIS 113 - Week 6.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>How to get data into a database</li>
+            <ul>
+                <li>You can import a number of different types of files including text, but CSV files are commonly used</li>
+                <li>Imports can also happen from other programs including spreadsheet programs or other database programs</li>
+                <li>If you're using SQL you can use a create table or insert command to get your data into your database</li>
+                <li>There are also some Graphical options depending on the database type you're using</li>
+                <li>You can also write a script to enter in your data</li>
+            </ul>
+        <li>How databases look different on different systems</li>
+            <ul>
+                <li>Databases can be access by either Graphical User Interface (GUI) or Command line</li>
+                <li>The system you're using will affect how the data is stored and where it's being used</li>
+            </ul>
+        <li>Different between how the data is stored and how it's accessed</li>
+            <ul>
+                <li>You can have many different front end options, each may have different steps like switching between MS Word and Gooogle Docs</li>
+                <li>Dashboards are also commonly used for people that need to see but not change the data</li>
+                <li>Databases will save the information on your computer but that will depend on what database is installed, which can be different then the front end used</li>
+                <li>Databases can also be on servers and in the cloud, the front end would connect to those for viewing</li>
+                <li>Generally only a few people may change the data, but many more will be able to see the data</li>
+            </ul>
+        <li>Examples of front ends</li>
+            <ul>
+                <li>You can build your own, but a lot of people use already made options</li>
+                <li>Your front end can be as simple or complex as you like, some are free, some are not.</li>
+                <li>Some database front end options can be very complex and include data analytics and visualizations, examples include Tableau, MS Power BI, Oracle Analytics Cloud and AIMMS</li>
+            </ul>
+        <li><a href="https://web.archive.org/web/20231016182205/https://www.nnlm.gov/guides/data-glossary/data-dictionary">Data Dictionary</a></li>    
+            <ul>
+                <li>A data dictionary is an explanation of the data saves in our database</li>
+                <li>Should be centralized so everyone using the database is seeing the same definitions</li>
+                <li>Clarity can be an issue</li>
+                <li>Names listed aren't always obvious, and descriptions can be lacking</li>
+                <li>Active dictionaries are created within the database and auto updated, passive are separate and must be updated manually</li>
+            </ul>
+        <li>What is SQL</li>
+            <ul>
+                <li>SQL or Structured Query Language is how we can interact with our database</li>
+                <li>SQL can be used to view, organize and manage the data</li>
+                <li>SQL commands or queries are done on the command prompt and look similar to command line commands</li>
+                <li>SQL is relatively human readable once you're used to the syntax</li>
+                <li>Scripts can be written to automate things and make queries more efficient to use</li>
+                <li><a href="https://selectstarsql.com/">Select Star SQL: Interactive textbook to learn SQL</a></li>
+            </ul>
+        <li>Why it's so popular</li>
+            <ul>
+                <li>SQL is interactive, so you can see your results pretty fast and make sure you're looking at the right info</li>
+                <li>It's close enough to programming a lot of developers are very comfortable learning it quickly</li>
+                <li>Because it's popular a lot of people learn and use it, therefore making it more popular</li>
+                <li>SQL is relatively dependable and has been in use so long a lot of people have done a lot of testing on it</li>
+                <li>Once it's setup correctly a company is unlikely to move away into a new technology</li>
+                <li>Because SQL is relatively human readable a lot of people use it in companies including marketing, QA and sales,some larger companies will even offer free courses for people to learn it</li>
+            </ul>
+        <li>SQL the brand</li>
+            <ul>
+                <li>SQL was standardized in the 80s, but there are different dialects depending on what database you're using </li>
+                <li>SQL server is proprietary and owned by MS, Dialects including PostgreSQL and SQLite</li>
+                <li>For example PostgreSQL is open source and for Object oriented databases (we've been talking about relational), and can also suppose JSON data types</li>
+            </ul>
+        <li>Breakdown of a basic query</li>
+            <ul>
+                <li>For right now we're just using basic SQL standard</li>
+                <li>Each table in our database will have fields, each record will have a row and column. We need to know what we want to look at to form our query properly</li>
+                <li>Each SQL query is going to start and include commands such as SELECT, UPDATE, INSERT and DELETE</li>
+                <li>You want to figure out what you want first, and then try and translate it into a query. For example if you want to look at all customers in your database you might say "SELECT * FROM Customers;"</li>
+                    <ul>
+                        <li>SELECT is saying what you want</li>
+                        <li>The * indicates you want everything</li>
+                        <li>FROM is where you're getting the info</li>
+                        <li>Customers is the table we're pulling from</li>
+                    </ul>
+                <li><a href="https://www.w3schools.com/sql/default.asp">SQL Tutorial from W3Schools</a></li>    
+            </ul>
+
+    </ul>   
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <li>Beginner Activity: Go to <a href="https://www.w3schools.com/sql/sql_syntax.asp">The W3 Schools and try their basic SQL syntax, make sure to go through at least a couple pages so you can see several examples</a></li>
+        <li>Intermediate Activity: Go to either the <a href="http://wwwlgis.informatik.uni-kl.de/extra/game/?lang=en">Island Adventure</a> or the <a href="https://sqlpd.com/">Crime Solving Adventure</a> sites and try some of the puzzles</li>
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">Click here </a>
+</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+   
+
+        <!-- FOOTER -->
+      <!--  <footer class="container">
+         
+          <p>&copy; 2022 &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        </footer>
+        -->
+         <footer class="footer">
+          <div class="container">
+            <p class="float-left"style="font-size:30%;">
+              <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a> <br>
+              This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">CC Attribution-NonCommercial 4.0 International License</a>
+            </p>
+            <span class="text-muted text-center">
+              Contact me: <a href="mailto:admin@aholdengouveia.name">Email</a>
+             <!-- <a href="#">Email</a>-->
+              <a href="/cv.html">About me </a>
+              
+            
+              <p class="float-right"><a href="#">Back to top</a></p>
+            </span>
+          </div>
+        </footer>
+        
+  </main>
+
+  <!-- Bootstrap core JavaScript
+       ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+    integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+    crossorigin="anonymous"></script>
+  <!-- Always remember to call the above files first before calling the bootstrap.min.js file -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+    integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+    crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

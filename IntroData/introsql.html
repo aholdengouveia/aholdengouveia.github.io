@@ -1,0 +1,114 @@
+---
+title: Introduction to SQL
+layout: introdata
+---
+<!--Learning Outcomes for this topic-->
+<h3>Introduction to SQL</h3>
+<p>Learning outcomes:
+    <ul>
+        <li>Describe the use of SQL in a database</li>
+        <li>List some advantages of using query languages like SQL</li>
+        <li>Describe the parts of a basic SQL query such as :
+            Select Title from books where PublishingDate = 2001;</li>
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/KrStvYI_srk?si=iKTWlV2JOCO5QtSJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="CIS 113 - Week 6.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>How to get data into a database</li>
+            <ul>
+                <li>You can import a number of different types of files including text, but CSV files are commonly used</li>
+                <li>Imports can also happen from other programs including spreadsheet programs or other database programs</li>
+                <li>If you're using SQL you can use a create table or insert command to get your data into your database</li>
+                <li>There are also some Graphical options depending on the database type you're using</li>
+                <li>You can also write a script to enter in your data</li>
+            </ul>
+        <li>How databases look different on different systems</li>
+            <ul>
+                <li>Databases can be access by either Graphical User Interface (GUI) or Command line</li>
+                <li>The system you're using will affect how the data is stored and where it's being used</li>
+            </ul>
+        <li>Different between how the data is stored and how it's accessed</li>
+            <ul>
+                <li>You can have many different front end options, each may have different steps like switching between MS Word and Gooogle Docs</li>
+                <li>Dashboards are also commonly used for people that need to see but not change the data</li>
+                <li>Databases will save the information on your computer but that will depend on what database is installed, which can be different then the front end used</li>
+                <li>Databases can also be on servers and in the cloud, the front end would connect to those for viewing</li>
+                <li>Generally only a few people may change the data, but many more will be able to see the data</li>
+            </ul>
+        <li>Examples of front ends</li>
+            <ul>
+                <li>You can build your own, but a lot of people use already made options</li>
+                <li>Your front end can be as simple or complex as you like, some are free, some are not.</li>
+                <li>Some database front end options can be very complex and include data analytics and visualizations, examples include Tableau, MS Power BI, Oracle Analytics Cloud and AIMMS</li>
+            </ul>
+        <li><a href="https://web.archive.org/web/20231016182205/https://www.nnlm.gov/guides/data-glossary/data-dictionary">Data Dictionary</a></li>    
+            <ul>
+                <li>A data dictionary is an explanation of the data saves in our database</li>
+                <li>Should be centralized so everyone using the database is seeing the same definitions</li>
+                <li>Clarity can be an issue</li>
+                <li>Names listed aren't always obvious, and descriptions can be lacking</li>
+                <li>Active dictionaries are created within the database and auto updated, passive are separate and must be updated manually</li>
+            </ul>
+        <li>What is SQL</li>
+            <ul>
+                <li>SQL or Structured Query Language is how we can interact with our database</li>
+                <li>SQL can be used to view, organize and manage the data</li>
+                <li>SQL commands or queries are done on the command prompt and look similar to command line commands</li>
+                <li>SQL is relatively human readable once you're used to the syntax</li>
+                <li>Scripts can be written to automate things and make queries more efficient to use</li>
+                <li><a href="https://selectstarsql.com/">Select Star SQL: Interactive textbook to learn SQL</a></li>
+            </ul>
+        <li>Why it's so popular</li>
+            <ul>
+                <li>SQL is interactive, so you can see your results pretty fast and make sure you're looking at the right info</li>
+                <li>It's close enough to programming a lot of developers are very comfortable learning it quickly</li>
+                <li>Because it's popular a lot of people learn and use it, therefore making it more popular</li>
+                <li>SQL is relatively dependable and has been in use so long a lot of people have done a lot of testing on it</li>
+                <li>Once it's setup correctly a company is unlikely to move away into a new technology</li>
+                <li>Because SQL is relatively human readable a lot of people use it in companies including marketing, QA and sales,some larger companies will even offer free courses for people to learn it</li>
+            </ul>
+        <li>SQL the brand</li>
+            <ul>
+                <li>SQL was standardized in the 80s, but there are different dialects depending on what database you're using </li>
+                <li>SQL server is proprietary and owned by MS, Dialects including PostgreSQL and SQLite</li>
+                <li>For example PostgreSQL is open source and for Object oriented databases (we've been talking about relational), and can also suppose JSON data types</li>
+            </ul>
+        <li>Breakdown of a basic query</li>
+            <ul>
+                <li>For right now we're just using basic SQL standard</li>
+                <li>Each table in our database will have fields, each record will have a row and column. We need to know what we want to look at to form our query properly</li>
+                <li>Each SQL query is going to start and include commands such as SELECT, UPDATE, INSERT and DELETE</li>
+                <li>You want to figure out what you want first, and then try and translate it into a query. For example if you want to look at all customers in your database you might say "SELECT * FROM Customers;"</li>
+                    <ul>
+                        <li>SELECT is saying what you want</li>
+                        <li>The * indicates you want everything</li>
+                        <li>FROM is where you're getting the info</li>
+                        <li>Customers is the table we're pulling from</li>
+                    </ul>
+                <li><a href="https://www.w3schools.com/sql/default.asp">SQL Tutorial from W3Schools</a></li>    
+            </ul>
+
+    </ul>   
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <li>Beginner Activity: Go to <a href="https://www.w3schools.com/sql/sql_syntax.asp">The W3 Schools and try their basic SQL syntax, make sure to go through at least a couple pages so you can see several examples</a></li>
+        <li>Intermediate Activity: Go to either the <a href="http://wwwlgis.informatik.uni-kl.de/extra/game/?lang=en">Island Adventure</a> or the <a href="https://sqlpd.com/">Crime Solving Adventure</a> sites and try some of the puzzles</li>
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">Click here </a>
+</p>

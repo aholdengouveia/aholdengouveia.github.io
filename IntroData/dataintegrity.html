@@ -1,0 +1,159 @@
+---
+title: Data Integrity and uses
+layout: introdata
+---
+<!--Learning Outcomes for this topic-->
+<h3>Data Integrity and uses</h3>
+<p>Learning outcomes:
+    <ul>
+        <li>List what data integrity entails</li>
+        <li>List some examples of what might happen with data integrity failure</li>
+        <li>List some approaches to fixing a data base without sufficient integrity</li>
+        <li>List ways to ensure you don't lose data integrity in a database</li>
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/zWpHISM1dQM?si=1HMXR5ARkicSeXP2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="CIS 113 - Week 3.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li><a href="https://web.archive.org/web/20231215133543/https://online.hbs.edu/blog/post/what-is-data-integrity">Data integrity</a></li>
+            <ul>
+                <li>Data integrity can be the accuracy of the data, or making sure that the data you have stored is correct.</li>
+                <li>Integrity can also be the completeness of the data, or making sure that if you are storing information, you are storing all the information</li>
+                <li>Data integrity can also refer to the method of data storage, or making sure that wherever you have the data such as a hard drive, is working properly</li>
+                <li>Data integrity can also be guidelines for data retention, or how long you keep dataData integrity can also be guidelines for data retention, or how long you keep data</li>
+
+            </ul>
+        <li>Examples of Data integrity</li>
+            <ul>
+                <li>Complete Data</li>
+                    <ul>
+                        <li>Tolkien instead of J. R. R. Tolkien</li>
+                        <li>$1000.30 in your account vs $900ish dollars saved somewhere</li>
+                        <li>Heathcare record says there are allergies but doesn't list them</li>
+                        <li>You were awarded some amount of financial aid</li>
+                    </ul>
+                <li>Accurate Data</li>
+                    <ul>
+                        <li>My dude Tolks instead of Tolkien</li>
+                        <li>You're pretty sure you have $1000 in your account vs you KNOW you have $1034.56 in your account</li>
+                        <li>Healthcare record says there is an allergy to pomegranate but it meant penicillin</li>
+                        <li>You were awarded $20,000 in tuition vs $2,000 in tuition</li>
+                    </ul>
+            </ul>
+        <li>Incorrect data vs Badly organized</li>
+            <ul>
+                <li>Incorrect Data</li>
+                    <ul>
+                        <li>Asked for birthday and told colour blue</li>
+                        <li>Wrong allergy written down in heathcare record</li>
+                        <li> Wrong transcript was sent to transfer school</li>
+                        <li>Incorrect amount was put on your credit card for your coffee</li>
+                    </ul>
+                <li>Badly Organized Data</li>
+                    <ul>
+                        <li>Asked for birthday and told dec but meant 12/2/2000</li>
+                        <li>Data that  doesn't correspond to what was asked for, such as sometimes first name is first, sometimes last name is first</li>
+                        <li>Odd organizational methods, such as organizing your library database by wordcount, or book weight</li>
+                    </ul>
+            </ul>
+        <li>Examples of why data more complex than you think</li>
+             <ul>
+                 <li>Names</li>
+                <ul>
+                    <li>Firstname Lastname</li>
+                    <li>Lastname Firstname</li>
+                    <li>Multiple Names For First And Last</li>
+                    <li>Short names(Wu, Li, Fan)</li>
+                    <li>Long Names</li>
+                    <li>Hyphenated names</li>
+                    <li>Names that are a symbol</li>
+                    <li>Names with non-letter characters</li>
+                    <li>Characters not in the English language</li>
+                </ul>
+        <li>Examples of how to collect data well</li>
+            <ul>
+                <li><a href="https://web.archive.org/web/20231009033457/https://online.hbs.edu/blog/post/data-collection-methods">Data collection methods in business</a></li>
+                <li>Make sure you have a clear plan that everyone who is collecting data can see, including identifying what you need and how it's being measured in clear and hard to misinterpret language</li>
+                <li>Decide if you are collecting qualitative (Open ended response such as "I feel good today") or quantitative(numbers such as year you were born) data</li>
+                <li>Have a clear system! Include procedures and tests of the people doing the collecting BEFORE sending them out</li>
+            </ul>
+        <li>How and why to <a href="https://web.archive.org/web/20230301045356/https://www.techtarget.com/searchdatamanagement/definition/data-scrubbing">clean data</a></li>
+            <ul>
+                <li>Data cleaning is fixing data, removing duplicate data, fixing incorrect data and fixing formatting</li>
+                <li>Data cleaning usually removes the data that doesn't belong (Important note!  Keep copy of ORIGINAL data, just in case)</li>
+                <li>Quality and validity matters, make sure your data makes sense</li>
+                <li>We clean data so that when we work with it later, we get better results.</li>
+                    <ul>
+                        <li>For example, we might see both N/A and "non applicable" but they mean the same, so we could group them together</li>
+                        <li>This can include outliers, but be warned!  Outlier isn't the same as incorrect, and your definition of "outlier" might not match someone else's, don't ruin your data for a goal or personal opinion</li>
+                    </ul>
+            </ul>
+        <li>Examples of how data is cleaned</li>
+            <ul>
+                <li>We might clean data by only looking at specific age ranges, or locations, as part of the process to make sure we're looking at the right group of people</li>
+                <li>We might clean data by removing duplicates such as making sure everyone only did the survey once</li>
+                <li>We might clean data by fixing typos, naming conventions, or even just making sure the format is the same for all collected data</li>
+                <li>We might clean data by checking validity such as does this data make sense? We asked for a name and got a date, or we asked for a birthday and got a colour</li>
+            </ul>
+        <li>How AI is used to clean data</li>
+            <ul>
+                <li>Artificial Intelligence is being used to clean data more and more</li>
+                <li>We can use programs to clean data, either the program we used to collect the data, or write out own program to look for specific things.</li>
+                <li>New advances in technology is having AI do this for us automatically! Not always correctly, but automatically! Such as AWS sagemaker or AI validator for Google Sheets</li>
+            </ul>
+        <li>Why data is important to every job</li>
+            <ul>
+                <li>Good data can lead to better choices, bad data isn't helpful</li>
+                <li>All businesses run on data to some extent, even if it's just sales and goods.</li>
+                <li>Some businesses run on data more such as social media and more tech focused companies</li>
+                <li>Data can help make business more efficient, improve quality, and either make more money or help more people depending on the type of company</li>
+            </ul>
+        <li>Examples of how data is used in jobs well</li>
+            <ul>
+                <li>Predicting future sales and stocking of goods</li>
+                <li>Predicating market trends so that the right amount of goods can be produced or ordered on time</li>
+                <li>Healthcare uses data to see failures in the system and fix them to help save more people</li>
+                <li>Data can be used to see trends and either continue or correct them</li>
+            </ul>
+        <li>Examples of how data is used in jobs poorly</li>
+            <ul>
+                <li><a href="https://web.archive.org/web/20240101024820/https://www.seattletimes.com/business/amazon/inside-amazon-warehouses-workers-worry-about-risk-of-unsafe-chemicals/">Amazon warehouse efficiency dangers</a> and drivers peeing in bottles to make time</li>
+                <li>Laying off people because the data says they don't make money, except those were the people making and checking the good produced so the company can't make money in 6 months</li>
+                <li><a href="https://web.archive.org/web/20240108192320/https://science.nasa.gov/mission/mars-climate-orbiter/">Mars Climate Orbiter</a> was unable to perform the test because the software didn't convert data to metric</li>
+                <li><a href="https://web.archive.org/web/20240112104020/https://abcnews.go.com/Business/housing-advocates-forecasted-2008-financial-crisis/story?id=103718982">2008 housing crash</a> was bad data saying pieces of the market were worth more than they actually were, collapsing pieces of the economy when true values were found out</li>
+                <li><a href="https://web.archive.org/web/20240112215713/https://www.ibm.com/blog/the-impact-of-bad-data-and-why-observability-is-now-imperative/">Unity getting bad data</a> for its audience guessing tool and lost $110mil on bad bet</li>
+            </ul>
+
+    </ul>   
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+
+        <li>In small groups or pairs, Consider the following questions:
+                <ul>
+                    <li>How can data-driven decisions lead to better outcomes in various fields, such as healthcare or education?</li>
+                    <li>What are some potential risks and challenges associated with the misuse or mishandling of data?</li>
+                    <li> How does data impact privacy, ethics, and security concerns?</li>
+                    <li>How does Artificial Intelligence and Machine Learning affect the topic of your choice?</li>
+        Include at least 1 article on the topic of data in modern life.  In your discussion posting you should link your article, give a quick (5 sentences or less) summary, and include your opinion on the quality of the article using the CRAAP method as described <a href=" https://academic-englishuk.com/evaluating-sources/">HERE</a></li>
+        <!--
+        <li>Activity: </li>
+        <li>Activity:</li>
+        -->
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">Click here </a>
+</p>
