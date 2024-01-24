@@ -17,7 +17,7 @@
   gtag('config', 'G-Q9SWNFD6DB');
 </script>
 
-    <title>Introduction to Linux and history</title>
+    <title>Environmental variables, PATH. vi (vim)</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
 
@@ -191,77 +191,52 @@
         <div class="col">
             <br><br>
             <!--Learning Outcomes for this topic-->
-<h3>Introduction to Linux and history</h3>
+<h3>Environmental variables, PATH. vi (vim)</h3>
 <p>Learning outcomes:
     <ul>
-        <li>Describe the origins of linux operating systems</li>
-        <li>State several differences from Windows OS</li>
-        <li>List characteristics of open source software</li>
+        <li>Show the use of vi to create, edit and save a text file</li>
+        <li>Explain how the environmental variable PATH is displayed and why it is important</li>
+        <li>Describe two  environmental variables other than PATH</li>
     </ul>
 </p>
 
 <!--embed Youtube video here-->
 <div class="video-wrapper">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/QLzD5c-KA6A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/hdgPUPUhwLc?si=E1h6zM5Kx9NNbe4k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 
 <!--Download PowerPoint-->
 <p>
-    <a href="/IntroLinux/Week 1 CIS117.pptx">Would you like to download my PowerPoint to follow along?</a>
+    <a href="Week 5 CIS117.pptx">Would you like to download my PowerPoint to follow along?</a>
 </p>
 <!--Outline Of lecture notes/powerpoint for the topic-->
 <p>
     <ul>
-        <li>What is Linux?</li>
+        <li>VI</li>
             <ul>
-                <li>Linux is an Operating System</li>
-                <li>Operating Systems are how we can communicate with the hardware of a device</li>
-                <li><a href="https://web.archive.org/web/20221118162543/https://www.digitalocean.com/community/tutorials/brief-history-of-linux">A Brief History of Linux</a></li>
-                <li><a href="https://web.archive.org/web/20221218024504/http://www.ee.surrey.ac.uk/Teaching/Unix/unixintro.html">UNIX Introduction</a></li> 
+                <li>Modal editor, which means you need to be in the correct mode to change the file, and a different one to save the file</li>
+                <li><a href="https://web.archive.org/web/20240118122320/https://www.howtogeek.com/102468/a-beginners-guide-to-editing-text-files-with-vi/">A Beginner's Guide to Editing Text Files With Vi</a></li>
+                <li>Learn VI through <a href="https://vim-adventures.com">VIM adventures</a></li>
+                <li><a href="https://web.archive.org/web/20240112151010/https://ryanstutorials.net/linuxtutorial/cheatsheetvi.php">VI Cheat Sheet</a></li>
             </ul>
-        <li>Common Uses for Linux</li> 
-            <ul>
-                <li>Phones and Tablets (Android is Linux Based) and <a href="https://gs.statcounter.com/os-market-share/mobile/worldwide">about 70%</a> of the market as of 2022</li>
-                <li>Servers, <a href="https://w3techs.com/technologies/overview/operating_system">over 80% of web sites run some version of Linux/Unix</a></li>
-                <li>Supercomputers, <a href="https://web.archive.org/web/20230110125615/https://www.top500.org/statistics/details/osfam/1/">starting in November of 2017</a>, all 500 of the top Supercomputers run some version of Linux</li>
-            </ul>
-        <li>Advantages and Disadvantages of Linux</li> 
-            <ul>
-                <li>Advantages</li>
-                    <ul>
-                        <li><a href="https://web.archive.org/web/20230115085435/https://www.computerworld.com/article/3252823/why-linux-is-better-than-windows-or-macos-for-security.html">Why Linux has better Security</a></li>
-                        <li>Almost all versions of Linux are Free!</li>
-                        <li>Linux can handle less resources so you can use older computers longer, and cheap computers with less power (ex. <a href="https://www.raspberrypi.com/">Raspberry Pi</a>)</li>
-                        <li>Everything can be customized!</li>
-                        <li><a href="https://distrowatch.com/dwres.php?resource=major">There are a lot of options to choose from</a></li>
-                    </ul>
-                <li>Disadvantages</li>
-                    <ul>
-                        <li>Linux is less popular on Desktop Computers so most people aren't familiar with it, and the learning curve can be rough. </li>
-                        <li>Compatibility, because it's not widely adopted, Linux programs aren't common, and most things are made for Windows.</li>
-                        <li>There is NO tech support, if you run into an issue it's all on you to solve, hope your GoogleFu is strong.</li>
-                        <li>Hardware Compatibility, Device drivers are an issue with Linux, it can be hard to find things that work with your system. If you want a printer you can't just go buy one, you need to find one that's compatible. </li>
-                        <li>Everything can be customized!</li>
-                    </ul>
-            </ul>
-        <li>Vocabulary</li>    
-            <ul>
-                <li><a href="https://www.kernel.org/doc/man-pages/">Man pages</a> (Short for Manual)</li>
-                <li><a href="https://itsfoss.com/what-is-linux-distribution/">Distros or Flavours</a> are which kind of Linux you're using</li>
-                <li><a href="https://itsfoss.com/what-is-linux/">What is Linux and is it more then just a Kernel</a></li>
-            </ul>
-            
+        <li>Environmental Variables</li> 
+        <ul>
+            <li>Used to keep track of things on system</li>
+            <li>Global variables are all upper case</li>
+                <ul>
+                    <li>PATH places to look for files</li>
+                    <li>HOME the home directory</li>
+                </ul>
+            <li>printenv displays environmental variables</li>
+            <li>set can change values, DANGER HERE Linux will let you be stupid and not give warnings</li>    
+            <li><a href="https://web.archive.org/web/20230610012234/https://www.rosehosting.com/blog/guide-to-linux-environment-variables/">Guide to Linux Environment Variables</a></li>
+            <li><a href="https://web.archive.org/web/20240117121018/https://www.digitalocean.com/community/tutorials/how-to-read-and-set-environmental-and-shell-variables-on-linux">How To Read and Set Environmental and Shell Variables on Linux</a></li>
+        </ul>
     </ul>   
 <!--Discussions and activities for the topic-->
 <p>Suggested Activities and Discussion Topics:
     <ul>
-        <li>Find one person you think is interesting in the open source community and write a quick paragraph to tell us about them.  First come first serve on who you pick.  </li>
-        <li>This discussion is about all the variety of Linux flavors that are out there and your thoughts on that. Pick 1 flavor of Linux and tell us about it. Things to think about:
-            <ul>
-                <li>You know from the materials in this first topic that Linux has more options then any other OS, do you think that's good? Bad? Neither?</li>
-                <li>Can you see any problems with having so many options?</li>
-                <li>Can you see any benefits to having so many options?</li>
-            </ul>
-        <li>If using these on an LMS (Learning Management System such as Blackboard or Canvas) consider adding the following: Your person is picked by including their name in the title of your thread after you name.  Duplications are not counted</li>    
+        <li>Activity: Watch <a href="https://www.youtube.com/watch?v=GlrS0dOCecY">my video on YouTube for VI</a> and follow along with me</li>
     </ul>
 </p>
 
