@@ -1,0 +1,78 @@
+---
+title: Shellscripts with variables
+layout: introLinux
+---
+<!--Learning Outcomes for this topic-->
+<h3>Shellscripts with variables</h3>
+<p>Learning outcomes:
+    <ul>
+        <li>Use a script to demonstrate the use of a positional parameter</li>
+        <li>Show how to get user input for a script using read</li>
+        <li>Explain the use of set with backticks</li>
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/V2yiB-0Y-sY?si=5Zna3ztEQOFoaxoQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="Week 9 CIS117.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>Shell Scripting with inputs and variables</li>
+            <ul>
+                <li>Variables</li>
+                    <ul>
+                        <li>Variables in Linux are untyped</li>
+                        <li>Any word (that isn't reserved) can be a variable</li>
+                        <li>Use $  to use variable</li>
+                    </ul>
+                <li>Small script asking for name and then saying hello, try out the code below yourself!</li>
+                <li>Example:</li>
+                    <pre>
+                    #!/bin/bash
+
+                    Echo "What's your name?"
+                    
+                    Read name
+                    
+                    Echo "Hello $name"</pre></li>
+
+            </ul>
+        <li>Positional parameters</li> 
+        <ul>
+            <li>Used to pass info to a script when executed instead of using an input method such as "read"</li>
+            <li>Numbered starting at 1 with some special parameters (such as $* and $? to get all or some of the contents of the temp variables)</li>
+            <li>Example to put Jane as $1:
+                <pre>
+                    ./testscript.sh Jane</pre>
+                echo "hello $1" #should say hello Jane</li>
+            <li>Example to put Jane as $1 and Doe $2 
+                <pre>
+                    ./testscript.sh Jane Doe</pre>
+                echo "hello $1 $2" # should say hello Jane Doe</li>
+        </ul>
+        <li>Positional parameters and backticks</li> 
+            <ul>
+                <li>use set `date` (backticks not single quote) Puts the results in positional parameters, an example can be found <a href="https://web.archive.org/web/20240129205529/https://www.learnlinux.org.za/courses/build/shell-scripting/ch05s04">here</a></li>
+                <li><a href="https://bash.cyberciti.biz/guide/Set_command">An example of the set command</a></li>
+                <li><a href="https://web.archive.org/web/20230217090635/https://www.geeksforgeeks.org/shell-scripting-set-command/">Set command in shell scripting</a></li>
+                <li><a href="https://web.archive.org/web/20240129072428/https://www.geeksforgeeks.org/set-variable-in-bash/">Set - $VARIABLE” in bash</a></li>
+            </ul>
+    </ul>   
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <li>Watch <a href="https://youtu.be/59bAJiMzgVY?si=1WP2afGWAa923_IY">this video</a> and follow along to create a shell script.</li>
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">Click here </a>
+</p>

@@ -17,7 +17,7 @@
   gtag('config', 'G-Q9SWNFD6DB');
 </script>
 
-    <title>More  commands and switches</title>
+    <title>Introduction to Shellscripting</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
 
@@ -191,72 +191,66 @@
         <div class="col">
             <br><br>
             <!--Learning Outcomes for this topic-->
-<h3>More  commands and switches</h3>
+<h3>Introduction to Linux and history</h3>
 <p>Learning outcomes:
     <ul>
-        <li>Demonstrate finding files with several criteria</li>
-        <li>Show the use of ls with wildcards and recursive searches</li>
-        <li>Explain how to locate running processes and kill a process</li>
+        <li>Create and use a basic shellscript that includes a shebang line, comment and echo</li>
+        <li>Explain the different quotes and their uses</li>
+        <li>Modify a script using a text editor</li>
     </ul>
 </p>
 
 <!--embed Youtube video here-->
 <div class="video-wrapper">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/t_Osref_Ntc?si=GzBOBGrjU9y3Etjm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/t-nB7OPzoHQ?si=sECecEuG6yP8JBgD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 <!--Download PowerPoint-->
 <p>
-    <a href="Week 4 CIS117.pptx">Would you like to download my PowerPoint to follow along?</a>
+    <a href="Week 8 CIS117.pptx">Would you like to download my PowerPoint to follow along?</a>
 </p>
 <!--Outline Of lecture notes/powerpoint for the topic-->
 <p>
     <ul>
-        <li>Using Switches</li>
+        <li>What is a script and why do we care?</li>
             <ul>
-                <li>Commands have their own sentence structure</li>
-                <li>The basic pattern is "Command Switch Argument"</li>
-                <li>Switches give us the ability to get more details and power from commands</li>
+                <li>Small programs that can be used for multiple things including repetitive tasks and repeated activities</li>
+                <li>A text file with 1 command per line</li>
+                <li>Scripts are also good for Complicated things you don't use often, If you need to figure it out once, why not make a script so you don't have to do it again?</li>
+                <li>Comments use a #</li>
+                <li>Always start with shbang to specify shell type, it's not required, but it makes it more clear what kind of script you're writing</li>
+                <li>An example tutorial for scripting can be found <a href="https://www.shellscript.sh/">here</a> includes some history of scripting and BASH as well</li>
             </ul>
-        <li>the find command</li> 
+        <li>Types of text in scripts/li> 
         <ul>
-            <li>Search using find (or locate)</li>
-            <li>find -name myfile (basic)</li>
-            <li>find /etc -name passwd (within a folder)</li>
-            <li>find -name “*.txt” (search by extension)</li>
-            <li>find - testfile (case insensitive find)</li>
-            <li>Groups, user, file type, dirdctory, empty files, date, last access etc.</li>
-            <li>Video: <a href="https://www.youtube.com/watch?v=JYR_s4TIWSM">How to use the find command</a></li>
+            <li>Plain (no quotes) <pre>echo hello</pre></li>
+            <li>Semi-opaque (double quotes, expands variables) <pre>echo "hello $name"</pre></li>
+            <li>Opaque (single quote, shows exactly what's in quotes)<pre> echo 'hello $name'</pre></li>
         </ul>
-        <li>Wildcards</li> 
+        <li>Important things to know</li> 
         <ul>
-            <li>* any number of characters</li>
-            <li>? Single character</li>
-            <li>[aA] sets</li>
-            <li><a href="https://fosspost.org/linux-command-line-basics-examples/#Common_BashLinux_Command_Line_Symbols">Some examples of Symbols</a></li>
-
+            <li><a href="https://web.archive.org/web/20240129205529/https://www.learnlinux.org.za/courses/build/shell-scripting/ch05s04">Backticks</a><pre>`this is an example of a backtick`</pre></li>
+            <li><a href="https://web.archive.org/web/20240104183154/https://byby.dev/bash-shebang">Shbang line</a> <pre>#!/bin/sh</pre></li>
+            <li>To run, file must be executable (it's not by default so you will need to change the <a href="networking.html">file permissions</a> There is a video example of me showing how to do that <a href="https://youtu.be/7rY9OVA_7VQ?si=_Tn75G6Mhjvy9WHB">here</a>)</li>
+            <li>To run you need to use the path of your script (unless in PATH)</li>
+            <li>It is important to <a href="https://web.archive.org/web/20231204082603/https://dev.to/flippedcoding/its-important-to-test-your-code-3lid">TEST YOUR CODE</a></li>
         </ul>
-        <li>Processes</li> 
+        <li>Sequence of a successful script</li> 
         <ul>
-            <li>What is <a href="https://web.archive.org/web/20230521153719/https://www.geeksforgeeks.org/processes-in-linuxunix/">Processes in Linux</a></li>
-            <li>How to <a href="https://web.archive.org/web/20240109042115/https://www.linuxfoundation.org/blog/blog/classic-sysadmin-how-to-kill-a-process-from-the-command-line">Kill a Process from the Linux Command Line</a></li>
-            <li>Monzy's <a href="https://www.youtube.com/watch?v=IuGjtlsKo4s">kill -9 rap video</a></li>
+            <li>Test commands at command prompt</li>
+            <li>Create and edit the file in an editor (VIM)</li>
+            <li>Start script with shbang line ( such as: #!/bin/bash)</li>
+            <li>Add comment with function, name and date</li>
+            <li>Save</li>
+            <li>Change permissions</li>
+            <li>Test!!</li>
+            <li>Rinse and repeat</li>
         </ul>
     </ul>   
 <!--Discussions and activities for the topic-->
 <p>Suggested Activities and Discussion Topics:
     <ul>
-        <li>Activity: Go to a Linux Emulator or Linux machine and try to solve the following problems using wildcards:</li>
-            <ul>
-                <li>All files including hidden files</li>
-                <li>Files that start with “f”</li>
-                <li>Files that start with “f” or “F”</li>
-                <li>Files that have “f” or “F” anywhere in the name</li>
-                <li>Files that have a digit in the name</li>
-                <li>Files that start with a through d</li>
-                <li>Files that end with 1 or 2</li>
-                <li>Experiment with the find command. Include going to your home directory and using find.</li>
-            </ul>
+        <li>Watch <a href="https://youtu.be/59bAJiMzgVY?si=1WP2afGWAa923_IY">this video</a> and follow along to create a shell script.</li>
     </ul>
 </p>
 

@@ -17,7 +17,7 @@
   gtag('config', 'G-Q9SWNFD6DB');
 </script>
 
-    <title>More  commands and switches</title>
+    <title>Shellscripts with variables</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
 
@@ -191,72 +191,72 @@
         <div class="col">
             <br><br>
             <!--Learning Outcomes for this topic-->
-<h3>More  commands and switches</h3>
+<h3>Shellscripts with variables</h3>
 <p>Learning outcomes:
     <ul>
-        <li>Demonstrate finding files with several criteria</li>
-        <li>Show the use of ls with wildcards and recursive searches</li>
-        <li>Explain how to locate running processes and kill a process</li>
+        <li>Use a script to demonstrate the use of a positional parameter</li>
+        <li>Show how to get user input for a script using read</li>
+        <li>Explain the use of set with backticks</li>
     </ul>
 </p>
 
 <!--embed Youtube video here-->
 <div class="video-wrapper">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/t_Osref_Ntc?si=GzBOBGrjU9y3Etjm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/V2yiB-0Y-sY?si=5Zna3ztEQOFoaxoQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 <!--Download PowerPoint-->
 <p>
-    <a href="Week 4 CIS117.pptx">Would you like to download my PowerPoint to follow along?</a>
+    <a href="Week 9 CIS117.pptx">Would you like to download my PowerPoint to follow along?</a>
 </p>
 <!--Outline Of lecture notes/powerpoint for the topic-->
 <p>
     <ul>
-        <li>Using Switches</li>
+        <li>Shell Scripting with inputs and variables</li>
             <ul>
-                <li>Commands have their own sentence structure</li>
-                <li>The basic pattern is "Command Switch Argument"</li>
-                <li>Switches give us the ability to get more details and power from commands</li>
-            </ul>
-        <li>the find command</li> 
-        <ul>
-            <li>Search using find (or locate)</li>
-            <li>find -name myfile (basic)</li>
-            <li>find /etc -name passwd (within a folder)</li>
-            <li>find -name “*.txt” (search by extension)</li>
-            <li>find - testfile (case insensitive find)</li>
-            <li>Groups, user, file type, dirdctory, empty files, date, last access etc.</li>
-            <li>Video: <a href="https://www.youtube.com/watch?v=JYR_s4TIWSM">How to use the find command</a></li>
-        </ul>
-        <li>Wildcards</li> 
-        <ul>
-            <li>* any number of characters</li>
-            <li>? Single character</li>
-            <li>[aA] sets</li>
-            <li><a href="https://fosspost.org/linux-command-line-basics-examples/#Common_BashLinux_Command_Line_Symbols">Some examples of Symbols</a></li>
+                <li>Variables</li>
+                    <ul>
+                        <li>Variables in Linux are untyped</li>
+                        <li>Any word (that isn't reserved) can be a variable</li>
+                        <li>Use $  to use variable</li>
+                    </ul>
+                <li>Small script asking for name and then saying hello, try out the code below yourself!</li>
+                <li>Example:</li>
+                    <pre>
+                    #!/bin/bash
 
-        </ul>
-        <li>Processes</li> 
+                    Echo "What's your name?"
+                    
+                    Read name
+                    
+                    Echo "Hello $name"</pre></li>
+
+            </ul>
+        <li>Positional parameters</li> 
         <ul>
-            <li>What is <a href="https://web.archive.org/web/20230521153719/https://www.geeksforgeeks.org/processes-in-linuxunix/">Processes in Linux</a></li>
-            <li>How to <a href="https://web.archive.org/web/20240109042115/https://www.linuxfoundation.org/blog/blog/classic-sysadmin-how-to-kill-a-process-from-the-command-line">Kill a Process from the Linux Command Line</a></li>
-            <li>Monzy's <a href="https://www.youtube.com/watch?v=IuGjtlsKo4s">kill -9 rap video</a></li>
+            <li>Used to pass info to a script when executed instead of using an input method such as "read"</li>
+            <li>Numbered starting at 1 with some special parameters (such as $* and $? to get all or some of the contents of the temp variables)</li>
+            <li>Example to put Jane as $1:
+                <pre>
+                    ./testscript.sh Jane</pre>
+                echo "hello $1" #should say hello Jane</li>
+            <li>Example to put Jane as $1 and Doe $2 
+                <pre>
+                    ./testscript.sh Jane Doe</pre>
+                echo "hello $1 $2" # should say hello Jane Doe</li>
         </ul>
+        <li>Positional parameters and backticks</li> 
+            <ul>
+                <li>use set `date` (backticks not single quote) Puts the results in positional parameters, an example can be found <a href="https://web.archive.org/web/20240129205529/https://www.learnlinux.org.za/courses/build/shell-scripting/ch05s04">here</a></li>
+                <li><a href="https://bash.cyberciti.biz/guide/Set_command">An example of the set command</a></li>
+                <li><a href="https://web.archive.org/web/20230217090635/https://www.geeksforgeeks.org/shell-scripting-set-command/">Set command in shell scripting</a></li>
+                <li><a href="https://web.archive.org/web/20240129072428/https://www.geeksforgeeks.org/set-variable-in-bash/">Set - $VARIABLE” in bash</a></li>
+            </ul>
     </ul>   
 <!--Discussions and activities for the topic-->
 <p>Suggested Activities and Discussion Topics:
     <ul>
-        <li>Activity: Go to a Linux Emulator or Linux machine and try to solve the following problems using wildcards:</li>
-            <ul>
-                <li>All files including hidden files</li>
-                <li>Files that start with “f”</li>
-                <li>Files that start with “f” or “F”</li>
-                <li>Files that have “f” or “F” anywhere in the name</li>
-                <li>Files that have a digit in the name</li>
-                <li>Files that start with a through d</li>
-                <li>Files that end with 1 or 2</li>
-                <li>Experiment with the find command. Include going to your home directory and using find.</li>
-            </ul>
+        <li>Watch <a href="https://youtu.be/59bAJiMzgVY?si=1WP2afGWAa923_IY">this video</a> and follow along to create a shell script.</li>
     </ul>
 </p>
 

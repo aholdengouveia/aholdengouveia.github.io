@@ -1,0 +1,72 @@
+---
+title: Introduction to Shellscripting
+layout: introLinux
+---
+<!--Learning Outcomes for this topic-->
+<h3>Introduction to Linux and history</h3>
+<p>Learning outcomes:
+    <ul>
+        <li>Create and use a basic shellscript that includes a shebang line, comment and echo</li>
+        <li>Explain the different quotes and their uses</li>
+        <li>Modify a script using a text editor</li>
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/t-nB7OPzoHQ?si=sECecEuG6yP8JBgD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="Week 8 CIS117.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>What is a script and why do we care?</li>
+            <ul>
+                <li>Small programs that can be used for multiple things including repetitive tasks and repeated activities</li>
+                <li>A text file with 1 command per line</li>
+                <li>Scripts are also good for Complicated things you don't use often, If you need to figure it out once, why not make a script so you don't have to do it again?</li>
+                <li>Comments use a #</li>
+                <li>Always start with shbang to specify shell type, it's not required, but it makes it more clear what kind of script you're writing</li>
+                <li>An example tutorial for scripting can be found <a href="https://www.shellscript.sh/">here</a> includes some history of scripting and BASH as well</li>
+            </ul>
+        <li>Types of text in scripts/li> 
+        <ul>
+            <li>Plain (no quotes) <pre>echo hello</pre></li>
+            <li>Semi-opaque (double quotes, expands variables) <pre>echo "hello $name"</pre></li>
+            <li>Opaque (single quote, shows exactly what's in quotes)<pre> echo 'hello $name'</pre></li>
+        </ul>
+        <li>Important things to know</li> 
+        <ul>
+            <li><a href="https://web.archive.org/web/20240129205529/https://www.learnlinux.org.za/courses/build/shell-scripting/ch05s04">Backticks</a><pre>`this is an example of a backtick`</pre></li>
+            <li><a href="https://web.archive.org/web/20240104183154/https://byby.dev/bash-shebang">Shbang line</a> <pre>#!/bin/sh</pre></li>
+            <li>To run, file must be executable (it's not by default so you will need to change the <a href="networking.html">file permissions</a> There is a video example of me showing how to do that <a href="https://youtu.be/7rY9OVA_7VQ?si=_Tn75G6Mhjvy9WHB">here</a>)</li>
+            <li>To run you need to use the path of your script (unless in PATH)</li>
+            <li>It is important to <a href="https://web.archive.org/web/20231204082603/https://dev.to/flippedcoding/its-important-to-test-your-code-3lid">TEST YOUR CODE</a></li>
+        </ul>
+        <li>Sequence of a successful script</li> 
+        <ul>
+            <li>Test commands at command prompt</li>
+            <li>Create and edit the file in an editor (VIM)</li>
+            <li>Start script with shbang line ( such as: #!/bin/bash)</li>
+            <li>Add comment with function, name and date</li>
+            <li>Save</li>
+            <li>Change permissions</li>
+            <li>Test!!</li>
+            <li>Rinse and repeat</li>
+        </ul>
+    </ul>   
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <li>Watch <a href="https://youtu.be/59bAJiMzgVY?si=1WP2afGWAa923_IY">this video</a> and follow along to create a shell script.</li>
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">Click here </a>
+</p>
