@@ -17,7 +17,7 @@
   gtag('config', 'G-Q9SWNFD6DB');
 </script>
 
-    <title>Introduction to Linux and history</title>
+    <title>Scripts with conditionals</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
 
@@ -190,44 +190,73 @@
         <!--Main content of the page will fill in here-->
         <div class="col">
             <br><br>
-            <h3>Links to Resources</h3>
-<!--Some general documentation links for linux tips and tricks-->
+            <!--Learning Outcomes for this topic-->
+<h3>Scripts with conditionals</h3>
+<p>Learning outcomes:
+    <ul>
+        <li>Write and test a script with a conditional and explain the use of conditionals</li>
+        <li>Demonstrate how to debug a script with conditionals</li>    </ul>
+</p>
 
-
-<div class="container">
-    <h5>Linux tips, tricks and ways to help you do things faster</h5>
-        <ul>
-            <li><a href="https://web.archive.org/web/20220804144558/https://www.endpointdev.com/blog/2015/11/favourite-unix-command-line-tools/">15 useful command line tools and tricks</a></li>
-            <li><a href="https://web.archive.org/web/20220804144703/https://www.tecmint.com/cool-linux-commandline-tools-for-terminal/">10 command line tools</a></li>
-            <li><a href="https://web.archive.org/web/20220804150444/https://www.networkworld.com/article/3284105/linux-control-sequence-tricks.html">Linux Control Sequence tricks</a></li>
-            <li><a href="https://web.archive.org/web/20220804150549/https://www.networkworld.com/article/3305811/linux-tricks-that-even-you-can-love.html">Tricks to help you master the command line on Linux</a></li>
-            <li><a href="https://web.archive.org/web/20220804150326/https://www.networkworld.com/article/3268768/finding-what-you-re-looking-for-on-linux.html">7 commands to help you find things on Linux</a></li>
-            <li><a href="https://web.archive.org/web/20220804151142/https://www.networkworld.com/article/3219684/half-a-dozen-clever-linux-command-line-tricks.html">6 command line tricks to do less work</a></li>
-
-        </ul>
+<div class="video-wrapper">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Mctd8Fq7VOU?si=MT_WTvTTY6Dh7RYQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
-
-<!--Some general  links for linux tools tips and tricks-->
-
-<div class="container">
-    <h5>Tool/Command specific help</h5>
+<!--Download PowerPoint-->
+<p>
+    <a href="Week 11 CIS117.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>Basic If-Then-Else loop</li>
+            <ul>
+                <li>Conditionals mean you have choices in a path, this is not the same as a loop</li>
+                <pre> 
+                    if [condition]
+                    then
+                    echo 
+                    yes
+                    
+                    else
+                    echo "no"
+                    
+                    fi </pre>
+                    <li>if [ $answer = “Y” ] Brackets do test (can also use function test)</li>
+                    <li>There are some required pieces of syntax such as "then" that are needed for an if statement</li>
+                    <li>echo “Yes” If condition is true (can be multiple statements)</li>
+                    <li>echo “No” If condition is false (can be multiple statements)</li>
+                    <li>fi End of conditional (if backwards) is used to indicate the if statement has ended</li>
+                    <li>if statements can also be nested if you wish to have multiple paths, be careful though!  A nested if is NOT the same as two if statements next to each other.</li>
+                    <li><a href="https://web.archive.org/web/20240128013417/https://ioflood.com/blog/bash-if-statement/">if statements in bash in more detail with some examples</a></li>
+            </ul>
+        <li>Case Statements</li> 
         <ul>
-            <li>Video: <a href="https://www.computerworld.com/video/94367/how-to-run-command-loops-linux-tip">How to run command loops </a></li>
-            <li>Video: <a href="https://www.computerworld.com/video/89095/linux-tip-how-to-use-the-find-command">How to use the find command</a></li>
-            <li>Video: <a href="https://www.computerworld.com/video/88397/2-minute-linux-tip-how-to-use-the-top-command">How to use the top command</a></li>
-            <li>Video: <a href="https://www.computerworld.com/video/86820/2-minute-linux-tip-learn-how-to-use-the-alias-command">How to use the alias command</a></li>
-            <li>Video: <a href="https://www.computerworld.com/video/86695/2-minute-linux-tip-learn-how-to-use-the-history-command">How to use the history command</a></li>
-            <li>Video: <a href="https://www.networkworld.com/video/97227/how-to-use-the-wc-command-2-minute-linux-tips">How to use the wc command</a></li>
-            <li>Video: <a href="https://www.computerworld.com/video/86896/2-minute-linux-tip-how-to-terminate-processes">How to terminate a process</a></li>
-            <li>Video: <a href="https://www.computerworld.com/video/95669/how-to-use-the-nslookup-command-2-minute-linux-tip">How to use the nslookup command</a></li>
-            <li>Video: <a href="https://www.computerworld.com/video/97207/how-to-use-the-groups-command-2-minute-linux-tipsp">How to use the groups command</a></li>
-            <li><a href="https://web.archive.org/web/20220804150150/https://www.networkworld.com/article/3256279/linux-command-history-choosing-what-to-remember-and-how.html">Linux Command line history</a></li>
-            <li><a href="https://web.archive.org/web/20220804151016/https://opensource.com/article/19/7/master-ls-command">How to use the ls command</a></li>
-            <li><a href="https://web.archive.org/web/20210122041102/https://www.networkworld.com/article/3224897/whats-behind-the-linux-umask.html">How to use umask</a></li>
-            <li><a href="https://web.archive.org/web/20220831175701/https://www.networkworld.com/article/3236499/some-tricks-for-using-sudo.html">5 tricks for using the sudo command</a></li>
+            <li>Another kind of conditional.  This is still a way of indicating paths and choices, not loops, but has differnt syntax.</li>
+            <li>If statements can be used to evaluate if one thing has happened, or if you include if-then-else two choices, but they can also include multiple choices by using the if-elseif-elseif...-else </li>
+            <li><a href="https://web.archive.org/web/20231207115828/https://www.warp.dev/terminus/bash-case-statement">Case statement example in bash with a comparison to if-else statements</a></li>
         </ul>
-</div>
+        <li>Conditional statement options</li> 
+        <ul>
+            <li>Tests for string comparison use "="</li> <pre> string = string</pre>
+            <li>Test for numbers (-eq -le -ge -gt -lt )</li> <pre>14 -eq 14</pre>
+            <li>You can also have <a href="https://web.archive.org/web/20240206005354/https://tldp.org/LDP/abs/html/fto.html">file test operators</a> such as -e and -s</li> <pre>-e /path/path/file</pre>
+            <li><a href="https://web.archive.org/web/20240206005006/https://tldp.org/LDP/abs/html/comparison-ops.html">Examples of both string and number test operators including sample code</a></li>
+        </ul>
+        <li>Debugging and common mistakes</li> 
+        <ul>
+            <li>Space matters (there and not there, can be picky)</li>
+            <li>Make sure the condition is right type (-eq vs = vs -f)</li>
+            <li>Watch for closing fi</li>
+            <li><a href="https://web.archive.org/web/20240212213439/https://learn.openwaterfoundation.org/owf-learn-linux-shell/troubleshooting/troubleshooting/">Some troubleshooting tips</a></li>
+        </ul>
+    </ul>   
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <li>Watch <a href="https://youtu.be/0N0tgZJLHZc?si=m3vRMSap8BIT8KjH">This Video</a> on conditionals with scripting and follow along</li>
+    </ul>
+</p>
 
 <!--Link to my classes page-->
 <p>Would you like to see some more classes?  

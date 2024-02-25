@@ -17,7 +17,7 @@
   gtag('config', 'G-Q9SWNFD6DB');
 </script>
 
-    <title>Introduction to Linux and history</title>
+    <title>Scripts with loops</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
 
@@ -190,44 +190,66 @@
         <!--Main content of the page will fill in here-->
         <div class="col">
             <br><br>
-            <h3>Links to Resources</h3>
-<!--Some general documentation links for linux tips and tricks-->
+            <!--Learning Outcomes for this topic-->
+<h3>Scripts with loops</h3>
+<p>Learning outcomes:
+    <ul>
+        <li>Use a script with a loop to explain how loops works</li>
+        <li>Demonstrate how to debug a script with a loop</li>
+    </ul>
+</p>
 
-
-<div class="container">
-    <h5>Linux tips, tricks and ways to help you do things faster</h5>
-        <ul>
-            <li><a href="https://web.archive.org/web/20220804144558/https://www.endpointdev.com/blog/2015/11/favourite-unix-command-line-tools/">15 useful command line tools and tricks</a></li>
-            <li><a href="https://web.archive.org/web/20220804144703/https://www.tecmint.com/cool-linux-commandline-tools-for-terminal/">10 command line tools</a></li>
-            <li><a href="https://web.archive.org/web/20220804150444/https://www.networkworld.com/article/3284105/linux-control-sequence-tricks.html">Linux Control Sequence tricks</a></li>
-            <li><a href="https://web.archive.org/web/20220804150549/https://www.networkworld.com/article/3305811/linux-tricks-that-even-you-can-love.html">Tricks to help you master the command line on Linux</a></li>
-            <li><a href="https://web.archive.org/web/20220804150326/https://www.networkworld.com/article/3268768/finding-what-you-re-looking-for-on-linux.html">7 commands to help you find things on Linux</a></li>
-            <li><a href="https://web.archive.org/web/20220804151142/https://www.networkworld.com/article/3219684/half-a-dozen-clever-linux-command-line-tricks.html">6 command line tricks to do less work</a></li>
-
-        </ul>
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/dJms9TOlm8k?si=xLbQf_cfVRO8FuoD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
-
-<!--Some general  links for linux tools tips and tricks-->
-
-<div class="container">
-    <h5>Tool/Command specific help</h5>
+<!--Download PowerPoint-->
+<p>
+    <a href="Week 12 CIS117.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>What is a loop</li>
+            <ul>
+                <li>Loop takes care of repetitive tasks</li>
+                <li>Not the same as if/else or case statements</li>
+                <li>Use Cases</li> 
+                    <ul>
+                        <li>Move or delete files over a certain size/age/attribute</li>
+                        <li>Number manipulation (such as increase all numbers by 1)</li>
+                        <li>Changing whole folders of files (such as adding time stamps or changing permissions)</li>
+                        <li>Searching for a value</li>
+                        <li>Check computer status (such as is the server up)</li>
+                    </ul>
+                <li><a href="https://web.archive.org/web/20240129140625/https://ryanstutorials.net/bash-scripting-tutorial/bash-loops.php">Tutorial on Bash Scripting with code examples</a></li>    
+            </ul>
+        <li>While loops</li> 
         <ul>
-            <li>Video: <a href="https://www.computerworld.com/video/94367/how-to-run-command-loops-linux-tip">How to run command loops </a></li>
-            <li>Video: <a href="https://www.computerworld.com/video/89095/linux-tip-how-to-use-the-find-command">How to use the find command</a></li>
-            <li>Video: <a href="https://www.computerworld.com/video/88397/2-minute-linux-tip-how-to-use-the-top-command">How to use the top command</a></li>
-            <li>Video: <a href="https://www.computerworld.com/video/86820/2-minute-linux-tip-learn-how-to-use-the-alias-command">How to use the alias command</a></li>
-            <li>Video: <a href="https://www.computerworld.com/video/86695/2-minute-linux-tip-learn-how-to-use-the-history-command">How to use the history command</a></li>
-            <li>Video: <a href="https://www.networkworld.com/video/97227/how-to-use-the-wc-command-2-minute-linux-tips">How to use the wc command</a></li>
-            <li>Video: <a href="https://www.computerworld.com/video/86896/2-minute-linux-tip-how-to-terminate-processes">How to terminate a process</a></li>
-            <li>Video: <a href="https://www.computerworld.com/video/95669/how-to-use-the-nslookup-command-2-minute-linux-tip">How to use the nslookup command</a></li>
-            <li>Video: <a href="https://www.computerworld.com/video/97207/how-to-use-the-groups-command-2-minute-linux-tipsp">How to use the groups command</a></li>
-            <li><a href="https://web.archive.org/web/20220804150150/https://www.networkworld.com/article/3256279/linux-command-history-choosing-what-to-remember-and-how.html">Linux Command line history</a></li>
-            <li><a href="https://web.archive.org/web/20220804151016/https://opensource.com/article/19/7/master-ls-command">How to use the ls command</a></li>
-            <li><a href="https://web.archive.org/web/20210122041102/https://www.networkworld.com/article/3224897/whats-behind-the-linux-umask.html">How to use umask</a></li>
-            <li><a href="https://web.archive.org/web/20220831175701/https://www.networkworld.com/article/3236499/some-tricks-for-using-sudo.html">5 tricks for using the sudo command</a></li>
+            <li>While runs as long as condition is successfully executing, stops when condition is false</li>
+            <li>Some example use cases might be counting, or reading input</li>
+            <li><a href="https://web.archive.org/web/20240112214245/https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_09_02.html">While loop documentation with example code</a></li>
         </ul>
-</div>
+        <li>For loops</li> 
+        <ul>
+            <li>Also called a for-each</li>
+            <li>Some example use cases might be if you needed to process a sequence or list of items,or work with items from another command such as cat or ls</li>
+            <li><a href="https://web.archive.org/web/20240112211346/https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_09_01.html">For loop documentation with example code</a></li>
+        </ul>
+        <li>Until loops</li> 
+        <ul>
+            <li>Similar to the while loop, but the thing happens until the condition is met</li>
+            <li>Some use cases might be if you needed a sequence or specific input</li>
+            <li><a href="https://web.archive.org/web/20240112195053/https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_09_03.html">Until loop documentation with example code</a></li>
+        </ul>
+    </ul>   
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <li>Watch <a href="https://youtu.be/YcP3J4i2hfU?si=1LRkLoIbQXZC3_zL">This Video</a> and follow along.</li>
+    </ul>
+</p>
 
 <!--Link to my classes page-->
 <p>Would you like to see some more classes?  

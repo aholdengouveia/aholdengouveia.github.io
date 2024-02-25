@@ -1,0 +1,89 @@
+\documentclass[12pt]{article}
+
+\usepackage{fontawesome}
+\usepackage{hyperref}
+\usepackage{xurl}
+
+
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0},
+}
+
+
+\title{Data Integrity}
+\author{
+        Adrianna Holden-Gouveia \\
+        Website: \url{https://aholdengouveia.name}\\ 
+        \date{\vspace{-5ex}}
+        %Email: \href{mailto:admin@aholdengouveia.name}{admin@aholdengouveia.name} \\
+        \faLinkedin{: aholdengouveia} \\
+        \faGithub {: aholdengouveia} \\
+        \faTwitter {: aholdengouveia} \\
+        }
+
+%S\date{\today}
+
+
+\begin{document}    
+
+\maketitle
+
+%\begin{abstract}
+%\end{abstract}
+%\tableofcontents
+
+\section*{Objectives:}
+\begin{itemize}
+    \item The goal of this lab assignment is for students to actively identify and address data integrity issues. Through hands-on analysis and problem-solving, students will gain practical experience in maintaining data quality
+\end{itemize}
+
+References, a video, a PowerPoint and some notes are available at my website
+\url {https://www.aholdengouveia.name/IntroData/dataintegrity.html}
+
+
+To do this lab you need both the HalloweenCandy.csv data set, and the data set you collected in the previous lab on what is data. You will also need to use Google Sheets with the Simple ML extension.  If you do not have a Google account, you can get one for free before doing this lab.  
+
+Before attempting this lab, watch this video on Simple ML for Google Sheets \url{https://io.google/2023/program/e695ebdd-b968-4b85-98d9-0a722892e842/} to get an idea of what can be done with Machine Learning
+
+The documentation for Google sheets can be found \url{https://support.google.com/docs/topic/1361472?hl=en&sjid=7424903615941153253-NA}
+
+
+\section*{Given Data set}
+
+Using the given data set HalloweenCandy.csv, we're going to actively explore the dataset and look for potential issues, including missing data, inconsistent formatting, duplicates, or outliers. The tools we'll be using are going to be under Data and Extensions in Google Sheets. 
+
+Open the Data set in Google Sheets, we're going to try the data tools, and answer the following questions. 
+\begin{enumerate}
+    \item Looking at the data in the columns for Age and Country, do you see any outliers or things that look different then you expected? For example, did everyone enter in a number for their age? If no, what did they say? What do you think went wrong in the collection of that data?  What about for their Country?
+    \item Try getting rid of the white space, go to Data --> Data Cleanup --> Trim White space.  How much white space did you get rid of? Visually, what changed in your data?
+    \item Using the data duplication check on the whole sheet, How many duplicates are there?
+    \item Using the data duplication check on the whole sheet except the internal ID column, how many duplicates were there?
+    \item Using the "Cleanup suggestions", what is the suggested actions to take? What happened after you did them? 
+    \item After doing the cleanup suggestions, review the column stats, pick one column and look at the suggested graph.  What column did you pick? Why? What's going on in the graph? 
+    \item Try the Simple ML for Sheets extension on this data set. We're going to try predicting values on two of the columns.  Try predicting values on the age column, and one column of your choice.  How did it work? How long did it take? What happened?
+\end{enumerate}
+
+ 
+\subsection*{Your data set}
+Using the data set you collected from the previous lab, we're going to explore how we can check over that data for potential issues.  You can choose to do more data validation then what's listed here, but make sure to note that in your documentation.
+
+Open your Data set in Google Sheets, we're going to try the data tools, and answer the following questions. 
+
+    \begin{enumerate}
+        \item Pick two of the columns, do you see any outliers or things that look different then you expected? What column did you pick to check? And why?
+        \item Try getting rid of the white space.  How much white space did you get rid of? Visually, what changed in your data?
+        \item Using the data duplication check on the whole sheet, How many duplicates are there?
+        \item Using the "Cleanup suggestions", what are the suggested actions to take? What happened after you did them? 
+        \item After doing the cleanup suggestions, review the column stats, pick one column and look at the suggested graph.  What column did you pick? Why? What's going on in the graph? 
+        \item Try the Simple ML for Sheets extension on this data set. We're going to try predicting values on two of the columns.What two columns did you pick? Why did you pick them? How did it work? How long did it take? Were you expecting it to take more or less time then it did? What happened?
+    \end{enumerate}
+
+
+\section*{Deliverables}
+\begin{enumerate}
+    \item A text document with the answers to the questions for the given data on Halloween Candy.  Several of the questions have multiple parts, make sure you are answering all of them.
+    \item A text document with the answers to the questions for your data set.  Several of the questions have multiple parts, make sure you are answering all of them.
+    \item Your data as a CSV after you have finished the data clean up tools and any changes. 
+\end{enumerate}
+\end{document}
