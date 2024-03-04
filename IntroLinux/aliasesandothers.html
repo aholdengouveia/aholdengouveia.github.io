@@ -1,0 +1,80 @@
+---
+title: Alias, history, _bash, prompt
+layout: introLinux
+---
+<!--Learning Outcomes for this topic-->
+<h3>Alias, history, _bash, prompt</h3>
+<p>Learning outcomes:
+    <ul>
+        <li>Show how to use alias to substitute for a command string</li>
+        <li>Describe the _bash files and their uses</li>
+        <li>Show how to modify the user prompt</li>
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/9VmlDKiMNig?si=Uk6IsMEl8QH9heSC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="Week 13 CIS117.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li><a href="https://web.archive.org/web/20240229112116/https://linuxize.com/post/how-to-create-bash-aliases/">Alias</a></li>
+            <ul>
+                <li>Shortcut or synonym for frequently used commands</li>
+                <li>Easy way to use complex command structures (lots of switches, pipes etc.)</li>
+                <li>To create an alias use <pre>alias</pre> to delete <pre>unalias</pre></li>
+                <li>To make permanent add alias to .bashrc DANGER HERE easy to mess up the .bashrc file use caution</li>
+            </ul>
+        <li>Hidden bash config files</li> 
+        <ul>
+            <li>Use the switch -a to see them, <pre>ls -a</pre> shows hidden files
+            <li>Also referred to as <a href="https://web.archive.org/web/20240226080939/https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_01.html">Bash Initialization files</a></li>
+            <li>.bash_profile</li>
+                <ul>
+                    <li>Runs on log in</li>
+                    <li>Used to set paths</li>
+                    <li>Changes you want to happen at log in</li>
+                </ul>
+            <li>.bash-history Records all commands used</li>    
+        </ul>
+        <li>Prompts</li> 
+        <ul>
+            <li>User prompt is environmental variable</li>
+                <ul>
+                    <li>Show: echo $PS1</li>
+                    <li>Change: PS1=newprompt</li>
+                </ul>
+            <li>Permanent change by changing .bash_profile DANGER!! Can mess yourself up very easily and very badly</li>
+            <li><a href="https://web.archive.org/web/20240229150805/https://ioflood.com/blog/bash-prompt/">Customizing the Bash Prompt: Terminal Layout Guide</a></li>
+            <li><a href="https://web.archive.org/web/20240229150019/https://www.baeldung.com/linux/customize-bash-prompt">Customizing Bash Prompt
+            </a></li>
+        </ul>
+        <li>Potentially useful prompts</li> 
+        <ul>
+            <li>Show last command run</li>
+            <li>Change color if last command run was successful</li>
+            <li>Show working directory</li>
+            <li>Show directory info</li>
+            <li><a href="https://bash-prompt-generator.org/">$ _ Bash Prompt Generator</a></li>
+            <li><a href="https://robotmoon.com/bash-prompt-generator/">Bash prompt generator with colours</a></li>
+            <li><a href="https://web.archive.org/web/20240220162206/https://www.maketecheasier.com/8-useful-and-interesting-bash-prompts/">8 Useful and Interesting Bash Prompts
+            </a></li>
+        </ul>
+    </ul>   
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <li>Go to <a href="https://github.com/awesome-lists/awesome-bash">this GitHub "A curated list of delightful Bash scripts and resources."</a> and pick one the resources to try.  Which one did you pick? Why?</li>
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">Click here </a>
+</p>

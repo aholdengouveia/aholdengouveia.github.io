@@ -17,7 +17,7 @@
   gtag('config', 'G-Q9SWNFD6DB');
 </script>
 
-    <title>Distros, file/directory structure (basics)</title>
+    <title>Grep, pipes, filters, top, redirection and append</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
 
@@ -190,63 +190,72 @@
         <div class="col">
             <br><br>
             <!--Learning Outcomes for this topic-->
-<h3>Distros, file/directory structure (basics)</h3>
+<h3>Grep, pipes, filters, top, redirection and append</h3>
 <p>Learning outcomes:
     <ul>
-        <li>List several distros and explain some differences</li>
-        <li>Describe File structure basics and some common directories</li>
-        <li>Demonstrate getting help (man pages, web resources, etc)</li>
+        <li>Demonstrate the use of grep to filter a text file</li>
+        <li>Use redirection (or append) in a command and explain what is happening</li>
+        <li>Show the use of head, tail and diff</li>
     </ul>
 </p>
 
 <!--embed Youtube video here-->
 <div class="video-wrapper">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/IZrPIHPgiFQ?si=X8ToG-v4qrZq2Xc6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/DeJt51UQzag?si=TrkaVa-xTHXkRCld" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 <!--Download PowerPoint-->
 <p>
-    <a href="Week 2 CIS 117.pptx">Would you like to download my PowerPoint to follow along?</a>
+    <a href="Week 10 CIS117.pptx">Would you like to download my PowerPoint to follow along?</a>
 </p>
 <!--Outline Of lecture notes/powerpoint for the topic-->
 <p>
     <ul>
-        <li>Linux Families</li>
+        <li><a href="https://web.archive.org/web/20231018015446/https://linuxize.com/post/how-to-use-grep-command-to-search-files-in-linux/">Grep</a></li>
             <ul>
-                <li><a href="https://web.archive.org/web/20240112171113/https://distrowatch.com/dwres.php?resource=family-tree">Visual of the Linux family trees</a></li>
-                <li><a href="https://ubuntu.com/desktop/flavours">Ubuntu Family Tree</a></li>
-                <li>Linux Family Resemblance</li>
+                <li>grep is a command to filter lines that contain specific text</li>
+                <li>Examples</li>
+                    <ul>
+                        <li>cat /etc/passwd</li>
+                        <li>cat /etc/passwd  | grep Jane</li>
+                        <li>cat /etc/passwd |  grep Jane |wc -l</li>
+                        <li>cat /etc/passwd | grep -v Jane</li>
+                    </ul>
             </ul>
-        <li>Linux Users</li> 
+        <li><a href="https://web.archive.org/web/20240204095849/https://www.gnu.org/software/bash/manual/html_node/Redirections.html">Redirect and append</a></li> 
+        <ul>
+            <li>Redirect ></li>
+            <li>Append >></li>
+            <li>What's the difference? Redirect erases the file contents, append puts the results at the end of the file</li>
+        </ul>
+        <li>Display file options</li> 
+        <ul>
+            <li><a href="https://web.archive.org/web/20230604235646/https://linuxhint.com/cat-command-bash/">cat</a> Used to display a file</li>
+            <li>Alternatives <a href="https://web.archive.org/web/20231209020919/https://linuxhint.com/bash_head_tail_command/">head, tail</a> and od</li>
+                <ul>
+                    <li>head displays top (default 10) lines</li>
+                    <li>tail displays end (defaults to 10) lines</li>
+                    <li><a href="https://web.archive.org/web/20231206045441/https://linux.101hacks.com/unix/od-command-examples/">od</a> displays any file by showing hex code</li>
+                </ul>
+        </ul>
+        <li>File comparison</li> 
             <ul>
-                <li><a href="https://tldp.org/LDP/lame/LAME/linux-admin-made-easy/root-account.html">Root Account</a></li>
-                <li><a href="https://tldp.org/LDP/lame/LAME/linux-admin-made-easy/creating-user-accounts.html">Creating user accounts</a></li>
+                <li>Use <a href="https://web.archive.org/web/20230322154324/https://ss64.com/bash/diff.html">diff</a> to compare files</li>
+                <li>By default the output is designed to be read by computer not human</li>
+                <li><a href="https://web.archive.org/web/20230930033621/https://linuxize.com/post/diff-command-in-linux/">diff command with examples</a></li>
             </ul>
-        <li>How to try out Linux</li> 
-            <ul>
-                <li><a href="https://distrosea.com/">Distrosea: Click here to try different distros online</li>
-                <li><a href="https://www.webminal.org/">FWebminal:free account needed to try Linux in your browser</a></li>
-                <li><a href="https://cocalc.com/features/terminal">CoCalc: required free login but has some AI help</a> </li>
-            </ul>
-        <li><a href="https://tldp.org/LDP/abs/html/basic.html">Some first commands to try</a></li> 
-            <ul>
-                <li><a href="https://linuxcommandlibrary.com/man/ls">ls</a></li>
-                <li><a href="https://linuxcommandlibrary.com/man/touch">touch</a></li>
-                <li><a href="https://linuxcommandlibrary.com/man/rm">rm</a></li>
-                <li><a href="https://linuxcommandlibrary.com/man/cp">cp</a></li>
-                <li><a href="https://linuxcommandlibrary.com/man/mkdir">mkdir</a></li>
-            </ul>
-        <li>Where to go for help</li> 
-            <ul>
-                <li><a href="https://ubuntu.com/tutorials/command-line-for-beginners#1-overview">The Linux command line for beginners by Ubuntu</a></li>
-                <li><a href="https://linuxize.com/post/basic-linux-commands/">Basic Linux Commands</a></li>
-                <li><a href="https://fosswire.com/post/2007/08/unixlinux-command-cheat-sheet/">Linux Commands Cheat Sheet by FossWire</a></li>
-            </ul>
+        <li><a href="https://web.archive.org/web/20231208163834/https://ss64.com/bash/tar.html">Tar</a></li> 
+        <ul>
+            <li>What is a tarball? It means tape archive</li>
+            <li>Why are the used? To archive files, so they can be easily moved around and worked with</li>
+            <li>How do you use one?<pre>tar -cvf ~/name.tar /home/user/directory</pre></li>
+            <li><a href="https://web.archive.org/web/20240128215756/https://linuxize.com/post/gzip-command-in-linux/">Gzip</a> is also used to compress into a gzip instead of archive. To use add z to the options (-cvzf) also change the extension to .tar.gz or .tgz</li>
+        </ul>
     </ul>   
 <!--Discussions and activities for the topic-->
 <p>Suggested Activities and Discussion Topics:
     <ul>
-        <li>Activity: Watch <a href="https://youtu.be/CMapC4F2g7E?si=OYvEZTIrZLZNCVsa">this YouTube video</a> and follow along with me</li>
+        <li>Follow along with me on <a href="https://youtu.be/x0EK6PmKRCU?si=DdRIvFB9LbZZxbpC">This video</a> on how to use tar</li>
     </ul>
 </p>
 

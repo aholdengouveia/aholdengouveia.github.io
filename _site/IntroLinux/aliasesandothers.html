@@ -17,7 +17,7 @@
   gtag('config', 'G-Q9SWNFD6DB');
 </script>
 
-    <title>Distros, file/directory structure (basics)</title>
+    <title>Alias, history, _bash, prompt</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
 
@@ -190,63 +190,74 @@
         <div class="col">
             <br><br>
             <!--Learning Outcomes for this topic-->
-<h3>Distros, file/directory structure (basics)</h3>
+<h3>Alias, history, _bash, prompt</h3>
 <p>Learning outcomes:
     <ul>
-        <li>List several distros and explain some differences</li>
-        <li>Describe File structure basics and some common directories</li>
-        <li>Demonstrate getting help (man pages, web resources, etc)</li>
+        <li>Show how to use alias to substitute for a command string</li>
+        <li>Describe the _bash files and their uses</li>
+        <li>Show how to modify the user prompt</li>
     </ul>
 </p>
 
 <!--embed Youtube video here-->
 <div class="video-wrapper">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/IZrPIHPgiFQ?si=X8ToG-v4qrZq2Xc6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/9VmlDKiMNig?si=Uk6IsMEl8QH9heSC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 <!--Download PowerPoint-->
 <p>
-    <a href="Week 2 CIS 117.pptx">Would you like to download my PowerPoint to follow along?</a>
+    <a href="Week 13 CIS117.pptx">Would you like to download my PowerPoint to follow along?</a>
 </p>
 <!--Outline Of lecture notes/powerpoint for the topic-->
 <p>
     <ul>
-        <li>Linux Families</li>
+        <li><a href="https://web.archive.org/web/20240229112116/https://linuxize.com/post/how-to-create-bash-aliases/">Alias</a></li>
             <ul>
-                <li><a href="https://web.archive.org/web/20240112171113/https://distrowatch.com/dwres.php?resource=family-tree">Visual of the Linux family trees</a></li>
-                <li><a href="https://ubuntu.com/desktop/flavours">Ubuntu Family Tree</a></li>
-                <li>Linux Family Resemblance</li>
+                <li>Shortcut or synonym for frequently used commands</li>
+                <li>Easy way to use complex command structures (lots of switches, pipes etc.)</li>
+                <li>To create an alias use <pre>alias</pre> to delete <pre>unalias</pre></li>
+                <li>To make permanent add alias to .bashrc DANGER HERE easy to mess up the .bashrc file use caution</li>
             </ul>
-        <li>Linux Users</li> 
-            <ul>
-                <li><a href="https://tldp.org/LDP/lame/LAME/linux-admin-made-easy/root-account.html">Root Account</a></li>
-                <li><a href="https://tldp.org/LDP/lame/LAME/linux-admin-made-easy/creating-user-accounts.html">Creating user accounts</a></li>
-            </ul>
-        <li>How to try out Linux</li> 
-            <ul>
-                <li><a href="https://distrosea.com/">Distrosea: Click here to try different distros online</li>
-                <li><a href="https://www.webminal.org/">FWebminal:free account needed to try Linux in your browser</a></li>
-                <li><a href="https://cocalc.com/features/terminal">CoCalc: required free login but has some AI help</a> </li>
-            </ul>
-        <li><a href="https://tldp.org/LDP/abs/html/basic.html">Some first commands to try</a></li> 
-            <ul>
-                <li><a href="https://linuxcommandlibrary.com/man/ls">ls</a></li>
-                <li><a href="https://linuxcommandlibrary.com/man/touch">touch</a></li>
-                <li><a href="https://linuxcommandlibrary.com/man/rm">rm</a></li>
-                <li><a href="https://linuxcommandlibrary.com/man/cp">cp</a></li>
-                <li><a href="https://linuxcommandlibrary.com/man/mkdir">mkdir</a></li>
-            </ul>
-        <li>Where to go for help</li> 
-            <ul>
-                <li><a href="https://ubuntu.com/tutorials/command-line-for-beginners#1-overview">The Linux command line for beginners by Ubuntu</a></li>
-                <li><a href="https://linuxize.com/post/basic-linux-commands/">Basic Linux Commands</a></li>
-                <li><a href="https://fosswire.com/post/2007/08/unixlinux-command-cheat-sheet/">Linux Commands Cheat Sheet by FossWire</a></li>
-            </ul>
+        <li>Hidden bash config files</li> 
+        <ul>
+            <li>Use the switch -a to see them, <pre>ls -a</pre> shows hidden files
+            <li>Also referred to as <a href="https://web.archive.org/web/20240226080939/https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_01.html">Bash Initialization files</a></li>
+            <li>.bash_profile</li>
+                <ul>
+                    <li>Runs on log in</li>
+                    <li>Used to set paths</li>
+                    <li>Changes you want to happen at log in</li>
+                </ul>
+            <li>.bash-history Records all commands used</li>    
+        </ul>
+        <li>Prompts</li> 
+        <ul>
+            <li>User prompt is environmental variable</li>
+                <ul>
+                    <li>Show: echo $PS1</li>
+                    <li>Change: PS1=newprompt</li>
+                </ul>
+            <li>Permanent change by changing .bash_profile DANGER!! Can mess yourself up very easily and very badly</li>
+            <li><a href="https://web.archive.org/web/20240229150805/https://ioflood.com/blog/bash-prompt/">Customizing the Bash Prompt: Terminal Layout Guide</a></li>
+            <li><a href="https://web.archive.org/web/20240229150019/https://www.baeldung.com/linux/customize-bash-prompt">Customizing Bash Prompt
+            </a></li>
+        </ul>
+        <li>Potentially useful prompts</li> 
+        <ul>
+            <li>Show last command run</li>
+            <li>Change color if last command run was successful</li>
+            <li>Show working directory</li>
+            <li>Show directory info</li>
+            <li><a href="https://bash-prompt-generator.org/">$ _ Bash Prompt Generator</a></li>
+            <li><a href="https://robotmoon.com/bash-prompt-generator/">Bash prompt generator with colours</a></li>
+            <li><a href="https://web.archive.org/web/20240220162206/https://www.maketecheasier.com/8-useful-and-interesting-bash-prompts/">8 Useful and Interesting Bash Prompts
+            </a></li>
+        </ul>
     </ul>   
 <!--Discussions and activities for the topic-->
 <p>Suggested Activities and Discussion Topics:
     <ul>
-        <li>Activity: Watch <a href="https://youtu.be/CMapC4F2g7E?si=OYvEZTIrZLZNCVsa">this YouTube video</a> and follow along with me</li>
+        <li>Go to <a href="https://github.com/awesome-lists/awesome-bash">this GitHub "A curated list of delightful Bash scripts and resources."</a> and pick one the resources to try.  Which one did you pick? Why?</li>
     </ul>
 </p>
 
