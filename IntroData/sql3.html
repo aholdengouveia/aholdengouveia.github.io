@@ -1,0 +1,122 @@
+---
+title: SQL Table Joins and What's Next
+layout: introdata
+---
+<!--Learning Outcomes for this topic-->
+<h3>SQL Table Joins and What's Next</h3>
+<p>Learning outcomes:
+    <ul>
+        <li>Write a SQL statement that joins multiple tables using foreign keys and primary keys</li>
+        <li>List resources for continuing to learn SQL</li>
+        <li>Describe query options that are not based on SQL</li>
+        <li>Describe what UI/UX is and why it's important</li>
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/6616uneYZwQ?si=D7gE0BT-7VY0f7RY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="CIS 113 Week 9.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>Why do we have so many table join types</li>
+            <ul>
+                <li>Tables will have different relationships</li>
+                <li>The results of the different joins will show combinations of data</li>
+                <li>Depending on the problem we're trying to solve with our query we might need different combos of the data</li>
+                <li>For example, maybe we want to see the winner of a reading campaign. If we have a table of library patrons who signed up, and a table of books checked out for the campaign, we can do an inner join on them to see who the winner of the campaign is by ordering the results by descending(desc)
+                    <pre>
+                    SELECT "Patrons"."Name", COUNT(*) 
+                    FROM "Patrons" 
+                    INNER JOIN "CampaignCheckouts" 
+                    ON "Patrons"."PatronID" = "CampaignCheckouts"."Patron" 
+                    GROUP BY "Patrons"."Name" 
+                    ORDER BY COUNT(*) DESC";</pre>
+                </li>
+                <li><a href="https://web.archive.org/web/20240211234915/https://www.atlassian.com/data/sql/sql-join-types-explained-visually">SQL Join types explained visually</a></li>
+                <li><a href="https://web.archive.org/web/20240229154221/https://blog.codinghorror.com/a-visual-explanation-of-sql-joins/">A Visual Explanation of SQL Joins, includes venn diagrams, sample SQL queries and example tables</a></li>
+            </ul>
+        <li><a href="https://www.w3schools.com/sql/sql_join_inner.asp">Inner Join</a></li> 
+        <ul>
+            <li>Tables have columns of information you need to know the names of the columns so that you can figure out what needs to match for the join</li>
+            <li>An Inner Join is going to be where the information on tables A and B match looking at a particular column</li>
+            <li>This is ONLY where they match</li>
+            <li>Example:If we wanted to know patrons of the library who borrowed books in the last 6 months we would look at where patron's table and the books checkouts tables as seen in the example query on slide 1 or above</li>
+        </ul>
+        <li><a href="https://www.w3schools.com/sql/sql_join_full.asp">Outer Join</a></li> 
+        <ul>
+            <li>An Outer Join is all information in both tables including where they match</li>
+            <li>This is less common then inner joins</li>
+            <li>Example: We can take a books table and a patrons table and look at both, not all books have been checked out, not all patrons have borrowed a book, but we want all the data anyway, anything not filled in will have a NULL value</li>
+        </ul>
+        <li><a href="https://www.w3schools.com/sql/sql_join_left.asp">Left</a> and <a href="https://www.w3schools.com/sql/sql_join_right.asp">Right</a> Joins</li> 
+        <ul>
+            <li>Left Outer Join is all  results from Table A including where there are matches on Table B</li>
+            <li>Left Outer join where we won't have the matches from Table B is done by using the WHERE to specify that if Table A has matches in Table B mark it as null in our results</li>
+            <li>We can do the same for the right with Right Outer Join by switching the order of the tables in the query</li>
+        </ul>
+        <li>Where to go next for more SQL</li> 
+        <ul>
+            <li>There are places you can go to get case studies to trial your SQL knowledge</li>
+            <ul>
+                <li><a href="https://8weeksqlchallenge.com/case-study-1/">8 week SQL challenge Case Studies</a></li>
+                <li><a href="https://advancedsqlpuzzles.com/">Advanced SQL puzzles</a></li>
+                <li><a href="https://www.hackerrank.com/domains/sql">Hacker Rank challenges for SQL</a></li>
+            </ul>
+            <li>There are references you can look at such as <a href="https://www.w3schools.com/sql/sql_quickref.asp">W3 Schools SQL</a></li>
+            <li>There are <a href="https://web.archive.org/web/20240119141821/https://learnsql.com/blog/sql-basics-cheat-sheet/#inner-join">cheat sheets</a> you can use for refresh</li>
+        </ul>
+        <li>NoSQL</li> 
+        <ul>
+            <li>NoSQL stands for Not Only SQL</li>
+            <li>NoSQL databases are not relational</li>
+            <li>Examples of NoSQL databases are document, key-value, graph, or wide-column stores</li>
+            <li>Many people argue NoSQL is more flexible and scalable then SQL based Databases</li>
+            <li>NoSQL can handle unstructured and semi-structured data</li>
+            <li>Examples of implementations are MongoDB, Redis and Cassandra</li>
+            <li>An example of where you might want to use NoSQL instead of SQL might be if you wanted a database of images or videos (Large Items)</li>
+            <li><a href="https://web.archive.org/web/20231208084049/https://cloud.google.com/discover/what-is-nosql">Explanation of NoSQL by Google</a></li>
+        </ul>
+        <li>What is <a href="https://web.archive.org/web/20240118093642/https://careerfoundry.com/en/blog/ux-design/the-difference-between-ux-and-ui-design-a-laymans-guide/">UI/UX</a></li> 
+        <ul>
+            <li>UI is User Interface</li>
+            <li>UX is User Experience</li>
+            <li>Both are topics that can be an entire course or job</li>
+            <li>UI/UX is how we interact with software, data or other things</li>
+            <li>UI is the look and feel of the interaction</li>
+            <li> UX is the overall experience</li>
+        </ul>
+        <li>Why UI/UX is important</li> 
+        <ul>
+            <li>It's important to be able to communicate your information to others</li>
+            <li>If people don't want to use your software or interact with your data it doesn't matter how good your data is, or how important your analytics are</li>
+            <li> If others can't follow what you're doing with your data or product they won't know how to interact with it and will miss the things you want them to see, or not realize what you are trying to focus on</li>
+            <li>Reasonable or not people, tend to judge credibility by useability, if your data is hard to understand or present, people may not think it's credible</li>
+        </ul>
+        <li>Ways we can communicate our data with others</li> 
+        <ul>
+            <li>We can generate reports of our data, for example PostgreSQL can generate a CSV for results of a query</li>
+            <li>Query results can also be sent to other programs if they are hooked into the database</li>
+            <li>Dashboards can be an example of a way to interact with a database</li>
+            <li>Business Intelligence (BI) tools can be used to create a data analysis report with charts, tables, filters, and parameters</li>
+            <li>You can also put your query results on a website, such as when you search stores for items, a lot of stores use databases to keep track of their inventory, and your search is creating a query</li>
+        </ul>
+    </ul>   
+    </p>
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <li>Follow the instructions on <a href="labs/dbsql3.pdf">this PDF</a></li>
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">Click here </a>
+</p>

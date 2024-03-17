@@ -1,0 +1,108 @@
+---
+title: SQL Continued
+layout: introdata
+---
+<!--Learning Outcomes for this topic-->
+<h3>SQL Continued</h3>
+<p>Learning outcomes:
+    <ul>
+        <li>Demonstrate using sql with multiple filters</li>
+        <li>Use SQL with “distinct” and ordered by ascending and descending</li>
+
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/pVr8ElnuWy8?si=tSq17wpWjsYGMXOD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="/IntroData/CIS 113 Week 8.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>Table joins</li>
+            <ul>
+                <li>Data is organized in tables</li>
+                <li>Tables will have a primary key for each item/record that is unique</li>
+                <li>Joining tables is so that you can get data from two tables</li>
+                <li>There are different types of joins depending how you want your data presented</li>
+                <li>The relationship of the tables is based on the primary key and foreign key</li>
+                <li>Joins are typically done between primary and foreign keys, but can involve other values as well</li>
+                <li>To have a join, you need a related column otherwise the join won't know how to work</li>
+            </ul>
+        <li>Examples of Table joins</li> 
+            <ul>
+                <li>Let's say we have a table of books and a table of library patrons</li>
+                <li>From what we know about SQL so far we can look at the contents of each table individually and manipulate the data on each single table</li>
+                <li>Adding in joins allows us to look at combos, such as who borrowed a book or the borrowing history of each patron</li>
+                <li><a href="https://web.archive.org/web/20240211234915/https://www.atlassian.com/data/sql/sql-join-types-explained-visually">SQL Join types explained visually</a></li>
+            </ul>
+        <li>SQL filters</li> 
+            <ul>
+                <li>We can also use filters or groupings to get data out of the database</li>
+                <li>FILTER can show particular pieces of data</li>
+                <li><a href="https://docs.data.world/documentation/sql/concepts/intermediate/GROUP_BY.html">An introduction to the GROUP BY clause and FILTER modifier</a> with samples to try right in your browser</li>
+                <li>One example of filtering data is using the following symbols: = != &lt &gt </li>
+                <li>For example you could see all books that cost less than $10, or more then $5 or cost equal to $9.99</li>
+                <li>An example of how this might look in a SQL command would be <pre>SELECT * FROM books_table WHERE price &lt 10;</pre> <pre>SELECT * FROM books_table WHERE price = 9.99;</pre></li>
+            </ul>
+        <li>Adding in multiple options</li> 
+            <ul>
+                <li>We can also use AND condition and the OR condition to get multiple options selected</li>
+                <li><a href="https://web.archive.org/web/20231110091106/https://www.techonthenet.com/sql/and_or.php">AND condition and the OR condition explained with examples</a></li>
+                <li>For example, if you wanted to look at books that cost less than $10 AND were published in the last 10 years</li>
+                <li>An example of how this might look in a SQL command would be <pre>SELECT * FROM books_table WHERE price &lt 10 AND publish_date &gt 2015;</pre></li>
+            </ul>
+        <li>SQL distinct</li> 
+            <ul>
+                <li>We could also look for items that are unique, or distinct using SQL</li>
+                <li> This would allow us to look at data without duplication</li>
+                <li><a href="https://web.archive.org/web/20231021161427/https://www.sqlshack.com/common-use-cases-of-sql-select-distinct/">Common use cases of SQL SELECT Distinct</a></li>
+                <li>Example 1: If we wanted to make sure we have unique library patrons, we could look for addresses to make sure we are only seeing unique addresses and no duplicates</li>
+                <li>Example 2: Looking at books we might want to make sure we are looking at a distinct or unique catalog of books, without duplication so we can take accurate inventory of what we might be missing</li>
+            </ul>
+        <li>SQL ascending and descending</li> 
+            <ul>
+                <li>We can also easily organize our data</li>
+                <li>Asking the database to give results in any order or organizational pattern we want without changing the data can give us the ability to play with the data in more ways</li>
+                <li>SQL has the options of Ascending or Descending</li>
+                <li>These are denoted by ASC and DESC functions, These are used by saying ORDER BY</li>
+                <li>In SQL this might look like <pre>SELECT * FROM books_table ORDER BY cost desc;</pre></li>
+                <li><a href="https://web.archive.org/web/20231210163900/https://learnsql.com/cookbook/how-to-sort-in-sql/">How to Sort in SQL</a></li>
+            </ul>
+        <li>Other functions with SQL</li> 
+            <ul>
+                <li>SQL has a number of other functions that are helpful as well</li>
+                <li>CAUTION:  The type of SQL you're using affects what functions there are and how they are labelled</li>
+                <li>Some functions are there in all the common dialects of SQL and look the same</li>
+                <li><a href="https://en.wikibooks.org/wiki/SQL_Dialects_Reference">Here</a> are some examples of what functions look like by dialect</li>
+                <li>For example, if you wanted to find Natural logarithm of x</li>
+                    <ul>
+                        <li>Standard SQL says it's LN(x)</li>
+                        <li>MSSQL says it's  LOG(x)</li>
+                        <li>MySQL says it can be either one</li>
+                    </ul>
+            </ul>
+        <li>How SQL queries are processed</li> 
+            <ul>
+                <li>FROM/JOIN --&gt  WHERE --&gt GROUP BY --&gt HAVING --&gt SELECT --&gt ORDER BY --&gt LIMIT</li>
+                <li><a href="https://twitter.com/maybeshalinii/status/1728363137903267905">Tweet about this with visual</a></li>
+            </ul>
+    </ul> 
+</p>  
+
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <li>Follow the instructions on <a href="labs/dbsql2.pdf">this PDF</a></li>
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">Click here </a>
+</p>
