@@ -17,7 +17,7 @@
   gtag('config', 'G-Q9SWNFD6DB');
 </script>
 
-    <title>SQL Table Joins and What's Next</title>
+    <title>Uses and Abuses of Data</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
 
@@ -166,116 +166,122 @@
         <div class="col">
             <br><br>
             <!--Learning Outcomes for this topic-->
-<h3>SQL Table Joins and What's Next</h3>
+<h3>Uses and Abuses of Data</h3>
 <p>Learning outcomes:
     <ul>
-        <li>Write a SQL statement that joins multiple tables using foreign keys and primary keys</li>
-        <li>List resources for continuing to learn SQL</li>
-        <li>Describe query options that are not based on SQL</li>
-        <li>Describe what UI/UX is and why it's important</li>
+        <li>Describe a situation where databases might be misused for example with privacy issues and DNA</li>
+        <li>Describe what makes a good UI/UX</li>
     </ul>
 </p>
 
 <!--embed Youtube video here-->
 <div class="video-wrapper">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/6616uneYZwQ?si=D7gE0BT-7VY0f7RY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/1KkHLog2kxU?si=jCzsdwbYUEsyHHVR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 <!--Download PowerPoint-->
 <p>
-    <a href="CIS 113 Week 9.pptx">Would you like to download my PowerPoint to follow along?</a>
+    <a href="CIS 113 Week 10.pptx">Would you like to download my PowerPoint to follow along?</a>
 </p>
 <!--Outline Of lecture notes/powerpoint for the topic-->
 <p>
     <ul>
-        <li>Why do we have so many table join types</li>
+        <li>Reminder of UI/UX</li>
             <ul>
-                <li>Tables will have different relationships</li>
-                <li>The results of the different joins will show combinations of data</li>
-                <li>Depending on the problem we're trying to solve with our query we might need different combos of the data</li>
-                <li>For example, maybe we want to see the winner of a reading campaign. If we have a table of library patrons who signed up, and a table of books checked out for the campaign, we can do an inner join on them to see who the winner of the campaign is by ordering the results by descending(desc)
-                    <pre>
-                    SELECT "Patrons"."Name", COUNT(*) 
-                    FROM "Patrons" 
-                    INNER JOIN "CampaignCheckouts" 
-                    ON "Patrons"."PatronID" = "CampaignCheckouts"."Patron" 
-                    GROUP BY "Patrons"."Name" 
-                    ORDER BY COUNT(*) DESC";</pre>
-                </li>
-                <li><a href="https://web.archive.org/web/20240211234915/https://www.atlassian.com/data/sql/sql-join-types-explained-visually">SQL Join types explained visually</a></li>
-                <li><a href="https://web.archive.org/web/20240229154221/https://blog.codinghorror.com/a-visual-explanation-of-sql-joins/">A Visual Explanation of SQL Joins, includes venn diagrams, sample SQL queries and example tables</a></li>
+                <li>UI is User Interface and it's how people interact with your data or product</li>
+                <li>UX is User Experience and how people feel about the interaction</li>
+                <li>We want to be able to share our data, our results and our analysis with others. To be able to do this successfully we have to pay attention to UI, UX and other types of visualizations</li>
+                <li>Well-designed user interactions with our data and results mean others want to interact with them more, greater understanding of the data and results, and can lead to better choices being made</li>
             </ul>
-        <li><a href="https://www.w3schools.com/sql/sql_join_inner.asp">Inner Join</a></li> 
+        <li>What makes good UI/UX</li> 
         <ul>
-            <li>Tables have columns of information you need to know the names of the columns so that you can figure out what needs to match for the join</li>
-            <li>An Inner Join is going to be where the information on tables A and B match looking at a particular column</li>
-            <li>This is ONLY where they match</li>
-            <li>Example:If we wanted to know patrons of the library who borrowed books in the last 6 months we would look at where patron's table and the books checkouts tables as seen in the example query on slide 1 or above</li>
+            <li>Understanding of your target market will help you understand what they need and want so your design can meet them where they are</li>
+            <li>Having a clear user journey, understand how they will go through your UI/UX/visualization including what touchpoints  (specific cases that are important in your scenario) are important.  Think of  a treasure map with landmarks</li>
+            <li>Responsive design that is easy to navigate on all screen sizes</li>
+            <li>Accessibility is for everyone, better designs should make accessibility part of the interaction seamlessly</li>
+            <li>Simplicity, ease of use and intuitive navigation and understanding are key to good UI/UX/visualizations</li>
+            <li><a href="https://web.archive.org/web/20231207174503/https://www.uxpin.com/studio/blog/good-ui-design-characteristics/">Key Characteristics of Good UI Design - According to 8 Experts</a></li>
         </ul>
-        <li><a href="https://www.w3schools.com/sql/sql_join_full.asp">Outer Join</a></li> 
+        <li>Examples of good UI/UX</li> 
         <ul>
-            <li>An Outer Join is all information in both tables including where they match</li>
-            <li>This is less common then inner joins</li>
-            <li>Example: We can take a books table and a patrons table and look at both, not all books have been checked out, not all patrons have borrowed a book, but we want all the data anyway, anything not filled in will have a NULL value</li>
+            <li>Some common examples of UI/UX that are considered intuitive include, Netflix, Spotify, Bumble, and Google Store</li>
+            <li>There are awards for good UI/UX</li>
+            <li><a href="https://winners.webbyawards.com/winners/websites-and-mobile-sites/features-design/best-user-experience?years=0">Webby</a> for websites</li>
+            <li>More general UX would be the <a href="https://ux-design-awards.com/winners?grouped=&search=&filter=&year=">UX design awards</a></li>
+            <li>More examples of designs can be found <a href="https://dribbble.com/">Dribble</a></li>
+            <li><a href="https://bear.app/">bear</a> A markdown note taking app</li>
         </ul>
-        <li><a href="https://www.w3schools.com/sql/sql_join_left.asp">Left</a> and <a href="https://www.w3schools.com/sql/sql_join_right.asp">Right</a> Joins</li> 
+        <li>What makes bad UI/UX</li> 
         <ul>
-            <li>Left Outer Join is all  results from Table A including where there are matches on Table B</li>
-            <li>Left Outer join where we won't have the matches from Table B is done by using the WHERE to specify that if Table A has matches in Table B mark it as null in our results</li>
-            <li>We can do the same for the right with Right Outer Join by switching the order of the tables in the query</li>
+            <li>Not paying attention to your target market and always doing the same thing, and presenting everything in the same way.  A pie chart is great, ONLY using pie charts is not</li>
+            <li>Having no plan, hard to navigate interactions, and lots of clicks to get where you want to be</li>
+            <li>Confusing diagrams of the analysis that are hard to follow, not paying attention to how things look to others, for example a chart or website all in shades of red would be hard to use, tough for people with colour blindness, and not intuitive to navigate</li>
         </ul>
-        <li>Where to go next for more SQL</li> 
+        <li>Examples of bad UI/UX</li> 
         <ul>
-            <li>There are places you can go to get case studies to trial your SQL knowledge</li>
+            <li>I'm sure everyone can think of examples of times where you tried to use a product, navigate a website, play a game, or anything else where it was such a confusing and bad experience you gave up. Therefore we'll look at humorously bad options</li>
+            <li>Reddit has a whole subreddit for <a href="https://www.reddit.com/r/badUIbattles/">bad UI battles</a></li>
+            <li>Some designers have implemented <a href="https://goulartnogueira.github.io/BadUI/">collections of these bad UI examples</a></li>
+            <li>Challenge: Fill out <a href="https://userinyerface.com/">this form</a> as fast as you can Yes it's bad on purpose.</li>
+        </ul>
+        <li>How UI/UX can affect how data is used and seen</li> 
+        <ul>
+            <li>Part of UI/UX is organization and consistency, if your data isn't organized it's hard to use, think of adding in a birthday to a website, you expect the dates to be in order right? What if they weren't?</li>
+            <li>If you give too much data and information to a user right away, you will overload them and they won't get much out of it, think of my TL;DR videos at 20min, vs if I recorded a two hour lecture for you to listen to, or the 17hour video on SQL in my resources</li>
+            <li>If your interface is confusing and frustrating, even if the user powers through because they have to, they won't get as much out of it, and if they misunderstand what you're trying to convey you'll lose their trust and they won't listen/read/see/understand what you want them to</li>
+        </ul>
+        <li>How and why people can manipulate data</li> 
+        <ul>
+            <li>Data can show anything you want, for example, US is best at Football! <a href="https://www.espn.com/nfl/superbowl/history/winners">100% of Superbowls are won by US teams!</a> Are you impressed by that? Is the US the best at football?  No? Why not? Did you make a face and say something about American football and not REAL football</li>
+            <li>Showing the right data (or the wrong data) can change how people view things</li>
+            <li>If you can understand what data to collect and how it influences choices you can choose where to press</li>
+            <li>Dark Patterns are unfortunately a common thing, especially in social media. But the ability to subtly press people into things using data has been used for many  years for good things (eating vegetables during WWII) or bad things (Doom scrolling)</li>
+            <li>An example of where data can be manipulated for good and bad is in science, <a href="https://web.archive.org/web/20231003032731/http://ds-wordpress.haverford.edu/psych2015/projects/chapter/plagiarism-and-data-manipulation/">this chapter explains how science data can be manipulated</a></li>
+        </ul>
+        <li>Examples of people manipulating data</li> 
+        <ul>
+            <li><a href="https://web.archive.org/web/20231226234233/https://privacyinternational.org/news-analysis/3735/why-were-concerned-about-profiling-and-micro-targeting-elections">Data profiling</a></li>
             <ul>
-                <li><a href="https://8weeksqlchallenge.com/case-study-1/">8 week SQL challenge Case Studies</a></li>
-                <li><a href="https://advancedsqlpuzzles.com/">Advanced SQL puzzles</a></li>
-                <li><a href="https://www.hackerrank.com/domains/sql">Hacker Rank challenges for SQL</a></li>
+                <li>Based on data collected about you, should you get ads to push your vote one way? Encourage you not to vote? Show you lies or exaggerations about the opposing party?</li>
+                <li>What is most likely to make you want to interact with a post? Something you agree with a little? Or something you REALLY hate?</li>
             </ul>
-            <li>There are references you can look at such as <a href="https://www.w3schools.com/sql/sql_quickref.asp">W3 Schools SQL</a></li>
-            <li>There are <a href="https://web.archive.org/web/20240119141821/https://learnsql.com/blog/sql-basics-cheat-sheet/#inner-join">cheat sheets</a> you can use for refresh</li>
+            <li><a href="https://web.archive.org/web/20240227131347/https://www.wired.com/story/how-to-spot-avoid-dark-patterns/">Dark Patterns</a></li>
+            <ul>
+                <li>Have you ever felt like you accidentally bought something? Signed up for a reoccurring bill that you didn't mean to?</li>
+                <li><a href="https://web.archive.org/web/20210519160204/https://www.eff.org/press/releases/coalition-launches-dark-patterns-tip-line-expose-deceptive-technology-design">Coalition Launches Dark Patterns Tip Line to Expose Deceptive Technology Design</a></li>
+                <li>Tricky wording and hiding information is common, think of the unsubscribe button on emails</li>
+                <li>Some examples of these are HP ink cartridge subscriptions that stop your printer from working when they run out, or apps that trick you into uploading your address book</li>
+                <li><a href="https://www.deceptive.design/">Deceptive patterns explained with examples</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Dark_pattern">Wikipedia on Dark Patterns with citations</a></li>
+            </ul>
         </ul>
-        <li>NoSQL</li> 
+        <li>Current industries where data abuse is rampant</li> 
         <ul>
-            <li>NoSQL stands for Not Only SQL</li>
-            <li>NoSQL databases are not relational</li>
-            <li>Examples of NoSQL databases are document, key-value, graph, or wide-column stores</li>
-            <li>Many people argue NoSQL is more flexible and scalable then SQL based Databases</li>
-            <li>NoSQL can handle unstructured and semi-structured data</li>
-            <li>Examples of implementations are MongoDB, Redis and Cassandra</li>
-            <li>An example of where you might want to use NoSQL instead of SQL might be if you wanted a database of images or videos (Large Items)</li>
-            <li><a href="https://web.archive.org/web/20231208084049/https://cloud.google.com/discover/what-is-nosql">Explanation of NoSQL by Google</a></li>
+            <li>Social Media</li>
+            <li>Healthcare that isn't (DNA databases)</li>
+            <li>Banks that aren't (Things that appear to be insured banks but aren't)</li>
+            <li>User-to-user payment or investing services</li>
+            <li>Internet Service Providers (ISPs)</li>
+            <li>Large conglomerates such as Microsoft , Amazon and Google</li>
+            <li><a href="https://www.ppsl.org/news/news/press-releases/new-data-96-of-students-defrauded-by-abusive-for-profit-colleges-waiting-for-betsy-devos-to-process-their-claims-report-their-lives-are-worse-off-now-than-before-they-went-to-school">For-profit educational institutions</a></li>
         </ul>
-        <li>What is <a href="https://web.archive.org/web/20240118093642/https://careerfoundry.com/en/blog/ux-design/the-difference-between-ux-and-ui-design-a-laymans-guide/">UI/UX</a></li> 
+        <li>Examples of where data is used for common good</li> 
         <ul>
-            <li>UI is User Interface</li>
-            <li>UX is User Experience</li>
-            <li>Both are topics that can be an entire course or job</li>
-            <li>UI/UX is how we interact with software, data or other things</li>
-            <li>UI is the look and feel of the interaction</li>
-            <li> UX is the overall experience</li>
-        </ul>
-        <li>Why UI/UX is important</li> 
-        <ul>
-            <li>It's important to be able to communicate your information to others</li>
-            <li>If people don't want to use your software or interact with your data it doesn't matter how good your data is, or how important your analytics are</li>
-            <li> If others can't follow what you're doing with your data or product they won't know how to interact with it and will miss the things you want them to see, or not realize what you are trying to focus on</li>
-            <li>Reasonable or not people, tend to judge credibility by useability, if your data is hard to understand or present, people may not think it's credible</li>
-        </ul>
-        <li>Ways we can communicate our data with others</li> 
-        <ul>
-            <li>We can generate reports of our data, for example PostgreSQL can generate a CSV for results of a query</li>
-            <li>Query results can also be sent to other programs if they are hooked into the database</li>
-            <li>Dashboards can be an example of a way to interact with a database</li>
-            <li>Business Intelligence (BI) tools can be used to create a data analysis report with charts, tables, filters, and parameters</li>
-            <li>You can also put your query results on a website, such as when you search stores for items, a lot of stores use databases to keep track of their inventory, and your search is creating a query</li>
+            <li>Hygiene, <a href="https://globalhandwashing.org/resources/how-data-leadership-and-accountability-led-to-better-hand-hygiene/">hand washing</a> is a relatively new concept as are germs. Even as late as the 1840s hand washing for medical professionals was seen as weird and not needed</li>
+            <li>Health of a nation, cigarettes were seen as "healthy" as little as 100 years ago and recommended by doctors even for people with Asthma. <a href="https://web.archive.org/web/20221221102721/https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9556318/">Data has shown that they are not healthy</a></li>
+            <li><a href="https://www.climate.gov/news-features/understanding-climate/climate-change-global-temperature">Climate change</a></li>
         </ul>
     </ul>   
-    </p>
 <!--Discussions and activities for the topic-->
 <p>Suggested Activities and Discussion Topics:
     <ul>
-        <li>Follow the instructions on <a href="labs/dbsql3.pdf">this PDF</a></li>
+        <li>Follow the instructions on <a href="labs/usesandabusesofdata.pdf">this PDF</a></li>
+        <li>In pairs or small groups, discuss the following questions:</li>
+            <ul>
+                <li> What is an example of an ethical dilemma you encountered in data manipulations?</li>
+                <li>How do these instances of data misuse or abuse impact individuals or society as a whole? Are there specific examples that stand out to you?</li>
+                <li>What is an example of a UI that you would consider manipulative, and why?</li>
+            </ul>
     </ul>
 </p>
 
