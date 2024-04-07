@@ -1,0 +1,145 @@
+---
+title: Data Security
+layout: introdata
+---
+<!--Learning Outcomes for this topic-->
+<h3>Data Security</h3>
+<p>Learning outcomes:
+    <ul>
+        <li>List some examples where security of a data base created problems</li>
+        <li>List and describe some examples of database security best practices</li>
+        <li>List some common problems with data security</li>
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/wIWGvB_Gk50?si=1ckwUQTR3Nx3ev2J" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="CIS 113 Week 12.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>What is <a href="https://www.nccoe.nist.gov/data-security">Data Security</a></li>
+            <ul>
+                <li>Data security is all about keeping your data safe no matter where it is or how it's stored</li>
+                <li>Data security is based on the <a href="https://www.nccoe.nist.gov/sites/default/files/legacy-files/di-identity-protect-nist-sp1800-25a-final.pdf">CIA</a> principals of Confidentiality (keep it secret), Integrity(make sure it's accurate) and Availability (it's there when you need it)</li>
+                <li>Data security covers the data as it's collected, processed, and saved, it also includes all backups of the data</li>
+                <li>Data security should also include processes to check in with the data to make sure it's as safe as you think it is</li>
+                <li><a href="https://www.nist.gov/blogs/manufacturing-innovation-blog/cybersecurity-critical-component-industry-40-implementation">An example of security being important for manufacturing</a></li>
+            </ul>
+        <li><a href="https://web.archive.org/web/20230918111435/https://www.forbes.com/sites/forbesbusinesscouncil/2023/01/09/data-privacy-vs-data-security-four-implications-for-business-leaders/">Data Security vs. Data Privacy</a></li> 
+        <ul>
+            <li>Data security is about how we make sure our data is protected from unauthorized access, people using or sharing our data</li>
+                <ul>
+                    <li>For example, data security might talk about encrypting our data as it's stored, or making sure our important data is as safe as possible from threats like black hat hackers</li>
+                </ul>
+            <li>Data privacy is more about who can and should control who can see our data</li>
+                <ul>
+                    <li>For example, data privacy might talk about who should be able to see our data, delete our data, and the right to  be "forgotten" online</li>
+                    <li>This can be where we might talk about an individual's right to their own data and personal information</li>
+                </ul>
+            <li>You can have data security (encryption of data) without Privacy (Data can be shared at the company's will, not yours)</li>    
+            <li>You can't have data privacy without security, because the security is part of how we can keep information private</li>
+        </ul>
+        <li>Why Data security is important</li> 
+        <ul>
+            <li>There are laws and regulations in a lot of places that require data security, so companies should want to follow those</li>
+            <li>Data can be stolen if it's not protected, even seemingly inconsequential data can be valuable to the right person in the right scenario</li>
+            <li>Some data can be extra valuable such as credit card numbers, social security numbers, or bank account info</li>
+            <li>Even things like email and social media accounts can be valuable</li>
+            <li>Most things are connected to the internet in some way, it's impossible to be a part of modern society without it, losing access to even something like email can topple your access</li>
+        </ul>
+        <li>Why companies don't like Data Security</li> 
+        <ul>
+            <li>Companies don't enjoy spending money, stringent laws (such as GDPR) can carry heavy fines if they aren't followed, and they can be expensive to follow properly</li>
+            <li>Companies like to collect more data then needed "just in case" so they can use or sell it to the highest bidder, having to take care of that data is more expensive then storing it</li>
+            <li>Data security and data privacy laws can limit how data is used and sold which takes away income</li>
+            <li>Data privacy can be a more nebulous concept because what one person considers private or important to keep private might not be another's, data security is easier to agree on for standards</li>
+        </ul>
+        <li>Some examples of Data Security gone wrong</li> 
+        <ul>
+            <li>Any data breach is data security gone wrong, it's impossible to be perfect, but some mistakes are so silly the company should be embarrassed</li>
+            <li><a href="https://web.archive.org/web/20231130055934/https://www.cbsnews.com/news/thieves-steal-lifelock-ceos-id-13-times-and-show-the-danger-of-challenging-your-customers/">Lifelock CEO posted their social security number to billboards</a> to show off their product which was supposed to protect your identity. Identity was then stolen 13 times in one year</li>
+            <li><a href="https://web.archive.org/web/20230924171957/https://phishingtackle.com/articles/logicmonitor-security-breach-ransomware-attacks-targeting-customers/">LogicMonitor</a> a data security company had multiple customers breached because poor passwords were given and used without requiring the password to be changed, and also assigned as the admin so there were accounts with FULL access to systems with a username of "admin" and a password of "Welcome@123"</li>
+            <li><a href="https://web.archive.org/web/20230803185053/https://arstechnica.com/information-technology/2017/06/internet-cameras-expose-private-video-feeds-and-remote-controls/">IoT (Internet of Things) cameras that had a HARDCODED unable to be changed username/password</a> that were very simple to crack (think admin/admin) and then these cameras were put in devices all over the world for multiple companies such as doorbells, baby monitors, etc.</li>
+        </ul>
+        <li>Current Best Practices for Data security overview</li> 
+        <ul>
+            <li>Cyber "hygiene" such as strong passwords, updates, using MFA, and being cautious of what links you click and websites you visit are common suggestions for people and companies</li>
+            <li>Data security is entwined with cybersecurity because data is digital now, and almost everyone and everything is connected to the internet</li>
+            <li><a href="https://www.cisa.gov/topics/cybersecurity-best-practices">CISA cybersecurity Best Practices</a> is a resource the US government keeps up with for publishing best practices</li>
+            <li><a href="https://www.nist.gov/itl/voting/security-best-practices">NIST</a> is a framework for cyber security, run by the US government, but works a lot with educators and researchers to keep up to date, this particular example is about voting, but they do standards for all security best practices</li>
+        </ul>
+        <li>Reputable sources for more info, and trendsetters  in Data Security</li> 
+        <ul>
+            <li>Government sites are a good place to start, see who they reference and where they direct, sites can be identified by the .gov top level domain (<a href="https://www.nist.gov/">NIST</a> and <a href="https://www.cisa.gov/">CISA</a> are good places to start)</li>
+            <li>Try non-profits first, they can be identified by .org as their top level domain, they are likely to be less biased or trying to sell you anything (<a href="https://www.eff.org/">EFF</a> is a nice place to start)</li>
+            <li>Both have the downside that because they aren't trying to get a profit, they might not have the money to fund research or update as frequently as you want</li>
+            <li>Research papers written by researchers and published in reputable journals can be good too, but have the downside of being complex topics, and potentially out of touch with industry</li>
+            <li>Well known conferences such as <a href="https://www.rsaconference.com/">RSA</a> and <a href="https://www.blackhat.com/">Black Hat</a> should have requirements for speakers so they can be good places to look for info that has been vetted by experts in the industry</li>
+            <li>Companies can have good resources, but look for "white papers", informational reports to help you understand ideas better, but be warned they might have an agenda</li>
+        </ul>
+        <li>Data security for <a href="https://web.archive.org/web/20231129154343/https://www.neweggbusiness.com/smartbuyer/visualized/infographic-comparing-information-security-large-small-businesses/">big business vs small business</a></li> 
+        <ul>
+            <li>Big companies are more profitable targets with larger weak spots</li>
+            <li>Facebook or TikTok might have lots of places for data to be stolen, but it's unlikely their entire userbase will abandon them for it no matter how bad the issue is</li>
+            <li>Small companies might go under the radar, but a hit will do more damage</li>
+            <li>Local company might have worse practices such as storing plain text data because they don't have the resources to protect it, but if word gets out in a community that a business made poor choices it can sink faster</li>
+            <li>Big companies have the capacity to collect, store and process more data</li>
+            <li>Smaller companies likely have less resources to spend on protecting what they do have, or the ability to hire someone to help them (security professionals are both hard to find and expensive)</li>
+        </ul>
+        <li>Top Threats to data security</li> 
+        <ul>
+            <li>User Apathy, it can be tough to convince someone why they shouldn't share their personal data, and systems are setup to get you to share as much as possible</li>
+                <ul>
+                    <li>How often are you asked for a phone number?</li>
+                    <li>Did you know you don't have to share it and can use loyalty cards or membership access in other ways?</li>
+                    <li>If you pay bills how often are you identified by your social?</li>
+                </ul>
+            <li>Poor credential management, shared logins, weak passwords, poorly secured machines are all issues for keeping your data safe at companies of all sizes</li>
+            <li>Plus all the traditional security threats of hackers, poor cyber hygiene and social engineering</li>
+        </ul>
+        <li>Why <a href="https://web.archive.org/web/20231015145055/https://guides.library.cmu.edu/researchdatamanagement/security">Backups are important for Data Security</a></li> 
+        <ul>
+            <li>Keeping data safe is part of the battle, but making sure that you have access to the data you keep is another</li>
+            <li>Backups are how we can make sure our data won't be lost</li>
+            <li>Backups need to have the same protections as our original data</li>
+            <li>Backups need to be checked to ensure they are actually working the way we think they are</li>
+            <li>Backups need backups, you never know what's going to fail and should have contingency plans in place</li>
+            <li>Think of the value of the data, and the work that could be lost if you lose access to your data</li>
+        </ul>
+        <li>How data erasure isn't what you think</li> 
+        <ul>
+            <li>How Windows "erases" files</li>
+                <ul>
+                    <li>They don't!  Mostly what happens is the file is marked as "not used" space and the pointer to the location of the file is taken away from view, then it looks "gone" to the user, but is still there and easily accessible to common and free software</li>
+                    <li>That's why it's so easy to "recover" files in windows, they weren't lost to begin with</li>
+                </ul>
+            <li>A full data wipe of a Hard Drive (HD) can be anything from a factory reset, to magnets flipping bits, to data being overwritten. The type of wipe changes how easy it is to restore data or if it's even possible</li>
+            <li>To wipe data for realsies you need to not just erase things, you have to write over where the info was, there is an echo of the data because of how hard drives work and overwriting the data can mix up the echo</li>
+            <li>Most hardware has some kind of data on it, from printers, to routers, to photocopiers, each of these would need to be taken care of or your data goes out to the world</li>
+            <li><a href="https://web.archive.org/web/20240117175750/https://www.lifewire.com/wipe-vs-shred-vs-delete-vs-erase-whats-the-difference-2619146">Wipe vs Shred vs Delete vs Erase: What's the Difference?</a></li>
+        </ul>
+        <li>Why you should care about Data Security</li> 
+        <ul>
+            <li>Your data should be yours to choose who you share it with and why</li>
+            <li>Some people have risks you don't, and their data can make them vulnerable (such as selling location of your phone, not everyone is safe and tracking can be a problem)</li>
+            <li>Your data can be used to manipulate you in big and small ways, think of scrolling online, or being talking into something you didn't think you needed/wanted, these dark patterns are common</li>
+        </ul>
+    </ul>   
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <!-- <li>Complete <a href="labs/datasecurity.pdf">this PDF</a></li> -->
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">Click here </a>
+</p>

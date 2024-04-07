@@ -1,0 +1,116 @@
+---
+title: Big Data
+layout: introdata
+---
+<!--Learning Outcomes for this topic-->
+<h3>Big Data</h3>
+<p>Learning outcomes:
+    <ul>
+        <li>Define how the term “Big Data” is usually used</li>
+        <li>List ways that big data differs from databases</li>
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ur5tD2i5CVE?si=QU1M7yZCufBP22eS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="CIS 113 Week 14.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>What is <a href="https://web.archive.org/web/20240205092508/https://www.sas.com/en_us/insights/big-data/what-is-big-data.html">Big Data</a></li>
+            <ul>
+                <li>Big Data is what we refer to whenever we are talking about extraordinarily large collections of data</li>
+                <li>This data can be structured, unstructred or semi-structured</li>
+                <li>These data stores or datasets are so large they can't be handled by traditional means, let alone used in any reasonable way</li>
+                <li>Big data is usually data that is not only extremely large, but also growing very quickly</li>
+                <li>Big Data is used commonly for things like predictive modeling, AI, Machine Learning and other popular topics</li>
+            </ul>
+        
+        <li>Why is Big Data Important</li> 
+        <ul>
+            <li>Big data means you can (technically) make better choices because you have more data to work with, better patterns can be found with more data points</li>
+            <li>Real time data collection and analytics can mean you can move and make choices faster</li>
+            <li>Having more data and real time data can mean you can automate more of your business to reduce costs</li>
+            <li>The more data you have, the closer you can tailor your business to your customers</li>
+        </ul>
+        <li>The Vs of Big Data</li> 
+        <ul>
+            <li>Big Data has characteristics that are referred to as the <a href="https://web.archive.org/web/20230927061710/https://community.aiim.org/blogs/doug-laney/2012/08/25/deja-vvvu-gartners-original-volume-velocity-variety-definition-of-big-data">"3 Vs of big data" by Gartner in 2001</a></li>
+            <li>Volume, High volume of data (Much data)</li>
+            <li>Velocity, Speed of data being generated, tends to be real time (So fast)</li>
+            <li>Variety, Many sources of data (Such variety)</li>
+        </ul>
+        <li>Some <a href="https://web.archive.org/web/20240222203205/https://www.mongodb.com/big-data-explained/examples">examples of Big Data being used</a></li> 
+        <ul>
+            <li>Advertisements for  products and marketing campaigns</li>
+            <li>Route Software such as Google Maps or Waze that use GPS and real time traffic to help plan your routes</li>
+            <li>Fraud detection for banks and credit cards</li>
+            <li>Predicting weather patterns, natural disasters, climate change and early warning systems</li>
+        </ul>
+        <li>Why Big Data needs different tools/languages</li> 
+        <ul>
+            <li>The ability to handle large volumes of data</li>
+            <li> Able to handle real time visualizations that can also be interactive as a bonus</li>
+            <li>Large amount of data storage are needed, which will require places to store it, backups, people to take care of both the data, the backups, and the security of the system</li>
+        </ul>
+        <li>What tools do we use with Big Data</li> 
+        <ul>
+            <li><a href="https://hadoop.apache.org/">Apache Hadoop</a> - Stores and processes data, very popular, open source, uses distributed computing to process the data</li>
+            <li><a href="https://spark.apache.org/">Apache Spark</a> - unified analytics engine, very popular, open source, uses cluster computing to process the data, lots of inbuilt options for working with your data such as ML, SQL, and even APIs for other languages like Python, R, and Java</li>
+            <li><a href="https://www.splunk.com/">Splunk</a> - Data analytics tool that can handle big data, can work with dashboards and data visualizations, also incorporates AI</li>
+            <li><a href="https://www.tableau.com/">Tableau</a> - Data visualization tool, very popular in companies, can create lots of different types of charts and has drag-and-drop properties so it's easier to learn, seen commonly as a dashboard</li>
+            <li>This is not an exhaustive list, just some examples and popular options</li>
+        </ul>
+        <li>How Big Data is different than databases</li> 
+        <ul>
+            <li>NoSQL databases are said to handle bigger data pools by default</li>
+            <li>Big data can be stored in places besides databases such as a data lake (raw data) instead of data warehouse (processed data) or data mark (data warehouse for a specific purpose)</li>
+            <li>Data warehouses (or marts) can be databases because the data has been processed, it will need a schema design so the data can be easily worked with</li>
+            <li>Data lakes can be anything from web logs, social media, or even sensor data collected real time from IoT (Internet of Things) devices from around the world</li>
+            <li><a href="https://web.archive.org/web/20240312034853/https://aws.amazon.com/compare/the-difference-between-a-data-warehouse-data-lake-and-data-mart/">What's the Difference Between a Data Warehouse, Data Lake, and Data Mart? by AWS</a></li>
+        </ul>
+        <li><a href="https://web.archive.org/web/20231208083756/https://kb.objectrocket.com/database-administration/understanding-the-concepts-of-database-scalability-elasticity-and-availability-416">Database Scalability</a>                                                            </li> 
+        <ul>
+            <li>Database scalability is how gracefully you can work with a small amount of data  and grow it into a large amount of data, for example taking the data of 100 customers, to 1,000 customers to 100,000 customers</li>
+            <li>An example of this is the ID vs GUID and how that is used to make the database accessible for multiple people manipulating the data at once</li>
+            <li>At large scale tradeoffs need to be made to ensure the database works correctly, traditional relational databases will basically fall over if you try and use them for big data</li>
+            <li>NoSQL is an example of a way we can make some of these tradeoffs that relational databases won't be able to handle</li>
+        </ul>
+        <li>Some problems with Big Data</li> 
+        <ul>
+            <li>Lack of talent/skills - it's hard to find people that can work with big data tools well, people with experience and the skills needed are in short supply so they can be very expensive to hire and hard to find</li>
+            <li>Scalability - Infrastructure weaknesses and tech debt will hit FAST if you aren't careful, big data comes in fast, needs to be worked with fast and not all systems and networks can handle it</li>
+            <li>Quality - Not all data is good data. We can collect data we shouldn't, collect data that isn't helpful and can be hard to organize</li>
+            <li>Security/Compliance - The more data you have, the bigger the target for hackers and the more valuable you are to bad actors</li>
+        </ul>
+        <li>Where Big Data might be going next</li> 
+        <ul>
+            <li>Streaming data in real time, so the data is processed as a stream instead of in batches so you can get more real time information and analytics</li>
+            <li>Artificial Intelligence (AI) and Machine Learning (ML) for more automated decision making and responses</li>
+            <li>Democratization of data and people having more access to their own data, ability to remove their data, download their data, and see what is "known" about them</li>
+            <li>More no-code and low-code solutions, if AI and ML can be used to help out it might be possible to have tools that more people can use easier with less background knowledge required</li>
+        </ul>
+    </ul>   
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <li>In groups or pairs, discuss the following questions</li>
+            <ul>
+                <li>Think of a specific scenario where a large volume of data is generated (such as online bank transactions, wikipedia edits, sports stats, or sensor data). Estimate the scale of this data in terms of size (gigabytes or terabytes? Larger?). What challenges might arise when dealing with such massive amounts of data?</li>
+                    <li>Can you think of any recent controversies or ethical dilemmas related to big data usage for the topic you picked above?</li>
+            </ul>
+        <li>Share an article related to a topic of your choice that generates a lot of data, explain why you find it interesting and why you picked it. Some examples of topics might be online games, some variety of sports or gaming statistics</li>
+        <!-- <li>Complete <a href="labs/bigdata.pdf">this PDF</a></li> -->
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">Click here </a>
+</p>
