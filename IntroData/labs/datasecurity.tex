@@ -1,0 +1,89 @@
+\documentclass[12pt]{article}
+
+\usepackage{fontawesome}
+\usepackage{hyperref}
+\usepackage{xurl}
+
+
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0},
+}
+
+
+\title{Data Security}
+\author{
+        Adrianna Holden-Gouveia \\
+        Website: \url{https://aholdengouveia.name}\\ 
+        \date{\vspace{-5ex}}
+        %Email: \href{mailto:admin@aholdengouveia.name}{admin@aholdengouveia.name} \\
+        \faLinkedin{: aholdengouveia} \\
+        \faGithub {: aholdengouveia} \\
+        %\faTwitter {: aholdengouveia} \\
+        }
+
+%S\date{\today}
+
+
+\begin{document}    
+
+\maketitle
+
+%\begin{abstract}
+%This is a template for Linux Administration Lab work
+%\end{abstract}
+%\tableofcontents
+
+\section*{Objectives:}
+\begin{enumerate}
+    \item Upon completion of this lab, students will be able to identify some examples of how healthcare data is used and shared, where some vulnerabilities are, and some common paths of Data through the system.  
+    \item Students will also be able to identify some of their personal information, including what is publicly available, and how to starting protecting their data and themselves.
+\end{enumerate}
+\section*{Complete the following problems}
+
+References, a video, a PowerPoint and some notes are available at my website
+\url {https://www.aholdengouveia.name/IntroData/datasecurity.html}
+
+Disclaimer: You do not need to share personal information for this lab.  You can choose to share or not share personal information.  When questions are asked that are too personal for you, you can choose to generalize your answers or blur out any screenshots that contain personal information you do not wish to share. 
+
+\subsection*{Personal Data}
+    \begin{enumerate}
+        \item Go to \url{https://aboutmyinfo.org/identity} and see how unique your data is.   
+        \item How unique are you?
+        \item Are you easy to identify? Take a screenshot.
+        \item What other information do you think might be available about you? Try Googling yourself to see what pops up, any examples?
+        \item Go to \url{https://haveibeenpwned.com/} and pick something to check.  Have you been pwned? In which breach?
+        \item Go to \url{https://robinlinus.github.io/socialmedia-leak/} what social media are you logged in to? Did you realize you were logged in to each of them? Do you know how to logout of each?
+        \item Go to \url{https://webkay.robinlinus.com/} what about your browser? Did you realize how much information you were sharing? Any of them surprising? if yes, Which ones?
+        
+    \end{enumerate}
+
+\subsection*{Healthcare Data}
+Go to \url{https://thedatamap.org/index.php} and see the map of your health care data.  
+\begin{enumerate}
+    \item Come up with 3 example scenarios, and go through them, write up your findings, including who is covered or not covered by HIPAA.  
+    \item Make at least one of your three examples include someone not included by HIPAA, examples of those paths are \url{https://thedatamap.org/map2013/contexts.php}
+        \begin{itemize}
+            \item For example, Person A goes to the Hospital for a routine blood test, they get your name and info and you get a blood test, in this case the bill needs to go to coding to see if your insurance will pay for it, this says "A Coding Service receives identifiable patient information from a healthcare provider (e.g., physician or hospital) and uses the information to complete an insurance claim form with codes for diagnoses (e.g., ICD-9 codes) and procedures (e.g., CPT codes) in accordance with coding books and guidelines. The completed form is returned to the Healthcare Provider." which means now your data is in the hospital, with your doctor, and with the bill coding service. Then the data, along with the bill code goes to insurance, which can include "Bills typically include your name, address, policy number, date of birth, diagnoses, and procedures. Often providers submit bills to insurance companies through clearing houses.", to keep it simple we're going to assume it's covered and needs no payment. 
+            \item Our list of people that can see the data include hospital staff, phlebotomy staff, coding service staff, insurance company staff, your doctor who ordered the test, and the medical record keeping company. All these people should be covered by HIPAA. 
+            \item Our list of data that is shared includes name, address, policy type and number, date of birth, medical records, tests ordered, and results.
+        \end{itemize}
+    \item Do you know any of the people selling healthcare data on this list \url{https://thedatamap.org/map2013/organizations.php}? Approximately how many look familiar to you?  Do they sell data for Massachusetts residents?    
+\end{enumerate}
+
+\subsection*{How to protect your data}
+\begin{enumerate}
+    \item Go to \url{https://www.consumerreports.org/electronics-computers/privacy/66-ways-to-protect-your-privacy-right-now-a7383217267/} and pick 3 things to try out right now to help protect your privacy.  What did you pick? Why?
+    \item Pick one from the above article and share with someone in your life.  What did you pick? Who did you share it with? Why?
+\end{enumerate}
+
+\section*{Deliverables}
+
+\begin{enumerate}
+    \item All the answers to the Personal Data questions
+    \item Your 3 examples from the healthcare data, including the list of people, who's covered by HIPAA, and what was shared with them. Answers to the questions from healthcare data.
+    \item Your answers to how to protect your data.
+
+\end{enumerate}
+
+\end{document}
