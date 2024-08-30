@@ -1,0 +1,172 @@
+---
+title: Intro to Data
+layout: AdvData
+---
+<!--Learning Outcomes for this topic-->
+<h3>Introduction to Data</h3>
+<p>Learning outcomes:
+    <ul>
+        <li>Describe the difference between primary and foreign keys and explain how to use them</li>
+        <li>List some criteria for picking good data sets including what makes a good or bad dataset</li>
+        <li>Describe what data is</li>
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/jxnEIrYkR7s?si=V81tFvfqTBCkfgyz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="/AdvData/CIS 210 Week 1 Intro to Data.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>What is data</li>
+            <ul>
+                <li>Data is facts</li>
+                <li>Data is values</li>
+                <li>Data can be collected</li>
+            </ul>
+            <li>What is information</li> 
+            <ul>
+                <li>Information is what we can get out of the data</li>
+                <li>If data is a fact, information tells us why that fact is important</li>
+                    <ul>
+                        <li>Data: The sky is Blue</li>
+                        <li>Information: Blue skies indicate clear weather and unlikely to rain</li>
+                    </ul>
+                <li>If data is a value, information is what we can do with that value</li>
+                    <ul>
+                        <li>Data: Temp is 90°</li>
+                        <li>Information: Not a good day to wear a sweater</li>
+                    </ul>
+                <li> If data is collected, information is what we can use the collection for</li>
+            </ul>
+            <li><a href="https://web.archive.org/web/20230609024132/https://bloomfire.com/blog/data-vs-information/">Data vs Information</a></li> 
+            <ul>
+                <li>Given the collection of data below, can you tell if I am referring to King Charles or Ozzy Osbourne?</li>
+                    <ul>
+                        <li>Identifies as Male</li>
+                        <li>Born in 1948</li>
+                        <li>Raised in the UK</li>
+                        <li>Married twice</li>
+                        <li>Wealthy and famous</li>
+                        <li>Has lived in a castle</li>
+                    </ul>
+                <li>If data is a collection of facts, information is the results of analyzing those facts to be able to get something useful from them</li>
+                <li>You can use information to make choices and decisions within a context</li>
+            </ul>
+            <li>Collect your data</li>
+            <ul>
+                <li>Data can be collected Manually or automatically</li>
+                <li><a href="https://web.archive.org/web/20231009033457/https://online.hbs.edu/blog/post/data-collection-methods">Data collection Methods</a></li>
+                <li>When data is collected, it's important to pay attention to the form</li>
+                    <ul>
+                        <li>Celsius vs Fahrenheit, or meters vs feet</li>
+                        <li>Make sure to collect the same data (if it's books, collect title AND author not OR author)</li>
+                        <li>Make sure format such as text, or integer or float is consistent</li>
+                    </ul>
+                <li>Data accuracy is important!  Don't fudge or make things up.  Blank is better than inaccurate</li>
+                <li>Measure all data in the same way (if you use a ruler make sure you are consistent with where you consider the "start")</li>
+            </ul>
+            <li>Examples of how to collect data well</li>
+            <ul>
+                <li><a href="https://web.archive.org/web/20231009033457/https://online.hbs.edu/blog/post/data-collection-methods">Data collection methods in business</a></li>
+                <li>Make sure you have a clear plan that everyone who is collecting data can see, including identifying what you need and how it's being measured in clear and hard to misinterpret language</li>
+                <li>Decide if you are collecting qualitative (Open ended response such as "I feel good today") or quantitative(numbers such as year you were born) data</li>
+                <li>Have a clear system! Include procedures and tests of the people doing the collecting BEFORE sending them out</li>
+            </ul>
+        <li>Structure your data</li>
+            <ul>
+                <li>Make sure it's in the same order so you don't have confusion of things like title vs author vs editor</li>
+                <li>If data is starting in something like a spreadsheet, rows vs columns is important!</li>
+                <li>Data labels are important, make sure each row, column or other is clearly labeled</li>
+                <li>You may want to specify the type of data expected, such as text, or single char, or integer, or float.</li>
+            </ul>
+            <li>What is a <a href="https://web.archive.org/web/20240103085618/https://www.oracle.com/database/what-is-database/">database</a></li>
+            <ul>
+                <li>A database is a collection of information</li>
+                <li>Databases store and organize data so you can get to it easier</li>
+                <li>Databases are good for larger amounts of data</li>
+                <li>Some examples of where a database might be useful</li>
+                    <ul>
+                        <li>Customer information</li>
+                        <li>Product or store information</li>
+                        <li>Item collection information (Pokémon, Movies, Books)</li>
+                        <li>Patient records</li>
+                        <li>Student records</li>
+                    </ul>
+            </ul>
+            <li>Why we have databases</li>
+            <ul>
+                <li>Databases allow us to store more data easier than other formats, they also allow us to organize the data in lots of ways</li>
+                <li>Organized data allows us to run reports and queries more easily, so we can answer certain questions about our data, such as What is the email address for the customer? How many units did they buy last month? Last year? How much product have we sold last month? Last year?</li>
+                <li>Databases allow us to store and process our data, but also allow multiple simulations other people to also store and process data</li>
+                <li>Centralized locations for data to ensure everyone is using the same data and has access to it allows for better business practices</li>
+            </ul>
+            <li>How to get data into a database</li>
+            <ul>
+                <li>You can import a number of different types of files including text, but CSV files are commonly used</li>
+                <li>Imports can also happen from other programs including spreadsheet programs or other database programs</li>
+                <li>If you're using SQL you can use a create table or insert command to get your data into your database</li>
+                <li>There are also some Graphical options depending on the database type you're using</li>
+                <li>You can also write a script to enter in your data</li>
+            </ul>
+            <li>How databases look different on different systems</li>
+            <ul>
+                <li>Databases can be access by either Graphical User Interface (GUI) or Command line</li>
+                <li>The system you're using will affect how the data is stored and where it's being used</li>
+            </ul>
+            <li>Different between how the data is stored and how it's accessed</li>
+            <ul>
+                <li>You can have many different front end options, each may have different steps like switching between MS Word and Gooogle Docs</li>
+                <li>Dashboards are also commonly used for people that need to see but not change the data</li>
+                <li><a href="https://web.archive.org/web/20230607182507/https://www.geckoboard.com/blog/what-is-a-sql-dashboard/">SQL Dashboards</a></li>
+                <li>Databases will save the information on your computer but that will depend on what database is installed, which can be different then the front end used</li>
+                <li>Databases can also be on servers and in the cloud, the front end would connect to those for viewing</li>
+                <li>Generally only a few people may change the data, but many more will be able to see the data</li>
+            </ul>
+        <li>Examples of front ends</li>
+            <ul>
+                <li>You can build your own, but a lot of people use already made options</li>
+                <li>Your front end can be as simple or complex as you like, some are free, some are not.</li>
+                <li>Some database front end options can be very complex and include data analytics and visualizations, examples include Tableau, MS Power BI, Oracle Analytics Cloud and AIMMS</li>
+            </ul>
+            <li><a href="https://web.archive.org/web/20231016182205/https://www.nnlm.gov/guides/data-glossary/data-dictionary">Data Dictionary</a></li>    
+            <ul>
+                <li>A data dictionary is an explanation of the data saves in our database</li>
+                <li>Should be centralized so everyone using the database is seeing the same definitions</li>
+                <li>Clarity can be an issue</li>
+                <li>Names listed aren't always obvious, and descriptions can be lacking</li>
+                <li>Active dictionaries are created within the database and auto updated, passive are separate and must be updated manually</li>
+            </ul>
+        <li>Keys</li> 
+        <ul>
+            <li>Primary Key</li>
+                <ul>
+                    <li>Unique Identifier for each record</li>
+                    <li>Used to be Numeric only</li>
+                    <li>You're NOT supposed to use data (i.e not social security numbers) but people do</li>
+                </ul>
+            <li>Foreign Key</li>
+                <ul>
+                    <li>Identifier for connecting to the primary key, linking the data in the tables</li>
+                    <li>Always point to a primary key</li>
+                    <li>Some databases call both foreign key AND primary key the ID (BADBAD)</li>
+                </ul>
+        </ul>
+    </ul>   
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <li>Complete <a href="/AdvData/labs/week1.pdf">This PDF</a></li>
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">Click here </a>
+</p>

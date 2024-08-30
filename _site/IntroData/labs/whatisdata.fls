@@ -437,13 +437,9 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/fontawesome/ufontawesometwo.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/fontawesome/ufontawesometwo.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/fontawesome/ufontawesometwo.fd
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/fontawesome/FontAwesome--fontawesometwo.tfm
-INPUT /usr/share/texlive/texmf-dist/tex/latex/fontawesome/ufontawesomethree.fd
-INPUT /usr/share/texlive/texmf-dist/tex/latex/fontawesome/ufontawesomethree.fd
-INPUT /usr/share/texlive/texmf-dist/tex/latex/fontawesome/ufontawesomethree.fd
-INPUT /usr/share/texlive/texmf-dist/tex/latex/fontawesome/ufontawesomethree.fd
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/fontawesome/FontAwesome--fontawesomethree.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
@@ -454,11 +450,9 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT whatisdata.aux
 INPUT ./whatisdata.out
 INPUT ./whatisdata.out
-INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomethree.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb

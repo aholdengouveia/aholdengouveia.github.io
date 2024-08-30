@@ -1,0 +1,145 @@
+---
+title: SQL pt2
+layout: AdvData
+---
+<!--Learning Outcomes for this topic-->
+<h3>SQL Review Part 2</h3>
+<p>Learning outcomes:
+    <ul>
+        <li>Write a SQL statement that joins multiple tables using foreign keys and primary keys</li>
+        <li>List resources for continuing to learn SQL</li>
+        <li>Describe how one-to-one and one-to-many relationships are used</li>
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/3rkpll-EnYc?si=SWMxTM3JZH6A4L1j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="/AdvData/CIS 210 Week 3 SQL pt2.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>Table joins</li>
+        <ul>
+            <li>Data is organized in tables</li>
+            <li>Tables will have a primary key for each item/record that is unique</li>
+            <li>Joining tables is so that you can get data from two tables</li>
+            <li>There are different types of joins depending how you want your data presented</li>
+            <li>The relationship of the tables is based on the primary key and foreign key</li>
+            <li>Joins are typically done between primary and foreign keys, but can involve other values as well</li>
+            <li>To have a join, you need a related column otherwise the join won't know how to work</li>
+        </ul>
+        <li>Examples of Table joins</li> 
+        <ul>
+            <li>Let's say we have a table of books and a table of library patrons</li>
+            <li>From what we know about SQL so far we can look at the contents of each table individually and manipulate the data on each single table</li>
+            <li>Adding in joins allows us to look at combos, such as who borrowed a book or the borrowing history of each patron</li>
+            <li><a href="https://web.archive.org/web/20240211234915/https://www.atlassian.com/data/sql/sql-join-types-explained-visually">SQL Join types explained visually</a></li>
+        </ul>
+        <li>Why do we have so many table join types</li>
+        <ul>
+            <li>Tables will have different relationships</li>
+            <li>The results of the different joins will show combinations of data</li>
+            <li>Depending on the problem we're trying to solve with our query we might need different combos of the data</li>
+            <li>For example, maybe we want to see the winner of a reading campaign. If we have a table of library patrons who signed up, and a table of books checked out for the campaign, we can do an inner join on them to see who the winner of the campaign is by ordering the results by descending(desc)
+                <pre>
+                SELECT "Patrons"."Name", COUNT(*) 
+                FROM "Patrons" 
+                INNER JOIN "CampaignCheckouts" 
+                ON "Patrons"."PatronID" = "CampaignCheckouts"."Patron" 
+                GROUP BY "Patrons"."Name" 
+                ORDER BY COUNT(*) DESC";</pre>
+            </li>
+            <li><a href="https://web.archive.org/web/20240211234915/https://www.atlassian.com/data/sql/sql-join-types-explained-visually">SQL Join types explained visually</a></li>
+            <li><a href="https://web.archive.org/web/20240229154221/https://blog.codinghorror.com/a-visual-explanation-of-sql-joins/">A Visual Explanation of SQL Joins, includes venn diagrams, sample SQL queries and example tables</a></li>
+        </ul>
+        <li><a href="https://www.w3schools.com/sql/sql_join_inner.asp">Inner Join</a></li> 
+        <ul>
+            <li>Tables have columns of information you need to know the names of the columns so that you can figure out what needs to match for the join</li>
+            <li>An Inner Join is going to be where the information on tables A and B match looking at a particular column</li>
+            <li>This is ONLY where they match</li>
+            <li>Example:If we wanted to know patrons of the library who borrowed books in the last 6 months we would look at where patron's table and the books checkouts tables as seen in the example query on slide 1 or above</li>
+        </ul>
+        <li><a href="https://www.w3schools.com/sql/sql_join_full.asp">Outer Join</a></li> 
+        <ul>
+            <li>An Outer Join is all information in both tables including where they match</li>
+            <li>This is less common then inner joins</li>
+            <li>Example: We can take a books table and a patrons table and look at both, not all books have been checked out, not all patrons have borrowed a book, but we want all the data anyway, anything not filled in will have a NULL value</li>
+        </ul>
+        <li><a href="https://www.w3schools.com/sql/sql_join_left.asp">Left</a> and <a href="https://www.w3schools.com/sql/sql_join_right.asp">Right</a> Joins</li> 
+        <ul>
+            <li>Left Outer Join is all  results from Table A including where there are matches on Table B</li>
+            <li>Left Outer join where we won't have the matches from Table B is done by using the WHERE to specify that if Table A has matches in Table B mark it as null in our results</li>
+            <li>We can do the same for the right with Right Outer Join by switching the order of the tables in the query</li>
+        </ul>
+        <li>Where to go next for more SQL</li> 
+        <ul>
+            <li>There are places you can go to get case studies to trial your SQL knowledge</li>
+            <ul>
+                <li><a href="https://8weeksqlchallenge.com/case-study-1/">8 week SQL challenge Case Studies</a></li>
+                <li><a href="https://advancedsqlpuzzles.com/">Advanced SQL puzzles</a></li>
+                <li><a href="https://www.hackerrank.com/domains/sql">Hacker Rank challenges for SQL</a></li>
+            </ul>
+            <li>There are references you can look at such as <a href="https://www.w3schools.com/sql/sql_quickref.asp">W3 Schools SQL</a></li>
+            <li>There are <a href="https://web.archive.org/web/20240119141821/https://learnsql.com/blog/sql-basics-cheat-sheet/#inner-join">cheat sheets</a> you can use for refresh</li>
+        </ul>
+        <li>NoSQL</li> 
+        <ul>
+            <li>NoSQL stands for Not Only SQL</li>
+            <li>NoSQL databases are not relational</li>
+            <li>Examples of NoSQL databases are document, key-value, graph, or wide-column stores</li>
+            <li>Many people argue NoSQL is more flexible and scalable then SQL based Databases</li>
+            <li>NoSQL can handle unstructured and semi-structured data</li>
+            <li>Examples of implementations are MongoDB, Redis and Cassandra</li>
+            <li>An example of where you might want to use NoSQL instead of SQL might be if you wanted a database of images or videos (Large Items)</li>
+            <li><a href="https://web.archive.org/web/20231208084049/https://cloud.google.com/discover/what-is-nosql">Explanation of NoSQL by Google</a></li>
+        </ul>
+        <li>Table Relationships</li>
+            <ul>
+                <li>Relationships for tables are how connect to each other, so you can organize and link data across multiple tables</li>
+                <li>There are 4 types of relationships, One-to-one, One-to-many, Many-to-many, and self-referencing</li>
+                <li><a href="https://web.archive.org/web/20240830142248/https://www.geeksforgeeks.org/relationships-in-sql-one-to-one-one-to-many-many-to-many/">Examples of relationships</a></li>
+                <ul>
+                    <li>One-to-one relationships</li>
+                    <ul>
+                        <li>If we assume two tables, Table A and Table B</li>
+                        <li>One-to-one means for each record in Table A, there is only one reference for Table B</li>
+                        <li>The same is true for each record in Table B, there is only one reference for Table A</li>
+                        <li>Example: There is only one person associated with each Employee profile</li>
+                    </ul>
+                    <li>One-to-many relationships</li>
+                    <ul>
+                        <li>Each record for Table A can have multiple associations with Table B.  But each record for Table B only has 1 association with Table A</li>
+                        <li>Example: There are many employees, but only a few departments</li>
+                    </ul>
+                    <li>Many-to-many</li>
+                    <ul>
+                        <li>Each record in table A can have multiple associations with Table B, and that goes both ways</li>
+                        <li>Example: There are many students, in many classes</li>
+                    </ul>
+                    <li>Self-referencing</li>
+                    <ul>
+                        <li>A table foreign key references it's primary key</li>
+                        <li>Sometimes referred to as a recursive relationship</li>
+                        <li>Example: All employees are staff,  including managers, but each employee also has a manager</li>
+                    </ul>
+                </ul>
+            </ul>
+    </ul>   
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <li>Complete <a href="/AdvData/labs/week3.pdf">This PDF</a></li>
+
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">Click here </a>
+</p>
