@@ -1,8 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1707687049 "/home/aholdengouveia/aholdengouveia.github.io/IntroData/labs/whatisdata.tex" "whatisdata.pdf" "whatisdata" 1707687049
+["pdflatex"] 1725028761 "/home/aholdengouveia/aholdengouveia.github.io/IntroData/labs/whatisdata.tex" "whatisdata.pdf" "whatisdata" 1725028761
   "/etc/texmf/web2c/texmf.cnf" 1659374508 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/aholdengouveia/aholdengouveia.github.io/IntroData/labs/whatisdata.tex" 1707687048 3985 499a97b7b1d9ba6bcddf08c595225c18 ""
-  "/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomethree.enc" 1463430686 2437 443c81fb50993bacedc5f9a206c322b0 ""
+  "/home/aholdengouveia/aholdengouveia.github.io/IntroData/labs/whatisdata.tex" 1725028761 3942 00a8499938bf6f7fed7c02b0d21bcc98 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc" 1463430686 2679 32dd8ae231bf4a0752b98f62dc097183 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -17,7 +16,6 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm" 1136768653 772 9a936b7f5e2ff0557fce0f62822f0bbf ""
-  "/usr/share/texlive/texmf-dist/fonts/tfm/public/fontawesome/FontAwesome--fontawesomethree.tfm" 1463430686 808 fa82c08e99ce03a59bd6b6935f08982c ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/fontawesome/FontAwesome--fontawesometwo.tfm" 1463430686 1360 76c648952c3cfb458d3ca1d9dde7e9bf ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
@@ -49,7 +47,6 @@
   "/usr/share/texlive/texmf-dist/tex/latex/fontawesome/fontawesome.sty" 1463430686 2757 ee97743276dc242c78f33fd622e260ea ""
   "/usr/share/texlive/texmf-dist/tex/latex/fontawesome/fontawesomesymbols-generic.tex" 1465747999 33234 40b369fd6c8364bdcc88401c4c1db5bf ""
   "/usr/share/texlive/texmf-dist/tex/latex/fontawesome/fontawesomesymbols-pdftex.tex" 1463430686 46429 f7ffa71c62c5257edd5542253d4cea15 ""
-  "/usr/share/texlive/texmf-dist/tex/latex/fontawesome/ufontawesomethree.fd" 1465747999 533 8ef7321a43d7426394eae184116ae32c ""
   "/usr/share/texlive/texmf-dist/tex/latex/fontawesome/ufontawesometwo.fd" 1465747999 519 e730d6099b4b4ed4da396d7b545ddf49 ""
   "/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty" 1622581934 2671 4de6781a30211fe0ea4c672e4a2a8166 ""
   "/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty" 1580250785 17914 4c28a13fc3d975e6e81c9bea1d697276 ""
@@ -69,10 +66,10 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1659374618 4379155 98693266ff65f58d9f98aff394de12d2 ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1685733874 2800355 6b38a3d6f2e24552e2e607e4952de1c4 ""
-  "whatisdata.aux" 1707687049 686 470fdebd29f279999e89f3533b8c7bc8 "pdflatex"
-  "whatisdata.out" 1707687049 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "whatisdata.tex" 1707687048 3985 499a97b7b1d9ba6bcddf08c595225c18 ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1710512241 2800509 c4c12e3d318df674f536069e493abfbc ""
+  "whatisdata.aux" 1725028761 686 470fdebd29f279999e89f3533b8c7bc8 "pdflatex"
+  "whatisdata.out" 1725028761 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "whatisdata.tex" 1725028761 3942 00a8499938bf6f7fed7c02b0d21bcc98 ""
   (generated)
   "whatisdata.aux"
   "whatisdata.log"
