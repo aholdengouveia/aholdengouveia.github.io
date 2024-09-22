@@ -1,0 +1,93 @@
+\documentclass[12pt]{article}
+
+\usepackage{fontawesome}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage{graphicx}
+
+
+
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0},
+}
+
+
+\title{Database Schema}
+\author{
+        Adrianna Holden-Gouveia \\
+        Website: \url{https://aholdengouveia.name}\\ 
+        \date{\vspace{-5ex}}
+        %Email: \href{mailto:admin@aholdengouveia.name}{admin@aholdengouveia.name} \\
+        \faLinkedin{: aholdengouveia} \\
+        \faGithub {: aholdengouveia} \\
+        %\faTwitter {: aholdengouveia} \\
+        }
+
+%S\date{\today}
+
+
+\begin{document}    
+
+\maketitle
+
+%\begin{abstract}
+%This is a template for Linux Administration Lab work
+%\end{abstract}
+%\tableofcontents
+
+\section*{Objectives:}
+\begin{enumerate}
+    \item Learn how to evaluate which schema is appropriate
+    \item Create your own schema
+\end{enumerate}
+\section*{Complete the following problems}
+
+References, a video, a PowerPoint and some notes are available at my website
+\url {https://www.aholdengouveia.name/AdvData/databaseschema.html}
+
+Pick a topic you're interested in.  This could be anything; sports, collectable card games, cars, video games, etc. 
+
+
+
+\subsection*{Decide on a Schema}
+    \begin{itemize}
+        \item Out of the 6 design option, pick 3 to evaluate, list them here
+        \item For each design option, give 2 pros and 2 cons for your data specifically
+        \item List out some potential data options for your dataset
+            For example, books might have authors, publication dates and publishers, genre, sub genres, purchase types such as audio or ebook, part of a series or world, connections to other books, etc.
+        \item Make a list of what you think some potential tables could be, include a primary key for each table
+        \item Make notes on how the tables might relate to each other using example, list out potential foreign keys, if you have no foreign keys, explain why not.
+        \item Pick which one you think would be best for your given topic and explain why you chose it in one paragraph or less. Include your pros and cons.
+    \end{itemize}
+
+\subsection*{Create your schema}
+
+The tool that I used is \url{https://app.diagrams.net/} 
+You may use other tools of your choice, but make sure everything is clearly labelled and the image includes your name and term somewhere.
+
+See the attached schema example for an idea of what you should be creating, don't copy it or feel you have to use the same type, pick the one that works best for your data. My example does NOT include all the information you should have, you should have more tables, and a key, maybe some relationship tables instead of short notes, and rules listed out. You are also likely to have more relationship types with your data, I kept my example small so you'd have an idea of what I'm looking for.
+
+\begin{itemize}
+    \item Make sure to include all your tables, there should be at least 4.  
+    \item Each table needs to have a labeled primary key.  
+    \item You may need to include foreign keys, if you do then label them.
+\end{itemize}
+
+
+\section*{Deliverables}
+\begin{itemize}
+        \item Document that includes answers to the above questions for deciding on which schema to use
+        \item Document/image of your schema following the above guidelines.
+\end{itemize}
+
+
+\begin{figure}[h!]
+    \centerline{\includegraphics[scale=.7]{cis210schemaexampleV2.png}}
+    \caption{This is an example of a schema. My example does NOT include all the information you should have, you should have more tables, and a key, maybe some relationship tables instead of short notes, and rules listed out.}
+
+    \end{figure} 
+
+
+
+\end{document}

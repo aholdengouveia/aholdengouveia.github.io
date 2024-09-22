@@ -17,7 +17,7 @@
   gtag('config', 'G-Q9SWNFD6DB');
 </script>
 
-    <title>SQL pt2</title>
+    <title>Database Documentation</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
 
@@ -160,138 +160,116 @@
         <div class="col">
             <br><br>
             <!--Learning Outcomes for this topic-->
-<h3>SQL Review Part 2</h3>
+<h3>Database Documentation</h3>
 <p>Learning outcomes:
     <ul>
-        <li>Write a SQL statement that joins multiple tables using foreign keys and primary keys</li>
-        <li>List resources for continuing to learn SQL</li>
-        <li>Describe how one-to-one and one-to-many relationships are used</li>
+        <li>Describe the importance of database documentation</li>
+        <li>Describe the purpose and benefits of maintaining database documentation</li>
+        <li>Demonstrate how to create and update a data dictionary</li>
     </ul>
 </p>
 
 <!--embed Youtube video here-->
 <div class="video-wrapper">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/3rkpll-EnYc?si=SWMxTM3JZH6A4L1j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/MgAYpanw2Vc?si=4ovJ2cFxsR2av05l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 </div>
 
 <!--Download PowerPoint-->
 <p>
-    <a href="/AdvData/CIS 210 Week 3 SQL pt2.pptx">Would you like to download my PowerPoint to follow along?</a>
+    <a href="/AdvData/CIS 210 Week 6 Database Documentation.pptx">Would you like to download my PowerPoint to follow along?</a>
 </p>
 <!--Outline Of lecture notes/powerpoint for the topic-->
 <p>
     <ul>
-        <li>Table joins</li>
-        <ul>
-            <li>Data is organized in tables</li>
-            <li>Tables will have a primary key for each item/record that is unique</li>
-            <li>Joining tables is so that you can get data from two tables</li>
-            <li>There are different types of joins depending how you want your data presented</li>
-            <li>The relationship of the tables is based on the primary key and foreign key</li>
-            <li>Joins are typically done between primary and foreign keys, but can involve other values as well</li>
-            <li>To have a join, you need a related column otherwise the join won't know how to work</li>
-        </ul>
-        <li>Examples of Table joins</li> 
-        <ul>
-            <li>Let's say we have a table of books and a table of library patrons</li>
-            <li>From what we know about SQL so far we can look at the contents of each table individually and manipulate the data on each single table</li>
-            <li>Adding in joins allows us to look at combos, such as who borrowed a book or the borrowing history of each patron</li>
-            <li><a href="https://web.archive.org/web/20240211234915/https://www.atlassian.com/data/sql/sql-join-types-explained-visually">SQL Join types explained visually</a></li>
-        </ul>
-        <li>Why do we have so many table join types</li>
-        <ul>
-            <li>Tables will have different relationships</li>
-            <li>The results of the different joins will show combinations of data</li>
-            <li>Depending on the problem we're trying to solve with our query we might need different combos of the data</li>
-            <li>For example, maybe we want to see the winner of a reading campaign. If we have a table of library patrons who signed up, and a table of books checked out for the campaign, we can do an inner join on them to see who the winner of the campaign is by ordering the results by descending(desc)
-                <pre>
-                SELECT "Patrons"."Name", COUNT(*) 
-                FROM "Patrons" 
-                INNER JOIN "CampaignCheckouts" 
-                ON "Patrons"."PatronID" = "CampaignCheckouts"."Patron" 
-                GROUP BY "Patrons"."Name" 
-                ORDER BY COUNT(*) DESC";</pre>
-            </li>
-            <li><a href="https://web.archive.org/web/20240211234915/https://www.atlassian.com/data/sql/sql-join-types-explained-visually">SQL Join types explained visually</a></li>
-            <li><a href="https://web.archive.org/web/20240229154221/https://blog.codinghorror.com/a-visual-explanation-of-sql-joins/">A Visual Explanation of SQL Joins, includes venn diagrams, sample SQL queries and example tables</a></li>
-        </ul>
-        <li><a href="https://www.w3schools.com/sql/sql_join_inner.asp">Inner Join</a></li> 
-        <ul>
-            <li>Tables have columns of information you need to know the names of the columns so that you can figure out what needs to match for the join</li>
-            <li>An Inner Join is going to be where the information on tables A and B match looking at a particular column</li>
-            <li>This is ONLY where they match</li>
-            <li>Example:If we wanted to know patrons of the library who borrowed books in the last 6 months we would look at where patron's table and the books checkouts tables as seen in the example query on slide 1 or above</li>
-        </ul>
-        <li><a href="https://www.w3schools.com/sql/sql_join_full.asp">Outer Join</a></li> 
-        <ul>
-            <li>An Outer Join is all information in both tables including where they match</li>
-            <li>This is less common then inner joins</li>
-            <li>Example: We can take a books table and a patrons table and look at both, not all books have been checked out, not all patrons have borrowed a book, but we want all the data anyway, anything not filled in will have a NULL value</li>
-        </ul>
-        <li><a href="https://www.w3schools.com/sql/sql_join_left.asp">Left</a> and <a href="https://www.w3schools.com/sql/sql_join_right.asp">Right</a> Joins</li> 
-        <ul>
-            <li>Left Outer Join is all  results from Table A including where there are matches on Table B</li>
-            <li>Left Outer join where we won't have the matches from Table B is done by using the WHERE to specify that if Table A has matches in Table B mark it as null in our results</li>
-            <li>We can do the same for the right with Right Outer Join by switching the order of the tables in the query</li>
-        </ul>
-        <li>Where to go next for more SQL</li> 
-        <ul>
-            <li>There are places you can go to get case studies to trial your SQL knowledge</li>
+        <li><a href="https://web.archive.org/web/20240828120016/https://technicalwriterhq.com/documentation/">What is documentation</a></li>
             <ul>
-                <li><a href="https://8weeksqlchallenge.com/case-study-1/">8 week SQL challenge Case Studies</a></li>
-                <li><a href="https://advancedsqlpuzzles.com/">Advanced SQL puzzles</a></li>
-                <li><a href="https://www.hackerrank.com/domains/sql">Hacker Rank challenges for SQL</a></li>
+                <li>Documentation is used as way to layout and explain what's going on for reference</li>
+                <li>This should include descriptions and notes of whatever you're trying to keep a record for</li>
+                <li>This is an instruction set that is easy to share with others</li>
+                <li>Documentation is like a love letter to your future self, it's a way to say "future self, I love you so much I'm writing down everything I'm doing so you don't have to remember it later" If you don't believe me try and recall what you were doing 6 months ago in detail or a year ago, in detail.</li>
+                <li><a href="https://web.archive.org/web/20240919202325/https://documentation.softwareag.com/adabas/ada744mfr/adamf/dbatasks/dbadbdoc.htm">Database Documentation</a></li>
             </ul>
-            <li>There are references you can look at such as <a href="https://www.w3schools.com/sql/sql_quickref.asp">W3 Schools SQL</a></li>
-            <li>There are <a href="https://web.archive.org/web/20240119141821/https://learnsql.com/blog/sql-basics-cheat-sheet/#inner-join">cheat sheets</a> you can use for refresh</li>
-        </ul>
-        <li>NoSQL</li> 
+        <li>Why documentation is important</li> 
         <ul>
-            <li>NoSQL stands for Not Only SQL</li>
-            <li>NoSQL databases are not relational</li>
-            <li>Examples of NoSQL databases are document, key-value, graph, or wide-column stores</li>
-            <li>Many people argue NoSQL is more flexible and scalable then SQL based Databases</li>
-            <li>NoSQL can handle unstructured and semi-structured data</li>
-            <li>Examples of implementations are MongoDB, Redis and Cassandra</li>
-            <li>An example of where you might want to use NoSQL instead of SQL might be if you wanted a database of images or videos (Large Items)</li>
-            <li><a href="https://web.archive.org/web/20231208084049/https://cloud.google.com/discover/what-is-nosql">Explanation of NoSQL by Google</a></li>
+            <li>Having everything written down makes it easier to share with others and reference later</li>
+            <li>Making sure you have the notes of what you did is important for when you have to redo or fix things</li>
+            <li>Documentation is useful in a lot of places, not just for databases, it's a way of making sure everyone is in agreement for what's going on</li>
+            <li>Having documentation also means decisions can be made and recorded so you can always look back on what you need to do if you switch projects</li>
+            <li>Documentation can be useful for the creators, but also the end-user</li>
         </ul>
-        <li>Table Relationships</li>
-            <ul>
-                <li>Relationships for tables are how connect to each other, so you can organize and link data across multiple tables</li>
-                <li>There are 4 types of relationships, One-to-one, One-to-many, Many-to-many, and self-referencing</li>
-                <li><a href="https://web.archive.org/web/20240830142248/https://www.geeksforgeeks.org/relationships-in-sql-one-to-one-one-to-many-many-to-many/">Examples of relationships</a></li>
+        <li>Documentation timing</li> 
+        <ul>
+            <li>There are a number of times you might create and update your documentation</li>
+            <li>Design documentation before database is created and write up everything you know about how you want your database to work</li>
+            <li>Updating documentation as database is used so you can fix "In my ideal world this would happen" when it crashes into "The real world of data wants to talk"</li>
+            <li>Documentation should also be reviewed on a regular basis to make sure it's staying up to date</li>
+        </ul>
+        <li>Automated vs manual documentation</li> 
+        <ul>
+            <li>Some documentation can be automated by the database and you can run commands to update it</li>
                 <ul>
-                    <li>One-to-one relationships</li>
-                    <ul>
-                        <li>If we assume two tables, Table A and Table B</li>
-                        <li>One-to-one means for each record in Table A, there is only one reference for Table B</li>
-                        <li>The same is true for each record in Table B, there is only one reference for Table A</li>
-                        <li>Example: There is only one person associated with each Employee profile</li>
-                    </ul>
-                    <li>One-to-many relationships</li>
-                    <ul>
-                        <li>Each record for Table A can have multiple associations with Table B.  But each record for Table B only has 1 association with Table A</li>
-                        <li>Example: There are many employees, but only a few departments</li>
-                    </ul>
-                    <li>Many-to-many</li>
-                    <ul>
-                        <li>Each record in table A can have multiple associations with Table B, and that goes both ways</li>
-                        <li>Example: There are many students, in many classes</li>
-                    </ul>
-                    <li>Self-referencing</li>
-                    <ul>
-                        <li>A table foreign key references it's primary key</li>
-                        <li>Sometimes referred to as a recursive relationship</li>
-                        <li>Example: All employees are staff,  including managers, but each employee also has a manager</li>
-                    </ul>
+                    <li>Schema can be created by the database after it's created so you can see how close your original planning schema is to the real world</li>
+                    <li>Automating where you can is important so that your documentation is maintained well</li>
                 </ul>
-            </ul>
+            <li>Some documentation needs to be done by a human</li>
+            <li>Sometimes we use a combination</li>
+                <ul>
+                    <li>For example, Data Definition Language (DDL) scripts are useful for creating and modifying things, but the scripts themselves need to be documented so that everyone knows what they should be doing</li>
+                </ul>
+        </ul>
+        <li>How to combine manual and automated documentation tools</li> 
+        <ul>
+            <li>Automate away what you can, if there is a reasonable option to have something automatically update the documentation, do it</li>
+            <li>Have a human check everything over for making sense and matching</li>
+            <li>This can be a reasonable use case for AI,  but only if it meets privacy and security standards (most don't especially on sensitive data)</li>
+        </ul>
+        <li><a href="https://web.archive.org/web/20240910084835/https://library.ucmerced.edu/data-dictionaries">Data dictionaries</a> and business logic</li> 
+        <ul>
+            <li>Data dictionaries are places where you have descriptions of your data/table/function</li>
+            <li>Having a well-documented data dictionary ensures you have consistency across the project including any conventions required</li>
+            <li>Business logic is the information you need to decide what data you need, how it's stored, and what types if any are expected</li>
+            <li>Business logic is the real world constraints or rules you have to follow, such as work flows and access</li>
+            <li>Business logic might include things like what data is considered sensitive and should have extra protections</li>
+            <li>Business logic might also have rules for how the database can be communicated with by end-users, or end-user applications</li>
+            <li><a href="https://web.archive.org/web/20230801152530/https://www.percona.com/blog/should-you-keep-your-business-logic-in-your-database/">Should You Keep Your Business Logic In Your Database?</a></li>
+        </ul>
+        <li>Version control</li> 
+        <ul>
+            <li>When you have something important like documentation or code you should keep it under version control</li>
+            <li>Version control is a way to track and manage updates and changes</li>
+            <li>Version control should keep a record of all changes, who made them, and when they were made, along with the ability to roll back to a previous version</li>
+            <li>Version control can be done in house or outsourced to something on the cloud</li>
+            <li>GitHub is a public and free version control option for example</li>
+            <li><a href="https://web.archive.org/web/20240828100439/https://www.liquibase.com/resources/guides/database-version-control">Database Version Control</a></li>
+        </ul>
+        <li><a href="https://web.archive.org/web/20240919202508/https://www.geeksforgeeks.org/best-practices-for-documenting-database-design/">Documentation best practices</a></li> 
+        <ul>
+            <li>Documentation for any Data Language (DDL) scripts or other procedures and functions</li>
+            <li>Include the ER diagrams and schema</li>
+            <li>Descriptions for the data such as the tables, index and constraints or rules.  This should include clearly labeled keys</li>
+            <li>Any business logic that is required should be included</li>
+            <li>Version control</li>
+            <li>Regular updates</li>
+            <li>Backup procedures and implementation guidelines</li>
+        </ul>
+        <li>How to share your documentation with others</li> 
+        <ul>
+            <li>Interactive private websites only available on a company's intranet</li>
+            <li>Documentation attached to the database</li>
+            <li>Knowledge base somewhere within the company</li>
+            <li>Examples of ways to share and some documentation:</li>
+                <ul>
+                    <li><a href="https://dataedo.com/samples/">Dataedo company - NOT AN AD just an example, there are a bunch out there, they just had free samples on their website</a></li>
+                    <li><a href="https://locadoc.github.io/LocAdoc/Project_Diary_Page/doc/Database_Design_Document_LocADoc.pdf">Database design doc LocADoc</a></li>
+                    <li><a href="https://www.ars.usda.gov/ARSUserFiles/CEAP/DBdesign.doc">Database design draft from USDA for watersheds</a></li>
+                </ul>
+        </ul>
     </ul>   
 <!--Discussions and activities for the topic-->
 <p>Suggested Activities and Discussion Topics:
     <ul>
-        <li>Complete <a href="/AdvData/labs/week3.pdf">This PDF</a></li>
+        <!--<li>Complete <a href="/AdvData/labs/week6documentation.pdf">This PDF</a></li>-->
 
     </ul>
 </p>

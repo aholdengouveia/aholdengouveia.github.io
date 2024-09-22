@@ -1,0 +1,123 @@
+---
+title: Database Documentation
+layout: AdvData
+---
+<!--Learning Outcomes for this topic-->
+<h3>Database Documentation</h3>
+<p>Learning outcomes:
+    <ul>
+        <li>Describe the importance of database documentation</li>
+        <li>Describe the purpose and benefits of maintaining database documentation</li>
+        <li>Demonstrate how to create and update a data dictionary</li>
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/MgAYpanw2Vc?si=4ovJ2cFxsR2av05l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+</div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="/AdvData/CIS 210 Week 6 Database Documentation.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li><a href="https://web.archive.org/web/20240828120016/https://technicalwriterhq.com/documentation/">What is documentation</a></li>
+            <ul>
+                <li>Documentation is used as way to layout and explain what's going on for reference</li>
+                <li>This should include descriptions and notes of whatever you're trying to keep a record for</li>
+                <li>This is an instruction set that is easy to share with others</li>
+                <li>Documentation is like a love letter to your future self, it's a way to say "future self, I love you so much I'm writing down everything I'm doing so you don't have to remember it later" If you don't believe me try and recall what you were doing 6 months ago in detail or a year ago, in detail.</li>
+                <li><a href="https://web.archive.org/web/20240919202325/https://documentation.softwareag.com/adabas/ada744mfr/adamf/dbatasks/dbadbdoc.htm">Database Documentation</a></li>
+            </ul>
+        <li>Why documentation is important</li> 
+        <ul>
+            <li>Having everything written down makes it easier to share with others and reference later</li>
+            <li>Making sure you have the notes of what you did is important for when you have to redo or fix things</li>
+            <li>Documentation is useful in a lot of places, not just for databases, it's a way of making sure everyone is in agreement for what's going on</li>
+            <li>Having documentation also means decisions can be made and recorded so you can always look back on what you need to do if you switch projects</li>
+            <li>Documentation can be useful for the creators, but also the end-user</li>
+        </ul>
+        <li>Documentation timing</li> 
+        <ul>
+            <li>There are a number of times you might create and update your documentation</li>
+            <li>Design documentation before database is created and write up everything you know about how you want your database to work</li>
+            <li>Updating documentation as database is used so you can fix "In my ideal world this would happen" when it crashes into "The real world of data wants to talk"</li>
+            <li>Documentation should also be reviewed on a regular basis to make sure it's staying up to date</li>
+        </ul>
+        <li>Automated vs manual documentation</li> 
+        <ul>
+            <li>Some documentation can be automated by the database and you can run commands to update it</li>
+                <ul>
+                    <li>Schema can be created by the database after it's created so you can see how close your original planning schema is to the real world</li>
+                    <li>Automating where you can is important so that your documentation is maintained well</li>
+                </ul>
+            <li>Some documentation needs to be done by a human</li>
+            <li>Sometimes we use a combination</li>
+                <ul>
+                    <li>For example, Data Definition Language (DDL) scripts are useful for creating and modifying things, but the scripts themselves need to be documented so that everyone knows what they should be doing</li>
+                </ul>
+        </ul>
+        <li>How to combine manual and automated documentation tools</li> 
+        <ul>
+            <li>Automate away what you can, if there is a reasonable option to have something automatically update the documentation, do it</li>
+            <li>Have a human check everything over for making sense and matching</li>
+            <li>This can be a reasonable use case for AI,  but only if it meets privacy and security standards (most don't especially on sensitive data)</li>
+        </ul>
+        <li><a href="https://web.archive.org/web/20240910084835/https://library.ucmerced.edu/data-dictionaries">Data dictionaries</a> and business logic</li> 
+        <ul>
+            <li>Data dictionaries are places where you have descriptions of your data/table/function</li>
+            <li>Having a well-documented data dictionary ensures you have consistency across the project including any conventions required</li>
+            <li>Business logic is the information you need to decide what data you need, how it's stored, and what types if any are expected</li>
+            <li>Business logic is the real world constraints or rules you have to follow, such as work flows and access</li>
+            <li>Business logic might include things like what data is considered sensitive and should have extra protections</li>
+            <li>Business logic might also have rules for how the database can be communicated with by end-users, or end-user applications</li>
+            <li><a href="https://web.archive.org/web/20230801152530/https://www.percona.com/blog/should-you-keep-your-business-logic-in-your-database/">Should You Keep Your Business Logic In Your Database?</a></li>
+        </ul>
+        <li>Version control</li> 
+        <ul>
+            <li>When you have something important like documentation or code you should keep it under version control</li>
+            <li>Version control is a way to track and manage updates and changes</li>
+            <li>Version control should keep a record of all changes, who made them, and when they were made, along with the ability to roll back to a previous version</li>
+            <li>Version control can be done in house or outsourced to something on the cloud</li>
+            <li>GitHub is a public and free version control option for example</li>
+            <li><a href="https://web.archive.org/web/20240828100439/https://www.liquibase.com/resources/guides/database-version-control">Database Version Control</a></li>
+        </ul>
+        <li><a href="https://web.archive.org/web/20240919202508/https://www.geeksforgeeks.org/best-practices-for-documenting-database-design/">Documentation best practices</a></li> 
+        <ul>
+            <li>Documentation for any Data Language (DDL) scripts or other procedures and functions</li>
+            <li>Include the ER diagrams and schema</li>
+            <li>Descriptions for the data such as the tables, index and constraints or rules.  This should include clearly labeled keys</li>
+            <li>Any business logic that is required should be included</li>
+            <li>Version control</li>
+            <li>Regular updates</li>
+            <li>Backup procedures and implementation guidelines</li>
+        </ul>
+        <li>How to share your documentation with others</li> 
+        <ul>
+            <li>Interactive private websites only available on a company's intranet</li>
+            <li>Documentation attached to the database</li>
+            <li>Knowledge base somewhere within the company</li>
+            <li>Examples of ways to share and some documentation:</li>
+                <ul>
+                    <li><a href="https://dataedo.com/samples/">Dataedo company - NOT AN AD just an example, there are a bunch out there, they just had free samples on their website</a></li>
+                    <li><a href="https://locadoc.github.io/LocAdoc/Project_Diary_Page/doc/Database_Design_Document_LocADoc.pdf">Database design doc LocADoc</a></li>
+                    <li><a href="https://www.ars.usda.gov/ARSUserFiles/CEAP/DBdesign.doc">Database design draft from USDA for watersheds</a></li>
+                </ul>
+        </ul>
+    </ul>   
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <!--<li>Complete <a href="/AdvData/labs/week6documentation.pdf">This PDF</a></li>-->
+
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">Click here </a>
+</p>
