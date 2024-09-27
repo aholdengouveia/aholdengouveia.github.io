@@ -1,0 +1,142 @@
+---
+title: Query Optimization
+layout: AdvData
+---
+<!--Learning Outcomes for this topic-->
+<h3>Query Optimization</h3>
+<p>Learning outcomes:
+    <ul>
+        <li>Describe a query plan </li>
+        <li>Describe an index and when to use one</li>
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ySfc7eyIbEQ?si=XjYykbX9Sz2Fd31h" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+</div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="/AdvData/CIS 210 Week 5 Query Optimization.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>Query plans and times</li>
+            <ul>
+                <li>Each query has a time that it takes to run</li>
+                <li>Each query has a plan, this is the steps the database is using to figure out the results to give you for the query</li>
+                <li>Each query can have different amounts of time needed to run based on  how it's put together</li>
+                <li>Some databases will come with a built in way to see the plan for your query, this will likely include things like  operator attributes and types</li>
+                <li><a href="https://web.archive.org/web/20230924202135/https://www.geeksforgeeks.org/query-execution-plan-in-sql/">Query execution plans in SQL</a></li>
+            </ul>
+        <li>What is <a href="https://web.archive.org/web/20240706040324/https://www.analyticsvidhya.com/blog/2021/10/a-detailed-guide-on-sql-query-optimization/">Query Optimization</a></li> 
+        <ul>
+            <li>Query optimization is a way to make a query more efficient</li>
+            <li>Query optimization is really only useful for much more complex queries and large sets of data</li>
+            <li>When we look at performance, and simple queries, there isn't much to be done, they are what they are</li>
+            <li>You can change the queries slightly to improve time, but database tuning might not be enough</li>
+            <li>Some databases come with build in optimizers, however!  do not trust them blindly! Make sure it actually works and does what it says on the tin</li>
+        </ul>
+        <li>Why we need optimization</li> 
+        <ul>
+            <li>In the real world we have very large sets of data and very complex queries</li>
+            <li>These datasets are not 10,000 records, they can be millions of records and that will make every second or even tenth of a second count if we have to go through each record</li>
+            <li>Very complex queries have a lot of moving parts and can be put together in many ways to solve our problems</li>
+            <li><a href="https://web.archive.org/web/20240828132015/https://blog.quest.com/sql-query-optimization-how-to-determine-when-and-if-its-needed/">SQL query optimization — How to determine when and if it's needed</a></li>
+        </ul>
+        <li>Ok, but where do we start</li> 
+        <ul>
+            <li>Indexes: Front line defense for improvement</li>
+            <li><a href="https://web.archive.org/web/20240715192712/https://www.codecademy.com/article/sql-indexes">What is an Index?</a></li>
+                <ul>
+                    <li>An index is a way to copy some columns of the data so that we can get the information faster instead of having to sort through the whole table</li>
+                    <li>You can also think of it as a map to the table, or shortcuts to the data. Like a cheat code of a hidden level in Mario to get to the last world</li>
+                    <li>Indexes usually have a way to refer back to the original data using a key or direct link</li>
+                    <li>Think of a library index</li>
+                </ul>
+        </ul>
+        <li>Index basics</li> 
+        <ul>
+            <li>How can we tell when an index might be useful?</li>
+                <ul>
+                    <li>If you look at your query plan and see a scan that goes over each record in sequence that might be a good place to have an index</li>
+                </ul>
+            <li>Indexes can be created on any column in a database</li>
+            <li>Technically you can create indexes on multiple columns</li>
+            <li>There is also a concept of a partial index or filtered index, where you can include part of the rows as well</li>
+                <ul>
+                    <li>For example, a partial index could be used when you need to track a shipment that is in the warehouse, but not ordered or shipped or delivered so you can focus your queries more</li>
+                </ul>
+            <li><a href="https://use-the-index-luke.com/">Use The Index, Luke: A guide to database performance for developers</a></li>    
+        </ul>
+        <li>What kind of changes and improvements can we expect?</li> 
+        <ul>
+            <li>Index creation time is dependent on the size of the table, this could be a few seconds or several</li>
+            <li>If your query is using the index, there is a direct relationship between how long it takes for the index to be created and how much time you can save using them</li>
+            <li>Indexes can take a lot of space</li>
+            <li> Moves a sequential search to a tree search</li>
+                <ul>
+                    <li><a href="https://web.archive.org/web/20240111143930/https://www.geeksforgeeks.org/linear-search-vs-binary-search/">Sequential(Linear) Search vs Binary Search</a></li>
+                    <li><a href="https://web.archive.org/web/20240925174929/http://watson.latech.edu/WatsonRebootTest/ch05s3p2.html">Binary search</a></li>
+                </ul>
+        </ul>
+        <li>Warning: <a href="https://web.archive.org/web/20240519191830/https://www.pgmustard.com/blog/2019/05/20/multi-column-indexes">Multi-column indexes</a></li> 
+        <ul>
+            <li>If you need a multi-column index, you should consider revising your schema instead</li>
+            <li>Multi-column indexes can increase the time it takes to add new rows to the database</li>
+            <li>If there isn't a lot of changes or writing happening to the database this might not be an issue</li>
+            <li>If we continue the library index card example, this would be the cards sorted by author, and once we got the author, it was then sorted by title</li>
+        </ul>
+        <li>Types of indexes</li> 
+        <ul>
+            <li>Different types of indexes may have both pros and cons</li>
+            <li>Different types of indexes will use different data structures  internally</li>
+            <li>Mostly the databases will make this choice for you, you don't have to pick which one is used</li>
+            <li>Some examples of types include clustered index, hash index, bitmap index and filtered index</li>
+            <li>There are a lot more types, some are only available on some systems or in some databases (such as bitmap only available on Oracle)</li>
+            <li><a href="https://web.archive.org/web/20240419041740/https://vertabelo.com/blog/database-index-types/">What Are the Types of Indexes in a Relational Database?</a></li>
+        </ul>
+        <li>Index implementation</li> 
+        <ul>
+            <li>Indexes will use data structures, the different databases will likely have different names for each data structure</li>
+            <li> Some popular ways to implement indexes are hashes and trees (self-balanced binary search trees and B+ trees specifically)</li>
+            <li>Most databases will create an index based on a primary key</li>
+            <li>Some databases might also create an index for foreign keys</li>
+            <li>There is a concept of a covering index, where what you need is actually in the index and you don't need to go find the record (The library card has the info, you don't need the book)</li>
+            <li>There are no standards for how indexes are created</li>
+        </ul>
+        <li>How to tell if it is an improvement</li> 
+        <ul>
+            <li>The cost of your query and alternative plans for your query is a hard problem to solve</li>
+            <li>At this point in time, hardware isn't usually the issue, disk space is cheap, and adding more servers isn't always the answer</li>
+                <ul>
+                    <li>You can't bake a loaf of bread faster with more ovens</li>
+                </ul>
+            <li>There can be clear metrics such as "users complained about load times less this month" or "Users complained A LOT about how slow their shopping was"</li>    
+            <li>How long the query takes to run can be variable enough it may not be the best indicator of improvements</li>
+            <li>Consider other metrics to also look for such as CPU use, or I/O</li>
+            <li>Another metric you could consider is how understandable your query and plan is to future people</li>
+        </ul>
+        <li>Other considerations</li> 
+        <ul>
+            <li>One thing to consider is the amount of time saved by what you're doing, is this a onetime cost to save a lot of time later, or is the a large cost upfront for a thing you don't do very often</li>
+            <li>Another thing to think about is "what is reasonable" Is this query actually possible to run in the requested time, or is this request not in the bounds of reality</li>
+            <li>Is the slowness of the query something outside of your control? Is there another option? Such as running reports off hours, or creating less reports because they are being sent to the cabinet of no return anyway?</li>
+        </ul>
+
+    </ul>   
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <!--<li>Complete <a href="/AdvData/labs/week5optimization.pdf">This PDF</a></li>-->
+
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">Click here </a>
+</p>
