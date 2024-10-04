@@ -1,0 +1,90 @@
+\documentclass[12pt]{article}
+
+\usepackage{fontawesome}
+\usepackage{hyperref}
+\usepackage{xurl}
+
+
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0},
+}
+
+
+\title{Query Optimization}
+\author{
+        Adrianna Holden-Gouveia \\
+        Website: \url{https://aholdengouveia.name}\\ 
+        \date{\vspace{-5ex}}
+        %Email: \href{mailto:admin@aholdengouveia.name}{admin@aholdengouveia.name} \\
+        \faLinkedin{: aholdengouveia} \\
+        \faGithub {: aholdengouveia} \\
+        %\faTwitter {: aholdengouveia} \\
+        }
+
+%S\date{\today}
+
+
+\begin{document}    
+
+\maketitle
+
+%\begin{abstract}
+%This is a template for Linux Administration Lab work
+%\end{abstract}
+%\tableofcontents
+
+\section*{Objectives:}
+\begin{enumerate}
+    \item Learn how to work with indexes
+    \item Demonstrate how to add an index to a table to make it more efficient
+\end{enumerate}
+\section*{Complete the following problems}
+
+References, a video, a PowerPoint and some notes are available at my website
+\url {https://www.aholdengouveia.name/AdvData/optimization.html}
+
+
+\subsection*{Query optimization practice on Kaggle}
+    Go to \url{https://www.kaggle.com/learn/advanced-sql} and sign up for Kaggle, it's free, use any email you want.  If you are unfamiliar with the way kaggle works, there is a tutorial section, and an exercises section for this course. 
+        \begin{itemize}
+            \item Go through the Advanced SQL course. Take a screenshot of the completed course in your profile.  Make sure to include your name and the term in your screenshot.  This should show you completed the tutorials
+            \item Now you'll be doing the exercises.  Go through the exercise on Query Optimization, it should be problems related to Pet Costumes International. Take a screenshot of your solution to both problems. Make sure to include your name and term in the screenshot.
+        \end{itemize}
+
+
+
+
+\subsection*{Query Optimization Challenges}
+For each query make sure to include a short (1 paragraph or less) explanation of how you optimized it and solved the problem.  Each problem should also include your solution typed out, and a screenshot of your solution being run.  Make sure all screenshots include your name and the term.
+
+Go to \url{https://www.sandboxsql.com/} and load in the database located here \url{https://github.com/aholdengouveia/aholdengouveia.github.io/blob/main/AdvData/labs/BooksDatabase.sqlite} for the following problems. 
+
+Note: The queries don't always copy over well, especially symbols like the single quote.
+
+    \begin{enumerate}
+        \item On your database, if I give you the information on a book title, what is the command used to create an index to run the query more efficiently?
+        \item Given the following query, which will select a book with a given title, what command would you use to create an index to make this query more efficient? 
+        \begin{verbatim}
+            SELECT authors.name, books.genre
+            FROM books INNER JOIN authors 
+            ON books.author_id = authors.author_id
+            WHERE books.title = 'Dune' 
+        \end{verbatim}
+        \item Given the following query, which selects books from a table, create a command that will add an index based on genre.  Then give a new query that will show fantasy books only, making sure to use the index you created.
+        \begin{verbatim}
+            SELECT authors.name, books.genre
+            FROM books INNER JOIN authors 
+            ON books.author_id = authors.author_id 
+        \end{verbatim}
+    \end{enumerate}
+
+
+
+\section*{Deliverables}
+\begin{itemize}
+    \item Document for the portion of this lab using Kaggle to practice query optimization and review your SQL. 
+    \item Document for the challenges.  Each challenge should include the solution typed out, an explanation of how you arrived at your solution including any resources used, and a screenshot of the solution being run, each screenshot must include your name and the term. 
+
+\end{itemize}
+\end{document}
