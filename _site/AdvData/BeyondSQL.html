@@ -17,7 +17,7 @@
   gtag('config', 'G-Q9SWNFD6DB');
 </script>
 
-    <title>Database Schema</title>
+    <title>Beyond SQL</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
 
@@ -167,136 +167,126 @@
         <div class="col">
             <br><br>
             <!--Learning Outcomes for this topic-->
-<h3>Database Schema</h3>
+<h3>Beyond SQL</h3>
 <p>Learning outcomes:
     <ul>
-        <li>Create a visualization for a database or dataset</li>
-        <li>List keys and relationships between data in a database or dataset</li>
+        <li>Describe the difference between SQL and NoSQL</li>
+        <li>List some database options besides SQL that are commonly used</li>
     </ul>
 </p>
 
 <!--embed Youtube video here-->
 <div class="video-wrapper">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/QtPxqnTt87s?si=CC0yCEMvBXXpYqmV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/izyBAwkjbM0?si=ioiGhsHN_ZVt8Pbo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 <!--Download PowerPoint-->
 <p>
-    <a href="CIS 210 Week 4 Database Schema.pptx">Would you like to download my PowerPoint to follow along?</a>
+    <a href="/AdvData/CIS 210 Week 8 Beyond SQL.pptx">Would you like to download my PowerPoint to follow along?</a>
 </p>
 <!--Outline Of lecture notes/powerpoint for the topic-->
 <p>
     <ul>
-        <li>What is <a href="https://web.archive.org/web/20240426135006/https://www.geeksforgeeks.org/database-schemas/">database schema</a>?</li>
+        <li><a href="https://web.archive.org/web/20241009132319/https://www.geeksforgeeks.org/advantages-and-disadvantages-of-sql/">Pros and Cons of SQL</a></li>
             <ul>
-                <li>In relational databases we need to organize the data</li>
-                <li>When data is organized we need a map or blueprint of it so we know how everything is put together</li>
-                <li>Schema can also be the rules or formulas for how the database is done</li>
-                <li>Schemas will create these rules to ensure data integrity is maintained</li>
+                <li>Pros</li>
+                    <ul>
+                        <li>Very popular for a long time so there is a decent amount of documentation and some standards</li>
+                        <li>Relatively simple for people who aren't programmers to learn</li>
+                        <li>There are some built in security and data integrity features</li>
+                        <li>It's possible to see data in different views  so you can have more abstraction and can limit user access/viewing when needed</li>
+                    </ul>
+                <li>Cons</li>
+                    <ul>
+                        <li>Limits on what it can be used for since it requires structured data<li>
+                        <li>There can be hidden rules which make it harder to control fully</li>
+                        <li>No real time analytics, so things that want real time data processing is an issue</li>
+                        <li>Large datasets can lead to longer processing times because of the way queries perform</li>
+                        <li>Setup of SQL databases can be complicated and need specific skill sets</li>
+                    </ul>
             </ul>
-        <li><a href="https://web.archive.org/web/20240302134424/https://www.integrate.io/blog/database-schema-examples/#one">Why is this important?</a></li> 
+        <li>Beyond SQL</li> 
         <ul>
-            <li>Having a map or blueprint allows us to see at a glance the relationships of our database</li>
-            <li>Having rules for our database helps our data integrity, which is an important component to databases</li>
-            <li>Data is often "dirty" and that affects how it's used and the accuracy of results</li>
-            <li>A schema is also a good way to share this information in a concise way with others</li>
-            <li>A perfect database you can never share or have others use wouldn't be useful</li>
+            <li>NoSQL is non-relational database model, literally non-SQL or not only SQL</li>
+            <li>NoSQL is useful for larger datasets and real time analytics and data processing especially</li>
+            <li>There are a lot of different ways you can organize NoSQL type databases, one is by data model</li>
+            <li>For reference, SQL stores data in tables, NoSQL can store data in many other models including objects, documents and graphs</li>
+            <li>Because the data is not done in a way that shows relationships, schema are designed differently</li>
+            <li>NoSQL tends to not use joins in the queries because the data isn't stored in tables, NoSQL uses multiple queries  instead</li>
+            <li><a href="https://web.archive.org/web/20240903230214/https://www.christof-strauch.de/nosqldbs.pdf">NoSQL Databases</a> NOTE: Very long paper, but has some really good examples and explanations</li>
         </ul>
-        <li>What's included?</li> 
+        <li><a href="https://web.archive.org/web/20240520040135/https://www.adservio.fr/post/what-are-the-pros-and-cons-of-nosql">Pros and Cons of NoSQL</a></li> 
         <ul>
-            <li>Database Schemas are likely to have</li>
+            <li>Pros</li>
                 <ul>
-                    <li>Tables with labeled fields</li>
-                    <li>Primary key and foreign keys with relationships illustrated</li>
-                    <li>Any rules or requirements for adding data</li>
-                    <li>Notes on if particular data types are required</li>
+                    <li>Scalability for larger datasets</li>
+                    <li>Can store data outside the traditional SQL options</li>
+                    <li>Real time analytics is possible</li>
+                    <li>Less maintenance needed in general</li>
                 </ul>
-            <li>Schemas tend to include pictures and graphical representations to illustrate all of this</li>
+            <li>Cons</li>
+                <ul>
+                    <li>Hasn't been popular as long so there has been less stress testing then SQL</li>
+                    <li>Less complex queries are done so usually multiple queries are used instead of table joins</li>
+                    <li>Additional infrastructure may be needed for scaling</li>
+                    <li>Difficult to change data once added</li>
+                </ul>
         </ul>
-        <li>Advantages of having schema</li> 
+        <li><a href="https://web.archive.org/web/20240616144216/https://www.integrate.io/blog/the-sql-vs-nosql-difference/">SQL vs NoSQL</a></li> 
         <ul>
-            <li>Design Consistency - records of how the database was put together are useful for you and anyone that has to interact with it</li>
-            <li>Scalability - Well organized data and databases are easier to grow then if they were not well put together</li>
-            <li>Optimization - Knowing how the database is organized can help queries run faster</li>
-            <li>Maintenance -  It's easier to fix and maintain a well-organized well documented database</li>
-            <li>Security - Having a plan of how you're storing and protecting your sensitive data means it's more likely to be followed by everyone</li>
+            <li>SQL</li>
+                <ul>
+                    <li>Relational</li>
+                    <li>Schema is predesigned</li>
+                    <li>Vertically scalable - more power added to scale database, such as upgrading current servers</li>
+                    <li>Based on tables</li>
+                    <li>Needs structured data</li>
+                </ul>
+            <li>NoSQL</li>
+                <ul>
+                    <li>Non-relational</li>
+                    <li>Schema can be dynamic to accommodate unstructured data</li>
+                    <li>Horizontally scalable - more nodes are added to scale database, such as adding more servers</li>
+                    <li>Uses other data structures besides tables</li>
+                    <li>Can work with unstructured and semi-structured data</li>
+                </ul>
         </ul>
-        <li>Types of schema</li>
-            <ul>
-                <li>Physical schema</li>
-                <ul>
-                    <li>Explains how the data is stored on the actual storage</li>
-                    <li>Usually will have the explanation including files and indices</li>
-                </ul>
-                <li>Logical schema</li>
-                <ul>
-                    <li>Includes the relationships of the tables</li>
-                    <li>The rules that the data has to follow is included here</li>
-                    <li>Will include the ER modelling</li>
-                </ul>
-                <li>View schema</li>
-                <ul>
-                    <li>How the end user will work with the database</li>
-                    <li>To see this you don't need all the other information, so it might be easier for some people to follow</li>
-                </ul>
-            </ul>
-        <li><a href="https://web.archive.org/web/20240516010045/https://www.integrate.io/blog/complete-guide-to-database-schema-design-guide/">Schema design<a></li> 
+        <li><a href="https://web.archive.org/web/20240407020057/https://www.geeksforgeeks.org/types-of-nosql-databases/">Types of NoSQL</a></li> 
         <ul>
-            <li>There are a lot of potential design options for schema</li>
-            <li>They are chosen based on what makes the most sense for the data and application</li>
+            <li>There are multiple ways to classify NoSQL databases, some of which can overlap</li>
+            <li>One common way to classify the types is by data structure, or the way in which the data is stored</li>
+            <li>Some common types are graph, key-value and document</li>
+            <li>The vocab that is used for the way the data is stored can be different than expected, especially if you're coming from programming</li>
         </ul>
-            <li>Examples of database schema design options:</li>
-                <ul>
-                    <li>Flat model schema</li>
-                        <ul>
-                            <li>This is basically like a single table</li>
-                            <li>Very simple</li>
-                            <li>Doesn't model all the data needs for more complex situations</li>
-                            <li>Likely only useful if you could do a spreadsheet instead of a database</li>
-                            <li>Might be used for a small company with only a few  employees that need an employee database</li>
-                        </ul>
-                    <li>Hierarchical model schema</li>
-                        <ul>
-                            <li>Looks like a tree structure like you might see in programming data structures</li>
-                            <li>Contains a root node where the information is starting from</li>
-                            <li>Used for things like nested data because it's the parent/child model</li>
-                            <li>An example use case for a school might be a database of employees and students</li>
-                        </ul>
-                    <li>Network model schema</li>
-                        <ul>
-                            <li>Similar to the hierarchal schema</li>
-                            <li>This allows many-to-many relationships to be illustrated, whereas networking only allows one-to-many</li>
-                            <li>Network model schema means you can include workflows and paths to the data</li>
-                            <li>Example use case might be a restaurant  chain where you need to keep track of inventory and employees but you also want to model workflows for cash and food delivery</li>
-                        </ul>
-                    <li>Relational model schema</li>
-                        <ul>
-                            <li>Mostly used in relational databases</li>
-                            <li>Used to keep track of the table and relationships</li>
-                            <li>Some say it's better for object-oriented design</li>
-                            <li>Example use case in a school we have classes, faculty and students, departments and divisions, or other data that is related</li>
-                        </ul>
-                    <li>Star model schema</li>
-                        <ul>
-                            <li>Can be used for larger amounts of data</li>
-                            <li><a href="https://web.archive.org/web/20240914002743/https://www.geeksforgeeks.org/star-schema-in-data-warehouse-modeling/">Used frequently for data marts and data warehouses</a></li>
-                            <li>Has the general appearance of a star, where there is a central table called the fact table, and connected to that are the dimension tables that describe other important info</li>
-                            <li>The relationships are described using foreign key relationships</li>
-                        </ul>
-                    <li>Snowflake model schema</li>
-                        <ul>
-                            <li>Snowflake is an adaptation of the star schema</li>
-                            <li>Like the star style, there is a central table that stores datapoints and references to dimensional tables</li>
-                            <li>However it expands on star by allowing multiple dimensional tables to include even more information</li>
-                            <li><a href="https://web.archive.org/web/20230330143349/https://www.geeksforgeeks.org/snowflake-schema-in-data-warehouse-model/">Also used frequently for data marts and data warehouses</a></li>
-                            <li>Same example as star model, but used when more data is needed, such as  breaking out a location table for customers, or departments for employees</li>
-                        </ul>
+        <li><a href="https://web.archive.org/web/20240901120421/https://www.influxdata.com/key-value-database/">NoSQL Example: Key Value Store</a></li> 
+        <ul>
+            <li>This uses a data structure that is an associative array or dictionary if you're coming from programming</li>
+            <li>This type will use key-value pairs, each piece of data has an associated key</li>
+            <li>The unique key is how you can retrieve your data from the database, the data can be simple (string) or complex (object)</li>
+            <li>One way to think of this is like a relational database but it only has two columns in the table, the key and the value</li>
+        </ul>
+        <li><a href="https://web.archive.org/web/20240926115325/https://redis.io/nosql/document-databases/">NoSQL Example: Document Store</a></li> 
+        <ul>
+            <li>Instead of using tables with rows and columns, there is a document to store the data</li>
+            <li>Documents may be closer to the data objects so there may be less modifications needed to retrieve the data</li>
+            <li>Collections are a group of documents with similar contents, you can also use things like tags or metadata to organize and group the data</li>
+            <li>Flexible schema is used, the documents don't need to all have the same schema</li>
+            <li>Document creation is easy, not much maintenance is required</li>
+            <li>No foreign keys are needed because there is no relationship between documents required</li>
+        </ul>
+        <li><a href="https://web.archive.org/web/20241008121539/https://aws.amazon.com/nosql/graph/">NoSQL Example: Graph Databases</a></li> 
+        <ul>
+            <li>Best for data that has relationships that need a graph to represent them, such as networking topologies or social connections</li>
+            <li>The focus Is on the relationship been the elements.  The nodes on a graph can be connected by links</li>
+            <li>Query can have real time results for output</li>
+            <li>How fast results show depend on the number of connections or relationships</li>
+            <li>Adding data is easy by adding new nodes or edges, schema doesn't need to be changed much</li>
+        </ul>
     </ul>   
 <!--Discussions and activities for the topic-->
 <p>Suggested Activities and Discussion Topics:
     <ul>
-        <li>Complete <a href="/AdvData/labs/week4schema.pdf">This PDF</a></li>
+        <li>Complete <a href="/AdvData/labs/week8.pdf">This PDF</a></li>
 
     </ul>
 </p>
