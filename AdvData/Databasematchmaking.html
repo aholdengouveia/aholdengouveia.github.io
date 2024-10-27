@@ -1,0 +1,165 @@
+---
+title: Database Matchmaking
+layout: AdvData
+---
+<!--Learning Outcomes for this topic-->
+<h3>Database Matchmaking</h3>
+<p>Learning outcomes:
+    <ul>
+        <li>Describe how to evaluate database types for different situations</li>
+        <li>List database types with appropriate data</li>
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/dyyljC3Dwrk?si=D6BjW1GllYPRnKDq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="/AdvData/CIS 210 Week 9 Database Matching.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>Why it's important to pick a database to match your data/company</li>
+            <ul>
+                <li>A lot of times people tend to go with what they know, but that might not always be the optimal solution</li>
+                <li>Starting with the simple "Do I use relational databases or not?"  is a good place to start narrowing down the myriad options (estimated at over 300)</li>
+                <li>Each database has its own pros and cons, and it's important to think about those with your use case and dataset</li>
+                <li>There are likely several good or good enough options, don't let perfect be the enemy of the good</li>
+                <li><a href="https://web.archive.org/web/20230923013021/https://www.geeksforgeeks.org/how-to-choose-the-right-database-for-your-application/">How to Choose The Right Database for Your Application</a></li>
+                <li><a href="https://web.archive.org/web/20240729142305/https://www.nebula-graph.io/posts/how-to-choose-database">Choosing a Database for Your Project: Step by Step</a></li>
+            </ul>
+        <li>Considerations</li> 
+        <ul>
+            <li>Integrations - What systems does your database need to work with</li>
+            <li>Scaling - How large you think your database will be, and how many people will be accessing it either for viewing or changing</li>
+            <li>Support - How much money will you be spending to make sure the database is being maintained properly</li>
+            <li>Those things will end up being the basis for how you can decide which database is the right one for you</li>
+        </ul>
+        <li>Some important questions that need to be asked</li> 
+        <ul>
+            <li>How much data are you working with?</li>
+            <li>How many people add data? See data? Access the database?</li>
+            <li>Do you have a preferred language for programming?</li>
+            <li>What is the budget?</li>
+            <li>Do you have availability requirements of the database?</li>
+            <li>What scalability do you expect to need?</li>
+            <li>Do you already have anything in play that needs to be taken into consideration? Such as tools and services you need to integrate with?</li>
+            <li>What kind of support/staff do you have? Knowledge base?</li>
+        </ul>
+        <li><a href="https://web.archive.org/web/20240712064326/https://insightsoftware.com/blog/whats-the-difference-relational-vs-non-relational-databases/">Relational vs Non-Relational database</a></li> 
+        <ul>
+            <li>Relational</li>
+                <ul>
+                    <li>Structured data required</li>
+                    <li>Needs relationships between tables of data to make sense</li>
+                    <li>Useful for ACID transactions (atomicity, consistency, isolation and durability) Basically data integrity during processing and important for places where lost data is BIG uh ohs like anywhere that handles big $$</li>
+                </ul>
+            <li>Non-Relational database</li>
+                <ul>
+                    <li>Can take any data</li>
+                    <li>More flexible options for how data relates, or doesn't relate, to other stored data</li>
+                    <li>Better at scale, so larger volumes of data can be handled like data warehouses and data lakes</li>
+                    <li>Good for when you want to make quick changes so you can speed up your development cycles because they don't have schemas</li>
+                </ul>
+        </ul>
+        <li><a href="https://web.archive.org/web/20240917102808/https://www.mongodb.com/resources/basics/scaling">Scaling</a></li> 
+        <ul>
+            <li>There is horizontal scaling and vertical scaling</li>
+            <ul>
+                <li>Vertical scaling is when you can add more power to a server that holds your database</li>
+                <li>Horizontal scaling is when you add more servers to your database</li>
+            </ul>
+            <li>Scalability is a HUGE issue in industry (pun intented)</li>
+            <li>The ability to get more data, more users, more more more, is one of the things that can really hold companies back, and the problem of scalability is one that most large companies are continually trying to solve and make more efficient.  Moar for less $$ basically</li>
+            <li>The reverse can be an issue too where people are trying so hard to account for potential scale they complicate their world unnecessarily</li>
+            <li>For example, if you are a 3 person local shop with a small customer base and very little online inventory, do you really need a full NoSQL database implementation for everything? Likely no, no you do not</li>
+        </ul>
+        <li>Schemas and data models</li> 
+        <ul>
+            <li>The type of data set you are using should dictate how you need to store and use your data</li>
+            <li>A database with a schema that is relational makes a lot of sense for something like inventory, or customers, or employees, but it might not make sense for something like social media profile scrapings or videos of cats</li>
+            <li>The data you have might need/want a specific database type if you have something besides traditional text based data like images or videos or music</li>
+        </ul>
+        <li>Security and compliance</li> 
+        <ul>
+            <li>One thing you may have to take into consideration is Industry compliance requirements</li>
+                <ul>
+                    <li>If you are in a highly regulated industry, you likely have extra rules to follow</li>
+                    <li>For example, if you are in healthcare, you have to follow HIPAA, therefore any database you use must also follow HIPAA for data security and privacy, including database encryption options</li>
+                </ul>
+            <li>Your specific company might have compliance requirements, For example, some places have preferred vendors and if you can stick with that vendor there is less paperwork</li>
+            <li>One large note here, open source. Open Source is awesome and information wants to be free, BUT not all companies are on board with it, and open source software can let in unexpected vulnerabilities that you need to be aware of</li>
+            <li>Another thing that can happen is a company can divest themselves of risk by having a third party be responsible for the data</li>
+        </ul>
+        <li>Examples of databases on the market</li> 
+        <ul>
+            <li>Relational</li>
+                <ul>
+                    <li>MySQL</li>
+                    <li>SQLite</li>
+                    <li>Oracle</li>
+                    <li>PostgreSQL</li>
+                    <li>MariaDB</li>
+                    <li>SQLServer</li>
+                    <li>Technically cloud companies have relational database on offer as well, but tend to advertise compatibility with other popular options instead</li>
+                </ul>
+            <li>Non-Relational</li>
+                <ul>
+                    <li>MongoDB</li>
+                    <li>Redis</li>
+                    <li>Cassandra</li>
+                    <li>GraphQL</li>
+                    <li>Neo4J</li>
+                    <li>ElasticSearch</li>
+                    <li>All cloud companies have their own propriety options for NoSQL as well</li>
+                </ul>
+        </ul>
+        <li>Evaluation of what to purchase/use</li> 
+        <ul>
+            <li>First and foremost, what is your budget.  Infrastructure? Maintenance? DBAs?</li>
+            <li>Are you doing this in house or asking a third party to take care of it for you?</li>
+            <li>What skills does your team/company already have and what are they comfortable learning?</li>
+            <li>How quickly do you need this up and running?  Both the "in an ideal world" and the real world options needed</li>
+            <li>Are you looking at "good enough for now options"? And if you need to transfer the database how bad will the transfer be?</li>
+            <li>How easy is the upgrade? Do you have the people/skills to keep this up to date?</li>
+            <li>Who holds the purse strings, and do they understand what you need? It's very common for software to be sold to people that aren't using it so the flashy stuff they show isn't what the people using it need </li>
+        </ul>
+        <li>Examples of free to use databases</li> 
+        <ul>
+            <li>Free databases are actually very commonly used, but they will have different license options and may have limits on who can use them and how</li>
+                <ul>
+                    <li>Remember, Open Source is awesome, but it may not work for your company/situation for a multitude of reasons</li>
+                    <li>Sometimes companies will have free community versions, they are not all the same!  Some communities are more helpful then others</li>
+                </ul>
+            <li>The biggest issue with free databases is the support, or lack thereof.  Remember, free database doesn't have a help desk if you need it and have questions.  Sometimes it's worth the money to have someone on call to help fix your issues</li>
+                <ul>
+                    <li>Support services are NOT cheap, and tend to have frequent and surprisingly high fees.  A lot of places are going with a pay to play model and you will commonly see monthly charges for the privilege of using them</li>
+                </ul>
+            <li>Free database examples: MariaDB, PostgreSQL, MySQL, MongoDB Community version, Redis Community version</li>    
+        </ul>
+        <li>Examples of databases and their potential use cases</li> 
+        <ul>
+            <li>PostgreSQL - Financial information, such as ATM transactions</li>
+            <li>Elasticsearch - Log analytics, such as looking through server logs for specific information</li>
+            <li>Redis - Web hosting service, such as finding the static information about web pages quickly</li>
+            <li>Cassandra - Videos, such as where you left off when watching a video, think of any major video platform and how they remember where you stopped watching</li>
+            <li>MongoDB - News, such as the place that news articles might be held, because news articles are long form text</li>
+            <li>Neo4J - Real time recommendations, such as suggestions for which products or services you might be interested in</li>
+        </ul>
+    </ul>   
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <li>Complete <a href="/AdvData/labs/wk9matchmaking.pdf">This PDF</a></li>
+
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">Click here </a>
+</p>

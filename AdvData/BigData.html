@@ -1,0 +1,159 @@
+---
+title: Big Data
+layout: AdvData
+---
+<!--Learning Outcomes for this topic-->
+<h3>Big Data</h3>
+<p>Learning outcomes:
+    <ul>
+        <li>Describe some uses of AI/ML for databases</li>
+        <li>List some pros/cons for using AI/ML in databases</li>
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/gKBuYAyo7Xw?si=rd5OzxpASH9yATD9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
+</div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="/AdvData/CIS 210 Week 10 Big Data.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>What is considered <a href="https://web.archive.org/web/20240917013822/https://cloud.google.com/learn/what-is-big-data">big data?</a></li>
+            <ul>
+                <li>Big data is usually identified by the "3 Vs of Big Data"</li>
+                <li> Volume - Very literally how much data, lots of data from lots of sources</li>
+                <li>Velocity - How fast the data is generated, how quickly it's being produced is another hallmark of "big data"</li>
+                <li>Variety - The different kinds of data, big data means it's going to be a lot of different types of data from structured to unstructured, such as IoT device metrics with locations, devices and readings</li>
+                <li>Veracity (how trustworthy the data is), variability (the meaning of the data can change) and value (is this actually useful to me) are also commonly talked about with big data</li>
+            </ul>
+        <li>Why we might be interested in more data</li> 
+        <ul>
+            <li>Most companies like making money, traditionally the more customers you have the more you can make, finding new customers, new products, new venture, new ideas, is one way data is being used</li>
+            <li>The more data you have the better you can tailor what you have to the person, for example, if we recommend seeing a big sportsball game to everyone in MA we might spend a bunch on advertising but accidentally send them Yankees wins highlights and then there will be riots in the streets.  Again.</li>
+            <li>Real time analytics needs a lot of data continuously coming in to work, the more data you have the better your analytics can work if it's good data</li>
+            <li>For example, AI/ML training models that can find breast cancer, it was however originally designed to <a href="https://web.archive.org/web/20241001052226/https://www.newyorker.com/tech/annals-of-technology/the-pastry-ai-that-learned-to-fight-cancer">identify if a photo was a croissant or a bear claw</a></li>
+        </ul>
+        <li>Examples of Big Data right now</li> 
+        <ul>
+            <li>Anything using Artificial Intelligence and Machine learning models is using big data</li>
+            <li>Search engines use big data to give you the best results</li>
+            <li>Any large streaming platform uses big data to both hold the videos and see analytics so they can do things like make suggestions of what to watch next, produce next or buy next</li>
+            <li>Online advertisements use a surprising amount of data, your phone isn't recording you, but it is doing things like see what other phones you spend time around, their histories and current interests, and places you go</li>
+        </ul>
+        <li><a href="https://web.archive.org/web/20240927162754/https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-a-data-lake/">Data lakes</a></li> 
+        <ul>
+            <li>Data lakes - any and all data welcome</li>
+                <ul>
+                    <li>Example use cases include streaming media and suggestions for what to watch, investment houses watching the market to decide where to invest money, healthcare using past patient data to improve current patient outcomes</li>
+                </ul>
+            <li>Data lakehouses are a newer concept where it's a cross between a data lake and a data warehouse, you can analyze unstructured data because the lakehouse automatically structures it. This involves more setup and not everyone wants their structured and unstructured data mixing</li>
+            <li>Commonly used by companies to pull all the data from disparate groups into one place</li>
+        </ul>
+        <li><a href="https://web.archive.org/web/20240715102146/https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-a-data-warehouse/#data-warehouse-definition">Data warehouse</a></li> 
+        <ul>
+            <li>Data warehouses - tends to welcome relational data only</li>
+                <ul>
+                    <li>Commonly used for business analytics and data analysts</li>
+                    <li>Data warehouses tend to hold a lot of historical data so can be used for data mining and data visualizations and other types of reports</li>
+                    <li><a href="https://web.archive.org/web/20240614070034/https://www.mezmo.com/learn-observability/what-is-a-data-warehouse">What is the Purpose of a Data Warehouse</a></li>
+                </ul>
+            <li>Data marts are data warehouses but for specific use cases and teams, think smaller and more focused warehouse. Boutique shopping instead of big box store</li>
+            <li>Very commonly used, but starting to fall out of corporate fashion because so many people are moving to NoSQL</li>
+        </ul>
+        <li>What are AI and ML</li> 
+        <ul>
+            <li><a href="https://web.archive.org/web/20241009105204/https://www.technologyreview.com/2024/07/10/1094475/what-is-artificial-intelligence-ai-definitive-guide/">Artificial Intelligence (AI)</a></li>
+                <ul>
+                    <li>This is a popular thing right now, with technologies like ChatGPT and other Large Learning Models (LLMs)</li>
+                    <li>AI can be anything that is computers doing things that people can do, but require intelligence from the person</li>
+                    <li>Some common examples are things like facial recognition or other picture recognition, answering questions or even driving cars</li>
+                </ul>
+            <li><a href="https://web.archive.org/web/20241005161752/https://mitsloan.mit.edu/ideas-made-to-matter/machine-learning-explained">Machine Learning (ML)</a></li>
+                <ul>
+                    <li>ML is a subset of AI that is supposed to be machines that imitate human behaviors</li>
+                    <li>It can be seen as computers learning without being programmed, but instead use learned behaviors and computer models to do training</li>
+                </ul>
+        </ul>
+        <li>Machine Learning categories</li> 
+        <ul>
+            <li>Supervised</li>
+                <ul>
+                    <li>Models are trained with labeled data sets</li>
+                    <li>So for this is if you're looking for pictures of cute animals, you would need to have a large data set of pictures, labeled by humans, that are of cute animals.  Once the computer has seen enough of these it should be able to find cute animals on its own</li>
+                    <li>Most popular option right now</li>
+                </ul>
+            <li>Unsupervised</li>
+                <ul>
+                    <li>This is going to be unlabeled data where the computer is looking for patterns and trends</li>
+                    <li>So instead of looking for cute animals, you'd have the computer look for patterns you didn't expect, like all photos of cute animals are of a specific size, or eye shape or something</li>
+                </ul>
+            <li>Reinforcement</li>
+                <ul>
+                    <li>Training through trial and error</li>
+                    <li>This is how some people will do self-driving cars or have the computer play games</li>
+                </ul>
+        </ul>
+        <li><a href="https://web.archive.org/web/20240827132554/https://www.tableau.com/data-insights/ai/advantages-disadvantages">Pros and Cons of AI/ML</a></li> 
+        <ul>
+            <li>Pros</li>
+            <ul>
+                <li>Can be used to make choices faster</li>
+                <li>Some people see it as less error prone (not true)</li>
+                <li>Always available</li>
+                <li>Can cost less than other options</li>
+                <li>Good for repetitive work</li>
+                <li>Can be used for real time analysis</li>
+            </ul>
+            <li>Cons</li>
+            <ul>
+                <li>Because it's seen as less error prone people ignore the inherent bias in AI</li>
+                <li>Not able to make exceptions or  choices that were not explicitly programmed</li>
+                <li>Not creative, can  reformat other people's ideas, but doesn't come up with its own</li>
+                <li>Doesn't learn from experience unless you're in actively training it</li>
+                <li>Ethical issues with implementations, bias, data persistence, and ownership of original ideas (AI art is a good example of that)</li>
+            </ul>
+        </ul>
+        <li>How AI/ML can be used in databases</li> 
+        <ul>
+            <li>AI can be used for some forms of analysis. Examples include finding patterns or relationships that aren't obvious to humans.  Such as hidden trends or potential correlations between data</li>
+            <li><a href="https://web.archive.org/web/20241007235321/https://www.datastax.com/guides/ai-database">AI databases</a> can store data as mathematical vectors instead of traditional data storage ideas</li>
+                <ul>
+                    <li>Mathematical vectors are a way to represent the data abstractly, the data can be generated by ML</li>
+                    <li>AI databases can scale vertically or horizontally</li>
+                    <li>AI databases can also support natural language processing</li>
+                    <li>Can be SQL or NoSQL style database</li>
+                </ul>
+            <li>AI databases can also have predictive capabilities, so they can apply ML for trying to predict future trends</li>
+        </ul>
+        <li>Some examples of AI/ML in use right now</li> 
+        <ul>
+            <li>Healthcare - <a href="https://web.archive.org/web/20240707052146/https://www.pharmacytimes.com/view/data-driven-development-how-real-world-data-and-ai-are-transforming-clinical-trials">Dandelion Health is saying they are using an AI database for GLP-1 drugs, insights into where to move the research and feedback for the sponsors of the trials</a></li>
+            <li><a href="https://web.archive.org/web/20240529145938/https://blog.devart.com/how-to-use-chatgpt-to-write-sql-join-queries.html">Using chat bots to write SQL queries, or make the queries more efficient</a></li>
+            <li><a href="https://web.archive.org/web/20240926235533/https://fedscoop.com/using-ai-and-database-technologies-to-drive-innovation/">The US armed forces are said to be using AI for data management and decision making.  Can also be used for things like logistics and predicting maintenance</a></li>
+            <li><a href="https://web.archive.org/web/20240511020841/https://blogs.oracle.com/datawarehousing/post/now-is-the-time-to-innovate-with-ai-ml">Example of AI in a database by Oracle</a></li>    
+            <li><a href="https://web.archive.org/web/20240926191353/https://techcommunity.microsoft.com/t5/microsoft-mechanics-blog/new-ai-integration-for-your-sql-databases-rag-vector-search/ba-p/4180692">Example of AI in a database by Microsoft</a></li>
+        </ul>
+        <li>Some resources for learning more about AI/ML</li> 
+        <ul>
+            <li><a href="https://ai.google.dev/gemma/docs/lora_tuning">Google AI</a></li>
+            <li><a href="https://www.kaggle.com/learn/intro-to-machine-learning">Kaggle has several courses on ML</a></li>
+            <li><a href="https://github.com/SkalskiP/courses">GitHub repo of AI courses of different types and different levels of skills</a></li>
+        </ul>
+    </ul>   
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <li>Complete <a href="/AdvData/labs/wk10bigdata.pdf">This PDF</a></li>
+
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">Click here </a>
+</p>
