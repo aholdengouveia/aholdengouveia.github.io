@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/images/WomanComputerSilouette.png">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9SWNFD6DB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Q9SWNFD6DB');
+</script>
+
+    <title>SQL scaling</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/carousel.css" rel="stylesheet">
+    <link href="/css/stylesheet.css" rel="stylesheet">
+    <link href="/fontawesome-free-6.1.1-web/css/all.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <header>
+
+
+
+      <!-- Why are you looking at my website code?  You might need a hobby.  
+      
+      Come take a class with me! I promise to keep you busy
+    -->
+
+
+
+<!--Nav bar area at the top of the page -->
+    
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #2c365e;">
+  <a class="navbar-brand" href="/index.html">Welcome!</a>
+ <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+   <span class="navbar-toggler-icon"></span>
+ </button>
+       
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <ul class="navbar-nav mr-auto">
+<!--Social Media Menu section of NavBar-->
+      <li class="nav-item dropdown">
+       <a class="nav-link dropdown-toggle" href="/socials.html" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Socials
+       </a>
+       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+         <a class="dropdown-item" href="https://www.youtube.com/channel/UCebdI1gT84U7PBtJFUTrIQA">YouTube</a>
+         <a class="dropdown-item" href="https://github.com/aholdengouveia">GitHub </a>
+         <a class="dropdown-item" href="https://www.thingiverse.com/aholdengouveia/designs">Thingiverse</a>
+         <!--<a class="dropdown-item" href="https://twitter.com/aholdengouveia">Twitter</a>-->
+         <a class="dropdown-item" rel="me" href="https://fosstodon.org/@aholdengouveia">Mastodon</a>
+         <a class="dropdown-item" href="https://www.linkedin.com/in/aholdengouveia">LinkedIn</a>
+         <a class="dropdown-item" href="https://g.dev/aholdengouveia">Google Developer</a>
+         <a class="dropdown-item" href="https://oercommons.org/profile/429418">OER Commons Profile</a>         
+        </div>
+     </li>
+
+<!--Classes menu section of NavBar-->
+     <li class="nav-item dropdown">
+       <a class="nav-link dropdown-toggle" href="/classes.html" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Classes
+       </a>
+       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+         <a class="dropdown-item" href="/introlinux.html">Introduction to Linux</a>
+         <a class="dropdown-item" href="/introdata.html">Introduction to Data</a>
+         <a class="dropdown-item" href="/introinfosec.html">Introduction to Security</a>
+         <!-- <a class="dropdown-item" href="/introit.html">Introduction to IT</a>
+         <a class="dropdown-item" href="/intropython.html">Introduction to Python</a>
+         -->
+         <a class="dropdown-item" href="/AdvSec.html">Advanced Security</a>
+         <a class="dropdown-item" href="/advdata.html">Advanced Database Management</a>
+         <a class="dropdown-item" href="/advlinux.html">Linux Administration</a>
+        </div>
+     </li>
+
+     <!--Technical Jobs Section of NavBar-->
+<li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Tech Jobs
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item" href="/techjobs.html">How to Get a job</a>
+        <!--<a class="dropdown-item" href="#">Tips to succeed at your job</a>
+        <a class="dropdown-item" href="#">Documentation</a>
+        -->
+      </div>
+    </li>
+<!--Other things I think are Important to learn-->
+   <!-- <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Other tech stuff
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item" href="#">Shellscripting</a>
+        <a class="dropdown-item" href="#">Linux Power Tools</a>
+        <a class="dropdown-item" href="#">Google-Fu</a>
+      </div>
+    </li> -->
+
+<!--Home Automation Section of NavBar-->
+  <li class="nav-item active">
+    <a class="nav-link" href="/SmartHome/smarthomewelcome.html">Smart Home Project <span class="sr-only">(current)</span></a>
+  </li>
+
+
+<!--About Me Section of NavBar-->
+    <li class="nav-item active">
+      <a class="nav-link" href="/cv.html">About Me <span class="sr-only">(current)</span></a>
+    </li>
+<!--Search Bar Section of NavBar-->
+         </ul>
+         <form class="form-inline mt-2 mt-md-0">
+           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+         </form>
+       </div>
+     </nav>
+   </header>
+
+
+    <!-- Sidebar for the course by topic/week-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4 col-md-3">
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand"><a href="/AdvDataOverview.html">Overview</a></li>
+                    <li><a href="/AdvData/IntroData.html">Data</a></li>
+                    <li><a href="/AdvData/sqlpt1.html">SQL Review</a></li>
+                    <li><a href="/AdvData/sqlpt2.html">SQL Tables</a></li>
+                   <li><a href="/AdvData/databaseschema.html">Schema</a></li>
+                    <li><a href="/AdvData/optimization.html">Optimization</a></li><li>
+                    <li><a href="/AdvData/databasedocumentation.html">Documentation</a></li><li>
+               
+                    <li><a href="/AdvData/BeyondSQL.html">Beyond SQL</a></li> 
+                     <li><a href="/AdvData/Databasematchmaking.html">Database Matchmaking</a></li> 
+                    <li><a href="/AdvData/BigData.html">Big Data</a></li> 
+                    <li><a href="/AdvData/SQLscaling.html">SQL Scaling</a></li> 
+                    <li><a href="/AdvData/NoSQLscaling.html">NoSQL Scaling</a></li> 
+                    <!--<li><a href="#">Data Visualizations</a></li> 
+                    <li><a href="#">Reporting</a></li> 
+                     
+               -->    
+                    <li><a href="/AdvData/Resources.html">Resources</a></li>  
+                </ul>
+            </div>
+        </div>
+        <!--Main content of the page will fill in here-->
+        <div class="col">
+            <br><br>
+            <!--Learning Outcomes for this topic-->
+<h3>SQL scaling</h3>
+<p>Learning outcomes:
+    <ul>
+        <li>Describe how to scale using SQL</li>
+        <li>List some SQL scaling limitations</li>
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Se6Ngfn7HRw?si=j4b6whD8qLDigXH2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="/AdvData/CIS 210 Week 11 SQL Scalability.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>What is scaling</li>
+            <ul>
+                <li>Scaling is the ability to have your software able to work with large amounts of data gracefully</li>
+                <li>Scaling is a huge issue in industry</li>
+                <li>Vertical vs horizontal scaling</li>
+                    <ul>
+                        <li>SQL databases are usually scaled vertically</li>
+                        <li>This is done by adding more power to the servers holding the database</li>
+                        <li>There are inherent limits to this</li>
+                    </ul>
+                <li>If you can scale them horizontally, you have more options</li>
+                <li>Horizontal scaling can also be called "sharding" or "shards"</li>
+            </ul>
+        <li>Important things to consider when scaling</li> 
+        <ul>
+            <li>Keeping the database/software responsive, you have to keep the database usable at scale</li>
+            <li>Being as efficient as possible, you don't want to do more then you need, and because everything is so much more, even small delays can be problematic</li>
+            <li>Reliability, databases that go down or slow down frequently do not make people happy</li>
+            <li>Vocab note: Shards and servers tend to be used interchangeably</li>
+        </ul>
+        <li><a href="https://web.archive.org/web/20240422153754/https://www.designgurus.io/blog/scaling-sql-databases">Scaling Challenges</a></li> 
+        <ul>
+            <li>Vertical scaling challenges</li>
+                <ul>
+                    <li>There are limits to how much power you can add to a server</li>
+                    <li>The larger the single server is, the more expensive it will be, think of the power in a gaming laptop vs 10 Raspberry pi computers and the cost of each</li>
+                </ul>
+            <li>Data consistency guarantees - harder at scale</li>
+                <ul>
+                    <li>Data consistency is much harder at horizontal scale</li>
+                    <li>Data replication - making sure the data is the same in all shards</li>
+                    <li>Data integrity - making sure the data is correct</li>
+                </ul>
+        </ul>
+        <li>How to break up the database</li> 
+        <ul>
+            <li>Breaking the database up over multiple nodes is called sharding</li>
+            <li>The sharding key is how we can figure out how to distribute the data</li>
+            <li>One issue to contend with is data skew, where the database isn't broken up evenly</li>
+            <li>It's like a group project, everyone needs to pull their own weight, but it's easy to  have some people (nodes) do more than others</li>
+        </ul>
+        <li><a href="https://web.archive.org/web/20241106155742/https://dgraph.io/blog/post/shard-key/">Keys</a></li> 
+        <ul>
+            <li>Because SQL relies so heavily on keys for relationships and to keep the data together, we need to be careful with them</li>
+            <li>If we need to make any changes, everything must be changed, which is harder on multiple servers</li>
+            <li>The sharding key is a field that we use to decide how the database is broken up</li>
+            <li>If the tables weren't sharded the same way we can have inconsistencies and relationships between the tables can get lost and we get orphaned data</li>
+                <ul>
+                    <li>To fix this you have to check the data keeps its data integrity, making sure that the foreign key relationships are valid, this extra check takes extra time</li>
+                    <li>Changes like adding or removing data, or changing data need to be done across servers as well, and making sure each server is changed</li>
+                </ul>
+        </ul>
+        <li><a href="https://web.archive.org/web/20240907170138/https://www.mongodb.com/docs/manual/core/sharding-choose-a-shard-key/#shard-key-frequency">How to pick a shard key</a></li> 
+        <ul>
+            <li>Cardinality - This is how we can pick the max number of pieces, we want larger number of pieces, so we need high cardinality</li>
+                <ul>
+                    <li>Example: Use a BookID as the key to ensure there are lots of pieces possible</li>
+                </ul>
+            <li>Frequency - This is how often the key value is in the data, if the value is used too often the shards won't be evenly distributed</li>
+                <ul>
+                    <li>Example: If you used LibraryID one shard might be overloaded if the library is massive so having multiple fields used as the key can help that such as using LibraryID and a BookID</li>
+                </ul>
+            <li>Monotonically - Keys that increase at a predictable rate can affect node balancing</li>
+                <ul>
+                    <li>Example: If you check out books and use the date as the key, too many writes will be done on one shard and create a bottleneck</li>
+                </ul>
+            <li>Query Patterns - A lot of queries are done routinely so it's worth thinking about if your shard key will cover your commonly used patterns</li>
+                <ul>
+                    <li>Example: If you need to check on which books are currently checked out of the library, that's a common query and may be helpful to consider as you shard the database</li>
+                </ul>
+        </ul>
+        <li>ACID Transactions</li> 
+        <ul>
+            <li>Atomicity - All or nothing</li>
+            <li>Consistency - rules are respected</li>
+            <li>Isolation - independent processing</li>
+            <li>Durability - transaction is permanent</li>
+            <li>One of the strengths of SQL and relational databases is the ACID transactions</li>
+            <ul>
+                <li>These have to be maintained through all the shards because otherwise you lose one of the guarantees of a SQL database</li>
+                <li>Keeping to ACID gets more complicated the more nodes we have or nodes we want to add</li>
+            </ul>
+        </ul>
+        <li>Distributed queries while keeping ACID?</li> 
+        <ul>
+            <li>Having the data in multiple places means we have more challenges to overcome including communication and networking</li>
+            <li>Trying to make sure we keep ACID transactions across all the shards is hard, especially because we have to make sure all the data is changed and no hold outs are left</li>
+            <li>It's like trying to coordinate a room of people in one spot in one location vs spread across the world</li>
+        </ul>
+        <li>Table Joins</li> 
+        <ul>
+            <li>Another fundamental thing SQL databases do are table joins in the queries</li>
+            <li>Once we add more nodes, the joins become harder to do</li>
+                <ul>
+                    <li>More machines have to talk to each other</li>
+                    <li>More machines are working on the query so there can be upsides depending on the query (more ovens don't cook your bread faster)</li>
+                    <li>The original join was a simple thing locally, but now it's now a network issue because it's a distributed query</li>
+                    <li>Communication between shards can be slow depending on how many shards there are, and where they are located</li>
+                </ul>
+        </ul>
+        <li>Node Consistency</li> 
+        <ul>
+            <li>Each node or server should have equal work to do</li>
+            <li>They also need to have the same data state, all the data must be synchronized.  Again, easier to do locally with vertical scaling, than shards</li>
+            <li>Making sure all the nodes have the correct data is difficult, you have to make sure the updates are done quickly but also reliably.  You can't have old data in some places, new data in others</li>
+                <ul>
+                    <li>If a person updates their email it needs to be updated across the database cleanly</li>
+                    <li>This is even tougher with real time consistency issues</li>
+                </ul>
+        </ul>
+        <li>Schema</li> 
+        <ul>
+            <li>Sharding the database can change the schema and that is harder on horizontally scaled databases</li>
+            <li>Coordinated changes get harder and harder the more nodes we have that we need to keep consistent</li>
+            <li>We have to worry about synchronization, data consistency, but also the downtime of the database, we need the database accessible and don't want it to go down at all</li>
+            <li>Successful scaling should also make sure the table relationships stay correct, and are checked</li>
+        </ul>
+        <li>Query Optimization</li> 
+        <ul>
+            <li>In query optimization we talked a lot about indexes</li>
+            <li>When we have multiple servers, each query might have to hit multiple tables in multiple places which adds communication time since it's not local anymore</li>
+            <li>Changing how you do queries to take into account sharding schemes can help</li>
+            <li>Making sure the data is load balanced can help to reduce bottlenecks</li>
+            <li>Caches can also be used to help speed up queries</li>
+            <li>Breaking complex queries into simpler ones can also help reduce query time</li>
+        </ul>
+    </ul>   
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <li>Complete <a href="/AdvData/labs/wk11sqlscaling.pdf">This PDF</a></li>
+
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">Click here </a>
+</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+   
+
+        <!-- FOOTER -->
+      <!--  <footer class="container">
+         
+          <p>&copy; 2022 &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        </footer>
+        -->
+         <footer class="footer">
+          <div class="container">
+            <p class="float-left"style="font-size:30%;">
+              <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a> <br>
+              This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">CC Attribution-NonCommercial 4.0 International License</a>
+            </p>
+            <span class="text-muted text-center">
+              Contact me: <a href="mailto:admin@aholdengouveia.name">Email</a>
+             <!-- <a href="#">Email</a>-->
+              <a href="/cv.html">About me </a>
+              
+            
+              <p class="float-right"><a href="#">Back to top</a></p>
+            </span>
+          </div>
+        </footer>
+        
+  </main>
+
+  <!-- Bootstrap core JavaScript
+       ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+    integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+    crossorigin="anonymous"></script>
+  <!-- Always remember to call the above files first before calling the bootstrap.min.js file -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+    integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+    crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

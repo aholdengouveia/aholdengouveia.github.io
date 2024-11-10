@@ -1,0 +1,76 @@
+\documentclass[12pt]{article}
+
+\usepackage{fontawesome}
+\usepackage{hyperref}
+\usepackage{xurl}
+
+
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0},
+}
+
+
+\title{SQL scaling}
+\author{
+        Adrianna Holden-Gouveia \\
+        Website: \url{https://aholdengouveia.name}\\ 
+        \date{\vspace{-5ex}}
+        %Email: \href{mailto:admin@aholdengouveia.name}{admin@aholdengouveia.name} \\
+        \faLinkedin{: aholdengouveia} \\
+        \faGithub {: aholdengouveia} \\
+        %\faTwitter {: aholdengouveia} \\
+        }
+
+%S\date{\today}
+
+
+\begin{document}    
+
+\maketitle
+
+%\begin{abstract}
+%This is a template for Linux Administration Lab work
+%\end{abstract}
+%\tableofcontents
+
+\section*{Objectives:}
+\begin{enumerate}
+    \item Learn more about SQL and how it can be used.
+    \item Learn how to evaluate data sets for scalability including business logic
+\end{enumerate}
+\section*{Complete the following problems}
+
+References, a video, a PowerPoint and some notes are available at my website
+\url {https://www.aholdengouveia.name/AdvData/SQLscaling.html}
+
+\subsection*{SQL Challenges HackerRank}
+
+    \begin{itemize}
+        \item From \url{https://www.hackerrank.com} You'll be doing 3 challenges that are listed as Medium difficulty or higher.  Make sure you pick NEW challenges. Take screenshots of each solution making sure to include your name and the term in each screenshot.
+        \item Each screenshot should include a short explanation of how you solved it, and what resources you used.  If you needed hints, include that and where you found the hint. 
+        \item Screenshot of your HackerRank profile that includes the completed challenges. Make sure I can see all your completed challenges so I can tell that you have done enough new ones
+    \end{itemize}
+
+\subsection*{SQL Challenges}
+
+    From \url{https://8weeksqlchallenge.com/} you will be doing 2 case studies.  You can either use the embedded option in the website, or put the data into another place such as SQL Sandbox or a locally hosted database
+\begin{itemize}
+    \item From case study number 1, the diner, you need to solve all 10 questions.  Each one should be done with a single SQL statement.  Make sure to include a screenshot of your solution, and a short explanation of how you solved it. 
+    \item From case study number 2, pizza runner, solve the first 5 problems under Pizza Metrics.  Make sure to include a screenshot of your solution, and a short explanation of how you solved it.
+\end{itemize}
+
+\subsection*{SQL Scalability}
+ Answer the following questions about the scalability of each SQL challenge from the 8 week SQL challenge case studies. For each case study, write a short paragraph explaining how you think this might work at scale. Make sure to answer each of the following.
+
+\begin{itemize}
+  \item How do you think your queries would change? 
+  \item Would you continue to use a relational database? Explain why or why not. 
+  \item Does the dataset need to stay with SQL because of ACID transactions?
+  \item Would the schema have to change?
+  \item Do you think node consistency would be an issue for the data set? What about the Business?
+\end{itemize}
+
+\section*{Deliverables}
+A text document that contains the answers to the above questions, and requested screenshots.  Make sure you include both the SQL challenges from HackerRank and the ones from the 8 week SQL challenge
+\end{document}
