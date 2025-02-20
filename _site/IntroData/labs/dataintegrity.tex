@@ -3,6 +3,7 @@
 \usepackage{fontawesome}
 \usepackage{hyperref}
 \usepackage{xurl}
+\usepackage{graphicx}
 
 
 \hypersetup{
@@ -49,6 +50,16 @@ Before attempting this lab, watch this video on Simple ML for Google Sheets \url
 The documentation for Google sheets can be found \url{https://support.google.com/docs/topic/1361472?hl=en&sjid=7424903615941153253-NA}
 
 
+Each screenshot should have your name, term, and year.  One of the easiest ways to do that is make a text document with your name and term/year on your computer and saving it to use all term. Any screenshots that don't include this information won't be counted.
+
+\begin{figure}[h!]
+    \centerline{\includegraphics[scale=.2]{ExampleScreenshot.png}}
+    \caption{This is an image of what each of your screenshots should look like}
+
+    \end{figure} 
+
+
+
 \section*{Given Data set}
 
 Using the given data set HalloweenCandy.csv, we're going to actively explore the dataset and look for potential issues, including missing data, inconsistent formatting, duplicates, or outliers. The tools we'll be using are going to be under Data and Extensions in Google Sheets. 
@@ -57,10 +68,10 @@ Open the Data set in Google Sheets, we're going to try the data tools, and answe
 \begin{enumerate}
     \item Looking at the data in the columns for Age and Country, do you see any outliers or things that look different then you expected? For example, did everyone enter in a number for their age? If no, what did they say? What do you think went wrong in the collection of that data?  What about for their Country?
     \item Try getting rid of the white space, go to Data --> Data Cleanup --> Trim White space.  How much white space did you get rid of? Visually, what changed in your data?
-    \item Using the data duplication check on the whole sheet, How many duplicates are there?
-    \item Using the data duplication check on the whole sheet except the internal ID column, how many duplicates were there?
+    \item Using the data duplication check on the whole sheet, How many duplicates are there? Take a screenshot.
+    \item Using the data duplication check on the whole sheet except the internal ID column, how many duplicates were there? Take a screenshot.
     \item Using the "Cleanup suggestions", what is the suggested actions to take? What happened after you did them? 
-    \item After doing the cleanup suggestions, review the column stats, pick one column and look at the suggested graph.  What column did you pick? Why? What's going on in the graph? 
+    \item After doing the cleanup suggestions, review the column stats, pick one column and look at the suggested graph.  What column did you pick? Why? What's going on in the graph? Take a screenshot.
     \item Try the Simple ML for Sheets extension on this data set. We're going to try predicting values on two of the columns.  Try predicting values on the age column, and one column of your choice.  How did it work? How long did it take? What happened?
 \end{enumerate}
 
@@ -73,14 +84,15 @@ Open your Data set in Google Sheets, we're going to try the data tools, and answ
     \begin{enumerate}
         \item Pick two of the columns, do you see any outliers or things that look different then you expected? What column did you pick to check? And why?
         \item Try getting rid of the white space.  How much white space did you get rid of? Visually, what changed in your data?
-        \item Using the data duplication check on the whole sheet, How many duplicates are there?
+        \item Using the data duplication check on the whole sheet, How many duplicates are there? Take a screenshot.
         \item Using the "Cleanup suggestions", what are the suggested actions to take? What happened after you did them? 
-        \item After doing the cleanup suggestions, review the column stats, pick one column and look at the suggested graph.  What column did you pick? Why? What's going on in the graph? 
+        \item After doing the cleanup suggestions, review the column stats, pick one column and look at the suggested graph.  What column did you pick? Why? What's going on in the graph? Take a screenshot.
         \item Try the Simple ML for Sheets extension on this data set. We're going to try predicting values on two of the columns.What two columns did you pick? Why did you pick them? How did it work? How long did it take? Were you expecting it to take more or less time then it did? What happened?
     \end{enumerate}
 
 
 \section*{Deliverables}
+
 \begin{enumerate}
     \item A text document with the answers to the questions for the given data on Halloween Candy.  Several of the questions have multiple parts, make sure you are answering all of them.
     \item A text document with the answers to the questions for your data set.  Several of the questions have multiple parts, make sure you are answering all of them.

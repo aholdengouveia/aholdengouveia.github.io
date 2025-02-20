@@ -403,6 +403,16 @@ INPUT /usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.st
 INPUT /usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+INPUT ./awklab.out
+INPUT awklab.out
+INPUT ./awklab.out
+INPUT awklab.out
+INPUT ./awklab.out
+INPUT awklab.out
+INPUT ./awklab.out
+INPUT awklab.out
+INPUT ./awklab.out
+INPUT ./awklab.out
 OUTPUT awklab.out
 OUTPUT awklab.pdf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr17.tfm

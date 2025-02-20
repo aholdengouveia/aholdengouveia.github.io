@@ -176,6 +176,7 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 26.
 LaTeX Info: Redefining \pageref on input line 26.
 LaTeX Info: Redefining \nameref on input line 26.
+ (./awklab.out) (./awklab.out)
 \@outlinefile=\write3
 \openout3 = `awklab.out'.
 
@@ -189,19 +190,13 @@ File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] (./awklab.aux)
-
-Package rerunfilecheck Warning: File `awklab.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `awklab.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+Package rerunfilecheck Info: File `awklab.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 8849 strings out of 478287
- 137872 string characters out of 5849289
- 428660 words of memory out of 5000000
+ 8853 strings out of 478287
+ 137916 string characters out of 5849289
+ 428880 words of memory out of 5000000
  26962 multiletter control sequences out of 15000+600000
  472504 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
