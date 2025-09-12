@@ -1,0 +1,61 @@
+Shell Scripting with Variables: A Study Guide
+This guide covers the fundamental concepts of using variables in shell scripting, including how to define them, gather user input, and utilize special variable functionalities.
+1. Introduction to Variables in Shell Scripting
+• What are Variables? Variables allow you to store information within your script for later use. They are essential for making scripts dynamic and interactive.
+• Untyped Variables: Shell scripting uses what are called untyped or loosely typed variables. This means you do not need to declare the data type (e.g., integer, string, character) of a variable before using it, unlike many other programming languages. The shell automatically determines the type of data stored.
+• Variable Naming: Any word that is not a reserved keyword can be used as a variable name.
+2. Creating and Using Variables
+• Assignment: You create a variable simply by assigning a value to it, for example, name=value.
+• Expansion (Using the Value): To use the value stored in a variable, you must precede its name with a dollar sign ($). For instance, if you have a variable named name, you would refer to its content as $name. This dollar sign tells the shell to expand the variable and substitute its value.
+• Example Script:
+• This script will ask for a name, read it into the name variable, and then print a greeting using the stored name.
+3. Getting User Input for Variables
+There are two primary ways to pass information or input to variables in a shell script:
+• The read Command:
+    ◦ The read command is used to get interactive input from the user while the script is running.
+    ◦ When read variable_name is encountered, the script will pause execution and wait for the user to type something and press Enter.
+    ◦ Whatever the user types will then be stored in the specified variable.
+    ◦ Example:
+    ◦ In this example, $answer will expand to whatever the user typed.
+• Positional Parameters:
+    ◦ Positional parameters allow you to pass information to a script when it is executed, rather than interactively gathering input using read.
+    ◦ These are numbered temporary variables, starting at $1, $2, $3, and so on, up to $9.
+    ◦ How to Use: You pass values as arguments when running the script.
+        ▪ Example: ./testscript.sh Jane would put Jane into $1.
+        ▪ Example: ./testscript.sh Jane Doe would put Jane into $1 and Doe into $2.
+    ◦ Special Parameters:
+        ▪ $@ (or $*) can be used to get all the contents of the temporary variables.
+        ▪ $? is another special parameter used to check the exit status of the last command.
+    ◦ Example Script for Positional Parameters:
+4. Special Variable Usage:  with Command Substitution
+• Purpose: The set command combined with command substitution (using backticks ` or $(command)) allows you to execute a command and then store its output into positional parameters.
+• Backticks vs. Single Quotes: It's crucial to distinguish backticks (`) from single quotes (').
+    ◦ Backticks (or the preferred $(command) syntax) perform command substitution, running the command inside and substituting its output.
+    ◦ Single quotes prevent any interpretation of special characters, treating everything literally [Speaker 2, conversation history].
+• Example:
+    ◦ If you include set date`` within your script:
+    ◦ The date command will be executed.
+    ◦ Its output (e.g., "Mon Apr 22 10:30:00 EDT 2024") will be broken down into individual words and stored in positional parameters:
+        ▪ $1 might be "Mon"
+        ▪ $2 might be "Apr"
+        ▪ $3 might be "22", etc..
+    ◦ You could then echo "$1 $2 $3" to display parts of the date.
+5. Important Considerations and Best Practices
+• Quotes: Understanding how different types of quotes affect variable expansion is critical:
+    ◦ No Quotes: echo hello world treats "hello" and "world" as separate arguments [Speaker 2, conversation history].
+    ◦ Double Quotes ("): echo "hello $name" allows variable expansion ($name will be replaced by its value) and groups the content into a single string [Speaker 2, conversation history].
+    ◦ Single Quotes ('): echo 'hello $name' treats everything literally; $name will not be expanded and will be printed as $name [Speaker 2, conversation history].
+• Testing: Always test your scripts rigorously and iteratively [Speaker 2, conversation history].
+    ◦ Test individual commands first at the command prompt.
+    ◦ Test after every few lines of code, not just at the end [Speaker 2, conversation history].
+    ◦ Verify the logic, flow, and actual outcome at each step [Speaker 1, conversation history].
+    ◦ Never assume a script works without testing; "I think it works" is not sufficient [Speaker 2, conversation history].
+• Script Creation and Execution Basics (Quick Review):
+    1. Create File: Use a text editor (e.g., vi) to create a file, often with a .sh extension (e.g., myscript.sh) for clarity.
+    2. Shebang Line: Start the script with a shebang line (e.g., #!/bin/sh or #!/bin/bash) to tell the system which interpreter to use.
+    3. Comments: Add comments using the # symbol to explain your script's purpose and logic [Speaker 2, conversation history].
+    4. Permissions: Make the script executable using chmod +x myscript.sh. The file name might turn green in your terminal, indicating it's executable [Speaker 2, conversation history].
+    5. Run: Execute the script by providing its path, typically ./myscript.sh if it's in the current directory.
+
+--------------------------------------------------------------------------------
+

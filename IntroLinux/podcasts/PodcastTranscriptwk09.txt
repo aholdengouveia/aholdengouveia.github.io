@@ -1,0 +1,140 @@
+Speaker 1: Welcome back to the deep dive. We're here to unpack complex ideas, uh, turning them into insights you can really use.
+Speaker 2: That's the goal.
+Speaker 1: And today we're jumping into shell scripting. But not just, you know, the basics. We're talking about giving your computer a voice,
+Speaker 2: making it interactive.
+Speaker 1: Exactly. Letting it listen, respond, maybe even uh tell a story with you. Like imagine setting up a kind of Mad Lib game, right? The script asks the questions
+Speaker 2: and your answer is fill in the blanks. Create something new each time. Precisely. So, our mission today, show you how to build these sorts of intelligent scripts, make them interactive using input and variables, and also how to um feed them info directly.
+Speaker 1: Yeah. And we're pulling this from, you know, YouTube FAQs, different forms, some really detailed learning guides.
+Speaker 2: Good stuff.
+Speaker 1: And what's really interesting, something that pros often mention is that the really powerful automation, it often boils down to mastering just a few simple interaction patterns.
+Speaker 2: Oh, okay.
+Speaker 1: They look basic, but they're like the secret sauce for those quick productivity hacks people talk about. So, we'll focus on those details. Variables, user input, positional parameters, the things that really make a script dynamic, not static.
+Speaker 2: Okay, let's start right at square one. Then,
+Speaker 1: giving the computer its voice. The first step,
+Speaker 2: you need a file, right? A plain text file. Yeah,
+Speaker 1: let's call it maybe storyteller.esh. Now, that at the end,
+Speaker 2: it's optional. Technically, Linux doesn't really care about extensions like Windows does.
+Speaker 1: True, but it's a really strong vention, isn't it? Yeah,
+Speaker 2: he just screams shell script to anyone looking at it. Help keep things organized.
+Speaker 1: Definitely good practice.
+Speaker 2: So, you open that file in your editor. First line absolutely critical the uh shebang.
+Speaker 1: Mhm. Hashtag.binch or maybe hashtag.bin,
+Speaker 2: right? Hashtag exclamation point, then the path like bench. It tells the system how to run the script, which interpreter to use.
+Speaker 1: It's like saying, "Hey OS, use the born shell for this or use bash for this one."
+Speaker 2: And the choice matters sometimes, right? Dash versus bad.
+Speaker 1: Yeah. that Jash is often aimed at being more POSICEX compliant. So maybe more portable across different systems, more basic perhaps whereas BESH has, you know, more bells and whistles,
+Speaker 2: fancy arrays, brace expansion, stuff like that.
+Speaker 1: But for simple things, probably doesn't make a huge difference
+Speaker 2: for basic scripts. Yeah. Often not much difference, but good to know the distinction exists, especially if you want your script to run everywhere.
+Speaker 1: Gotcha. So she bangs in. Then maybe a simple echo command like echo Welcome to the deep dive mad lib.
+Speaker 2: First words.
+Speaker 1: Yeah. You save the file.
+Speaker 2: Mhm.
+Speaker 1: And then this is key. You have to give it permission to run.
+Speaker 2: Uh chimad the execute permission.
+Speaker 1: Exactly. It's a security thing fundamentally. So schmod plus x storyteller.esh. You might even see the file color change in your terminal.
+Speaker 2: Usually turns green or something. Yeah. Indicates it's runnable.
+Speaker 1: And then you run it. /storyteller.sh. And boom, you see your message.
+Speaker 2: Feels good the first time.
+Speaker 1: It does. It's like it works.
+Speaker 2: And And stepping back, all those little steps, they're about clear communication. You, the script, the OS, the shanache is a visual clue. The shebang tells the OS how to interpret it, which language it's speaking, and those permissions. That's not just red tape. It's basic security. Making sure only stuff you intend to run can actually execute.
+Speaker 1: Yeah, that makes sense. Understanding the why is important there.
+Speaker 2: Totally.
+Speaker 1: Okay. So, the script can talk, but conversations are two-way. We need it to listen. user input time.
+Speaker 2: Exactly. Which brings us to variables. Now, shell script variables are well, they're called untyped or loosely typed.
+Speaker 1: Yeah. You don't have to say this is a number or this is text beforehand,
+Speaker 2: right? You just make up a name like answer. As long as it's not a reserved word, the shell just sort of figures out what it is when you use it.
+Speaker 1: Makes things quick for simple stuff.
+Speaker 2: It does. And to get the value out of the variable, use the dollar sign answer. That expands it. Puts the value right there.
+Speaker 1: Standard practice. So, how do we get the user's input into that variable?
+Speaker 2: That's where read comes in. The read command.
+Speaker 1: Perfect. Let's make our storyteller.sh a bit more interesting. We could add echo.
+Speaker 2: Give me a silly adjective for our story.
+Speaker 1: Okay. Prompting the user.
+Speaker 2: Then the magic line. Read adjective.
+Speaker 1: Simple, right? It just stops and waits.
+Speaker 2: It does. It just pauses the script, waits for you to type something, hit enter, and whatever you typed gets stuffed into that adjective variable.
+Speaker 1: Nice.
+Speaker 2: Then maybe the next line is echo. Our tail begins with the adjective knight.
+Speaker 1: Ah, using the variable.
+Speaker 2: Yeah. So, if you run it and type I don't wobbly.
+Speaker 1: It'll say our tail begins with a wobbly knight.
+Speaker 2: Exactly. It feels like it's actually listening and using your input. Pretty cool.
+Speaker 1: It is cool. And that pattern echo a question then read the answer is super fundamental for interactive command line tools.
+Speaker 2: Definitely.
+Speaker 1: But that untyped nature while flexible,
+Speaker 2: it means you need to be a bit careful. Right.
+Speaker 1: How so?
+Speaker 2: Well, unlike some language that might error if you try to say do math on text. The shell might just concatenate things or give weird results.
+Speaker 1: Oh, right. So, it's flexible, but the onus is kind of on you to handle the input correctly.
+Speaker 2: Exactly. It's a trade-off. Speed versus strictness, but for guiding users, asking for inputs step by step, it's fantastic.
+Speaker 1: Okay, so read is great for that back and forth, but what if you know the info the script needs before you run it?
+Speaker 2: Uh, yeah, you don't always want to be prompted. Right. There's another way. Positional parameters.
+Speaker 1: Dollar one, dollar two.
+Speaker 2: Exactly. $1, $2, $3, and so on. You pass the information on the command line when you launch the script.
+Speaker 1: Mhm. They're like temporary variables filled automatically.
+Speaker 2: Let's try with our Mad Lib again. Maybe we want the knight's name and where they're from passed in. Oh,
+Speaker 1: okay.
+Speaker 2: So, inside storyteller.esh, we change the line to something like echo. Our tale begins with a adjective knight named $1 from the land of $2.
+Speaker 1: Using $1 for the name $2 for the land. Makes sense.
+Speaker 2: Then when you run it, you do it like this. Storyteller.shmaris. Sir wobbles a lot. Enchanted forest.
+Speaker 1: So sir wobbles a lot goes into $1.
+Speaker 2: Yep. And enchanted forest goes into $2.
+Speaker 1: And notice the quotes around enchanted forest. That's important, right?
+Speaker 2: Crucial. So that's a super common trip up I see people asking about. If you didn't have the quotes,
+Speaker 1: enchanted would be $2 and forest would become $3. It splits on the space.
+Speaker 2: Exactly. So quotes are essential if your arguments have spaces. Yeah.
+Speaker 1: Yeah. This method is really efficient for known data. Great for automation.
+Speaker 2: Yeah.
+Speaker 1: Oh, and a fun fact, there's a dollar which grabs all the parameters together.
+Speaker 2: Handy sometimes. So, the big question then is when to use read versus these positional parameters.
+Speaker 1: Good question. What's the rule of thumb?
+Speaker 2: Well, like you said, read is for interactivity. When the script needs to ask the user something during its run, guiding them.
+Speaker 1: Okay.
+Speaker 2: Positional parameters. That's for non-interactive use. Scripts and pipelines, automated tasks. Like a backup script needing a directory name.
+Speaker 1: Perfect example. Yeah. Or a deployment script needing a version number. Yeah. The data is known up front. You just pass it in. No human waiting to type makes scripts much more versatile for automation.
+Speaker 2: Makes sense. Interactive versus non-interactive. Clear distinction.
+Speaker 1: Mhm.
+Speaker 2: All right. Now, for something a bit more advanced, maybe this next technique really shows off the shell's power.
+Speaker 1: Oo,
+Speaker 2: we're talking combined with back ticks. And first, those back ticks,
+Speaker 1: super important. They are not the same as single quotes.
+Speaker 2: Yeah, visually similar functionally totally different,
+Speaker 1: right? Back tell the shell run the command inside me first. It's called command substitution.
+Speaker 2: So it executes the command
+Speaker 1: and then it takes the output of that command and basically pastes it right there in the scripts command line.
+Speaker 2: Okay, got it. Like running it separately and copying the result.
+Speaker 1: Exactly. Now pair that with the set command. If you write set command,
+Speaker 2: set takes the output generated by command inside the back ticks and this is the cool part. It assigns that output word by word. to the positional parameters $1, $2, $3, etc.
+Speaker 1: Whoa. Okay. So, the command runs, gives output, and set breaks that output up into $1, $2, $3
+Speaker 2: precisely. Let's use our story again. We want to add the date dynamically.
+Speaker 1: Okay.
+Speaker 2: Inside the script, you put set date. The date command runs maybe outputs something like free 1210.30 DDT 2025,
+Speaker 1: right? The standard date output.
+Speaker 2: And set takes that output. Free becomes $1. Set becomes $2, 12 becomes $3, and so on.
+Speaker 1: Ah, I see.
+Speaker 2: So, If your next line was echo, it was a $1, $2, the $3 of the month when our story truly began.
+Speaker 1: It would print it was a fry, the 12 of the month using the current date. That's clever,
+Speaker 2: isn't it? And what's really powerful here is how it flattens command output into simple variables. You could grab system stats, parts of file listings.
+Speaker 1: Yeah. Without needing complex parsing tools like a or said for every little thing, it takes the output and just assigns it directly to $1, $2. That's a neat shortcut.
+Speaker 2: Definitely a powerful technique.
+Speaker 1: Yeah. Unpacking that set with back ticks, you see its real value. It lets scripts grab dynamic info from other commands or the system itself really easily.
+Speaker 2: Streamlines things
+Speaker 1: totally generating reports with timestamps, creating log files named with the date, personalizing output. It connects running external commands directly to your scripts variables. And that set date example, that's just the beginning. Think about setup time to get load averages or set wi to know who's running the script. Lots of possibilities for adaptive scripts.
+Speaker 2: Really cool stuff. So, wow, we covered a lot today. We did. Picked off with the basics, setting up the file, the importance of dash, the crucial shebang line,
+Speaker 1: getting those foundations right,
+Speaker 2: then making scripts listen with read and understanding those flexible untyped variables.
+Speaker 1: Give the interactive pattern.
+Speaker 2: Then the other ways to get data in positional parameters, $1, $2, remember those quotes
+Speaker 1: for non-interactive use. Yeah.
+Speaker 2: And finally, that powerful combo set with back ticks to capture command output directly into parameters
+Speaker 1: dynamically grabbing system info.
+Speaker 2: These aren't just, you know, abstract concepts. These are the tools you use to automate things, build handy command line utilities, really make your system work for you.
+Speaker 1: Absolutely. They're fundamental building blocks. So, here's something to think about.
+Speaker 2: Okay,
+Speaker 1: considering how even a simple script can grab input with read, take arguments like $1, and even parse command output with set date, what kind of Mad Live story could you actually create? M
+Speaker 2: just asking for a few nouns, adjectives, maybe a verb, and weaving it all together dynamically using these techniques. Building a whole narrative just through script interaction.
+Speaker 1: That's a fun challenge.
+Speaker 2: Or maybe think about automating something in your own workflow. Could you make a script that checks the date, knows who you are, asks you what task you're working on, and logs it?
+Speaker 1: Yeah. Applying these ideas practically.
+Speaker 2: Exactly. Take these concepts, play around with them, see what you can automate or just create for fun on your command line. The potential there is huge.
