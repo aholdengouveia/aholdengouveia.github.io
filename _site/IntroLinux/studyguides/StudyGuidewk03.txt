@@ -1,0 +1,73 @@
+Study Guide: Mastering Linux Fundamentals
+This study guide is designed to help you deeply understand the core concepts of Linux, providing a solid foundation for further exploration, with specific activities linked to video demonstrations.
+1. Learning Outcomes Upon completing this study, you should be able to:
+• Explain the differences between absolute versus relative paths and why this distinction is important.
+• Demonstrate the use of basic commands such as ls, touch, rm, cp, mkdir, mv, cd, and pwd.
+• Show how to use some common switches for the ls command.
+• List a few common Linux distributions (distros) and understand their basic differences and intended uses [conversation].
+• Understand the basic file system structure in Linux and the purpose of key directories [conversation, 4].
+• Effectively find answers and get help when encountering challenges, utilizing built-in and external resources [conversation].
+2. Key Concepts & Explanations
+A. What is Linux and its Open-Source Philosophy?
+• Linux is a powerful, ubiquitous operating system found in various devices, from smart homes to supercomputers [conversation].
+• Its core is the Linux kernel, the fundamental part that handles interactions with computer hardware (processor, memory, disks) [conversation].
+• The open-source nature of the kernel is central to Linux's philosophy. This means anyone can view, use, and modify the code, leading to innovation and a vast array of tailored systems [conversation].
+• This contrasts with proprietary systems like Windows or macOS, which typically have only a few active versions at any given time [conversation].
+B. Linux Distributions (Distros)
+• A Linux distribution is a complete operating system package that includes the Linux kernel, a graphical desktop environment (like KDE or XFCE), system tools, and pre-installed applications [conversation].
+• Different groups, companies, and communities build these "cars" around the "engine" (the kernel) to create specialized experiences [conversation].
+• Examples of Distros and their Focus:
+    ◦ General/Beginner-Friendly: Ubuntu, Linux Mint (user-friendly, large communities, good documentation) [conversation].
+    ◦ Enterprise/Server: Red Hat Enterprise Linux (RHEL), SUSE Linux Enterprise Server (SLES) (stability, security, commercial support) [conversation].
+    ◦ Security: Kali Linux (preloaded with cybersecurity tools for penetration testing) [conversation].
+    ◦ Privacy: Qubes OS (designed for isolation, running everything in separate virtual machines) [conversation].
+• Practical Differences: Distros can differ in installation complexity (graphical vs. command line), default system file locations, and the range of software bundled with them [conversation]. The choice of distro is often dictated by the intended use [conversation].
+C. Navigating the File System: Absolute vs. Relative Paths
+• The Linux File System: Linux organizes files in a single unified tree structure starting from the root directory (/) [conversation, 5]. All other directories and files branch out from this root [conversation, 5].
+• Working Directory: Your current location in the file system. The pwd (print working directory) command helps you figure out where you are and the absolute path to that location.
+• Absolute Path: A full path that starts from the root directory (/) and explicitly specifies the location of a file or folder regardless of your current working directory. Example: /home/jim/calendar/august. An absolute path "will not care where you are and start at the root".
+• Relative Path: A path that starts from your current working directory and specifies the location relative to where you currently are. If your current directory is calendar, then august refers to the august folder within calendar. A relative path "takes into account your working directory or where you are".
+• Why it Matters: Understanding the difference is crucial for navigating, managing, and finding items within the system.
+D. Essential Commands These commands are your basic vocabulary for interacting with Linux. The "FAQ Common commands and paths" video provides detailed demonstrations:
+• ls: Lists files and directories. It helps you see the contents of your current folder. The learning outcomes suggest knowing "common switches for the ls command".
+• pwd: Print Working Directory. Tells you your current absolute path. This helps you "figure out where you are".
+• mkdir [directoryname]: Makes a new directory (folder). It needs an argument, the name of the folder. Example: mkdir serenity. You can verify its creation with ls.
+• touch [filename]: Creates an empty file. It takes an argument, and you can "send it several arguments" to create multiple files at once. Example: touch mal wash zoe jane kaylee.
+• mv [source] [destination]: The move command. This command needs two arguments: the source (what you're moving) and the destination (where you're moving it to).
+    ◦ It can be used with relative paths. Example: mv ./mal serenity (move 'mal' from the current directory into 'serenity' in the current directory).
+    ◦ It can also be used with absolute paths. Example: /home/user/zoe /home/user/serenity.
+    ◦ You can move files or folders.
+• rm [filename]: Removes (deletes) files. Be extremely careful as this often deletes files permanently without a trash bin [conversation].
+• cp [source] [destination]: Copies files.
+• cd [directoryname]: Change Directory. Navigates you into a specified folder.
+    ◦ cd ..: Moves you up one directory level, looking in the parent folder.
+    ◦ cd (alone): Takes you back to your home directory, symbolized by a tilde (~) [4, conversation].
+E. Good to Know Symbols These symbols are frequently used in commands and paths:
+• .: Refers to the current or working directory. Example: . in ./mal means "in my current folder".
+• ..: Refers to the parent directory (one level up). Example: If in 'august' folder, ../september means "look a folder above me for 'september'".
+• /: Used as a directory or folder separator in paths, and also denotes the root directory.
+• * (Splat): A wildcard that can represent any sequence of characters, useful for selecting multiple files or folders.
+F. How to Try Out Linux (Without Installation) To get comfortable, you can try Linux in a browser-based environment [2, conversation]:
+• Distrosea: A website that allows you to virtually boot and interact with various Linux distributions directly in your web browser [2, conversation]. Great for exploring different desktop environments [conversation].
+• FWebminal: Provides a functional Linux terminal environment in your browser, requiring a free account. Ideal for practicing command-line commands [2, conversation].
+• CoCalc: Offers a Linux environment in the browser with added AI assistance, requiring a free login [2, conversation].
+G. Getting Help (The Most Crucial Skill)
+• man Pages (Manual Pages): The primary built-in help system. Type man [command] (e.g., man ls) to access detailed documentation, including descriptions, options (switches), and examples for almost any command [conversation]. These are the authoritative source [conversation].
+• Online Resources:
+    ◦ Ubuntu's "Linux command line for beginners" guide: A very approachable starting point [conversation].
+    ◦ Linux command cheat sheets: Many websites offer quick reference guides; Fosswire is mentioned as having a good one [conversation].
+• Books: The Linux Pocket Guide is highly recommended as a practical, quick-lookup reference for daily use [conversation].
+H. Important Practical Reminders
+• Remote Access: Many people interact with Linux by logging into a remote server, such as a CIS server for labs [4, 5, conversation]. Tools like PuTTY for SSH and WinSCP for SCP are popular for Windows users [conversation].
+• Password Entry: When entering your password (e.g., when starting a lab on a CIS server), nothing will be displayed on the screen (no dots, asterisks, or characters). "Do not panic," just type the password carefully and press Enter, trusting that it's being accepted [4, 5, conversation].
+• Case Sensitivity: Linux is strictly case-sensitive. This applies to usernames, passwords, and the commands you enter. For example, ls will work, but LS may not. Pay close attention to capitalization [4, 5, conversation].
+3. Suggested Activities & Discussion Topics
+• Activity: Watch and Follow Along:
+    ◦ "FAQ Common commands and paths" video: Watch this video and follow along, practicing creating folders with mkdir, creating single and multiple files with touch, and especially practicing the mv (move) command using both relative and absolute paths, moving files and folders as demonstrated.
+    ◦ "TLDR CIS 117 Week 3" video: Watch this video to reinforce the concepts of absolute vs. relative paths, pwd, ls, and the "good to know symbols".
+• Activity: Explore Online Environments: Use Distrosea, FWebminal, or CoCalc to try out the basic commands you learned (ls, touch, rm, cp, mkdir, mv, cd) [2, conversation].
+• Activity: Map Your System: Get comfortable with your system by mapping it out. Use pwd to identify your current working directory and ls to see its contents, then use cd and ls to explore the structure and draw a simple diagram of what you find.
+• Activity: Practice Navigation: Use pwd to always know your current location. Practice navigating using both absolute paths (starting from /) and relative paths (using . and ..) to move between directories you've created.
+• Activity: Explore man Pages: Use the man command (e.g., man ls, man mv, man cd) to access the built-in documentation and learn about various options or "switches" for these commands [conversation].
+• Discussion: How does the open-source philosophy of Linux contribute to its vast diversity and specialized distros, and how does this variety benefit different users? [conversation].
+• Discussion: Consider how developing skills in Linux, such as understanding complex structures, choosing appropriate tools, and independently finding solutions, might foster an "adaptable problem-solving mindset" applicable to challenges outside of technology [conversation].

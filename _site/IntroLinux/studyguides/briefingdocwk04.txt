@@ -1,0 +1,48 @@
+Briefing Document: Linux Fundamentals - Week 4: Advanced Commands & Processes
+This briefing highlights the key learning objectives, concepts, and commands for Week 4 of the "Introduction to Linux" course, focusing on powerful file searching, process management, and advanced command line interaction.
+1. Week 4 Objectives The primary objectives for Week 4 are:
+• Demonstrate finding files with several criteria.
+• Show the use of ls with wildcards and recursive searches.
+• Explain how to locate running processes and kill a process.
+2. Understanding Command Structure In Linux, commands follow a specific "sentence structure": "Command Switch Argument".
+• Command: The primary instruction (e.g., ls, find, kill).
+• Switch (or Option/Flag): A dash (-) followed by a letter (e.g., -l, -r, -s). Switches enhance the command's power and detail.
+    ◦ Case Sensitivity: Switches are case-sensitive; for example, -r is not necessarily the same as -R.
+    ◦ Combining Switches: Multiple switches can often be combined (e.g., ls -la).
+• Argument: An additional piece of information passed to the command, specifying what the command should act upon (e.g., a filename, a directory path, a Process ID). Some commands, like copy or move, require arguments.
+3. Enhanced ls Command Usage The ls (list files) command can provide more detailed information using switches:
+• ls -l: Displays a long list format, showing permissions, file sizes, dates, and other details.
+• ls -a: Shows all files, including hidden files (those starting with a dot).
+• ls -la: Combines the above, providing a long list format that includes hidden files.
+4. Wildcards: Powerful Pattern Matching Wildcards are special characters that allow you to match patterns in filenames and directories, enabling more flexible and powerful commands.
+• * (Splat/Asterisk): Matches any number of characters.
+    ◦ Example: find all files that end in txt.
+    ◦ Example: find all files that start with a through c followed by any number of characters could use [a-c]*.
+• ? (Question Mark): Matches any single character.
+• [] (Square Brackets): Indicates a set of characters.
+    ◦ Example: [aA] matches 'a' or 'A'.
+    ◦ Example: `` matches any digit.
+    ◦ Combining: You can combine sets with other wildcards, e.g., [a-c]* to find files starting with 'a', 'b', or 'c'.
+5. The find Command The find command is essential for searching for files based on various criteria.
+• Basic Usage: find -name myfile.
+• Within a Specific Folder: find /etc -name passwd (searches for 'passwd' within the /etc directory).
+• By Extension: find -name “*.txt” (finds all files ending in .txt).
+• Case-Insensitive: find -iname testfile (finds 'testfile' regardless of case).
+• find can also search by other criteria such as groups, user, file type, directory, empty files, date, and last access.
+6. Processes: Viewing and Managing Running Programs Processes are instances of running programs or commands in Linux.
+• Viewing Processes:
+    ◦ ps: Lists the processes that you own in the current terminal.
+    ◦ ps -a: Lists all processes associated with your current session. (Many other options exist, consult the manual for ps).
+• Killing Processes: The kill command is used to terminate a process.
+    ◦ kill [process_id_number]: Requires the Process ID (PID) as an argument. The PID is generally a "semi large number".
+    ◦ kill -9 [process_id_number]: This is a forceful termination, often called "kill with a big stick," used when a process is unresponsive to a regular kill command.
+• Safe Practice: To practice killing processes, it's recommended to create "junk processes" using the sleep command: sleep [number_of_seconds] & (e.g., sleep 12345 &). The & makes the sleep command run in the background. Crucially, do NOT practice killing your own bash process, as this will log you out of the system.
+7. Suggested Activities for Practice
+• Wildcard Challenges: Go to a Linux emulator or machine and practice using wildcards to find files based on patterns like starting with specific letters (case-sensitive and insensitive), containing digits, or ending with certain characters.
+• find Command Experimentation: Experiment with the find command, including searching within your home directory, by name, by extension, and case-insensitively.
+• Process Management: Practice creating "junk processes" with sleep &, then use ps to identify their PIDs and kill them using both kill and kill -9.
+8. Important Reminders
+• Case Sensitivity: Linux is strictly case-sensitive for commands, filenames, and passwords.
+• Password Entry: When typing passwords in the terminal, nothing will appear on the screen (no stars or dots) for security reasons. Type carefully and press Enter.
+
+--------------------------------------------------------------------------------

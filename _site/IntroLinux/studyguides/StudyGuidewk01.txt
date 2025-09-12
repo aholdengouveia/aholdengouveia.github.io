@@ -1,0 +1,59 @@
+
+Study Guide: Introduction to Linux and Open Source
+This study guide is designed to review and reinforce core concepts related to the Linux operating system, its history, its comparison to other systems, and the principles of open source software.
+--------------------------------------------------------------------------------
+Quiz: Key Concepts
+Instructions: Answer the following questions in two to three sentences each, based on the information provided in the source materials.
+1. What is an Operating System, and what is its fundamental purpose?
+2. Who was the initial developer of the Linux kernel, and during which decade did this project begin?
+3. Describe the core principle of "open source" software as it relates to Linux.
+4. Identify two of the most common applications or platforms where the Linux operating system is widely used by the general public and on the internet.
+5. According to the source material, why is Linux generally considered more secure than Windows?
+6. What does it mean for an operating system to be designed as "multi-user," and why is this an advantage for Linux?
+7. List two significant disadvantages of using Linux on a desktop computer.
+8. How can developers of open source software generate income from their work?
+9. What is a key difference in how software updates and maintenance are handled between Linux and Windows?
+10. What are "Distros" or "Flavours" of Linux?
+--------------------------------------------------------------------------------
+Answer Key
+1. An Operating System is the software that allows a user to communicate with the hardware of a device. It serves as the intermediary between the physical components of a computer and the applications or user commands.
+2. Linus Torvalds was the first developer of the Linux kernel. His work on the project began in the 1990s, building upon older work related to UNIX that dates back to the 1960s.
+3. The core principle of open source is sharing the underlying source code of the software. This allows anyone to view the code, modify it, build upon it, and share it freely with others, fostering a collaborative and community-driven development environment.
+4. Two of the most common uses for Linux are on mobile phones and web servers. Android phones are Linux-based, and over 80% of websites are hosted on servers that run a version of Linux or Unix.
+5. Linux is considered more secure for two primary reasons. Its lower usage on desktop machines makes it a less common target for viruses, and its fundamental design, including how permissions and installs are handled, makes it an inherently more secure system.
+6. A multi-user system is designed from the ground up to be accessed by many people simultaneously. This is a key advantage for Linux, especially in server environments, as it handles multiple users more effectively than systems not originally built with this in mind.
+7. Two significant disadvantages are software and hardware compatibility. Because it is less popular on desktops, much software is not available for Linux, and it can be difficult to find compatible hardware drivers for devices like printers.
+8. While the software itself may be free, open source developers can generate income by charging for support. A developer can release the program and its source code for free but require payment from users who need help or technical assistance.
+9. On Windows, updates are often pushed out automatically by the company, giving the user little control. With Linux, the user has more control over updates and maintenance; because it's open source, users can even write their own patches and fixes.
+10. "Distros" or "Flavours" are terms used to describe the different kinds or versions of Linux that a user can choose from. The open source nature of Linux allows for many different variations to be created, each with its own characteristics.
+--------------------------------------------------------------------------------
+Essay Questions
+Instructions: The following questions are designed for longer, more detailed responses. Use the provided source material to construct a thorough and well-supported essay for each prompt.
+1. Analyze the philosophy and practical implications of the open source model. Discuss its benefits, such as accessibility and community collaboration, as well as its potential drawbacks, like the lack of guaranteed support.
+2. Compare and contrast the Linux and Windows operating systems. Cover their differences in security, maintenance, software availability, cost, and target user bases as described in the texts.
+3. The provided materials state that Linux dominates the server, supercomputer, and mobile phone markets (via Android) but has a very low adoption rate on desktop computers. Synthesize the information to explain the primary reasons for this market disparity.
+4. Customization is listed as both an advantage and a disadvantage of Linux. Elaborate on this duality, explaining how the ability to customize "everything" can be a powerful benefit for some users and a significant barrier for others.
+5. Trace the history and evolution of Linux. Begin with its conceptual roots in the 1960s, describe its formal creation in the 1990s, and explain how the decision to make it open source shaped its development and widespread modern applications.
+--------------------------------------------------------------------------------
+Glossary of Key Terms
+Term
+Definition
+Distros (or Flavours)
+The various kinds or versions of the Linux operating system that users can choose from.
+Graphical User Interface (GUI)
+A visual way of interacting with a computer, such as the interface on a smartphone. Linux is sometimes used with a GUI.
+Kernel
+The core component of the Linux operating system. It was first developed by Linus Torvalds in the 1990s, and its mascot is a penguin.
+Linux
+An open source operating system whose kernel was created by Linus Torvalds. It is widely used for servers, supercomputers, and Android-based phones and tablets.
+Man pages
+An abbreviation for "Manual pages," which serve as documentation or user manuals within the Linux environment.
+Open Source
+A software development model based on sharing the source code freely. It allows anyone to view, modify, and distribute the code, fostering community collaboration.
+Operating System (OS)
+The software that enables communication between a user and the hardware of a device.
+Server
+A computer that hosts web pages and other internet services. When a user visits a website, their browser requests the page from a server, a majority of which run Linux.
+UNIX
+An older operating system whose development dates back to the 1960s. Linux's history and evolution are rooted in the work done on UNIX.
+NotebookLM can be inaccurate; please double check its responses.

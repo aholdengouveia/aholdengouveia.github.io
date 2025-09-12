@@ -1,0 +1,83 @@
+Study Guide: Linux Fundamentals - Week 4: Advanced Commands & Processes
+This study guide focuses on the specific topics and skills introduced in the "More commands and switches" excerpts and the "TLDR CIS 117 Week 4" video, designed to enhance your ability to find files, manage processes, and use commands more powerfully.
+1. Learning Outcomes (Week 4 Specific) Upon completing this week's study, you should be able to:
+• Demonstrate finding files with several criteria using the find command.
+• Show the use of ls with wildcards and the ability to combine switches for detailed output.
+• Explain how to locate running processes using ps and how to kill a process using kill, including kill -9.
+2. Key Concepts & Explanations
+A. Command Sentence Structure in Linux
+• Linux commands follow a specific sentence structure: "Command Switch Argument".
+• Command: The primary instruction (e.g., ls, find, kill).
+• Switch (or Option/Flag): Generally a dash (-) followed by a letter, which modifies the command's behavior. Examples include -l, -a, -r, -s.
+    ◦ Case Sensitivity for Switches: A dash (-r) is not necessarily the same as a dash (-R); case matters.
+    ◦ Combining Switches: Multiple switches can often be combined (e.g., ls -la combines long list with all files).
+• Argument: Another piece of information passed to the command, specifying what the command should act upon (e.g., a filename, a directory path, a process ID). Some commands, like copy or move, require arguments.
+B. Enhanced ls Usage with Switches
+• The ls (list files) command can be made more powerful with switches:
+    ◦ ls -l: Provides a long list format, showing more details about files (permissions, size, date).
+    ◦ ls -a: Includes hidden files (those starting with a dot) in the list.
+    ◦ ls -la: Combines the above, giving a long list including hidden files. (Note: ls -h for human-readable file sizes is a common switch used with -l, though not explicitly detailed in the provided Week 4 sources, it's a good general ls switch).
+C. Wildcards: Powerful Pattern Matching Wildcards allow you to specify patterns for filenames, making commands more flexible.
+• * (Splat/Asterisk): Matches any number of characters.
+    ◦ Example: ls *.txt (lists all files ending with .txt).
+    ◦ Example: rm log* (deletes all files starting with log) [conversation].
+• ? (Question Mark): Matches any single character.
+• [] (Square Brackets): Indicates a set of characters.
+    ◦ Example: [aA] matches 'a' or 'A'.
+    ◦ Example:  matches any digit.
+    ◦ Example: [a-c]* will find all files that start with 'a' through 'c' followed by any number of characters.
+• Combining Wildcards: You can combine different wildcards for complex pattern matching.
+D. Finding Files with the find Command The find command is powerful for searching files with various criteria.
+• Basic Usage: find -name myfile.
+• Within a specific folder: find /etc -name passwd (searches for 'passwd' within the /etc directory).
+• By extension: find -name “*.txt” (finds all files ending in .txt).
+• Case-insensitive search: find -iname testfile (finds 'testfile' regardless of case).
+• find can search by many other criteria, including groups, user, file type, directory, empty files, date, and last access.
+• Practice is crucial for mastering find.
+E. Processes: Understanding and Managing Running Programs
+• What are Processes? In Linux, processes are instances of running programs or commands.
+• Viewing Processes:
+    ◦ ps: Lists the processes that you own in the current terminal.
+    ◦ ps -a: Lists all processes associated with your current session. (Many other options exist; check man ps).
+• Killing Processes: The command to terminate a running process is kill.
+    ◦ kill [process_id_number]: Requires the Process ID (PID) as an argument. The PID is generally a "semi large number".
+    ◦ kill -9 [process_id_number]: This is referred to as "kill with a big stick." It's a forceful way to terminate a process that is not responding to a regular kill command ("didn't die" or "wasn't able to be killed using regular kill").
+• Safe Practice for Killing Processes:
+    ◦ To practice, you should create "junk processes" using the sleep command: sleep [number_of_seconds] & (e.g., sleep 12345 &).
+    ◦ The & (ampersand) makes sleep run in the background. The number is how many seconds it will sleep for.
+    ◦ Use ps to find the PID of your sleep process, then use kill to terminate it.
+    ◦ Crucial Warning: Do NOT practice on your bash process, as this will "boot yourself out of the system".
+F. Trying Linux Safely (for Practice) To practice these commands and concepts without modifying your main computer, use online emulators [conversation]:
+• Distrosea: Boots different Linux distributions directly in your web browser, providing a full desktop and terminal [conversation].
+• FWebminal: Offers a dedicated Linux terminal in your browser (requires a free signup) [conversation].
+• CoCalc: A powerful online environment with Linux terminals and other features (requires a free login) [conversation].
+G. Getting Help (The Most Crucial Skill)
+• man Pages (Manual Pages): This is the primary built-in help system. For any command (e.g., man ls, man find, man kill, man ps), type man [command] to access detailed documentation, including descriptions, all available options/flags, and examples [5, conversation].
+• Online Resources: The Linux Pocket Guide is recommended as a practical reference for quick lookups of written examples [5, conversation].
+H. Important Practical Reminders
+• Case Sensitivity: Linux is strictly case-sensitive. This applies to commands, file names, directory names, usernames, and passwords. ls is the command; LS is not.
+• Password Entry: When prompted for a password in the terminal (e.g., for login or sudo), nothing will be displayed on the screen (no dots or asterisks). "Do not panic," just type your password carefully and press Enter.
+3. Suggested Activities & Discussion Topics
+• Activity: Watch and Follow Along:
+    ◦ Watch the "TLDR CIS 117 Week 4" video. Follow along and practice the commands as demonstrated, paying close attention to command sentence structure, ls switches, wildcards, find usage, and process management commands (ps, kill, sleep).
+• Activity: Wildcard Challenges (using a Linux Emulator or machine):
+    ◦ Create a test directory with a number of creatively named files (e.g., characters from your favorite video game, characters that die in Game of Thrones, locations in your favorite books).
+    ◦ Then, try to solve the following problems using wildcards:
+        ▪ List all files including hidden files.
+        ▪ List files that start with "f" or "F".
+        ▪ List files that have "f" or "F" anywhere in the name.
+        ▪ List files that have a digit in the name.
+        ▪ List files that start with 'a' through 'd'.
+        ▪ List files that end with '1' or '2'.
+• Activity: Experiment with the find command:
+    ◦ Go to your home directory and practice basic find usage.
+    ◦ Practice find -name myfile, find /path/to/folder -name anotherfile.
+    ◦ Practice find -name “*.txt” and find -iname testfile for case-insensitive searches.
+    ◦ Experiment with other find criteria like groups, user, file type, empty files, date, or last access.
+• Activity: Process Management Practice:
+    ◦ Create "junk processes" using sleep [seconds] & (e.g., sleep 3600 &).
+    ◦ Use ps to find the PIDs of your sleep processes.
+    ◦ Practice killing these processes using kill [PID] and kill -9 [PID]. Remember not to kill your own bash process.
+• Activity: Explore man Pages: Use the man command to look up the manual pages for ls, find, ps, and kill to explore their many options and functionalities.
+• Discussion: How does the "Command Switch Argument" structure enable more powerful and precise interaction with Linux compared to simply clicking graphical elements?.
+• Discussion: Reflect on how understanding the different types of wildcards (*, ?, []) significantly enhances efficiency when managing multiple files or performing complex searches.
