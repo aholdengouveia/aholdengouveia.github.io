@@ -1,0 +1,65 @@
+Week 10 Briefing: Essential Linux Commands for File Management
+This week, we focus on powerful Linux commands for filtering text, redirecting command output, and archiving files. Mastering these tools is crucial for efficient system administration and scripting.
+I. Filtering Text with grep
+grep is a fundamental search tool in Linux that filters lines containing specific text from a set of information, returning only what matches your query.
+• Purpose:
+    ◦ Find specific files or types of files.
+    ◦ Search for particular users on a system (e.g., in /etc/passwd).
+    ◦ Filter text based on patterns.
+• Basic Usage:
+    ◦ Directly: grep [what_to_look_for] [file].
+        ▪ Example: grep boston datebook.
+    ◦ Piping: cat [file] | grep [what_to_look_for]. This sends the output of cat as input to grep. For beginners, these two methods are functionally similar.
+• Key Options & Features:
+    ◦ -v (invert match): Shows results that do not contain the specified pattern.
+        ▪ Example: grep -v boston datebook.
+    ◦ Regular Expressions (Regex): grep understands regex for complex pattern matching.
+        ▪ ^ (caret): Matches the start of a line.
+            • Example: grep '^Z' datebook.
+        ▪ $ (dollar sign): Matches the end of a line.
+            • Example: grep '57000$' datebook.
+    ◦ Piping (|): Allows you to chain commands, sending the output of one command as the input to the next.
+        ▪ Example: grep '000$' datebook | grep california (searches for lines ending in "000", then filters those results for "california").
+        ▪ Important Note: When piping the output of a grep command to another grep command, do not re-add the original file name to the second grep, as it will search the entire file again.
+II. Redirection (>) and Append (>>)
+These symbols control where a command's output goes, allowing you to send it to a file instead of displaying it on the screen.
+• Redirect (> - single greater than sign):
+    ◦ Sends all command output to a text file.
+    ◦ Crucially, it will erase any existing contents of the file before writing the new information.
+    ◦ Example: ls > testfile (overwrites testfile with the directory listing).
+• Append (>> - two greater than signs):
+    ◦ Sends all command output to the end of a text file.
+    ◦ It will not erase existing file contents; it adds new information to the bottom.
+    ◦ Example: ls >> testfile (adds the directory listing to the end of testfile).
+III. Displaying and Comparing Files
+Various commands help you view and analyze file content:
+• cat: Displays the entirety of a file.
+• head: Displays the top (default 10) lines of a file.
+• tail: Displays the end (default 10) lines of a file.
+• od: Displays any file by showing its hex code.
+• diff (File Comparison):
+    ◦ Used to compare two files.
+    ◦ By default, its output is designed to be read by a computer, not a human.
+    ◦ Often integrated into tools like Git or used to identify changes in configuration files.
+IV. Archiving with tar (Tarballs)
+tar (Tape Archive) is used for bundling multiple files and folders into a single file, known as a tarball.
+• Purpose:
+    ◦ Archiving: To put a "bunch of information" (files and folders) together into one package for easier handling.
+    ◦ Backups: Useful for creating backups.
+    ◦ Portability: Makes it easy to move, copy, and work with sets of files without forgetting anything.
+    ◦ Can be used with compression.
+• Creating a Tarball (tar -cvf):
+    ◦ Options: c (create), v (verbose - shows what's going in), f (file - specifies the archive name).
+        ▪ c and f are mandatory when creating; v is optional but recommended.
+    ◦ Crucial Rule for f: The f option must always be the last option given to tar when creating an archive; incorrect placement will cause errors.
+    ◦ Arguments Order: Destination (the name and path of the tarball you are creating) then Source (the files/directories to include).
+        ▪ Example: tar -cvf ./test_tarball.tar . (creates test_tarball.tar in the current folder, containing everything in the current folder).
+        ▪ It's good practice to use the .tar extension for clarity.
+• Compression with gzip: To compress a tarball, add the z option (-cvzf) and typically use a .tar.gz or .tgz extension.
+V. Recommended Practice
+• Experiment with grep on /etc/passwd to search for specific users, use the -v option, and try regex for ^ and $.
+• Practice redirection (>) and append (>>) with commands like ls to observe how they affect a target file.
+• Use head, tail, and od on existing files to see different display methods.
+• Create a simple tarball, paying close attention to the cvf options and the order of destination/source arguments.
+
+--------------------------------------------------------------------------------

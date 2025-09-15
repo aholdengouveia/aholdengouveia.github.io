@@ -1,0 +1,52 @@
+Week 13 Study Guide: Alias, History, Bash Files, and Prompt Customization
+I. Learning Outcomes for Week 13
+By the end of this week, you should be able to:
+• Show how to use alias to substitute for a command string.
+• Describe the .bash files and their uses.
+• Show how to modify the user prompt.
+II. Key Concepts & Commands
+A. alias
+• Definition: An alias is a shortcut or synonym for frequently used commands. It allows you to create an easy way to use complex command structures, especially those with many switches, pipes, or arguments.
+• Purpose: To create a shorter, more convenient command for something you type often, like an ssh command with a consistent username and server.
+• Creating an Alias: Use the alias command followed by name='command_string'.
+    ◦ Example: To create an alias for making a tarball.
+• Deleting an Alias: Use the unalias command.
+• Making Aliases Permanent: To make an alias persist after you log out, add the alias command to your .bashrc file.
+    ◦ Danger/Caution: It is easy to mess up the .bashrc file, so use caution. It's recommended to not delete anything and only add to it. Also, consider making backups of your lab work and trying these changes after you've finished everything else, as changing or deleting things in hidden Bash files can lock you out of the server until fixed.
+B. Hidden Bash Configuration Files
+These files are often referred to as Bash Initialization files.
+• Viewing Hidden Files: To see these hidden files, use the ls command with the -a switch (ls -a). A dot (.) in front of a filename indicates it's a hidden file.
+• .bash_profile:
+    ◦ This file runs on login.
+    ◦ It is primarily used to set paths (environmental variables).
+    ◦ You can also use it to define changes you want to happen at login.
+    ◦ Danger/Caution: Permanent changes to the .bash_profile can mess you up very easily and very badly. Always exercise caution when modifying this file.
+• .bash_history:
+    ◦ This file records all commands you have used.
+C. Customizing the User Prompt
+The user prompt is the text you see when you first log into your system, typically your username at the computer/server, followed by the current location.
+• Environmental Variable: The user prompt is an environmental variable.
+• Showing the Current Prompt: The prompt's value is stored in the $PS1 variable. To see your current prompt, use echo $PS1.
+• Changing the Prompt (Temporary): To change your prompt temporarily, set the PS1 variable: PS1=newprompt. For example, PS1=firstname would change your prompt to your first name.
+    ◦ You are encouraged to try changing this to see what happens.
+• Making Prompt Changes Permanent: You can make permanent changes to your prompt by modifying your .bash_profile file.
+    ◦ Danger/Caution: Again, caution is urged. It's recommended to do this last, just in case anything goes wrong, as it's easy to mess up.
+• Potentially Useful Prompts/Customizations: Many popular customizations exist:
+    ◦ Show the last command run.
+    ◦ Change color if the last command run was successful (e.g., change to red if a command failed, possibly with an angry emoticon).
+    ◦ Show the working directory.
+    ◦ Show directory info.
+    ◦ Show the current date.
+    ◦ There are also online Bash prompt generators to help with customization, some with color options.
+III. Suggested Activities and Discussion Topics
+• Create an Alias: Try creating an alias to make a tarball. Experiment with creating other aliases for frequently used or complex commands.
+• Explore Hidden Bash Files: Use ls -a to view your hidden Bash files and examine the contents of your .bash_profile file to see what it says.
+• Experiment with the User Prompt:
+    ◦ Use echo $PS1 to display your current prompt.
+    ◦ Try changing your prompt temporarily using PS1=newprompt (e.g., using your first name).
+    ◦ Explore examples of useful prompts from online resources (like those mentioned from "Make Tech Easier") to see how to show the last command, change color based on success, or display directory info.
+• General Exploration: Go to the GitHub resource "A curated list of delightful Bash scripts and resources" and pick one to try. This allows you to see how other scripts are structured and utilized.
+• Review Documentation: If you're struggling, consult relevant documentation or manual pages for commands like alias, ls, and echo.
+• Backup & Caution: Before making permanent changes to .bashrc or .bash_profile, ensure you have backups of your files. This prevents accidental lockouts or system issues.
+
+--------------------------------------------------------------------------------

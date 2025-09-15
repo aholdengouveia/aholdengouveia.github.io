@@ -1,0 +1,43 @@
+Week 13 Briefing: Enhancing Your Linux Command Line Experience
+This week, we will explore powerful ways to customize and streamline your Linux command line experience using aliases, understanding Bash configuration files, and personalizing your user prompt. This is the final week of core materials for the Introduction to Linux course.
+I. Learning Objectives
+By the end of this week, you should be able to:
+• Show how to use alias to substitute for a command string.
+• Describe the hidden Bash files and their uses.
+• Show how to modify the user prompt.
+II. Key Concepts
+A. alias: Creating Command Shortcuts
+• Definition: An alias is a shortcut or synonym you create for frequently used or complex commands.
+• Purpose: It allows you to save time and reduce typing by creating an easier, shorter name for commands that have many switches, pipes, or arguments (e.g., an ssh command with a consistent username and server).
+• Creation & Deletion:
+    ◦ To create an alias, use alias name='command_string'. For example, you could create an alias for making a tarball.
+    ◦ To delete an alias, use unalias name.
+• Making Permanent: To ensure an alias persists after you log out, you must add the alias command to your .bashrc file.
+    ◦ ⚠️ CAUTION: It is easy to accidentally corrupt the .bashrc file. Always be cautious when editing these hidden Bash files. It is strongly recommended to only add to the file and not delete anything. Consider backing up your lab work and making these changes after completing other assignments, as incorrect modifications can lock you out of the server until fixed.
+B. Hidden Bash Configuration Files
+These files, often called Bash Initialization files, control aspects of your shell environment.
+• Visibility: These files are "hidden" because their names start with a dot (.). To see them, use the ls command with the -a switch (ls -a).
+• .bash_profile:
+    ◦ This file runs automatically when you log in.
+    ◦ Its primary use is to set paths (environmental variables) and define other changes you want to occur at login.
+    ◦ ⚠️ CAUTION: Making permanent changes to .bash_profile can severely impact your ability to log in or use the system. Exercise extreme caution.
+• .bash_history:
+    ◦ This file records all commands you have previously used in your shell session.
+C. Customizing the User Prompt
+The user prompt is the text you see on the command line, typically showing your username, computer/server name, and current location.
+• Environmental Variable: The user prompt is stored in an environmental variable called $PS1.
+• Viewing & Changing (Temporary):
+    ◦ To see your current prompt, use echo $PS1.
+    ◦ To change it temporarily, set the PS1 variable directly, e.g., PS1=newprompt or PS1=firstname.
+• Making Permanent: Permanent changes to your prompt are made by modifying your .bash_profile file.
+    ◦ ⚠️ CAUTION: As with .bashrc, modifying .bash_profile requires caution and is best done as a final step to avoid issues.
+• Useful Customizations: Prompts can be customized to display various information and visual cues, such as:
+    ◦ The last command run.
+    ◦ Changing color based on command success (e.g., red for failed commands, potentially with an angry emoticon).
+    ◦ Showing the working directory or other directory information.
+    ◦ Displaying the current date.
+    ◦ Online Bash prompt generators are available to assist with creating custom prompts, including color options.
+III. Practical Application
+• Alias Creation: Practice creating an alias to simplify the tar command for creating tarballs.
+• Bash File Exploration: Use ls -a to examine the hidden Bash configuration files in your home directory, particularly .bash_profile.
+• Prompt Customization: Experiment with echo $PS1 and temporarily changing your prompt using PS1= to see the effects.

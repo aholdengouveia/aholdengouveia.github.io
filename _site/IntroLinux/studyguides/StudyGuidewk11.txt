@@ -1,0 +1,81 @@
+Week 11 Study Guide: Shell Scripting with Conditionals
+I. Learning Outcomes for Week 11
+By the end of this week, you should be able to:
+• Write and test a script with a conditional and explain the use of conditionals.
+• Demonstrate how to debug a script with conditionals.
+II. Key Concepts & Commands
+A. Introduction to Conditionals
+• Definition: Conditionals allow you to run different blocks of code based on choices or decisions. They provide paths your script can take depending on whether something happens or not.
+• Not a Loop: A conditional is not the same as a loop; it allows you to make a decision once and follow a path. If you want to revisit a decision, you typically have to re-run the script.
+• Types: This week focuses on if-else statements due to their commonality across many languages. There are also case statements, which are another kind of conditional for indicating paths and choices with different syntax.
+B. Basic if-then-else Structure
+The fundamental structure for a conditional statement involves if, then, else, and fi.
+• if [condition]: The if keyword begins the conditional block, followed by square brackets [] that contain the test condition. The brackets themselves perform the test.
+• then: This is a required keyword. If the condition is true, the statements immediately following then are executed.
+• else: This is also a required keyword for this class's practice. If the condition is false, the statements following else are executed. It acts as a catch-all for any case not covered by previous if or elif conditions.
+• fi: This keyword (which is if spelled backward) is required and indicates the end of the conditional statement.
+• Indentation (Tabbing): While not strictly required by the script, tabbing or indenting the code within if, elif, and else blocks greatly improves legibility and readability, especially for nested conditionals.
+C. Shell Scripting Basics (Review from prior weeks)
+Conditionals are used within shell scripts.
+• Creating a Script: Create a new file (e.g., river.sh). Using a .sh file extension is optional but recommended for clarity.
+• Shebang Line: Start your script with #!/bin/sh (or #!/bin/bash for bash scripts) to tell the server how to execute the script.
+• Permissions: New scripts do not have execute permission by default. You need to use chmod +x scriptname.sh to make it runnable. The file color may change to green to indicate execute permission.
+• Running a Script: Execute the script by providing its path, e.g., ./river.sh.
+• echo: Used to print output to the command line.
+• read: Used to take user input into the shell script. It pauses the script and waits for input.
+D. Variables in Shell Scripting
+• Untyped Variables: Shell scripting uses untyped variables, meaning you don't need to declare their type (e.g., int, character, string).
+• Declaration & Usage: You create a variable by simply assigning a value (e.g., answer=yes). When you want to use or expand the variable's content, you put a dollar sign ($) in front of it (e.g., $answer).
+E. Types of Conditional Tests
+The type of comparison you're doing dictates the operator you use within the [] brackets.
+• String Comparisons:
+    ◦ Use the equals sign (=) to test if two strings are equal.
+    ◦ Example: if [ "$answer" = "yes" ].
+    ◦ Double Quotes: Always use double quotes around variables and comparison strings to ensure that multi-word inputs (e.g., "Susie Jane Doe") are read as a single variable content.
+• Number Comparisons:
+    ◦ Do NOT use = for numbers. Instead, use specific operators:
+        ▪ -eq: equals (e.g., if [ $number -eq 5 ]).
+        ▪ -le: less than or equal to.
+        ▪ -ge: greater than or equal to.
+        ▪ -gt: greater than.
+        ▪ -lt: less than.
+• File Test Operators:
+    ◦ Used to check properties of files or directories.
+    ◦ -e: tests if a file or directory exists.
+    ◦ -s: tests if a file exists and is not empty.
+    ◦ Example: if [ -e /path/to/file ].
+F. Advanced Conditional Structures
+• elif (Else If):
+    ◦ Allows you to include multiple choices or conditions in a single if statement.
+    ◦ Example: if [ $answer = "yes" ] then ... elif [ $answer = "no" ] then ... else ... fi.
+• Nested if Statements:
+    ◦ This is when you have an if statement within another if statement.
+    ◦ The nested if statement will only be executed if its parent if condition is met.
+    ◦ Each if statement, whether nested or not, must have its own corresponding fi.
+    ◦ Caution: Be careful with nesting, as it can make scripts complex if not managed well with good spacing.
+III. Debugging and Common Mistakes
+Debugging scripts with conditionals often comes down to a few key areas:
+• Spacing Matters: Shell scripting is very picky about spacing. Pay close attention to spaces:
+    ◦ Between if and [.
+    ◦ Between the [ and your condition.
+    ◦ Between your condition and ].
+    ◦ Around operators (e.g., [ "$answer" = "yes" ]).
+• Right Condition Type: Ensure you are using the correct test operator (e.g., -eq for numbers, = for strings, -e for file existence). Using the wrong type will cause errors.
+• Closing fi: Forgetting the closing fi is a very common mistake. Every if (and elif) block requires a matching fi.
+• Including else: For this class's practice, it is recommended to always include an else statement as a good catch-all to ensure all possibilities are handled.
+IV. Suggested Activities and Practice
+• Watch Videos: Watch the provided videos on conditionals with scripting and follow along with the examples.
+• Create Kaylee's Script: Practice creating a script like Kaylee's, including echo for output and read for input, and then implementing the basic if-else conditional logic.
+• Experiment with elif: Add an elif condition to handle multiple specific responses.
+• Implement Nested if Statements: Practice creating a nested if statement, paying close attention to indentation for readability and ensuring each if has its fi.
+• Test Different Operators: Try using string comparisons (=), number comparisons (-eq, -le, etc.), and file test operators (-e).
+• Debugging Practice: Deliberately introduce common mistakes (incorrect spacing, wrong operator, missing fi) to see the errors and learn how to fix them.
+• Assignments:
+    ◦ Knock-Knock Joke Script: Create a script that tells a knock-knock joke, ensuring the user gives the correct answer at the correct spot, which will require a nested if statement.
+    ◦ Choose Your Own Adventure Story: Develop an adventure story script with at least two nested if statements (more are welcome). Ensure you include distinct endings for different paths. Drawing diagrams can be helpful for planning the logic.
+
+
+Start typing...
+4 sources
+
+

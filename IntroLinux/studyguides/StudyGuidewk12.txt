@@ -1,0 +1,71 @@
+Week 12 Study Guide: Shell Scripting with Loops
+I. Learning Outcomes for Week 12
+By the end of this week, you should be able to:
+• Use a script with a loop to explain how loops work.
+• Demonstrate how to debug a script with a loop.
+• Incorporate tar into a script (as mentioned in the objectives for the week).
+II. Key Concepts & Commands
+A. What is a Loop?
+• Definition: A loop is a programming construct that takes care of repetitive tasks. It allows a block of code to be executed multiple times without manual repetition.
+• Distinction from Conditionals: Loops are not the same as if/else or case statements. Conditionals (if/else, case) make a decision once and follow a path, while loops are for repetition.
+B. Use Cases for Loops
+Loops are incredibly versatile and can be used for:
+• Moving or deleting files based on criteria (e.g., size, age, attribute).
+• Number manipulation (e.g., increasing all numbers by 1).
+• Changing whole folders of files (e.g., adding timestamps, changing permissions).
+• Searching for a value.
+• Checking computer or server status (e.g., ensuring a server is up and running continuously or at intervals).
+• Repeating a phrase a specified number of times.
+• Countdown sequences.
+• Opening multiple terminal windows.
+• Processing a sequence or list of items, including output from other commands like cat or ls.
+C. Types of Loops
+1. while loops
+• Mechanism: A while loop runs as long as its condition is successful (true). It stops as soon as the condition becomes false.
+• Use Cases: Common for counting or reading input.
+• Count-Controlled Loops: A while loop can be used as a count-controlled loop, meaning it repeats for a certain number of times.
+    ◦ Requires: A counter (variable), a check for when the counter hits its target, and an ending condition.
+    ◦ Example Structure:
+    ◦ In this example, the loop would echo "2x2 hands of blue" three times.
+• Event-Controlled Loops: A while loop can also be event-controlled, where the loop continues or stops based on an event being true or not true. An example could be checking if a disk is full.
+• Critical Components: For a while loop that is meant to stop (not be an infinite loop), it's very important to have a counter, a starting point, a stopping point, and an iteration (increasing the counter).
+2. for loops (also called for-each loops)
+• Mechanism: for loops are designed to process a sequence or list of items. They can iterate through items directly provided or items from the output of another command (e.g., cat or ls).
+• Sequence-based for loops:
+    ◦ Can run for a certain number of times by defining a sequence.
+    ◦ Example Structure:
+    ◦ This loop also repeats "2x2 hands of blue" three times.
+    ◦ Less code: When using seq (sequence), you have slightly less code than a while loop because the variable i is set directly in the for loop, and the addition (increment) is handled by the sequence generation.
+• Item-based for loops:
+    ◦ Can iterate over items (like files) without knowing the exact count.
+    ◦ Example: for file in *.txt; do cat "$file"; done would display the contents of every .txt file in the current folder.
+3. until loops
+• Mechanism: Similar to while loops, but the action happens until the condition is met.
+• Use Cases: Might be used if you need a specific sequence or specific input.
+• Complexity: until loops are generally considered more complex, especially if you haven't done much coding, and are often skipped over for introductory purposes. An example might show complex nesting with while loops.
+D. General Loop Considerations and Debugging
+• Counters: Crucial for count-controlled loops. You must initialize a counter variable, and increment it within the loop to prevent infinite loops.
+• Ending Condition: Every loop needs a clear condition that, when met, causes the loop to terminate.
+• Infinite Loops: If a counter isn't changed or the ending condition is never met, a loop will run indefinitely (an "infinite loop"). While there are specific use cases for infinite loops, for this course, loops are generally expected to stop.
+• Variables: Variables can be used for counters or to store the number of times a user wants a loop to run. Use $((expression)) for arithmetic operations (e.g., counter=$((counter+1))).
+• Comparison Operators for Numbers: Remember to use numerical comparison operators like -le (less than or equal to), -lt (less than), -eq (equals), etc., when comparing numbers in loop conditions, similar to conditionals.
+III. Suggested Activities and Practice
+• Watch the Video Tutorial: Watch the "FAQ Shellscript Loops" video and follow along with the examples to see while and for loops in action.
+• Experiment with while loops:
+    ◦ Create a script that uses a while loop with a counter.
+    ◦ Practice initializing the counter, setting the ending condition, and incrementing the counter within the loop.
+    ◦ Observe what happens if you forget to increment the counter (infinite loop).
+    ◦ Experiment with different numerical comparison operators (-lt, -le).
+• Experiment with for loops:
+    ◦ Create a script that uses a for loop to iterate through a sequence of numbers.
+    ◦ Try a for loop to process items from a list or the current directory (e.g., for file in *; do echo "$file"; done).
+• Assignments:
+    1. Echo Phrase Script: Write a script that:
+        ▪ Asks the user for a phrase.
+        ▪ Asks the user for the number of times to echo the phrase.
+        ▪ Uses a loop to echo the phrase the specified number of times (e.g., if "hello" 3 times, output "hello hello hello").
+    2. Countdown Script: Write a script that:
+        ▪ Asks the user for a starting number.
+        ▪ Uses a loop to count down from that number to one (e.g., if 3, output "3 2 1").
+
+--------------------------------------------------------------------------------

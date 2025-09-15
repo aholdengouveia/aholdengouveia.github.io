@@ -1,0 +1,100 @@
+Week 10 Study Guide: Filtering, Redirection, and Archiving in Linux
+I. Learning Objectives for Week 10
+By the end of this week, you should be able to:
+• Demonstrate the use of grep to filter a text file.
+• Use redirection (>) and append (>>) in a command and explain the difference between them.
+• Show the use of head, tail, and diff for displaying and comparing files.
+• Understand and create tarballs for archiving files.
+II. Key Concepts & Commands
+A. grep (Global Regular Expression Print)
+grep is a powerful search tool in Linux that filters lines containing specific text from a set of information. It only returns the information that matches what you are looking for.
+• Purpose:
+    ◦ Find specific files or types of files.
+    ◦ Search for particular users on a system.
+    ◦ Filter text based on specific patterns.
+• Basic Usage (Two main ways):
+    1. grep [what_to_look_for] [file]: You pass grep the pattern and the file directly.
+        ▪ Example: grep boston datebook
+        ▪ Example: grep Jane /etc/passwd
+    2. cat [file] | grep [what_to_look_for] (Piping): You cat the file and then pipe (|) its output to grep. This sends the results of one command to a second command. For beginners, these two methods function similarly.
+        ▪ Example: cat datebook | grep boston
+        ▪ Example: cat /etc/passwd | grep Jane
+• Options/Switches: grep has various options to refine searches.
+    ◦ -v (invert match): Shows results that do not match the pattern.
+        ▪ Example: grep -v boston datebook will show all lines that do not contain "boston".
+        ▪ Example: cat /etc/passwd | grep -v Jane will show all lines that do not contain "Jane".
+    ◦ Case-insensitive search: An option often available to ignore case. (Consult manual pages for specific flags).
+• Regular Expressions (Regex): grep can take regular expressions for more complex pattern matching.
+    ◦ ^ (caret): Matches the start of a line.
+        ▪ Example: grep '^Z' datebook will find lines starting with 'Z'.
+    ◦ $ (dollar sign): Matches the end of a line.
+        ▪ Example: grep '57000$' datebook will find lines ending with '57000'.
+    ◦ Refresh on regex: If you struggle with regular expressions, there are several good websites for practice.
+• Piping with grep for Chaining Commands:
+    ◦ The pipe symbol | allows you to send the output of one command as the input to another command. This makes the command line powerful for searching and filtering.
+    ◦ Example: grep '000$' datebook | grep california This first finds all lines ending in "000" and then pipes those results to a second grep command to find only those lines containing "california" within the initial results.
+    ◦ Important Note: When piping, do not re-add the original file name to the second grep command, as it will search the entire file again instead of the piped results.
+    ◦ Example: cat /etc/passwd | grep Jane | wc -l (counts lines containing 'Jane' in /etc/passwd).
+B. Redirection (>) and Append (>>)
+These are used to send the output of a command to a file instead of displaying it on the screen.
+• Redirect (> - single greater than sign):
+    ◦ Sends all information that would normally go to the screen to a text file.
+    ◦ Crucially, it will erase any existing contents of the file and put the new information in.
+    ◦ Example: ls > testfile will list files and folders in the current directory and save that list to testfile, overwriting testfile's previous content.
+• Append (>> - two greater than signs):
+    ◦ Sends all information that would normally go to the screen to the bottom of a text file.
+    ◦ It will not erase the file's existing contents; it adds new information to the end.
+    ◦ Example: ls >> testfile will list files and folders and add that list to the end of testfile without deleting its current content.
+C. Displaying File Contents (cat, head, tail, od)
+You can display files in various ways:
+• cat: Used to display the entirety of a file.
+• head: Displays the top (default 10) lines of a file.
+• tail: Displays the end (default 10) lines of a file.
+• od: Displays any file by showing its hex code. This can be interesting to try out.
+D. File Comparison (diff)
+• diff: Used to compare two files.
+• Output: By default, the output is designed to be read by a computer, not a human.
+• Use Cases: Often integrated into other tools like Git to show changes in code, settings, or configuration files.
+E. tar (Tarballs - Tape Archive)
+tar is a command used for archiving files and folders together into a single file called a tarball.
+• What is a Tarball? It is a way of putting a bunch of information (files and folders) together into one package.
+• Purpose:
+    ◦ Archiving: To bundle files so they can be easily moved around and worked with as one lump.
+    ◦ Backups: Useful for creating backups.
+    ◦ Portability: Makes it easy to copy and move sets of files without forgetting anything.
+    ◦ Compression (with gzip): Can be used in conjunction with compression, though tar itself is primarily for archiving.
+• Creating a Tarball (tar -cvf):
+    ◦ Command Structure: tar [options] [destination] [source].
+    ◦ Common Options for Creation (cvf):
+        ▪ c (create): Tells tar to create a new archive. This option is mandatory.
+        ▪ v (verbose): Shows everything that is going into the tarball on the screen. This is optional but recommended to confirm contents.
+        ▪ f (file): Specifies that the next argument will be the name of the archive file. This option is mandatory.
+    ◦ Critical Rule for f: The f option must always be the last option given to tar when creating a tarball. Incorrect order will result in an error.
+    ◦ Arguments (Order: Destination then Source):
+        1. Destination: The name and path of the tarball you are creating.
+            • Example: ./test_tarball.tar (in the current folder).
+            • It's a good practice to use the .tar extension for clarity.
+        2. Source: The files or directories you want to include in the tarball.
+            • Can be a specific directory (e.g., /home/user/directory), or everything in the current folder (.), or use wildcards.
+            • Example: tar -cvf ~/name.tar /home/user/directory.
+• Compression with gzip:
+    ◦ To compress a tarball using gzip, add the z option (-cvzf).
+    ◦ Change the file extension to .tar.gz or .tgz to indicate compression.
+• Untarring: tar can also be used to extract (untar) files from an archive using different options. (Refer to tar manual for more details).
+III. Suggested Activities and Practice
+• Practice grep:
+    ◦ Use grep on the /etc/passwd file on a server (it has enough entries to be useful).
+    ◦ Experiment with grep using the datebook file or /etc/passwd to search for specific words, lines starting/ending with characters, and using the -v option.
+    ◦ Try piping commands, for example, cat /etc/passwd | grep [user] | wc -l to count instances.
+• Experiment with Redirection and Append:
+    ◦ Use ls > testfile and ls >> testfile to observe the difference between redirect and append.
+• Play with head, tail, and od:
+    ◦ Try these commands on the /etc/passwd file or any other long files on your system.
+• Compare Files with diff:
+    ◦ Create two similar text files with slight differences and use diff to compare them.
+• Create a Tarball:
+    ◦ Follow the instructions to create your own tarball, paying close attention to the cvf options and the order of arguments.
+    ◦ Try including different sources (e.g., specific files, entire directories).
+    ◦ (Optional) Experiment with adding the z option for gzip compression.
+
+--------------------------------------------------------------------------------
