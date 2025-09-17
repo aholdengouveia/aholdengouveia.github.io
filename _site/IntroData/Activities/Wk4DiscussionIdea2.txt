@@ -1,0 +1,4 @@
+Structuring the Unstructured
+The sources draw a clear line between organized, formatted structured data (like in a database) and unformatted unstructured data (like the text of an email or a photo). Structured data is powerful because it allows for specific, targeted queries like "show me all customers in California who bought product X".
+• Initial Post: Think of a common online activity you do, like ordering food from a delivery app, booking a flight, or using a music streaming service. Identify one piece of unstructured data and one piece of structured data that the service likely uses.
+• Interaction Requirement: Reply to a classmate. Formulate a simple question (a query) in plain English that the company could only answer using the structured data your classmate identified. Explain why that question would be much harder to answer using their unstructured data example

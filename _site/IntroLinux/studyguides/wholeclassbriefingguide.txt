@@ -1,0 +1,96 @@
+Briefing Guide: Linux Command-Line Operations
+This guide provides a tactical overview of the Linux operating system, essential commands, and automation techniques. Master these fundamentals to gain effective control over your digital environment.
+1. Mission Overview: Understanding the Linux Environment
+What is Linux & The Open-Source Doctrine
+• Origins: The Linux kernel was created by Linus Torvalds in the 1990s, but its conceptual roots trace back to Unix in the 1960s. The mascot is a penguin named Tux.
+• Open-Source Philosophy: Instead of being sold, Linux was released as open source. This means its source code is freely available for anyone to view, use, modify, and share. This fosters a global community of volunteer developers who collaboratively improve the software. While the software is often free, developers can charge for support services. This model makes powerful software accessible worldwide, especially where expensive licenses are unaffordable.
+• Field Deployment: Linux is a dominant, if often invisible, force. It powers:
+    ◦ Mobile Devices: Android is built on the Linux kernel, accounting for about 70% of the smartphone market in 2022.
+    ◦ The Internet: Over 80% of websites run on servers powered by Linux or Unix-like systems.
+    ◦ Supercomputers: As of late 2017, all 500 of the world's top supercomputers run a version of Linux.
+Threat Assessment: Linux vs. Windows
+• Advantages of Linux:
+    ◦ Superior Security: Linux is designed to be more secure, partly due to its permission structure and the constant review of its open-source code.
+    ◦ Multi-User Design: It was built from the ground up to handle many users on a single system, making it ideal for servers.
+    ◦ Cost-Effective: Most versions are free.
+    ◦ Highly Customizable: Everything can be customized, with hundreds of versions available.
+    ◦ Resource Efficient: It runs well on older or low-power hardware, like a Raspberry Pi.
+• Disadvantages of Linux:
+    ◦ Lack of Official Support: Because it's often community-driven, there's no single company to call for tech support; you must solve issues yourself.
+    ◦ Compatibility Issues: Its lower popularity on desktops means much commercial software (especially games) and hardware (like printers) are not designed for it.
+    ◦ Steep Learning Curve: It can feel unfamiliar to users accustomed to Windows or macOS.
+Choosing Your Kit: Linux Distributions (Distros)
+A distro is a complete operating system package built around the Linux kernel. There are potentially hundreds of active distros, each tailored for a specific mission.
+• For New Recruits: Ubuntu and Linux Mint are highly recommended for being user-friendly and having large support communities.
+• For Enterprise Servers: Red Hat Enterprise Linux (RHEL) is a top choice for businesses needing security, stability, and commercial support.
+• For Special Operations: Kali Linux is equipped with cybersecurity tools for penetration testing, while Qubes OS focuses on extreme privacy and security through isolation.
+2. Field Operations: Essential Command-Line Skills
+Navigation and Orientation: The File System
+Linux uses a unified tree structure starting from the root (/).
+• pwd (Print Working Directory): Your digital "You Are Here" sign. It shows you the full, absolute path to your current location.
+• ls (List): Shows the contents (files and subdirectories) of your current location. Use switches like -l for a detailed long list, -a to show all (hidden) files, and -h to make file sizes human-readable.
+• cd (Change Directory): Your primary tool for moving around the file system. cd with no arguments always returns you to your home directory ("home sweet home").
+Target Acquisition: Absolute vs. Relative Paths
+• Absolute Path: The full, unambiguous address of a file or directory, always starting from the root (/). It's like a GPS coordinate and works from anywhere in the system.
+• Relative Path: Gives directions from your current location. It's shorter and more convenient for working with nearby assets but requires you to know where you are. Key symbols include . (current directory) and .. (parent directory, one level up).
+Asset Management: Creating, Moving, Copying, and Deleting
+• mkdir: Makes a new directory (folder).
+• touch: Creates a new, empty file.
+• mv: Moves or renames a file or directory. Syntax: mv source destination.
+• cp: Copies a file or directory. Syntax: cp source destination.
+• rm (Remove): EXTREME CAUTION ADVISED. This command deletes files, and in most setups, the deletion is permanent with no recycle bin. Double-check every rm command, especially when using wildcards.
+Critical Intel
+• Case Sensitivity: Linux is case-sensitive. MyFile.txt and myfile.txt are different files. Commands, usernames, and passwords are also case-sensitive.
+• Invisible Password Entry: When you type a password in the terminal, nothing will appear on screen—no dots, no stars. This is a security feature. Type carefully and press Enter.
+3. Advanced Intelligence: Data & Process Management
+• Wildcards: For pattern matching. The asterisk * matches any number of characters, ? matches exactly one character, and [] matches a set or range of characters.
+• find: A powerful tool to search for files based on criteria like name, type, size, or modification time.
+• grep: Scans the content inside files for lines that match a specific text pattern. It is often used with a pipe (|) to filter the output of other commands.
+• Redirection (>) and Append (>>): Control command output. > overwrites a file with the output, while >> adds the output to the end of the file.
+• tar (Tape Archive): Bundles many files and directories into a single archive file, called a tarball, for easy backup or transfer. Use the -c flag to create, -v for verbose output, and -f to specify the filename. The -f option must be the last letter in the option block (e.g., tar -cvf). Add -z to compress the archive with gzip.
+• Process Management:
+    ◦ ps: Shows running processes and their Process ID (PID).
+    ◦ kill <PID>: Sends a polite "terminate" signal (SIGTERM, 15) to a process, asking it to shut down.
+    ◦ kill -9 <PID>: The "big stick." It sends a forceful "kill" signal (SIGKILL, 9) that cannot be ignored. Use this as a last resort for unresponsive processes, as it can cause data loss.
+4. Operational Security: Permissions & Access Control
+File Permissions
+• Reading the Field: Use ls -l to view permissions. Permissions are set for the owner, the group, and the world (others). The permissions are Read (r), Write (w), and Execute (x).
+• Setting the Rules (chmod): The fastest way to change permissions is with octal (numeric) notation. Each permission has a numeric value: Read=4, Write=2, Execute=1. Add them to get the desired permission set for each category (owner, group, world).
+    ◦ Example: chmod 755 myscript.sh gives the owner read/write/execute (4+2+1=7), while the group and world get read/execute (4+0+1=5).
+Network Reconnaissance
+• Basic diagnostic commands include ping (to check if a host is reachable), ifconfig (legacy), and ip (modern) to display your IP address and other network interface information.
+5. Force Multiplication: Automation with Shell Scripting
+A shell script is a text file containing a sequence of commands to automate tasks.
+Phase 1: Scripting Fundamentals
+• Creation: Create a plain text file, typically with a .sh extension for clarity.
+• The Shebang: The very first line must be the shebang, like #!/bin/sh or #!/bin/bash. This tells the system which interpreter to use.
+• Execution: A new script is not runnable by default. You must grant it execute permission with chmod +x scriptname.sh. To run it from the current directory, use its path: ./scriptname.sh.
+• Critical Communications:
+    ◦ Double Quotes "": Allow variables ($name) to be expanded.
+    ◦ Single Quotes '': Treat everything inside literally; variables are not expanded.
+    ◦ Command Substitution: Use backticks (`date`) or $(date) to run a command and use its output directly in your script.
+• The Golden Rule: TEST YOUR CODE. Test individual commands first, then test the script after every small change.
+Phase 2: Interactive Operations
+• read: Pauses the script to get input from the user and store it in a variable. Shell variables are untyped—you don't declare them as numbers or text.
+• Positional Parameters ($1, $2): Pass information to a script directly on the command line (e.g., ./myscript.sh arg1 arg2). This is for non-interactive automation. Use quotes for arguments with spaces.
+• set with Backticks: A powerful technique to run a command and assign its output, word by word, to the positional parameters ($1, $2, etc.). Example: set \date``.
+Phase 3: Decision Making (Conditionals)
+Conditionals (if-then-else) allow your script to make decisions.
+• Syntax: The basic structure is if [ condition ]; then ... else ... fi. The fi is required to end the block.
+• Comparison Operators:
+    ◦ Strings: Use a single equals sign (=). Example: if [ "$answer" = "yes" ]. Always use double quotes around variables in tests.
+    ◦ Numbers: Use operators like -eq (equal), -ne (not equal), -gt (greater than), -lt (less than).
+    ◦ Files: Use tests like -e (exists), -f (is a file), -d (is a directory).
+• elif and Nested if: Use elif (else if) to check multiple conditions in a chain. You can nest an if statement inside another to create dependent decisions.
+Phase 4: Repetitive Tasks (Loops)
+Loops automate repetitive actions.
+• while Loops: Run as long as a condition is true. When used for counting, they require a counter, a condition check, and an increment step to avoid infinite loops. Be careful with -lt (less than) vs. -le (less than or equal to) to avoid off-by-one errors.
+• for Loops: Excellent for iterating over a sequence of items, like numbers (for i in {1..5}) or files (for file in *.txt).
+6. Customizing Your Toolkit: Environment & Aliases
+• Aliases: Create shortcuts or synonyms for longer commands using alias ll='ls -lah'.
+• Hidden Bash Files: To see hidden configuration files (which start with a .), use ls -a. Key files include:
+    ◦ .bash_profile: Runs once at login. Good for setting paths.
+    ◦ .bashrc: Runs for every new interactive shell. Good for permanent aliases.
+    ◦ .bash_history: Records all commands you have used.
+• DANGER: Editing these files requires extreme caution. A mistake can lock you out of your system. Always back them up first.
+• The User Prompt ($PS1): This environmental variable controls the appearance of your command prompt. You can change it to show different information, like the time, or even change its color based on the success of the last command.

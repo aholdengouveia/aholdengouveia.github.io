@@ -1,0 +1,214 @@
+Class Study Guide: Introduction to Linux
+This guide covers the key concepts, commands, and skills discussed in class. Use it to review topics, prepare for assessments, and deepen your understanding of the Linux operating system.
+
+--------------------------------------------------------------------------------
+Topic 1: Introduction to Linux & Open Source
+Learning Outcomes
+• Describe the origins of the Linux operating system.
+• State several differences between Linux and Windows.
+• List characteristics of open source software.
+• List several Linux distributions (distros) and explain some of their differences.
+Key Concepts
+• History of Linux: While Linus Torvalds created the Linux kernel in the 1990s, its conceptual roots and the work on precursor operating systems like Unix go back to the 1960s. The mascot for the Linux kernel is a penguin named Tux.
+• Open Source Philosophy: Instead of selling his creation, Linus Torvalds released it as open source. This means the source code is freely available for anyone to view, use, modify, and share. This fosters a collaborative community of volunteer developers who improve the software. While the software is often free, developers can charge for support services. This model helps make powerful software accessible globally, especially where expensive licenses for software like Windows or Adobe are unaffordable.
+• Common Uses of Linux: Linux is a dominant force in modern computing, even if it's often invisible. It is the foundation for:
+    ◦ Mobile Phones: Android is built on the Linux kernel and made up about 70% of the smartphone market in 2022.
+    ◦ The Internet: Over 80% of websites run on servers powered by Linux or Unix-like systems.
+    ◦ Supercomputers: As of late 2017, all 500 of the world's top supercomputers run a version of Linux.
+• Linux vs. Windows (Advantages & Disadvantages)
+    ◦ Advantages:
+        ▪ Security: Linux is considered more secure by design due to its permission structure and the fact that its open-source code is constantly reviewed by many people.
+        ▪ Multi-User Design: It was built from the ground up to handle many users on one system, which is ideal for servers.
+        ▪ Cost: Most versions are free.
+        ▪ Customization & Options: Linux can be customized extensively, with hundreds of different versions (distros) available.
+        ▪ Resource Efficiency: It can run well on older or less powerful hardware, like a Raspberry Pi.
+    ◦ Disadvantages:
+        ▪ Lack of Tech Support: Because it's often free and community-driven, there is no official company to call for help; you must solve issues yourself.
+        ▪ Software & Hardware Compatibility: It is less popular on desktops, so many commercial programs (especially games) and hardware devices (like printers) are not made to work with it.
+        ▪ Learning Curve: It can feel different and less intuitive for those accustomed to Windows or macOS.
+• Distributions (Distros): A distro is a complete operating system package that includes the Linux kernel, a set of software, and a specific configuration. There are potentially hundreds of active distros, each tailored for different users or tasks.
+    ◦ For Beginners: Ubuntu and Linux Mint are highly recommended because they are user-friendly and have large support communities.
+    ◦ For Servers: Red Hat Enterprise Linux (RHEL) is a major choice for businesses needing security, stability, and commercial support.
+    ◦ For Special Purposes: Kali Linux is pre-loaded with cybersecurity tools for penetration testing, while Qubes OS focuses on privacy and security through isolation.
+Practice & Getting Help
+• Safe Practice Environments: You can try Linux without installing it by using websites that run it in your browser. Recommended sites include Distrosea, FWebminal, and CoCalc.
+• Getting Help: The most crucial skill is knowing how to find answers.
+    ◦ Man Pages: Use the man command (e.g., man ls) to access the built-in manual for almost any command.
+    ◦ Web Resources: Ubuntu's website has a beginner-friendly guide, and cheat sheets like the one from FossWire are useful.
+    ◦ Books: The Linux Pocket Guide is a recommended physical reference book for looking up commands.
+
+--------------------------------------------------------------------------------
+Topic 2: Navigating the File System
+Learning Outcomes
+• Explain the difference between Absolute vs. Relative paths.
+• Demonstrate the use of basic commands.
+• Show how to use common switches for the ls command.
+Key Concepts
+• File System Structure: Linux uses a unified tree structure starting from the root directory (/). Key standard directories include:
+    ◦ /home: Contains personal directories for each user.
+    ◦ /etc: Holds system-wide configuration files.
+    ◦ /usr: Contains most user-installed programs and software libraries.
+• Absolute vs. Relative Paths: This is a fundamental concept for locating files and directories.
+    ◦ An absolute path is the full address, always starting from the root directory (/). It is unambiguous and works from anywhere in the system, like a GPS coordinate. Example: /home/user/documents/report.txt.
+    ◦ A relative path gives directions from your current location (your "working directory"). It's shorter and more convenient for working with nearby files. Example: documents/report.txt (if you are in the /home/user directory).
+• Important Symbols:
+    ◦ . (dot): Represents the current directory.
+    ◦ .. (dot-dot): Represents the parent directory (one level up).
+    ◦ / (slash): The directory separator.
+    ◦ ~ (tilde): A shortcut for your home directory.
+Essential Commands
+• pwd: Print Working Directory. Shows you the full absolute path of your current location.
+• ls: List files and directories. Can be modified with switches:
+    ◦ ls -l: Shows a "long" detailed list including permissions, size, and date.
+    ◦ ls -a: Shows "all" files, including hidden files that start with a dot (.).
+    ◦ ls -h: Used with -l, makes file sizes "human-readable" (KB, MB, GB).
+    ◦ You can combine them: ls -la or ls -lah are very common.
+• cd: Change Directory. Used to move around the file system. cd with no arguments takes you back to your home directory.
+• mkdir: Make Directory. Creates a new folder.
+• touch: Creates a new, empty file.
+• cp: Copy a file or directory. Syntax is cp source destination. Use cp -r to copy a directory recursively.
+• mv: Move or rename a file or directory. Syntax is mv source destination.
+• rm: Remove (delete) a file. Use rm -r to remove a directory recursively.
+Crucial Tips & Common Mistakes
+• DANGER of rm: Be extremely careful with rm. In most setups, it deletes files permanently with no recycle bin or trash can. Double-check what you are deleting, especially when using wildcards. Using the -i (interactive) switch can provide a safety net by asking for confirmation.
+• Case Sensitivity: Linux is case-sensitive. MyFile.txt and myfile.txt are completely different files. Commands, usernames, and passwords are also case-sensitive.
+• Invisible Password Typing: When you type a password in the terminal (e.g., for ssh login), nothing will appear on the screen—no dots, no stars. This is a security feature. Type carefully and press Enter.
+
+--------------------------------------------------------------------------------
+Topic 3: Shell Scripting
+This topic is broken down into fundamentals, interactive scripts, conditionals, and loops.
+Part 1: Scripting Fundamentals
+• Learning Outcomes:
+    ◦ Create and use a basic shell script that includes a shebang line, comment, and echo.
+    ◦ Explain the different quotes and their uses.
+• What is a Shell Script?: A shell script is a simple text file containing a sequence of commands, one per line. They are excellent for automating repetitive tasks (like backups) or simplifying complex tasks you don't perform often.
+• Creating Your First Script:
+    1. Create a file: Use an editor like vi to create a plain text file. It is good practice to name it with a .sh extension (e.g., myscript.sh) for clarity, though it's not required by Linux.
+    2. Add the Shebang Line: The very first line must be the shebang. This tells the system which interpreter to use to run the script.
+        ▪ #!/bin/sh: For a standard shell script (more portable).
+        ▪ #!/bin/bash: For a Bash script (offers more features).
+    3. Add Comments: Use the # symbol to add comments. Good practice is to include your name, the date, and what the script does at the top.
+    4. Add a Command: The echo command is used to print text to the screen.
+• Running a Script:
+    1. Change Permissions: By default, a new file is not executable. You must grant it execute permission with the chmod command: chmod +x myscript.sh. In many terminals, the file's color will change (often to green) to indicate it's now executable.
+    2. Execute the Script: To run a script in your current directory, you must specify its path. The most common way is ./myscript.sh. The ./ tells the shell to look in the current directory.
+• Quotes are Critical:
+    ◦ No Quotes (echo hello $name): The shell may treat words as separate arguments.
+    ◦ Double Quotes "" (echo "hello $name"): Groups text into a single string but allows variable expansion. The value of $name will be printed.
+    ◦ Single Quotes '' (echo 'hello $name'): Treats everything inside literally. The text $name will be printed, not its value.
+• Command Substitution: This allows you to run a command and use its output directly in your script.
+    ◦ Use backticks `date` or, the more modern way, $(date).
+• The Golden Rule: TEST YOUR CODE: Never assume your code works. Test individual commands first, then test your script after every small change. Document that you have tested your work.
+Part 2: Interactive Scripts (Variables & Input)
+• Learning Outcomes:
+    ◦ Demonstrate the use of a positional parameter.
+    ◦ Show how to get user input for a script using read.
+    ◦ Explain the use of set with backticks.
+• Variables: Shell scripting uses untyped variables; you don't have to declare them as a number or text beforehand. To use the value stored in a variable, you prefix it with a dollar sign ($).
+• Getting Input with read: The read command pauses the script and waits for the user to type something and press Enter. The input is then stored in a variable.
+    ◦ Example:
+• Positional Parameters: This is a way to pass information to a script when you run it, instead of prompting the user with read. The parameters are stored in temporary variables: $1, $2, $3, etc..
+    ◦ Example: If you run ./testscript.sh Jane Doe
+        ▪ $1 will contain "Jane".
+        ▪ $2 will contain "Doe".
+        ▪ $* holds all parameters together.
+    ◦ Important: If an argument contains spaces, you must enclose it in quotes on the command line (e.g., ./storyteller.sh "Sir Galahad").
+• set with Backticks: This powerful technique runs a command and assigns its output, word by word, to the positional parameters ($1, $2, etc.).
+    ◦ Example: set \date`runs thedatecommand. If the output isFri Oct 27 10:30:00 EDT 2023, then $1becomes "Fri",$2becomes "Oct",$3` becomes "27", and so on. This is a great way to parse system information easily.
+Part 3: Scripting with Conditionals
+• Learning Outcomes:
+    ◦ Write and test a script with a conditional.
+    ◦ Debug a script with conditionals.
+• Purpose: Conditionals (if-then-else) allow your script to make decisions and follow different paths based on whether a condition is true or false. This is different from a loop, which is for repetition.
+• Basic Syntax: The structure is if [ condition ]; then ... else ... fi.
+    ◦ The if, then, and fi parts are mandatory. The else clause is optional but highly recommended as a catch-all.
+    ◦ elif ("else if") lets you chain multiple conditions to check for several specific possibilities.
+• Nested Conditionals: You can place an if statement inside another if statement. A nested if only runs if the outer condition was true, creating dependent decisions. Indenting your code helps with readability here.
+• Comparison Operators:
+    ◦ Strings: Use a single equals sign (=). Example: if [ "$answer" = "yes" ]. Always use double quotes around variables in tests to handle spaces or empty input gracefully.
+    ◦ Numbers: Use special operators like -eq (equal), -ne (not equal), -gt (greater than), -lt (less than), -ge (greater/equal), -le (less/equal). Example: if [ "$count" -gt 5 ].
+    ◦ Files: Use file test operators like -e (exists), -f (is a regular file), -d (is a directory).
+• Common Mistakes:
+    ◦ Spacing: Shell scripting is very picky. You must have spaces around the square brackets ([ ]) and around operators like = or -eq.
+    ◦ Wrong Operator: Using = for numbers or -eq for strings will cause errors.
+    ◦ Missing fi: Every if statement needs a corresponding fi to close it.
+Part 4: Scripting with Loops
+• Learning Outcomes:
+    ◦ Use a script with a loop to explain how loops work.
+    ◦ Demonstrate how to debug a script with a loop.
+• Purpose: Loops are used to automate repetitive tasks, such as processing all files in a folder, running a command a specific number of times, or continuously checking a server's status.
+• Types of Loops:
+    ◦ Count-Controlled: Repeats a specific, predetermined number of times (e.g., "do this 5 times").
+    ◦ Event-Controlled: Continues as long as a certain condition is true (e.g., "stir until the sauce thickens").
+• while Loops: An event-controlled loop that runs as long as its condition is true. When used for counting, it needs three essential parts:
+    1. A counter variable initialized before the loop (e.g., counter=1).
+    2. A condition to check (e.g., while [ $counter -le 3 ]).
+    3. An increment step inside the loop that changes the counter (e.g., counter=$((counter + 1))).
+• Common while Loop Mistakes:
+    ◦ Infinite Loops: If you forget the increment step, the condition will never become false and the loop will run forever, potentially freezing your system.
+    ◦ Off-by-One Errors: Be careful with -lt (less than) versus -le (less than or equal to). If you want a loop to run 3 times starting from 1, you must use -le 3.
+• for Loops: Also known as a "for-each" loop, this is excellent for iterating over a sequence of items, like numbers or files.
+    ◦ It can often be cleaner and require less code than a while loop for simple sequences.
+    ◦ Example: for i in {1..3}; do echo "Hello"; done will print "Hello" three times.
+    ◦ It is extremely powerful for processing files with wildcards: for file in *.txt; do echo "Processing $file"; done.
+• until Loops: Similar to a while loop, but it runs until its condition becomes true (i.e., it runs as long as the condition is false).
+
+--------------------------------------------------------------------------------
+Topic 4: Advanced Tools & System Administration
+This section covers tools for searching, data management, networking, and customizing your environment.
+Advanced Command Line Tools
+• find: A powerful tool for searching for files based on various criteria like name, type, size, permissions, or modification time.
+    ◦ find . -name "myfile.txt": Find a file by name in the current directory (.).
+    ◦ find /etc -name "*.conf": Find all files ending in .conf inside the /etc directory.
+    ◦ find . -type f -size +1G: Find files (-type f) larger than 1 Gigabyte (+1G).
+• Wildcards: Used for pattern matching with commands like ls, rm, and find.
+    ◦ * (asterisk/splat): Matches any number of characters.
+    ◦ ? (question mark): Matches exactly one character.
+    ◦ [ ] (brackets): Matches any one character from a set (e.g., [aA] matches a or A) or a range (e.g., [a-d]).
+• grep: A fundamental tool for searching inside files for lines that contain specific text or patterns.
+    ◦ It can be used with pipes | to filter the output of other commands. Example: cat /etc/passwd | grep jane.
+    ◦ Common switches: -v (inverts the match, showing lines that don't contain the pattern), -i (ignore case).
+    ◦ It supports regular expressions (regex) for complex pattern matching.
+• Viewing & Managing Data:
+    ◦ Redirection > and Append >>: Control command output. > overwrites a file with the output, while >> adds the output to the end of the file.
+    ◦ head / tail: Display the beginning or end of a file (default 10 lines). tail -f is essential for watching log files in real-time.
+    ◦ tar: The "tape archive" tool is used to bundle many files and directories into a single archive file, called a tarball, for easy transfer or backup.
+        ▪ Create an archive: tar -cvf my_archive.tar /path/to/stuff.
+        ▪ Common Mistake: The -f (file) option must be the last letter in the option block (e.g., -cvf is good, -cfv is bad).
+        ▪ Add the -z option to compress the archive using gzip (e.g., tar -cvzf archive.tar.gz ...).
+• Managing Processes:
+    ◦ A process is any running program or command.
+    ◦ Use ps (or ps aux) to see all running processes and their Process ID (PID).
+    ◦ Use kill PID to terminate a process. This sends a "terminate" signal (SIGTERM, signal 15), politely asking the process to shut down.
+    ◦ Use kill -9 PID to forcefully terminate a stuck or unresponsive process. This sends a "kill" signal (SIGKILL, signal 9) that cannot be ignored. This is a last resort as it can lead to data loss or file corruption.
+    ◦ To practice safely, create a harmless background process with a command like sleep 120 &.
+System Administration & Customization
+• Networking: Basic diagnostic commands include:
+    ◦ ping: Checks if a host is reachable and measures response time.
+    ◦ ifconfig (legacy) and ip: Display network interface information, such as your IP address.
+• File Permissions (chmod):
+    ◦ Use ls -l to view permissions.
+    ◦ Permissions are set for the owner, the group, and the world (others).
+    ◦ The permissions are Read (r), Write (w), and Execute (x).
+    ◦ The chmod command changes permissions. The fastest way is with octal (numeric) notation.
+    ◦ Octal Values: Read = 4, Write = 2, Execute = 1. Add them together for the desired permission set.
+        ▪ 0: No permissions (---)
+        ▪ 4: Read-only (r--)
+        ▪ 5: Read and execute (r-x)
+        ▪ 6: Read and write (rw-)
+        ▪ 7: Read, write, and execute (rwx)
+    ◦ Example: chmod 755 myscript.sh gives the owner full permissions (7), while the group and others get read and execute permissions (5).
+• Environmental Variables: Global settings that affect how the shell and other programs behave. They are case-sensitive and conventionally uppercase.
+    ◦ $PATH: A list of directories the shell searches for commands.
+    ◦ $HOME: Your user's home directory.
+    ◦ $PS1: Defines the appearance of your command prompt.
+    ◦ Use printenv or echo $VARNAME to view them. Be very careful using set to change them, as it can break your session.
+• Aliases and Customization:
+    ◦ An alias is a shortcut or synonym for a longer command. Create one with alias ll='ls -lah'.
+    ◦ To make aliases and other settings permanent, add them to hidden configuration files in your home directory.
+    ◦ Hidden Bash Files: These are also called Bash Initialization files. Use ls -a to see them.
+        ▪ .bash_profile: Runs once when you log in. Good for setting paths.
+        ▪ .bashrc: Runs for every new interactive shell. Good for aliases and prompt settings.
+        ▪ .bash_history: Records all commands you've used.
+    ◦ DANGER: Editing these files requires extreme caution. A mistake can lock you out of your system. Always back them up first.
+    ◦ You can customize your prompt by changing the $PS1 variable. You can make it show the current time, the success/failure status of the last command, or even change color.

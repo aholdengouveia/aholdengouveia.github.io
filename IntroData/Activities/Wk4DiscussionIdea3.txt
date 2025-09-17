@@ -1,0 +1,4 @@
+Designing with Multiple Tables
+A key feature of relational databases is that data is structured across multiple tables that are connected using keys. For instance, you might have separate tables for Customers, Products, and Sales to ask complex questions like, "Who has purchased pencils in the last six months?".
+• Initial Post: Imagine you are creating a database for a local animal shelter. Instead of one giant table, you want to use a relational approach. Propose two or three tables you would create (e.g., "Animals," "Adopters," "Donations"). For one of your tables, list 3-4 columns (fields) it would contain.
+• Interaction Requirement: Reply to a classmate's proposed table structure. Suggest how their tables might be connected or related to each other. For example, how would you link the "Animals" table to the "Adopters" table to know who adopted which pet? Refer to the idea of "keys" or "unique ID numbers" that link data.

@@ -1,0 +1,14 @@
+ Learning Outcome:  Students will discuss the importance of databases, their role in various industries, and the challenges associated with managing and utilizing databases effectively.
+Instructions:
+Imagine you are a consultant hired by a small but rapidly growing business, the business can be anything you're interested in such as pet store, gaming, collectable card games, sports paraphernalia, whatever. The owner has been managing everything—customer information, product inventory, and every single sale—in one massive spreadsheet. As the business grows, this is becoming chaotic. You don't need to create anything, just imagine the spreadsheet.
+
+    Identify the "Breaking Point" where a spreadsheet will no longer serve the business. Describe one specific problem the business owner is likely facing by using a single spreadsheet.  This could be anything from products, inventory, customer numbers, to wanting to have more locations.  Be specific, don't just use my examples here, come up with your own.  
+    Explain how adopting a structured data model within a database would directly help solve the specific "breaking point" you identified. 
+    Propose a simple relational structure for the business. Name at least two different tables you would create. For each table, list 3-4 column headers (fields) you would include. You don't need to create either the spreadsheet or a database, just list out what you think we should have for the tables and labels.
+
+Reply:
+Look at the multi-table design proposed by at least one classmate, reply to them including the following information.
+
+    Formulate one specific business question in plain English that the store owner could now answer only because the data is split into the separate tables your classmate suggested.
+    Briefly explain why this question would be very difficult or unreliable to answer if all the data were still mixed together in a single spreadsheet.
+
