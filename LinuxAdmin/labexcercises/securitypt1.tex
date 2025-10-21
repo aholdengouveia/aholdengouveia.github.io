@@ -40,23 +40,35 @@
 %\end{enumerate}
 \section*{Complete the following problems}
 
-\subsection*{Please include the script, a screenshot showing it works as intended, cite all sources you used, and give a short explanation of how the script works works and why.}
-A lot of these would make sense as a cron job, make sure you set up a cron job for at least the snapshot, but feel free to use cron jobs for the rest as well.
-    \begin{enumerate}
-        \item Write a Script to detect ip addresses trying to gain access, examples of things to pay attention to include all use between midnight and 6, all logins for a specific user, anything else you consider behavior that should send up a red flag.  Make sure to include in your assignment what you consider a "red flag" and why
-        \item Write script to detect changes to a specific directory.  Such as changes to /var/log or /etc/ think about using a diff here, or a hash.
-        \item Monitor hidden files, root executables, and see if changes are made, who made them, and when they were changed
+
+List of AI that can be used for this lab:  ChatGPT, Gemini by Google, ClaudeAI by Anthropic, Perplexity, or Microsoft Copilot. 
+
+
+\subsection*{Pick an AI from the list above and complete the following}
+\begin{enumerate}
+    \item Ask it to make you a script for cybersecurity on your server. What was the prompt you gave it? What changes did you have to make to the script for it to work? What changes did you have to make to the prompt? How many tries did it take to get something that worked? Describe the whole conversation with the AI including all modifications and your testing on the servers.
+    \item Have the AI add in comments and explanation for the script.  Go through each line, look up what it does and compare to what AI said, give a line by line comparison of what you found in your research with links, and what the AI said. 
+    \item Test the script on each server, document how to get the script onto the server, how to run the script, what results should look like.  Include screenshots of the script running successfully and any output files. 
     \end{enumerate}
+
+    \subsection*{Pick a different AI from the list above and complete the following}
+\begin{enumerate}
+    \item Ask it to make you a script for cybersecurity on your server. What was the prompt you gave it? What changes did you have to make to the script for it to work? What changes did you have to make to the prompt? How many tries did it take to get something that worked? Describe the whole conversation with the AI including all modifications and your testing on the servers.
+    \item Have the AI add in comments and explanation for the script.  Go through each line, look up what it does and compare to what AI said, give a line by line comparison of what you found in your research with links, and what the AI said. 
+    \item Test the script on each server, document how to get the script onto the server, how to run the script, what results should look like.  Include screenshots of the script running successfully and any output files. 
+    \end{enumerate}
+
 
 
 
 \section*{Deliverables}
 \begin{enumerate}
-    \item Well commented and tested scripts including a link to your GitHub where you've uploaded them.
-    \item You should have 1 document for your CentOS machine and 1 for your other server.
+
+    \item Well commented and tested scripts including a link to your GitHub where you've uploaded them, make sure to clearly note what's been done by AI and not you.
+    \item You should have at least 1 document for your CentOS machine and 1 for your other server.  Make sure to clearly label which AI was used for each part.
     \item  Documentation for scripts should include any changes or updates to the system needed for these scripts to run.
-    \item Include any assumptions made with justifications, such as: what is considered concerning behavior? which directories are the most concerning if changes are made to them and why?
-    \item A small paragraph or two explaining if there anything else you think you should have a script and/or cron job for relating to security?  why or why not?  Must include AT LEAST 3 sources
+    \item Answers to all of the above questions about the AIs used, prompts used, changes, and anything else you needed to answer. Make sure to include answers for BOTH of the AIs used and everything tested on BOTH servers.
+    \item A small paragraph or two explaining if there is anything else you think you should have a script and/or cron job for relating to security?  Why or why not?  Must include AT LEAST 3 sources
 
 \end{enumerate}    
 
