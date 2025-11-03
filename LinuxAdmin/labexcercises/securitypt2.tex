@@ -39,20 +39,46 @@
 %\end{enumerate}
 \section*{Complete the following problems}
 
-\subsection*{Scripting}
+\subsection*{Troubleshooting}
 
-Please include the script, a screenshot showing it works as intended, cite all sources you used, and give a short explanation of how the script works works and why.
+%Please include the script, a screenshot showing it works as intended, cite all sources you used, and give a short explanation of how the script works works and why.
 
+Attached to this lab is a script that will B0rk your machine in some way.  Your job is to use your troubleshooting skills to find out what happened and how to fix it.  Think of it like a puzzle or mystery. 
+
+I STRONGLY recommend that you make a backup copy of your virtual machine before running the script or doing any troubleshooting.  It is very easy for things to go wrong and have to start over. 
+
+
+Take this script and run it as root on each server. The script must be run as root to work correctly. 
+  
     \begin{enumerate}
-        \item Take a snapshot of users every other hour (Use a cron job for this) to see if there is any suspicious adding/removing of users 
-        \item Write a script to backup your most important information and your logs.  Make sure to note what you consider "your most important information" and why you've decided on that.  You should have your script save to a directory you make specifically for backups.  You'll need to compress your files in some way.
-    \end{enumerate}    
+        \item On each server go through some troubleshooting steps that you've learned to try to figure out what the issue is, document the steps including screenshots. 
+        \item  You may use AI to help you come up with ideas, you may not use AI to do it for you, and YOU MUST test it.  "I think it works.",  "I assume it works." or   "It probably works." are not acceptable.
+
+     %   \item Take a snapshot of users every other hour (Use a cron job for this) to see if there is any suspicious adding/removing of users 
+      %  \item Write a script to backup your most important information and your logs.  Make sure to note what you consider "your most important information" and why you've decided on that.  You should have your script save to a directory you make specifically for backups.  You'll need to compress your files in some way.
+    \end{enumerate}   
+    
+  %  \subsection*{Please include the script, a screenshot showing it works as intended, cite all sources you used, and give a short explanation of how the script works works and why.}
+%A lot of these would make sense as a cron job, make sure you set up a cron job for at least the snapshot, but feel free to use cron jobs for the rest as well.
+
+
+\subsection*{Solutions}
+        \begin{enumerate}
+            \item Once you figure it out what the issue is explain how to solve it including screenshots.
+            \item Now that you have your problem solved, how could you turn your troubleshooting into a script?
+            \item Create a script in the language of your choice that will help you troubleshoot this potential set of issues, test the script on each server.
+            \item Make sure the script creates a file that gives some results to help you diagnose the issue. 
+            \item Testing should include screenshots showing that you have run the script and it gives you the expected and useful information. 
+        %\item Write a Script to detect ip addresses trying to gain access, examples of things to pay attention to include all use between midnight and 6, all logins for a specific user, anything else you consider behavior that should send up a red flag.  Make sure to include in your assignment what you consider a "red flag" and why
+        %\item Write script to detect changes to a specific directory.  Such as changes to /var/log or /etc/ think about using a diff here, or a hash.
+       % \item Monitor hidden files, root executables, and see if changes are made, who made them, and when they were changed
+    \end{enumerate}
 
     \subsection*{Documentation}
     \begin{enumerate}   
-        \item Write a document that will show how to control what daemons run on boot and how to change that.  assume your audience is technically inclined, but not an expert.
-        \item Write a one page (or less) document on how to do boot into emergency mode on each server. Include 1 paragraph executive summary on why you might want to. 
-        \item Set up a cron job to run your backup script at specific intervals (daily, weekly, and/or monthly). Document both how you set up the cron job, and make notes on why you've chosen the frequency you have.  Frequency of backup MUST include a source on why that timing is a good practice. 
+       % \item Write a document that will show how to control what daemons run on boot and how to change that.  assume your audience is technically inclined, but not an expert.
+        \item Write a one page (or less) document on how to do boot into emergency mode on each server. Include 1 paragraph executive summary on why you might want to. Include screenshots showing what each step of the emergency boot process looks like
+        \item Set up a cron job to run your troubleshooting script at specific intervals (daily, weekly, and/or monthly). Document both how you set up the cron job, and make notes on why you've chosen the frequency you have.  
 
     \end{enumerate}
 
@@ -60,11 +86,11 @@ Please include the script, a screenshot showing it works as intended, cite all s
 
 \section*{Deliverables}
 \begin{enumerate}
-    \item Well commented and tested scripts including a link to your GitHub where you've uploaded them.
-    \item You should have 1 document for your CentOS machine and 1 for your other server.
-    \item  Documentation for scripts should include any changes or updates to the system needed for these scripts to run.
+    \item You should have 1 document for your CentOS machine and 1 for your other server.  You may have more documents as well, but each server should have it's own clearly labelled document. 
+    \item  Documentation for scripts should include any changes or updates to the system needed for the script to run.  If there is nothing much needed you may include the instructions as part of a comment at the top of the script. 
     \item A short document explaining how to set up a cron job, why they are used, and any sources you used for setting them up. Make sure to include a simple sample for someone to follow
     \item Document for the boot system and emergency boot should be focused on how to do each of those things. Audience is someone technically inclined but not an expert.  Use screenshots as well as descriptions to guide someone through how to control the daemons and emergency boot.
+    \item  Turn in a document with the script, that includes your screenshots showing that it runs correctly, answers to all of the above questions and screenshots with documentation showing the troubleshooting and fix for the issues on EACH server. Make sure that you have all of these answers for both servers. Well commented and tested script should including a link to your GitHub where you've uploaded it.
     \item All Sources used should be noted at the end of each document.  
 \end{enumerate}
 
