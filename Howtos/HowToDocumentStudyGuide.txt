@@ -1,0 +1,105 @@
+This study guide provides terminology, best practices, and examples for creating understandable and maintainable technical documentation and code.
+Study Guide: Technical Documentation and Code Comments
+I. Key Vocabulary and Terminology
+Term
+Definition and Context
+Source
+Accessible Documents
+Documents that are easier to understand and read for all users, including those with disabilities.
+Alt Text
+Alternative text; ensures meaningful images have descriptive text for accessibility.
+Headings
+Concise titles used to delineate sections of a document and should be tagged and ordered like an outline.
+Document Metadata
+Information added to a document, such as the Title, Author, and Language.
+README File
+A text file, often written in Markdown, that introduces and explains a project, providing crucial information like installation and usage instructions. It is the first place people look for instructions.
+Technical Documentation
+Describes and explains anything related to a software product, its features, and functionality, written for the target audience (internal teams or external users).
+Product Documentation
+Defines the product under development and gives instructions on how to install and operate it, often including user manuals and knowledge bases.
+Process Documentation
+Content produced during the development process, such as historical logs, meeting minutes, project plans, and status reports.
+Comment (Programming)
+Text embedded in source code that is ignored by a compiler or interpreter, intended to make the code easier for a programmer to understand.
+Block Comment
+A comment delimited by specific text that marks the start and end; it can span multiple lines.
+Line Comment
+A comment that begins with a delimiter and ends at the end of the text line.
+Comment Tag / Codetag
+A prefix used to categorize a comment, such as TODO (describes work to do) or FIXME (implies work is needed to fix a bug).
+Version Control
+A system (like GitHub) used to keep a dated record of changes, ensuring a consistent record with timestamps, signatures, and authentication.
+Wikis
+A form of documentation (like Confluence) that allows multiple people to edit and improve the document, serving as a single source of truth.
+Issue Tracker
+Software (like Jira or Linear) used to give visibility into issues and track what is getting fixed, changed, or updated, including the reasoning behind the decisions.
+
+--------------------------------------------------------------------------------
+II. Samples of Good and Bad Documentation
+The two documents regarding how to play video games demonstrate contrasting approaches to documentation, illustrating the adherence to or violation of best practices.
+Sample Document
+Good Practices Observed
+Violations of Best Practice
+Sample Document 1: Best Practices Guide [85–89]
+Uses concise headings. Organizes steps using numbered lists. Includes context for hardware (e.g., HDMI port location). Uses visual aids (mock screenshots) to illustrate steps. Provides troubleshooting for common issues.
+N/A (Intentionally follows best practices)
+Sample Document 2: Intentionally Bad Practices Guide [83–84]
+N/A (Intentionally violates best practices)
+Lacks clarity (e.g., "jiggle it a bit"). Uses unprofessional tone (e.g., "it's fine probably," "idk"). Uses vague language and poor formatting (dense text, haphazard section breaks). Provides unhelpful troubleshooting. Uses highly ambiguous, unlabeled sketches.
+
+--------------------------------------------------------------------------------
+III. List of Best Practices for Documentation and Code
+Best practices cover three major areas: general documentation structure, accessibility, and effective code communication.
+A. General Documentation and Workflow Best Practices
+1. Audience Focus and Clarity:
+    ◦ Define the Target Audience at the beginning (customers, developers, etc.) to adapt the tone and style, ensuring the document is relevant and engaging. If the audience is unknown, the documentation will be unfocused and unhelpful.
+    ◦ Write using plain and clear language.
+    ◦ Use Active Voice (e.g., "He pressed the button") instead of passive voice.
+    ◦ Provide Context and do not assume readers have prior knowledge of the topic.
+    ◦ Be thorough but concise; write only as much content as needed to convey the point.
+    ◦ Avoid using acronyms, or, if they must be used, clearly state the meaning next to the acronym.
+    ◦ Do not try to be funny or overly casual; keep the tone professional.
+2. Structure and Organization:
+    ◦ Use concise headings to delineate sections.
+    ◦ Structure vertically; keep paragraphs very short, and use bullets and numbered lists to help readers easily see relevant information.
+    ◦ Create individual documents for different processes rather than compiling one massive document. Documents longer than about 11 or 12 pages can be overwhelming.
+    ◦ Include an overview or roadmap at the beginning to provide the "big picture".
+    ◦ Organize information into categories and subcategories that users can search through efficiently.
+3. Maintenance and Quality Control:
+    ◦ Treat documentation as "living documents" that are never finished, requiring periodic review and revision.
+    ◦ Fix anything you notice as an issue right away; do not assume you will remember or have time to do it later.
+    ◦ Include a date stamp at the top showing when the file was most recently updated, and use a changelog or version control to maintain a dated record of changes.
+    ◦ Use job titles instead of people's names when documenting workflow, as this is important for transferability.
+    ◦ Do not output documents to PDFs; keep master copies in a format that can be edited.
+    ◦ Centralize documentation in one location or tool (e.g., Confluence) to reduce duplicate or contradictory content.
+    ◦ Separate "live" documents (like architectural diagrams) that require continuous maintenance from historical logs (like meeting minutes).
+    ◦ Run a thorough review process involving Subject Matter Experts for accuracy and peers for usability testing.
+    ◦ Schedule regular maintenance based on analytics like failed searches or negative article ratings.
+B. Accessibility Best Practices
+1. Keep documentation accessible by default, keeping others in mind, such as those who are colorblind, have low vision, or use screen readers.
+2. Do not rely on color alone to convey meaning.
+3. Ensure meaningful images have alternative text (Alt Text).
+4. Use available Accessibility Tools to run an accessibility check as you work.
+5. Screenshots are helpful but should never be the only source of information.
+C. Code and Comment Style Best Practices
+1. Code is Primary: Write clear code before adding comments. The code itself is the primary means of documentation.
+2. Comments Explain Intent: Comments should clarify the author's intent (why the code is as it is) at a higher level of abstraction, rather than repeating what the code does.
+3. Comments Must Be Quality: Comments must be meaningful and always complete sentences. Avoid comments that are useless or obvious (e.g., % Add two numbers (x and y) together).
+4. Maintenance Cost: Remember that comments require maintenance; misleading or outdated comments are frustrating.
+5. Use Context: Use surrounding code context to avoid redundancy in names or comments.
+6. Naming Conventions:
+    ◦ Keep names straightforward and descriptive.
+    ◦ Variables and classes are typically nouns; functions and methods are verbs.
+    ◦ Maintain consistent and purposeful typography (e.g., CamelCase, lower_case).
+7. Structure and Alignment:
+    ◦ Structure vertically. Do not go beyond column 80.
+    ◦ Put only one statement per line.
+    ◦ Indent consistently, typically using spaces (e.g., 4 spaces), not tabs.
+8. Tags and Tools:
+    ◦ Use tags like TODO to describe work that needs to be done. A good TODO comment should be specific, describing the problem and who is responsible.
+    ◦ Consider using tools that auto-generate documentation or help blocks (like docstrings or Doxygen) to support documentation generation.
+9. Relocate Technical Docs: Move technical documentation (like Markdown files) closer to the code repository (git repo) to ensure updates are caught during code review.
+
+--------------------------------------------------------------------------------
+Creating effective documentation is like writing a reliable history book for your project: every event (code step) should be clear enough to stand alone, but critical choices or historical context (intent) must be recorded clearly, consistently, and accurately so that future readers can understand the whole narrative without having to guess.

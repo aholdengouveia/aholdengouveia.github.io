@@ -1,0 +1,33 @@
+def doThing(a, b):
+    # get the number ready
+    x = 0
+    for q in a:
+        # add it up
+        x = x + q
+
+    # tax math
+    t2 = x * b  # figure out tax amount
+
+    # last bit
+    finalNum = x + t2  # finish it
+
+    # done
+    return finalNum
+
+
+def big(vs):
+    # starting point
+    temp = 0
+    for item in vs:
+        # compare stuff
+        if item > temp:
+            temp = item  # keep the big one
+    return temp  # hope it's correct
+
+
+def makeName(n1, n2):
+    # both names together here
+    zz = n1.lower() + "_" + n2.lower()  # lower it
+    # give back
+    return zz
+
