@@ -4,20 +4,25 @@
 \usepackage{hyperref}
 \usepackage{xurl}
 \usepackage{graphicx}
+\usepackage[tagged, highstructure]{accessibility}
 
 \hypersetup{
     colorlinks=false,
     pdfborder={0 0 0},
+    pdftitle={Data Collection Lab},
+    pdfauthor={Adrianna Holden-Gouveia},
+    pdfsubject={Introduction to Data - Lab Assignment},
+    pdflang={en-US},
+    pdfkeywords={data collection, data analysis, statistics}
 }
 
 
 \title{Data Collection}
 \author{
         Adrianna Holden-Gouveia \\
-        Website: \url{https://aholdengouveia.name}\\ 
+        Website: \url{https://aholdengouveia.name}\\
         \date{\vspace{-5ex}}
         %Email: \href{mailto:admin@aholdengouveia.name}{admin@aholdengouveia.name} \\
-        \faLinkedin{: aholdengouveia} \\
         \faGithub {: aholdengouveia} \\
         %\faTwitter {: aholdengouveia} \\
         }
@@ -60,10 +65,12 @@ A sample of book data is included as a CSV separately.You may pick another topic
 Each screenshot should have your name, term, and year.  One of the easiest ways to do that is make a text document with your name and term/year on your computer and saving it to use all term. Any screenshots that don't include this information won't be counted.
 
 \begin{figure}[h!]
-    \centerline{\includegraphics[scale=.2]{ExampleScreenshot.png}}
+    \centering
+    \includegraphics[scale=.2]{ExampleScreenshot.png}
     \caption{This is an image of what each of your screenshots should look like}
-
-    \end{figure} 
+    \alt{Example screenshot showing a text document with student name and term/year alongside data visualization}
+    \label{fig:screenshot}
+\end{figure} 
 
 
 References, a video, a PowerPoint and some notes are available at my website \url {https://www.aholdengouveia.name/IntroData/dataforeveryone.html}
