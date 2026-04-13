@@ -4,11 +4,16 @@
 \usepackage{hyperref}
 \usepackage{xurl}
 \usepackage{graphicx}
-
+\usepackage[tagged, highstructure]{accessibility}
 
 \hypersetup{
     colorlinks=false,
     pdfborder={0 0 0},
+    pdftitle={Database Vocabulary, Keys and Normalization Lab},
+    pdfauthor={Adrianna Holden-Gouveia},
+    pdfsubject={Introduction to Data - Lab Assignment},
+    pdflang={en-US},
+    pdfkeywords={database design, primary keys, foreign keys, normalization, ERD}
 }
 
 
@@ -18,7 +23,7 @@
         Website: \url{https://aholdengouveia.name}\\ 
         \date{\vspace{-5ex}}
         %Email: \href{mailto:admin@aholdengouveia.name}{admin@aholdengouveia.name} \\
-        \faLinkedin{: aholdengouveia} \\
+%        \faLinkedin{: aholdengouveia} \\
         \faGithub {: aholdengouveia} \\
         %\faTwitter {: aholdengouveia} \\
         }
@@ -53,13 +58,13 @@ If you need to switch away from your original data for any reason, please check 
 My examples will be based on the book data I collected previously, 100bestbooks.csv if you have trouble adding your data, make sure to check how many characters are allowed in each field, it's likely the default will be a text[varchar] and only allow 100 characters, but you can change that to whatever you need. 
 
 
-    \begin{enumerate}
+    \begin{itemize}
         \item Create a table that has the labels for all your data. You can create this graphic using any program you want. Here is an example of what this should look like based on my book data: 
         
         \begin{figure}[h!]
             \centerline{\includegraphics[scale=.3]{Table1Example1_100bestbooks.png}}
             \caption{This is an image of my single table from the original CSV.}
-
+            \alt{Database table diagram showing a single table structure for 100 best books data with column headers and field definitions from the original CSV file}
             \end{figure}
 
         \item Identify some potential ways you could separate out your data in into other tables, and list at least 3 options including an explanation of why you think those might be good choices. For example with my books data you could have a table for authors, genres, Book format, publishers, or awards.
@@ -70,10 +75,10 @@ My examples will be based on the book data I collected previously, 100bestbooks.
         \begin{figure}[h!]
             \centerline{\includegraphics[scale=.3]{TableMapOption3.png}}
             \caption{This is an image of my 3 tables after choosing how I want to start normalizing my data and planning my database.}
-
+            \alt{Entity relationship diagram showing three normalized database tables with primary and foreign key relationships for the books database schema}
             \end{figure}
 
-    \end{enumerate}
+    \end{itemize}
 
 
 

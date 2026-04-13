@@ -4,12 +4,16 @@
 \usepackage{hyperref}
 \usepackage{xurl}
 \usepackage{graphicx}
-
-
+\usepackage[tagged, highstructure]{accessibility}
 
 \hypersetup{
     colorlinks=false,
     pdfborder={0 0 0},
+    pdftitle={Database Schema Lab},
+    pdfauthor={Adrianna Holden-Gouveia},
+    pdfsubject={Advanced Data - Lab Assignment},
+    pdflang={en-US},
+    pdfkeywords={database schema, ERD, normalization, primary keys, foreign keys}
 }
 
 
@@ -19,7 +23,7 @@
         Website: \url{https://aholdengouveia.name}\\ 
         \date{\vspace{-5ex}}
         %Email: \href{mailto:admin@aholdengouveia.name}{admin@aholdengouveia.name} \\
-        \faLinkedin{: aholdengouveia} \\
+%        \faLinkedin{: aholdengouveia} \\
         \faGithub {: aholdengouveia} \\
         %\faTwitter {: aholdengouveia} \\
         }
@@ -37,10 +41,10 @@
 %\tableofcontents
 
 \section*{Objectives:}
-\begin{enumerate}
+\begin{itemize}
     \item Learn how to evaluate which schema is appropriate
     \item Create your own schema
-\end{enumerate}
+\end{itemize}
 \section*{Complete the following problems}
 
 References, a video, a PowerPoint and some notes are available at my website
@@ -85,7 +89,7 @@ See the attached schema example for an idea of what you should be creating, don'
 \begin{figure}[h!]
     \centerline{\includegraphics[scale=.7]{cis210schemaexampleV2.png}}
     \caption{This is an example of a schema. My example does NOT include all the information you should have, you should have more tables, and a key, maybe some relationship tables instead of short notes, and rules listed out.}
-
+    \alt{Database schema diagram example showing table structures with primary keys, foreign keys, and relationships between tables with explanatory notes}
     \end{figure} 
 
 
