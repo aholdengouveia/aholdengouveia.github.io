@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Data Integrity</title>
+    <link href="whatisdata.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <header>
+        <h1>Data Integrity</h1>
+        <div class="author">
+            <p>Adrianna Holden-Gouveia</p>
+            <p>Website: <a href="https://aholdengouveia.name">https://aholdengouveia.name</a></p>
+            <p>GitHub: <a href="https://github.com/aholdengouveia" aria-label="GitHub profile">aholdengouveia</a></p>
+        </div>
+    </header>
+
+    <main>
+<section aria-labelledby="objectives">
+<h2 id="objectives">Objectives:</h2>
+<ul>
+<li>The goal of this lab assignment is for students to actively identify and address data integrity issues. Through hands-on analysis and problem-solving, students will gain practical experience in maintaining data quality</li>
+</ul>
+
+<p>References, a video, a PowerPoint and some notes are available at my website <a href="https://www.aholdengouveia.name/IntroData/dataintegrity.html">https://www.aholdengouveia.name/IntroData/dataintegrity.html</a></p>
+
+<p>To do this lab you need both the HalloweenCandy.csv data set, and the data set you collected in the previous lab on what is data. You will also need to use Google Sheets with the Simple ML extension. If you do not have a Google account, you can get one for free before doing this lab.</p>
+
+<p>Before attempting this lab, watch this video on Simple ML for Google Sheets <a href="https://io.google/2023/program/e695ebdd-b968-4b85-98d9-0a722892e842/">https://io.google/2023/program/e695ebdd-b968-4b85-98d9-0a722892e842/</a> to get an idea of what can be done with Machine Learning</p>
+
+<p>The documentation for Google sheets can be found <a href="https://support.google.com/docs/topic/1361472?hl=en&sjid=7424903615941153253-NA">https://support.google.com/docs/topic/1361472?hl=en&sjid=7424903615941153253-NA</a></p>
+
+<p>Each screenshot should have your name, term, and year. One of the easiest ways to do that is make a text document with your name and term/year on your computer and saving it to use all term. Any screenshots that don't include this information won't be counted.</p>
+
+<figure>
+<img src="ExampleScreenshot.png" alt="Example screenshot showing a text document with student name and term/year alongside data visualization">
+<figcaption>This is an image of what each of your screenshots should look like</figcaption>
+</figure>
+
+</section>
+
+<section aria-labelledby="given-data-set">
+<h2 id="given-data-set">Given Data set</h2>
+<p>Using the given data set HalloweenCandy.csv, we're going to actively explore the dataset and look for potential issues, including missing data, inconsistent formatting, duplicates, or outliers. The tools we'll be using are going to be under Data and Extensions in Google Sheets.</p>
+
+<ul>
+<li>Looking at the data in the columns for Age and Country, do you see any outliers or things that look different then you expected? For example, did everyone enter in a number for their age? If no, what did they say? What do you think went wrong in the collection of that data? What about for their Country?</li>
+<li>Try getting rid of the white space, go to Data --> Data Cleanup --> Trim White space. How much white space did you get rid of? Visually, what changed in your data?</li>
+<li>Using the data duplication check on the whole sheet, How many duplicates are there? Take a screenshot.</li>
+<li>Using the data duplication check on the whole sheet except the internal ID column, how many duplicates were there? Take a screenshot.</li>
+<li>Using the "Cleanup suggestions", what is the suggested actions to take? What happened after you did them?</li>
+<li>After doing the cleanup suggestions, review the column stats, pick one column and look at the suggested graph. What column did you pick? Why? What's going on in the graph? Take a screenshot.</li>
+<li>Try the Simple ML for Sheets extension on this data set. We're going to try predicting values on two of the columns. Try predicting values on the age column, and one column of your choice. How did it work? How long did it take? What happened?</li>
+</ul>
+
+</section>
+
+<section aria-labelledby="your-data-set">
+<h2 id="your-data-set">Your data set</h2>
+<p>Using the data set you collected from the previous lab, we're going to explore how we can check over that data for potential issues. You can choose to do more data validation then what's listed here, but make sure to note that in your documentation.</p>
+
+<p>Open your Data set in Google Sheets, we're going to try the data tools, and answer the following questions.</p>
+
+<ol>
+<li>Pick two of the columns, do you see any outliers or things that look different then you expected? What column did you pick to check? And why?</li>
+<li>Try getting rid of the white space. How much white space did you get rid of? Visually, what changed in your data?</li>
+<li>Using the data duplication check on the whole sheet, How many duplicates are there? Take a screenshot.</li>
+<li>Using the "Cleanup suggestions", what are the suggested actions to take? What happened after you did them?</li>
+<li>After doing the cleanup suggestions, review the column stats, pick one column and look at the suggested graph. What column did you pick? Why? What's going on in the graph? Take a screenshot.</li>
+<li>Try the Simple ML for Sheets extension on this data set. We're going to try predicting values on two of the columns.What two columns did you pick? Why did you pick them? How did it work? How long did it take? Were you expecting it to take more or less time then it did? What happened?</li>
+</ol>
+
+</section>
+
+<section aria-labelledby="deliverables">
+<h2 id="deliverables">Deliverables</h2>
+<ol>
+<li>A text document with the answers to the questions for the given data on Halloween Candy. Several of the questions have multiple parts, make sure you are answering all of them.</li>
+<li>A text document with the answers to the questions for your data set. Several of the questions have multiple parts, make sure you are answering all of them.</li>
+<li>Your data as a CSV after you have finished the data clean up tools and any changes.</li>
+</ol>
+
+</section>
+
+    </main>
+</body>
+</html>
