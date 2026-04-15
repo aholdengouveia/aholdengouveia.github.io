@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Query Optimization</title>
+    <link href="../../tools/accessible-lab.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <header>
+        <h1>Query Optimization</h1>
+        <div class="author">
+            <p>Adrianna Holden-Gouveia</p>
+            <p>Website: <a href="https://aholdengouveia.name">https://aholdengouveia.name</a></p>
+            <p>GitHub: <a href="https://github.com/aholdengouveia" aria-label="GitHub profile">aholdengouveia</a></p>
+        </div>
+    </header>
+
+    <main>
+<section aria-labelledby="objectives">
+<h2 id="objectives">Objectives:</h2>
+<ul>
+<li>Learn how to work with indexes</li>
+<li>Demonstrate how to add an index to a table to make it more efficient</li>
+</ul>
+
+</section>
+
+<section aria-labelledby="complete-the-following-problems">
+<h2 id="complete-the-following-problems">Complete the following problems</h2>
+<p>References, a video, a PowerPoint and some notes are available at my website <a href="https://www.aholdengouveia.name/AdvData/optimization.html">https://www.aholdengouveia.name/AdvData/optimization.html</a></p>
+
+</section>
+
+<section aria-labelledby="query-optimization-practice-on-kaggle">
+<h2 id="query-optimization-practice-on-kaggle">Query optimization practice on Kaggle</h2>
+<ul>
+<li>Go through the Advanced SQL course. Take a screenshot of the completed course in your profile. Make sure to include your name and the term in your screenshot. This should show you completed the tutorials</li>
+<li>Now you'll be doing the exercises. Go through the exercise on Query Optimization, it should be problems related to Pet Costumes International. Take a screenshot of your solution to both problems. Make sure to include your name and term in the screenshot.</li>
+</ul>
+
+</section>
+
+<section aria-labelledby="query-optimization-challenges">
+<h2 id="query-optimization-challenges">Query Optimization Challenges</h2>
+<p>For each query make sure to include a short (1 paragraph or less) explanation of how you optimized it and solved the problem. Each problem should also include your solution typed out, and a screenshot of your solution being run. Make sure all screenshots include your name and the term.</p>
+
+<p>Go to <a href="https://www.sandboxsql.com/">https://www.sandboxsql.com/</a> and load in the database located here <a href="https://github.com/aholdengouveia/aholdengouveia.github.io/blob/main/AdvData/labs/BooksDatabase.sqlite">https://github.com/aholdengouveia/aholdengouveia.github.io/blob/main/AdvData/labs/BooksDatabase.sqlite</a> for the following problems.</p>
+
+<p>Note: The queries don't always copy over well, especially symbols like the single quote.</p>
+
+<ol>
+<li>On your database, if I give you the information on a book title, what is the command used to create an index to run the query more efficiently?</li>
+<li>Given the following query, which will select a book with a given title, what command would you use to create an index to make this query more efficient? verbatim SELECT authors.name, books.genre FROM books INNER JOIN authors ON books.author_id = authors.author_id WHERE books.title = 'Dune' verbatim</li>
+<li>Given the following query, which selects books from a table, create a command that will add an index based on genre. Then give a new query that will show fantasy books only, making sure to use the index you created. verbatim SELECT authors.name, books.genre FROM books INNER JOIN authors ON books.author_id = authors.author_id verbatim</li>
+</ol>
+
+</section>
+
+<section aria-labelledby="deliverables">
+<h2 id="deliverables">Deliverables</h2>
+<ul>
+<li>Document for the portion of this lab using Kaggle to practice query optimization and review your SQL.</li>
+<li>Document for the challenges. Each challenge should include the solution typed out, an explanation of how you arrived at your solution including any resources used, and a screenshot of the solution being run, each screenshot must include your name and the term.</li>
+</ul>
+
+</section>
+
+    </main>
+</body>
+</html>
