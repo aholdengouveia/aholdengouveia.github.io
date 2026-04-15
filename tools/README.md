@@ -4,7 +4,23 @@ Convert .tex files to clean, accessible HTML.
 
 ## Quick Start
 
-### Convert a Single File
+### Interactive Converter (PDF + HTML)
+
+The easiest way to convert a single .tex file to both PDF and HTML:
+
+```bash
+cd tools
+./update-tex-outputs.sh
+```
+
+The script will:
+- ✓ Prompt you for the .tex file path
+- ✓ Validate the file exists
+- ✓ Generate both PDF (via pdflatex) and HTML (via tex-to-clean-html.py)
+- ✓ Show clear success/failure messages
+- ✓ Clean up auxiliary files (.aux, .log, etc.)
+
+### Convert a Single File to HTML Only
 
 ```bash
 cd IntroData/labs
@@ -69,18 +85,24 @@ make clean        # Remove generated HTML
 
 ## Files
 
-- `tex-to-clean-html.py` - Main converter (recommended)
-- `Makefile` - Simple make interface
+- `update-tex-outputs.sh` - **Interactive script to generate both PDF and HTML** (recommended for single files)
+- `tex-to-clean-html.py` - Main HTML converter
+- `Makefile` - Simple make interface for batch conversion
 - `clean-html.py` - Post-processor for htlatex output
 - `tex-to-accessible-html.sh` - Alternative using htlatex
-- `watch-tex.sh` - Watch script
+- `watch-tex.sh` - Watch script for auto-conversion
 
 ## Requirements
 
+### For HTML conversion only:
 - Python 3 (usually pre-installed)
 - Optional: `entr` for watch mode (`sudo apt-get install entr`)
 
-No pandoc or other tools required!
+### For PDF + HTML conversion (update-tex-outputs.sh):
+- Python 3
+- pdflatex (install with: `sudo apt-get install texlive-latex-base`)
+
+No pandoc required!
 
 ## Test Results
 

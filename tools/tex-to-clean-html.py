@@ -56,6 +56,50 @@ def convert_section(section_text, section_level='h2'):
 
     return html
 
+def extract_sections(body):
+    """Extract all section titles and IDs for TOC generation"""
+    sections = []
+
+    # Find all section headers
+    for match in re.finditer(r'\\((?:sub)?section)\*?\{([^}]+)\}', body):
+        section_type = match.group(1)
+        title = match.group(2)
+        section_id = re.sub(r'[^a-z0-9]+', '-', title.lower()).strip('-')
+
+        # Determine if it's a subsection
+        is_subsection = section_type == 'subsection'
+
+        sections.append({
+            'title': title,
+            'id': section_id,
+            'is_subsection': is_subsection
+        })
+
+    return sections
+
+def generate_toc(sections):
+    """Generate HTML for table of contents"""
+    if not sections:
+        return ""
+
+    html = '''        <nav aria-label="Table of Contents" class="toc">
+            <h2>On this page:</h2>
+            <ul>
+'''
+
+    for section in sections:
+        if section['is_subsection']:
+            # Skip subsections in TOC to keep it concise
+            continue
+        html += f'                <li><a href="#{section["id"]}">{section["title"]}</a></li>\n'
+
+    html += '''            </ul>
+        </nav>
+
+'''
+
+    return html
+
 def convert_content(content):
     """Convert LaTeX content to HTML"""
     html = ""
@@ -177,6 +221,9 @@ def convert_tex_to_html(tex_file, css_file="../../tools/accessible-lab.css"):
     title = extract_title(tex_content)
     author_info = extract_author_info(tex_content)
 
+    # Get PDF filename for accessibility notice
+    pdf_file = Path(tex_file).with_suffix('.pdf').name
+
     # Extract document body
     body_match = re.search(r'\\begin\{document\}(.*?)\\end\{document\}', tex_content, re.DOTALL)
     if not body_match:
@@ -184,6 +231,10 @@ def convert_tex_to_html(tex_file, css_file="../../tools/accessible-lab.css"):
         return False
 
     body = body_match.group(1)
+
+    # Extract sections for TOC
+    sections = extract_sections(body)
+    toc_html = generate_toc(sections)
 
     # Start HTML
     html = f'''<!DOCTYPE html>
@@ -195,6 +246,7 @@ def convert_tex_to_html(tex_file, css_file="../../tools/accessible-lab.css"):
     <link href="{css_file}" rel="stylesheet" type="text/css">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
         <h1>{title}</h1>
         <div class="author">
@@ -204,8 +256,14 @@ def convert_tex_to_html(tex_file, css_file="../../tools/accessible-lab.css"):
         </div>
     </header>
 
-    <main>
-'''
+    <main id="main-content">
+        <section aria-labelledby="pdf-version-notice" class="accessibility-notice">
+            <h2 id="pdf-version-notice">PDF Version Available</h2>
+            <p>This document is also available in PDF format: <a href="{pdf_file}">{pdf_file}</a></p>
+            <p>The PDF version includes bookmarks for easy navigation and is optimized for printing.</p>
+        </section>
+
+{toc_html}'''
 
     # Split into sections
     sections = re.split(r'(\\(?:sub)?section\*?\{[^}]+\})', body)

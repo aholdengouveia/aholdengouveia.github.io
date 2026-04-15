@@ -34,19 +34,25 @@ p {
 
 /* Links */
 a {
-    color: #0066cc;
+    color: #0050a0;  /* Enhanced contrast: 7.03:1 ratio (WCAG AAA) */
     text-decoration: underline;
     word-wrap: break-word;
 }
 
 a:hover, a:focus {
-    color: #004499;
+    color: #003d7a;  /* Darker on hover for better contrast */
     text-decoration: none;
 }
 
-a:focus {
-    outline: 2px solid #0066cc;
+/* Focus visible for keyboard navigation only */
+a:focus-visible {
+    outline: 2px solid #0050a0;
     outline-offset: 2px;
+}
+
+/* Remove focus outline for mouse clicks */
+a:focus:not(:focus-visible) {
+    outline: none;
 }
 
 /* Lists */
@@ -110,6 +116,65 @@ pre {
     border-width: 0;
 }
 
+/* Skip navigation link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
+    z-index: 100;
+    border-radius: 0 0 4px 0;
+}
+
+.skip-link:focus-visible {
+    top: 0;
+    color: #fff;
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+/* Table of Contents */
+.toc {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 1.5em;
+    margin: 2em 0;
+}
+
+.toc h2 {
+    margin-top: 0;
+    font-size: 1.25em;
+    color: #333;
+}
+
+.toc ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0.5em 0 0 0;
+}
+
+.toc li {
+    margin: 0.5em 0;
+    padding-left: 1em;
+    position: relative;
+}
+
+.toc li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #0050a0;
+}
+
+.toc a {
+    display: inline-block;
+    padding: 0.25em 0;
+}
+
 /* Print styles */
 @media print {
     body {
@@ -135,4 +200,110 @@ pre {
 
     h1 { font-size: 1.75em; }
     h2 { font-size: 1.5em; }
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+    }
+
+    a {
+        color: #6ba3ff;  /* Lighter blue for dark backgrounds */
+    }
+
+    a:hover, a:focus {
+        color: #8fb9ff;
+    }
+
+    code, pre {
+        background-color: #2a2a2a;
+        color: #e0e0e0;
+        border: 1px solid #444;
+    }
+
+    figcaption {
+        color: #999;
+    }
+
+    .skip-link {
+        background: #fff;
+        color: #000;
+    }
+
+    .skip-link:focus-visible {
+        outline: 2px solid #6ba3ff;
+    }
+
+    a:focus-visible {
+        outline: 2px solid #6ba3ff;
+    }
+
+    .toc {
+        background-color: #2a2a2a;
+        border-color: #444;
+    }
+
+    .toc h2 {
+        color: #e0e0e0;
+    }
+
+    .toc li::before {
+        color: #6ba3ff;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    body {
+        color: #000;
+        background-color: #fff;
+    }
+
+    a {
+        color: #0000ee;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+
+    a:hover {
+        color: #0000ee;
+        background-color: #ffff00;
+    }
+
+    a:focus-visible {
+        color: #0000ee;
+        background-color: #ffff00;
+        outline: 3px solid #000;
+        outline-offset: 2px;
+    }
+
+    code, pre {
+        background-color: #fff;
+        color: #000;
+        border: 2px solid #000;
+    }
+
+    .skip-link {
+        background: #000;
+        color: #fff;
+        border: 2px solid #fff;
+    }
+
+    .skip-link:focus-visible {
+        outline: 3px solid #000;
+        background: #fff;
+        color: #000;
+    }
 }
