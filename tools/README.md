@@ -27,7 +27,7 @@ The `tex-to-clean-html.py` script generates accessible HTML similar to whatisdat
 - ✓ Proper `<header>`, `<main>`, `<section>` structure
 - ✓ ARIA labels (`aria-labelledby`) for accessibility
 - ✓ Responsive design (viewport meta tag)
-- ✓ Links to whatisdata.css
+- ✓ Links to accessible-lab.css in tools folder
 - ✓ Converts lists, figures, links automatically
 - ✓ No complex LaTeX-generated classes
 
@@ -39,7 +39,7 @@ The `tex-to-clean-html.py` script generates accessible HTML similar to whatisdat
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lab Title</title>
-    <link href="whatisdata.css" rel="stylesheet" type="text/css">
+    <link href="../../tools/accessible-lab.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <header>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Scripting for Server Security Part 2</title>
+    <link href="../../tools/accessible-lab.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <header>
+        <h1>Scripting for Server Security Part 2</h1>
+        <div class="author">
+            <p>Adrianna Holden-Gouveia</p>
+            <p>Website: <a href="https://aholdengouveia.name">https://aholdengouveia.name</a></p>
+            <p>GitHub: <a href="https://github.com/aholdengouveia" aria-label="GitHub profile">aholdengouveia</a></p>
+        </div>
+    </header>
+
+    <main>
+<section aria-labelledby="objectives">
+<h2 id="objectives">Objectives:</h2>
+<ul>
+<li>The objective of this lab is to develop students' systematic troubleshooting skills and security automation capabilities through hands-on problem-solving exercises. Students will diagnose and resolve deliberately introduced server issues, transform troubleshooting processes into automated scripts, implement scheduled security monitoring using cron jobs, and master emergency boot procedures—building the diagnostic expertise and proactive security practices essential for maintaining robust and resilient Linux server environments.</li>
+</ul>
+
+</section>
+
+<section aria-labelledby="complete-the-following-problems">
+<h2 id="complete-the-following-problems">Complete the following problems</h2>
+</section>
+
+<section aria-labelledby="troubleshooting">
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>Attached to this lab is a script that will B0rk your machine in some way. Your job is to use your troubleshooting skills to find out what happened and how to fix it. Think of it like a puzzle or mystery.</p>
+
+<p>I STRONGLY recommend that you make a backup copy of your virtual machine before running the script or doing any troubleshooting. It is very easy for things to go wrong and have to start over.</p>
+
+<ol>
+<li>On each server go through some troubleshooting steps that you've learned to try to figure out what the issue is, document the steps including screenshots.</li>
+<li>You may use AI to help you come up with ideas, you may not use AI to do it for you, and YOU MUST test it. "I think it works.", "I assume it works." or "It probably works." are not acceptable.</li>
+</ol>
+
+<p>enumerate</p>
+
+</section>
+
+<section aria-labelledby="please-include-the-script-a-screenshot-showing-it-works-as-intended-cite-all-sources-you-used-and-give-a-short-explanation-of-how-the-script-works-works-and-why">
+<h2 id="please-include-the-script-a-screenshot-showing-it-works-as-intended-cite-all-sources-you-used-and-give-a-short-explanation-of-how-the-script-works-works-and-why">Please include the script, a screenshot showing it works as intended, cite all sources you used, and give a short explanation of how the script works works and why.</h2>
+</section>
+
+<section aria-labelledby="solutions">
+<h2 id="solutions">Solutions</h2>
+<ol>
+<li>Once you figure it out what the issue is explain how to solve it including screenshots.</li>
+<li>Now that you have your problem solved, how could you turn your troubleshooting into a script?</li>
+<li>Create a script in the language of your choice that will help you troubleshoot this potential set of issues, test the script on each server.</li>
+<li>Make sure the script creates a file that gives some results to help you diagnose the issue.</li>
+<li>Testing should include screenshots showing that you have run the script and it gives you the expected and useful information.</li>
+<li>Write a Script to detect ip addresses trying to gain access, examples of things to pay attention to include all use between midnight and 6, all logins for a specific user, anything else you consider behavior that should send up a red flag. Make sure to include in your assignment what you consider a "red flag" and why</li>
+<li>Write script to detect changes to a specific directory. Such as changes to /var/log or /etc/ think about using a diff here, or a hash.</li>
+<li>Monitor hidden files, root executables, and see if changes are made, who made them, and when they were changed</li>
+</ol>
+
+</section>
+
+<section aria-labelledby="documentation">
+<h2 id="documentation">Documentation</h2>
+<ol>
+<li>Write a document that will show how to control what daemons run on boot and how to change that. assume your audience is technically inclined, but not an expert.</li>
+<li>Write a one page (or less) document on how to do boot into emergency mode on each server. Include 1 paragraph executive summary on why you might want to. Include screenshots showing what each step of the emergency boot process looks like</li>
+<li>Set up a cron job to run your troubleshooting script at specific intervals (daily, weekly, and/or monthly). Document both how you set up the cron job, and make notes on why you've chosen the frequency you have.</li>
+</ol>
+
+</section>
+
+<section aria-labelledby="deliverables">
+<h2 id="deliverables">Deliverables</h2>
+<ol>
+<li>You should have 1 document for your CentOS machine and 1 for your other server. You may have more documents as well, but each server should have it's own clearly labelled document.</li>
+<li>Documentation for scripts should include any changes or updates to the system needed for the script to run. If there is nothing much needed you may include the instructions as part of a comment at the top of the script.</li>
+<li>A short document explaining how to set up a cron job, why they are used, and any sources you used for setting them up. Make sure to include a simple sample for someone to follow</li>
+<li>Document for the boot system and emergency boot should be focused on how to do each of those things. Audience is someone technically inclined but not an expert. Use screenshots as well as descriptions to guide someone through how to control the daemons and emergency boot.</li>
+<li>Turn in a document with the script, that includes your screenshots showing that it runs correctly, answers to all of the above questions and screenshots with documentation showing the troubleshooting and fix for the issues on EACH server. Make sure that you have all of these answers for both servers. Well commented and tested script should including a link to your GitHub where you've uploaded it.</li>
+<li>All Sources used should be noted at the end of each document.</li>
+</ol>
+
+</section>
+
+    </main>
+</body>
+</html>

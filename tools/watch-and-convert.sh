@@ -32,7 +32,7 @@ convert_tex_to_html() {
         --from latex \
         --to html5 \
         --standalone \
-        --css=whatisdata.css \
+        --css=accessible-lab.css \
         --metadata title="$title" \
         --metadata lang=en-US \
         --output "$html_file"

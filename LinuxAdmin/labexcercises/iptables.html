@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IP Tables</title>
+    <link href="../../tools/accessible-lab.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <header>
+        <h1>IP Tables</h1>
+        <div class="author">
+            <p>Adrianna Holden-Gouveia</p>
+            <p>Website: <a href="https://aholdengouveia.name">https://aholdengouveia.name</a></p>
+            <p>GitHub: <a href="https://github.com/aholdengouveia" aria-label="GitHub profile">aholdengouveia</a></p>
+        </div>
+    </header>
+
+    <main>
+<section aria-labelledby="objectives">
+<h2 id="objectives">Objectives:</h2>
+<ul>
+<li>The objective of this lab is to introduce students to iptables, Linux's built-in firewall and packet filtering system, which is critical for network security and server protection. Through hands-on exercises, students will learn to configure firewall rules for common services, control network traffic through port management and forwarding, block or allow specific hosts, and understand strategies for preventing network attacks such as DDOS—essential skills for securing Linux servers in production environments.</li>
+</ul>
+
+</section>
+
+<section aria-labelledby="complete-the-following-problems">
+<h2 id="complete-the-following-problems">Complete the following problems</h2>
+<p>References, a video, a PowerPoint and some notes are available at my website https://www.aholdengouveia.name/LinuxAdmin/iptables.html</p>
+
+</section>
+
+<section aria-labelledby="go-through-both-servers-and-complete-the-following-problems">
+<h2 id="go-through-both-servers-and-complete-the-following-problems">Go through both servers and complete the following problems.  </h2>
+<ol>
+<li>Deal with web server (open needed ports, and forward port 80 traffic to 8080)</li>
+<li>Deal with MySQL service (open needed ports)</li>
+<li>Deal with SSH service (allow incoming and outgoing SSH, second script to deny SSH)</li>
+<li>Deal with Email service (Such as allow or block incoming SMTP,POP3...)</li>
+<li>Script to allow/block specific hosts, MAC addresses</li>
+<li>A script/command to block telnet, and another one to block ping</li>
+</ol>
+
+<p>Write the specs for how you think you could prevent a DDOS attack using IPtables. Can you write a script for this? Cite your sources!</p>
+
+</section>
+
+<section aria-labelledby="deliverables">
+<h2 id="deliverables">Deliverables</h2>
+<p>Target Market is someone trying to take care of your server that hasn't used IPTables before, assume some technical knowledge but not expertise. Screenshots are helpful to go with your descriptions.</p>
+
+<p>Include documents for BOTH servers clearly labeled with what the document is and which server it's for</p>
+
+<ul>
+<li>A text document including the answers to each question, (scripts or statements or commands are fine) but explain why you choose what you choose. Include any assumptions made about what you consider "dealing with" as well as the screenshots showing Wireshark to prove your script/statement/command works.</li>
+<li>Documentation of your IPtables for each of your servers should include a list of changes to the chains you've made including which table you think needs to be changed, when the change was made. Include a copy of your original IPtable and your updated IPtable at the end of this assignment.</li>
+<li>A short document explaining how you think you could prevent a DDOS attack using IPtables. Cite at least 2 sources.</li>
+</ul>
+
+</section>
+
+    </main>
+</body>
+</html>

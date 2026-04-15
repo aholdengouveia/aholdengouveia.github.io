@@ -29,7 +29,7 @@ def clean_html(html_file):
         # Link to simplified CSS
         content = re.sub(
             r'<link[^>]*rel=["\']stylesheet["\'][^>]*>',
-            '<link href="whatisdata.css" rel="stylesheet" type="text/css">',
+            '<link href="../../tools/accessible-lab.css" rel="stylesheet" type="text/css">',
             content
         )
 

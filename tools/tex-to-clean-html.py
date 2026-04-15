@@ -167,7 +167,7 @@ def clean_latex(text):
 
     return text
 
-def convert_tex_to_html(tex_file, css_file="whatisdata.css"):
+def convert_tex_to_html(tex_file, css_file="../../tools/accessible-lab.css"):
     """Main conversion function"""
     # Read .tex file
     with open(tex_file, 'r', encoding='utf-8') as f:

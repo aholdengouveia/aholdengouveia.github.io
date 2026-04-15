@@ -26,16 +26,16 @@ if ! command -v pandoc &> /dev/null; then
     exit 1
 fi
 
-# Find CSS file (look in current dir, parent dir, or use default)
-CSS_FILE=""
-if [ -f "whatisdata.css" ]; then
-    CSS_FILE="whatisdata.css"
-elif [ -f "../whatisdata.css" ]; then
-    CSS_FILE="../whatisdata.css"
-elif [ -f "style.css" ]; then
-    CSS_FILE="style.css"
-else
-    echo "Warning: No CSS file found. HTML will be generated without styling."
+# Find CSS file (look for accessible-lab.css in tools folder)
+CSS_FILE="../../tools/accessible-lab.css"
+if [ ! -f "$CSS_FILE" ]; then
+    # Fallback: try to find it relative to script location
+    SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+    CSS_FILE="$SCRIPT_DIR/accessible-lab.css"
+    if [ ! -f "$CSS_FILE" ]; then
+        echo "Warning: No CSS file found. HTML will be generated without styling."
+        CSS_FILE=""
+    fi
 fi
 
 # Function to convert .tex to .html
