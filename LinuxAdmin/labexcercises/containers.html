@@ -7,7 +7,8 @@
     <link href="../../tools/accessible-lab.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <header>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
         <h1>Containers</h1>
         <div class="author">
             <p>Adrianna Holden-Gouveia</p>
@@ -16,8 +17,42 @@
         </div>
     </header>
 
-    <main>
-<section aria-labelledby="objectives">
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li><a href="/LinuxAdmin/">Linux Administration</a></li>
+                <li aria-current="page">Containers</li>
+            </ol>
+        </nav>
+
+    <main role="main" id="main-content">
+        <section role="region" aria-labelledby="pdf-version-notice" class="accessibility-notice">
+            <h2 id="pdf-version-notice">PDF Version Available</h2>
+            <p>This document is also available in PDF format: <a href="containers.pdf">containers.pdf</a></p>
+            <p>The PDF version includes bookmarks for easy navigation and is optimized for printing.</p>
+        </section>
+
+        <nav role="navigation" aria-label="Table of Contents" class="toc">
+            <h2>On this page:</h2>
+            <ul>
+                <li><a href="#accessibility-notice">Accessibility Notice</a></li>
+                <li><a href="#objectives">Objectives:</a></li>
+                <li><a href="#complete-the-following-problems">Complete the following problems</a></li>
+                <li><a href="#deliverables">Deliverables</a></li>
+            </ul>
+        </nav>
+
+<section role="region" aria-labelledby="accessibility-notice">
+<h2 id="accessibility-notice">Accessibility Notice</h2>
+<p>This document is also available in HTML format at:</p>
+
+<p><a href="https://aholdengouveia.name/LinuxAdmin/labexcercises/containers.html">https://aholdengouveia.name/LinuxAdmin/labexcercises/containers.html</a></p>
+
+<p>The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.</p>
+
+</section>
+
+<section role="region" aria-labelledby="objectives">
 <h2 id="objectives">Objectives:</h2>
 <ul>
 <li>The objective of this lab is to introduce students to containerization technologies, including Docker and Kubernetes, which are widely used in modern server administration and application deployment. Through hands-on installation and configuration exercises, students will gain practical experience deploying containerized applications, understand the advantages and limitations of containers, and evaluate their use in enterprise environments.</li>
@@ -25,13 +60,13 @@
 
 </section>
 
-<section aria-labelledby="complete-the-following-problems">
+<section role="region" aria-labelledby="complete-the-following-problems">
 <h2 id="complete-the-following-problems">Complete the following problems</h2>
 <p>References, a video, a PowerPoint and some notes are available at my website <a href="https://www.aholdengouveia.name/LinuxAdmin/containers.html">https://www.aholdengouveia.name/LinuxAdmin/containers.html</a></p>
 
 </section>
 
-<section aria-labelledby="you-may-do-this-on-one-of-your-servers">
+<section role="region" aria-labelledby="you-may-do-this-on-one-of-your-servers">
 <h2 id="you-may-do-this-on-one-of-your-servers">You may do this on one of your servers.</h2>
 <ol>
 <li>Install Docker and Kubernetes on your server. You can use Microk8 as your Kubernetes installation method Instructions: <a href="https://microk8s.io/">https://microk8s.io/</a></li>
@@ -41,11 +76,11 @@
 
 </section>
 
-<section aria-labelledby="deliverables">
+<section role="region" aria-labelledby="deliverables">
 <h2 id="deliverables">Deliverables</h2>
 </section>
 
-<section aria-labelledby="target-market-is-someone-technically-inclined-but-unfamiliar-with-virtualization-include-screenshots-to-walk-them-through-the-install-process-as-well-as-explanations-of-what-you-re-doing-and-any-troubleshooting-that-was-needed">
+<section role="region" aria-labelledby="target-market-is-someone-technically-inclined-but-unfamiliar-with-virtualization-include-screenshots-to-walk-them-through-the-install-process-as-well-as-explanations-of-what-you-re-doing-and-any-troubleshooting-that-was-needed">
 <h2 id="target-market-is-someone-technically-inclined-but-unfamiliar-with-virtualization-include-screenshots-to-walk-them-through-the-install-process-as-well-as-explanations-of-what-you-re-doing-and-any-troubleshooting-that-was-needed">Target Market is someone technically inclined but unfamiliar with virtualization. Include screenshots to walk them through the install process, as well as explanations of what you're doing and any troubleshooting that was needed.</h2>
 <ol>
 <li>A document on how to install Docker and Kubernetes on your server.</li>

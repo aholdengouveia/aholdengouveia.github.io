@@ -7,7 +7,8 @@
     <link href="../../tools/accessible-lab.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <header>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
         <h1>Database Vocabulary, Keys and Normalization</h1>
         <div class="author">
             <p>Adrianna Holden-Gouveia</p>
@@ -16,8 +17,42 @@
         </div>
     </header>
 
-    <main>
-<section aria-labelledby="objectives">
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li><a href="/IntroData/">Introduction to Data</a></li>
+                <li aria-current="page">Database Vocabulary, Keys and Normalization</li>
+            </ol>
+        </nav>
+
+    <main role="main" id="main-content">
+        <section role="region" aria-labelledby="pdf-version-notice" class="accessibility-notice">
+            <h2 id="pdf-version-notice">PDF Version Available</h2>
+            <p>This document is also available in PDF format: <a href="dbvocab.pdf">dbvocab.pdf</a></p>
+            <p>The PDF version includes bookmarks for easy navigation and is optimized for printing.</p>
+        </section>
+
+        <nav role="navigation" aria-label="Table of Contents" class="toc">
+            <h2>On this page:</h2>
+            <ul>
+                <li><a href="#accessibility-notice">Accessibility Notice</a></li>
+                <li><a href="#objectives">Objectives:</a></li>
+                <li><a href="#complete-the-following">Complete the following</a></li>
+                <li><a href="#deliverables">Deliverables</a></li>
+            </ul>
+        </nav>
+
+<section role="region" aria-labelledby="accessibility-notice">
+<h2 id="accessibility-notice">Accessibility Notice</h2>
+<p>This document is also available in HTML format at:</p>
+
+<p><a href="https://aholdengouveia.name/IntroData/labs/dbvocab.html">https://aholdengouveia.name/IntroData/labs/dbvocab.html</a></p>
+
+<p>The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.</p>
+
+</section>
+
+<section role="region" aria-labelledby="objectives">
 <h2 id="objectives">Objectives:</h2>
 <ul>
 <li>The objective of this lab is to introduce students to the fundamental concepts of database keys, vocabulary, and normalization without involving programming or mathematical operations. Students will gain a basic understanding of these concepts through hands-on exploration and practical examples.</li>
@@ -27,11 +62,11 @@
 
 </section>
 
-<section aria-labelledby="complete-the-following">
+<section role="region" aria-labelledby="complete-the-following">
 <h2 id="complete-the-following">Complete the following</h2>
 </section>
 
-<section aria-labelledby="using-the-data-you-have-collected-and-started-working-with">
+<section role="region" aria-labelledby="using-the-data-you-have-collected-and-started-working-with">
 <h2 id="using-the-data-you-have-collected-and-started-working-with">Using the data you have collected and started working with</h2>
 <p>If you need to switch away from your original data for any reason, please check in with me before you do so.</p>
 
@@ -48,7 +83,7 @@
 
 </section>
 
-<section aria-labelledby="deliverables">
+<section role="region" aria-labelledby="deliverables">
 <h2 id="deliverables">Deliverables</h2>
 <ol>
 <li>A text document that contains the answers to all the above questions</li>

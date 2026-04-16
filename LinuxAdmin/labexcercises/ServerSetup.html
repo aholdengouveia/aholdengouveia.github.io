@@ -8,7 +8,7 @@
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    <header>
+    <header role="banner">
         <h1>Server Setup</h1>
         <div class="author">
             <p>Adrianna Holden-Gouveia</p>
@@ -17,14 +17,22 @@
         </div>
     </header>
 
-    <main id="main-content">
-        <section aria-labelledby="pdf-version-notice" class="accessibility-notice">
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li><a href="/LinuxAdmin/">Linux Administration</a></li>
+                <li aria-current="page">Server Setup</li>
+            </ol>
+        </nav>
+
+    <main role="main" id="main-content">
+        <section role="region" aria-labelledby="pdf-version-notice" class="accessibility-notice">
             <h2 id="pdf-version-notice">PDF Version Available</h2>
             <p>This document is also available in PDF format: <a href="ServerSetup.pdf">ServerSetup.pdf</a></p>
             <p>The PDF version includes bookmarks for easy navigation and is optimized for printing.</p>
         </section>
 
-        <nav aria-label="Table of Contents" class="toc">
+        <nav role="navigation" aria-label="Table of Contents" class="toc">
             <h2>On this page:</h2>
             <ul>
                 <li><a href="#accessibility-notice">Accessibility Notice</a></li>
@@ -35,7 +43,7 @@
             </ul>
         </nav>
 
-<section aria-labelledby="accessibility-notice">
+<section role="region" aria-labelledby="accessibility-notice">
 <h2 id="accessibility-notice">Accessibility Notice</h2>
 <p>This document is also available in HTML format at:</p>
 
@@ -45,7 +53,7 @@
 
 </section>
 
-<section aria-labelledby="objectives">
+<section role="region" aria-labelledby="objectives">
 <h2 id="objectives">Objectives:</h2>
 <ul>
 <li>The objective of this lab is to introduce students to the fundamental practices of Linux server deployment and configuration management. Through hands-on installation of multiple server distributions, students will learn to set up production-ready server environments, configure essential services including network connectivity and file sharing, and develop professional technical documentation skills—establishing the foundational infrastructure and documentation practices that will support all subsequent system administration work throughout the course.</li>
@@ -53,15 +61,15 @@
 
 </section>
 
-<section aria-labelledby="welcome-to-acme-corporation">
+<section role="region" aria-labelledby="welcome-to-acme-corporation">
 <h2 id="welcome-to-acme-corporation">Welcome to Acme Corporation!</h2>
 </section>
 
-<section aria-labelledby="you-have-accepted-the-post-of-systems-administrator-for-acme-corporation">
+<section role="region" aria-labelledby="you-have-accepted-the-post-of-systems-administrator-for-acme-corporation">
 <h2 id="you-have-accepted-the-post-of-systems-administrator-for-acme-corporation">You have accepted the post of Systems Administrator for Acme corporation.</h2>
 </section>
 
-<section aria-labelledby="congratulations-on-your-new-job">
+<section role="region" aria-labelledby="congratulations-on-your-new-job">
 <h2 id="congratulations-on-your-new-job">Congratulations on your new job!</h2>
 <p>If you've never done technical documentation before, go through the module on Technical documentation and portfolios before attempting this lab.</p>
 
@@ -69,19 +77,19 @@
 <li>References for an Introduction to Servers, a video and some notes are available at my website</li>
 </ul>
 
-<p>https://www.aholdengouveia.name/LinuxAdmin/IntroServers.html</p>
+<p><a href="https://www.aholdengouveia.name/LinuxAdmin/IntroServers.html">https://www.aholdengouveia.name/LinuxAdmin/IntroServers.html</a></p>
 
 <p>I also have a section on how to do documentation</p>
 
-<p>https://www.aholdengouveia.name/LinuxAdmin/Documentation.html</p>
+<p><a href="https://www.aholdengouveia.name/LinuxAdmin/Documentation.html">https://www.aholdengouveia.name/LinuxAdmin/Documentation.html</a></p>
 
 </section>
 
-<section aria-labelledby="complete-the-following-problems">
+<section role="region" aria-labelledby="complete-the-following-problems">
 <h2 id="complete-the-following-problems">Complete the following problems</h2>
 </section>
 
-<section aria-labelledby="we-need-two-linux-systems-that-are-servers-virtual-machines-are-the-recommended-option">
+<section role="region" aria-labelledby="we-need-two-linux-systems-that-are-servers-virtual-machines-are-the-recommended-option">
 <h2 id="we-need-two-linux-systems-that-are-servers-virtual-machines-are-the-recommended-option">We need two Linux systems that are servers.  Virtual machines are the recommended option</h2>
 <ol>
 <li>You will need to use 2 different Linux Distributions (also known as distros or flavours), one for each setup.</li>
@@ -94,7 +102,7 @@
 
 </section>
 
-<section aria-labelledby="deliverables">
+<section role="region" aria-labelledby="deliverables">
 <h2 id="deliverables">Deliverables</h2>
 <p>Target market is someone trying to follow along with you to make their own machines, assume some technical knowledge but not expertise.</p>
 

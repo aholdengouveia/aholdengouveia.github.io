@@ -7,7 +7,8 @@
     <link href="../../tools/accessible-lab.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <header>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
         <h1>Server Hardening</h1>
         <div class="author">
             <p>Adrianna Holden-Gouveia</p>
@@ -16,8 +17,42 @@
         </div>
     </header>
 
-    <main>
-<section aria-labelledby="objectives">
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li><a href="/LinuxAdmin/">Linux Administration</a></li>
+                <li aria-current="page">Server Hardening</li>
+            </ol>
+        </nav>
+
+    <main role="main" id="main-content">
+        <section role="region" aria-labelledby="pdf-version-notice" class="accessibility-notice">
+            <h2 id="pdf-version-notice">PDF Version Available</h2>
+            <p>This document is also available in PDF format: <a href="serverhardening.pdf">serverhardening.pdf</a></p>
+            <p>The PDF version includes bookmarks for easy navigation and is optimized for printing.</p>
+        </section>
+
+        <nav role="navigation" aria-label="Table of Contents" class="toc">
+            <h2>On this page:</h2>
+            <ul>
+                <li><a href="#accessibility-notice">Accessibility Notice</a></li>
+                <li><a href="#objectives">Objectives:</a></li>
+                <li><a href="#complete-the-following-problems">Complete the following problems</a></li>
+                <li><a href="#deliverables">Deliverables</a></li>
+            </ul>
+        </nav>
+
+<section role="region" aria-labelledby="accessibility-notice">
+<h2 id="accessibility-notice">Accessibility Notice</h2>
+<p>This document is also available in HTML format at:</p>
+
+<p><a href="https://aholdengouveia.name/LinuxAdmin/labexcercises/serverhardening.html">https://aholdengouveia.name/LinuxAdmin/labexcercises/serverhardening.html</a></p>
+
+<p>The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.</p>
+
+</section>
+
+<section role="region" aria-labelledby="objectives">
 <h2 id="objectives">Objectives:</h2>
 <ul>
 <li>The objective of this lab is to introduce students to server hardening practices and security auditing through the use of automated tools and health monitoring systems. Through hands-on exercises, students will learn to use Lynis for comprehensive security audits, analyze and remediate security vulnerabilities, debug and refactor poorly written monitoring scripts, and develop effective server health monitoring systems—building the critical skills needed to maintain secure, well-monitored production servers and respond to real-world code quality challenges.</li>
@@ -25,18 +60,18 @@
 
 </section>
 
-<section aria-labelledby="complete-the-following-problems">
+<section role="region" aria-labelledby="complete-the-following-problems">
 <h2 id="complete-the-following-problems">Complete the following problems</h2>
 </section>
 
-<section aria-labelledby="please-include-the-command-a-screenshot-showing-it-works-as-intended-cite-all-sources-you-used-and-give-a-short-explanation-of-how-the-command-works-and-why">
+<section role="region" aria-labelledby="please-include-the-command-a-screenshot-showing-it-works-as-intended-cite-all-sources-you-used-and-give-a-short-explanation-of-how-the-command-works-and-why">
 <h2 id="please-include-the-command-a-screenshot-showing-it-works-as-intended-cite-all-sources-you-used-and-give-a-short-explanation-of-how-the-command-works-and-why">Please include the command, a screenshot showing it works as intended, cite all sources you used, and give a short explanation of how the command works and why.</h2>
 <p>This lab includes a script that was written by me using an AI. Scripts written by AI can be of varying quality, and it's likely you'll get slop and need to fix it. This script is slop on purpose and needs to be fixed. Be wary of the comments by previous developers (me!), you never know who you can trust, here be dragons!</p>
 
 <p>The script is attached to this lab, it's called "BadServerHealthCheck", there is a bash script version and a Python version. You make pick which one you want to fix. There are some hints in the comments for things to fix. Not everything that should be fixed is hinted at, some things that need fixing are included and hidden for extra coding chaos. Let the games begin.</p>
 
 <ol>
-<li>Download and install Lynis (https://cisofy.com/lynis/) on both your servers and run it.</li>
+<li>Download and install Lynis (<a href="https://cisofy.com/lynis/)">https://cisofy.com/lynis/)</a> on both your servers and run it.</li>
 <li>Create a short report on the findings (one report for each server) and what you'll do to improve your server setup.</li>
 <li>Fix the given script to monitor the health of your server using the commands from the PowerPoints on Security, DFIR and Backups as your base. Think about what info you care about, and how to make it easier for you to read or upload to your dashboard. Data is only good if you're using it for something.</li>
 <li>When fixing/debugging/refactoring the script, make sure you also add comments for what each thing actually does.</li>
@@ -44,11 +79,11 @@
 
 </section>
 
-<section aria-labelledby="deliverables">
+<section role="region" aria-labelledby="deliverables">
 <h2 id="deliverables">Deliverables</h2>
 </section>
 
-<section aria-labelledby="scripts-with-no-documentation-and-no-commentary-will-not-be-accepted">
+<section role="region" aria-labelledby="scripts-with-no-documentation-and-no-commentary-will-not-be-accepted">
 <h2 id="scripts-with-no-documentation-and-no-commentary-will-not-be-accepted">Scripts with no documentation and no commentary will not be accepted.</h2>
 <ol>
 <li>Your Lynis reports, including any changes you made to each server and why you made those changes.</li>

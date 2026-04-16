@@ -4,23 +4,28 @@
 \usepackage{hyperref}
 \usepackage[tagged, highstructure]{accessibility}
 \usepackage{bookmark}
+\usepackage{enumitem}
 
 \hypersetup{
     colorlinks=false,
-    pdfborder={0 0 0}
+    pdfborder={0 0 0},
+    pdftitle={Grep Lab},
+    pdfauthor={Adrianna Holden-Gouveia},
+    pdfsubject={Linux Administration - Lab Assignment},
+    pdflang={en-US},
+    pdfkeywords={grep, pattern matching, text search, Linux, regular expressions}
+
+}
 
 % Configure PDF bookmarks for navigation
 \bookmarksetup{
     numbered,
     open,
 }
-,
-    pdftitle={Grep Lab},
-    pdfauthor={Adrianna Holden-Gouveia},
-    pdfsubject={Linux Administration - Lab Assignment},
-    pdflang={en-US},
-    pdfkeywords={grep, pattern matching, text search, Linux, regular expressions}
-}
+
+% Configure list spacing for better accessibility
+\setlist{nosep}
+
 
 
 \title{Grep}
@@ -62,7 +67,7 @@ The HTML version provides enhanced accessibility features including keyboard nav
 
 References, a video and some notes are available at my website
 
-https://www.aholdengouveia.name/LinuxAdmin/Grep.html
+\url{https://www.aholdengouveia.name/LinuxAdmin/Grep.html}
 
 \subsection*{Please include the command, a screenshot showing it works as intended, cite all sources you used, and give a short explanation of how the command works and why.}
     \begin{enumerate}

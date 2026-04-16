@@ -7,7 +7,8 @@
     <link href="../../tools/accessible-lab.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <header>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
         <h1>Data Security</h1>
         <div class="author">
             <p>Adrianna Holden-Gouveia</p>
@@ -16,8 +17,42 @@
         </div>
     </header>
 
-    <main>
-<section aria-labelledby="objectives">
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li><a href="/IntroData/">Introduction to Data</a></li>
+                <li aria-current="page">Data Security</li>
+            </ol>
+        </nav>
+
+    <main role="main" id="main-content">
+        <section role="region" aria-labelledby="pdf-version-notice" class="accessibility-notice">
+            <h2 id="pdf-version-notice">PDF Version Available</h2>
+            <p>This document is also available in PDF format: <a href="datasecurity.pdf">datasecurity.pdf</a></p>
+            <p>The PDF version includes bookmarks for easy navigation and is optimized for printing.</p>
+        </section>
+
+        <nav role="navigation" aria-label="Table of Contents" class="toc">
+            <h2>On this page:</h2>
+            <ul>
+                <li><a href="#accessibility-notice">Accessibility Notice</a></li>
+                <li><a href="#objectives">Objectives:</a></li>
+                <li><a href="#complete-the-following-problems">Complete the following problems</a></li>
+                <li><a href="#deliverables">Deliverables</a></li>
+            </ul>
+        </nav>
+
+<section role="region" aria-labelledby="accessibility-notice">
+<h2 id="accessibility-notice">Accessibility Notice</h2>
+<p>This document is also available in HTML format at:</p>
+
+<p><a href="https://aholdengouveia.name/IntroData/labs/datasecurity.html">https://aholdengouveia.name/IntroData/labs/datasecurity.html</a></p>
+
+<p>The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.</p>
+
+</section>
+
+<section role="region" aria-labelledby="objectives">
 <h2 id="objectives">Objectives:</h2>
 <ul>
 <li>Upon completion of this lab, students will be able to identify some examples of how healthcare data is used and shared, where some vulnerabilities are, and some common paths of Data through the system.</li>
@@ -26,7 +61,7 @@
 
 </section>
 
-<section aria-labelledby="complete-the-following-problems">
+<section role="region" aria-labelledby="complete-the-following-problems">
 <h2 id="complete-the-following-problems">Complete the following problems</h2>
 <p>References, a video, a PowerPoint and some notes are available at my website <a href="https://www.aholdengouveia.name/IntroData/datasecurity.html">https://www.aholdengouveia.name/IntroData/datasecurity.html</a></p>
 
@@ -34,7 +69,7 @@
 
 </section>
 
-<section aria-labelledby="personal-data">
+<section role="region" aria-labelledby="personal-data">
 <h2 id="personal-data">Personal Data</h2>
 <ol>
 <li>Go to <a href="https://aboutmyinfo.org/identity">https://aboutmyinfo.org/identity</a> and see how unique your data is.</li>
@@ -48,7 +83,7 @@
 
 </section>
 
-<section aria-labelledby="healthcare-data">
+<section role="region" aria-labelledby="healthcare-data">
 <h2 id="healthcare-data">Healthcare Data</h2>
 <ul>
 <li>Come up with 1 example scenario of going through the health care system, and go through it, write up your findings, including who is covered or not covered by HIPAA. For example, are doctors covered by HIPPA? What about pharmacists? Billing? Does it make a difference if you go through a service such as Amazon health or a concierge service?</li>
@@ -61,7 +96,7 @@
 
 </section>
 
-<section aria-labelledby="how-to-protect-your-data">
+<section role="region" aria-labelledby="how-to-protect-your-data">
 <h2 id="how-to-protect-your-data">How to protect your data</h2>
 <ol>
 <li>Go to <a href="https://www.consumerreports.org/electronics-computers/privacy/66-ways-to-protect-your-privacy-right-now-a7383217267/">https://www.consumerreports.org/electronics-computers/privacy/66-ways-to-protect-your-privacy-right-now-a7383217267/</a> and pick 3 things to try out right now to help protect your privacy. What did you pick? Why?</li>
@@ -70,7 +105,7 @@
 
 </section>
 
-<section aria-labelledby="deliverables">
+<section role="region" aria-labelledby="deliverables">
 <h2 id="deliverables">Deliverables</h2>
 <ol>
 <li>All the answers to the Personal Data questions</li>

@@ -7,7 +7,8 @@
     <link href="../../tools/accessible-lab.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <header>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
         <h1>SQL Continued</h1>
         <div class="author">
             <p>Adrianna Holden-Gouveia</p>
@@ -16,8 +17,43 @@
         </div>
     </header>
 
-    <main>
-<section aria-labelledby="objectives">
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li><a href="/IntroData/">Introduction to Data</a></li>
+                <li aria-current="page">SQL Continued</li>
+            </ol>
+        </nav>
+
+    <main role="main" id="main-content">
+        <section role="region" aria-labelledby="pdf-version-notice" class="accessibility-notice">
+            <h2 id="pdf-version-notice">PDF Version Available</h2>
+            <p>This document is also available in PDF format: <a href="dbsql2.pdf">dbsql2.pdf</a></p>
+            <p>The PDF version includes bookmarks for easy navigation and is optimized for printing.</p>
+        </section>
+
+        <nav role="navigation" aria-label="Table of Contents" class="toc">
+            <h2>On this page:</h2>
+            <ul>
+                <li><a href="#accessibility-notice">Accessibility Notice</a></li>
+                <li><a href="#objectives">Objectives:</a></li>
+                <li><a href="#instructions">Instructions</a></li>
+                <li><a href="#tutorial-recommendation">Tutorial Recommendation</a></li>
+                <li><a href="#deliverables">Deliverables</a></li>
+            </ul>
+        </nav>
+
+<section role="region" aria-labelledby="accessibility-notice">
+<h2 id="accessibility-notice">Accessibility Notice</h2>
+<p>This document is also available in HTML format at:</p>
+
+<p><a href="https://aholdengouveia.name/IntroData/labs/dbsql2.html">https://aholdengouveia.name/IntroData/labs/dbsql2.html</a></p>
+
+<p>The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.</p>
+
+</section>
+
+<section role="region" aria-labelledby="objectives">
 <h2 id="objectives">Objectives:</h2>
 <ul>
 <li>The objective of this lab is to continue working with SQL to learn more advanced topics such as filters and functions. Prior knowledge SQL is assumed. Students will gain a understanding of SQL functions and filters through interactive methods utilizing a free online tutorial and other resources.</li>
@@ -25,7 +61,7 @@
 
 </section>
 
-<section aria-labelledby="instructions">
+<section role="region" aria-labelledby="instructions">
 <h2 id="instructions">Instructions</h2>
 <p>References, a video, a PowerPoint and some notes are available at my website <a href="https://www.aholdengouveia.name/IntroData/sql2.html">https://www.aholdengouveia.name/IntroData/sql2.html</a></p>
 
@@ -33,7 +69,7 @@
 
 </section>
 
-<section aria-labelledby="please-include-answers-to-the-following-questions">
+<section role="region" aria-labelledby="please-include-answers-to-the-following-questions">
 <h2 id="please-include-answers-to-the-following-questions">Please include answers to the following questions</h2>
 <ul>
 <li>How do you think this compares to the first tutorial from Kahn Academy?</li>
@@ -43,7 +79,7 @@
 
 </section>
 
-<section aria-labelledby="tutorial-recommendation">
+<section role="region" aria-labelledby="tutorial-recommendation">
 <h2 id="tutorial-recommendation">Tutorial Recommendation</h2>
 <p>You should find a tutorial that you would recommend to another person that wanted to learn SQL filters and functions. The tutorial can be interactive or not. Videos that you can follow along with count as tutorials for this. You should find at least 3 options for tutorials/videos that you also include here. In your recommendation you should explain why you picked the one you did over the other two including pros and cons of each.</p>
 
@@ -51,7 +87,7 @@
 
 </section>
 
-<section aria-labelledby="deliverables">
+<section role="region" aria-labelledby="deliverables">
 <h2 id="deliverables">Deliverables</h2>
 <ul>
 <li>A document containing all requested screenshots</li>

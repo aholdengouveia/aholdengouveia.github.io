@@ -44,7 +44,7 @@ def convert_section(section_text, section_level='h2'):
     title = title_match.group(1)
     section_id = re.sub(r'[^a-z0-9]+', '-', title.lower()).strip('-')
 
-    html = f'<section aria-labelledby="{section_id}">\n'
+    html = f'<section role="region" aria-labelledby="{section_id}">\n'
     html += f'<{section_level} id="{section_id}">{title}</{section_level}>\n'
 
     # Get content after section title
@@ -82,7 +82,7 @@ def generate_toc(sections):
     if not sections:
         return ""
 
-    html = '''        <nav aria-label="Table of Contents" class="toc">
+    html = '''        <nav role="navigation" aria-label="Table of Contents" class="toc">
             <h2>On this page:</h2>
             <ul>
 '''
@@ -98,6 +98,82 @@ def generate_toc(sections):
 
 '''
 
+    return html
+
+def generate_breadcrumbs(tex_file_path, page_title):
+    """Generate breadcrumb navigation based on file path"""
+    path = Path(tex_file_path)
+
+    # Determine section from path
+    section_map = {
+        'IntroData': {'name': 'Introduction to Data', 'url': '/IntroData/'},
+        'AdvData': {'name': 'Advanced Data', 'url': '/AdvData/'},
+        'LinuxAdmin': {'name': 'Linux Administration', 'url': '/LinuxAdmin/'},
+        'IntroLinux': {'name': 'Introduction to Linux', 'url': '/IntroLinux/'}
+    }
+
+    # Find which section this file belongs to
+    section_info = None
+    for section_key, section_data in section_map.items():
+        if section_key in str(path):
+            section_info = section_data
+            section_name = section_key
+            break
+
+    if not section_info:
+        # No breadcrumbs if we can't determine section
+        return ""
+
+    html = '''        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+'''
+    html += f'                <li><a href="{section_info["url"]}">{section_info["name"]}</a></li>\n'
+    html += f'                <li aria-current="page">{page_title}</li>\n'
+    html += '''            </ol>
+        </nav>
+
+'''
+
+    return html
+
+def detect_code_language(code):
+    """Detect the programming language of code block"""
+    code_lower = code.lower()
+
+    # Check for awk (must come before bash)
+    if re.search(r'\bawk\b|\{print\s+\$|\$[0-9]+\b|BEGIN\s*\{|END\s*\{', code, re.IGNORECASE):
+        return 'awk'
+
+    # Check for sed (must come before bash)
+    if re.search(r'\bsed\b|s/.*/.*/|[0-9]+,\$d|[0-9]+p', code):
+        return 'sed'
+
+    # Check for SQL
+    if re.search(r'\b(SELECT|INSERT|UPDATE|DELETE|CREATE|DROP|ALTER|FROM|WHERE|JOIN|TABLE)\b', code, re.IGNORECASE):
+        return 'sql'
+
+    # Check for bash/shell
+    if re.search(r'\b(sudo|chmod|chown|grep|ls|cd|mkdir|rm|cp|mv|cat|echo|export|if\s+\[|then|fi|bash|sh)\b', code):
+        return 'bash'
+
+    # Default
+    return 'text'
+
+def convert_verbatim(block):
+    """Convert verbatim environment to HTML code block"""
+    # Extract code from verbatim environment
+    match = re.search(r'\\begin\{verbatim\}(.*?)\\end\{verbatim\}', block, re.DOTALL)
+    if not match:
+        return ""
+
+    code = match.group(1).strip()
+
+    # Detect language
+    lang = detect_code_language(code)
+
+    # Return formatted code block
+    html = f'<pre><code lang="{lang}">{code}</code></pre>\n\n'
     return html
 
 def convert_content(content):
@@ -116,8 +192,11 @@ def convert_content(content):
         if re.match(r'^\\end\{(itemize|enumerate|figure|table|verbatim|quote)\}$', block):
             continue
 
+        # Handle verbatim (code blocks) - must come before other checks
+        if '\\begin{verbatim}' in block:
+            html += convert_verbatim(block)
         # Handle itemize (bullet lists)
-        if '\\begin{itemize}' in block:
+        elif '\\begin{itemize}' in block:
             html += convert_itemize(block)
         # Handle enumerate (numbered lists)
         elif '\\begin{enumerate}' in block:
@@ -143,8 +222,25 @@ def convert_itemize(block):
 
     html = "<ul>\n"
     for item in items:
-        item = clean_latex(item.strip())
-        html += f"<li>{item}</li>\n"
+        # Check if item contains verbatim block
+        if '\\begin{verbatim}' in item:
+            # Extract text before verbatim
+            parts = re.split(r'(\\begin\{verbatim\}.*?\\end\{verbatim\})', item, flags=re.DOTALL)
+            item_html = ""
+            for part in parts:
+                if '\\begin{verbatim}' in part:
+                    # Convert verbatim block
+                    verb_match = re.search(r'\\begin\{verbatim\}(.*?)\\end\{verbatim\}', part, re.DOTALL)
+                    if verb_match:
+                        code = verb_match.group(1).strip()
+                        lang = detect_code_language(code)
+                        item_html += f'\n<pre><code lang="{lang}">{code}</code></pre>\n'
+                else:
+                    item_html += clean_latex(part.strip())
+            html += f"<li>{item_html}</li>\n"
+        else:
+            item = clean_latex(item.strip())
+            html += f"<li>{item}</li>\n"
     html += "</ul>\n\n"
     return html
 
@@ -157,8 +253,27 @@ def convert_enumerate(block):
 
     html = "<ol>\n"
     for item in items:
-        item = clean_latex(item.strip())
-        html += f"<li>{item}</li>\n"
+        # Check if item contains verbatim block
+        if '\\begin{verbatim}' in item:
+            # Extract text before and after verbatim
+            parts = re.split(r'(\\begin\{verbatim\}.*?\\end\{verbatim\})', item, flags=re.DOTALL)
+            item_html = ""
+            for part in parts:
+                if '\\begin{verbatim}' in part:
+                    # Convert verbatim block
+                    verb_match = re.search(r'\\begin\{verbatim\}(.*?)\\end\{verbatim\}', part, re.DOTALL)
+                    if verb_match:
+                        code = verb_match.group(1).strip()
+                        lang = detect_code_language(code)
+                        item_html += f'\n<pre><code lang="{lang}">{code}</code></pre>\n'
+                else:
+                    cleaned = clean_latex(part.strip())
+                    if cleaned:
+                        item_html += cleaned
+            html += f"<li>{item_html}</li>\n"
+        else:
+            item = clean_latex(item.strip())
+            html += f"<li>{item}</li>\n"
     html += "</ol>\n\n"
     return html
 
@@ -195,6 +310,13 @@ def clean_latex(text):
     # Convert URLs (allow optional whitespace between \url and {)
     text = re.sub(r'\\url\s*\{([^}]+)\}', r'<a href="\1">\1</a>', text)
     text = re.sub(r'\\href\s*\{([^}]+)\}\s*\{([^}]+)\}', r'<a href="\1">\2</a>', text)
+
+    # Convert standalone URLs to clickable links (not already in href attributes)
+    text = re.sub(
+        r'(?<!href=")(?<!")(?<!>)(https?://[^\s<>"]+)',
+        r'<a href="\1">\1</a>',
+        text
+    )
 
     # Convert text formatting
     text = re.sub(r'\\textbf\{([^}]+)\}', r'<strong>\1</strong>', text)
@@ -236,6 +358,9 @@ def convert_tex_to_html(tex_file, css_file="../../tools/accessible-lab.css"):
     sections = extract_sections(body)
     toc_html = generate_toc(sections)
 
+    # Generate breadcrumbs
+    breadcrumb_html = generate_breadcrumbs(tex_file, title)
+
     # Start HTML
     html = f'''<!DOCTYPE html>
 <html lang="en-US">
@@ -247,7 +372,7 @@ def convert_tex_to_html(tex_file, css_file="../../tools/accessible-lab.css"):
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    <header>
+    <header role="banner">
         <h1>{title}</h1>
         <div class="author">
             <p>{author_info['name']}</p>
@@ -256,8 +381,8 @@ def convert_tex_to_html(tex_file, css_file="../../tools/accessible-lab.css"):
         </div>
     </header>
 
-    <main id="main-content">
-        <section aria-labelledby="pdf-version-notice" class="accessibility-notice">
+{breadcrumb_html}    <main role="main" id="main-content">
+        <section role="region" aria-labelledby="pdf-version-notice" class="accessibility-notice">
             <h2 id="pdf-version-notice">PDF Version Available</h2>
             <p>This document is also available in PDF format: <a href="{pdf_file}">{pdf_file}</a></p>
             <p>The PDF version includes bookmarks for easy navigation and is optimized for printing.</p>

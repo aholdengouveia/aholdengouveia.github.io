@@ -4,23 +4,28 @@
 \usepackage{hyperref}
 \usepackage[tagged, highstructure]{accessibility}
 \usepackage{bookmark}
+\usepackage{enumitem}
 
 \hypersetup{
     colorlinks=false,
-    pdfborder={0 0 0}
+    pdfborder={0 0 0},
+    pdftitle={Server Hardening Lab},
+    pdfauthor={Adrianna Holden-Gouveia},
+    pdfsubject={Linux Administration - Lab Assignment},
+    pdflang={en-US},
+    pdfkeywords={server hardening, security, Lynis, Linux, system administration}
+
+}
 
 % Configure PDF bookmarks for navigation
 \bookmarksetup{
     numbered,
     open,
 }
-,
-    pdftitle={Server Hardening Lab},
-    pdfauthor={Adrianna Holden-Gouveia},
-    pdfsubject={Linux Administration - Lab Assignment},
-    pdflang={en-US},
-    pdfkeywords={server hardening, security, Lynis, Linux, system administration}
-}
+
+% Configure list spacing for better accessibility
+\setlist{nosep}
+
 
 
 \title{Server Hardening}
@@ -67,7 +72,7 @@ This lab includes a script that was written by me using an AI.  Scripts written 
 The script is attached to this lab, it's called "BadServerHealthCheck", there is a bash script version and a Python version.  You make pick which one you want to fix. There are some hints in the comments for things to fix.  Not everything that should be fixed is hinted at, some things that need fixing are included and hidden for extra coding chaos. Let the games begin. 
 
     \begin{enumerate}
-        \item Download and install Lynis (https://cisofy.com/lynis/) on both your servers and run it.
+        \item Download and install Lynis (\url{https://cisofy.com/lynis/)} on both your servers and run it.
         \item Create a short report on the findings (one report for each server) and what you'll do to improve your server setup.
         \item Fix the given script to monitor the health of your server using the commands from the PowerPoints on Security, DFIR and Backups as your base. Think about what info you care about, and how to make it easier for you to read or upload to your dashboard.  Data is only good if you're using it for something. 
         \item When fixing/debugging/refactoring the script, make sure you also add comments for what each thing actually does. 

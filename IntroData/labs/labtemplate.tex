@@ -5,6 +5,7 @@
 \usepackage{xurl}
 \usepackage[tagged, highstructure]{accessibility}
 \usepackage{bookmark}
+\usepackage{enumitem}
 
 \hypersetup{
     colorlinks=false,
@@ -22,6 +23,10 @@
     open,
 }
 
+% Configure list spacing for better accessibility
+\setlist{nosep}
+
+
 \title{Lab Template}
 \author{
         Adrianna Holden-Gouveia \\
@@ -30,7 +35,7 @@
         %Email: \href{mailto:admin@aholdengouveia.name}{admin@aholdengouveia.name} \\
 %        \faLinkedin{: aholdengouveia} \\
         \faGithub {: aholdengouveia} \\
-        \faTwitter {: aholdengouveia} \\
+        %\faTwitter {: aholdengouveia} \\
         }
 
 %S\date{\today}
@@ -76,5 +81,24 @@ References, a video, a PowerPoint and some notes are available at my website
 
 
 \section*{Deliverables}
-A text document 
+A text document
+
+% ============================================================
+% EXAMPLE: Accessible Table (if needed)
+% Uncomment and modify the lines below to add a table
+% This ensures proper screen reader support
+% ============================================================
+%\begin{table}[h]
+%\caption{Command Options}
+%\begin{tabular}{|l|l|}
+%\hline
+%\textbf{Option} & \textbf{Description} \\
+%\hline
+%-F & Field separator \\
+%\hline
+%-v & Variable assignment \\
+%\hline
+%\end{tabular}
+%\end{table}
+
 \end{document}

@@ -7,7 +7,8 @@
     <link href="../../tools/accessible-lab.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <header>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
         <h1>Lab Template</h1>
         <div class="author">
             <p>Adrianna Holden-Gouveia</p>
@@ -16,8 +17,23 @@
         </div>
     </header>
 
-    <main>
-<section aria-labelledby="objectives">
+    <main role="main" id="main-content">
+        <section role="region" aria-labelledby="pdf-version-notice" class="accessibility-notice">
+            <h2 id="pdf-version-notice">PDF Version Available</h2>
+            <p>This document is also available in PDF format: <a href="labtemplate.pdf">labtemplate.pdf</a></p>
+            <p>The PDF version includes bookmarks for easy navigation and is optimized for printing.</p>
+        </section>
+
+        <nav role="navigation" aria-label="Table of Contents" class="toc">
+            <h2>On this page:</h2>
+            <ul>
+                <li><a href="#objectives">Objectives:</a></li>
+                <li><a href="#complete-the-following-problems">Complete the following problems</a></li>
+                <li><a href="#deliverables">Deliverables</a></li>
+            </ul>
+        </nav>
+
+<section role="region" aria-labelledby="objectives">
 <h2 id="objectives">Objectives:</h2>
 <ul>
 <li>Objective 1</li>
@@ -26,13 +42,13 @@
 
 </section>
 
-<section aria-labelledby="complete-the-following-problems">
+<section role="region" aria-labelledby="complete-the-following-problems">
 <h2 id="complete-the-following-problems">Complete the following problems</h2>
 <p>References, a video, a PowerPoint and some notes are available at my website <a href="https://www.aholdengouveia.name">https://www.aholdengouveia.name</a></p>
 
 </section>
 
-<section aria-labelledby="please-include-the-command-a-screenshot-showing-it-works-as-intended-cite-all-sources-you-used-and-give-a-short-explanation-of-how-the-command-works-and-why">
+<section role="region" aria-labelledby="please-include-the-command-a-screenshot-showing-it-works-as-intended-cite-all-sources-you-used-and-give-a-short-explanation-of-how-the-command-works-and-why">
 <h2 id="please-include-the-command-a-screenshot-showing-it-works-as-intended-cite-all-sources-you-used-and-give-a-short-explanation-of-how-the-command-works-and-why">Please include the command, a screenshot showing it works as intended, cite all sources you used, and give a short explanation of how the command works and why.</h2>
 <ol>
 <li>1</li>
@@ -43,7 +59,7 @@
 
 </section>
 
-<section aria-labelledby="deliverables">
+<section role="region" aria-labelledby="deliverables">
 <h2 id="deliverables">Deliverables</h2>
 <p>A text document with the grep statements used to get each result. Clearly labeled so I can see which answer goes to which question.</p>
 

@@ -7,7 +7,8 @@
     <link href="../../tools/accessible-lab.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <header>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
         <h1>Scripting for Server Security Part 1</h1>
         <div class="author">
             <p>Adrianna Holden-Gouveia</p>
@@ -16,8 +17,42 @@
         </div>
     </header>
 
-    <main>
-<section aria-labelledby="objectives">
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li><a href="/LinuxAdmin/">Linux Administration</a></li>
+                <li aria-current="page">Scripting for Server Security Part 1</li>
+            </ol>
+        </nav>
+
+    <main role="main" id="main-content">
+        <section role="region" aria-labelledby="pdf-version-notice" class="accessibility-notice">
+            <h2 id="pdf-version-notice">PDF Version Available</h2>
+            <p>This document is also available in PDF format: <a href="securitypt1.pdf">securitypt1.pdf</a></p>
+            <p>The PDF version includes bookmarks for easy navigation and is optimized for printing.</p>
+        </section>
+
+        <nav role="navigation" aria-label="Table of Contents" class="toc">
+            <h2>On this page:</h2>
+            <ul>
+                <li><a href="#accessibility-notice">Accessibility Notice</a></li>
+                <li><a href="#objectives">Objectives:</a></li>
+                <li><a href="#complete-the-following-problems">Complete the following problems</a></li>
+                <li><a href="#deliverables">Deliverables</a></li>
+            </ul>
+        </nav>
+
+<section role="region" aria-labelledby="accessibility-notice">
+<h2 id="accessibility-notice">Accessibility Notice</h2>
+<p>This document is also available in HTML format at:</p>
+
+<p><a href="https://aholdengouveia.name/LinuxAdmin/labexcercises/securitypt1.html">https://aholdengouveia.name/LinuxAdmin/labexcercises/securitypt1.html</a></p>
+
+<p>The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.</p>
+
+</section>
+
+<section role="region" aria-labelledby="objectives">
 <h2 id="objectives">Objectives:</h2>
 <ul>
 <li>The objective of this lab is to introduce students to the practical application and critical evaluation of AI-assisted script development for server security. Through hands-on exercises with multiple AI tools, students will learn to effectively prompt AI systems for cybersecurity automation, validate and test AI-generated code, understand script functionality through independent research, and develop critical thinking skills for assessing the reliability and security of AI-generated solutions—essential competencies for modern system administration in an AI-augmented workflow.</li>
@@ -25,13 +60,13 @@
 
 </section>
 
-<section aria-labelledby="complete-the-following-problems">
+<section role="region" aria-labelledby="complete-the-following-problems">
 <h2 id="complete-the-following-problems">Complete the following problems</h2>
 <p>List of AI that can be used for this lab: ChatGPT, Gemini by Google, ClaudeAI by Anthropic, Perplexity, or Microsoft Copilot.</p>
 
 </section>
 
-<section aria-labelledby="pick-an-ai-from-the-list-above-and-complete-the-following">
+<section role="region" aria-labelledby="pick-an-ai-from-the-list-above-and-complete-the-following">
 <h2 id="pick-an-ai-from-the-list-above-and-complete-the-following">Pick an AI from the list above and complete the following</h2>
 <ol>
 <li>Ask it to make you a script for cybersecurity on your server. What was the prompt you gave it? What changes did you have to make to the script for it to work? What changes did you have to make to the prompt? How many tries did it take to get something that worked? Describe the whole conversation with the AI including all modifications and your testing on the servers.</li>
@@ -41,7 +76,7 @@
 
 </section>
 
-<section aria-labelledby="pick-a-different-ai-from-the-list-above-and-complete-the-following">
+<section role="region" aria-labelledby="pick-a-different-ai-from-the-list-above-and-complete-the-following">
 <h2 id="pick-a-different-ai-from-the-list-above-and-complete-the-following">Pick a different AI from the list above and complete the following</h2>
 <ol>
 <li>Ask it to make you a script for cybersecurity on your server. What was the prompt you gave it? What changes did you have to make to the script for it to work? What changes did you have to make to the prompt? How many tries did it take to get something that worked? Describe the whole conversation with the AI including all modifications and your testing on the servers.</li>
@@ -51,7 +86,7 @@
 
 </section>
 
-<section aria-labelledby="deliverables">
+<section role="region" aria-labelledby="deliverables">
 <h2 id="deliverables">Deliverables</h2>
 <p>Well commented and tested scripts including a link to your GitHub where you've uploaded them, make sure to clearly note what's been done by AI and not you. You should have at least 1 document for your CentOS machine and 1 for your other server. Make sure to clearly label which AI was used for each part. Documentation for scripts should include any changes or updates to the system needed for these scripts to run. Answers to all of the above questions about the AIs used, prompts used, changes, and anything else you needed to answer. Make sure to include answers for BOTH of the AIs used and everything tested on BOTH servers. A small paragraph or two explaining if there is anything else you think you should have a script and/or cron job for relating to security? Why or why not? Must include AT LEAST 3 sources</p>
 

@@ -7,7 +7,8 @@
     <link href="../../tools/accessible-lab.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <header>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
         <h1>Database Documentation</h1>
         <div class="author">
             <p>Adrianna Holden-Gouveia</p>
@@ -16,8 +17,42 @@
         </div>
     </header>
 
-    <main>
-<section aria-labelledby="objectives">
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li><a href="/AdvData/">Advanced Data</a></li>
+                <li aria-current="page">Database Documentation</li>
+            </ol>
+        </nav>
+
+    <main role="main" id="main-content">
+        <section role="region" aria-labelledby="pdf-version-notice" class="accessibility-notice">
+            <h2 id="pdf-version-notice">PDF Version Available</h2>
+            <p>This document is also available in PDF format: <a href="week6documentation.pdf">week6documentation.pdf</a></p>
+            <p>The PDF version includes bookmarks for easy navigation and is optimized for printing.</p>
+        </section>
+
+        <nav role="navigation" aria-label="Table of Contents" class="toc">
+            <h2>On this page:</h2>
+            <ul>
+                <li><a href="#accessibility-notice">Accessibility Notice</a></li>
+                <li><a href="#objectives">Objectives:</a></li>
+                <li><a href="#complete-the-following-problems">Complete the following problems</a></li>
+                <li><a href="#deliverables">Deliverables</a></li>
+            </ul>
+        </nav>
+
+<section role="region" aria-labelledby="accessibility-notice">
+<h2 id="accessibility-notice">Accessibility Notice</h2>
+<p>This document is also available in HTML format at:</p>
+
+<p><a href="https://aholdengouveia.name/AdvData/labs/week6documentation.html">https://aholdengouveia.name/AdvData/labs/week6documentation.html</a></p>
+
+<p>The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.</p>
+
+</section>
+
+<section role="region" aria-labelledby="objectives">
 <h2 id="objectives">Objectives:</h2>
 <ul>
 <li>Create some basic documentation for your database</li>
@@ -25,7 +60,7 @@
 
 </section>
 
-<section aria-labelledby="complete-the-following-problems">
+<section role="region" aria-labelledby="complete-the-following-problems">
 <h2 id="complete-the-following-problems">Complete the following problems</h2>
 <p>References, a video, a PowerPoint and some notes are available at my website <a href="https://www.aholdengouveia.name/AdvData/databasedocumentation.html">https://www.aholdengouveia.name/AdvData/databasedocumentation.html</a></p>
 
@@ -35,7 +70,7 @@
 
 </section>
 
-<section aria-labelledby="create-your-documentation">
+<section role="region" aria-labelledby="create-your-documentation">
 <h2 id="create-your-documentation">Create your Documentation</h2>
 <p>Based on the data you picked, come up with a company that might use this data. This documentation should be for the company. The company can be any size, just make note of what size you pick. Some of this you may have from previous labs, but you should work on organizing it into your documentation here.</p>
 
@@ -53,7 +88,7 @@
 
 </section>
 
-<section aria-labelledby="deliverables">
+<section role="region" aria-labelledby="deliverables">
 <h2 id="deliverables">Deliverables</h2>
 <ol>
 <li>Document that includes answers to all the above questions. Document is likely to be long enough you'll need some variety of index, or table of contents, or shortcuts to the data. Your document needs to be sent in, you can also include a live link to a doc, but there must be a document uploaded that is static.</li>

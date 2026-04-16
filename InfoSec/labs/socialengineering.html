@@ -7,7 +7,8 @@
     <link href="../../tools/accessible-lab.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <header>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
         <h1>Social Engineering</h1>
         <div class="author">
             <p>Adrianna Holden-Gouveia</p>
@@ -16,8 +17,23 @@
         </div>
     </header>
 
-    <main>
-<section aria-labelledby="objectives">
+    <main role="main" id="main-content">
+        <section role="region" aria-labelledby="pdf-version-notice" class="accessibility-notice">
+            <h2 id="pdf-version-notice">PDF Version Available</h2>
+            <p>This document is also available in PDF format: <a href="socialengineering.pdf">socialengineering.pdf</a></p>
+            <p>The PDF version includes bookmarks for easy navigation and is optimized for printing.</p>
+        </section>
+
+        <nav role="navigation" aria-label="Table of Contents" class="toc">
+            <h2>On this page:</h2>
+            <ul>
+                <li><a href="#objectives">Objectives:</a></li>
+                <li><a href="#complete-the-following-problems">Complete the following problems</a></li>
+                <li><a href="#deliverables">Deliverables</a></li>
+            </ul>
+        </nav>
+
+<section role="region" aria-labelledby="objectives">
 <h2 id="objectives">Objectives:</h2>
 <ul>
 <li>Learn what social engineering is and why it's so important</li>
@@ -27,11 +43,11 @@
 
 </section>
 
-<section aria-labelledby="complete-the-following-problems">
+<section role="region" aria-labelledby="complete-the-following-problems">
 <h2 id="complete-the-following-problems">Complete the following problems</h2>
 </section>
 
-<section aria-labelledby="please-complete-the-following-3-activities">
+<section role="region" aria-labelledby="please-complete-the-following-3-activities">
 <h2 id="please-complete-the-following-3-activities">Please complete the following 3 activities</h2>
 <ul>
 <li>Find and describe two real-world examples of social engineering attacks. Explain how these attacks exploited human behavior to compromise security. Use credible sources to support your examples.The examples can be in the news or observed in person, but make sure if it's from the news you include the articles referenced. Make sure to keep in mind your CRAP/CRAAP tests from previous assignments when evaluating sources</li>
@@ -55,7 +71,7 @@
 
 </section>
 
-<section aria-labelledby="deliverables">
+<section role="region" aria-labelledby="deliverables">
 <h2 id="deliverables">Deliverables</h2>
 <p>Turn in a document with answers to every question listed in the lab, including an analysis of the conversation you watched/listened to. Make sure you include details about why you think what you think about the conversation and sources for all your answers. Even if you are pretty sure you know the answer make sure you include a source that agrees with you.</p>
 

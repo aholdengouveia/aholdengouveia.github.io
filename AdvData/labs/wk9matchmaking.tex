@@ -5,23 +5,28 @@
 \usepackage{xurl}
 \usepackage[tagged, highstructure]{accessibility}
 \usepackage{bookmark}
+\usepackage{enumitem}
 
 \hypersetup{
     colorlinks=false,
-    pdfborder={0 0 0}
+    pdfborder={0 0 0},
+    pdftitle={Picking a Database Lab},
+    pdfauthor={Adrianna Holden-Gouveia},
+    pdfsubject={Advanced Data - Lab Assignment},
+    pdflang={en-US},
+    pdfkeywords={NoSQL, database selection, key-value store, document store, graph database}
+
+}
 
 % Configure PDF bookmarks for navigation
 \bookmarksetup{
     numbered,
     open,
 }
-,
-    pdftitle={Picking a Database Lab},
-    pdfauthor={Adrianna Holden-Gouveia},
-    pdfsubject={Advanced Data - Lab Assignment},
-    pdflang={en-US},
-    pdfkeywords={NoSQL, database selection, key-value store, document store, graph database}
-}
+
+% Configure list spacing for better accessibility
+\setlist{nosep}
+
 
 
 \title{Picking a Database}

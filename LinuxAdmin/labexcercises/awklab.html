@@ -8,7 +8,7 @@
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    <header>
+    <header role="banner">
         <h1>Awk</h1>
         <div class="author">
             <p>Adrianna Holden-Gouveia</p>
@@ -17,8 +17,42 @@
         </div>
     </header>
 
-    <main id="main-content">
-<section aria-labelledby="objectives">
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li><a href="/LinuxAdmin/">Linux Administration</a></li>
+                <li aria-current="page">Awk</li>
+            </ol>
+        </nav>
+
+    <main role="main" id="main-content">
+        <section role="region" aria-labelledby="pdf-version-notice" class="accessibility-notice">
+            <h2 id="pdf-version-notice">PDF Version Available</h2>
+            <p>This document is also available in PDF format: <a href="awklab.pdf">awklab.pdf</a></p>
+            <p>The PDF version includes bookmarks for easy navigation and is optimized for printing.</p>
+        </section>
+
+        <nav role="navigation" aria-label="Table of Contents" class="toc">
+            <h2>On this page:</h2>
+            <ul>
+                <li><a href="#accessibility-notice">Accessibility Notice</a></li>
+                <li><a href="#objectives">Objectives:</a></li>
+                <li><a href="#complete-the-following-problems">Complete the following problems</a></li>
+                <li><a href="#deliverables">Deliverables</a></li>
+            </ul>
+        </nav>
+
+<section role="region" aria-labelledby="accessibility-notice">
+<h2 id="accessibility-notice">Accessibility Notice</h2>
+<p>This document is also available in HTML format at:</p>
+
+<p><a href="https://aholdengouveia.name/LinuxAdmin/labexcercises/awklab.html">https://aholdengouveia.name/LinuxAdmin/labexcercises/awklab.html</a></p>
+
+<p>The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.</p>
+
+</section>
+
+<section role="region" aria-labelledby="objectives">
 <h2 id="objectives">Objectives:</h2>
 <ul>
 <li>The objective of this lab is to introduce students to AWK, a powerful text-processing and pattern-matching language commonly used in Linux administration. Through hands-on exercises, students will learn to extract, filter, and manipulate data from structured text files using AWK's field-oriented processing capabilities, pattern matching, and computational features.</li>
@@ -26,15 +60,15 @@
 
 </section>
 
-<section aria-labelledby="complete-the-following-problems">
+<section role="region" aria-labelledby="complete-the-following-problems">
 <h2 id="complete-the-following-problems">Complete the following problems</h2>
 <p>References, a video and some notes are available at my website</p>
 
-<p>https://www.aholdengouveia.name/LinuxAdmin/Awk.html</p>
+<p><a href="https://www.aholdengouveia.name/LinuxAdmin/Awk.html">https://www.aholdengouveia.name/LinuxAdmin/Awk.html</a></p>
 
 </section>
 
-<section aria-labelledby="please-include-the-command-a-screenshot-showing-it-works-as-intended-cite-all-sources-you-used-and-give-a-short-explanation-of-how-the-command-works-and-why">
+<section role="region" aria-labelledby="please-include-the-command-a-screenshot-showing-it-works-as-intended-cite-all-sources-you-used-and-give-a-short-explanation-of-how-the-command-works-and-why">
 <h2 id="please-include-the-command-a-screenshot-showing-it-works-as-intended-cite-all-sources-you-used-and-give-a-short-explanation-of-how-the-command-works-and-why">Please include the command, a screenshot showing it works as intended, cite all sources you used, and give a short explanation of how the command works and why.</h2>
 <ol>
 <li>Print all the First Names.</li>
@@ -64,7 +98,7 @@
 
 </section>
 
-<section aria-labelledby="deliverables">
+<section role="region" aria-labelledby="deliverables">
 <h2 id="deliverables">Deliverables</h2>
 <p>A text document with the awk statements used to get each result. Clearly labeled so I can see which answer goes to which question.</p>
 

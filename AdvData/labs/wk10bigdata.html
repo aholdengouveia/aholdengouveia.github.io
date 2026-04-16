@@ -7,7 +7,8 @@
     <link href="../../tools/accessible-lab.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <header>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
         <h1>Big Data</h1>
         <div class="author">
             <p>Adrianna Holden-Gouveia</p>
@@ -16,8 +17,42 @@
         </div>
     </header>
 
-    <main>
-<section aria-labelledby="objectives">
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li><a href="/AdvData/">Advanced Data</a></li>
+                <li aria-current="page">Big Data</li>
+            </ol>
+        </nav>
+
+    <main role="main" id="main-content">
+        <section role="region" aria-labelledby="pdf-version-notice" class="accessibility-notice">
+            <h2 id="pdf-version-notice">PDF Version Available</h2>
+            <p>This document is also available in PDF format: <a href="wk10bigdata.pdf">wk10bigdata.pdf</a></p>
+            <p>The PDF version includes bookmarks for easy navigation and is optimized for printing.</p>
+        </section>
+
+        <nav role="navigation" aria-label="Table of Contents" class="toc">
+            <h2>On this page:</h2>
+            <ul>
+                <li><a href="#accessibility-notice">Accessibility Notice</a></li>
+                <li><a href="#objectives">Objectives:</a></li>
+                <li><a href="#complete-the-following-problems">Complete the following problems</a></li>
+                <li><a href="#deliverables">Deliverables</a></li>
+            </ul>
+        </nav>
+
+<section role="region" aria-labelledby="accessibility-notice">
+<h2 id="accessibility-notice">Accessibility Notice</h2>
+<p>This document is also available in HTML format at:</p>
+
+<p><a href="https://aholdengouveia.name/AdvData/labs/wk10bigdata.html">https://aholdengouveia.name/AdvData/labs/wk10bigdata.html</a></p>
+
+<p>The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.</p>
+
+</section>
+
+<section role="region" aria-labelledby="objectives">
 <h2 id="objectives">Objectives:</h2>
 <ul>
 <li>Start to see how big data works and learn about some resources for further options</li>
@@ -25,13 +60,13 @@
 
 </section>
 
-<section aria-labelledby="complete-the-following-problems">
+<section role="region" aria-labelledby="complete-the-following-problems">
 <h2 id="complete-the-following-problems">Complete the following problems</h2>
 <p>References, a video, a PowerPoint and some notes are available at my website <a href="https://www.aholdengouveia.name/AdvData/BigData.html">https://www.aholdengouveia.name/AdvData/BigData.html</a></p>
 
 </section>
 
-<section aria-labelledby="khan-academy-tutorial">
+<section role="region" aria-labelledby="khan-academy-tutorial">
 <h2 id="khan-academy-tutorial">Khan academy tutorial</h2>
 <p>Go through the tutorial at <a href="https://www.khanacademy.org/computing/ap-computer-science-principles/data-analysis-101">https://www.khanacademy.org/computing/ap-computer-science-principles/data-analysis-101</a></p>
 
@@ -44,7 +79,7 @@
 
 </section>
 
-<section aria-labelledby="choose-your-own-tutorial">
+<section role="region" aria-labelledby="choose-your-own-tutorial">
 <h2 id="choose-your-own-tutorial">Choose your own tutorial</h2>
 <p>Pick one of the tutorials listed on this GitHub Repo <a href="https://github.com/SkalskiP/courses">https://github.com/SkalskiP/courses</a> If you already have some Python skill, you could do one of the tutorials at Kaggle <a href="https://www.kaggle.com/learn/intro-to-machine-learning">https://www.kaggle.com/learn/intro-to-machine-learning</a> instead.</p>
 
@@ -61,7 +96,7 @@
 
 </section>
 
-<section aria-labelledby="deliverables">
+<section role="region" aria-labelledby="deliverables">
 <h2 id="deliverables">Deliverables</h2>
 <p>A document containing each of the screenshots clearly labelled with what they are. Answers to all the questions, numbered and clearly labelled so it's obvious what you're answering.</p>
 

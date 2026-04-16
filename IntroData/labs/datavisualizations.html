@@ -7,7 +7,8 @@
     <link href="../../tools/accessible-lab.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <header>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
         <h1>Data Visualization</h1>
         <div class="author">
             <p>Adrianna Holden-Gouveia</p>
@@ -16,8 +17,42 @@
         </div>
     </header>
 
-    <main>
-<section aria-labelledby="objectives">
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li><a href="/IntroData/">Introduction to Data</a></li>
+                <li aria-current="page">Data Visualization</li>
+            </ol>
+        </nav>
+
+    <main role="main" id="main-content">
+        <section role="region" aria-labelledby="pdf-version-notice" class="accessibility-notice">
+            <h2 id="pdf-version-notice">PDF Version Available</h2>
+            <p>This document is also available in PDF format: <a href="datavisualizations.pdf">datavisualizations.pdf</a></p>
+            <p>The PDF version includes bookmarks for easy navigation and is optimized for printing.</p>
+        </section>
+
+        <nav role="navigation" aria-label="Table of Contents" class="toc">
+            <h2>On this page:</h2>
+            <ul>
+                <li><a href="#accessibility-notice">Accessibility Notice</a></li>
+                <li><a href="#objectives">Objectives:</a></li>
+                <li><a href="#complete-the-following-problems">Complete the following problems</a></li>
+                <li><a href="#deliverables">Deliverables</a></li>
+            </ul>
+        </nav>
+
+<section role="region" aria-labelledby="accessibility-notice">
+<h2 id="accessibility-notice">Accessibility Notice</h2>
+<p>This document is also available in HTML format at:</p>
+
+<p><a href="https://aholdengouveia.name/IntroData/labs/datavisualizations.html">https://aholdengouveia.name/IntroData/labs/datavisualizations.html</a></p>
+
+<p>The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.</p>
+
+</section>
+
+<section role="region" aria-labelledby="objectives">
 <h2 id="objectives">Objectives:</h2>
 <ul>
 <li>The goal of this lab assignment is for students to distinguish between good and bad data visualizations using real-world examples. Through practical examples and observations, students will gain an understanding of when to use which data visualizations and how best to implement them.</li>
@@ -25,7 +60,7 @@
 
 </section>
 
-<section aria-labelledby="complete-the-following-problems">
+<section role="region" aria-labelledby="complete-the-following-problems">
 <h2 id="complete-the-following-problems">Complete the following problems</h2>
 <p>References, a video, a PowerPoint and some notes are available at my website <a href="https://www.aholdengouveia.name/IntroData/datavis.html">https://www.aholdengouveia.name/IntroData/datavis.html</a></p>
 
@@ -41,9 +76,9 @@
 
 </section>
 
-<section aria-labelledby="evaluate-visualizations">
+<section role="region" aria-labelledby="evaluate-visualizations">
 <h2 id="evaluate-visualizations">Evaluate visualizations</h2>
-<p>Using the guidelines from this website {https://web.archive.org/web/20230713094315/https://www.interaction-design.org/literature/article/guidelines-for-good-visual-information-representations#tufte</p>
+<p>Using the guidelines from this website {<a href="https://web.archive.org/web/20230713094315/https://www.interaction-design.org/literature/article/guidelines-for-good-visual-information-representations#tufte">https://web.archive.org/web/20230713094315/https://www.interaction-design.org/literature/article/guidelines-for-good-visual-information-representations#tufte</a></p>
 
 <ol>
 <li>What was your favorite Visualization? Why?</li>
@@ -55,7 +90,7 @@
 
 </section>
 
-<section aria-labelledby="create-your-own-visualizations">
+<section role="region" aria-labelledby="create-your-own-visualizations">
 <h2 id="create-your-own-visualizations">Create your own Visualizations</h2>
 <ol>
 <li>Going back to the Halloween candy data, pick 1 thing that you think would be better illustrated using a visualization. Create your visualization using whatever software you like, this could be an online chart maker, or a spreadsheet or anything.</li>
@@ -66,7 +101,7 @@
 
 </section>
 
-<section aria-labelledby="deliverables">
+<section role="region" aria-labelledby="deliverables">
 <h2 id="deliverables">Deliverables</h2>
 <ol>
 <li>A document with answers to each of the above questions evaluating other people's visualizations. Make sure to fill out the attached table for each of the 5 visualizations you picked.</li>

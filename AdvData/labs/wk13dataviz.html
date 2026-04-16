@@ -7,7 +7,8 @@
     <link href="../../tools/accessible-lab.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <header>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
         <h1>Data Visualizations</h1>
         <div class="author">
             <p>Adrianna Holden-Gouveia</p>
@@ -16,8 +17,42 @@
         </div>
     </header>
 
-    <main>
-<section aria-labelledby="objectives">
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li><a href="/AdvData/">Advanced Data</a></li>
+                <li aria-current="page">Data Visualizations</li>
+            </ol>
+        </nav>
+
+    <main role="main" id="main-content">
+        <section role="region" aria-labelledby="pdf-version-notice" class="accessibility-notice">
+            <h2 id="pdf-version-notice">PDF Version Available</h2>
+            <p>This document is also available in PDF format: <a href="wk13dataviz.pdf">wk13dataviz.pdf</a></p>
+            <p>The PDF version includes bookmarks for easy navigation and is optimized for printing.</p>
+        </section>
+
+        <nav role="navigation" aria-label="Table of Contents" class="toc">
+            <h2>On this page:</h2>
+            <ul>
+                <li><a href="#accessibility-notice">Accessibility Notice</a></li>
+                <li><a href="#objectives">Objectives:</a></li>
+                <li><a href="#complete-the-following-problems">Complete the following problems</a></li>
+                <li><a href="#deliverables">Deliverables</a></li>
+            </ul>
+        </nav>
+
+<section role="region" aria-labelledby="accessibility-notice">
+<h2 id="accessibility-notice">Accessibility Notice</h2>
+<p>This document is also available in HTML format at:</p>
+
+<p><a href="https://aholdengouveia.name/AdvData/labs/wk13dataviz.html">https://aholdengouveia.name/AdvData/labs/wk13dataviz.html</a></p>
+
+<p>The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.</p>
+
+</section>
+
+<section role="region" aria-labelledby="objectives">
 <h2 id="objectives">Objectives:</h2>
 <ul>
 <li>Learn how to create and evaluate data visualizations</li>
@@ -25,13 +60,13 @@
 
 </section>
 
-<section aria-labelledby="complete-the-following-problems">
+<section role="region" aria-labelledby="complete-the-following-problems">
 <h2 id="complete-the-following-problems">Complete the following problems</h2>
 <p>References, a video, a PowerPoint and some notes are available at my website <a href="https://www.aholdengouveia.name/AdvData/Datavis.html">https://www.aholdengouveia.name/AdvData/Datavis.html</a></p>
 
 </section>
 
-<section aria-labelledby="use-an-ai-to-create-some-visuals">
+<section role="region" aria-labelledby="use-an-ai-to-create-some-visuals">
 <h2 id="use-an-ai-to-create-some-visuals">Use an AI to create some visuals</h2>
 <ol>
 <li>Why was this style (chart, graph, etc) picked do you think?</li>
@@ -44,7 +79,7 @@
 
 </section>
 
-<section aria-labelledby="create-some-visuals-yourself">
+<section role="region" aria-labelledby="create-some-visuals-yourself">
 <h2 id="create-some-visuals-yourself">Create some visuals yourself</h2>
 <ol>
 <li>Why was this style (chart, graph, etc) picked do you think?</li>
@@ -56,7 +91,7 @@
 
 </section>
 
-<section aria-labelledby="deliverables">
+<section role="region" aria-labelledby="deliverables">
 <h2 id="deliverables">Deliverables</h2>
 <p>A text document that contains the answers to both the AI created visuals and the ones you made yourself. Make sure you are including the answers and checklist for EACH visualization. So there will be 6 sets of answers and 6 checklists in total.</p>
 

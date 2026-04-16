@@ -4,23 +4,28 @@
 \usepackage{hyperref}
 \usepackage[tagged, highstructure]{accessibility}
 \usepackage{bookmark}
+\usepackage{enumitem}
 
 \hypersetup{
     colorlinks=false,
-    pdfborder={0 0 0}
+    pdfborder={0 0 0},
+    pdftitle={AWK Lab},
+    pdfauthor={Adrianna Holden-Gouveia},
+    pdfsubject={Linux Administration - Lab Assignment},
+    pdflang={en-US},
+    pdfkeywords={AWK, text processing, scripting, Linux, command line}
+
+}
 
 % Configure PDF bookmarks for navigation
 \bookmarksetup{
     numbered,
     open,
 }
-,
-    pdftitle={AWK Lab},
-    pdfauthor={Adrianna Holden-Gouveia},
-    pdfsubject={Linux Administration - Lab Assignment},
-    pdflang={en-US},
-    pdfkeywords={AWK, text processing, scripting, Linux, command line}
-}
+
+% Configure list spacing for better accessibility
+\setlist{nosep}
+
 
 
 \title{Awk}
@@ -61,7 +66,7 @@ The HTML version provides enhanced accessibility features including keyboard nav
 
 References, a video and some notes are available at my website
 
-https://www.aholdengouveia.name/LinuxAdmin/Awk.html
+\url{https://www.aholdengouveia.name/LinuxAdmin/Awk.html}
 
 \subsection*{Please include the command, a screenshot showing it works as intended, cite all sources you used, and give a short explanation of how the command works and why.}
     \begin{enumerate}

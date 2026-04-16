@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1776272661 "whatisdata.tex" "whatisdata.pdf" "whatisdata" 1776272661
+["pdflatex"] 1776348340 "whatisdata.tex" "whatisdata.pdf" "whatisdata" 1776348340
   "/etc/texmf/web2c/texmf.cnf" 1659374508 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1136768653 1288 655e228510b4c2a1abe905c368440826 ""
@@ -30,6 +30,7 @@
   "/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo" 1636758526 8449 bc7344e882df4d7e51c046514dee83e4 ""
   "/usr/share/texlive/texmf-dist/tex/latex/bookmark/bkm-pdftex.def" 1604871679 8609 8ac7db65d9617618cf703bd16c1bd0b8 ""
   "/usr/share/texlive/texmf-dist/tex/latex/bookmark/bookmark.sty" 1604871679 18237 5cbdfe9ef383a557f780a0a1f45cdb1c ""
+  "/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty" 1561238569 51697 f8f08183cd2080d9d18a41432d651dfb ""
   "/usr/share/texlive/texmf-dist/tex/latex/fontawesome/fontawesome.sty" 1463430686 2757 ee97743276dc242c78f33fd622e260ea ""
   "/usr/share/texlive/texmf-dist/tex/latex/fontawesome/fontawesomesymbols-generic.tex" 1465747999 33234 40b369fd6c8364bdcc88401c4c1db5bf ""
   "/usr/share/texlive/texmf-dist/tex/latex/fontawesome/fontawesomesymbols-pdftex.tex" 1463430686 46429 f7ffa71c62c5257edd5542253d4cea15 ""
@@ -54,8 +55,8 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1770042360 2798855 622813713f24d2dbd083fd3928387d33 ""
-  "whatisdata.aux" 0 -1 0 "pdflatex"
-  "whatisdata.tex" 1776272661 5431 143a81cdb4f825f0e8c9f5472d96a620 ""
+  "whatisdata.aux" 1776348298 1838 068af7e2a5359b23b7d6589da13c565c "pdflatex"
+  "whatisdata.tex" 1776348338 5521 1355ade88850614945a9efc550a1f57b ""
   (generated)
   "whatisdata.log"
   "whatisdata.pdf"

@@ -7,7 +7,8 @@
     <link href="../../tools/accessible-lab.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <header>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
         <h1>Data Collection</h1>
         <div class="author">
             <p>Adrianna Holden-Gouveia</p>
@@ -16,14 +17,48 @@
         </div>
     </header>
 
-    <main>
-<section aria-labelledby="objectives">
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li><a href="/IntroData/">Introduction to Data</a></li>
+                <li aria-current="page">Data Collection</li>
+            </ol>
+        </nav>
+
+    <main role="main" id="main-content">
+        <section role="region" aria-labelledby="pdf-version-notice" class="accessibility-notice">
+            <h2 id="pdf-version-notice">PDF Version Available</h2>
+            <p>This document is also available in PDF format: <a href="whatisdata.pdf">whatisdata.pdf</a></p>
+            <p>The PDF version includes bookmarks for easy navigation and is optimized for printing.</p>
+        </section>
+
+        <nav role="navigation" aria-label="Table of Contents" class="toc">
+            <h2>On this page:</h2>
+            <ul>
+                <li><a href="#accessibility-notice">Accessibility Notice</a></li>
+                <li><a href="#objectives">Objectives:</a></li>
+                <li><a href="#complete-the-following-problems">Complete the following problems</a></li>
+                <li><a href="#deliverables">Deliverables:</a></li>
+            </ul>
+        </nav>
+
+<section role="region" aria-labelledby="accessibility-notice">
+<h2 id="accessibility-notice">Accessibility Notice</h2>
+<p>This document is also available in HTML format at:</p>
+
+<p><a href="https://aholdengouveia.name/IntroData/labs/whatisdata.html">https://aholdengouveia.name/IntroData/labs/whatisdata.html</a></p>
+
+<p>The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.</p>
+
+</section>
+
+<section role="region" aria-labelledby="objectives">
 <h2 id="objectives">Objectives:</h2>
 <p>The goal of this lab assignment is for students to distinguish between data and information using real-world examples. Through practical scenarios and observations, students will explore the transformation of raw data into meaningful information. Students will also practice gathering data and finding good sources of data.</p>
 
 </section>
 
-<section aria-labelledby="complete-the-following-problems">
+<section role="region" aria-labelledby="complete-the-following-problems">
 <h2 id="complete-the-following-problems">Complete the following problems</h2>
 <p>Data Collection: Pick one of the following topics and collect some data about this topic, you need at least 100 records, you can use a text editor or spreadsheet to collect your data. You should think about what is good data to collect for your topic, and what your column and row names should be</p>
 
@@ -32,14 +67,14 @@
 <li>Weather Data</li>
 <li>Collectable Card Game such as Magic The Gathering, or Vampire the Masquerade</li>
 <li>Video game stats for items or characters in the game</li>
-<li>Collectables such as figurines for Warhammer or D</li>
+<li>Collectables such as figurines for Warhammer or D\&D</li>
 </ul>
 
 <p>This can include numbers, figures, text or any relevant data points. Raw data should be unprocessed and unorganized. This means you shouldn't try and manipulate the data yet or do anything to it besides make sure it's in a table with labels. It's ok to have errors and duplications and other things like that at this stage.</p>
 
 <p>You need at least 100 records (or rows) and 7 labeled columns per record. You can choose more, but don't go over 1000 records.</p>
 
-<p>A sample of book data is included as a CSV separately.You may pick another topic not listed above, but it can't be books. Data was collected from {https://zenodo.org/records/4265096} there are some suggestions for where you can get data sets on the Resources page <a href="https://www.aholdengouveia.name/IntroData/Resources.html">https://www.aholdengouveia.name/IntroData/Resources.html</a></p>
+<p>A sample of book data is included as a CSV separately.You may pick another topic not listed above, but it can't be books. Data was collected from <a href="https://zenodo.org/records/4265096">https://zenodo.org/records/4265096</a> there are some suggestions for where you can get data sets on the Resources page <a href="https://www.aholdengouveia.name/IntroData/Resources.html">https://www.aholdengouveia.name/IntroData/Resources.html</a></p>
 
 <p>Each screenshot should have your name, term, and year. One of the easiest ways to do that is make a text document with your name and term/year on your computer and saving it to use all term. Any screenshots that don't include this information won't be counted.</p>
 
@@ -48,11 +83,11 @@
 <figcaption>This is an image of what each of your screenshots should look like</figcaption>
 </figure>
 
-<p>References, a video, a PowerPoint and some notes are available at my website {https://www.aholdengouveia.name/IntroData/dataforeveryone.html}</p>
+<p>References, a video, a PowerPoint and some notes are available at my website <a href="https://www.aholdengouveia.name/IntroData/dataforeveryone.html">https://www.aholdengouveia.name/IntroData/dataforeveryone.html</a></p>
 
 </section>
 
-<section aria-labelledby="answer-the-following-questions-about-your-data">
+<section role="region" aria-labelledby="answer-the-following-questions-about-your-data">
 <h2 id="answer-the-following-questions-about-your-data">Answer the Following questions about your data</h2>
 <ol>
 <li>How did you find your data?</li>
@@ -70,7 +105,7 @@
 
 </section>
 
-<section aria-labelledby="deliverables">
+<section role="region" aria-labelledby="deliverables">
 <h2 id="deliverables">Deliverables:</h2>
 <ol>
 <li>Raw Data as either a CSV or spreadsheet</li>

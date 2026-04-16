@@ -7,7 +7,8 @@
     <link href="../../tools/accessible-lab.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <header>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
         <h1>NoSQL Scaling</h1>
         <div class="author">
             <p>Adrianna Holden-Gouveia</p>
@@ -16,8 +17,42 @@
         </div>
     </header>
 
-    <main>
-<section aria-labelledby="objectives">
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li><a href="/AdvData/">Advanced Data</a></li>
+                <li aria-current="page">NoSQL Scaling</li>
+            </ol>
+        </nav>
+
+    <main role="main" id="main-content">
+        <section role="region" aria-labelledby="pdf-version-notice" class="accessibility-notice">
+            <h2 id="pdf-version-notice">PDF Version Available</h2>
+            <p>This document is also available in PDF format: <a href="wk12nosqlscaling.pdf">wk12nosqlscaling.pdf</a></p>
+            <p>The PDF version includes bookmarks for easy navigation and is optimized for printing.</p>
+        </section>
+
+        <nav role="navigation" aria-label="Table of Contents" class="toc">
+            <h2>On this page:</h2>
+            <ul>
+                <li><a href="#accessibility-notice">Accessibility Notice</a></li>
+                <li><a href="#objectives">Objectives:</a></li>
+                <li><a href="#complete-the-following">Complete the following</a></li>
+                <li><a href="#deliverables">Deliverables</a></li>
+            </ul>
+        </nav>
+
+<section role="region" aria-labelledby="accessibility-notice">
+<h2 id="accessibility-notice">Accessibility Notice</h2>
+<p>This document is also available in HTML format at:</p>
+
+<p><a href="https://aholdengouveia.name/AdvData/labs/wk12nosqlscaling.html">https://aholdengouveia.name/AdvData/labs/wk12nosqlscaling.html</a></p>
+
+<p>The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.</p>
+
+</section>
+
+<section role="region" aria-labelledby="objectives">
 <h2 id="objectives">Objectives:</h2>
 <ul>
 <li>Learn about NoSQL and try a NoSQL database</li>
@@ -25,13 +60,13 @@
 
 </section>
 
-<section aria-labelledby="complete-the-following">
+<section role="region" aria-labelledby="complete-the-following">
 <h2 id="complete-the-following">Complete the following</h2>
 <p>References, a video, a PowerPoint and some notes are available at my website <a href="https://www.aholdengouveia.name/AdvData/NoSQLscaling.html">https://www.aholdengouveia.name/AdvData/NoSQLscaling.html</a></p>
 
 </section>
 
-<section aria-labelledby="try-out-some-nosql">
+<section role="region" aria-labelledby="try-out-some-nosql">
 <h2 id="try-out-some-nosql">Try out some NoSQL</h2>
 <p>Go to <a href="https://learn.mongodb.com/">https://learn.mongodb.com/</a> and pick a course to try. They should be free. If they are not free, please talk to me, don't pay money for this. If you're not sure what to try, just try the beginner one "Introduction to MongoDB". You don't have to do each section, but you should make sure you're comfortable with the topic. The course can be very long, but make sure you go through at least "MongoDB CRUD Operations: Replace and Delete Documents"</p>
 
@@ -46,7 +81,7 @@
 
 </section>
 
-<section aria-labelledby="nosql-scalability">
+<section role="region" aria-labelledby="nosql-scalability">
 <h2 id="nosql-scalability">NoSQL Scalability</h2>
 <ul>
 <li>What data set did you pick? Where is it from? Include a URL</li>
@@ -57,7 +92,7 @@
 
 </section>
 
-<section aria-labelledby="deliverables">
+<section role="region" aria-labelledby="deliverables">
 <h2 id="deliverables">Deliverables</h2>
 <p>A text document with the answers to the above questions. Make sure to clearly label both the questions and which section they are from so it's easy to see which thing you're answering.</p>
 

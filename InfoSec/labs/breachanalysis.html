@@ -7,7 +7,8 @@
     <link href="../../tools/accessible-lab.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <header>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
         <h1>Breach Analysis</h1>
         <div class="author">
             <p>Adrianna Holden-Gouveia</p>
@@ -16,8 +17,23 @@
         </div>
     </header>
 
-    <main>
-<section aria-labelledby="objectives">
+    <main role="main" id="main-content">
+        <section role="region" aria-labelledby="pdf-version-notice" class="accessibility-notice">
+            <h2 id="pdf-version-notice">PDF Version Available</h2>
+            <p>This document is also available in PDF format: <a href="breachanalysis.pdf">breachanalysis.pdf</a></p>
+            <p>The PDF version includes bookmarks for easy navigation and is optimized for printing.</p>
+        </section>
+
+        <nav role="navigation" aria-label="Table of Contents" class="toc">
+            <h2>On this page:</h2>
+            <ul>
+                <li><a href="#objectives">Objectives:</a></li>
+                <li><a href="#complete-the-following-problems">Complete the following problems</a></li>
+                <li><a href="#deliverables">Deliverables</a></li>
+            </ul>
+        </nav>
+
+<section role="region" aria-labelledby="objectives">
 <h2 id="objectives">Objectives:</h2>
 <ul>
 <li>Learn how to evaluate PR and news releases</li>
@@ -26,11 +42,11 @@
 
 </section>
 
-<section aria-labelledby="complete-the-following-problems">
+<section role="region" aria-labelledby="complete-the-following-problems">
 <h2 id="complete-the-following-problems">Complete the following problems</h2>
 </section>
 
-<section aria-labelledby="pick-a-breach-that-happened-in-the-last-2-years-and-write-an-analysis-of-how-well-they-did-compared-to-the-best-practices-make-sure-you-include-why-you-think-your-chosen-breach-matches-or-doesn-t-match-best-practices-this-should-include-proof-such-as-screenshots-of-social-media-links-to-news-articles-interviews-and-press-releases-from-your-company">
+<section role="region" aria-labelledby="pick-a-breach-that-happened-in-the-last-2-years-and-write-an-analysis-of-how-well-they-did-compared-to-the-best-practices-make-sure-you-include-why-you-think-your-chosen-breach-matches-or-doesn-t-match-best-practices-this-should-include-proof-such-as-screenshots-of-social-media-links-to-news-articles-interviews-and-press-releases-from-your-company">
 <h2 id="pick-a-breach-that-happened-in-the-last-2-years-and-write-an-analysis-of-how-well-they-did-compared-to-the-best-practices-make-sure-you-include-why-you-think-your-chosen-breach-matches-or-doesn-t-match-best-practices-this-should-include-proof-such-as-screenshots-of-social-media-links-to-news-articles-interviews-and-press-releases-from-your-company">Pick a breach that happened in the last 2 years and write an analysis of how well they did compared to the best practices. Make sure you include why you think your chosen breach matches or doesn't match best practices, this should include proof such as screenshots of social media, links to news articles, interviews and press releases from your company.</h2>
 <ul>
 <li>TJX <a href="https://www.computerworld.com/article/2544306/tjx-data-breach--at-45-6m-card-numbers--it-s-the-biggest-ever.html">https://www.computerworld.com/article/2544306/tjx-data-breach--at-45-6m-card-numbers--it-s-the-biggest-ever.html</a></li>
@@ -41,7 +57,7 @@
 
 </section>
 
-<section aria-labelledby="deliverables">
+<section role="region" aria-labelledby="deliverables">
 <h2 id="deliverables">Deliverables</h2>
 <ul>
 <li>Turn in a document that includes a link to your chosen breach</li>
