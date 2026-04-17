@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>More Commands</title>
+    <link href="../../tools/accessible-lab.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
+        <h1>More Commands</h1>
+        <div class="author">
+            <p>Adrianna Holden-Gouveia</p>
+            <p>Website: <a href="https://aholdengouveia.name">https://aholdengouveia.name</a></p>
+            <p>GitHub: <a href="https://github.com/aholdengouveia" aria-label="GitHub profile">aholdengouveia</a></p>
+        </div>
+    </header>
+
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li><a href="/IntroLinux/">Introduction to Linux</a></li>
+                <li aria-current="page">More Commands</li>
+            </ol>
+        </nav>
+
+    <main role="main" id="main-content">
+        <section role="region" aria-labelledby="pdf-version-notice" class="accessibility-notice">
+            <h2 id="pdf-version-notice">PDF Version Available</h2>
+            <p>This document is also available in PDF format: <a href="cmdsandwildcards.pdf">cmdsandwildcards.pdf</a></p>
+            <p>The PDF version includes bookmarks for easy navigation and is optimized for printing.</p>
+        </section>
+
+        <nav role="navigation" aria-label="Table of Contents" class="toc">
+            <h2>On this page:</h2>
+            <ul>
+                <li><a href="#accessibility-notice">Accessibility Notice</a></li>
+                <li><a href="#objectives">Objectives:</a></li>
+                <li><a href="#complete-the-following-problems">Complete the following problems</a></li>
+                <li><a href="#deliverables">Deliverables</a></li>
+            </ul>
+        </nav>
+
+<section role="region" aria-labelledby="accessibility-notice">
+<h2 id="accessibility-notice">Accessibility Notice</h2>
+<p>This document is also available in HTML format at:</p>
+
+<p><a href="https://aholdengouveia.name/IntroLinux/labs/cmdsandwildcards.html">https://aholdengouveia.name/IntroLinux/labs/cmdsandwildcards.html</a></p>
+
+<p>The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.</p>
+
+</section>
+
+<section role="region" aria-labelledby="objectives">
+<h2 id="objectives">Objectives:</h2>
+<ul>
+<li>Learn to use wildcards for file pattern matching</li>
+<li>Practice using the ls command with various wildcard patterns</li>
+<li>Understand the difference between ls and find commands</li>
+<li>Develop skills in efficiently locating files in Linux</li>
+</ul>
+
+</section>
+
+<section role="region" aria-labelledby="complete-the-following-problems">
+<h2 id="complete-the-following-problems">Complete the following problems</h2>
+<p>References, a video, a PowerPoint and some notes are available at my website <a href="https://www.aholdengouveia.name/IntroLinux/cmdsandwildcards.html">https://www.aholdengouveia.name/IntroLinux/cmdsandwildcards.html</a></p>
+
+</section>
+
+<section role="region" aria-labelledby="how-to-setup-for-this-lab">
+<h2 id="how-to-setup-for-this-lab">How to setup for this lab</h2>
+<ul>
+<li>We are going to create a test directory with numerous files and then use find and wildcards to locate files.</li>
+</ul>
+
+<ol>
+<li>Create a test subdirectory for this lab. I do NOT recommend using any spaces in the name of the files or folders.</li>
+<li>Using touch create at least a dozen files with different names with the following characteristics: enumerate</li>
+<li>Some start with f</li>
+<li>Some start with F</li>
+<li>Some start with a number</li>
+<li>Some end with a number</li>
+<li>Some do not have an f or F</li>
+<li>Some do not have a number</li>
+<li>At least one starts with a . (hidden file)</li>
+</ol>
+
+<p>If you're struggling to think of names, use a naming scheme such as characters from your favorite video game, or locations and characters from favorite books etc. Make sure your files are full names of at least 5 characters, not just single letters/numbers For each of the problems you should start with ls and then figure out the pattern needed to show the requested information, then pick 1 of them to try with find instead. Demo of how to use ls is in the Linux FAQ videos <a href="https://youtube.com/playlist?list=PLQOmuLC45eoQlIMH7oCNL6yFP7kWQubBo&si=R1SFWzEPHDDo-VBJ">https://youtube.com/playlist?list=PLQOmuLC45eoQlIMH7oCNL6yFP7kWQubBo&si=R1SFWzEPHDDo-VBJ</a></p>
+
+</section>
+
+<section role="region" aria-labelledby="problems-to-solve">
+<h2 id="problems-to-solve">Problems to solve</h2>
+<ol>
+<li>All files</li>
+<li>All files including hidden files.</li>
+<li>Files that start with “f”</li>
+<li>Files that start with “f” or “F”</li>
+<li>Files that have “f” or “F” anywhere in the name</li>
+<li>Files that have a digit in the name</li>
+<li>Files that start with a through d</li>
+<li>Files that end with 1 or 2</li>
+<li>Experiment with the find command by solving one of the above questions using find instead of ls.</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="deliverables">
+<h2 id="deliverables">Deliverables</h2>
+<ul>
+<li>Each problem given should be numbered to match the question</li>
+<li>Make sure to list each command and the result.</li>
+<li>Make sure to take a screenshot of each successful command.</li>
+<li>Don't use one screenshot for everything, make sure each screenshot is labeled with which problem it solved.</li>
+</ul>
+
+</section>
+
+    </main>
+</body>
+</html>

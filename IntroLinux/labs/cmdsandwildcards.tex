@@ -1,0 +1,119 @@
+\documentclass[12pt]{article}
+
+\usepackage{fontawesome}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage[tagged, highstructure]{accessibility}
+\usepackage{bookmark}
+\usepackage{enumitem}
+
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0},
+    pdftitle={More Commands},
+    pdfauthor={Adrianna Holden-Gouveia},
+    pdfsubject={Introduction to Linux - Lab Assignment},
+    pdflang={en-US},
+    pdfkeywords={lab assignment, More Commands}
+}
+
+% Configure PDF bookmarks for navigation
+\bookmarksetup{
+    numbered,
+    open,
+}
+
+% Configure list spacing for better accessibility
+\setlist{nosep}
+
+
+
+\title{More Commands}
+\author{
+        Adrianna Holden-Gouveia \\
+        Website: \url{https://aholdengouveia.name}\\ 
+        \date{\vspace{-5ex}}
+        %Email: \href{mailto:admin@aholdengouveia.name}{admin@aholdengouveia.name} \\
+%        \faLinkedin{: aholdengouveia} \\
+        \faGithub {: aholdengouveia} \\
+%        \faTwitter {: aholdengouveia} \\
+        }
+
+%S\date{\today}
+
+
+\begin{document}    
+
+\maketitle
+
+\section*{Accessibility Notice}
+This document is also available in HTML format at:
+
+\url{https://aholdengouveia.name/IntroLinux/labs/cmdsandwildcards.html}
+
+The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.
+
+
+%\begin{abstract}
+%This is a template for Linux Administration Lab work
+%\end{abstract}
+%\tableofcontents
+
+\section*{Objectives:}
+\begin{itemize}
+    \item Learn to use wildcards for file pattern matching
+    \item Practice using the ls command with various wildcard patterns
+    \item Understand the difference between ls and find commands
+    \item Develop skills in efficiently locating files in Linux
+\end{itemize}
+\section*{Complete the following problems}
+
+References, a video, a PowerPoint and some notes are available at my website
+\url {https://www.aholdengouveia.name/IntroLinux/cmdsandwildcards.html}
+
+\subsection*{How to setup for this lab}
+
+\begin{itemize}
+    \item We are going to create a test directory with numerous files and then use find and wildcards to locate files.
+
+    \item Create a test subdirectory for this lab. I do NOT recommend using any spaces in the name of the files or folders.
+    \item Using touch create at least a dozen files with different names with the following characteristics:
+        \begin{enumerate}
+            \item Some start with f
+            \item Some start with F
+            \item Some start with a number
+            \item Some end with a number
+            \item Some do not have an f or F
+            \item Some do not have a number
+            \item At least one starts with a . (hidden file)
+        \end{enumerate}
+
+    \item If you're struggling to think of names, use a naming scheme such as characters from your favorite video game, or locations and characters from favorite books etc.  Make sure your files are full names of at least 5 characters, not just single letters/numbers
+    \item For each of the problems you should start with ls and then figure out the pattern needed to show the requested information, then pick 1 of them to try with find instead.  \item Demo of how to use ls is in the Linux FAQ videos \url{https://youtube.com/playlist?list=PLQOmuLC45eoQlIMH7oCNL6yFP7kWQubBo&si=R1SFWzEPHDDo-VBJ}
+
+    \end{itemize}
+\subsection*{Problems to solve}
+Use wildcards and the ls command to answer the following. 
+    \begin{enumerate}
+        \item All files
+        \item All files including hidden files.
+        \item Files that start with “f”
+        \item Files that start with “f” or “F”
+        \item Files that have “f” or “F” anywhere in the name
+        \item Files that have a digit in the name
+        \item Files that start with a through d
+        \item Files that end with 1 or 2
+        \item Experiment with the find command by solving one of the above questions using find instead of ls.
+
+    \end{enumerate}
+
+
+
+\section*{Deliverables}
+One file that has the lab title, name and date and the answers.  
+\begin{itemize}
+    \item Each problem given should be numbered to match the question
+    \item Make sure to list each command and the result.  \item Make sure to take a screenshot of each successful command.  
+    \item Don't use one screenshot for everything, make sure each screenshot is labeled with which problem it solved.
+\end{itemize}
+\end{document}

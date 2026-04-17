@@ -1,0 +1,109 @@
+\documentclass[12pt]{article}
+
+\usepackage{fontawesome}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage[tagged, highstructure]{accessibility}
+\usepackage{bookmark}
+\usepackage{enumitem}
+
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0},
+    pdftitle={Networks and permissions},
+    pdfauthor={Adrianna Holden-Gouveia},
+    pdfsubject={Introduction to Linux - Lab Assignment},
+    pdflang={en-US},
+    pdfkeywords={lab assignment, Networks and permissions}
+}
+
+% Configure PDF bookmarks for navigation
+\bookmarksetup{
+    numbered,
+    open,
+}
+
+% Configure list spacing for better accessibility
+\setlist{nosep}
+
+
+
+\title{Networks and permissions}
+\author{
+        Adrianna Holden-Gouveia \\
+        Website: \url{https://aholdengouveia.name}\\ 
+        \date{\vspace{-5ex}}
+        %Email: \href{mailto:admin@aholdengouveia.name}{admin@aholdengouveia.name} \\
+%        \faLinkedin{: aholdengouveia} \\
+        \faGithub {: aholdengouveia} \\
+%        \faTwitter {: aholdengouveia} \\
+        }
+
+%S\date{\today}
+
+
+\begin{document}    
+
+\maketitle
+
+\section*{Accessibility Notice}
+This document is also available in HTML format at:
+
+\url{https://aholdengouveia.name/IntroLinux/labs/networking.html}
+
+The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.
+
+
+%\begin{abstract}
+%This is a template for Linux Administration Lab work
+%\end{abstract}
+%\tableofcontents
+
+\section*{Objectives:}
+\begin{itemize}
+    \item Learn basic networking commands (ping, ifconfig/ip)
+    \item Understand how to test network connectivity
+    \item Master Linux file permissions and the chmod command
+    \item Practice setting different permission levels for files
+\end{itemize}
+\section*{Complete the following problems}
+
+References, a video, a PowerPoint and some notes are available at my website
+\url {https://www.aholdengouveia.name/IntroLinux/networking.html}
+
+\subsection*{Networking}
+You are going to use two basic commands ping and ifconfig or ip a
+
+    \begin{enumerate}
+        \item ping Google.com Was ping successful? What was the result? Take a screenshot
+        \item ping CNN.com Was ping successful? What was the result? Take a screenshot
+        \item Use ifconfig or ip a What does it show you? Use man to see what other useful things one of those can do
+    \end{enumerate}
+
+\subsection*{File Permissions}
+
+Create a subdirectory for this lab and put several files in it either using cp or touch
+
+
+Use chmod to create files with the following permissions:
+    \begin{enumerate}
+        \item Everyone can read and write but not execute
+        \item Owner has full permissions but everyone else can only read
+        \item No one can do anything including the owner
+        \item Owner and group have read and write permission, public only has read
+        \item Owner can read and execute but not write, everyone else can read\\
+    \end{enumerate}
+
+
+Use ls -l to show results, take a screenshot and include in report
+
+Pick one file and explain the permissions in your own words in the lab report
+
+
+\section*{Deliverables}
+ One file with your name, date, and lab title at the top and all the answers. 
+ \begin{itemize}
+        \item You should have screenshots for each ping, your ifconfig or ip a, and showing your file permissions
+        \item Make sure to include labels for each screenshot so it's clear what you're turning in. \item Don't forget to include the answers to each question asked as well. 
+\end{itemize}
+\end{document}

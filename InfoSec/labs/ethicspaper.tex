@@ -3,6 +3,8 @@
 \usepackage{fontawesome}
 \usepackage{hyperref}
 \usepackage[tagged, highstructure]{accessibility}
+\usepackage{bookmark}
+\usepackage{enumitem}
 
 \hypersetup{
     colorlinks=false,
@@ -13,6 +15,16 @@
     pdflang={en-US},
     pdfkeywords={computer ethics, security ethics, hacktivism, encryption, privacy}
 }
+
+% Configure PDF bookmarks for navigation
+\bookmarksetup{
+    numbered,
+    open,
+}
+
+% Configure list spacing for better accessibility
+\setlist{nosep}
+
 
 
 \title{Ethics Paper}
@@ -32,6 +44,14 @@
 \begin{document}    
 
 \maketitle
+
+\section*{Accessibility Notice}
+This document is also available in HTML format at:
+
+\url{https://aholdengouveia.name/InfoSec/labs/ethicspaper.html}
+
+The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.
+
 
 
 

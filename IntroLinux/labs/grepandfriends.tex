@@ -1,0 +1,118 @@
+\documentclass[12pt]{article}
+
+\usepackage{fontawesome}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage[tagged, highstructure]{accessibility}
+\usepackage{bookmark}
+\usepackage{enumitem}
+
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0},
+    pdftitle={Grep, and friends},
+    pdfauthor={Adrianna Holden-Gouveia},
+    pdfsubject={Introduction to Linux - Lab Assignment},
+    pdflang={en-US},
+    pdfkeywords={lab assignment, Grep, and friends}
+}
+
+% Configure PDF bookmarks for navigation
+\bookmarksetup{
+    numbered,
+    open,
+}
+
+% Configure list spacing for better accessibility
+\setlist{nosep}
+
+
+
+\title{Grep, and friends}
+\author{
+        Adrianna Holden-Gouveia \\
+        Website: \url{https://aholdengouveia.name}\\ 
+        \date{\vspace{-5ex}}
+        %Email: \href{mailto:admin@aholdengouveia.name}{admin@aholdengouveia.name} \\
+%        \faLinkedin{: aholdengouveia} \\
+        \faGithub {: aholdengouveia} \\
+%        \faTwitter {: aholdengouveia} \\
+        }
+
+%S\date{\today}
+
+
+\begin{document}    
+
+\maketitle
+
+\section*{Accessibility Notice}
+This document is also available in HTML format at:
+
+\url{https://aholdengouveia.name/IntroLinux/labs/grepandfriends.html}
+
+The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.
+
+
+%\begin{abstract}
+%This is a template for Linux Administration Lab work
+%\end{abstract}
+%\tableofcontents
+
+\section*{Objectives:}
+\begin{itemize}
+    \item Learn to use grep to filter text (locate lines with a specific text)
+    \item Use head, tail, and less to display a text file
+\end{itemize}
+\section*{Complete the following problems}
+
+References, a video, a PowerPoint and some notes are available at my website
+\url {https://www.aholdengouveia.name/IntroLinux/grepandfriends.html}
+
+
+
+We will use the /etc/passwd file for our example text file.
+
+If you would like to see some examples of what else you can do with grep I have a video on my Linux FAQ playlist on grep, it's called Grep: re-GREPable, ohh so re-GREPable... and can be found at this URL \url{https://www.youtube.com/embed/Iif-DjWYoWY}
+
+Grep can be used in many ways, but the two ways we'll work with are using a pipe or just passing arguments.
+
+Basic form: \\
+  \verb!cat /etc/passwd | grep pattern! \\
+  or \\
+  \verb|grep pattern file| \\
+  or with a switch like -n \\
+  \verb|grep -n pattern file|  
+
+
+
+Use man (or the text) to see what switches are available.
+
+The lab submission will be the command and the output in a text file
+
+
+
+\subsection*{Problems to solve}
+    \begin{enumerate}
+        \item  Find lines with your name
+        \item  Find lines with the name of your teacher (aholdengouveia)
+        \item  Find any lines containing daemon
+        \item  Use the -n switch to display the number of the line, and find nologin
+        \item  Use the -c switch to count how many times daemon shows up
+        \item  Count the number of bash appearances
+        \item  Use the -v switch (and -c) to count the number of lines without bash
+        \item  Display the file using head
+        \item  Do it again showing 15 lines
+        \item  Display the last 10 lines
+        \item  Display the last 20
+        \item  Use both more and less to display /etc/passwd
+        \item  Use od /etc/passwd | more (to display only one page)
+        \item  use the redirect to send the first 10 lines of the /etc/passwd file to a file called file1
+        \item  Append the last ten lines of /etc/passwd to file1
+    \end{enumerate}
+
+
+
+\section*{Deliverables}
+Turn in one file that includes all answers as text and screenshots for all 15 questions. All clearly labeled and numbered with which question your answer is for. Make sure to include screenshots for each answer, each screenshot should be clearly focused on the solution to the question asked.
+\end{document}

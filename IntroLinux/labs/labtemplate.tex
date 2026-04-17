@@ -4,6 +4,8 @@
 \usepackage{hyperref}
 \usepackage{xurl}
 \usepackage[tagged, highstructure]{accessibility}
+\usepackage{bookmark}
+\usepackage{enumitem}
 
 \hypersetup{
     colorlinks=false,
@@ -15,6 +17,16 @@
     pdfkeywords={lab assignment, template}
 }
 
+% Configure PDF bookmarks for navigation
+\bookmarksetup{
+    numbered,
+    open,
+}
+
+% Configure list spacing for better accessibility
+\setlist{nosep}
+
+
 
 \title{Lab Template}
 \author{
@@ -24,7 +36,7 @@
         %Email: \href{mailto:admin@aholdengouveia.name}{admin@aholdengouveia.name} \\
 %        \faLinkedin{: aholdengouveia} \\
         \faGithub {: aholdengouveia} \\
-        \faTwitter {: aholdengouveia} \\
+%        \faTwitter {: aholdengouveia} \\
         }
 
 %S\date{\today}
@@ -33,6 +45,14 @@
 \begin{document}    
 
 \maketitle
+
+\section*{Accessibility Notice}
+This document is also available in HTML format at:
+
+\url{https://aholdengouveia.name/IntroLinux/labs/labtemplate.html}
+
+The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.
+
 
 %\begin{abstract}
 %This is a template for Linux Administration Lab work
@@ -63,5 +83,24 @@ References, a video, a PowerPoint and some notes are available at my website
 
 
 \section*{Deliverables}
-A text document 
+A text document
+
+% ============================================================
+% EXAMPLE: Accessible Table (if needed)
+% Uncomment and modify the lines below to add a table
+% This ensures proper screen reader support
+% ============================================================
+%\begin{table}[h]
+%\caption{Command Options}
+%\begin{tabular}{|l|l|}
+%\hline
+%\textbf{Option} & \textbf{Description} \\
+%\hline
+%-F & Field separator \\
+%\hline
+%-v & Variable assignment \\
+%\hline
+%\end{tabular}
+%\end{table}
+
 \end{document}

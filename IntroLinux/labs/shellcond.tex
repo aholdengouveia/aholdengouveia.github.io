@@ -1,0 +1,95 @@
+\documentclass[12pt]{article}
+
+\usepackage{fontawesome}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage[tagged, highstructure]{accessibility}
+\usepackage{bookmark}
+\usepackage{enumitem}
+
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0},
+    pdftitle={Scripts with Conditionals},
+    pdfauthor={Adrianna Holden-Gouveia},
+    pdfsubject={Introduction to Linux - Lab Assignment},
+    pdflang={en-US},
+    pdfkeywords={lab assignment, Scripts with Conditionals}
+}
+
+% Configure PDF bookmarks for navigation
+\bookmarksetup{
+    numbered,
+    open,
+}
+
+% Configure list spacing for better accessibility
+\setlist{nosep}
+
+
+
+\title{Scripts with Conditionals}
+\author{
+        Adrianna Holden-Gouveia \\
+        Website: \url{https://aholdengouveia.name}\\ 
+        \date{\vspace{-5ex}}
+        %Email: \href{mailto:admin@aholdengouveia.name}{admin@aholdengouveia.name} \\
+%        \faLinkedin{: aholdengouveia} \\
+        \faGithub {: aholdengouveia} \\
+%        \faTwitter {: aholdengouveia} \\
+        }
+
+%S\date{\today}
+
+
+\begin{document}    
+
+\maketitle
+
+\section*{Accessibility Notice}
+This document is also available in HTML format at:
+
+\url{https://aholdengouveia.name/IntroLinux/labs/shellcond.html}
+
+The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.
+
+
+%\begin{abstract}
+%This is a template for Linux Administration Lab work
+%\end{abstract}
+%\tableofcontents
+
+\section*{Objectives:}
+\begin{itemize}
+    \item Learn how to do if statements, case statements, if/else statements and if/elseif/else statements. Become comfortable and competent with conditional statements. Learn more about why testing and commenting is important.  
+\end{itemize}
+\section*{Complete the following problems}
+
+References, a video, a PowerPoint and some notes are available at my website
+\url{https://www.aholdengouveia.name/IntroLinux/shellloop.html}
+
+
+\subsection*{How to turn in Scripts}
+    \begin{enumerate}
+        \item Testing must be submitted along with your code. You should submit a copy of the code and a screenshot or the results of your test so that I can see a successful run of your code. Every script should be tested.  A script that doesn't run is worth 0 points.
+        \item Comments should be done on EVERY line of code, (this is very bad practice in the real world, never do this for a job) so that I can see that you understand the code that you are submitting. Every line should have an explanation of what that line does.  Comments are worth 5 points per script.
+        \item For submission you need to submit a copy of your code (actual text NO screenshots of code allowed) and your successful test run of your code for every script.
+\end{enumerate}
+
+\subsection*{Scripts}
+
+For these two prompts, include your first iteration of your code with the single working if statement, clearly labelled, and then the code from your finished program.  Submissions that don't have both iterations will be given a 0.
+
+
+    \begin{enumerate}
+        \item Write a script to tell a knock knock joke. Make sure the user is giving the correct input in the correct spot.    This will require a nested if statement that will only finish the joke if the correct response is given.  Test that each option works!
+        \item Write a script do a choose your own adventure story about our school mascot.  If you don't know what an adventure story is,  is look it up or ask me. You need to have 2 conditional statements that are nested together.  So for example you could have a paragraph of story and then an A or B choice, each one would lead to another paragraph and another choice.  You also need to include endings,     Be creative.   Do not have more then the 2 nested if statements.   A great example of an adventure story is at  \url{http://xkcd.com/1350/}
+
+
+    \end{enumerate}
+
+It's better to start simple and work your way up.  I have a video on my Linux FAQ playlist on YouTube if you need help. Don't try and do the whole nested statements all at once, start with the basics, use my example if you want, and make small changes.
+
+\section*{Deliverables}
+One file that includes all the requested information with your name, the date, and the lab title, make sure to follow the requested pattern for scripts, an example is included with the first scripting lab
+\end{document}

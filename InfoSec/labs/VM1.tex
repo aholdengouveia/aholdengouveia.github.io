@@ -3,12 +3,28 @@
 \usepackage{fontawesome}
 \usepackage{hyperref}
 \usepackage[tagged, highstructure]{accessibility}
+\usepackage{bookmark}
+\usepackage{enumitem}
 
 \hypersetup{
+
     colorlinks=false,
-    pdfborder={0 0 0},
+    pdfborder={0 0 0}
+
+
     pdftitle={Virtual Machines Introduction Lab},
-    pdfauthor={Adrianna Holden-Gouveia},
+    pdfauthor={Adrianna Holden-Gouveia
+}
+
+% Configure PDF bookmarks for navigation
+\bookmarksetup{
+    numbered,
+    open,
+}
+
+% Configure list spacing for better accessibility
+\setlist{nosep}
+,
     pdfsubject={Information Security - Lab Assignment},
     pdflang={en-US},
     pdfkeywords={virtual machines, Kali Linux, Linux Mint, VirtualBox, security tools}
@@ -32,6 +48,14 @@
 \begin{document}    
 
 \maketitle
+
+\section*{Accessibility Notice}
+This document is also available in HTML format at:
+
+\url{https://aholdengouveia.name/InfoSec/labs/VM1.html}
+
+The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.
+
 
 %\begin{abstract}
 %This is a template for Linux Administration Lab work

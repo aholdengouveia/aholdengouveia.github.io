@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Alias and prompts</title>
+    <link href="../../tools/accessible-lab.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
+        <h1>Alias and prompts</h1>
+        <div class="author">
+            <p>Adrianna Holden-Gouveia</p>
+            <p>Website: <a href="https://aholdengouveia.name">https://aholdengouveia.name</a></p>
+            <p>GitHub: <a href="https://github.com/aholdengouveia" aria-label="GitHub profile">aholdengouveia</a></p>
+        </div>
+    </header>
+
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li><a href="/IntroLinux/">Introduction to Linux</a></li>
+                <li aria-current="page">Alias and prompts</li>
+            </ol>
+        </nav>
+
+    <main role="main" id="main-content">
+        <section role="region" aria-labelledby="pdf-version-notice" class="accessibility-notice">
+            <h2 id="pdf-version-notice">PDF Version Available</h2>
+            <p>This document is also available in PDF format: <a href="aliasesandothers.pdf">aliasesandothers.pdf</a></p>
+            <p>The PDF version includes bookmarks for easy navigation and is optimized for printing.</p>
+        </section>
+
+        <nav role="navigation" aria-label="Table of Contents" class="toc">
+            <h2>On this page:</h2>
+            <ul>
+                <li><a href="#accessibility-notice">Accessibility Notice</a></li>
+                <li><a href="#objectives">Objectives:</a></li>
+                <li><a href="#complete-the-following-problems">Complete the following problems</a></li>
+                <li><a href="#deliverables">Deliverables</a></li>
+            </ul>
+        </nav>
+
+<section role="region" aria-labelledby="accessibility-notice">
+<h2 id="accessibility-notice">Accessibility Notice</h2>
+<p>This document is also available in HTML format at:</p>
+
+<p><a href="https://aholdengouveia.name/IntroLinux/labs/aliasesandothers.html">https://aholdengouveia.name/IntroLinux/labs/aliasesandothers.html</a></p>
+
+<p>The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.</p>
+
+</section>
+
+<section role="region" aria-labelledby="objectives">
+<h2 id="objectives">Objectives:</h2>
+<ul>
+<li>Objective: Learn how to create and use an Alias. Learn how to modify your command prompt to display helpful information.</li>
+</ul>
+
+</section>
+
+<section role="region" aria-labelledby="complete-the-following-problems">
+<h2 id="complete-the-following-problems">Complete the following problems</h2>
+<p>Adrianna's video on how to use tar <a href="https://youtu.be/x0EK6PmKRCU">https://youtu.be/x0EK6PmKRCU</a></p>
+
+<p>References, a video, a PowerPoint and some notes are available at my website <a href="https://www.aholdengouveia.name/IntroLinux/aliasesandothers.html">https://www.aholdengouveia.name/IntroLinux/aliasesandothers.html</a></p>
+
+</section>
+
+<section role="region" aria-labelledby="aliases">
+<h2 id="aliases">Aliases</h2>
+<p>Reference: <a href="http://linuxreviews.org/quicktips/alias/">http://linuxreviews.org/quicktips/alias/</a></p>
+
+<ol>
+<li>For this part we are going to create and alias that will untar a tarball easily. enumerate</li>
+<li>Look up the man file on Aliases, take a screenshot.</li>
+<li>Create an alias called untar that will run the command tar -xvf take a screenshot.</li>
+<li>Create a tarball of your folders. take a screenshot.</li>
+<li>Run untar on that tarball. What happened? take a screenshot.</li>
+<li>How would you make this a permanent addition to your bash profile? (Don't make it permanent, just tell me how you would do it)</li>
+<li>Pick one command that you use all the time, create and alias for it. Tell me what the command is, why you chose is and what you called your alias. take a screenshot.</li>
+<li>The answers to all the questions should be put in a file called Aliases</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="environment-variables">
+<h2 id="environment-variables">Environment variables</h2>
+<p>This part of the lab is about changing your command prompt. We will be using Environmental Variables to do this.</p>
+
+<p>Reference: <a href="http://maketecheasier.com/8-useful-and-interesting-bash-prompts/2009/09/04">http://maketecheasier.com/8-useful-and-interesting-bash-prompts/2009/09/04</a></p>
+
+<p><a href="https://www.maketecheasier.com/more-useful-and-interesting-bash-prompts/">https://www.maketecheasier.com/more-useful-and-interesting-bash-prompts/</a></p>
+
+<ol>
+<li>Run the command echo \$SHELL What happened? take a screenshot.</li>
+<li>To do this you need to change the variable PS1 and reset it to your desired prompt. Reset this to your full first name. Take a screenshot to pass in</li>
+<li>What does your .bash\_profile or .profile say? take a screenshot.</li>
+<li>Go to the man file on Bash. You should be able to find options for your prompt. Try adding in the current time option, any of the 4 choices are fine.</li>
+<li>Run the command unset PS1 What happened? How did you fix it? take a screenshot.</li>
+<li>Go to the second reference link, read through it and make a command prompt that you think will be most useful to you. What did you do? Take a screenshot.</li>
+<li>The answers to all the questions should be put in a file called EnvironmentVariables</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="deliverables">
+<h2 id="deliverables">Deliverables</h2>
+<p>Two files should be submitted, both should have your name, date and lab title on them. Include screenshots of each of your successful commands and prompt changes. Make sure to clearly label any screenshots and answers so it's clear what you're solving.</p>
+
+</section>
+
+    </main>
+</body>
+</html>

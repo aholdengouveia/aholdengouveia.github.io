@@ -1,0 +1,112 @@
+\documentclass[12pt]{article}
+
+\usepackage{fontawesome}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage[tagged, highstructure]{accessibility}
+\usepackage{bookmark}
+\usepackage{enumitem}
+
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0},
+    pdftitle={Alias and prompts},
+    pdfauthor={Adrianna Holden-Gouveia},
+    pdfsubject={Introduction to Linux - Lab Assignment},
+    pdflang={en-US},
+    pdfkeywords={lab assignment, Alias and prompts}
+}
+
+% Configure PDF bookmarks for navigation
+\bookmarksetup{
+    numbered,
+    open,
+}
+
+% Configure list spacing for better accessibility
+\setlist{nosep}
+
+
+
+\title{Alias and prompts}
+\author{
+        Adrianna Holden-Gouveia \\
+        Website: \url{https://aholdengouveia.name}\\ 
+        \date{\vspace{-5ex}}
+        %Email: \href{mailto:admin@aholdengouveia.name}{admin@aholdengouveia.name} \\
+%        \faLinkedin{: aholdengouveia} \\
+        \faGithub {: aholdengouveia} \\
+%        \faTwitter {: aholdengouveia} \\
+        }
+
+%S\date{\today}
+
+
+\begin{document}    
+
+\maketitle
+
+\section*{Accessibility Notice}
+This document is also available in HTML format at:
+
+\url{https://aholdengouveia.name/IntroLinux/labs/aliasesandothers.html}
+
+The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.
+
+
+%\begin{abstract}
+%This is a template for Linux Administration Lab work
+%\end{abstract}
+%\tableofcontents
+
+\section*{Objectives:}
+\begin{itemize}
+    \item  Objective: Learn how to create and use an Alias.  Learn how to modify your command prompt to display helpful information. 
+\end{itemize}
+\section*{Complete the following problems}
+
+Adrianna's video on how to use tar \url {https://youtu.be/x0EK6PmKRCU}  
+
+
+References, a video, a PowerPoint and some notes are available at my website
+\url {https://www.aholdengouveia.name/IntroLinux/aliasesandothers.html}
+
+\subsection*{Aliases}
+ Reference: \url {http://linuxreviews.org/quicktips/alias/}
+
+    \begin{enumerate}
+        \item For this part we are going to create and alias that will untar a tarball easily.
+            \begin{enumerate}
+                \item Look up the man file on Aliases, take a screenshot.
+                \item Create an alias called untar that will run the command tar -xvf  take a screenshot.
+                \item Create a tarball of your folders. take a screenshot.
+                \item Run untar on that tarball. What happened? take a screenshot.
+                \item How would you make this a permanent addition to your bash profile? (Don't make it permanent, just tell me how you would do it)
+            \end{enumerate}
+        \item Pick one command that you use all the time, create and alias for it. Tell me what the command is, why you chose is and what you called your alias.  take a screenshot.
+        \item The answers to all the questions should be put in a file called Aliases
+    \end{enumerate}
+
+\subsection*{Environment variables}
+
+This part of the lab is about changing your command prompt. We will be using Environmental Variables to do this.
+
+
+ Reference: 
+ \url{http://maketecheasier.com/8-useful-and-interesting-bash-prompts/2009/09/04}
+
+\url{https://www.maketecheasier.com/more-useful-and-interesting-bash-prompts/}
+
+    \begin{enumerate}
+        \item Run the command echo \$SHELL What happened?  take a screenshot.
+        \item To do this you need to change the variable PS1 and reset it to your desired prompt. Reset this to your full first name. Take a screenshot to pass in
+        \item What does your .bash\_profile or .profile say?  take a screenshot.
+        \item Go to the man file on Bash. You should be able to find options for your prompt. Try adding in the current time option, any of the 4 choices are fine.
+        \item Run the command unset PS1 What happened? How did you fix it?  take a screenshot.
+        \item Go to the second reference link, read through it and make a command prompt that you think will be most useful to you. What did you do? Take a screenshot.
+        \item The answers to all the questions should be put in a file called EnvironmentVariables
+    \end{enumerate}
+
+\section*{Deliverables}
+Two files should be submitted, both should have your name, date and lab title on them. Include screenshots of each of your successful commands and prompt changes.  Make sure to clearly label any screenshots and answers so it's clear what you're solving.
+\end{document}

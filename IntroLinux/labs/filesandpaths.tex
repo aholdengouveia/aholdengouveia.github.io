@@ -1,0 +1,94 @@
+\documentclass[12pt]{article}
+
+\usepackage{fontawesome}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage[tagged, highstructure]{accessibility}
+\usepackage{bookmark}
+\usepackage{enumitem}
+
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0},
+    pdftitle={Files and Paths},
+    pdfauthor={Adrianna Holden-Gouveia},
+    pdfsubject={Introduction to Linux - Lab Assignment},
+    pdflang={en-US},
+    pdfkeywords={lab assignment, Files and Paths}
+}
+
+% Configure PDF bookmarks for navigation
+\bookmarksetup{
+    numbered,
+    open,
+}
+
+% Configure list spacing for better accessibility
+\setlist{nosep}
+
+
+
+\title{Files and Paths}
+\author{
+        Adrianna Holden-Gouveia \\
+        Website: \url{https://aholdengouveia.name}\\ 
+        \date{\vspace{-5ex}}
+        %Email: \href{mailto:admin@aholdengouveia.name}{admin@aholdengouveia.name} \\
+%        \faLinkedin{: aholdengouveia} \\
+        \faGithub {: aholdengouveia} \\
+%        \faTwitter {: aholdengouveia} \\
+        }
+
+%S\date{\today}
+
+
+\begin{document}    
+
+\maketitle
+
+\section*{Accessibility Notice}
+This document is also available in HTML format at:
+
+\url{https://aholdengouveia.name/IntroLinux/labs/filesandpaths.html}
+
+The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.
+
+
+%\begin{abstract}
+%This is a template for Linux Administration Lab work
+%\end{abstract}
+%\tableofcontents
+
+\section*{Objectives:}
+\begin{itemize}
+    \item Navigate the Linux file system using both absolute and relative paths
+    \item Perform basic file management operations, including creating, copying, moving, and deleting files and directories
+\end{itemize}
+\section*{Complete the following problems}
+
+References, a video, a PowerPoint and some notes are available at my website
+\url {https://www.aholdengouveia.name/IntroLinux/filesandpaths.html}
+
+
+
+\subsection*{Complete the following problems:}
+Make sure to take a screenshot of each problem solved.  You can use the clear command to make sure the terminal is focused on your current solution
+    \begin{enumerate}
+        \item Use pwd command to display and record the absolute path of your current working directory.
+        \item Create two new directories using mkdir
+        \item Use touch command to create five files
+        \item Navigate into one of the  directories using cd 
+        \item Move one file from your home directory into your current folder using a relative path
+        \item Use ls to confirm it moved
+        \item Move one file into the folder using its absolute path
+        \item Use ls to confirm it moved
+        \item Create a duplicate of one file in your folder and name the copy FILENAMEbackup using the cp command and relative paths
+        \item Delete one file in your home folder using rm
+        \item Perform a long listing ls -l of the home directory to view the final file details and permissions
+    \end{enumerate}
+
+
+
+\section*{Deliverables}
+A document containing the exact commands used for each numbered step, include clearly labelled screenshots of solution showing the successful execution of these commands as proof of testing.
+\end{document}
