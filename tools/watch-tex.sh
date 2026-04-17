@@ -27,10 +27,10 @@ if ! command -v inotifywait &> /dev/null; then
     exit 1
 fi
 
-# Check if pandoc is available
-if ! command -v pandoc &> /dev/null; then
-    echo "Error: pandoc is not installed"
-    echo "Install with: sudo apt-get install pandoc"
+# Check if python3 is available
+if ! command -v python3 &> /dev/null; then
+    echo "Error: python3 is not installed"
+    echo "Install with: sudo apt-get install python3"
     exit 1
 fi
 
@@ -39,7 +39,11 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Initial conversion
 echo "Running initial conversion..."
-"$SCRIPT_DIR/convert-tex-to-html.sh" "$TARGET_DIR"
+for tex_file in "$TARGET_DIR"/*.tex; do
+    if [ -f "$tex_file" ]; then
+        python3 "$SCRIPT_DIR/tex-to-html.py" "$tex_file"
+    fi
+done
 echo ""
 echo "Now watching for changes..."
 echo ""
@@ -49,7 +53,7 @@ cd "$TARGET_DIR" || exit 1
 inotifywait -m -e close_write,moved_to,create --format '%f' *.tex 2>/dev/null | while read file; do
     if [[ "$file" == *.tex ]]; then
         echo "Change detected in $file"
-        "$SCRIPT_DIR/convert-tex-to-html.sh" "$TARGET_DIR"
+        python3 "$SCRIPT_DIR/tex-to-html.py" "$TARGET_DIR/$file"
         echo ""
     fi
 done

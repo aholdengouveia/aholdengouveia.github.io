@@ -78,10 +78,10 @@ check_dependencies() {
         exit 1
     fi
 
-    # Check for tex-to-clean-html.py script
-    if [[ ! -f "$SCRIPT_DIR/tex-to-clean-html.py" ]]; then
-        echo -e "${RED}Error: tex-to-clean-html.py not found in tools directory${NC}"
-        echo "Expected location: $SCRIPT_DIR/tex-to-clean-html.py"
+    # Check for tex-to-html.py script
+    if [[ ! -f "$SCRIPT_DIR/tex-to-html.py" ]]; then
+        echo -e "${RED}Error: tex-to-html.py not found in tools directory${NC}"
+        echo "Expected location: $SCRIPT_DIR/tex-to-html.py"
         exit 1
     fi
 }
@@ -122,7 +122,7 @@ compile_html() {
 
     echo -e "${YELLOW}Generating HTML...${NC}"
 
-    if python3 "$SCRIPT_DIR/tex-to-clean-html.py" "$tex_file"; then
+    if python3 "$SCRIPT_DIR/tex-to-html.py" "$tex_file"; then
         echo -e "${GREEN}✓ HTML created: $html_file${NC}"
         return 0
     else

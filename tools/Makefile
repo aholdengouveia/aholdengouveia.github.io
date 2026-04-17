@@ -7,7 +7,7 @@
 
 # Find the tools directory and Python converter
 TOOLS_DIR := $(dir $(lastword $(MAKEFILE_LIST)))
-CONVERTER := $(TOOLS_DIR)tex-to-clean-html.py
+CONVERTER := $(TOOLS_DIR)tex-to-html.py
 
 # Find all .tex files in current directory
 TEX_FILES := $(wildcard *.tex)

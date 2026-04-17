@@ -16,7 +16,7 @@ cd tools
 The script will:
 - ✓ Prompt you for the .tex file path
 - ✓ Validate the file exists
-- ✓ Generate both PDF (via pdflatex) and HTML (via tex-to-clean-html.py)
+- ✓ Generate both PDF (via pdflatex) and HTML (via tex-to-html.py)
 - ✓ Show clear success/failure messages
 - ✓ Clean up auxiliary files (.aux, .log, etc.)
 
@@ -24,7 +24,14 @@ The script will:
 
 ```bash
 cd IntroData/labs
-python3 ../../tools/tex-to-clean-html.py usesandabusesofdata.tex
+python3 ../../tools/tex-to-html.py usesandabusesofdata.tex
+```
+
+Or specify a backend explicitly:
+
+```bash
+python3 ../../tools/tex-to-html.py --backend=pandoc usesandabusesofdata.tex
+python3 ../../tools/tex-to-html.py --backend=htlatex usesandabusesofdata.tex
 ```
 
 ### Convert All Files in a Directory
@@ -34,9 +41,16 @@ cd IntroData/labs
 make
 ```
 
-## The Clean HTML Converter
+## The Unified HTML Converter
 
-The `tex-to-clean-html.py` script generates accessible HTML similar to whatisdata.html:
+The `tex-to-html.py` script is a unified converter that supports multiple backends:
+
+**Backends:**
+- **custom** - Fast Python parser (always available, default)
+- **pandoc** - Robust LaTeX parsing (requires pandoc)
+- **htlatex** - Complex document support (requires TeX4ht)
+
+The converter auto-detects the best available backend, or you can specify one explicitly with `--backend=<name>`.
 
 **Features:**
 - ✓ Clean, semantic HTML5
@@ -46,6 +60,7 @@ The `tex-to-clean-html.py` script generates accessible HTML similar to whatisdat
 - ✓ Links to accessible-lab.css in tools folder
 - ✓ Converts lists, figures, links automatically
 - ✓ No complex LaTeX-generated classes
+- ✓ Automatic post-processing for clean output
 
 **Example Output:**
 ```html
@@ -86,10 +101,8 @@ make clean        # Remove generated HTML
 ## Files
 
 - `update-tex-outputs.sh` - **Interactive script to generate both PDF and HTML** (recommended for single files)
-- `tex-to-clean-html.py` - Main HTML converter
+- `tex-to-html.py` - **Unified HTML converter with multiple backends** (custom/pandoc/htlatex)
 - `Makefile` - Simple make interface for batch conversion
-- `clean-html.py` - Post-processor for htlatex output
-- `tex-to-accessible-html.sh` - Alternative using htlatex
 - `watch-tex.sh` - Watch script for auto-conversion
 
 ## Requirements
