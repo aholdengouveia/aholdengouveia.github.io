@@ -12,7 +12,7 @@ Tracking improvements and enhancements for the LaTeX accessibility toolkit.
 ## ⭐ Quick Wins (Easy, High Impact)
 _These can be done quickly and provide immediate value_
 
-### QW1. Add Version Number to Scripts ⏳
+### QW1. Add Version Number to Scripts ✅
 **Effort:** 🟢 Low (5 min) | **Impact:** Helps users know if they have latest version
 
 Add `__version__ = "1.0.0"` to latex-accessibility.py and tex-to-html.py. Show version with `--version` flag.
@@ -22,6 +22,8 @@ Add `__version__ = "1.0.0"` to latex-accessibility.py and tex-to-html.py. Show v
 python3 latex-accessibility.py --version
 # Should output: LaTeX Accessibility Tool v1.0.0
 ```
+
+**Status:** ✅ COMPLETED - Added version 1.0.0 to both tools with --version flag support.
 
 ---
 

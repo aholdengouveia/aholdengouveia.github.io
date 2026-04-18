@@ -98,6 +98,53 @@ figcaption {
     color: #666;
 }
 
+/* Tables */
+.table-container {
+    overflow-x: auto;
+    margin: 2em 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+caption {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 0.5em;
+    padding: 0.5em;
+    text-align: left;
+    caption-side: top;
+}
+
+th, td {
+    padding: 0.75em;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    color: #333;
+}
+
+thead th {
+    background-color: #e9ecef;
+    border-bottom: 2px solid #adb5bd;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tbody tr:hover {
+    background-color: #e9ecef;
+}
+
 /* Code and monospace */
 code, pre, .monospace {
     font-family: "Courier New", Courier, monospace;
@@ -312,6 +359,33 @@ pre code {
 
     figcaption {
         color: #999;
+    }
+
+    table {
+        border-color: #444;
+        background-color: #1a1a1a;
+    }
+
+    th, td {
+        border-color: #444;
+    }
+
+    th {
+        background-color: #2a2a2a;
+        color: #e0e0e0;
+    }
+
+    thead th {
+        background-color: #333;
+        border-bottom-color: #666;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #222;
+    }
+
+    tbody tr:hover {
+        background-color: #2a2a2a;
     }
 
     .skip-link {

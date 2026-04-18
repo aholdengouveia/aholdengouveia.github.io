@@ -13,6 +13,8 @@ Usage:
   python3 tex-to-html.py --list-backends               # Show available backends
 """
 
+__version__ = "1.2.2"
+
 import sys
 import re
 import argparse
@@ -53,6 +55,92 @@ def get_best_backend():
         return 'htlatex'
 
     return 'custom'  # Fallback to custom
+
+
+# ============================================================================
+# Input File Preprocessing
+# ============================================================================
+
+def preprocess_inputs(tex_content, base_path, processed_files=None):
+    """
+    Recursively expand \input{} and \include{} commands
+
+    This allows documents to be composed of multiple files, which is common
+    for large LaTeX documents.
+
+    Args:
+        tex_content: The LaTeX content to process
+        base_path: Path object for the directory of the current file
+        processed_files: Set of already processed files (to avoid infinite loops)
+
+    Returns:
+        Processed content with all inputs expanded
+    """
+    if processed_files is None:
+        processed_files = set()
+
+    # Pattern to match \input{filename} or \include{filename}
+    # These can have optional .tex extension
+    pattern = r'\\(?:input|include)\{([^}]+)\}'
+
+    def replace_input(match):
+        filename = match.group(1).strip()
+
+        # Try multiple file resolution strategies
+        possible_files = []
+
+        # Strategy 1: Use filename as-is
+        possible_files.append(base_path / filename)
+
+        # Strategy 2: Add .tex extension if not present
+        if not filename.endswith('.tex'):
+            possible_files.append(base_path / f"{filename}.tex")
+
+        # Strategy 3: Try removing .tex if present and adding it back
+        if filename.endswith('.tex'):
+            possible_files.append(base_path / filename[:-4])
+
+        # Find the first file that exists
+        input_file = None
+        for candidate in possible_files:
+            if candidate.exists() and candidate.is_file():
+                input_file = candidate
+                break
+
+        if not input_file:
+            # File not found, leave a comment and warning
+            print(f"⚠️  Warning: Could not find input file: {filename}")
+            print(f"   Searched in: {base_path}")
+            return f"\n% WARNING: Input file not found: {filename}\n"
+
+        # Check for circular dependencies
+        input_file_str = str(input_file.resolve())
+        if input_file_str in processed_files:
+            print(f"⚠️  Warning: Circular input detected: {filename}")
+            return f"\n% WARNING: Circular input detected: {filename}\n"
+
+        try:
+            with open(input_file, 'r', encoding='utf-8') as f:
+                content = f.read()
+
+            # Add this file to processed set
+            new_processed = processed_files.copy()
+            new_processed.add(input_file_str)
+
+            # Recursively process inputs in the included file
+            processed_content = preprocess_inputs(content, input_file.parent, new_processed)
+
+            # Add a comment to mark where the input was expanded
+            return f"\n% === BEGIN: {filename} ===\n{processed_content}\n% === END: {filename} ===\n"
+
+        except Exception as e:
+            print(f"⚠️  Warning: Error reading {filename}: {e}")
+            return f"\n% ERROR: Could not read input file: {filename}\n"
+
+    # Replace all \input{} and \include{} commands
+    processed = re.sub(pattern, replace_input, tex_content)
+
+    return processed
 
 
 # ============================================================================
@@ -172,13 +260,13 @@ def extract_author_info(tex_content):
 
     info['name'] = name_match.group(1).strip() if name_match else "Author Name"
 
-    # Extract website
+    # Extract website (return None if not found)
     website_match = re.search(r'\\url\{(https://[^}]+)\}', tex_content)
-    info['website'] = website_match.group(1) if website_match else "https://example.com"
+    info['website'] = website_match.group(1) if website_match else None
 
-    # Extract GitHub
+    # Extract GitHub (return None if not found)
     github_match = re.search(r'\\faGithub.*?\{:\s*([^}]+)\}', tex_content)
-    info['github'] = github_match.group(1).strip() if github_match else "username"
+    info['github'] = github_match.group(1).strip() if github_match else None
 
     return info
 
@@ -409,6 +497,140 @@ def convert_figure(block):
     return html
 
 
+def convert_table(block):
+    """
+    Convert LaTeX table/tabular/longtable environment to accessible HTML table
+
+    Supports:
+    - table, tabular, and longtable environments
+    - Column specifications (|l|c|r|, etc.)
+    - \\hline for horizontal rules
+    - \\caption for table captions
+    - & for cell separators
+    - \\\\ for row separators
+    - \\textbf{} for bold (header detection)
+    - longtable-specific commands (\\endfirsthead, \\endhead, \\endfoot, \\endlastfoot)
+    """
+    # Extract caption if present (can be inside or outside the environment)
+    caption_match = re.search(r'\\caption\{([^}]+)\}', block)
+    caption = caption_match.group(1) if caption_match else None
+
+    # Try to match longtable first, then tabular
+    tabular_match = re.search(r'\\begin\{longtable\}\{[^}]*\}(.*?)\\end\{longtable\}', block, re.DOTALL)
+    if not tabular_match:
+        tabular_match = re.search(r'\\begin\{tabular\}\{[^}]*\}(.*?)\\end\{tabular\}', block, re.DOTALL)
+
+    if not tabular_match:
+        return ""
+
+    tabular_content = tabular_match.group(1).strip()
+
+    # For longtable, handle caption that appears before the table data
+    if '\\caption{' in tabular_content and not caption:
+        # Match caption at the start (including the \\)
+        caption_match_inline = re.match(r'\\caption\{([^}]+)\}\s*\\\\\s*', tabular_content)
+        if caption_match_inline:
+            caption = caption_match_inline.group(1)
+            # Remove entire caption line including \\
+            tabular_content = tabular_content[caption_match_inline.end():]
+
+    # Remove \\hline commands (we'll use CSS for styling)
+    tabular_content = re.sub(r'\\hline\s*', '', tabular_content)
+
+    # For longtable, remove the header/footer definition sections
+    # Remove \multicolumn continuation notices first (usually "continued from/to next page")
+    tabular_content = re.sub(r'\\multicolumn\{[^}]*\}\{[^}]*\}\{.*?\}\s*\\\\\s*', '', tabular_content)
+
+    # Remove the longtable end-marker commands (but keep the rows before them)
+    tabular_content = re.sub(r'\s*\\endfirsthead\s*', '\n', tabular_content)
+    tabular_content = re.sub(r'\s*\\endhead\s*', '\n', tabular_content)
+    tabular_content = re.sub(r'\s*\\endfoot\s*', '\n', tabular_content)
+    tabular_content = re.sub(r'\s*\\endlastfoot\s*', '\n', tabular_content)
+
+    # Split into rows (separated by \\\\)
+    rows = [row.strip() for row in re.split(r'\\\\', tabular_content) if row.strip()]
+
+    # Remove duplicate consecutive rows (happens with longtable headers)
+    # Also remove rows that are just the caption text or single-cell non-data rows
+    deduplicated_rows = []
+    prev_row = None
+    for row in rows:
+        row_stripped = row.strip()
+
+        # Skip if it's the same as previous row (duplicate)
+        if row_stripped == prev_row:
+            continue
+
+        # Skip if it's just the caption text (shouldn't be a table row)
+        if caption and row_stripped == caption.strip():
+            continue
+
+        # Skip single-cell rows that match the caption (no & separators)
+        if caption and '&' not in row_stripped and caption.strip() in row_stripped:
+            continue
+
+        deduplicated_rows.append(row)
+        prev_row = row_stripped
+    rows = deduplicated_rows
+
+    if not rows:
+        return ""
+
+    # Start table HTML with accessibility attributes
+    html = '<div class="table-container">\n<table>\n'
+
+    if caption:
+        # Use caption as table caption
+        caption_id = re.sub(r'[^a-z0-9]+', '-', caption.lower()).strip('-')
+        html += f'<caption id="{caption_id}">{caption}</caption>\n'
+
+    # Check if first row is a header (contains \\textbf or all cells look like headers)
+    first_row = rows[0]
+    is_header_row = bool(re.search(r'\\textbf\{', first_row))
+
+    # Process rows
+    in_thead = False
+    for i, row in enumerate(rows):
+        # Split into cells (separated by &)
+        cells = [cell.strip() for cell in row.split('&')]
+
+        # Determine if this is a header row
+        is_header = (i == 0 and is_header_row)
+
+        # Start thead or tbody
+        if is_header and not in_thead:
+            html += '<thead>\n'
+            in_thead = True
+        elif not is_header and in_thead:
+            html += '</thead>\n<tbody>\n'
+            in_thead = False
+        elif i == 0 and not is_header:
+            html += '<tbody>\n'
+
+        html += '<tr>\n'
+
+        for cell in cells:
+            # Clean LaTeX commands from cell
+            cell_clean = clean_latex(cell)
+
+            # Use th for header cells, td for data cells
+            tag = 'th' if is_header else 'td'
+            scope = ' scope="col"' if is_header else ''
+            html += f'<{tag}{scope}>{cell_clean}</{tag}>\n'
+
+        html += '</tr>\n'
+
+    # Close thead or tbody
+    if in_thead:
+        html += '</thead>\n'
+    else:
+        html += '</tbody>\n'
+
+    html += '</table>\n</div>\n\n'
+
+    return html
+
+
 def clean_latex(text):
     """Remove/convert LaTeX commands to plain text/HTML"""
     # Remove comments
@@ -445,6 +667,23 @@ def convert_content(content):
     """Convert LaTeX content to HTML"""
     html = ""
 
+    # First, extract table environments (including longtable) to prevent them from being split
+    # We'll replace them with placeholders, process normally, then restore them
+    table_placeholders = {}
+    placeholder_counter = [0]  # Use list to allow modification in nested function
+
+    def replace_table(match):
+        placeholder = f"___TABLE_PLACEHOLDER_{placeholder_counter[0]}___"
+        table_placeholders[placeholder] = match.group(0)
+        placeholder_counter[0] += 1
+        return placeholder
+
+    # Extract longtable, table, and standalone tabular environments
+    content = re.sub(r'\\begin\{longtable\}.*?\\end\{longtable\}', replace_table, content, flags=re.DOTALL)
+    content = re.sub(r'\\begin\{table\}.*?\\end\{table\}', replace_table, content, flags=re.DOTALL)
+    # Only match standalone tabular (not inside table)
+    content = re.sub(r'\\begin\{center\}[^\\]*\\begin\{tabular\}.*?\\end\{tabular\}[^\\]*\\end\{center\}', replace_table, content, flags=re.DOTALL)
+
     # Split into blocks
     blocks = re.split(r'\n\n+', content)
 
@@ -453,8 +692,12 @@ def convert_content(content):
         if not block:
             continue
 
+        # Check if this block is a table placeholder and restore it
+        if block in table_placeholders:
+            block = table_placeholders[block]
+
         # Skip blocks that are just environment endings
-        if re.match(r'^\\end\{(itemize|enumerate|figure|table|verbatim|quote)\}$', block):
+        if re.match(r'^\\end\{(itemize|enumerate|figure|table|tabular|longtable|verbatim|quote|center)\}$', block):
             continue
 
         # Handle verbatim (code blocks) - must come before other checks
@@ -466,6 +709,9 @@ def convert_content(content):
         # Handle enumerate (numbered lists)
         elif '\\begin{enumerate}' in block:
             html += convert_enumerate(block)
+        # Handle tables (including restored longtable placeholders)
+        elif '\\begin{table}' in block or '\\begin{tabular}' in block or '\\begin{longtable}' in block:
+            html += convert_table(block)
         # Handle figures
         elif '\\begin{figure}' in block or '\\includegraphics' in block:
             html += convert_figure(block)
@@ -508,8 +754,12 @@ def backend_custom(tex_file, css_path="../../tools/accessible-lab.css"):
     Fast, generates clean semantic HTML with full control
     """
     # Read .tex file
+    tex_path = Path(tex_file)
     with open(tex_file, 'r', encoding='utf-8') as f:
         tex_content = f.read()
+
+    # Preprocess to expand \input{} and \include{} commands
+    tex_content = preprocess_inputs(tex_content, tex_path.parent)
 
     # Extract metadata
     title = extract_title(tex_content)
@@ -533,6 +783,10 @@ def backend_custom(tex_file, css_path="../../tools/accessible-lab.css"):
     # Generate breadcrumbs
     breadcrumb_html = generate_breadcrumbs(tex_file, title)
 
+    # Build author info lines (conditionally include or comment out)
+    website_line = f'            <p>Website: <a href="{author_info["website"]}">{author_info["website"]}</a></p>\n' if author_info['website'] else '            <!-- <p>Website: <a href="https://example.com">https://example.com</a></p> -->\n'
+    github_line = f'            <p>GitHub: <a href="https://github.com/{author_info["github"]}" aria-label="GitHub profile">{author_info["github"]}</a></p>\n' if author_info['github'] else '            <!-- <p>GitHub: <a href="https://github.com/username" aria-label="GitHub profile">username</a></p> -->\n'
+
     # Start HTML
     html = f'''<!DOCTYPE html>
 <html lang="en-US">
@@ -548,9 +802,7 @@ def backend_custom(tex_file, css_path="../../tools/accessible-lab.css"):
         <h1>{title}</h1>
         <div class="author">
             <p>{author_info['name']}</p>
-            <p>Website: <a href="{author_info['website']}">{author_info['website']}</a></p>
-            <p>GitHub: <a href="https://github.com/{author_info['github']}" aria-label="GitHub profile">{author_info['github']}</a></p>
-        </div>
+{website_line}{github_line}        </div>
     </header>
 
 {breadcrumb_html}    <main role="main" id="main-content">
@@ -597,22 +849,38 @@ def backend_pandoc(tex_file, css_path="../../tools/accessible-lab.css"):
     """
     Pandoc backend
     Robust LaTeX parsing, good for complex documents
-    """
-    html_file = Path(tex_file).with_suffix('.html')
 
-    # Extract title for metadata
+    Note: Pandoc can handle \input{} natively, but we preprocess anyway
+    to ensure consistent behavior across all backends and better error reporting.
+    """
+    tex_path = Path(tex_file)
+    html_file = tex_path.with_suffix('.html')
+
+    # Read and preprocess the tex file to expand \input{} commands
     try:
         with open(tex_file, 'r', encoding='utf-8') as f:
             tex_content = f.read()
+
+        # Preprocess to expand inputs
+        tex_content = preprocess_inputs(tex_content, tex_path.parent)
+
+        # Extract title for metadata
         title_match = re.search(r'\\title\{([^}]+)\}', tex_content)
         title = title_match.group(1) if title_match else None
-    except:
-        title = None
 
-    # Build pandoc command
+        # Create temporary preprocessed file
+        temp_tex = tex_path.parent / f"{tex_path.stem}_pandoc_temp.tex"
+        with open(temp_tex, 'w', encoding='utf-8') as f:
+            f.write(tex_content)
+
+    except Exception as e:
+        print(f"Error: Failed to preprocess {tex_file}: {e}", file=sys.stderr)
+        return None
+
+    # Build pandoc command (use temp file)
     cmd = [
         'pandoc',
-        str(tex_file),
+        str(temp_tex),
         '--from', 'latex',
         '--to', 'html5',
         '--standalone',
@@ -631,6 +899,10 @@ def backend_pandoc(tex_file, css_path="../../tools/accessible-lab.css"):
     except subprocess.CalledProcessError as e:
         print(f"Error: pandoc conversion failed: {e.stderr}", file=sys.stderr)
         return None
+    finally:
+        # Clean up temporary file
+        if temp_tex.exists():
+            temp_tex.unlink()
 
 
 def backend_htlatex(tex_file, css_path="../../tools/accessible-lab.css"):
@@ -647,6 +919,9 @@ def backend_htlatex(tex_file, css_path="../../tools/accessible-lab.css"):
         # Read original .tex file
         with open(tex_file, 'r', encoding='utf-8') as f:
             tex_content = f.read()
+
+        # Preprocess to expand \input{} and \include{} commands
+        tex_content = preprocess_inputs(tex_content, tex_path.parent)
 
         # Create temporary tex file without accessibility package
         # (htlatex has issues with the accessibility package)
@@ -781,6 +1056,12 @@ Examples:
   %(prog)s --backend=pandoc myfile.tex   # Use pandoc explicitly
   %(prog)s --list-backends               # Show available backends
         '''
+    )
+
+    parser.add_argument(
+        '--version',
+        action='version',
+        version=f'%(prog)s {__version__}'
     )
 
     parser.add_argument('tex_file', nargs='?', help='.tex file to convert')

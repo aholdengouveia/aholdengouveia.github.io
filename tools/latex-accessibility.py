@@ -25,6 +25,8 @@ Usage:
     python3 latex-accessibility.py fix-all <directory>
 """
 
+__version__ = "1.0.0"
+
 import sys
 import re
 import platform
@@ -342,16 +344,21 @@ def add_all_features(tex_file, html_url=None):
 
     # Auto-generate HTML URL if not provided
     if not html_url:
-        # Try to extract from existing URLs or create default
+        # CUSTOMIZATION NOTE: Change the domain below to match your website
+        # Default: https://example.com
+        # Example: https://yoursite.edu or https://username.github.io
+
         file_path = Path(tex_file)
         # Assuming structure like /path/to/Section/labs/filename.tex
-        # Create URL like https://aholdengouveia.name/Section/labs/filename.html
+        # Creates URL like https://example.com/Section/labs/filename.html
         parts = file_path.parts
         if len(parts) >= 2:
             section = parts[-2]  # e.g., "labs"
             parent = parts[-3] if len(parts) >= 3 else "unknown"  # e.g., "IntroLinux"
             filename = file_path.stem  # filename without extension
-            html_url = f"https://aholdengouveia.name/{parent}/{section}/{filename}.html"
+
+            # CUSTOMIZE THIS: Change "example.com" to your domain
+            html_url = f"https://example.com/{parent}/{section}/{filename}.html"
 
     # Add packages
     content, pkg_modified = add_accessibility_packages(content)
@@ -443,6 +450,11 @@ def main():
         sys.exit(1)
 
     command = sys.argv[1]
+
+    # Handle --version flag
+    if command in ['--version', '-v']:
+        print(f"LaTeX Accessibility Tool v{__version__}")
+        sys.exit(0)
 
     if command in ['add', 'fix']:
         if len(sys.argv) < 3:

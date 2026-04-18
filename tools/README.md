@@ -58,9 +58,11 @@ The converter auto-detects the best available backend, or you can specify one ex
 - ✓ ARIA labels (`aria-labelledby`) for accessibility
 - ✓ Responsive design (viewport meta tag)
 - ✓ Links to accessible-lab.css in tools folder
-- ✓ Converts lists, figures, links automatically
+- ✓ Converts lists, figures, and **tables** automatically
+- ✓ **Accessible table support** with proper `<thead>`, `<tbody>`, `<th scope="col">`, and `<td>` elements
 - ✓ No complex LaTeX-generated classes
 - ✓ Automatic post-processing for clean output
+- ✓ Supports `\input{}` and `\include{}` commands (recursively expands included files)
 
 **Example Output:**
 ```html
@@ -97,6 +99,79 @@ make              # Convert all .tex files
 make watch        # Auto-convert on changes (requires entr)
 make clean        # Remove generated HTML
 ```
+
+## Table Support
+
+The converter automatically converts LaTeX tables to accessible HTML tables:
+
+```latex
+\begin{table}[h]
+\centering
+\caption{Student Grades}
+\begin{tabular}{|l|c|r|}
+\hline
+\textbf{Name} & \textbf{Score} & \textbf{Grade} \\
+\hline
+Alice & 95 & A \\
+Bob & 87 & B+ \\
+Charlie & 92 & A- \\
+\hline
+\end{tabular}
+\end{table}
+```
+
+**Converts to:**
+```html
+<div class="table-container">
+  <table>
+    <caption id="student-grades">Student Grades</caption>
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Score</th>
+        <th scope="col">Grade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Alice</td><td>95</td><td>A</td></tr>
+      <tr><td>Bob</td><td>87</td><td>B+</td></tr>
+      <tr><td>Charlie</td><td>92</td><td>A-</td></tr>
+    </tbody>
+  </table>
+</div>
+```
+
+**Features:**
+- ✓ Proper semantic HTML with `<thead>`, `<tbody>`, `<th>`, `<td>`
+- ✓ Accessibility attributes (`scope="col"` on headers)
+- ✓ Responsive design with horizontal scrolling on mobile
+- ✓ Caption support with `\caption{}`
+- ✓ Header row detection using `\textbf{}`
+- ✓ **Supports `longtable` environment** for multi-page tables
+- ✓ Automatically handles longtable-specific commands (`\endfirsthead`, `\endhead`, `\endfoot`, `\endlastfoot`)
+- ✓ Styled with alternating row colors and hover effects
+- ✓ Dark mode support
+
+## Working with Multi-File Documents
+
+The converter automatically handles LaTeX documents that use `\input{}` or `\include{}` to split content across multiple files:
+
+```latex
+% main.tex
+\documentclass{article}
+\begin{document}
+\input{chapter1}
+\input{chapter2}
+\end{document}
+```
+
+**Features:**
+- ✓ Automatically expands all `\input{}` and `\include{}` commands
+- ✓ Handles nested inputs (files that include other files)
+- ✓ Resolves relative paths correctly
+- ✓ Works with all backends (custom, pandoc, htlatex)
+- ✓ Detects and warns about missing or circular includes
+- ✓ Supports both `.tex` extension and without (LaTeX convention)
 
 ## Files
 

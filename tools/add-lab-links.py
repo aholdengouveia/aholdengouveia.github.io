@@ -1,6 +1,28 @@
 #!/usr/bin/env python3
 """
-Add lab PDF and HTML links to IntroLinux topic HTML files
+Add lab PDF and HTML links to topic HTML files
+
+This tool automatically adds lab assignment links to topic pages.
+It looks for HTML files in a directory and adds links to matching
+labs in the labs/ subdirectory.
+
+Usage:
+    python3 add-lab-links.py <directory>
+
+Example:
+    python3 add-lab-links.py /path/to/IntroLinux
+    python3 add-lab-links.py ../IntroData
+
+Directory structure expected:
+    directory/
+        topic1.html          # Topic page
+        topic2.html          # Topic page
+        resources.html       # (skipped)
+        labs/
+            topic1.html      # Matching lab
+            topic1.pdf       # Matching lab PDF
+            topic2.html
+            topic2.pdf
 """
 
 import sys
@@ -38,9 +60,50 @@ def add_lab_links(content, lab_name):
     return content, False
 
 def main():
-    # Get all IntroLinux HTML files (excluding resources.html)
-    intro_linux_dir = Path('/home/aholdengouveia/aholdengouveia.github.io/IntroLinux')
-    html_files = list(intro_linux_dir.glob('*.html'))
+    # Check for directory argument
+    if len(sys.argv) < 2:
+        print("❌ Error: Missing directory argument")
+        print("\nUsage: python3 add-lab-links.py <directory>")
+        print("\nExample:")
+        print("  python3 add-lab-links.py /path/to/IntroLinux")
+        print("  python3 add-lab-links.py ../IntroData")
+        print("\nExpected structure:")
+        print("  directory/")
+        print("    topic1.html")
+        print("    topic2.html")
+        print("    labs/")
+        print("      topic1.html")
+        print("      topic1.pdf")
+        sys.exit(1)
+
+    # Get directory from command line
+    target_dir = Path(sys.argv[1])
+
+    # Validate directory exists
+    if not target_dir.exists():
+        print(f"❌ Error: Directory not found: {target_dir}")
+        print("\nSuggestions:")
+        print("  • Check the path is correct")
+        print("  • Use 'ls' to see available directories")
+        sys.exit(1)
+
+    if not target_dir.is_dir():
+        print(f"❌ Error: {target_dir} is not a directory")
+        sys.exit(1)
+
+    # Check if labs subdirectory exists
+    labs_dir = target_dir / 'labs'
+    if not labs_dir.exists():
+        print(f"❌ Error: No 'labs' subdirectory found in {target_dir}")
+        print(f"\nExpected: {labs_dir}")
+        print("\nThis tool requires a 'labs/' subdirectory with lab HTML/PDF files.")
+        sys.exit(1)
+
+    print(f"Processing HTML files in: {target_dir}")
+    print(f"Looking for labs in: {labs_dir}\n")
+
+    # Get all HTML files (excluding resources.html)
+    html_files = list(target_dir.glob('*.html'))
 
     modified_count = 0
 
@@ -52,7 +115,7 @@ def main():
         lab_name = html_file.stem  # filename without extension
 
         # Check if matching lab exists
-        lab_html = intro_linux_dir / 'labs' / f'{lab_name}.html'
+        lab_html = labs_dir / f'{lab_name}.html'
         if not lab_html.exists():
             print(f"○ Skipping {html_file.name} - no matching lab found")
             continue

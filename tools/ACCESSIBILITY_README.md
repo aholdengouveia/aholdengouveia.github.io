@@ -287,11 +287,9 @@ python3 latex-accessibility.py add myfile.tex
 | `README.md` | HTML conversion documentation |
 | `ACCESSIBILITY_README.md` | This file - accessibility tools documentation |
 
-## Site-Specific Tools
+## Additional Utilities
 
-These tools are customized for specific site structures and should be modified for your use:
-
-- `add-lab-links.py` - Adds lab links to topic HTML pages (site-specific structure)
+- `add-lab-links.py` - Adds lab links to topic HTML pages (generic - works with any directory structure containing a labs/ subdirectory)
 
 ## Tips and Best Practices
 
