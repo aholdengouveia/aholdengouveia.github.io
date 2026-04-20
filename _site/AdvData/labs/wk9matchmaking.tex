@@ -3,21 +3,39 @@
 \usepackage{fontawesome}
 \usepackage{hyperref}
 \usepackage{xurl}
-
+\usepackage[tagged, highstructure]{accessibility}
+\usepackage{bookmark}
+\usepackage{enumitem}
 
 \hypersetup{
     colorlinks=false,
     pdfborder={0 0 0},
+    pdftitle={Picking a Database Lab},
+    pdfauthor={Adrianna Holden-Gouveia},
+    pdfsubject={Advanced Data - Lab Assignment},
+    pdflang={en-US},
+    pdfkeywords={NoSQL, database selection, key-value store, document store, graph database}
+
 }
+
+% Configure PDF bookmarks for navigation
+\bookmarksetup{
+    numbered,
+    open,
+}
+
+% Configure list spacing for better accessibility
+\setlist{nosep}
+
 
 
 \title{Picking a Database}
 \author{
         Adrianna Holden-Gouveia \\
-        Website: \url{https://aholdengouveia.name}\\ 
+        Website: \href{https://aholdengouveia.name}{aholdengouveia.name}\\ 
         \date{\vspace{-5ex}}
         %Email: \href{mailto:admin@aholdengouveia.name}{admin@aholdengouveia.name} \\
-        \faLinkedin{: aholdengouveia} \\
+%        \faLinkedin{: aholdengouveia} \\
         \faGithub {: aholdengouveia} \\
         %\faTwitter {: aholdengouveia} \\
         }
@@ -34,14 +52,22 @@
 %\end{abstract}
 %\tableofcontents
 
+
+\section*{Accessibility Notice}
+This document is also available in HTML format at:
+
+Link: \href{https://aholdengouveia.name/AdvData/labs/wk9matchmaking.html}{\textbf{https://aholdengouveia.name/AdvData/labs/wk9matchmaking.html}}
+
+The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.
+
 \section*{Objectives:}
-\begin{enumerate}
+\begin{itemize}
     \item Learn how to evaluate database choices to pick the right one for a data set
-\end{enumerate}
+\end{itemize}
 \section*{Complete the following problems}
 
 References, a video, a PowerPoint and some notes are available at my website
-\url {https://www.aholdengouveia.name/AdvData/Databasematchmaking.html}
+Link: \href{https://www.aholdengouveia.name/AdvData/Databasematchmaking.html}{\textbf{https://www.aholdengouveia.name/AdvData/Databasematchmaking.html}}
 
 This should use the data set you've been working with.  If you need to change it for any reason please reach out to me.
 

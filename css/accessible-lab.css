@@ -334,7 +334,7 @@ pre code {
     }
 
     a {
-        color: #6ba3ff;  /* Lighter blue for dark backgrounds */
+        color: #82baff;  /* 8.6:1 on #1a1a1a, 7.1:1 on #2a2a2a — passes WCAG AAA */
     }
 
     a:hover, a:focus {
@@ -343,7 +343,7 @@ pre code {
 
     a[href^="http"]:not([href*="aholdengouveia.name"])::after,
     a[href^="https"]:not([href*="aholdengouveia.name"])::after {
-        color: #6ba3ff;
+        color: #82baff;
     }
 
     a[href^="http"]:not([href*="aholdengouveia.name"]):hover::after,
@@ -398,7 +398,7 @@ pre code {
     }
 
     a:focus-visible {
-        outline: 2px solid #6ba3ff;
+        outline: 2px solid #82baff;
     }
 
     .toc {
@@ -414,12 +414,16 @@ pre code {
         color: #6ba3ff;
     }
 
+    .breadcrumb a {
+        color: #82baff;  /* Explicit override — inheriting #0050a0 gives only 2.2:1 on #1a1a1a */
+    }
+
     .breadcrumb li + li::before {
         color: #999;
     }
 
     .breadcrumb li[aria-current="page"] {
-        color: #999;
+        color: #aaaaaa;  /* #999 gives 6.1:1 on #1a1a1a; #aaa gives 7.5:1 */
     }
 }
 

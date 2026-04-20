@@ -34,6 +34,7 @@
   </head>
 
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header>
 
@@ -58,10 +59,10 @@
          <ul class="navbar-nav mr-auto">
 <!--Social Media Menu section of NavBar-->
       <li class="nav-item dropdown">
-       <a class="nav-link dropdown-toggle" href="/socials.html" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       <a class="nav-link dropdown-toggle" href="/socials.html" id="navSocialsDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          Socials
        </a>
-       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+       <div class="dropdown-menu" aria-labelledby="navSocialsDropdown">
          <a class="dropdown-item" href="https://www.youtube.com/channel/UCebdI1gT84U7PBtJFUTrIQA">YouTube</a>
          <a class="dropdown-item" href="https://github.com/aholdengouveia">GitHub </a>
          <a class="dropdown-item" href="https://www.thingiverse.com/aholdengouveia/designs">Thingiverse</a>
@@ -75,10 +76,10 @@
 
 <!--Classes menu section of NavBar-->
      <li class="nav-item dropdown">
-       <a class="nav-link dropdown-toggle" href="/classes.html" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       <a class="nav-link dropdown-toggle" href="/classes.html" id="navClassesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          Classes
        </a>
-       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+       <div class="dropdown-menu" aria-labelledby="navClassesDropdown">
          <a class="dropdown-item" href="/introlinux.html">Introduction to Linux</a>
          <a class="dropdown-item" href="/introdata.html">Introduction to Data</a>
          <a class="dropdown-item" href="/introinfosec.html">Introduction to Security</a>
@@ -93,26 +94,30 @@
 
      <!--How to Section of NavBar-->
 <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="/HowTo.html" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="nav-link dropdown-toggle" href="/HowTo.html" id="navHowtoDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         How to ...
       </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-        <a class="dropdown-item" href="/Howtos/techjobs.html">get a Tech Job</a>
+      <div class="dropdown-menu" aria-labelledby="navHowtoDropdown">
+        <a class="dropdown-item" href="/Howtos/Getatechjob/techjobs.html">Get a Tech Job</a>
+        <a class="dropdown-item" href="/Howtos/Sourceeval/sourceEvaluation.html">Evaluate Sources</a>
+        <a class="dropdown-item" href="/Howtos/Study/HowToStudy.html">Take notes/Study</a>
+        <a class="dropdown-item" href="/Howtos/Documentation/HowToDocument.html">Documentation</a>
+        <a class="dropdown-item" href="/Howtos/ManageTime/HowtoTimeManage.html">Time Management</a>
         <!--
-        <a class="dropdown-item" href="#">Take notes/Study</a>
+        
         <a class="dropdown-item" href="#">Be your own project manager</a>
         <a class="dropdown-item" href="#">Manage your time</a>
-        <a class="dropdown-item" href="#">Documentation</a>
+        
         <a class="dropdown-item" href="#">Not cheat</a>
         -->
       </div>
     </li>
 <!--Other things I think are Important to learn-->
    <!-- <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="nav-link dropdown-toggle" href="#" id="navOtherDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Other tech stuff
       </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+      <div class="dropdown-menu" aria-labelledby="navOtherDropdown">
         <a class="dropdown-item" href="#">Shellscripting</a>
         <a class="dropdown-item" href="#">Linux Power Tools</a>
         <a class="dropdown-item" href="#">Google-Fu</a>
@@ -140,6 +145,7 @@
    </header>
 
 
+    <main id="main-content">
     <main role="main">
     <!--Jumbotron for the page header -->
     <div class="jumbotron" style="background: url(/SmartHome/smarthomeimages/rainbowsmokeairquality.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
@@ -220,7 +226,7 @@
         <p>
             <h4>It's Soldering time!</h4>
             I did not find the soldering to be particularly difficult, but it is a little bit finicky. I ended up actually buying a new soldering iron, called the <a href="https://pine64.com/product/pinecil-smart-mini-portable-soldering-iron/">Pinecil</a> because I had some old soldering irons that were not very user friendly.  And this one is open source. You do not have to spend a lot of money on a soldering iron, and it is also completely possible that either your school or your town has a makerspace where you can go and use a soldering iron. For example, the school that I work at you can actually just go ask one of the computer science or engineering teachers and they will make sure to give you a quick little safety rundown and then you can use one of the many soldering irons that we have if you're a student. What we're going to be doing is actually soldering three wires onto the board that we bought and then the other side of those wires is going to get soldered onto the ikea sensor.
-            <p id="two">
+            <p class="two">
                 NOTE: If nothing else, get a soldering iron with a digital temp reading.  The ones that say "High" or "Low" are most common, nothing are just not worth it.  
             </p>
         </p>
@@ -368,11 +374,10 @@
     </div>
 </p>
 
+    </main>
 
 
 
-
-   
 
         <!-- FOOTER -->
       <!--  <footer class="container">
@@ -396,8 +401,6 @@
             </span>
           </div>
         </footer>
-        
-  </main>
 
   <!-- Bootstrap core JavaScript
        ================================================== -->

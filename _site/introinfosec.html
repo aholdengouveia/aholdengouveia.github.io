@@ -34,6 +34,7 @@
   </head>
 
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header>
 
@@ -58,10 +59,10 @@
          <ul class="navbar-nav mr-auto">
 <!--Social Media Menu section of NavBar-->
       <li class="nav-item dropdown">
-       <a class="nav-link dropdown-toggle" href="/socials.html" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       <a class="nav-link dropdown-toggle" href="/socials.html" id="navSocialsDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          Socials
        </a>
-       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+       <div class="dropdown-menu" aria-labelledby="navSocialsDropdown">
          <a class="dropdown-item" href="https://www.youtube.com/channel/UCebdI1gT84U7PBtJFUTrIQA">YouTube</a>
          <a class="dropdown-item" href="https://github.com/aholdengouveia">GitHub </a>
          <a class="dropdown-item" href="https://www.thingiverse.com/aholdengouveia/designs">Thingiverse</a>
@@ -75,10 +76,10 @@
 
 <!--Classes menu section of NavBar-->
      <li class="nav-item dropdown">
-       <a class="nav-link dropdown-toggle" href="/classes.html" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       <a class="nav-link dropdown-toggle" href="/classes.html" id="navClassesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          Classes
        </a>
-       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+       <div class="dropdown-menu" aria-labelledby="navClassesDropdown">
          <a class="dropdown-item" href="/introlinux.html">Introduction to Linux</a>
          <a class="dropdown-item" href="/introdata.html">Introduction to Data</a>
          <a class="dropdown-item" href="/introinfosec.html">Introduction to Security</a>
@@ -93,28 +94,30 @@
 
      <!--How to Section of NavBar-->
 <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="/HowTo.html" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="nav-link dropdown-toggle" href="/HowTo.html" id="navHowtoDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         How to ...
       </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-        <a class="dropdown-item" href="/Howtos/techjobs.html">get a Tech Job</a>
-        <a class="dropdown-item" href="/Howtos/sourceEvaluation.html">Evaluate Sources</a>
-
+      <div class="dropdown-menu" aria-labelledby="navHowtoDropdown">
+        <a class="dropdown-item" href="/Howtos/Getatechjob/techjobs.html">Get a Tech Job</a>
+        <a class="dropdown-item" href="/Howtos/Sourceeval/sourceEvaluation.html">Evaluate Sources</a>
+        <a class="dropdown-item" href="/Howtos/Study/HowToStudy.html">Take notes/Study</a>
+        <a class="dropdown-item" href="/Howtos/Documentation/HowToDocument.html">Documentation</a>
+        <a class="dropdown-item" href="/Howtos/ManageTime/HowtoTimeManage.html">Time Management</a>
         <!--
-        <a class="dropdown-item" href="#">Take notes/Study</a>
+        
         <a class="dropdown-item" href="#">Be your own project manager</a>
         <a class="dropdown-item" href="#">Manage your time</a>
-        <a class="dropdown-item" href="#">Documentation</a>
+        
         <a class="dropdown-item" href="#">Not cheat</a>
         -->
       </div>
     </li>
 <!--Other things I think are Important to learn-->
    <!-- <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="nav-link dropdown-toggle" href="#" id="navOtherDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Other tech stuff
       </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+      <div class="dropdown-menu" aria-labelledby="navOtherDropdown">
         <a class="dropdown-item" href="#">Shellscripting</a>
         <a class="dropdown-item" href="#">Linux Power Tools</a>
         <a class="dropdown-item" href="#">Google-Fu</a>
@@ -142,6 +145,7 @@
    </header>
 
 
+    <main id="main-content">
     <!-- Sidebar -->
 <div class="container-fluid">
 <div class="row">
@@ -191,14 +195,14 @@
             </ul>
         </div>
     </div>
-    <div class="col">
+    <div class="col course-topic" id="main-content">
         <br><br>
-        <h2>Information Security for Everyone</h2>
+        <h1>Information Security for Everyone</h1>
 
 <p>
 The goal of this course is to provide students with a fundamental understanding of information security principles. Students will learn about the types of attacks and malicious code that may be used against a computer, the threats and countermeasures for e-mail, Web, wireless, and identity theft. Further, they will learn about spyware, viruses, and firewalls. In addition, security policies, disaster recovery, and home networks are covered. There will be a variety of hands-on and case project assignments that reinforce the concepts covered in each chapter.
 
-<h5> Learning Objectives</h5>
+<h2> Learning Objectives</h2>
 <ul>
   <li>Explain and Identify top threats to a computer network such as DDOS, password crackers, Spyware and Malware, and how to prevent them.</li>
   <li>Explain how to avoid online fraud and identity theft </li>
@@ -226,11 +230,10 @@ The goal of this course is to provide students with a fundamental understanding 
     </div>
 </div>
 </div>
+    </main>
 
 
 
-
-   
 
         <!-- FOOTER -->
       <!--  <footer class="container">
@@ -254,8 +257,6 @@ The goal of this course is to provide students with a fundamental understanding 
             </span>
           </div>
         </footer>
-        
-  </main>
 
   <!-- Bootstrap core JavaScript
        ================================================== -->

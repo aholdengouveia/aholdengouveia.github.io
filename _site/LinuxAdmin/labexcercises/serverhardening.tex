@@ -2,20 +2,39 @@
 
 \usepackage{fontawesome}
 \usepackage{hyperref}
+\usepackage[tagged, highstructure]{accessibility}
+\usepackage{bookmark}
+\usepackage{enumitem}
 
 \hypersetup{
     colorlinks=false,
     pdfborder={0 0 0},
+    pdftitle={Server Hardening Lab},
+    pdfauthor={Adrianna Holden-Gouveia},
+    pdfsubject={Linux Administration - Lab Assignment},
+    pdflang={en-US},
+    pdfkeywords={server hardening, security, Lynis, Linux, system administration}
+
 }
+
+% Configure PDF bookmarks for navigation
+\bookmarksetup{
+    numbered,
+    open,
+}
+
+% Configure list spacing for better accessibility
+\setlist{nosep}
+
 
 
 \title{Server Hardening}
 \author{
         Adrianna Holden-Gouveia \\
-        Website: \url{https://aholdengouveia.name}\\ 
+        Website: \href{https://aholdengouveia.name}{aholdengouveia.name}\\ 
         \date{\vspace{-5ex}}
         %Email: \href{mailto:admin@aholdengouveia.name}{admin@aholdengouveia.name} \\
-        \faLinkedin{: aholdengouveia} \\
+%        \faLinkedin{: aholdengouveia} \\
         \faGithub {: aholdengouveia} \\
        % \faTwitter {: aholdengouveia} \\
         }
@@ -32,18 +51,31 @@
 %\end{abstract}
 %\tableofcontents
 
-%\section*{Objectives:}
-%\begin{enumerate}
-%    \item Objective 1
-%    \item Objective 2
-%\end{enumerate}
-%\section*{Complete the following problems}
+
+\section*{Accessibility Notice}
+This document is also available in HTML format at:
+
+Link: \href{https://aholdengouveia.name/LinuxAdmin/labexcercises/serverhardening.html}{\textbf{https://aholdengouveia.name/LinuxAdmin/labexcercises/serverhardening.html}}
+
+The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.
+
+\section*{Objectives:}
+\begin{itemize}
+    \item The objective of this lab is to introduce students to server hardening practices and security auditing through the use of automated tools and health monitoring systems. Through hands-on exercises, students will learn to use Lynis for comprehensive security audits, analyze and remediate security vulnerabilities, debug and refactor poorly written monitoring scripts, and develop effective server health monitoring systems—building the critical skills needed to maintain secure, well-monitored production servers and respond to real-world code quality challenges.
+\end{itemize}
+\section*{Complete the following problems}
  
 %\subsection*{Please include the command, a screenshot showing it works as intended, cite all sources you used, and give a short explanation of how the command works and why.}
+
+This lab includes a script that was written by me using an AI.  Scripts written by AI can be of varying quality, and it's likely you'll get slop and need to fix it.  This script is slop on purpose and needs to be fixed. Be wary of the comments by previous developers (me!), you never know who you can trust, here be dragons! 
+
+The script is attached to this lab, it's called "BadServerHealthCheck", there is a bash script version and a Python version.  You make pick which one you want to fix. There are some hints in the comments for things to fix.  Not everything that should be fixed is hinted at, some things that need fixing are included and hidden for extra coding chaos. Let the games begin. 
+
     \begin{enumerate}
-        \item Download and install Lynis (https://cisofy.com/lynis/) on both your servers and run it.
+        \item Download and install Lynis (Link: \href{https://cisofy.com/lynis/)}{\textbf{https://cisofy.com/lynis/)}} on both your servers and run it.
         \item Create a short report on the findings (one report for each server) and what you'll do to improve your server setup.
-        \item Write a script to monitor the health of your server using the commands from the PowerPoints on Security, DFIR and Backups as your base. Think about what info you care about, and how to make it easier for you to read or upload to your dashboard.  Data is only good if you're using it for something. 
+        \item Fix the given script to monitor the health of your server using the commands from the PowerPoints on Security, DFIR and Backups as your base. Think about what info you care about, and how to make it easier for you to read or upload to your dashboard.  Data is only good if you're using it for something. 
+        \item When fixing/debugging/refactoring the script, make sure you also add comments for what each thing actually does. 
     \end{enumerate}
 
 
@@ -55,9 +87,9 @@ Audience is a new intern at the company who's first set of jobs is to check the 
         \item Your Lynis reports, including any changes you made to each server and why you made those changes. 
         \item Health Monitoring Document(s)
             \begin{enumerate}
-                \item Documentation for this should include a short text file explaining what you choose to include on your health monitor and why.
+                \item Documentation for this should include a short text file explaining what you choose to change on your health monitor and why.
                 \item Location for where the health report is saved and instructions for how to run your script remotely.
-                \item Make sure to include information about what you picked, why you picked those commands and how they are used.
+                \item Make sure to include information about what you picked/fixed, why you picked those commands and how they are used.
                 \item Answer the following: Are they different for each server? the same for both?  Are the running instructions any different?
             \end{enumerate}
     \end{enumerate}

@@ -34,6 +34,7 @@
   </head>
 
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header>
 
@@ -58,10 +59,10 @@
          <ul class="navbar-nav mr-auto">
 <!--Social Media Menu section of NavBar-->
       <li class="nav-item dropdown">
-       <a class="nav-link dropdown-toggle" href="/socials.html" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       <a class="nav-link dropdown-toggle" href="/socials.html" id="navSocialsDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          Socials
        </a>
-       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+       <div class="dropdown-menu" aria-labelledby="navSocialsDropdown">
          <a class="dropdown-item" href="https://www.youtube.com/channel/UCebdI1gT84U7PBtJFUTrIQA">YouTube</a>
          <a class="dropdown-item" href="https://github.com/aholdengouveia">GitHub </a>
          <a class="dropdown-item" href="https://www.thingiverse.com/aholdengouveia/designs">Thingiverse</a>
@@ -75,10 +76,10 @@
 
 <!--Classes menu section of NavBar-->
      <li class="nav-item dropdown">
-       <a class="nav-link dropdown-toggle" href="/classes.html" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       <a class="nav-link dropdown-toggle" href="/classes.html" id="navClassesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          Classes
        </a>
-       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+       <div class="dropdown-menu" aria-labelledby="navClassesDropdown">
          <a class="dropdown-item" href="/introlinux.html">Introduction to Linux</a>
          <a class="dropdown-item" href="/introdata.html">Introduction to Data</a>
          <a class="dropdown-item" href="/introinfosec.html">Introduction to Security</a>
@@ -93,28 +94,30 @@
 
      <!--How to Section of NavBar-->
 <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="/HowTo.html" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="nav-link dropdown-toggle" href="/HowTo.html" id="navHowtoDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         How to ...
       </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-        <a class="dropdown-item" href="/Howtos/techjobs.html">get a Tech Job</a>
-        <a class="dropdown-item" href="/Howtos/sourceEvaluation.html">Evaluate Sources</a>
-
+      <div class="dropdown-menu" aria-labelledby="navHowtoDropdown">
+        <a class="dropdown-item" href="/Howtos/Getatechjob/techjobs.html">Get a Tech Job</a>
+        <a class="dropdown-item" href="/Howtos/Sourceeval/sourceEvaluation.html">Evaluate Sources</a>
+        <a class="dropdown-item" href="/Howtos/Study/HowToStudy.html">Take notes/Study</a>
+        <a class="dropdown-item" href="/Howtos/Documentation/HowToDocument.html">Documentation</a>
+        <a class="dropdown-item" href="/Howtos/ManageTime/HowtoTimeManage.html">Time Management</a>
         <!--
-        <a class="dropdown-item" href="#">Take notes/Study</a>
+        
         <a class="dropdown-item" href="#">Be your own project manager</a>
         <a class="dropdown-item" href="#">Manage your time</a>
-        <a class="dropdown-item" href="#">Documentation</a>
+        
         <a class="dropdown-item" href="#">Not cheat</a>
         -->
       </div>
     </li>
 <!--Other things I think are Important to learn-->
    <!-- <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="nav-link dropdown-toggle" href="#" id="navOtherDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Other tech stuff
       </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+      <div class="dropdown-menu" aria-labelledby="navOtherDropdown">
         <a class="dropdown-item" href="#">Shellscripting</a>
         <a class="dropdown-item" href="#">Linux Power Tools</a>
         <a class="dropdown-item" href="#">Google-Fu</a>
@@ -142,6 +145,7 @@
    </header>
 
 
+    <main id="main-content">
     <!-- Sidebar -->
 <div class="container-fluid">
 <div class="row">
@@ -191,9 +195,9 @@
             </ul>
         </div>
     </div>
-    <div class="col">
+    <div class="col course-topic" id="main-content">
         <br><br>
-        <h3>Introduction to Security and Information Assurance</h3>
+        <h1>Introduction to Security and Information Assurance</h1>
 <p>Learning outcomes
     <ul>
         <li>Be able to understand and explain the basic CIA principles</li>
@@ -312,7 +316,7 @@
 <p>Suggested Activities and Discussion Topics:
     <ul>
         <li>This activity is going to be checking to see if you have potentially compromised accounts.  Go to <a href="https://haveibeenpwned.com/">https://haveibeenpwned.com</a> and see if you are listed under any or all of your accounts.  If you are, take the steps recommended to fix and security your accounts. </li>
-        <li>Download <a href="/InfoSec/labs/VM1.pdf">this PDF</a> and setup the two virtual machines.  Both Mint and Kali Linux are useful for information security work, Linux can have a steep learning curve so it's important to get comfortable with it sooner rather then later. This course won't be going to far into it, but it's good to have some familiarity.</li>
+        <li>Download <a href="/InfoSec/labs/VM1.pdf">this PDF</a> (<a href="/InfoSec/labs/VM1.html">accessible HTML version</a>) and setup the two virtual machines.  Both Mint and Kali Linux are useful for information security work, Linux can have a steep learning curve so it's important to get comfortable with it sooner rather then later. This course won't be going to far into it, but it's good to have some familiarity.</li>
         <li>Try out <a href="https://www.phishingbox.com/phishing-test">this phishing test online for free</a> and see what your score is. Can you correctly identify all the phishing emails?</li>
     </ul>
 </p>
@@ -324,11 +328,10 @@
     </div>
 </div>
 </div>
+    </main>
 
 
 
-
-   
 
         <!-- FOOTER -->
       <!--  <footer class="container">
@@ -352,8 +355,6 @@
             </span>
           </div>
         </footer>
-        
-  </main>
 
   <!-- Bootstrap core JavaScript
        ================================================== -->

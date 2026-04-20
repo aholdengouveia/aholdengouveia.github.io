@@ -2,20 +2,39 @@
 
 \usepackage{fontawesome}
 \usepackage{hyperref}
+\usepackage[tagged, highstructure]{accessibility}
+\usepackage{bookmark}
+\usepackage{enumitem}
 
 \hypersetup{
     colorlinks=false,
     pdfborder={0 0 0},
+    pdftitle={Containers Lab},
+    pdfauthor={Adrianna Holden-Gouveia},
+    pdfsubject={Linux Administration - Lab Assignment},
+    pdflang={en-US},
+    pdfkeywords={containers, Docker, Kubernetes, virtualization, server administration}
+
 }
+
+% Configure PDF bookmarks for navigation
+\bookmarksetup{
+    numbered,
+    open,
+}
+
+% Configure list spacing for better accessibility
+\setlist{nosep}
+
 
 
 \title{Containers}
 \author{
         Adrianna Holden-Gouveia \\
-        Website: \url{https://aholdengouveia.name}\\ 
+        Website: \href{https://aholdengouveia.name}{aholdengouveia.name}\\ 
         \date{\vspace{-5ex}}
         %Email: \href{mailto:admin@aholdengouveia.name}{admin@aholdengouveia.name} \\
-        \faLinkedin{: aholdengouveia} \\
+%        \faLinkedin{: aholdengouveia} \\
         \faGithub {: aholdengouveia} \\
        % \faTwitter {: aholdengouveia} \\
         }
@@ -32,28 +51,35 @@
 %\end{abstract}
 %\tableofcontents
 
-%\section*{Objectives:}
-%\begin{enumerate}
-%    \item Objective 1
-%    \item Objective 2
-%\end{enumerate}
+
+\section*{Accessibility Notice}
+This document is also available in HTML format at:
+
+Link: \href{https://aholdengouveia.name/LinuxAdmin/labexcercises/containers.html}{\textbf{https://aholdengouveia.name/LinuxAdmin/labexcercises/containers.html}}
+
+The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.
+
+\section*{Objectives:}
+\begin{itemize}
+    \item The objective of this lab is to introduce students to containerization technologies, including Docker and Kubernetes, which are widely used in modern server administration and application deployment. Through hands-on installation and configuration exercises, students will gain practical experience deploying containerized applications, understand the advantages and limitations of containers, and evaluate their use in enterprise environments.
+\end{itemize}
 
 
 \section*{Complete the following problems}
 
 References, a video, a PowerPoint and some notes are available at my website
-\url {https://www.aholdengouveia.name/LinuxAdmin/containers.html}
+Link: \href{https://www.aholdengouveia.name/LinuxAdmin/containers.html}{\textbf{https://www.aholdengouveia.name/LinuxAdmin/containers.html}}
 
 \subsection*{You may do this on one of your servers.}
     \begin{enumerate}
         \item Install Docker and Kubernetes on your server.  
             \subitem You can use Microk8 as your Kubernetes installation method  
-            \subitem Instructions: \url{https://microk8s.io/}
+            \subitem Instructions: Link: \href{https://microk8s.io/}{\textbf{https://microk8s.io/}}
         \item Go through the MiniKube tutorial
-            \subitem Tutorial: \url{https://kubernetes.io/docs/tutorials/hello-minikube/}
+            \subitem Tutorial: Link: \href{https://kubernetes.io/docs/tutorials/hello-minikube/}{\textbf{https://kubernetes.io/docs/tutorials/hello-minikube/}}
         \item Get a basic web server working using Docker \underline{OR} kubernetes on \underline{ONE} of your servers. 
-            \subitem You can grab the docker image from \url{https://hub.docker.com/_/httpd}  
-            \subitem I also have some instructions and sample yaml files available for you on my website \url{https://www.aholdengouveia.name/SmartHome/Virtualizationsetup.html}  
+            \subitem You can grab the docker image from Link: \href{https://hub.docker.com/_/httpd}{\textbf{https://hub.docker.com/_/httpd}}  
+            \subitem I also have some instructions and sample yaml files available for you on my website Link: \href{https://www.aholdengouveia.name/SmartHome/Virtualizationsetup.html}{\textbf{https://www.aholdengouveia.name/SmartHome/Virtualizationsetup.html}}  
             \subitem If you would prefer you can substitute another server for Apache such as Home Assistant or ZoneMinder.
     \end{enumerate}
 

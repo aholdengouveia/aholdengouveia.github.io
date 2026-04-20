@@ -2,20 +2,39 @@
 
 \usepackage{fontawesome}
 \usepackage{hyperref}
+\usepackage[tagged, highstructure]{accessibility}
+\usepackage{bookmark}
+\usepackage{enumitem}
 
 \hypersetup{
     colorlinks=false,
     pdfborder={0 0 0},
+    pdftitle={IP Tables Lab},
+    pdfauthor={Adrianna Holden-Gouveia},
+    pdfsubject={Linux Administration - Lab Assignment},
+    pdflang={en-US},
+    pdfkeywords={iptables, firewall, network security, Linux, DDOS prevention}
+
 }
+
+% Configure PDF bookmarks for navigation
+\bookmarksetup{
+    numbered,
+    open,
+}
+
+% Configure list spacing for better accessibility
+\setlist{nosep}
+
 
 
 \title{IP Tables}
 \author{
         Adrianna Holden-Gouveia \\
-        Website: \url{https://aholdengouveia.name}\\ 
+        Website: \href{https://aholdengouveia.name}{aholdengouveia.name}\\ 
         \date{\vspace{-5ex}}
         %Email: \href{mailto:admin@aholdengouveia.name}{admin@aholdengouveia.name} \\
-        \faLinkedin{: aholdengouveia} \\
+%        \faLinkedin{: aholdengouveia} \\
         \faGithub {: aholdengouveia} \\
         %\faTwitter {: aholdengouveia} \\
         }
@@ -32,15 +51,22 @@
 %\end{abstract}
 %\tableofcontents
 
-%\section*{Objectives:}
-%\begin{enumerate}
-%    \item Objective 1
-%    \item Objective 2
-%\end{enumerate}
+
+\section*{Accessibility Notice}
+This document is also available in HTML format at:
+
+Link: \href{https://aholdengouveia.name/LinuxAdmin/labexcercises/iptables.html}{\textbf{https://aholdengouveia.name/LinuxAdmin/labexcercises/iptables.html}}
+
+The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.
+
+\section*{Objectives:}
+\begin{itemize}
+    \item The objective of this lab is to introduce students to iptables, Linux's built-in firewall and packet filtering system, which is critical for network security and server protection. Through hands-on exercises, students will learn to configure firewall rules for common services, control network traffic through port management and forwarding, block or allow specific hosts, and understand strategies for preventing network attacks such as DDOS—essential skills for securing Linux servers in production environments.
+\end{itemize}
 \section*{Complete the following problems}
 
 References, a video, a PowerPoint and some notes are available at my website
-https://www.aholdengouveia.name/LinuxAdmin/iptables.html
+Link: \href{https://www.aholdengouveia.name/LinuxAdmin/iptables.html}{\textbf{https://www.aholdengouveia.name/LinuxAdmin/iptables.html}}
 
 \subsection*{Go through both servers and complete the following problems.  }
 

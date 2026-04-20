@@ -4,21 +4,39 @@
 \usepackage{hyperref}
 \usepackage{xurl}
 \usepackage{graphicx}
-
+\usepackage[tagged, highstructure]{accessibility}
+\usepackage{bookmark}
+\usepackage{enumitem}
 
 \hypersetup{
     colorlinks=false,
     pdfborder={0 0 0},
+    pdftitle={Data Integrity Lab},
+    pdfauthor={Adrianna Holden-Gouveia},
+    pdfsubject={Introduction to Data - Lab Assignment},
+    pdflang={en-US},
+    pdfkeywords={data integrity, data quality, data validation, machine learning}
+
 }
+
+% Configure PDF bookmarks for navigation
+\bookmarksetup{
+    numbered,
+    open,
+}
+
+% Configure list spacing for better accessibility
+\setlist{nosep}
+
 
 
 \title{Data Integrity}
 \author{
         Adrianna Holden-Gouveia \\
-        Website: \url{https://aholdengouveia.name}\\ 
+        Website: \href{https://aholdengouveia.name}{aholdengouveia.name}\\ 
         \date{\vspace{-5ex}}
         %Email: \href{mailto:admin@aholdengouveia.name}{admin@aholdengouveia.name} \\
-        \faLinkedin{: aholdengouveia} \\
+%        \faLinkedin{: aholdengouveia} \\
         \faGithub {: aholdengouveia} \\
         %\faTwitter {: aholdengouveia} \\
         }
@@ -34,20 +52,28 @@
 %\end{abstract}
 %\tableofcontents
 
+
+\section*{Accessibility Notice}
+This document is also available in HTML format at:
+
+Link: \href{https://aholdengouveia.name/IntroData/labs/dataintegrity.html}{\textbf{https://aholdengouveia.name/IntroData/labs/dataintegrity.html}}
+
+The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.
+
 \section*{Objectives:}
 \begin{itemize}
     \item The goal of this lab assignment is for students to actively identify and address data integrity issues. Through hands-on analysis and problem-solving, students will gain practical experience in maintaining data quality
 \end{itemize}
 
 References, a video, a PowerPoint and some notes are available at my website
-\url {https://www.aholdengouveia.name/IntroData/dataintegrity.html}
+Link: \href{https://www.aholdengouveia.name/IntroData/dataintegrity.html}{\textbf{https://www.aholdengouveia.name/IntroData/dataintegrity.html}}
 
 
 To do this lab you need both the HalloweenCandy.csv data set, and the data set you collected in the previous lab on what is data. You will also need to use Google Sheets with the Simple ML extension.  If you do not have a Google account, you can get one for free before doing this lab.  
 
-Before attempting this lab, watch this video on Simple ML for Google Sheets \url{https://io.google/2023/program/e695ebdd-b968-4b85-98d9-0a722892e842/} to get an idea of what can be done with Machine Learning
+Before attempting this lab, watch this video on Simple ML for Google Sheets Link: \href{https://io.google/2023/program/e695ebdd-b968-4b85-98d9-0a722892e842/}{\textbf{https://io.google/2023/program/e695ebdd-b968-4b85-98d9-0a722892e842/}} to get an idea of what can be done with Machine Learning
 
-The documentation for Google sheets can be found \url{https://support.google.com/docs/topic/1361472?hl=en&sjid=7424903615941153253-NA}
+The documentation for Google sheets can be found Link: \href{https://support.google.com/docs/topic/1361472?hl=en&sjid=7424903615941153253-NA}{\textbf{https://support.google.com/docs/topic/1361472?hl=en&sjid=7424903615941153253-NA}}
 
 
 Each screenshot should have your name, term, and year.  One of the easiest ways to do that is make a text document with your name and term/year on your computer and saving it to use all term. Any screenshots that don't include this information won't be counted.
@@ -55,7 +81,7 @@ Each screenshot should have your name, term, and year.  One of the easiest ways 
 \begin{figure}[h!]
     \centerline{\includegraphics[scale=.2]{ExampleScreenshot.png}}
     \caption{This is an image of what each of your screenshots should look like}
-
+    \alt{Example screenshot showing a text document with student name and term/year alongside data visualization}
     \end{figure} 
 
 
@@ -65,7 +91,7 @@ Each screenshot should have your name, term, and year.  One of the easiest ways 
 Using the given data set HalloweenCandy.csv, we're going to actively explore the dataset and look for potential issues, including missing data, inconsistent formatting, duplicates, or outliers. The tools we'll be using are going to be under Data and Extensions in Google Sheets. 
 
 Open the Data set in Google Sheets, we're going to try the data tools, and answer the following questions. 
-\begin{enumerate}
+\begin{itemize}
     \item Looking at the data in the columns for Age and Country, do you see any outliers or things that look different then you expected? For example, did everyone enter in a number for their age? If no, what did they say? What do you think went wrong in the collection of that data?  What about for their Country?
     \item Try getting rid of the white space, go to Data --> Data Cleanup --> Trim White space.  How much white space did you get rid of? Visually, what changed in your data?
     \item Using the data duplication check on the whole sheet, How many duplicates are there? Take a screenshot.
@@ -73,7 +99,7 @@ Open the Data set in Google Sheets, we're going to try the data tools, and answe
     \item Using the "Cleanup suggestions", what is the suggested actions to take? What happened after you did them? 
     \item After doing the cleanup suggestions, review the column stats, pick one column and look at the suggested graph.  What column did you pick? Why? What's going on in the graph? Take a screenshot.
     \item Try the Simple ML for Sheets extension on this data set. We're going to try predicting values on two of the columns.  Try predicting values on the age column, and one column of your choice.  How did it work? How long did it take? What happened?
-\end{enumerate}
+\end{itemize}
 
  
 \subsection*{Your data set}

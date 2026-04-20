@@ -7,6 +7,8 @@ Website for Adrianna to host materials from classes she created, her sabbatical 
 
 [![License: CC BY-NC 4.0](https://licensebuttons.net/l/by-nc/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc/4.0/)
 
+**See [LICENSE](LICENSE) file for complete terms and attribution guidelines.**
+
 
 
 ## Links

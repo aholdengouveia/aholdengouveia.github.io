@@ -2,20 +2,33 @@
 
 \usepackage{fontawesome}
 \usepackage{hyperref}
+\usepackage{bookmark}
+\usepackage{enumitem}
 
 \hypersetup{
     colorlinks=false,
-    pdfborder={0 0 0},
+    pdfborder={0 0 0}
+
+% Configure PDF bookmarks for navigation
+\bookmarksetup{
+    numbered,
+    open,
+}
+
+% Configure list spacing for better accessibility
+\setlist{nosep}
+
+,
 }
 
 
 \title{Networking}
 \author{
         Adrianna Holden-Gouveia \\
-        Website: \url{https://aholdengouveia.name}\\ 
+        Website: \href{https://aholdengouveia.name}{aholdengouveia.name}\\ 
         \date{\vspace{-5ex}}
         %Email: \href{mailto:admin@aholdengouveia.name}{admin@aholdengouveia.name} \\
-        \faLinkedin{: aholdengouveia} \\
+%        \faLinkedin{: aholdengouveia} \\
         \faGithub {: aholdengouveia} \\
         %\faTwitter {: aholdengouveia} \\
         }
@@ -32,15 +45,22 @@
 %\end{abstract}
 %\tableofcontents
 
-%\section*{Objectives:}
-%\begin{enumerate}
-%    \item Objective 1
-%    \item Objective 2
-%\end{enumerate}
+
+\section*{Accessibility Notice}
+This document is also available in HTML format at:
+
+Link: \href{https://aholdengouveia.name/LinuxAdmin/labexcercises/networking.html}{\textbf{https://aholdengouveia.name/LinuxAdmin/labexcercises/networking.html}}
+
+The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.
+
+\section*{Objectives:}
+\begin{itemize}
+    \item The objective of this lab is to introduce students to Linux networking fundamentals and network troubleshooting techniques essential for server administration. Through hands-on exercises across multiple servers, students will learn to document and understand network configurations, create automated scripts for gathering network diagnostic information, develop interactive troubleshooting tools, and apply systematic approaches to resolving common network connectivity issues—critical skills for maintaining reliable networked systems.
+\end{itemize}
 \section*{Complete the following problems}
 
 References, a video, a PowerPoint and some notes are available at my website
-https://www.aholdengouveia.name/LinuxAdmin/networking.html
+Link: \href{https://www.aholdengouveia.name/LinuxAdmin/networking.html}{\textbf{https://www.aholdengouveia.name/LinuxAdmin/networking.html}}
 
 
 
@@ -48,7 +68,7 @@ https://www.aholdengouveia.name/LinuxAdmin/networking.html
     \begin{enumerate}
         \item Document network setup, this must include the network configuration as discussed in the PowerPoint and video. Your setup should include how to find all the networking information, as well as the basics on how your server does networking by default, this needs to be more then just the IP address. This should include locations of any files you've created or need to reference. You should include any programs you've installed or updated as well, with dates of when you've done those things. Include a short document including how you did any of the installs or updates. 
         \item Write a script to dump network info to the commandline and to a file, you may use the language from your intro to programming course, or your intro to Linux course, make sure you start with what was suggested in the Powerpoint.  Make sure the name of the file includes the date, your name, and the purpose.  This needs to be more then just a single command or two, really think about the format of the file it's going into, what's useful, and what you would want if someone handed you this file. For the script, make sure to include your system info, and the commands you used to get that info. Screenshot your system to show it matches the script output.
-        \item Create a second script using the language from your Intro to Linux course that includes that structure for user interaction, (a refresher can be found at \url{https://www.aholdengouveia.name/introlinux.html}) which will ask for your server version, and then depending on which one you choose will give you different troubleshooting suggestions.  Script should cover both types of servers you picked.  You should have some general troubleshooting suggestions for fixing things like no internet connectivity, setting a static IP address and DNS to check, and running a trace on a path to a common website of your choice. 
+        \item Create a second script using the language from your Intro to Linux course that includes that structure for user interaction, (a refresher can be found at Link: \href{https://www.aholdengouveia.name/introlinux.html}{\textbf{https://www.aholdengouveia.name/introlinux.html}}) which will ask for your server version, and then depending on which one you choose will give you different troubleshooting suggestions.  Script should cover both types of servers you picked.  You should have some general troubleshooting suggestions for fixing things like no internet connectivity, setting a static IP address and DNS to check, and running a trace on a path to a common website of your choice. 
     \end{enumerate}
 
 \section*{Deliverables}

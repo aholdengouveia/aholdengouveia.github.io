@@ -34,6 +34,7 @@
   </head>
 
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header>
 
@@ -58,10 +59,10 @@
          <ul class="navbar-nav mr-auto">
 <!--Social Media Menu section of NavBar-->
       <li class="nav-item dropdown">
-       <a class="nav-link dropdown-toggle" href="/socials.html" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       <a class="nav-link dropdown-toggle" href="/socials.html" id="navSocialsDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          Socials
        </a>
-       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+       <div class="dropdown-menu" aria-labelledby="navSocialsDropdown">
          <a class="dropdown-item" href="https://www.youtube.com/channel/UCebdI1gT84U7PBtJFUTrIQA">YouTube</a>
          <a class="dropdown-item" href="https://github.com/aholdengouveia">GitHub </a>
          <a class="dropdown-item" href="https://www.thingiverse.com/aholdengouveia/designs">Thingiverse</a>
@@ -75,10 +76,10 @@
 
 <!--Classes menu section of NavBar-->
      <li class="nav-item dropdown">
-       <a class="nav-link dropdown-toggle" href="/classes.html" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       <a class="nav-link dropdown-toggle" href="/classes.html" id="navClassesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          Classes
        </a>
-       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+       <div class="dropdown-menu" aria-labelledby="navClassesDropdown">
          <a class="dropdown-item" href="/introlinux.html">Introduction to Linux</a>
          <a class="dropdown-item" href="/introdata.html">Introduction to Data</a>
          <a class="dropdown-item" href="/introinfosec.html">Introduction to Security</a>
@@ -93,26 +94,30 @@
 
      <!--How to Section of NavBar-->
 <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="/HowTo.html" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="nav-link dropdown-toggle" href="/HowTo.html" id="navHowtoDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         How to ...
       </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-        <a class="dropdown-item" href="/Howtos/techjobs.html">get a Tech Job</a>
+      <div class="dropdown-menu" aria-labelledby="navHowtoDropdown">
+        <a class="dropdown-item" href="/Howtos/Getatechjob/techjobs.html">Get a Tech Job</a>
+        <a class="dropdown-item" href="/Howtos/Sourceeval/sourceEvaluation.html">Evaluate Sources</a>
+        <a class="dropdown-item" href="/Howtos/Study/HowToStudy.html">Take notes/Study</a>
+        <a class="dropdown-item" href="/Howtos/Documentation/HowToDocument.html">Documentation</a>
+        <a class="dropdown-item" href="/Howtos/ManageTime/HowtoTimeManage.html">Time Management</a>
         <!--
-        <a class="dropdown-item" href="#">Take notes/Study</a>
+        
         <a class="dropdown-item" href="#">Be your own project manager</a>
         <a class="dropdown-item" href="#">Manage your time</a>
-        <a class="dropdown-item" href="#">Documentation</a>
+        
         <a class="dropdown-item" href="#">Not cheat</a>
         -->
       </div>
     </li>
 <!--Other things I think are Important to learn-->
    <!-- <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="nav-link dropdown-toggle" href="#" id="navOtherDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Other tech stuff
       </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+      <div class="dropdown-menu" aria-labelledby="navOtherDropdown">
         <a class="dropdown-item" href="#">Shellscripting</a>
         <a class="dropdown-item" href="#">Linux Power Tools</a>
         <a class="dropdown-item" href="#">Google-Fu</a>
@@ -140,6 +145,7 @@
    </header>
 
 
+    <main id="main-content">
     <main role="main">
     <!--Jumbotron for the page header -->
     <div class="jumbotron" style="background: url(/images/whaleShip.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
@@ -225,7 +231,7 @@
 
 
 <h4>New to Linux and nervous?</h4>
-        <p id="two">
+        <p class="two">
             If you're not sure where to start, I recommend starting with Docker. It's really common in lots of projects to have instructions on how to do things "The Docker Way" so if you're interested in projects I haven't covered, you're more likely to find Docker instructions then Kubernetes instructions. 
             </p>
         </div>
@@ -350,7 +356,7 @@
         </p>
         <p>
             Which ever one you pick after you're done make sure kubectl installed properly by doing <pre>kubectl version --client --output=yaml</pre><img src="/SmartHome/smarthomeimages/checkkubectlversion.png" class="img-fluid" alt ="image of checking the install and version of kubectl">
-            <p id="two">
+            <p class="two">
                 NOTE: If you are installing both Kuburnetes and kubectl at the same time this shouldn't be an issue, BUT your version of kubectl MUST be close to your version of the Kuburnetes server you're interacting with.  So if you're running Kubernetes 1.4 then you need to be running at kubectl 1.3, 1.4 or 1.5 to stay within that version range or you won't be able to interact with the server properly.  
             </p>
         </p>
@@ -369,7 +375,7 @@
                 Kubectl will be used on any computer that can talk to your server that is running Kubernetes.  Think of it like a walkie-talkie to your magic robot.  We can check our walkie-talkie is working by doing <pre>kubectl cluster-info</pre> and if you see a result like the following you're set, if you don't you'll need to run a script to do your setup following <a href="https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/">these instructions</a>
                 <img src="/SmartHome/smarthomeimages/kubectlwalkietalkieworking.png" class="img-fluid" alt ="image of kubectl able to talk to the server"> 
             </p>
-            <p id="two">
+            <p class="two">
                 NOTE: Sometimes you'll see that people have created an alias (rename on their computer) for kubectl, it's common to see people using k instead of kubectl on demos, they are the same, you can <a href="https://web.archive.org/web/20220905011821/https://www.tecmint.com/create-alias-in-linux/">create an alias</a> if you want to. 
             </p>
 
@@ -421,11 +427,10 @@
 
 
 
+    </main>
 
 
 
-
-   
 
         <!-- FOOTER -->
       <!--  <footer class="container">
@@ -449,8 +454,6 @@
             </span>
           </div>
         </footer>
-        
-  </main>
 
   <!-- Bootstrap core JavaScript
        ================================================== -->

@@ -4,21 +4,39 @@
 \usepackage{hyperref}
 \usepackage{xurl}
 \usepackage{graphicx}
-
+\usepackage[tagged, highstructure]{accessibility}
+\usepackage{bookmark}
+\usepackage{enumitem}
 
 \hypersetup{
     colorlinks=false,
     pdfborder={0 0 0},
+    pdftitle={Introduction to Databases Lab},
+    pdfauthor={Adrianna Holden-Gouveia},
+    pdfsubject={Introduction to Data - Lab Assignment},
+    pdflang={en-US},
+    pdfkeywords={databases, spreadsheets, LibreOffice Base, data management}
+
 }
+
+% Configure PDF bookmarks for navigation
+\bookmarksetup{
+    numbered,
+    open,
+}
+
+% Configure list spacing for better accessibility
+\setlist{nosep}
+
 
 
 \title{Introduction to Databases}
 \author{
         Adrianna Holden-Gouveia \\
-        Website: \url{https://aholdengouveia.name}\\ 
+        Website: \href{https://aholdengouveia.name}{aholdengouveia.name}\\ 
         \date{\vspace{-5ex}}
         %Email: \href{mailto:admin@aholdengouveia.name}{admin@aholdengouveia.name} \\
-        \faLinkedin{: aholdengouveia} \\
+%        \faLinkedin{: aholdengouveia} \\
         \faGithub {: aholdengouveia} \\
         %\faTwitter {: aholdengouveia} \\
         }
@@ -35,6 +53,14 @@
 %\end{abstract}
 %\tableofcontents
 
+
+\section*{Accessibility Notice}
+This document is also available in HTML format at:
+
+Link: \href{https://aholdengouveia.name/IntroData/labs/introdatabases.html}{\textbf{https://aholdengouveia.name/IntroData/labs/introdatabases.html}}
+
+The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.
+
 \section*{Objectives:}
 \begin{itemize}
     \item The objective of this lab assignment is to help students gain a basic understanding of the differences between spreadsheets and databases, without requiring prior knowledge of specific software. Through hands-on exploration, students will compare the features and potential use cases of these tools.
@@ -42,9 +68,9 @@
 
 
 References, a video, a PowerPoint and some notes are available at my website
-\url {https://www.aholdengouveia.name/IntroData/introdatabases.html}
+Link: \href{https://www.aholdengouveia.name/IntroData/introdatabases.html}{\textbf{https://www.aholdengouveia.name/IntroData/introdatabases.html}}
 
-For this lab you'll be using LibreOffice Base.  The documentation can be found at \url{https://books.libreoffice.org/en/BG73/BG7301-IntroductionToBase.html#toc26}
+For this lab you'll be using LibreOffice Base.  The documentation can be found at Link: \href{https://books.libreoffice.org/en/BG73/BG7301-IntroductionToBase.html#toc26}{\textbf{https://books.libreoffice.org/en/BG73/BG7301-IntroductionToBase.html#toc26}}
 
 You should get your data into a database, you may use a single table or multiple tables. LibreOffice Base is a Database front end using a Graphical User Interface (GUI), there are a lot of other ways you can get your data into a database as well and interact with it. We will be talking about those soon. After your data is in the database, answer the following questions
 
@@ -53,7 +79,7 @@ You should get your data into a database, you may use a single table or multiple
 
 
 \subsection*{Moving your data to a Database}
-    \begin{enumerate}
+    \begin{itemize}
         \item How long did it take you to move your data?
         \item Did you create one table or more? Why did you make the choice you did?
         \item Compared to a spreadsheet how difficult would you say it was to move your data into the database?
@@ -62,9 +88,9 @@ You should get your data into a database, you may use a single table or multiple
         \begin{figure}[h!]
             \centerline{\includegraphics[scale=.2]{ExampleScreenshot.png}}
             \caption{This is an image of what each of your screenshots should look like}
-
+            \alt{Example screenshot showing a text document with student name and term/year alongside data visualization}
             \end{figure} 
-    \end{enumerate}
+    \end{itemize}
 
     \subsection*{Database questions}
     \begin{enumerate}

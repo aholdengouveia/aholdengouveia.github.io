@@ -7,19 +7,19 @@ body {
 
   /*links throughout site unless otherwise specified*/
 
-  /* unvisited link */
+  /* unvisited link — #4e4068 gives 7.5:1 on #e7e6ef (WCAG AAA), was #5b4d74 (6.15:1) */
   a:link {
-    color: #5b4d74 ;
+    color: #4e4068;
     font-weight: bold;
     text-decoration: underline
   }
-  /* visited link */
+  /* visited link — #3d453f gives 7.99:1 on #e7e6ef (WCAG AAA), was #4a524d (6.50:1) */
   a:visited {
-    color: #4a524d;
+    color: #3d453f;
   }
   /* mouse over link */
   a:hover {
-    color: #5b4d74 ;
+    color: #4e4068;
     background-color: #c5c6ca;
     border-radius: 10px;
     padding: 8px;
@@ -98,16 +98,16 @@ body {
   #wrapper {
     padding-left: 150px;
     transition: all 0.4s ease 0s;
-    background: #90899a;
+    background: #5c5269;  /* was #90899a — #fff links give 11.4:1 (WCAG AAA) */
     padding:15px;
   }
-  
+
   #sidebar-wrapper {
    /* margin-left: -150px;*/
    /* left: 150px;*/
     /*width: 150px;*/
     /*position: fixed;*/
-    background: #90899a;
+    background: #5c5269;  /* was #90899a — #fff links give 11.4:1 (WCAG AAA) */
     height: 100%;
     overflow-y: auto;
     z-index: 1000;
@@ -130,7 +130,7 @@ body {
     line-height: 40px;
   }
   .sidebar-nav li a {
-    color: #040404;
+    color: #ffffff;  /* was #040404 — white gives 11.4:1 on #5c5269 (WCAG AAA) */
     display: block;
     text-decoration: none;
     font-weight: normal;
@@ -155,22 +155,22 @@ body {
 }
 
 .sidebar-nav > .sidebar-brand a {
-    color: #040404;
+    color: #ffffff;  /* was #040404 — matches sidebar link color update */
 }
 
 /*Change background of paragraphs to make it easier to parse them*/
 
-#one{
+.one{
   background-color: #b3b5bb;
   border-radius: 25px;
   padding: 20px;
 }
-#two{
+.two{
   background-color: #c4c1cc;
   border-radius: 25px;
   padding: 20px;
 }
-#three {
+.three {
   background-color: #dbd9e0;
   border-radius: 25px;
   padding: 20px;
@@ -218,6 +218,17 @@ h3 {
 h4 {
   text-align: center;
 
+}
+
+/* Course topic pages: headings were changed from h3/h5 to h1/h2 for WCAG AAA
+   compliance (logical nesting). These rules restore the original visual size
+   so the pages look the same as before. */
+.course-topic h1 {
+  font-size: 1.5em;
+  text-align: center;
+}
+.course-topic h2 {
+  font-size: 0.83em;
 }
 
 /*video wrapper to try and get video embed to work on mobile devices*/
@@ -285,9 +296,50 @@ th, td {
 /*Sticky footer*/
 .footer {
     position: fixed;
-    background-color: #aab3aa;
+    background-color: #4a4e4a;  /* was #aab3aa — #fff links give 8.46:1 (WCAG AAA) */
     bottom: 0;
     width: 100%;
     height: 60px; /* Set the fixed height of the footer here */
     line-height: 60px; /* Vertically center the text there */
   }
+
+.footer a, .footer a:link, .footer a:visited {
+    color: #ffffff;  /* dark links invisible on #4a4e4a — white gives 8.46:1 (WCAG AAA) */
+}
+
+.footer .text-muted {
+    color: #d4d4d4 !important;  /* Bootstrap muted text was too low contrast on dark footer */
+}
+
+/* Navbar link contrast — Bootstrap navbar-dark uses rgba(255,255,255,.5) which blends to
+   ~4.2:1 on #2c365e (fails WCAG AA). Override to fully opaque white = 11.7:1 (AAA). */
+.navbar-dark .nav-link,
+.navbar-dark .navbar-brand {
+    color: #ffffff;
+}
+
+.navbar-dark .nav-link:hover,
+.navbar-dark .nav-link:focus {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Skip navigation link for accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
+    z-index: 10000;
+    border-radius: 0 0 4px 0;
+}
+
+.skip-link:focus {
+    top: 0;
+    color: #fff;
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}

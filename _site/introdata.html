@@ -34,6 +34,7 @@
   </head>
 
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header>
 
@@ -58,10 +59,10 @@
          <ul class="navbar-nav mr-auto">
 <!--Social Media Menu section of NavBar-->
       <li class="nav-item dropdown">
-       <a class="nav-link dropdown-toggle" href="/socials.html" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       <a class="nav-link dropdown-toggle" href="/socials.html" id="navSocialsDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          Socials
        </a>
-       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+       <div class="dropdown-menu" aria-labelledby="navSocialsDropdown">
          <a class="dropdown-item" href="https://www.youtube.com/channel/UCebdI1gT84U7PBtJFUTrIQA">YouTube</a>
          <a class="dropdown-item" href="https://github.com/aholdengouveia">GitHub </a>
          <a class="dropdown-item" href="https://www.thingiverse.com/aholdengouveia/designs">Thingiverse</a>
@@ -75,10 +76,10 @@
 
 <!--Classes menu section of NavBar-->
      <li class="nav-item dropdown">
-       <a class="nav-link dropdown-toggle" href="/classes.html" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       <a class="nav-link dropdown-toggle" href="/classes.html" id="navClassesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          Classes
        </a>
-       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+       <div class="dropdown-menu" aria-labelledby="navClassesDropdown">
          <a class="dropdown-item" href="/introlinux.html">Introduction to Linux</a>
          <a class="dropdown-item" href="/introdata.html">Introduction to Data</a>
          <a class="dropdown-item" href="/introinfosec.html">Introduction to Security</a>
@@ -93,28 +94,30 @@
 
      <!--How to Section of NavBar-->
 <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="/HowTo.html" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="nav-link dropdown-toggle" href="/HowTo.html" id="navHowtoDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         How to ...
       </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-        <a class="dropdown-item" href="/Howtos/techjobs.html">get a Tech Job</a>
-        <a class="dropdown-item" href="/Howtos/sourceEvaluation.html">Evaluate Sources</a>
-
+      <div class="dropdown-menu" aria-labelledby="navHowtoDropdown">
+        <a class="dropdown-item" href="/Howtos/Getatechjob/techjobs.html">Get a Tech Job</a>
+        <a class="dropdown-item" href="/Howtos/Sourceeval/sourceEvaluation.html">Evaluate Sources</a>
+        <a class="dropdown-item" href="/Howtos/Study/HowToStudy.html">Take notes/Study</a>
+        <a class="dropdown-item" href="/Howtos/Documentation/HowToDocument.html">Documentation</a>
+        <a class="dropdown-item" href="/Howtos/ManageTime/HowtoTimeManage.html">Time Management</a>
         <!--
-        <a class="dropdown-item" href="#">Take notes/Study</a>
+        
         <a class="dropdown-item" href="#">Be your own project manager</a>
         <a class="dropdown-item" href="#">Manage your time</a>
-        <a class="dropdown-item" href="#">Documentation</a>
+        
         <a class="dropdown-item" href="#">Not cheat</a>
         -->
       </div>
     </li>
 <!--Other things I think are Important to learn-->
    <!-- <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="nav-link dropdown-toggle" href="#" id="navOtherDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Other tech stuff
       </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+      <div class="dropdown-menu" aria-labelledby="navOtherDropdown">
         <a class="dropdown-item" href="#">Shellscripting</a>
         <a class="dropdown-item" href="#">Linux Power Tools</a>
         <a class="dropdown-item" href="#">Google-Fu</a>
@@ -142,6 +145,7 @@
    </header>
 
 
+    <main id="main-content">
     <!-- Sidebar for the course by topic/week-->
 <div class="container-fluid">
     <div class="row">
@@ -170,13 +174,13 @@
             </div>
         </div>
         <!--Main content of the page will fill in here-->
-        <div class="col">
+        <div class="col course-topic" id="main-content">
             <br><br>
-            <h2>Introduction to Data</h2>
+            <h1>Introduction to Data</h1>
 <p>
     This is an introductory course in data literacy and databases.  The course includes aspects of database design including entity relationship modeling, tables, and queries.  Students will utilize database applications and Structured Query Language (SQL). Data science including data collection, modeling, and visualization will be discussed. Best practices for data security and privacy in regards to current regulations around the world will be emphasized in this course.
 </p>
-<h5> Learning Objectives</h5>
+<h2> Learning Objectives</h2>
 <ul>
   <li>Classify a diverse variety of data and construct usable data models</li>
   <li>Identify and apply industry best practices</li>
@@ -199,7 +203,7 @@
 </p>
 
 <div class="container">
-    <h5>Activites with materials that cover the whole class</h5>
+    <h2>Activites with materials that cover the whole class</h2>
         <ul>
             <li>Go through <a href="IntroData/studymaterials/wholeclassstudyguide.txt">This AI generated study guide</a>, what do you think? Did it capture the week materials well? How did you do on the self quiz? Do you know all the vocab used? </li>
             <li>Go through <a href="IntroData/studymaterials/wholeclasstrainingmanual.txt">This AI generated training manual</a>, what do you think? Did it capture the week materials well? What was missing? Do you know all the vocab used? </li>
@@ -219,11 +223,10 @@
         </div>
     </div>
 </div>
+    </main>
 
 
 
-
-   
 
         <!-- FOOTER -->
       <!--  <footer class="container">
@@ -247,8 +250,6 @@
             </span>
           </div>
         </footer>
-        
-  </main>
 
   <!-- Bootstrap core JavaScript
        ================================================== -->

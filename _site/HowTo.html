@@ -34,6 +34,7 @@
   </head>
 
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header>
 
@@ -58,10 +59,10 @@
          <ul class="navbar-nav mr-auto">
 <!--Social Media Menu section of NavBar-->
       <li class="nav-item dropdown">
-       <a class="nav-link dropdown-toggle" href="/socials.html" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       <a class="nav-link dropdown-toggle" href="/socials.html" id="navSocialsDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          Socials
        </a>
-       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+       <div class="dropdown-menu" aria-labelledby="navSocialsDropdown">
          <a class="dropdown-item" href="https://www.youtube.com/channel/UCebdI1gT84U7PBtJFUTrIQA">YouTube</a>
          <a class="dropdown-item" href="https://github.com/aholdengouveia">GitHub </a>
          <a class="dropdown-item" href="https://www.thingiverse.com/aholdengouveia/designs">Thingiverse</a>
@@ -75,10 +76,10 @@
 
 <!--Classes menu section of NavBar-->
      <li class="nav-item dropdown">
-       <a class="nav-link dropdown-toggle" href="/classes.html" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       <a class="nav-link dropdown-toggle" href="/classes.html" id="navClassesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          Classes
        </a>
-       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+       <div class="dropdown-menu" aria-labelledby="navClassesDropdown">
          <a class="dropdown-item" href="/introlinux.html">Introduction to Linux</a>
          <a class="dropdown-item" href="/introdata.html">Introduction to Data</a>
          <a class="dropdown-item" href="/introinfosec.html">Introduction to Security</a>
@@ -93,28 +94,30 @@
 
      <!--How to Section of NavBar-->
 <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="/HowTo.html" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="nav-link dropdown-toggle" href="/HowTo.html" id="navHowtoDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         How to ...
       </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-        <a class="dropdown-item" href="/Howtos/techjobs.html">get a Tech Job</a>
-        <a class="dropdown-item" href="/Howtos/sourceEvaluation.html">Evaluate Sources</a>
-
+      <div class="dropdown-menu" aria-labelledby="navHowtoDropdown">
+        <a class="dropdown-item" href="/Howtos/Getatechjob/techjobs.html">Get a Tech Job</a>
+        <a class="dropdown-item" href="/Howtos/Sourceeval/sourceEvaluation.html">Evaluate Sources</a>
+        <a class="dropdown-item" href="/Howtos/Study/HowToStudy.html">Take notes/Study</a>
+        <a class="dropdown-item" href="/Howtos/Documentation/HowToDocument.html">Documentation</a>
+        <a class="dropdown-item" href="/Howtos/ManageTime/HowtoTimeManage.html">Time Management</a>
         <!--
-        <a class="dropdown-item" href="#">Take notes/Study</a>
+        
         <a class="dropdown-item" href="#">Be your own project manager</a>
         <a class="dropdown-item" href="#">Manage your time</a>
-        <a class="dropdown-item" href="#">Documentation</a>
+        
         <a class="dropdown-item" href="#">Not cheat</a>
         -->
       </div>
     </li>
 <!--Other things I think are Important to learn-->
    <!-- <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="nav-link dropdown-toggle" href="#" id="navOtherDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Other tech stuff
       </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+      <div class="dropdown-menu" aria-labelledby="navOtherDropdown">
         <a class="dropdown-item" href="#">Shellscripting</a>
         <a class="dropdown-item" href="#">Linux Power Tools</a>
         <a class="dropdown-item" href="#">Google-Fu</a>
@@ -142,6 +145,7 @@
    </header>
 
 
+    <main id="main-content">
         <main role="main">
 
       <!--Jumbotron for the page header -->
@@ -168,24 +172,52 @@
               <img class="rounded-circle" src="/images/open-bookHowToStudy.jpg" alt="Image of a set of open books and a pen"  width="140" height="140">
               <p class="card-text"><h2>How to Get a Tech Job</h2>
                 <p>This section is about how to get a tech job </p>
-                <p><a class="btn btn-secondary" href="/Howtos/techjobs.html" role="button">View details &raquo;</a></p>
+                <p><a class="btn btn-secondary" href="/Howtos/Getatechjob/techjobs.html" role="button">View details &raquo;</a></p>
               </div></p>
             </div>
 
                       <div class="col">
             <div class="card">
-              <img class="rounded-circle" src="/Howtos/TwoHeadsofBooksTalking.jpg" alt="Image of two heads talking"  width="140" height="140">
+              <img class="rounded-circle" src="/Howtos/Sourceeval/TwoHeadsofBooksTalking.jpg" alt="Image of two heads talking"  width="140" height="140">
               <p class="card-text"><h2>How to evaluate sources</h2>
                 <p>This section is about how to evaluate sources, the difference between AI, search engines, and academic databases, and why it's important to have accurate information </p>
-                <p><a class="btn btn-secondary" href="/Howtos/sourceEvaluation.html" role="button">View details &raquo;</a></p>
+                <p><a class="btn btn-secondary" href="/Howtos/Sourceeval/sourceEvaluation.html" role="button">View details &raquo;</a></p>
               </div></p>
+            </div>
+
+            <div class="col">
+            <div class="card">
+              <img class="rounded-circle" src="/Howtos/Study/Booksinalecturehall.png" alt="Image of books in a lecture hall"  width="140" height="140">
+              <p class="card-text"><h2>How to Study</h2>
+                <p>This section is about how to study.  This includes why studying can be helpful, some ideas on how to take notes, potential software that might be helpful, and some suggestions on how to make your studying more efficient and helpful. </p>
+                <p><a class="btn btn-secondary" href="/Howtos/Study/HowToStudy.html" role="button">View details &raquo;</a></p>
+              </div></p>
+            </div>
+
+
+            <div class="col">
+              <div class="card">
+                  <img class="rounded-circle" src="/Howtos/Documentation/DocumentHandwrittenwithKey.jpg" alt="Image of a document with handwriting on it and a key" width="140" height="140">
+                  <h2>How to do Documentation</h2>
+                  <p>This is about comprehensive guide on the importance and methods of creating various types of documentation, including technical writing, README files, and code comments.</p>
+                  <p><a class="btn btn-secondary" href="/Howtos/Documentation/HowToDocument.html" role="button">View details &raquo;</a></p>
+              </div>
+            </div>
+
+                        <div class="col">
+              <div class="card">
+                  <img class="rounded-circle" src="/Howtos/ManageTime/Watchesonabluebackground.jpg" alt="Stopwatch with gears on a Blue background" width="140" height="140">
+                  <h2>How to manage your time</h2>
+                  <p>A guide on time management, explaining the importance of optimizing efforts and reducing stress, and details various systems like Getting Things Done (GTD), the Pomodoro technique, Bullet journaling, and Most Important Thing (MIT).  Also includes advice on using tools like calendars and overcoming roadblocks such as procrastination</p>
+                  <p><a class="btn btn-secondary" href="/Howtos/ManageTime/HowtoTimeManage.html" role="button">View details &raquo;</a></p>
+              </div>
             </div>
 
 <!--
           <div class="col">
             <div class="card">
               <img class="rounded-circle" src="/images/glassesmayversions.jpg" alt="Image of a set of open books and a pen"  width="140" height="140">
-              <p class="card-text"><h2>How to GitHub Workflow</h2>
+              <p class="card-text"><h2>How to use verson control</h2>
                 <p>This section is about how to use GitHub for both personal and professional projects.  This will include a sample GitHub workflow for personal projects and open source work, and also a sample workflow for how to use version control in industry </p>
                 <p><a class="btn btn-secondary" href="/Howtos/githubworkflow.html" role="button">View details &raquo;</a></p>
               </div></p>
@@ -195,7 +227,7 @@
             <div class="col">
               <div class="card">
                 <img class="rounded-circle" src="/images/lightbulb2.png" alt="Light-Bulb preferably said in the voice of Gru From Minions" width="140" height="140">
-                <h2>How to take notes and study</h2>
+                <h2>How to be a college student</h2>
                 <p>Description of taking notes and study skills </p>
                 <p><a class="btn btn-secondary" href="/Howtos/Howtotakenotes.html" role="button">View details &raquo;</a></p>
               </div>
@@ -211,30 +243,15 @@
               </div>
             </div>
 
-            <div class="col">
-              <div class="card">
-                  <img class="rounded-circle" src="/images/intropython.png" alt="Computer Monitor" width="140" height="140">
-                  <h2>How to manage your time</h2>
-                  <p>description for how to manage your time</p>
-                  <p><a class="btn btn-secondary" href="/intropython.html" role="button">View details &raquo;</a></p>
-              </div>
-            </div>
 
 
-            <div class="col">
-              <div class="card">
-                  <img class="rounded-circle" src="/images/intropython.png" alt="Computer Monitor" width="140" height="140">
-                  <h2>How to do Documentation</h2>
-                  <p>description for how to create good documentation</p>
-                  <p><a class="btn btn-secondary" href="/intropython.html" role="button">View details &raquo;</a></p>
-              </div>
-            </div>
+
 
 
                         <div class="col">
               <div class="card">
                   <img class="rounded-circle" src="/images/intropython.png" alt="Computer Monitor" width="140" height="140">
-                  <h2>How to not cheat</h2>
+                  <h2>How to ...</h2>
                   <p>description for how to manage your time</p>
                   <p><a class="btn btn-secondary" href="/intropython.html" role="button">View details &raquo;</a></p>
               </div>
@@ -246,11 +263,10 @@
         </div>
       </div>
 
+    </main>
 
 
 
-
-   
 
         <!-- FOOTER -->
       <!--  <footer class="container">
@@ -274,8 +290,6 @@
             </span>
           </div>
         </footer>
-        
-  </main>
 
   <!-- Bootstrap core JavaScript
        ================================================== -->

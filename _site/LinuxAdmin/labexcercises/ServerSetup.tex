@@ -2,20 +2,37 @@
 
 \usepackage{fontawesome}
 \usepackage{hyperref}
+\usepackage[tagged, highstructure]{accessibility}
+\usepackage{bookmark}
+\usepackage{enumitem}
 
 \hypersetup{
     colorlinks=false,
     pdfborder={0 0 0},
+    pdftitle={Server Setup Lab},
+    pdfauthor={Adrianna Holden-Gouveia},
+    pdfsubject={Linux Administration - Lab Assignment},
+    pdflang={en-US},
+    pdfkeywords={server setup, Linux, virtual machines, CentOS, Ubuntu Server}
 }
+
+% Configure PDF bookmarks for navigation
+\bookmarksetup{
+    numbered,
+    open,
+}
+
+% Configure list spacing for better accessibility
+\setlist{nosep}
 
 
 \title{Server Setup}
 \author{
         Adrianna Holden-Gouveia \\
-        Website: \url{https://aholdengouveia.name}\\ 
+        Website: \href{https://aholdengouveia.name}{aholdengouveia.name}\\ 
         \date{\vspace{-5ex}}
         %Email: \href{mailto:admin@aholdengouveia.name}{admin@aholdengouveia.name} \\
-        \faLinkedin{: aholdengouveia} \\
+%        \faLinkedin{: aholdengouveia} \\
         \faGithub {: aholdengouveia} \\
         %\faTwitter {: aholdengouveia} \\
         }
@@ -32,11 +49,18 @@
 %\end{abstract}
 %\tableofcontents
 
-%\section*{Objectives:}
-%\begin{enumerate}
- %   \item Objective 1
-  %  \item Objective 2
-%\end{enumerate}
+
+\section*{Accessibility Notice}
+This document is also available in HTML format at:
+
+Link: \href{https://aholdengouveia.name/LinuxAdmin/labexcercises/ServerSetup.html}{\textbf{https://aholdengouveia.name/LinuxAdmin/labexcercises/ServerSetup.html}}
+
+The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.
+
+\section*{Objectives:}
+\begin{itemize}
+    \item The objective of this lab is to introduce students to the fundamental practices of Linux server deployment and configuration management. Through hands-on installation of multiple server distributions, students will learn to set up production-ready server environments, configure essential services including network connectivity and file sharing, and develop professional technical documentation skills—establishing the foundational infrastructure and documentation practices that will support all subsequent system administration work throughout the course.
+\end{itemize}
 \section*{Welcome to Acme Corporation!}
 \subsection*{You have accepted the post of Systems Administrator for Acme corporation.} 
 \subsection*{Congratulations on your new job!}
@@ -46,12 +70,12 @@ If you've never done technical documentation before, go through the module on Te
     \begin{itemize}
 \item References for an Introduction to Servers, a video and some notes are available at my website
 
-https://www.aholdengouveia.name/LinuxAdmin/IntroServers.html 
+Link: \href{https://www.aholdengouveia.name/LinuxAdmin/IntroServers.html}{\textbf{https://www.aholdengouveia.name/LinuxAdmin/IntroServers.html}} 
 
 
 \item I also have a section on how to do documentation 
 
-https://www.aholdengouveia.name/LinuxAdmin/Documentation.html
+Link: \href{https://www.aholdengouveia.name/LinuxAdmin/Documentation.html}{\textbf{https://www.aholdengouveia.name/LinuxAdmin/Documentation.html}}
 
 
 \end{itemize}

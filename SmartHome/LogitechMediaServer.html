@@ -59,7 +59,7 @@ layout: default
         
     </p>
     <p>
-        <div id="two">Unsure what to pick?  Try the Docker command!  You will need a <a href="/SmartHome/ServerSetup.html">Server</a> with <a href="/SmartHome/Virtualizationsetup.html">Virtualization</a> installed, but the <a href="/SmartHome/Virtualizationsetup.html#Docker">Docker install</a> is pretty straightforward and they have documentation focused on the Docker way to do the install <a href="https://hub.docker.com/r/lmscommunity/logitechmediaserver">Here</a>. </div>
+        <div class="two">Unsure what to pick?  Try the Docker command!  You will need a <a href="/SmartHome/ServerSetup.html">Server</a> with <a href="/SmartHome/Virtualizationsetup.html">Virtualization</a> installed, but the <a href="/SmartHome/Virtualizationsetup.html#Docker">Docker install</a> is pretty straightforward and they have documentation focused on the Docker way to do the install <a href="https://hub.docker.com/r/lmscommunity/logitechmediaserver">Here</a>. </div>
     </p>
 </div>
 
@@ -99,7 +99,7 @@ layout: default
     </p>
     <p>
         Next we need to setup our YAML file for Logitech Media Server, a sample is <a href="/SmartHome/LogitechMediaServer.yaml">here</a>, you can use this but you MUST change the location of your path.  I have a comment in there on where to change the YAML, and some notes about how the YAML is put together, but you have to make sure you have a path to where you want your information stored. 
-        <div id="two">If you update nothing else in that file, you still HAVE to update the path in BOTH places on the persistent volume areas.  The YAML paths for the volume mounts can stay the same.  But in the persistent volume and persistent volume claim, those paths MUST change to match your server setup.  For example, on my server it would be /media/aholdengouveia/kubernetes/ because I put all my kubernetes data under my username so I can find everything easily. </div>
+        <div class="two">If you update nothing else in that file, you still HAVE to update the path in BOTH places on the persistent volume areas.  The YAML paths for the volume mounts can stay the same.  But in the persistent volume and persistent volume claim, those paths MUST change to match your server setup.  For example, on my server it would be /media/aholdengouveia/kubernetes/ because I put all my kubernetes data under my username so I can find everything easily. </div>
 
         <p>
             If you need a reminder on how to use kubectl please go <a href="/SmartHome/Virtualizationsetup.html#Kubectl">check out my kubectl guide here</a> and make sure to run in the correct directory
@@ -159,7 +159,7 @@ layout: default
     </p>
     <p>
         Now that your server is setup, it's time to add music, once you go to the settings to point at your audio files, you can add music to the system. </p>
-    <div id="two">NOTE: This system is a multi part system, you have the server which hosts your music and allows you to choose what is playing where, but it is NOT a player. You will need a player and a controller.  This could be smart speakers that you already own, or you build or an old android device you have laying around. This server has a web interface that I think is pretty good, but you must have a player to hear the music.  I used Squeezebox, which can work on Linux laptops, but there is a way to have it work on Android tablets and phones which I will cover below.</div>
+    <div class="two">NOTE: This system is a multi part system, you have the server which hosts your music and allows you to choose what is playing where, but it is NOT a player. You will need a player and a controller.  This could be smart speakers that you already own, or you build or an old android device you have laying around. This server has a web interface that I think is pretty good, but you must have a player to hear the music.  I used Squeezebox, which can work on Linux laptops, but there is a way to have it work on Android tablets and phones which I will cover below.</div>
     
 </div>
 
@@ -184,7 +184,7 @@ I do recommend renaming your players so that it's clear which one is playing wha
     <ul>
         <li>Go to the Android store and install <a href="https://play.google.com/store/apps/details?id=com.termux&hl=en_GB&gl=US">Termux</a></li>
         <li>Next you'll open the Termux app and say <pre>apt-get update</pre>
-            <div id="two">(Issues? <a href="https://github.com/termux/termux-packages/wiki/Package-Management">Troubleshooting information is here</a> I Had to follow this to change repositories instructions because I ran into an on my Android Phone where I got an error that said there was something wrong with the repository.</div></li>
+            <div class="two">(Issues? <a href="https://github.com/termux/termux-packages/wiki/Package-Management">Troubleshooting information is here</a> I Had to follow this to change repositories instructions because I ran into an on my Android Phone where I got an error that said there was something wrong with the repository.</div></li>
         <li>Now you can install squeezelite on your android by running <pre>apt install squeezelite</pre></li>
         <li>Then you can <pre>squeezelite -s IPADDRESS:9000</pre> to get the player up and running on your phone/tablet.</li>
         <li>It will look like the same nothing is happening that it does on the computer, but if you go to your Home Assistant or Logitech Media Server IP address you should see the player as an option.  Again, I recommend a rename of players so they don't get confused.</li>
