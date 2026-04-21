@@ -139,3 +139,107 @@ Screen readers use the title to describe the frame to the user.
 - [x] **Navbar link contrast** — `stylesheet.css`: `.navbar-dark .nav-link` overridden to `#ffffff` (11.7:1 on `#2c365e`)
 - [x] **Lab page contrast (WCAG AAA)** — `css/accessible-lab.css`: dark mode link color updated from `#6ba3ff` to `#82baff`; missing breadcrumb dark mode override added
 - [x] **Lab page breadcrumb** — dark mode current-page color updated from `#999` to `#aaaaaa`
+
+---
+
+## Re-scan Results (2026-04-20, pa11y against `_site/`, 186 files — 57 passed, 129 failed)
+
+---
+
+### 10. Duplicate `id="main-content"` — `_layouts/*.html` ✅
+**Instances: 90 | Priority: High (self-introduced)**
+
+Adding `<main id="main-content">` to `default.html` (fix for issue #6) created a
+duplicate because all 7 course layouts also had `id="main-content"` on their content
+`<div>`. Every rendered course page had two elements with the same ID.
+
+- [x] Removed `id="main-content"` from the content `<div>` in all 7 course layouts:
+  `introLinux.html`, `AdvSec.html`, `AdvData.html`, `AdvLinux.html`, `infosec1.html`,
+  `introdata.html`, `topictemplate.html`
+- [x] Skip link still works — `<main id="main-content">` in `default.html` remains
+
+---
+
+### 11. NaN:1 Contrast — Navbar Dropdowns and Skip Link ✅
+**Instances: ~500 | Priority: High**
+
+pa11y (Puppeteer) reports `NaN:1` when it can't compute contrast because an element's
+`background-color` is `transparent` and the ancestor background is set via an inline
+style (which Puppeteer doesn't reliably traverse). The skip link's `background` shorthand
+also wasn't always picked up as a computable value.
+
+- [x] Moved navbar background from inline `style="background-color: #2c365e"` on `<nav>`
+  to `nav.navbar { background-color: #2c365e !important; }` in `stylesheet.css`
+- [x] Changed `.skip-link` from `background: #000` (shorthand) to `background-color: #000000`
+  (explicit property) and `color: #fff` → `color: #ffffff` (fully explicit values)
+- [x] Same explicit values applied to `.skip-link:focus`
+- [ ] Re-scan to confirm NaN resolves
+
+---
+
+### 12. Search Button Contrast — `_layouts/default.html` ✅
+**Instances: 124 | Priority: High**
+
+The navbar search `<button class="btn btn-outline-success">` used Bootstrap's green
+outline style (`#28a745`) which gave 3.73:1 on the `#2c365e` navbar background.
+
+- [x] Added `.navbar .btn-outline-success` override to `stylesheet.css`:
+  white text/border (11.7:1 on `#2c365e`) in default state; inverts to navy-on-white
+  on hover/focus
+
+---
+
+### 13. Heading Structure — SmartHome Pages ✅
+**Instances: ~22 | Priority: Medium**
+
+All SmartHome pages used `layout: default` with an `<h1>` in the jumbotron then
+jumped to `<h3>` for section headings, skipping `<h2>`.
+
+- [x] Created `_layouts/smarthome.html` (thin wrapper: `layout: default` + wraps
+  content in `<div class="smarthome-content">`)
+- [x] Switched all 16 SmartHome content pages from `layout: default` to `layout: smarthome`
+  (`smarthomewelcome.html` already had correct h1→h2 structure, left unchanged)
+- [x] Added `.smarthome-content h2 { text-align: center; }` to `stylesheet.css` to
+  preserve the centred visual appearance after the heading level shift
+- [x] Batch fixed simple pages (h3→h2):
+  `CCTV`, `HAHomeMapIntegrations`, `homeassistant`, `IoTtemplate`, `octoprint`,
+  `smartlighting`, `portablec02`
+- [x] Batch fixed pages with sub-sections (h3→h2, h4→h3):
+  `IOTkit`, `LogitechMediaServer`, `ServerSetup`, `HASimpleIntegrations`, `airquality`
+- [x] Fixed `magicmirror.html` (h3→h2, h5→h3 for "Issues I ran into")
+- [x] Fixed `dockertoyaml.html` and `Virtualizationsetup.html`
+  (h3→h2, h4→h3, h5→h3; existing h2 in dockertoyaml preserved)
+- [x] Fixed `PoEexplained.html` individually: top-level h3→h2, nested h3 (Active,
+  Passive, PoE Switch, etc.) stay h3, h5 "What I did" → h4
+- [x] All 17 SmartHome pages now have logically nested headings (no skipped levels)
+
+---
+
+### 14. Footer and Sidebar Contrast — Possible Rendering Issue
+**Instances: ~200 | Priority: Medium**
+
+The re-scan still reports low contrast for footer text (3.98:1, 4.69:1) and sidebar
+links (3.98:1) despite CSS fixes applied in issues #1 and #7. Our CSS specifies
+`#4a4e4a` footer background with `#ffffff` links (8.46:1) and `#5c5269` sidebar with
+`#ffffff` links (11.4:1). The discrepancy may mean Puppeteer is not loading the
+stylesheet correctly, or Bootstrap is overriding our rules.
+
+- [ ] Check if `stylesheet.css` is loaded before Bootstrap or after (load order matters
+  for specificity at equal specificity levels)
+- [ ] Add `!important` to footer/sidebar rules if Bootstrap is overriding
+- [ ] Re-scan and confirm values
+
+---
+
+### 15. Duplicate `id="complete-the-following-problems"` — `IntroLinux/labs/filesandpaths.html` ✅
+**Instances: 1 file | Priority: Low**
+
+`filesandpaths.html` contained two `<h2 id="complete-the-following-problems">` elements.
+The first was a `\section*{Complete the following problems}` in the `.tex` source that
+only contained a reference link — the heading text was misleading. All other lab pages
+have one instance of this ID per page.
+
+- [x] Renamed the `.tex` section from `\section*{Complete the following problems}` to
+  `\section*{References}` (matches the actual content — just a link to the website)
+- [x] Updated the generated HTML to match: `id="references"`, heading text "References",
+  `aria-labelledby="references"` on the wrapping section

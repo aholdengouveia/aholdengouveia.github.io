@@ -49,7 +49,7 @@
 
 <!--Nav bar area at the top of the page -->
     
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #2c365e;">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <a class="navbar-brand" href="/index.html">Welcome!</a>
  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
    <span class="navbar-toggler-icon"></span>
@@ -66,7 +66,6 @@
          <a class="dropdown-item" href="https://www.youtube.com/channel/UCebdI1gT84U7PBtJFUTrIQA">YouTube</a>
          <a class="dropdown-item" href="https://github.com/aholdengouveia">GitHub </a>
          <a class="dropdown-item" href="https://www.thingiverse.com/aholdengouveia/designs">Thingiverse</a>
-         <!--<a class="dropdown-item" href="https://twitter.com/aholdengouveia">Twitter</a>-->
          <a class="dropdown-item" rel="me" href="https://fosstodon.org/@aholdengouveia">Mastodon</a>
          <a class="dropdown-item" href="https://www.linkedin.com/in/aholdengouveia">LinkedIn</a>
          <a class="dropdown-item" href="https://g.dev/aholdengouveia">Google Developer</a>
@@ -146,7 +145,8 @@
 
 
     <main id="main-content">
-    <main role="main">
+    <div class="smarthome-content">
+<main role="main">
     <!--Jumbotron for the page header -->
     <div class="jumbotron" style="background: url(/SmartHome/smarthomeimages/IOTkit.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
         <div class="container image-overlay">
@@ -161,7 +161,7 @@
 
 <!--Rating of the project in terms of difficulty, cost, and if I recommend for beginner-->
 <div class="container"> 
-    <h3>Rating</h3>
+    <h2>Rating</h2>
         <ul style="list-style: none;">
             <li>Difficulty of Project:Easy <span class="fa-solid fa-splotch"></span>
             </li>
@@ -173,7 +173,7 @@
 
 <!--Skills needed for This project make sure to include links on how to get those skills-->
 <div class="container">
-    <h3>Skills and supplies</h3>
+    <h2>Skills and supplies</h2>
         <ul style="list-style-type:disc;">
             <li>Desktop or laptop Computer with administrative access</li>
             <li>The Kit</li>
@@ -190,7 +190,7 @@
 
 <!--How the project went and what I thought about as I was working on it-->
 <div class="container">
-    <h3>From the Beginning</h3>
+    <h2>From the Beginning</h2>
 
         <p>I bought the Inland branded kit from Microcenter.  However, I'm pretty sure this kit is made by a totally different company, and just rebranded by Inland, given the links it gives all point to instructions by a company called Keyestudio, but they do have a full <a href="https://wiki.keyestudio.com/KS0085_Keyestudio_Smart_Home_Kit_for_Arduino ">Wiki page</a> with instructions and tutorials.
         </p>
@@ -204,7 +204,7 @@
 
 <!--First tutorial, let there be light-->
 <div class="container">
-    <h3>Let's get started</h3>
+    <h2>Let's get started</h2>
     <p>
         The first thing we need to do is install the Arduino IDE.  <a href="https://wiki.keyestudio.com/KS0085_Keyestudio_Smart_Home_Kit_for_Arduino#Download_software_and_install_driver">The Wiki with instructions</a> does have a tutorial on how to install the Arduino IDE which I will recommend to you because it explains how to install it on a Windows machine, I use Linux so my install process is unlikely to look like  yours.   In good news, the Arduino IDE install was very easy even on Linux, and literally the first step after that is plug in your board, and the kit even comes with a USB cord. 
     </p>
@@ -226,9 +226,9 @@
     </div>
 
 <div class="container">    
-<!--    <h4>Projects 1 & 2</h4>
+<!--    <h3>Projects 1 & 2</h3>
 -->
-    <h4>Projects 1 & 2</h4>
+    <h3>Projects 1 & 2</h3>
 
     <p>
         Now that the libraries are installed, we can continue with the LED blinking light. Our first project is going to be getting an LED blinking, the <a href="https://wiki.keyestudio.com/KS0085_Keyestudio_Smart_Home_Kit_for_Arduino#Project_1:_LED_Blink"> instructions for Project 1</a> are going to include some wiring, so our first steps are going to be getting our boards setup following the images.  The basic idea is that we are going to need to take the Sensor Shield, attach it to the Arduino, and then add on the white LED module to the shield.  There are more instructions and pictures on the tutorial. 
@@ -244,9 +244,9 @@
         <a href="https://wiki.keyestudio.com/KS0085_Keyestudio_Smart_Home_Kit_for_Arduino#Project_2:_Breathing_Light">Project two</a> is similar, except it's a yellow LED and it has a power change to make it look like it's breathing instead of just turning on and off. One thing you can try to make sure you understand the code is to combine projects 1 and 2, can you make both lights turn on? Can you have one with the power change and one that just turns on and off? Can you switch which one is which?  My code that I was playing with is <a href="https://github.com/aholdengouveia/IoT-Kit-Samples/blob/main/Project1plus">here.</a>
     </p>
 
-    <!--    <h4>Projects 3 & 4</h4>
+    <!--    <h3>Projects 3 & 4</h3>
 -->
-<h4>Projects 3 & 4</h4>
+<h3>Projects 3 & 4</h3>
     <p>
         Buzzer from <a href="https://wiki.keyestudio.com/KS0085_Keyestudio_Smart_Home_Kit_for_Arduino#Project_3:_Passive_Buzzer">Project 3</a>, yikes loud.  You have been warned.
     </p>
@@ -260,9 +260,9 @@
         Next I started trying to modify the code so that I can have the white LED and yellow LED light up on button press so I can practice how everything works. <a href="https://github.com/aholdengouveia/IoT-Kit-Samples/blob/main/Project4">The practice code</a> for Project 4 where I made the updates to include a second LED light to turn on and get rid of the error from the comments. You can see the changes that were made compared to the original project 4 are minimal, but it's good practice to make sure I understand how everything is put together.  You can try playing with my code, can you change which pins each light or the button uses? Could you make the light brighter or dimmer? 
     </p>
 
-        <!--    <h4>Projects 5 & 6</h4>
+        <!--    <h3>Projects 5 & 6</h3>
 -->
-<h4>Projects 5 & 6</h4>
+<h3>Projects 5 & 6</h3>
 <p>
     For <a href="https://wiki.keyestudio.com/KS0085_Keyestudio_Smart_Home_Kit_for_Arduino#Project_5%EF%BC%9A1-channel_Relay_Module">Project 5</a> we're starting to get a little more complex.  You will need to take some of the individual wires and hook them up instead of the set with 3, you'll also need to use two kinds of wires.  They did say which ones to use, but it was a little unclear what they meant since I'm not really super familiar with electrical terminology. The male to female means the cable with one pin, the female to female is the cable with no pins.  Another thing to note is that when you plug the pin into the relay it does a bit of a soft click, and when you run the program there is a clear "click" that you can hear. Once you are done you'll see that it goes with the LED turning off or on. 
 </p>
@@ -273,7 +273,7 @@
 
 <!--   Projects 7 & 8
 -->
-<h4>Projects 7 & 8</h4>
+<h3>Projects 7 & 8</h3>
 <p>
     <a href="https://wiki.keyestudio.com/KS0085_Keyestudio_Smart_Home_Kit_for_Arduino#Project_7%EF%BC%9AAdjusting_Motor_Servo_Angle">Project 7</a> you'll be attaching one of the two servos.  Now, they have switched the Ground connection, so instead of a black wire, it's the brown wire.  Another note, the servo comes with 4 white plastic options that are supposed to attach to the little white knob on the top of the servo.  Which one and how to attach isn't mentioned in the wiki. For my kit, I tried the fan with one blade, and it wouldn't attach.  The one with two long and two short blades does attach by pressing it on.  There are screws included, but I didn't want to use them because there didn't seem to be threads and I didn't want to break anything. 
 </p>
@@ -288,7 +288,7 @@
 
 <!--   Projects 9 & 10
 -->
-<h4>Projects 9 & 10</h4>
+<h3>Projects 9 & 10</h3>
 <p>
     <a href="https://wiki.keyestudio.com/KS0085_Keyestudio_Smart_Home_Kit_for_Arduino#Project_9%EF%BC%9ASteam_Sensor">Project 9</a>  There wasn't a great way for me to test this, because the house is attached to my laptop for programming and power, and I'm not carrying my laptop and the kit over to the stove with boiling water, I'm just going to assume everything works as intended. 
 </p>
@@ -299,7 +299,7 @@
 
 <!--   Projects 11 & 12
 -->
-<h4>Projects 11 & 12</h4>
+<h3>Projects 11 & 12</h3>
 
 <p>
     <a href="https://wiki.keyestudio.com/KS0085_Keyestudio_Smart_Home_Kit_for_Arduino#Project_11:_Analog%EF%BC%88MQ-2%EF%BC%89Sensor">Project 11</a>  This was easy to wire together, but I didn't really want to test it with flamable gas.  So we're just going to assume it works fine, no fire required. Also I hate noise and can't stand the buzzer for even 30 seconds.  I checked with my dogs and they agreed, no buzz buzz allowed in my house. 
@@ -311,7 +311,7 @@
 
 <!--   Projects 13 & 14
 -->
-<h4>Projects 13 & 14</h4>
+<h3>Projects 13 & 14</h3>
 
 <p>
     <a href="https://wiki.keyestudio.com/KS0085_Keyestudio_Smart_Home_Kit_for_Arduino#Project_13:_Soil_Humidity_Sensor">Project 13</a> Another nice straightforward project, easy wiring, works right away.  I'm doing this in winter, so the air is in the value range of the 90s, which isn't unexpected. 
@@ -329,7 +329,7 @@
 </div>
 
 <div class="container">    
-    <h3>Putting it all together</h3>
+    <h2>Putting it all together</h2>
     <p>
         <a href="https://wiki.keyestudio.com/KS0085_Keyestudio_Smart_Home_Kit_for_Arduino#Assembled_Guide">Assembly guide</a>
 
@@ -375,12 +375,14 @@
 <!--What I would do differently if I did this again, what recommendations I would have for future people
 <div class="container">
     <p>
-        <h3>Notes:</h3>
+        <h2>Notes:</h2>
     </p>
 </div>-->
 
 
 
+
+</div>
 
     </main>
 

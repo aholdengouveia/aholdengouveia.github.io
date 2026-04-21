@@ -49,7 +49,7 @@
 
 <!--Nav bar area at the top of the page -->
     
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #2c365e;">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <a class="navbar-brand" href="/index.html">Welcome!</a>
  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
    <span class="navbar-toggler-icon"></span>
@@ -66,7 +66,6 @@
          <a class="dropdown-item" href="https://www.youtube.com/channel/UCebdI1gT84U7PBtJFUTrIQA">YouTube</a>
          <a class="dropdown-item" href="https://github.com/aholdengouveia">GitHub </a>
          <a class="dropdown-item" href="https://www.thingiverse.com/aholdengouveia/designs">Thingiverse</a>
-         <!--<a class="dropdown-item" href="https://twitter.com/aholdengouveia">Twitter</a>-->
          <a class="dropdown-item" rel="me" href="https://fosstodon.org/@aholdengouveia">Mastodon</a>
          <a class="dropdown-item" href="https://www.linkedin.com/in/aholdengouveia">LinkedIn</a>
          <a class="dropdown-item" href="https://g.dev/aholdengouveia">Google Developer</a>
@@ -146,7 +145,8 @@
 
 
     <main id="main-content">
-    <main role="main">
+    <div class="smarthome-content">
+<main role="main">
     <!--Jumbotron for the page header  including project title and blurb-->
     <div class="jumbotron" style="background: url(/images/mirror-reflection.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
         <div class="container image-overlay">
@@ -169,7 +169,7 @@
 
 <!--Rating of the project in terms of difficulty, cost, and if I recommend for beginner-->
 <div class="container"style="padding:15px; border:solid; border-color:#c4c1cc; border-radius:25px; background-color: #e7e6ef;"> 
-    <h3>Rating</h3>
+    <h2>Rating</h2>
         <ul style="list-style: none;">
             <li>Difficulty of Project:Easy <span class="fa-solid fa-splotch"></span>
             </li>
@@ -181,7 +181,7 @@
 
 <!--Skills needed for This project make sure to include links on how to get those skills-->
 <div class="container">
-    <h3>Skills and assumed supplies</h3>
+    <h2>Skills and assumed supplies</h2>
         <ul style="list-style-type:disc;">
             <li>Computer with administrative access and Internet</li>
             <li>Mouse and keyboard that can connect to the Raspberry Pi</li>
@@ -191,7 +191,7 @@
 
 <!--Supplies and Cost of the project-->
 <div class="container">
-    <h3>Supplies (that stay with the project)</h3>
+    <h2>Supplies (that stay with the project)</h2>
         <ul style="list-style-type:disc;">
             <li>Raspberry Pi (2/3/4) with power cord</li>
             <li>Flat Screen Monitor with power Cord</li>
@@ -202,7 +202,7 @@
 
 <!--How the project went and what I thought about as I was working on it-->
 <div class="container">
-    <h3>Project Set up</h3>
+    <h2>Project Set up</h2>
     <p>
         The first thing that needs to happen is getting your Raspberry Pi setup which means putting an Operating System on your SD card.  <a href="https://www.raspberrypi.com/documentation/computers/getting-started.html">There is some great documentation with a step-by-step guide </a> where you can find all your files, troubleshoot issues, and get instructions on how to setup the pi from lots of systems.  <a href="https://youtu.be/ntaXWS8Lk34">They even made a video to show you how the installer works, it's only 45seconds! </a> 
     </p>
@@ -215,13 +215,13 @@
     <p class="three">
         I recommend reading through the whole installation once before trying it, don't worry if it doesn't make totally sense what's going on, just reading through the installation can give you some ideas on what to expect. I also recommend making sure to read everything on the screen carefully. If you get an error or warning usually there will be instructions on what the issues are and how to fix them if you read the errors carefully. 
     </p>
-    <h5>Issues I ran into</h5>
+    <h3>Issues I ran into</h3>
     <ul>
         <li>Issue with my raspberry pi running slowly (it's an older one, I used a raspberry pi 3 model B) and needing to reboot it a couple times. Don't worry if this happens to you too, sometimes a reboot or two will fix your problems. It's also likely to be pretty slow on start up and reboot, so don't panic if you feel like you're sitting and waiting a lot, that's pretty normal. Also don't forget this is running on a raspberry pi, these have significantly less power and resources then what you might be used to on phones or laptops. Don't expect the same speed in response time or having lots of things happening easily on this machine. Remember this is a $35 computer, not a $1000 computer and will need patience.</li>
         <li>Issue where I got a warning that says "1 high severity vulnerability" but right after it says that, there are instructions on how to fix it by rubbing "npm audit fix" so it's really good to make sure you read what's happening on the screen. But don't be surprised if you have to run "npm audit fix" as well and it takes quite a while.</li>
     </ul>
  
-    <h3>Magic Mirror Set up</h3>
+    <h2>Magic Mirror Set up</h2>
     <p>
         I started with having the base magic mirror build, I recommend you start there too. <a href="https://docs.magicmirror.builders/getting-started/installation.html#manual-installation">Follow the instructions </a> and after you're done with that you have a magic mirror! Now, if you want more things added to your mirror (which I do!) You'll need to pick some modules to add. Once you have the pattern down for how to add modules it's generally straightforward, but the different modules will have different levels of support, so be ready for not all of them to work perfectly. 
     </p>
@@ -236,7 +236,7 @@
 <!--Recommended upgrades and suggestions-->
 <div class="container">
     <p>
-        <h3>Recommended Upgrades</h3>
+        <h2>Recommended Upgrades</h2>
         <ul>
             <li>If you want to try something a little more complex you could consider following another set of instructions such as the ones <a href="https://khassel.gitlab.io/magicmirror/faq/">for how to install a mirror using a docker image. </a> This will have less documentation and videos available, so it isn't beginner friendly, but it's another option if you're interested in playing with new things and don't mind needing to troubleshoot and get further into the system </li>
             <li>Consider different sizes of mirror and monitors so you can try this in different places. You can also play with things like small inexpensive monitors in a corner of a mirror, or different shapes of mirrors to really customize what it looks like and what information is offered. </li>
@@ -265,7 +265,7 @@
 <!--Suggestions on how to save Money-->
 <div class="container">
     <p>
-        <h3>Ideas for how to save some Money</h3>
+        <h2>Ideas for how to save some Money</h2>
         <ul>
             <li>You could pick a different raspberry pi. You'll need one with wi-fi so you can't use the Pico, but you could pick an earlier version of the pi and get one for less money. You can also get a used one and save some money that way. Or even get a bulk order of several raspberry pi computers and split the cost with friends, make a party of creating magic mirrors together. </li>
             <li>Get a smaller monitor. Monitor prices can vary a lot depending on size, location and quality. You don't need a fancy monitor or HD or 4K anything, this is just showing some simple text and images. Frame rate and refresh rate do not matter here.</li>
@@ -274,7 +274,7 @@
     </p>
 </div>
 
-<h3>Cost breakdown with suggested supplies</h3>
+<h2>Cost breakdown with suggested supplies</h2>
 <p>
     <div class="container">
     NOTE:  Some of these supplies I had at home so links are to the same or similar products.  NO affiliate links of any kind are used. I just looked for similar products to what I had at home
@@ -345,6 +345,8 @@
   </div>
 </div>  
 </p>
+
+</div>
 
     </main>
 

@@ -49,7 +49,7 @@
 
 <!--Nav bar area at the top of the page -->
     
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #2c365e;">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <a class="navbar-brand" href="/index.html">Welcome!</a>
  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
    <span class="navbar-toggler-icon"></span>
@@ -66,7 +66,6 @@
          <a class="dropdown-item" href="https://www.youtube.com/channel/UCebdI1gT84U7PBtJFUTrIQA">YouTube</a>
          <a class="dropdown-item" href="https://github.com/aholdengouveia">GitHub </a>
          <a class="dropdown-item" href="https://www.thingiverse.com/aholdengouveia/designs">Thingiverse</a>
-         <!--<a class="dropdown-item" href="https://twitter.com/aholdengouveia">Twitter</a>-->
          <a class="dropdown-item" rel="me" href="https://fosstodon.org/@aholdengouveia">Mastodon</a>
          <a class="dropdown-item" href="https://www.linkedin.com/in/aholdengouveia">LinkedIn</a>
          <a class="dropdown-item" href="https://g.dev/aholdengouveia">Google Developer</a>
@@ -146,7 +145,8 @@
 
 
     <main id="main-content">
-    <main role="main">
+    <div class="smarthome-content">
+<main role="main">
     <!--Jumbotron for the page header -->
     <div class="jumbotron" style="background: url(/SmartHome/smarthomeimages/PoEbackgroundoffiberwiresDarkerversion.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
         <div class="container image-overlay">
@@ -173,7 +173,7 @@
 
 <!--Rating of the project in terms of difficulty, cost, and if I recommend for beginner-->
 <div class="container"> 
-    <h3>Rating</h3>
+    <h2>Rating</h2>
         <ul style="list-style: none;">
             <li>Difficulty of Project:Easy <span class="fa-solid fa-splotch"></span>
             </li>
@@ -185,7 +185,7 @@
 
 <!--Skills needed for This project make sure to include links on how to get those skills-->
 <div class="container">
-    <h3>Skills and assumed supplies</h3>
+    <h2>Skills and assumed supplies</h2>
         <ul style="list-style-type:disc;">
             <li>Ability to plug in Cat5 or Cat6 cables</li>
             <li>Recommendation: Build your own Cat5 or Cat 6 cables</li>
@@ -194,7 +194,7 @@
 
 <!--Supplies and Cost of the project
 <div class="container">
-    <h3>Supplies and costs </h3>
+    <h2>Supplies and costs </h2>
         <ul style="list-style-type:disc;">
             <li>Supply 1</li>
             <li>Supply 2</li>
@@ -204,7 +204,7 @@
 
 <!--How the project went and what I thought about as I was working on it-->
 <div class="container">
-    <h3>Power over Ethernet (PoE) in general and why it's cool</h3>
+    <h2>Power over Ethernet (PoE) in general and why it's cool</h2>
         <p>
             Power over ethernet or PoE is a way of being able to get power to devices with fewer wires. So let's say for example you have a device such as a camera, the camera is going to need to get internet so that you can get your camera feed on your server, and it's going to need to get power. Normally you're used to devices that actually have either a wired connection and a wired plug, or a wireless connection and a wired plug. So a lot of the IoT devices that have just a single wire coming from them are actually the power cord and it runs on wi-fi. 
         </p>
@@ -220,7 +220,7 @@
 
 <!--active vs Passive PoE-->
 <div class="container">
-    <h3>Active vs Passive PoE </h3>
+    <h2>Active vs Passive PoE </h2>
     <p>
         <h3>Active</h3>
         <p>
@@ -233,14 +233,14 @@
         <h3>What to pick?</h3>
         <p>
             Depending on your setup and trust levels and costs.  Passive means you'll need to pay attention to what you're plugging in, so if you have a large household that may not follow instructions, active might be right for you because that can take care of "whoops didn't realize that I can't use this wall socket. Bye Bye device/money".  However if you aren't worried about that, and are concerned about the active options not being smart enough you can choose passive.   </p>
-        <h5>What I did</h5>
+        <h4>What I did</h4>
         <p>
             For my house we ended up choosing an active PoE.  There was a sale on the device and I was able to find the information on the standards used for both the switch and my cameras.  I will need to make sure going forward I ONLY buy PoE devices that match that standard, but it does make it easy to plug-and-play.</p>
     </p>
 </div>
 <!--PoE switch vs Injector-->
 <div class="container">
-    <h3>PoE Switch vs PoE Injector</h3>
+    <h2>PoE Switch vs PoE Injector</h2>
     <p>
         <h3>PoE Switch</h3>
         <p>
@@ -260,14 +260,14 @@
         <h3>What to pick?</h3>
         <p>
             So if you know you're going to have a lot of devices using PoE seriously consider getting the switch and just running some wires in your home however if you live in an apartment and cannot run wires or you think you're only going to have a couple of devices then the injector might be a good choice for you.  </p>
-        <h5>What I did</h5>
+        <h4>What I did</h4>
         <p>
             I picked a switch because I have already wired my home with Cat5. I have plans for lots of PoE devices and switches are more cost effective for lots of devices.</p>
     </p>
 </div>
 <!--How to do this-->
 <div class="container">
-    <h3>How to do this</h3>
+    <h2>How to do this</h2>
         <p>
         Now the next bit of good news about PoE is that it is incredibly easy to set up once you've bought your hardware. 
         </p>
@@ -285,7 +285,7 @@
 <div class="container">
     <p>
 
-        <h3>Recommended Upgrades and ways to save money</h3>
+        <h2>Recommended Upgrades and ways to save money</h2>
         <ul>
             <li>Make your own Cables!</li>
                 <ul>
@@ -301,7 +301,7 @@
         </ul>
     </p>
 </div>
-<h3>Cost breakdown with the supplies I used</h3>
+<h2>Cost breakdown with the supplies I used</h2>
 <p>
     <div class="container">
     NOTE:  NO affiliate links of any kind are used. There will be a lot of extra supplies for making more cables, the box and connectors are enough to literally wire a whole house with CAT5 and still have leftovers, and if you get a nicer crimper they last a long time. Pro tip: Don't cheap out on the $5 crimper, it's tempting I know, but it's not worth the hassle.
@@ -344,6 +344,8 @@
       </div>
     </div>
 </p>
+
+</div>
 
     </main>
 

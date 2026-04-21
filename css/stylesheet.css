@@ -44,6 +44,20 @@ body {
     padding: 5px;
 }
 
+/* Navbar search button — Bootstrap btn-outline-success gives #28a745 green on #2c365e navy
+   which is only 3.73:1 (fails WCAG AA). White text/border = 11.7:1 (AAA). */
+.navbar .btn-outline-success {
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+    background-color: transparent !important;
+}
+.navbar .btn-outline-success:hover,
+.navbar .btn-outline-success:focus {
+    color: #2c365e !important;
+    background-color: #ffffff !important;
+    border-color: #ffffff !important;
+}
+
 
   /*jumbotron is the wide header used to call out page titles and blurbs
   */
@@ -231,6 +245,12 @@ h4 {
   font-size: 0.83em;
 }
 
+/* SmartHome pages: headings changed from h3→h2, h4→h3, h5→h3 for WCAG AAA
+   compliance. h2 needs centring to match the old h3 visual appearance. */
+.smarthome-content h2 {
+  text-align: center;
+}
+
 /*video wrapper to try and get video embed to work on mobile devices*/
 .video-wrapper{
   overflow:hidden; 
@@ -311,6 +331,12 @@ th, td {
     color: #d4d4d4 !important;  /* Bootstrap muted text was too low contrast on dark footer */
 }
 
+/* Navbar background — moved from inline style on <nav> so pa11y/Puppeteer can compute
+   contrast ratios (transparent backgrounds on ancestor inline styles cause NaN:1). */
+nav.navbar {
+    background-color: #2c365e !important;
+}
+
 /* Navbar link contrast — Bootstrap navbar-dark uses rgba(255,255,255,.5) which blends to
    ~4.2:1 on #2c365e (fails WCAG AA). Override to fully opaque white = 11.7:1 (AAA). */
 .navbar-dark .nav-link,
@@ -329,8 +355,8 @@ th, td {
     position: absolute;
     top: -40px;
     left: 0;
-    background: #000;
-    color: #fff;
+    background-color: #000000;  /* explicit property (not shorthand) so pa11y can compute contrast */
+    color: #ffffff;
     padding: 8px 16px;
     text-decoration: none;
     z-index: 10000;
@@ -339,7 +365,7 @@ th, td {
 
 .skip-link:focus {
     top: 0;
-    color: #fff;
-    outline: 2px solid #fff;
+    color: #ffffff;
+    outline: 2px solid #ffffff;
     outline-offset: 2px;
 }

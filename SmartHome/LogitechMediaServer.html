@@ -1,6 +1,6 @@
 ---
 title: Logitech Media Server
-layout: default
+layout: smarthome
 ---
 
 <main role="main">
@@ -22,7 +22,7 @@ layout: default
 
 <!--Rating of the project in terms of difficulty, cost, and if I recommend for beginner-->
 <div class="container"> 
-    <h3>Rating</h3>
+    <h2>Rating</h2>
         <ul style="list-style: none;">
             <li>Difficulty of Project: Intermediate <span class="fa-solid fa-splotch"></span><span class="fa-solid fa-splotch"></span>
             </li>
@@ -34,7 +34,7 @@ layout: default
 
 <!--Skills needed for This project make sure to include links on how to get those skills-->
 <div class="container">
-    <h3>Skills and assumed supplies</h3>
+    <h2>Skills and assumed supplies</h2>
         <ul style="list-style-type:disc;">
             <li>A <a href="/SmartHome/ServerSetup.html">Server</a> with either <a href="/SmartHome/Virtualizationsetup.html#Docker">Docker</a> or <a href="/SmartHome/Virtualizationsetup.html#Kubernetes">Kubernetes</a> installed if you want to use containers</li>
             <li>If you choose to use a Pi you'll need one of those with power cord</li>
@@ -45,7 +45,7 @@ layout: default
 
 <!--Supplies and Cost of the project-->
 <div class="container">
-    <h3>Supplies and costs </h3>
+    <h2>Supplies and costs </h2>
         <ul style="list-style-type:disc;">
             <li>If you do it on your <a href="/SmartHome/ServerSetup.html">Server</a> with <a href="/SmartHome/Virtualizationsetup.html">Virtualization</a>, Nothing!</li>
             <li>Optional: Raspberry Pi including power cord, Ethernet cable, and SD card</li>
@@ -55,7 +55,7 @@ layout: default
 <!--What I thought about as I was working on it-->
 
 <div class="container">
-    <p><h3>Logitech Media Server</h3>
+    <p><h2>Logitech Media Server</h2>
         
     </p>
     <p>
@@ -65,7 +65,7 @@ layout: default
 
 <!--Install using Docker-->
 <div class="container">
-    <p><h3>How to set up Logitech Media Server using Docker </h3>
+    <p><h2>How to set up Logitech Media Server using Docker </h2>
         <p>
             First we need to login to our server, you can do this on SSH if you want, or by going over to your server and logging in if it has a monitor.  If you need a refresh on how to SSH into a server I made a video for you!  It's <a href="https://youtu.be/w3yOQFZJMTo">here</a>.  Then we can run the given Docker command from <a href="https://www.home-assistant.io/installation/odroid">the documentation</a>. You'll need to scroll down to the portion that is for container installs. 
             <div class="container">
@@ -91,7 +91,7 @@ layout: default
 
 <!--Install using Kubernetes-->
 <div class="container">
-    <p><h3>How to set up Logitech Media Server using Kubernetes </h3>
+    <p><h2>How to set up Logitech Media Server using Kubernetes </h2>
         If you haven't already set up your namespace, I recommend you do that first.  I have a sample recipe for that <a href="/SmartHome/namespace.yaml">here</a> that will create a namespace called smart-home, you can reference <a href="/SmartHome/Virtualizationsetup.html#Kubectl">how to use kubectl</a> if you want to refresher on how to set that up.  
         
         Check to make sure your namespace is up by doing 
@@ -118,7 +118,7 @@ layout: default
     
 <!--Install using Raspberry Pi-->
 <div class="container">
-    <p><h3>How to set up Logitech Media Server using a Raspberry Pi </h3>
+    <p><h2>How to set up Logitech Media Server using a Raspberry Pi </h2>
         You'll need a Pi, power supply, SD card and an ethernet cable.  You will need to know how to see the IP address of your Pi, this can be done <a href="https://pimylifeup.com/raspberry-pi-ip-address/">in several ways</a>, option 1 is logging into your router and checking the address of the Pi, option 2 is logging into the Pi and running <pre>hostname -I</pre>  You're likely to see the address as either <pre>192.168.X.X</pre> or <pre>10.10.X.X</pre>
     </p>
     <p>
@@ -148,7 +148,7 @@ layout: default
 
 <!--Now let's start up the dashboard-->
 <div class="container">
-    <h3>How to use Logitech Media Server</h3>
+    <h2>How to use Logitech Media Server</h2>
     <p>
         First we need to open up the dashboard.  You'll need to go to the IP address of your Raspberry Pi, or container in your web browser. <pre>http://IPaddress:9000</pre><p><img src="/SmartHome/smarthomeimages/lmsworking.png" class="img-fluid" alt ="image of the LMS working but before the first library scan"></p>
     </p>
@@ -166,7 +166,7 @@ layout: default
 <!--how to install squeezebox-->
 <div class="container">
 <p>
-    <h4>Linux Squeezelite install</h4>
+    <h3>Linux Squeezelite install</h3>
     Squeezelite is something you can install on your android tablet or phone, or your linux laptop as a way to be able to play music. Remember, the server will send music but not play it, you MUST have something with a speaker and player to be able to play your music.  
 </p>
     <p>
@@ -180,7 +180,7 @@ layout: default
 I do recommend renaming your players so that it's clear which one is playing what.  For example, my <a href="/SmartHome/magicmirror.html">Magic Mirror</a> has a speaker attached so I can play music on that by following the above steps to install and run squeezeplayer, and then in the settings of the media player, I can see the options for my mirror including renaming it. 
 <p><img src="/SmartHome/smarthomeimages/kitchenmirrorsqueezeplayer.png" class="img-fluid" alt ="squeezelite running on kitchen  magic mirror"></p>
 </p>
-<p><h4>Android Phone/Tablet Squeezelite install</h4>You can also install this on your Android Phone, if you want to play music on your android phone or tablet.
+<p><h3>Android Phone/Tablet Squeezelite install</h3>You can also install this on your Android Phone, if you want to play music on your android phone or tablet.
     <ul>
         <li>Go to the Android store and install <a href="https://play.google.com/store/apps/details?id=com.termux&hl=en_GB&gl=US">Termux</a></li>
         <li>Next you'll open the Termux app and say <pre>apt-get update</pre>
@@ -195,7 +195,7 @@ I do recommend renaming your players so that it's clear which one is playing wha
 
 <!--Integrate with home assistant-->
 <div class="container">
-    <h3><a style="padding-top: 60px; margin-top: -40px;" id="HACS">Home Assistant Integration using Home Assistant Community Store (HACS)</a></h3>
+    <h2><a style="padding-top: 60px; margin-top: -40px;" id="HACS">Home Assistant Integration using Home Assistant Community Store (HACS)</a></h2>
     <p>One thing you can do to make this system more a part of your home is to integrate with <a href="/SmartHome/homeassistant.html">Home Assistant</a> if you have an instance up and running.  The official page on this integration is <a href="https://www.home-assistant.io/integrations/squeezebox/">here</a>.  But I will warn you, I did not find it straightforward how to do this, so I've included a lot more details below.
         <ul>
             <li>Start home assistant by going to the web portal <pre>http://IPADDRESS:8123</pre></li>
@@ -221,7 +221,7 @@ I do recommend renaming your players so that it's clear which one is playing wha
 <div class="container">
     <p>
 
-        <h3>Recommended Upgrades</h3>
+        <h2>Recommended Upgrades</h2>
         <ul>
             <li>Reorganize your Music.  The organization and tagging system that was here by default left something to be desired in my opinion.  So it would be worth your time to make sure all your music is relatively well organized into band names, or musicians or whatever makes the most sense to you.</li>
             <li>Try the <a href="https://github.com/CDrummond/lms-material">Material Skin</a> interface for the webportal. It's pretty easy to setup, you'll go into the settings on your Logitech Media Server, then enable the "Material Skin" plugin, restart the server, and then instead of going to <pre>http://IPaddress:9000</pre>  You'll go to <pre>http://IPaddress:9000/material/</pre></li>

@@ -1,6 +1,6 @@
 ---
 title: CCTV
-layout: default
+layout: smarthome
 ---
 
 <main role="main">
@@ -23,7 +23,7 @@ layout: default
 
 <!--Rating of the project in terms of difficulty, cost, and if I recommend for beginner-->
 <div class="container"> 
-    <h3>Rating</h3>
+    <h2>Rating</h2>
         <ul style="list-style: none;">
             <li>Difficulty of Project: Intermediate <span class="fa-solid fa-splotch"></span><span class="fa-solid fa-splotch"></span>
             </li>
@@ -35,7 +35,7 @@ layout: default
 
 <!--Skills needed for This project make sure to include links on how to get those skills-->
 <div class="container">
-    <h3>Skills and assumed supplies</h3>
+    <h2>Skills and assumed supplies</h2>
         <ul style="list-style-type:disc;">
             <li>A <a href="/SmartHome/ServerSetup.html">Server</a></li>
             <li>Either <a href="/SmartHome/Virtualizationsetup.html#Docker">Docker</a> or <a href="/SmartHome/Virtualizationsetup.html#Kubernetes">Kubernetes</a> on your Server</li>
@@ -46,7 +46,7 @@ layout: default
 
 <!--Supplies and Cost of the project-->
 <div class="container">
-    <h3>Supplies and costs </h3>
+    <h2>Supplies and costs </h2>
         <ul style="list-style-type:disc;">
             <li><a href="https://wiki.zoneminder.com/Hardware_Compatibility_List">IP Camera from this list</a>(Compatible with ZoneMinder)</li>
             <li>Power Supply for the camera (or a PoE setup)</li>
@@ -56,7 +56,7 @@ layout: default
 
 <!--How the project went and what I thought about as I was working on it-->
 <div class="container">
-    <p><h3>How to set up ZoneMinder using Docker </h3>
+    <p><h2>How to set up ZoneMinder using Docker </h2>
         The ZoneMinder documentation is written for Docker, so we can follow that.  However the documentation on the website does go to some deprecated repos and dead links. So we want to go to the ZoneMinder repository directly, which lives <a href="https://github.com/ZoneMinder/zmdockerfiles">Here</a> to find what we need. Once you go to the repository, you'll notice the docker image says “zoneminderhq/zoneminder:latest-ubuntu18.04” And this can look concerning since you are unlikely to be running Ubuntu 18, however because we are using docker, that should be ok.  Docker can run a previous version of the OS without you needing to do anything. 
     </p>
     <p>
@@ -87,7 +87,7 @@ layout: default
 
 <!--How the project went and what I thought about as I was working on it-->
 <div class="container">
-    <p><h3>How to set up zoneminder using Kubernetes </h3>
+    <p><h2>How to set up zoneminder using Kubernetes </h2>
         If you haven't already set up your namespace, i recommend you do that first.  I have a sample recipe for that <a href="/SmartHome/namespace.yaml">here</a> that will create a namespace called smart-home, you can reference <a href="/SmartHome/Virtualizationsetup.html#Kubectl">how to use kubectl</a> if you want to refresh on how to set that up.  
         
         Check to make sure your namespace is up by doing 
@@ -112,7 +112,7 @@ layout: default
 
 <!--How the project went and what I thought about as I was working on it-->
 <div class="container">
-    <p><h3>How to use Zoneminder</h3>
+    <p><h2>How to use Zoneminder</h2>
         We need to setup our cameras, you can plug your camera in to your power source, and make sure that it is connected to the internet. Now depending on your camera there might be different setup options, in my case for the camera that I've chosen and recommended for beginners, you're going to go to the IP address of that camera, the IP address by default of this hikvision camera is 192.168.1.64 and you're going to put that into the address bar of your browser. Once you do that it should ask you for a login to set up the camera, keeping the user as admin is fine but you will need to choose a strong password. You cannot paste anything in there you have to type it so make sure that the password is both strong and easy to type. 
     </p>
     <p>
@@ -163,13 +163,13 @@ layout: default
 <div class="container">
     <p>
 
-        <h3>Recommended Upgrades</h3>
+        <h2>Recommended Upgrades</h2>
         <ul>
             <li>Secure your ZoneMinder by making it require a login and use https, there are <a href="https://github.com/freenas/iocage-plugin-zoneminder">several guides</a> you <a href="http://www.overworkeditguy.com/2017/07/basic-security-with-zoneminder.html">can use</a> to do this. </li>
             <li>Add a VPN to your server so that you can access your zoneminder dashboard securely while you're away from home</li>
             <li>Consider changing the motion detection options on your cameras so that it's not all motion, just sustained motion so you don't fill up your hard disk</li>
         </ul>
-        <h3>Ideas for how to save some Money</h3>
+        <h2>Ideas for how to save some Money</h2>
         <ul>
             <li>Consider buying used CCTV cameras from a company or reputable reseller</li>
             <li>Buy in bulk, if you know you want 5-10 cameras buy a bunch so you can get the bulk discounts</li>
@@ -180,7 +180,7 @@ layout: default
         </ul>
     </p>
 </div>
-<h3>Cost breakdown with suggested supplies</h3>
+<h2>Cost breakdown with suggested supplies</h2>
 <p>
     <div class="container">
     NOTE:  NO affiliate links of any kind are used. If you want more then one camera, you must have a power supply and Cat5 or Cat6 for each camera. 

@@ -49,7 +49,7 @@
 
 <!--Nav bar area at the top of the page -->
     
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #2c365e;">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <a class="navbar-brand" href="/index.html">Welcome!</a>
  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
    <span class="navbar-toggler-icon"></span>
@@ -66,7 +66,6 @@
          <a class="dropdown-item" href="https://www.youtube.com/channel/UCebdI1gT84U7PBtJFUTrIQA">YouTube</a>
          <a class="dropdown-item" href="https://github.com/aholdengouveia">GitHub </a>
          <a class="dropdown-item" href="https://www.thingiverse.com/aholdengouveia/designs">Thingiverse</a>
-         <!--<a class="dropdown-item" href="https://twitter.com/aholdengouveia">Twitter</a>-->
          <a class="dropdown-item" rel="me" href="https://fosstodon.org/@aholdengouveia">Mastodon</a>
          <a class="dropdown-item" href="https://www.linkedin.com/in/aholdengouveia">LinkedIn</a>
          <a class="dropdown-item" href="https://g.dev/aholdengouveia">Google Developer</a>
@@ -146,7 +145,8 @@
 
 
     <main id="main-content">
-    <main role="main">
+    <div class="smarthome-content">
+<main role="main">
     <!--Jumbotron for the page header -->
     <div class="jumbotron" style="background: url(/SmartHome/smarthomeimages/rainbowsmokeairquality.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
         <div class="container image-overlay">
@@ -166,7 +166,7 @@
 
 <!--Rating of the project in terms of difficulty, cost, and if I recommend for beginner-->
 <div class="container"> 
-    <h3>Rating</h3>
+    <h2>Rating</h2>
         <ul style="list-style: none;">
             <li>Difficulty of Project:Intermediate <span class="fa-solid fa-splotch"></span><span class="fa-solid fa-splotch"></span>
             </li>
@@ -178,7 +178,7 @@
 
 <!--Skills needed for This project make sure to include links on how to get those skills-->
 <div class="container">
-    <h3>Skills and assumed supplies</h3>
+    <h2>Skills and assumed supplies</h2>
         <ul style="list-style-type:disc;">
             <li>Soldering <a href="https://youtu.be/QKbJxytERvg">Video on Soldering 101 it's easier then it sounds</a></li>
             <li>Desktop or laptop Computer with administrative access and internet</li>
@@ -191,7 +191,7 @@
 
 <!--Supplies and Cost of the project-->
 <div class="container">
-    <h3>Supplies and costs</h3>
+    <h2>Supplies and costs</h2>
         <ul style="list-style-type:disc;">
             <li>Ikea air Quality Monitor</li>
             <li>Ikea monitor power cord</li>
@@ -205,7 +205,7 @@
 
 <!--How the project went and what I thought about as I was working on it-->
 <div class="container">
-    <h3>How it went </h3>
+    <h2>How it went </h2>
         <p>
             I have tried several different tutorials and I found the one that I have linked above to be the best. Now, the other ones I'm sure are very useful if you have more experience with electronics, if you are used to working with an arduino, and if you're really comfortable with a lot of the steps that you're going to need to take then one of the other tutorials may be great for you. However if you have never done a lot of this work before and you're kind of nervous about it, I would recommend the tutorial that I linked because the person that did it not only did a really nice <a href="https://peyanski.com/vintriktning-ikea-air-quality-sensor-in-home-assistant/">write-up on their website</a> they also did a <a href="https://youtu.be/BQ222qzYUqw">short video</a>, which I found to be incredibly helpful. It's really nice to be able to both watch a video of all of the steps, and also have a write-up that you can follow along with if you've never done anything like this before the way that I haven't really done anything like this before.
         </p>
@@ -213,7 +213,7 @@
              The first thing that's going to end up happening is you need to take your board and plug it into your computer. I ended up buying <a href="https://a.co/d/cbZEMIk">this board</a> from hiletgo (I'm sure almost any brand is fine), it was a 5-pack on amazon, you can get cheaper ones if you buy in bulk (as in more then 50 boards) but in general the sort of rule of thumb is the more you get the cheaper they become, so if you know you're going to be doing a ton of projects like this and you find a brand you like it might be worth buying a bigger pack because you can get them even cheaper, mine ended up being about $4 a board which I'm okay paying for a trial. 
         </p>
         <p>
-            <h4>Flashing the Firmware</h4>
+            <h3>Flashing the Firmware</h3>
              For the board, the plug is going to be this mini USB plug, if you don't already have a cable any cable should work. The first time I tried to flash the firmware I tried something called Tasmotizer, I actually found that to be less user friendly than the option of going through a browser. It turns out you can actually flash the test mode of firmware using a browser, the catch being you have to use Chrome or Microsoft Edge, in my case because I don't run Windows I chose to use chrome. You're going to go to <a href="https://tasmota.github.io/install/">this website</a>  to flash our firmware. One of the things that I really like about this option is not only are there significantly more choices in terms of which firmware you can pick, one of the unofficial choices actually means that everything is already bundled in together and you don't have to add anything else. You also really don't have to do any actual programming, most everything is done through a GUI style menu.
         </p>
         <p>
@@ -224,7 +224,7 @@
     </p>
     <p>
         <p>
-            <h4>It's Soldering time!</h4>
+            <h3>It's Soldering time!</h3>
             I did not find the soldering to be particularly difficult, but it is a little bit finicky. I ended up actually buying a new soldering iron, called the <a href="https://pine64.com/product/pinecil-smart-mini-portable-soldering-iron/">Pinecil</a> because I had some old soldering irons that were not very user friendly.  And this one is open source. You do not have to spend a lot of money on a soldering iron, and it is also completely possible that either your school or your town has a makerspace where you can go and use a soldering iron. For example, the school that I work at you can actually just go ask one of the computer science or engineering teachers and they will make sure to give you a quick little safety rundown and then you can use one of the many soldering irons that we have if you're a student. What we're going to be doing is actually soldering three wires onto the board that we bought and then the other side of those wires is going to get soldered onto the ikea sensor.
             <p class="two">
                 NOTE: If nothing else, get a soldering iron with a digital temp reading.  The ones that say "High" or "Low" are most common, nothing are just not worth it.  
@@ -250,7 +250,7 @@
                 If you find wiring diagrams to be helpful, you're going to want to solder your wires following this picture to add the ESP8266 mini board to your ikea sensor: <p><img src="/SmartHome/smarthomeimages/esptoikeaboard.png" class="img-fluid" alt ="wiring for ESP8266 to the Ikea board using pin D1 on ESP board"></p>
             </p>
             <p>
-                <h4>How to add to Home Assistant and Automate things</h4>
+                <h3>How to add to Home Assistant and Automate things</h3>
                 Now that we have the ikea sensor put back together and plugged in to the wall, we should be able to go through the discovery portion so that we can get this attached to our Home Assistant. Now in my case I already had an mqtt server setup, <a href="https://peyanski.com/mqtt-home-assistant-and-node-red-integration/">there is also a tutorial for that if you are interested and you don't already have one</a>,   one of the things that I really liked about this, is because we entered in our Wi-Fi information during the configuration, it should be automatically discoverable. 
             </p>
             <p>
@@ -274,7 +274,7 @@
 <div class="container">
     <p>
 
-        <h4>Level 2 Upgrade with more sensors!</h4>
+        <h3>Level 2 Upgrade with more sensors!</h3>
         <p>
             The second level of the project is adding in another sensor to track more data about your air quality.  The Ikea sensor can see PM2.5 which is just particles in the air.  But there are a wide range of other sensors to track things like temperature, humidity, pressure and VOCs.  I choose to add a BME680 <a href="https://learn.adafruit.com/adafruit-bme680-humidity-temperature-barometic-pressure-voc-gas">(BME680 explained by Adafruit)</a> which tracks all of those, but if you aren't interested in that much data, you could choose a BME280 or BMP280 both of which track less, but are cheaper. More info on the BME280 can be found <a href="https://learn.adafruit.com/adafruit-bme280-humidity-barometric-pressure-temperature-sensor-breakout">here from Adafruit</a> There is a video on how to add the BME680 <a href="https://www.voltlog.com/tag/ikea-vindriktning-bosch-bme680/">here</a> if you're interested in adding another sensor.  There is more soldering involved, and the steps aren't broken down to quite the same level as the other video, so I will call this a Level 2 project if you complete Level 1 (adding wifi) successfully, try out Level 2. The changes you'll need to make are soldering on 4 more wires OR working with the JST connectors.  I choose to solder on more wires.  You'll also need to add 2 more choices to the module configuration, if you go back to the IP address of your board (likely a 192.168.X.X address) you'll see where you added "Vindriktning" to the D1 option. We're going to make two more changes to this screen, you'll add the I2C SDA to D3 and I2C SCL to D2 as show here: <p><img src="/SmartHome/smarthomeimages/ikeaairqualitysensorsBME680pinchoices.png" class="img-fluid" alt ="new automation choosing a trigger"></p>  this will correspond to the wires you've soldered on the SCK and SDI pins on your BME680 board.    
                 <p>
@@ -311,16 +311,16 @@
                 One thing that's really nice about this, because I set this to go on something called I2C you should be able to pick other chips that also use this if you wanted to, so for example you could use the BME280 or BMP280 (both are cheaper) and wire it up the same way.  And if you get it from Adafruit they should still use the SDI and SCK options I picked here so it would be the exact same process, just will give less data. 
                 </p>
         </p>
-    <h3>Recommended Upgrades</h3>
+    <h2>Recommended Upgrades</h2>
         <p>
             One thing that I would absolutely recommend you trying is automation.  If you're going to have an air quality sensor setup, you should try out some of the automation options you can do with the results, things like turning on an air purifier if the quality is too poor, notify you if the quality drops too much, or even things like running this in a less used portion of the house (basement/attic) and seeing what's happening there and how you can make the air quality better. I would recommend setting up an automation so that if the sensor stops working for whatever reason you get notified about it. One of the things that I've noticed having several sensors throughout the house, is one of them can go down and I won't necessarily notice until I'm actually checking it and then I won't know when it went out. I went over how to do that above, but that is a good second automation to try.
         </p>
-        <h3>Ideas for how to save some Money</h3>
+        <h2>Ideas for how to save some Money</h2>
         <p>
             There aren't a ton of ways to save money on this project, the air sensor chip alone is likely to run you $10-$15, and you'd still need the cable and housing and everything.  I think this project is the cost saving solution for air quality monitoring and is cheaper then the other options I've seen. </p>
     </p>
 </div>
-<h3>Cost breakdown with the supplies I used</h3>
+<h2>Cost breakdown with the supplies I used</h2>
 <p>
     <div class="container">
     NOTE:  NO affiliate links of any kind are used.
@@ -373,6 +373,8 @@
       </div>
     </div>
 </p>
+
+</div>
 
     </main>
 

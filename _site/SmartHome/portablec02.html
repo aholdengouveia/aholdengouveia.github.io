@@ -49,7 +49,7 @@
 
 <!--Nav bar area at the top of the page -->
     
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #2c365e;">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <a class="navbar-brand" href="/index.html">Welcome!</a>
  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
    <span class="navbar-toggler-icon"></span>
@@ -66,7 +66,6 @@
          <a class="dropdown-item" href="https://www.youtube.com/channel/UCebdI1gT84U7PBtJFUTrIQA">YouTube</a>
          <a class="dropdown-item" href="https://github.com/aholdengouveia">GitHub </a>
          <a class="dropdown-item" href="https://www.thingiverse.com/aholdengouveia/designs">Thingiverse</a>
-         <!--<a class="dropdown-item" href="https://twitter.com/aholdengouveia">Twitter</a>-->
          <a class="dropdown-item" rel="me" href="https://fosstodon.org/@aholdengouveia">Mastodon</a>
          <a class="dropdown-item" href="https://www.linkedin.com/in/aholdengouveia">LinkedIn</a>
          <a class="dropdown-item" href="https://g.dev/aholdengouveia">Google Developer</a>
@@ -146,7 +145,8 @@
 
 
     <main id="main-content">
-    <main role="main">
+    <div class="smarthome-content">
+<main role="main">
     <!--Jumbotron for the page header -->
     <div class="jumbotron" style="background: url(/SmartHome/smarthomeimages/c02monitorportable.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
         <div class="container image-overlay">
@@ -161,7 +161,7 @@
 
 <!--Rating of the project in terms of difficulty, cost, and if I recommend for beginner-->
 <div class="container"> 
-    <h3>Rating</h3>
+    <h2>Rating</h2>
         <ul style="list-style: none;">
             <li>Difficulty of Project:Easy/Intermediate <span class="fa-solid fa-splotch"></span><span class="fa-solid fa-splotch"></span>
             </li>
@@ -174,7 +174,7 @@
 
 <!--Skills needed for This project make sure to include links on how to get those skills-->
 <div class="container">
-    <h3>Skills and assumed supplies</h3>
+    <h2>Skills and assumed supplies</h2>
         <ul style="list-style-type:disc;">
             <li>Arduino IDE</li>
             <li>Desktop or laptop Computer with administrative access</li>
@@ -184,7 +184,7 @@
 
 <!--Supplies and Cost of the project-->
 <div class="container">
-    <h3>Supplies and costs </h3>
+    <h2>Supplies and costs </h2>
         <ul style="list-style-type:disc;">
             <li><a href="https://www.adafruit.com/product/3403">Feather</a></li>
             <li><a href="https://www.adafruit.com/product/2185">USB to connect the feather to the computer</a></li>
@@ -200,7 +200,7 @@
 
 <!--Why I decided to make this project-->
 <div class="container">
-    <h3>Why I choose this to work on</h3>
+    <h2>Why I choose this to work on</h2>
     <p>
         This project is going to be a portable CO2 monitor. The idea behind a CO2 monitor is that we are testing the air quality of a room that we are in for very specific things. One of the issues that has come up with the coronavirus that started in 2019 (also known as covid-19) is that, because the virus is airborne, ventilation and air quality has come to the forefront of things people care about.  And if we know that CO2 is air from other people's lungs we can make some calculations as to the likelihood of the amount of covid in a room based off of the CO2 that's in a room.There has been some research into this over the last several years, like <a href="https://web.archive.org/web/20230405180911/https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8043197/">this paper</a>, <a href="https://web.archive.org/web/20210909090725/https://ncceh.ca/sites/default/files/EH%20Seminar%20Indoor%20CO2%20Sensors%20for%20COVID-19%20Risk%20Mitigation%20May%2026%202021.pdf">this presentation</a>, or <a href="https://web.archive.org/web/20220712080945/https://www.sciencedirect.com/science/article/pii/S0013935121008549">this paper</a>.  
         <p>Even the US government, who is notoriously slow to update recommendations, is willing to say "<a href="https://web.archive.org/web/20230315040933/https://www.ashrae.org/file%20library/about/position%20documents/pd_indoorcarbondioxide_2022.pdf">This document recommends research into the impacts of CO2 on occupant health, comfort, and performance and on the application of indoor CO2 concentrations in building operation, as well as the development of guidance on the measurement and practical application of CO2 concentrations</a>", and that "<a href="https://web.archive.org/web/20230327052649/https://www.epa.gov/coronavirus/ventilation-important-indoor-air-quality-when-cleaning-andor-sanitizing-covid-19">Increasing ventilation, for example by opening windows or doors, can also reduce risks from particles resuspended during cleaning, including those potentially carrying SARS-CoV-2 (or other contaminants)</a>"</p>
@@ -215,7 +215,7 @@
     <p>
         What we are trying to do with this project is have a way to be able to monitor CO2, but we would like this to be portable, so that it can come with us, and we would like to be able to customize it. One of the reasons that it's good to have this project be portable, run off of a battery, is so that you can bring it with you and make decisions about your personal safety and choose to leave if there is too high a concentration of CO2 and therefore too much air from other people's lungs in the atmosphere. This way you would be able to do things like decide what is too crowded of a room, or what is too crowded of a public space, and if, for example, it makes sense to request that a window is opened, or you to take a walk or request ventilation or something.
     </p>
-    <h3>Project Basics and Starting Place</h3>   
+    <h2>Project Basics and Starting Place</h2>   
     <p>
 
         This particular project is actually very beginner friendly! Because we are going to be using components from Adafruit and they have well done libraries, well done documentation, and are well known to be a more entry-level, accessible, electronics company.
@@ -229,7 +229,7 @@
     <p>
         Now for the portable part, we are going to want to buy a <a href="https://www.adafruit.com/product/3898">Battery</a>, you can also buy batteries on Adafruit. One of the things that I really like about the feather is it actually has a lot of the stuff that you would worry about for overcharging or working with batteries all taken care of on the board so you can actually just plug an adafruit lipoly battery into an adafruit feather and know that they will work together, they will charge together, and they will live happily ever after. I ended up using a battery that should make this run for about 12 hours, you can obviously use a smaller or larger battery as it makes sense for you and your project and your budget. For the battery I have chosen to solder in a switch so that I can turn it on and off easily through the case, however if you do not wish to solder anything that's completely valid as well and you can unplug the battery from the feather when you no longer want the device to be on. I am going to be following <a href="https://learn.adafruit.com/on-slash-off-switches/overview">this tutorial</a> on how to add a switch to any project with a battery that uses a JST connection. 
     </p>      
-        <h3>Project Case</h3>
+        <h2>Project Case</h2>
         <p>
             I have chosen to 3D print my case because I happen to have a 3D printer at home, you may or may not have a 3D printer at home, however you probably have access to one through either your school, your work, a local makerspace, or even your local library. I always advocate asking your local library because libraries and librarians are awesome.  The case needs to have space for the feather with featherwing, C02 sensor, a battery, and the JST switch.  The switch needs to be accessible from the outside, but we'd like the wires hidden.  The USB needs to be easily accessible on the feather for charging.  And we need to be able to see the featherwing OLED, because we want to be able to read our air quality easily. 
         </p>
@@ -243,7 +243,7 @@
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/0AKduQL9D5U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </p>
         </p>
-    <h3>Pieces, Assemble!</h3>
+    <h2>Pieces, Assemble!</h2>
         <p>
             The assembly for this is very straightforward, if you have chosen to buy pre-soldered pieces you are all set, you can move to the next step. If you have chosen to solder on your own pieces then you need to make a decision here, do you want to solder in the headers to both the feather wing and the feather? Or do you want to permanently solder the featherwing OLED to the feather? 
         </p>
@@ -256,7 +256,7 @@
         <p>
             My feather actually came with circuit python version 5, but Adafruit is at circuit python version 8. Because of the supply shortages I had to buy a feather m0, instead of the m4. The reason that this matters here is because of the amount of memory that is on the feather, my feather m0 was actually unable to run some of the recommended libraries for the OLED and I did not have enough memory to get circuit python working the way that I needed it to work for this. So instead I ended up using the Arduino IDE to write this code. The feather will get plugged in and connected through the arduino, <a href="https://learn.adafruit.com/adafruit-feather-m0-express-designed-for-circuit-python-circuitpython/arduino-ide-setup">follow these instructions to connect the feather to computer using Arduino IDE</a>, and then upload the code that I have written or you can write your own code. Next we'll talk about the code and libraries I used.
         </p>
-    <h3>The brains of the operation</h3>
+    <h2>The brains of the operation</h2>
         <p>
             I had to install the Adafruit scd30 library and the Adafruit unified sensor library. One thing to note, is as of march 2023 the Adafruit scd-30 library ended up needing some dependencies which Arduino asked if I would like to install as well. I thought I already had those installed, but I didn't and had to indicate that yes, I would like to install the dependencies. 
         </p>
@@ -274,7 +274,7 @@
 <!--What I would do differently if I did this again, what recommendations I would have for future people-->
 <div class="container">
 
-        <h3>Recommended Upgrades/changes</h3>
+        <h2>Recommended Upgrades/changes</h2>
         <p>
             <ul>
                 <li>Change the case! Check out places like <a href="https://www.thingiverse.com/">Thingiverse</a>, or <a href="https://thangs.com/">Thangs</a> as a base and make your own or modify others.</li>
@@ -284,7 +284,7 @@
                 <li>If you didn't make a JST switch yet, that's a great upgrade.  Just follow <a href="https://learn.adafruit.com/on-slash-off-switches/overview">this tutorial</a></li>
             </ul>
         </p>
-        <h3>Ideas for how to save some Money</h3>
+        <h2>Ideas for how to save some Money</h2>
         <p>
             <ul>
                 <li>You don't have to buy the things I did, you can make this work on other boards. It might be more work, and you would need to make sure your battery is compatible.</li>
@@ -296,7 +296,7 @@
 
 <!--Cost breakdown with suggested supplies-->
 <div class="container">
-<h3>Cost breakdown with suggested supplies</h3>
+<h2>Cost breakdown with suggested supplies</h2>
 <p>
     <div class="container">
     NOTE:   NO affiliate links of any kind are used. 
@@ -350,6 +350,8 @@
 </div>
 </main>
 
+
+</div>
 
     </main>
 
