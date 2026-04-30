@@ -3,71 +3,119 @@ title: Social Media
 layout: default
 ---
 <main role="main">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <!--Jumbotron for the page header -->
   <section class="jumbotron text-xs-center">
     <div class="container">
       <h1 class="jumbotron-heading">Let's get Social!</h1>
-      <p class="lead text-muted">These are my social media accounts.  You'll find my YouTube, GitHub and LinkedIn accounts here.  Follow me!</p>
-      <!--Buttons for a call to action. But don't think I have a use right now
-        <p>
-        <a href="#" class="btn btn-primary">Main call to action</a>
-        <a href="#" class="btn btn-secondary">Secondary action</a>
-
-        
-      </p>-->
+      <p class="lead text-muted">These are my social media accounts. Follow me!</p>
     </div>
   </section>
-  <!--Buttons to follow me on Social media-->
 
-<!--Follow me on Twitter Button
-<a href="https://twitter.com/aholdengouveia?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @aholdengouveia</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-     -->
-<!--Subscribe on YouTube-->
-
-    <script src="https://apis.google.com/js/platform.js"></script>
-
-    <div class="g-ytsubscribe" data-channelid="UCebdI1gT84U7PBtJFUTrIQA" data-layout="default" data-count="hidden">
-      
+<div class="container" style="text-align: center; padding: 2rem 0 1.5rem;">
+  <img src="/images/WomanComputerSilouette.png" alt="Adrianna Holden-Gouveia"
+       style="width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 3px solid #ccc;">
+  <p style="margin-top: 1rem; font-size: 1.1rem; max-width: 480px; margin-left: auto; margin-right: auto;">
+    CS educator at Northern Essex Community College — building curriculum, making things, and teaching others to do the same.
+  </p>
+  <div style="margin-top: 0.75rem; font-size: 1.6rem;">
+    <a href="https://github.com/aholdengouveia" aria-label="Adrianna on GitHub" style="margin: 0 0.6rem; color: inherit; text-decoration: none;"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/aholdengouveia" aria-label="Adrianna on LinkedIn" style="margin: 0 0.6rem; color: inherit; text-decoration: none;"><i class="fab fa-linkedin"></i></a>
+    <a href="https://www.youtube.com/channel/UCebdI1gT84U7PBtJFUTrIQA" aria-label="Adrianna on YouTube" style="margin: 0 0.6rem; color: inherit; text-decoration: none;"><i class="fab fa-youtube"></i></a>
+    <a href="https://fosstodon.org/@aholdengouveia" rel="me" aria-label="Adrianna on Mastodon" style="margin: 0 0.6rem; color: inherit; text-decoration: none;"><i class="fab fa-mastodon"></i></a>
+    <a href="https://www.thingiverse.com/aholdengouveia/designs" aria-label="Adrianna on Thingiverse" style="margin: 0 0.6rem; color: inherit; text-decoration: none;"><i class="fas fa-cube"></i></a>
+    <a href="https://oercommons.org/profile/429418" aria-label="Adrianna on OER Commons" style="margin: 0 0.6rem; color: inherit; text-decoration: none;"><i class="fas fa-book-open"></i></a>
+    <a href="https://g.dev/aholdengouveia" aria-label="Adrianna on Google Developer" style="margin: 0 0.6rem; color: inherit; text-decoration: none;"><i class="fab fa-google"></i></a>
+    <a href="https://ko-fi.com/aholdengouveia" aria-label="Adrianna on Ko-Fi" style="margin: 0 0.6rem; color: inherit; text-decoration: none;"><i class="fas fa-mug-hot"></i></a>
   </div>
-<!--Follow me on GitHub-->
-      <a class="github-button" href="https://github.com/aholdengouveia" aria-label="Follow @aholdengouveia on GitHub">Follow @aholdengouveia</a>
-      <!-- Place this tag in your head or just before your close body tag. -->
-      <script async defer src="https://buttons.github.io/buttons.js"></script>
-
-<!-- Follow me on Mastodon -->      
-<a href="https://fosstodon.org/@aholdengouveia" rel="me">Follow me on Mastodon</a>
+</div>
 
 
-  <!--album of Social Media Feeds-->
 <hr class="featurette-divider">
 
-<div class="album text-muted">
-  <div class="container">
-    <div class="row">
-   <!-- Twitter Feed
-      <div class="col">
-        <div class="card">
-          <p class="card-text">
-            <h2 class="featurette-heading">Twitter Feed <span class="text-muted">Geronimo!</span></h2>
-            <a class="twitter-timeline" data-width="320" data-height="600" data-theme="dark" href="https://twitter.com/aholdengouveia?ref_src=twsrc%5Etfw">Tweets by aholdengouveia</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
-          </p>     
-        </div>
-      </div>
-    -->
-<!--YouTube Embeded video--> 
-      <div class="col">
-        <div class="card">
-          <p class="card-text">
-            <h2 class="featurette-heading">Would you like to try out a YouTube video?   <a href="https://www.youtube.com/channel/UCebdI1gT84U7PBtJFUTrIQA">My full channel is here</a></h2>
-            A sample video on how to create a resume for tech jobs
-            <!-- The embed of 404 Resume not found sample video. Random sample didn't seem to be an option 3/2022-->
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLQOmuLC45eoSqPM272xivgC3bdpNkOsEo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </p>     
-        </div>
-      </div>
+<div class="container">
 
+  <div class="row mb-4">
+    <div class="col">
+      <h2><i class="fab fa-github" aria-hidden="true"></i> GitHub</h2>
+      <p>My GitHub is where I share open source projects, course templates, and tools I've built over the years. You'll find LaTeX templates, website source code, accessibility tools, and other projects I've created for teaching and personal use. A great place to see what I'm actively working on and building.</p>
+      <a href="https://github.com/aholdengouveia">Follow me on GitHub</a>
     </div>
   </div>
- </div>   
+
+  <hr class="featurette-divider">
+
+  <div class="row mb-4">
+    <div class="col">
+      <h2><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</h2>
+      <p>My LinkedIn profile has my full professional history, including my work as a faculty member at Northern Essex Community College, conference presentations, publications, and other professional accomplishments. If you're interested in connecting professionally or learning more about my background as an educator and technologist, this is the place to start.</p>
+      <a href="https://www.linkedin.com/in/aholdengouveia">Connect with me on LinkedIn</a>
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row mb-4">
+    <div class="col">
+      <h2><i class="fab fa-youtube" aria-hidden="true"></i> YouTube</h2>
+      <p>My YouTube channel has videos on tech topics, tutorials, and course-related content that I create for my students and anyone else who's curious. Videos cover things like how to get a tech job, Linux basics, and more. I update the channel irregularly but try to keep content current and useful. The embedded video below is a sample playlist to get you started.</p>
+      <a href="https://www.youtube.com/channel/UCebdI1gT84U7PBtJFUTrIQA">Subscribe to my YouTube channel</a>
+      <div style="margin-top: 1rem;">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLQOmuLC45eoSqPM272xivgC3bdpNkOsEo" title="YouTube playlist: resume and tech job tips" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row mb-4">
+    <div class="col">
+      <h2><i class="fab fa-mastodon" aria-hidden="true"></i> Mastodon</h2>
+      <p>I'm on Mastodon at Fosstodon, a community focused on free and open source software. I post about tech, education, open source tools, and things I'm working on. Mastodon is a decentralized social network, so you can follow me from any Mastodon-compatible server.</p>
+      <a href="https://fosstodon.org/@aholdengouveia" rel="me">Follow me on Mastodon</a>
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row mb-4">
+    <div class="col">
+      <h2><i class="fas fa-cube" aria-hidden="true"></i> Thingiverse</h2>
+      <p>Thingiverse is where I share 3D printable designs I've created. I'm interested in making and physical computing, and I've been working to bring maker culture into education to spark student interest in building things. Check out my designs if you have access to a 3D printer or just want to see what I've been making.</p>
+      <a href="https://www.thingiverse.com/aholdengouveia/designs">View my designs on Thingiverse</a>
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row mb-4">
+    <div class="col">
+      <h2><i class="fas fa-book-open" aria-hidden="true"></i> OER Commons</h2>
+      <p>OER Commons is an open education platform where I share Open Educational Resources (OER) freely available course materials, guides, and other teaching resources I've developed. My goal is to make high-quality educational content accessible to anyone, whether they're a student, an educator, or someone learning on their own.</p>
+      <a href="https://oercommons.org/profile/429418">View my resources on OER Commons</a>
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row mb-4">
+    <div class="col">
+      <h2><i class="fab fa-google" aria-hidden="true"></i> Google Developer</h2>
+      <p>My Google Developer profile showcases my work and interests in the Google developer ecosystem, including tools, technologies, and projects I've worked with. If you're interested in my technical side beyond the classroom, this profile has more detail on that work.</p>
+      <a href="https://g.dev/aholdengouveia">View my Google Developer profile</a>
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row mb-4">
+    <div class="col">
+      <h2><i class="fas fa-mug-hot" aria-hidden="true"></i> Ko-Fi</h2>
+      <p>If you have enjoyed what I've created and shared, I have a Ko-Fi account you are welcome to donate to if you can without hardship. Everything I share is free to use, and donations are never expected — but they are always appreciated.</p>
+      <a href="https://ko-fi.com/aholdengouveia">Support me on Ko-Fi</a>
+    </div>
+  </div>
+
+</div>
 
