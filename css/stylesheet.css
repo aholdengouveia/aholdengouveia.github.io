@@ -256,6 +256,18 @@ h4 {
   text-align: center;
 }
 
+/* HowTo pages: add side padding so content doesn't run to the edges,
+   then pull jumbotrons back to full-width with negative margins */
+main[role="main"] {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+main[role="main"] .jumbotron,
+main[role="main"] section.jumbotron {
+    margin-left: -2rem;
+    margin-right: -2rem;
+}
+
 /*video wrapper to try and get video embed to work on mobile devices*/
 .video-wrapper{
   overflow:hidden; 
@@ -316,6 +328,33 @@ table {
 th, td {
   text-align: left;
   padding: 8px;
+}
+
+/* Definition lists used for paired data (e.g. situation → best method) */
+dt {
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+dd {
+    margin-left: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+/* Example email/letter blocks — white card with a navy left border to distinguish
+   them from surrounding list content */
+.email-example {
+    background-color: #ffffff;
+    border-left: 5px solid #2c365e;
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.5rem;
+    margin: 1rem 0 1rem 1rem;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+}
+.email-example p {
+    margin-bottom: 0.5rem;
+}
+.email-example p:last-child {
+    margin-bottom: 0;
 }
 
 /*Sticky footer*/
