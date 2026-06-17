@@ -1,0 +1,225 @@
+---
+title: How to use Version Control
+layout: default
+---
+
+<main role="main">
+    <!--Jumbotron for the page header -->
+    <section class="jumbotron text-xs-center" style="background: url(/Howtos/versionControl/drlancelot-rice-field.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+        <div class="container lt-image-overlay">
+          <h1 class="jumbotron-heading" style="font-weight:bold; font-family: Georgia, serif;">How to use Version Control</h1>
+            <p class="lead text-muted">This section is about how to use GitHub for both personal and professional projects, including sample workflows for personal projects, open source work, and industry use.</p>
+        </div>
+    </section>
+
+    <br><br>
+<p>Learning outcomes:
+    <ul>
+        <li>Explain what version control is and why it is important for both personal and professional projects</li>
+        <li>Demonstrate a basic GitHub workflow including creating a repository, making commits, and managing branches</li>
+        <li>Compare a personal GitHub workflow with an industry workflow and describe the key differences</li>
+    </ul>
+</p>
+
+<!--Skills needed for This project make sure to include links on how to get those skills
+<div class="container">
+    <h3>Skills and software</h3>
+        <ul style="list-style-type:disc;">
+            <li>Familiar with the command prompt, if you aren't go through the first few lessons for <a href="/introlinux.html">Intro to Linux</a> </li>
+            <li>Desktop or laptop Computer with administrative access</li>
+            <li>an IDE of some sort will make this easier</li>
+        </ul>  
+</div>
+-->
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+
+</div>
+
+
+
+<!--Download PowerPoint-->
+<p>
+    <a href="/Howtos/versionControl/HowToVersionControl.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+<ul>
+    <li>What Is Version Control?
+        <ul>
+            <li>Version control is a system for tracking changes to files over time.</li>
+            <li>Think of it as a detailed history of a project.</li>
+            <li>Avoids issues such as: paper.docx paper_final.docx paper_final_v2.docx paper_FINAL_FINAL.docx</li>
+            <li>Github is a commonly used version control option
+            <ul>
+                <li>There are a lot of free options they offer</li>
+                <li><a href="https://git-scm.com/book/en/v2">Pro Git — free comprehensive book on Git and version control</a></li>
+            </ul>
+            </li>
+        </ul>
+    </li>
+    <li>Why Use Version Control?
+        <ul>
+            <li>Benefits include:
+            <ul>
+                <li>Change history</li>
+                <li>Backup and recovery</li>
+                <li>Collaboration</li>
+                <li>Accountability</li>
+                <li>Experimentation without risk</li>
+            </ul>
+            </li>
+            <li>With version control:
+            <ul>
+                <li>Every change is recorded</li>
+                <li>Previous versions can be restored</li>
+                <li>Teams can work simultaneously</li>
+                <li>Contributions are documented</li>
+            </ul>
+            </li>
+            <li>Without version control:
+            <ul>
+                <li>Changes can be lost</li>
+                <li>Multiple copies become confusing</li>
+                <li>Collaboration becomes difficult</li>
+                <li>Mistakes are difficult to undo</li>
+            </ul>
+            </li>
+        </ul>
+    </li>
+    <li>Key Terms and Common Vocabulary
+        <ul>
+            <li>Repository (Repo) — A project managed by version control.</li>
+            <li>Commit — A saved checkpoint in project history.</li>
+            <li>Branch — A separate workspace used for developing changes without affecting the main project.</li>
+            <li>Merge — Combining completed work back into the primary project.</li>
+            <li>Pull Request (PR) — A request to review and merge changes.</li>
+            <li>Fork — Make a copy of the project/code/repo/app.</li>
+            <li><a href="https://www.atlassian.com/git/tutorials">Atlassian Git Tutorials — in-depth explanations of each of these concepts</a></li>
+        </ul>
+    </li>
+    <li>Example: Basic Workflow
+        <ul>
+            <li>The fundamental workflow is: Create → Edit → Commit → Push → Review</li>
+        </ul>
+    </li>
+    <li>Steps
+        <ul>
+            <li>Step 1: Create a Repository
+            <ul>
+                <li>Only needed at the start of the project</li>
+                <li><a href="https://docs.github.com/en/get-started">GitHub's official getting started documentation</a></li>
+                <li>When creating a public repository, consider choosing a license — <a href="https://choosealicense.com">choosealicense.com</a> explains the options</li>
+            </ul>
+            </li>
+            <li>Step 2: Make Changes</li>
+            <li>Step 3: Commit Changes</li>
+            <li>Step 4: Push Changes</li>
+            <li>Step 5: Review Progress</li>
+            <li>Go back to Step 2</li>
+            <li>Want guided practice? <a href="https://skills.github.com">GitHub Skills</a> offers interactive exercises for each step</li>
+        </ul>
+    </li>
+    <li>Common Mistakes
+        <ul>
+            <li>Waiting Too Long to Commit
+            <ul>
+                <li>Daily is better than weekly</li>
+            </ul>
+            </li>
+            <li>Vague Commit Messages
+            <ul>
+                <li>Examples of what to avoid: "Changes!" "Did things!" "Updates!"</li>
+
+            </ul>
+            </li>
+            <li>Committing Broken Work Without Explanation
+            <ul>
+                <li>Document changes and what needs to be done next</li>
+                <li>Even brief explanations such as "Commit before trying X" is better than nothing</li>
+            </ul>
+            </li>
+            <li>Working Directly on Main in group projects
+            <ul>
+                <li>Working on main in personal projects is ok to avoid losing branches of work</li>
+            </ul>
+            </li>
+            <li>Ignoring README Documentation</li>
+            <li><a href="https://web.archive.org/web/20260610114417/https://cbea.ms/git-commit/">How to Write a Git Commit Message — concrete rules for writing useful commit messages</a></li>
+        </ul>
+    </li>
+    <li>Example 1: Individual Student Project
+        <ul>
+            <li>Scenario: A student is creating a personal website for a web development course</li>
+            <li>Repository created
+            <ul>
+                <li>Commit: Initial project setup</li>
+            </ul>
+            </li>
+            <li>Follow general steps:
+            <ul>
+                <li>Step 1: Make Changes</li>
+                <li>Step 2: Commit Changes</li>
+                <li>Step 3: Push Changes</li>
+            </ul>
+            </li>
+        </ul>
+    </li>
+    <li>Example 2: Industry Team Workflow
+        <ul>
+            <li>Scenario: A software development team is building a customer management application</li>
+            <li>Five developers are contributing simultaneously</li>
+            <li>Shared Repository — each developer has their own branch
+            <ul>
+                <li>Step 1: Create the branch before work is started</li>
+                <li>Step 2: Do the work and make commits (with good messages!)</li>
+                <li>Step 3: Push the branch (uploads changes to version control)</li>
+                <li>Step 4: Pull Request (requests review from other developers)</li>
+                <li>Step 5: Once approved, merge into main/master</li>
+            </ul>
+            </li>
+        </ul>
+    </li>
+    <li>Example 3: Open Source Contribution Workflow
+        <ul>
+            <li>Scenario: A student wants to contribute to an open-source project</li>
+            <li>Unlike workplace projects, contributors usually do not have direct write access to the original repository</li>
+            <li><a href="https://opensource.guide/how-to-contribute/">Open Source Guides: How to Contribute to Open Source</a></li>
+            <li>Step 1: Fork the Repository</li>
+            <li>Step 2: Create a Branch</li>
+            <li>Step 3: Make Changes</li>
+            <li>Step 4: Commit Changes (with good commit messages)</li>
+            <li>Step 5: Push commit to your fork</li>
+            <li>Step 6: Submit Pull Request (requests feedback on changes)</li>
+            <li>Step 7: Respond to Feedback if needed</li>
+            <li>Step 8: The maintainer of the project does the merge</li>
+        </ul>
+    </li>
+</ul>
+</p>
+
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <!-- <li>Activity: Listen to <a href="#">This Podcast</a> That was created using AI from these materials.  <a href="#"> Transcript for the Podcast</a> What are your thoughts? Did the AI do a good job representing the materials? Did you find any mistakes?  </li> -->
+        <li>Go through <a href="HowToVersionControlStudyGuide.txt">This AI generated study guide</a>, what do you think? Did it capture the week materials well? How did you do on the self quiz? Do you know all the vocab used? </li>
+        <li>Activity: Create a free <a href="https://github.com">GitHub</a> account if you don't already have one — before signing up, take a look at <a href="https://government.github.com/accessibility/">GitHub's VPAT accessibility conformance report</a> and note whether it meets the accessibility standards you would expect from a tool used in a professional environment. Then create a new public repository for a personal project or a class assignment. Make at least three commits with clear, descriptive commit messages — avoid messages like "update" or "fix" and instead describe what actually changed and why. When you are done, share the link to your repository and reflect on the following: Did writing commit messages make you think more carefully about your changes? Was anything harder than expected?</li>
+        <li>Activity: Working in pairs, one person creates a repository and adds the other as a collaborator. Each person makes changes to the same file on separate branches, then opens a pull request for their changes. Attempt to merge both pull requests and handle any merge conflicts that come up. Discuss afterward: What caused the conflict? How did you resolve it? What would have helped prevent it in the first place?</li>
+        <li>Discussion: Version control is standard practice in the tech industry, but the workflow and expectations can vary significantly between teams. Some use strict branch protection rules and code reviews, others are more informal. What do you think the minimum version control habits should be for any technical project, even a solo one? At what point does a project become too small to bother?</li>
+        <li>Discussion: Commit messages, pull request descriptions, and branch names are all a form of documentation and communication with your future self and your teammates. Think about what makes a commit message useful versus useless. What information should it always include? Have you ever tried to trace back through a project and had no idea what past you was thinking? What would have helped?</li>
+        <li>Activity: Read through these five sets of example commit messages, all describing the exact same set of code changes but written at different quality levels: <a href="CommitMessages_Terrible.txt">Terrible</a>, <a href="CommitMessages_Poor.txt">Poor</a>, <a href="CommitMessages_OK.txt">OK</a>, <a href="CommitMessages_Good.txt">Good</a>, and <a href="CommitMessages_Excellent.txt">Excellent</a>. For each level, identify specifically what information is missing or present and why it matters. Then answer the following: Where would you draw your personal minimum standard, and why? Would that standard change depending on whether it was a solo project, a class assignment, or a professional team setting? Do you think the given labels are accurate for quality on the messages?</li>
+        <li>Activity: Choose an AI tool of your choice such as ChatGPT, Gemini, or Claude. Ask it to explain what a merge conflict is in Git and walk you through how to resolve one. Do some research not using an AI, Is the explanation accurate? Is it clear enough that someone brand new to version control could follow it? Did it leave anything out or get anything wrong? Would you recommend this explanation to a classmate who was confused about merge conflicts? This should take about 5–10 minutes.</li>
+        <li>Activity: Find an active open source project on GitHub in a domain you find interesting. Spend 15–20 minutes exploring it: Look at the commit history and evaluate whether the commit messages are descriptive or vague. Look at open and closed pull requests to see what was proposed and how feedback was given. Look at any open issues to understand what the community is currently working on. Write a short summary of what you found: What does this project's version control history tell you about how the team works and communicates?</li>
+        <li>Activity: Practice a complete fork-and-pull-request workflow. Find a public repository that accepts contributions — many have issues labeled "good first issue" on GitHub. Fork the repository, create a branch, make a small change such as fixing a typo, improving documentation, or adding a missing step to a README, and open a pull request. If submitting a real PR feels high-stakes, do this with a classmate's repository instead. Reflect: What was harder than expected? What did the process teach you about how open source collaboration works?</li>
+        <li>Activity: Write commit messages for a set of hypothetical changes. Imagine you are working on a personal portfolio website and have made the following changes: added a new projects section to the homepage, fixed a broken navigation link, updated the color scheme in CSS, and added setup instructions to the README. Write a commit message for each change — first a vague version, then rewrite it as a strong, descriptive one. Compare your pairs: What information does the better version include that the vague one does not? How long did it take to write the improved versions?</li>
+        <li>Activity: Set up a version-controlled project of your own from scratch. This does not have to be code — it could be your resume, a writing project, or notes for a class. Create a new repository on GitHub, make at least five commits over the course of a week with descriptive messages, and push them to the remote. At the end of the week, review your commit history: Does it tell the story of what you worked on? Would someone reading it understand what changed and why? What would you do differently on your next version-controlled project?</li>
+
+    </ul>
+</p>
+
+<!--Link to my HowTos page-->
+<p>Would you like to see some more How tos?  
+    <a href="/HowTo.html">See more How tos </a>
+</p>

@@ -1,0 +1,188 @@
+This study guide summarizes the core strategies, processes, and practical advice for breaking down large assignments and projects into manageable, actionable work.
+
+--------------------------------------------------------------------------------
+How to Solve Large Problems: Study Guide
+
+I. Why Large Problems Feel Overwhelming
+Large assignments and projects feel unmanageable when they are treated as a single task instead of a structured sequence of smaller ones. Common reasons people struggle include:
+• No clear plan or starting point, leading to avoidance
+• Relying entirely on the final due date rather than setting earlier internal checkpoints
+• Underestimating the number of distinct steps required
+• Not accounting for real-world obstacles such as competing deadlines, illness, or unexpected complexity
+• Attempting to work on everything at once rather than one piece at a time
+
+The solution is not to try harder — it is to plan differently. Breaking work into structured stages turns an overwhelming whole into a series of achievable next steps.
+
+II. The Six-Step Breakdown Process
+
+A. Step 1 — Read the Assignment or Project Thoroughly
+Before planning anything, make sure you fully understand what is being asked.
+• Consider how you process information best: taking notes, highlighting, hearing it read aloud
+• Read through all auxiliary materials, rubrics, and examples
+• Identify what your instructor, supervisor, or client is actually trying to have you learn or produce
+• Ask yourself: What must exist at submission for full credit? What is the ultimate goal?
+
+B. Step 2 — Reverse-Engineer the Requirements
+Analyze the assignment by working backward from the final deliverable.
+• Highlight required deliverables, rubric criteria, formatting requirements, citation rules, and deadlines
+• Identify potential roadblocks or areas of uncertainty early, before work has started
+• Distinguishing what is required versus what is optional prevents wasted effort
+
+C. Step 3 — Identify Deliverables
+Break the project into concrete, measurable outputs before assigning any tasks.
+• Examples of deliverables include: outline, draft, prototype, annotated bibliography, report, presentation, or deployed application
+• Deliverables are the visible products of work — if you cannot point to it or hand it in, it is probably a task, not a deliverable
+• Listing deliverables first gives you the structure your micro-tasks will fit around
+
+D. Step 4 — Create Micro-Tasks
+Convert each deliverable into the smallest practical actions needed to produce it.
+• If a task still feels overwhelming, it is too large and needs to be broken down further
+• Be honest about your available time, attention span, and energy levels when estimating tasks
+• Vary the type of tasks: heavy thinking tasks, easy tasks, research tasks, tasks you can do independently
+• Variety in task type allows you to keep making progress even on low-energy days
+
+E. Step 5 — Build a Timeline Using Backward Planning
+Work from the final due date backward to assign dates to each task and deliverable.
+• Never use the final due date as your first deadline
+• Add one to two buffer days before the final submission to allow for revision and unexpected problems
+• Add your timeline to a calendar and set reminders
+• Consider what external accountability tools will help you: a friend check-in, an alarm, a shared document
+• Factor in competing commitments from other classes or work when assigning task dates
+
+F. Step 6 — Schedule Structured Check-Ins
+Build formal review points at approximately 30%, 60%, and 90% completion.
+• A check-in can be a five-minute solo review, a conversation with a classmate, or an accountability check with a friend
+• Check-ins must be on the calendar — unscheduled check-ins rarely happen
+• Have a specific contingency plan for what you will do if a check-in deadline is missed; do not just say you will "work harder"
+• Check-ins should answer: What is complete? What is in progress? What still needs to be done?
+
+III. Applying the Process: Two Examples
+
+A. Example 1 — Research Paper (8–10 pages, 2-month timeline)
+Deliverables: topic approval, annotated bibliography (6 sources), outline, full draft, final paper
+
+Sample micro-task breakdown:
+• Choose topic
+• Find 6 sources
+• Annotate each source
+• Draft introduction
+• Draft body section 1
+• Check draft and revise
+• Draft body section 2
+• Draft conclusion
+• Edit for clarity and revise
+• Read entire paper out loud
+• Format citations
+
+Sample timeline milestones:
+• Week 1 — Topic approved
+• Week 2 — Annotated bibliography complete
+• Week 3 — Outline and draft of body section 1
+• Week 4 — Full draft complete
+• Week 5 — Peer review and final edits
+• Day before deadline — Submit final paper
+
+Check-in questions: Are the sources credible and relevant? Does the draft meet rubric requirements? Are citations correctly formatted?
+
+B. Example 2 — Website or Application (functional app, multiple features, deployed)
+Deliverables: project proposal, feature list, wireframes, technical design plan, working prototype, deployed application, README/documentation, presentation or demo
+
+Key task categories:
+• Proposal: define app purpose, list required features, identify target users
+• Design: sketch wireframes, define user flow, choose tech stack, design database schema
+• Development (per feature): create database table, build UI components, implement backend logic, validate inputs, test independently
+• Testing: test edge cases, validate inputs, check responsiveness, review logs, fix integration errors
+• Documentation: write README, add installation steps, include screenshots, describe features, list known limitations
+
+Check-in questions: Does the design support all required features? Do individual features work independently? Does the full system function without errors? Does documentation match the actual product?
+
+IV. Project Management Best Practices
+These strategies apply to any large project regardless of subject matter.
+• Use visible tracking tools such as checklists, calendars, or Kanban boards so progress is always apparent
+• Define a "minimum viable progress" goal for low-energy days — one small task completed is better than nothing attempted
+• Separate creation from editing and debugging; switching between modes interrupts momentum
+• Use structured time blocks (for example, 25-minute focused sessions) if you work well with defined intervals
+• Avoid single-point failure by spreading work across multiple sessions and days
+• For programming projects: complete one feature fully before starting another, and commit to version control frequently
+
+--------------------------------------------------------------------------------
+Quiz: How to Solve Large Problems
+Instructions: Answer each question in 2–3 sentences.
+
+1. Why is relying on the final due date as your only deadline a risky strategy?
+2. What is backward planning and why is it useful for large projects?
+3. What is the difference between a deliverable and a micro-task? Give one example of each.
+4. At what approximate completion percentages should structured check-ins occur, and what should they accomplish?
+5. What should you do if a task still feels overwhelming after you have written it down?
+6. Why is it important to vary the types of micro-tasks in your plan?
+7. What does "minimum viable progress" mean and when is it useful?
+8. Why should you separate the creation phase from the editing and debugging phase?
+9. What is one strategy for staying accountable to internal deadlines beyond just writing them on a calendar?
+10. In the research paper example, why is reading the entire paper out loud included as a micro-task?
+
+Quiz Answer Key
+1. Why is relying on the final due date as your only deadline a risky strategy? Using the final due date as the only deadline leaves no room to handle unexpected problems, revise work, or recover from setbacks. When anything goes wrong — illness, technical problems, a task taking longer than expected — there is no buffer, and the entire project is at risk.
+
+2. What is backward planning and why is it useful for large projects? Backward planning means starting from the final due date and working backward to assign dates to each deliverable and task. It is useful because it forces you to see whether your available time is realistic and reveals how early you actually need to start in order to finish on time.
+
+3. What is the difference between a deliverable and a micro-task? Give one example of each. A deliverable is a concrete, visible product you can submit or present — for example, a completed annotated bibliography. A micro-task is a single action needed to produce a deliverable — for example, "annotate source 3 from the bibliography."
+
+4. At what approximate completion percentages should structured check-ins occur, and what should they accomplish? Check-ins should occur at approximately 30%, 60%, and 90% completion. Each check-in should assess what is complete, what is in progress, and what still needs to be done — and identify any adjustments needed before the next stage.
+
+5. What should you do if a task still feels overwhelming after you have written it down? If a task still feels overwhelming, it is still too large and needs to be broken down further into smaller actions. Keep breaking it down until each step feels like something you could complete in a single focused session.
+
+6. Why is it important to vary the types of micro-tasks in your plan? Varying task types — heavy thinking tasks, research tasks, easy tasks, independent tasks — means you can always make progress regardless of your current energy or focus level. On a low-energy day you can complete lighter tasks rather than stalling entirely.
+
+7. What does "minimum viable progress" mean and when is it useful? Minimum viable progress means identifying the smallest task that still counts as meaningful forward movement on a project. It is most useful on low-energy or high-stress days when completing a full work session is unrealistic but doing nothing would create a larger setback.
+
+8. Why should you separate the creation phase from the editing and debugging phase? Switching between creating and editing or debugging interrupts your momentum and makes both tasks harder. Creating freely first allows ideas and work to flow without the interruption of constant correction; editing and debugging are then done as a separate, focused pass.
+
+9. What is one strategy for staying accountable to internal deadlines beyond just writing them on a calendar? Sharing your deadlines with a friend, classmate, or study partner and asking them to check in with you creates external accountability. Knowing that someone else is aware of your deadline makes it harder to quietly ignore or move it.
+
+10. In the research paper example, why is reading the entire paper out loud included as a micro-task? Reading a paper out loud forces you to slow down and hear each sentence, which makes it easier to catch unclear phrasing, missing transitions, and grammatical errors that the eye skips over when reading silently. It is a revision technique that catches a different category of problems than silent proofreading.
+
+Essay Format Questions (No Answers Supplied)
+1. Describe the full six-step process for breaking down a large project. For each step, explain not just what to do but why it matters and what specific problem it solves.
+
+2. Compare and contrast the research paper example and the website/application example from this module. What do they have in common in terms of structure and planning? Where do the challenges and task types diverge, and what does that tell you about how to adapt this process to different kinds of work?
+
+3. Reflect on a large project you have worked on in the past that did not go as planned. Using the strategies from this module, identify at least three specific things you would do differently and explain how each change would have improved the outcome.
+
+4. Why is planning alone not enough to complete a large project successfully? Discuss the role of check-ins, accountability, and contingency planning in bridging the gap between having a plan and actually executing it.
+
+5. This module suggests defining a "minimum viable progress" goal for low-energy days. What does this reveal about how effective project management accounts for human limitations? How does this differ from the way large projects are often framed in academic or professional settings?
+
+Glossary of Key Terms
+Backward Planning: A scheduling approach that starts from the final due date and works backward to assign dates to each milestone, deliverable, and task.
+
+Buffer Time: Extra time built into a schedule between the last internal deadline and the final due date to absorb unexpected problems or allow for revision.
+
+Check-In: A scheduled review point during a project at which progress is assessed, gaps are identified, and plans are adjusted if needed.
+
+Deliverable: A concrete, visible output produced at a stage of a project — something that can be submitted, demonstrated, or handed off.
+
+Executive Function: A set of cognitive skills involved in planning, organizing, managing time, and regulating behavior; relevant to project management because weakness in these areas requires specific compensating strategies.
+
+External Accountability: A system in which another person — a friend, classmate, or study partner — is aware of your deadlines and checks in on your progress, adding social motivation to follow through.
+
+Internal Deadline: A self-imposed due date set before the final deadline, used to ensure work is distributed across available time rather than concentrated at the end.
+
+Kanban Board: A visual project tracking tool that organizes tasks into columns such as "To Do," "In Progress," and "Done," making the state of a project visible at a glance.
+
+Micro-Task: A single, specific, completable action that contributes to producing a deliverable; the smallest practical unit of work in a project plan.
+
+Milestone: A significant checkpoint or completion point in a project timeline, usually tied to the completion of a deliverable.
+
+Minimum Viable Progress: The smallest meaningful task that can be completed on a given day, used to maintain forward momentum when full productivity is not possible.
+
+Project Management: The application of strategies, tools, and processes to plan, organize, and complete a defined scope of work within a set timeframe.
+
+Prototype: An early, functional version of a product used to test concepts and identify issues before full development is complete.
+
+Reverse-Engineering (an assignment): The process of analyzing a final deliverable or rubric and working backward to identify all the component tasks required to produce it.
+
+Single-Point Failure: A planning risk where all effort is concentrated in one session or one day, meaning a single disruption can cause the entire project to fail.
+
+Time Blocking: A scheduling technique in which specific periods of time are assigned to specific tasks or types of work, ensuring that important work receives dedicated attention.
+
+Wireframe: A simplified visual sketch or diagram of a user interface, used in the design phase of a software project to plan layout and user flow before writing code.

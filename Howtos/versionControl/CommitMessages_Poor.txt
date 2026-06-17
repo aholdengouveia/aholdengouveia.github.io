@@ -1,0 +1,53 @@
+EXAMPLE COMMIT MESSAGES: POOR
+==============================
+These commit messages name a category of change but not what actually changed.
+They are slightly better than nothing, but still force anyone reading the history
+to open the commit and read the diff to understand what happened.
+
+--------------------------------------------------
+
+What changed:
+  Fixed the search box so that queries containing spaces no longer return zero results.
+  The bug was caused by the search string not being URL-encoded before the API call.
+
+Commit message used:
+  "fixed bug"
+
+--------------------------------------------------
+
+What changed:
+  Added validation to the file upload function to reject any file over 10MB
+  and return a clear error message to the user explaining the size limit.
+
+Commit message used:
+  "updated file"
+
+--------------------------------------------------
+
+What changed:
+  Changed the call-to-action button on the homepage from blue (#2c365e) to green (#355E3B)
+  based on feedback from the client during the design review meeting.
+
+Commit message used:
+  "changes"
+
+--------------------------------------------------
+
+What changed:
+  Added a button on the user dashboard that lets users export all of their data
+  as a downloadable CSV file, including account details and activity history.
+
+Commit message used:
+  "new feature"
+
+--------------------------------------------------
+
+What changed:
+  Rewrote the list-sorting function because the previous version used a bubble sort,
+  which was causing the page to time out on lists longer than 500 items.
+  Replaced with a quicksort implementation, reducing worst-case time from O(n²) to O(n log n).
+
+Commit message used:
+  "better"
+
+--------------------------------------------------

@@ -1,0 +1,50 @@
+EXAMPLE COMMIT MESSAGES: TERRIBLE
+==================================
+These commit messages give the reader no useful information.
+If you came back to this project six months later, you would have no idea what any of these commits did.
+
+--------------------------------------------------
+
+What changed:
+  Fixed a bug where users could not log in if their email address contained any uppercase letters.
+  User@Email.com and user@email.com were being treated as two different accounts.
+
+Commit message used:
+  "fix"
+
+--------------------------------------------------
+
+What changed:
+  Added a new contact form to the About page, including fields for name, email, subject, and message,
+  and wired it up to send an email to the site admin on submission.
+
+Commit message used:
+  "stuff"
+
+--------------------------------------------------
+
+What changed:
+  Removed 200 rows of test data that were accidentally committed to the database seed file
+  and would have wiped real user data if run in production.
+
+Commit message used:
+  "aaa"
+
+--------------------------------------------------
+
+What changed:
+  Completed the entire user authentication system: registration, login, logout,
+  password reset via email, and session management.
+
+Commit message used:
+  "done"
+
+--------------------------------------------------
+
+What changed:
+  Updated the footer copyright year from 2022 to 2024 across all pages.
+
+Commit message used:
+  "."
+
+--------------------------------------------------

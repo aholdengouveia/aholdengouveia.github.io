@@ -1,0 +1,207 @@
+This study guide summarizes the core concepts, vocabulary, workflows, and best practices for using version control in personal, academic, and professional software development contexts.
+
+--------------------------------------------------------------------------------
+How to Use Version Control: Study Guide
+
+I. What Is Version Control?
+Version control is a system for tracking changes to files over time. It creates a detailed, navigable history of a project so that any previous state can be reviewed or restored.
+
+The problem version control solves:
+Without it, projects tend to accumulate files like these:
+  paper.docx → paper_final.docx → paper_final_v2.docx → paper_FINAL_FINAL.docx
+This approach is fragile, confusing, and makes collaboration nearly impossible.
+
+GitHub is one of the most widely used version control platforms and offers a large range of free features for individuals, students, and open source contributors. Other platforms exist (GitLab, Bitbucket), but GitHub is the most common starting point and the one most frequently referenced in industry job postings.
+
+II. Why Version Control Matters
+The difference between working with and without version control is significant in every context — solo projects, team projects, and open source work.
+
+With version control:
+• Every change is recorded with a timestamp and a description
+• Previous versions of any file can be restored at any point
+• Multiple people can work on the same project simultaneously without overwriting each other
+• Every contributor's work is documented and attributable
+
+Without version control:
+• Changes can be lost with no way to recover them
+• Multiple copies of files quickly become confusing and contradictory
+• Collaboration requires constant manual coordination to avoid conflicts
+• Mistakes are difficult or impossible to undo cleanly
+
+Beyond safety and recovery, version control also serves as a form of documentation. A well-maintained commit history tells the story of how a project evolved — who changed what, when, and why.
+
+III. Key Terms and Vocabulary
+
+Repository (Repo)
+  A project folder managed by version control. Contains all the project files and the full history of every change made to them.
+
+Commit
+  A saved checkpoint in the project's history. Each commit captures the state of the project at a specific moment and should include a clear message describing what changed and why.
+
+Branch
+  A separate workspace that allows changes to be developed in isolation without affecting the main project. Branches are used to work on new features, bug fixes, or experiments.
+
+Merge
+  The process of combining completed work from one branch back into another — typically into the main branch. May require resolving conflicts if two branches changed the same part of a file.
+
+Pull Request (PR)
+  A formal request to review and merge changes from one branch into another. Used in team and open source workflows to ensure changes are reviewed before they become part of the main project.
+
+Fork
+  A personal copy of someone else's repository. Used in open source workflows when a contributor does not have direct write access to the original project.
+
+Merge Conflict
+  A situation that occurs when two branches have made different changes to the same part of a file and Git cannot automatically determine which version to keep. Conflicts must be resolved manually.
+
+README
+  A documentation file (typically README.md) placed in the root of a repository that describes the project, how to set it up, and how to use it. Ignoring it is listed as one of the most common version control mistakes.
+
+IV. The Basic Workflow
+The fundamental version control cycle applies to almost every project, regardless of size or context:
+
+  Create → Edit → Commit → Push → Review → (repeat from Edit)
+
+Step 1: Create a Repository — only done once at the start of a project
+Step 2: Make Changes — edit files as needed
+Step 3: Commit Changes — save a checkpoint with a descriptive message
+Step 4: Push Changes — upload commits to the remote repository (e.g., GitHub)
+Step 5: Review Progress — check history, review what has been done
+Repeat from Step 2
+
+The create step only happens once. Every subsequent cycle is Edit → Commit → Push → Review.
+
+V. Common Mistakes
+Knowing what commonly goes wrong is as important as knowing the correct workflow.
+
+Waiting too long to commit
+  Committing daily is better than weekly. Large gaps between commits mean large gaps in project history — if something breaks, it is much harder to identify when and why.
+
+Vague commit messages
+  Messages like "Changes!", "Did things!", or "Updates!" tell future readers (including yourself) nothing useful. A good commit message describes what changed and why.
+
+Committing broken work without explanation
+  Sometimes it is necessary to commit incomplete or broken work. When this happens, the commit message should document what is broken and what needs to happen next. Even "Committing before trying X — current state is broken" is better than silence.
+
+Working directly on main in group projects
+  In team settings, making changes directly to the main branch bypasses code review and risks introducing untested changes. In solo projects, working on main is often acceptable to avoid the overhead of managing branches.
+
+Ignoring README documentation
+  A repository without a README is difficult for anyone else (or future you) to understand or use. Documentation is part of the work.
+
+VI. Three Workflow Examples
+
+A. Individual Student Project
+Scenario: A student is building a personal website for a web development course.
+
+Workflow:
+• Create repository → initial commit: "Initial project setup"
+• Make changes (add a page, update styles, fix a bug)
+• Commit each meaningful change with a description of what was done
+• Push to GitHub after each commit session
+
+This workflow is simple and linear. Branching is optional for solo work — pushing directly to main is acceptable. The priority is committing frequently with clear messages.
+
+B. Industry Team Workflow
+Scenario: Five developers are simultaneously building a customer management application.
+
+Workflow:
+• Shared repository — every developer works from the same codebase
+• Each developer creates a branch before starting any new work
+• Work is done on the branch with regular commits (good messages required)
+• Completed branch is pushed to the remote repository
+• Developer opens a Pull Request requesting review from teammates
+• After approval, the branch is merged into main/master
+
+The branch-PR-merge cycle ensures no unreviewed code reaches the main project. This protects quality and creates accountability. Code review via pull requests is standard practice in professional environments.
+
+C. Open Source Contribution Workflow
+Scenario: A student wants to contribute to a project they do not own.
+
+This workflow differs because contributors typically do not have write access to the original repository.
+
+Step 1: Fork the repository — creates a personal copy under your own account
+Step 2: Create a branch in your fork for the specific change you are making
+Step 3: Make changes to the code or documentation
+Step 4: Commit changes with clear, descriptive messages
+Step 5: Push the commits to your forked repository
+Step 6: Submit a Pull Request to the original project — this notifies the maintainer
+Step 7: Respond to feedback — maintainers may request changes before accepting
+Step 8: The project maintainer performs the merge if the contribution is accepted
+
+The key distinction from a team workflow is the fork step. Open source contributors work in their own copy and propose changes through pull requests rather than working directly in the shared repository.
+
+--------------------------------------------------------------------------------
+Quiz: How to Use Version Control
+Instructions: Answer each question in 2–3 sentences.
+
+1. What problem does version control solve that the "paper_final_FINAL.docx" example illustrates?
+2. What is the difference between a commit and a push?
+3. Why should commit messages be descriptive rather than vague?
+4. What is a branch, and why is using one important in a team setting?
+5. What is the purpose of a pull request?
+6. What is a fork, and when would you use one instead of a branch?
+7. What is a merge conflict, and what causes one?
+8. Why is committing directly to main acceptable in a solo project but problematic in a team project?
+9. What should you include in a commit message when committing broken or incomplete work?
+10. Why is a README considered part of the version control workflow rather than an optional extra?
+
+Quiz Answer Key
+1. What problem does version control solve that the "paper_final_FINAL.docx" example illustrates? The example illustrates the confusion that results from manually managing multiple copies of a file without a system for tracking what changed between versions. Version control replaces that chaos with a single tracked file whose complete history — every change, who made it, and when — is always available.
+
+2. What is the difference between a commit and a push? A commit saves a checkpoint in the local project history on your own machine, recording what changed and attaching a message describing the change. A push uploads those committed changes to a remote repository such as GitHub, making them visible and accessible to others.
+
+3. Why should commit messages be descriptive rather than vague? Commit messages are the primary way a project's history communicates to future readers — including yourself — what happened and why. A message like "Updated login form to require email verification per ticket #42" is useful; "Changes!" tells you nothing and makes it nearly impossible to trace the history of a specific decision.
+
+4. What is a branch, and why is using one important in a team setting? A branch is a separate workspace within a repository where changes can be developed in isolation without affecting the main codebase. In a team setting, branches ensure that unfinished or untested work does not disrupt what everyone else is relying on until it has been reviewed and approved.
+
+5. What is the purpose of a pull request? A pull request is a formal proposal to merge changes from one branch into another, typically into the main branch, and a request for teammates to review those changes first. It creates a structured opportunity for code review, discussion, and quality control before any change becomes part of the shared project.
+
+6. What is a fork, and when would you use one instead of a branch? A fork is a personal copy of someone else's repository, created under your own account, that you can modify freely without affecting the original. You use a fork when you do not have write access to the original repository — most commonly when contributing to an open source project you do not own.
+
+7. What is a merge conflict, and what causes one? A merge conflict occurs when two branches have made different changes to the same part of the same file and Git cannot automatically determine which version to keep. It is caused by parallel work that touches the same lines of code or content, and it must be resolved manually by choosing which version to keep or combining both.
+
+8. Why is committing directly to main acceptable in a solo project but problematic in a team project? In a solo project there is no one else whose work could be disrupted, and branching adds overhead that may not be worth it for a personal workflow. In a team project, committing directly to main bypasses code review, risks pushing untested or broken code into the shared codebase, and removes the accountability that the branch-and-pull-request workflow provides.
+
+9. What should you include in a commit message when committing broken or incomplete work? The message should clearly state that the current state is incomplete or broken and describe what is broken and what still needs to happen. For example: "Committing before attempting database refactor — login currently broken, needs session fix in next commit." This prevents confusion for anyone reading the history later.
+
+10. Why is a README considered part of the version control workflow rather than an optional extra? A repository without a README is difficult for anyone else — or for yourself after time has passed — to understand, set up, or use. Documentation is part of delivering a project; a working codebase with no explanation of what it does or how to run it is incomplete.
+
+Essay Format Questions (No Answers Supplied)
+1. Compare the three workflow examples from this module — individual student, industry team, and open source contribution. What do they have in common structurally, and where do they diverge? What does each workflow reveal about how version control adapts to different levels of access, trust, and team size?
+
+2. The module lists five common version control mistakes. Choose three of them and for each one, describe a realistic scenario where that mistake would cause a specific, concrete problem. Then explain what habit or practice would prevent it.
+
+3. Version control commit messages are described as a form of documentation and communication with your future self and teammates. What makes a commit message genuinely useful? Write three examples: one vague message, one adequate message, and one excellent message — all for the same hypothetical change — and explain the difference.
+
+4. The module notes that working directly on main is acceptable in solo projects but problematic in team projects. Where do you think the threshold is? At what point does a project become complex enough that a solo developer should start using branches? What factors should influence that decision?
+
+5. Open source contribution requires an extra step — forking — that does not exist in team workflows. What does this reveal about how trust and access work in open source communities? What are the advantages of the fork-and-pull-request model for a project maintainer receiving contributions from strangers?
+
+Glossary of Key Terms
+Branch: A separate workspace in a repository where changes can be developed in isolation without affecting the main project; used to safely develop features, fix bugs, or run experiments.
+
+Commit: A saved checkpoint in a project's version history, capturing the state of tracked files at a specific moment along with a message describing what changed and why.
+
+Commit Message: The written description attached to a commit that explains what changed and why; the primary means by which a project's history communicates with future readers.
+
+Fork: A personal copy of another user's repository, created under your own account, allowing you to make changes without affecting the original; the starting point for open source contributions.
+
+Git: The underlying version control system that tracks changes to files; GitHub is a web-based platform built on top of Git.
+
+GitHub: A web-based platform for hosting Git repositories, reviewing code, managing projects, and collaborating with others; one of the most widely used tools in the software industry.
+
+Main (or Master): The primary branch of a repository; typically represents the stable, production-ready version of the project.
+
+Merge: The process of combining changes from one branch into another; may require manual resolution if both branches modified the same content.
+
+Merge Conflict: A situation in which two branches have made incompatible changes to the same part of a file, requiring manual resolution before the merge can complete.
+
+Pull Request (PR): A formal proposal to merge changes from one branch into another, accompanied by a request for teammates or maintainers to review the changes before they are accepted.
+
+Push: The action of uploading locally committed changes to a remote repository such as GitHub, making them visible to collaborators.
+
+README: A documentation file placed in the root of a repository that describes the project, how to install or run it, and how to use or contribute to it.
+
+Repository (Repo): A version-controlled project folder containing all project files and their complete change history.
+
+Version Control: A system for tracking changes to files over time, enabling history review, recovery of previous states, parallel collaboration, and accountability for contributions.

@@ -1,0 +1,38 @@
+EXAMPLE HELP EMAIL: GOOD
+=========================
+This email gives the reader everything they need to actually help.
+It states what the goal is, what was tried, what happened, what was expected instead,
+and what environment the person is working in. The reader can respond with a real answer
+on the first try rather than having to ask a series of follow-up questions.
+
+--------------------------------------------------
+
+Subject: Linux lab question - chmod not producing expected permissions on lab 3
+
+Hi Professor,
+
+I am working on Lab 3 (file permissions) and running into an issue I cannot figure out.
+
+What I am trying to do:
+Set the file report.txt so that the owner can read and write, the group can only read,
+and others have no permissions at all (expected: -rw-r-----).
+
+What I tried:
+I ran: chmod 640 report.txt
+Then checked with: ls -l report.txt
+
+What I got:
+-rw-r--r-- 1 sam students 0 Jun 3 14:22 report.txt
+
+The "others" section is showing read permission (r--) instead of no permissions (---).
+I have tried running the chmod command twice and rebooting the VM, and the result is the same.
+
+Environment:
+I am using the class Ubuntu VM in VirtualBox on Windows 11.
+
+Is there something I am missing about how chmod 640 works, or is something else
+overriding the permissions I am setting?
+
+Thank you for your time,
+Sam Rivera
+sam.rivera@EMAIL.com

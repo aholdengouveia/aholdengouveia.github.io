@@ -1,0 +1,54 @@
+EXAMPLE COMMIT MESSAGES: OK
+============================
+These commit messages name what was changed, but leave out enough detail
+that you still have questions. They are acceptable for small solo projects
+but start to fall short on anything shared with a team or returned to later.
+
+--------------------------------------------------
+
+What changed:
+  Fixed the bug where logging in with a mixed-case email address failed.
+  User@Email.com and user@email.com were being treated as two different accounts.
+
+Commit message used:
+  "fix login bug"
+
+--------------------------------------------------
+
+What changed:
+  Added a search bar to the user directory page that shows live results
+  as the user types, pulling from the existing users API endpoint.
+
+Commit message used:
+  "add search feature"
+
+--------------------------------------------------
+
+What changed:
+  Added step-by-step installation instructions to the README,
+  updated the list of dependencies to reflect the current requirements,
+  and removed instructions that referred to a library no longer used.
+
+Commit message used:
+  "update readme"
+
+--------------------------------------------------
+
+What changed:
+  Fixed a z-index and positioning issue that caused the sticky navbar to overlap
+  the top of the page content on screens smaller than 768px wide.
+
+Commit message used:
+  "fix styling"
+
+--------------------------------------------------
+
+What changed:
+  Split the single 400-line database.py file into three separate modules:
+  models.py for data structures, queries.py for SQL logic, and connection.py
+  for managing the database connection pool.
+
+Commit message used:
+  "refactor database code"
+
+--------------------------------------------------

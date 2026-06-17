@@ -1,0 +1,218 @@
+This study guide summarizes the key concepts, vocabulary, and strategies for finding and securing a technical job, including resume writing, interview preparation, evaluating offers, and navigating the 2026 job market.
+
+--------------------------------------------------------------------------------
+How to Get a Technical Job: Study Guide
+
+I. The 2026 Technical Job Market
+The tech industry in 2026 is competitive and has changed significantly from earlier years. Widespread layoffs from 2022 onward reshaped hiring norms, and AI tools have transformed both how candidates search for jobs and how employers screen applicants.
+
+Key realities of the current market:
+• Automated applicant tracking systems (ATS) scan resumes before a human reads them — formatting and keyword matching matter
+• Many job postings now receive hundreds or thousands of applications within days of being posted
+• Salary transparency laws in many US states now require employers to post pay ranges — use this to your advantage
+• AI tools for interview prep, resume review, and job matching have become common
+• GitHub profiles, portfolios, and open source contributions increasingly matter as much as credentials for technical roles
+• Remote and hybrid work remain common in tech, which also means competition is often national or international rather than local
+
+Knowing this context helps you search and apply strategically rather than just sending out volume.
+
+II. Building a Strong Technical Resume
+A technical resume is a marketing document, not a list of everything you have done. Its job is to get you an interview, not to tell your whole story.
+
+Core resume principles:
+• Use action verbs to start every bullet: built, designed, deployed, reduced, automated, led, migrated
+• Follow the formula: [Action verb] + [what you did] + [result or impact]
+  Example: "Automated weekly reporting process using Python, reducing manual work from 3 hours to 15 minutes"
+• Be specific: name the technologies, tools, and languages you used
+• Tailor each resume to the job posting — match keywords from the job description
+• Keep it to one page if you have less than 10 years of experience
+• Use clean, ATS-friendly formatting: no tables, columns, or text boxes that break parsing
+
+What to include:
+• Contact information (professional email, LinkedIn URL, GitHub URL)
+• Skills section with specific technologies, languages, and tools
+• Project experience (academic, personal, or open source) if you have limited work history
+• Work experience with accomplishment-focused bullets, not task lists
+• Education (include GPA only if above 3.5 and you are early career)
+
+What to avoid:
+• Vague phrases like "helped with" or "worked on" — say what you specifically did
+• Walls of text — recruiters spend 6–10 seconds on an initial scan
+• Personal information not relevant to the role
+• Objective statements — use a summary only if it adds specific value
+• Listing every technology you have ever touched — curate for relevance
+
+III. Portfolios and GitHub Profiles
+For technical roles, a portfolio or GitHub profile is often reviewed alongside or instead of a resume. It shows work rather than just claiming it.
+
+What makes a strong GitHub profile:
+• Pinned repositories that show your best work at the top
+• Projects with clear README files explaining what each project does, how to run it, and why it exists
+• Consistent commit history showing active development (not just one big dump at the end)
+• Code that is readable and commented appropriately
+• A variety of project types if possible: solo projects, collaborative work, class projects you built on afterward
+
+Portfolio websites:
+• GitHub Pages offers free hosting and is commonly used for personal portfolio sites
+• Including a portfolio link on your resume gives employers a direct path to see your work
+• Describe each project: the problem it solved, the tech stack, what you built, and what you learned
+
+IV. Cover Letters
+Cover letters are not always required, but when they are, a weak one hurts and a strong one helps. Many hiring managers use them to assess communication skills and genuine interest.
+
+A professional cover letter includes:
+• Why you are interested in this specific company and role — not a generic statement
+• One or two specific examples of relevant experience or projects that match the job
+• What you would bring to the team
+• A clear, professional opening and closing
+
+Common mistakes:
+• Starting with "I am writing to apply for..." — open with something specific and interesting
+• Summarizing your resume instead of adding new information
+• Generic letters that could apply to any company — personalize each one
+• Writing more than one page
+
+V. Interview Types and Preparation
+Technical hiring often involves multiple rounds with different formats. Knowing what to expect reduces anxiety and helps you prepare specifically.
+
+HR or Recruiter Screen:
+• Usually 20–30 minutes by phone or video
+• Covers background, interest in the role, availability, and salary expectations
+• Prepare a clear 2-minute summary of your background and why you are interested in this role
+
+Behavioral Interviews:
+• Based on past experience: "Tell me about a time when..."
+• Use the STAR method: Situation, Task, Action, Result
+• Prepare 5–7 stories from your experience that can be adapted to different questions
+• Common topics: conflict resolution, failure and what you learned, collaboration, problem-solving under pressure
+
+Technical Interviews:
+• May include whiteboard or live coding problems (LeetCode-style algorithm questions)
+• May include system design questions for more senior roles
+• May include take-home projects or code reviews
+• Practice talking through your thinking out loud — interviewers evaluate process, not just answers
+• Resources: LeetCode, HackerRank, Exercism.io, and Pramp for mock interviews
+
+AI and Video Interviews:
+• Some employers use AI-assisted video interviews where software analyzes your responses
+• Treat these the same as human interviews — clear answers, professional environment, eye contact with the camera
+• Some tools score on pacing, filler words, and facial expression — practice in advance
+
+VI. Total Compensation and Evaluating Offers
+Salary is only one part of a job offer. Total compensation can vary significantly and should be compared carefully.
+
+Components of total compensation:
+• Base salary — the fixed annual amount
+• Equity — stock options or RSUs (Restricted Stock Units) that vest over time; only valuable if the company does well
+• Bonus — performance or signing bonuses, often with conditions attached
+• Benefits — health, dental, vision insurance (quality and cost vary enormously between employers)
+• Retirement — 401k with or without employer matching; matching is free money
+• Remote work / flexibility — has real financial value: no commute costs, no relocation
+• Paid time off — number of days matters; "unlimited PTO" policies often result in less time taken
+• Professional development — conference budgets, tuition reimbursement, certifications
+• Equipment — some employers provide high-quality equipment; others expect you to use your own
+
+Evaluating equity:
+• Vesting schedules: most equity vests over 4 years with a 1-year cliff (you receive nothing if you leave in the first year)
+• Private company equity has no guaranteed value
+• Ask about the strike price, current valuation, and last funding round for startup equity
+
+Salary transparency tools:
+• Levels.fyi — industry compensation data by company and level, especially strong for large tech companies
+• Glassdoor — employer reviews and salary reports from employees
+• LinkedIn Salary — broad market data by role and location
+• Many US states now require job postings to include salary ranges by law — check for the range before applying
+
+VII. Negotiation and Accepting Offers
+Negotiation is expected in professional hiring. Employers rarely rescind offers because a candidate asked for more.
+
+Negotiation principles:
+• Get every offer in writing before making any decisions — verbal offers are not binding and details get forgotten
+• Research the market rate before negotiating — know what comparable roles pay
+• Negotiate base salary first; then equity, signing bonus, and start date
+• Use data to support your ask: "Based on my research and comparable roles, I was expecting something in the range of X"
+• It is acceptable to ask for 2–3 business days to consider an offer before responding
+• If they cannot move on salary, ask about signing bonuses, extra PTO, or remote work flexibility
+
+Accepting and declining:
+• Respond professionally whether accepting or declining — tech is a small world
+• Send a written confirmation when accepting
+• Decline gracefully: "I have accepted another offer that is a better fit for where I am right now" is sufficient
+
+--------------------------------------------------------------------------------
+Quiz: How to Get a Technical Job
+Instructions: Answer each question in 2–3 sentences.
+
+1. What is an ATS and why does it matter for how you format your resume?
+2. What is the action verb + what + result formula for resume bullets, and why is it better than a task list?
+3. What are three elements that make a GitHub profile useful to a potential employer?
+4. What is the STAR method, and what type of interview question is it designed to answer?
+5. What is the difference between base salary and total compensation? Give two examples of non-salary components.
+6. What is equity vesting, and why should a job candidate ask about the vesting schedule?
+7. Why is it important to get a job offer in writing before accepting, and what should the written offer include?
+8. What is the difference between a technical interview and a behavioral interview? How do you prepare differently for each?
+9. What does "salary transparency" mean in 2026, and how can a candidate use it to their advantage?
+10. What are two mistakes people commonly make in cover letters, and how would you fix each one?
+
+Quiz Answer Key
+1. What is an ATS and why does it matter for how you format your resume? ATS stands for Applicant Tracking System — software that scans and parses resumes before a human reads them, filtering candidates based on keyword matching and formatting compatibility. It matters because resumes with tables, columns, unusual fonts, or missing keywords may be filtered out automatically, even if the candidate is qualified.
+
+2. What is the action verb + what + result formula for resume bullets, and why is it better than a task list? The formula structures each bullet as: [strong action verb] + [specific description of what you did] + [measurable result or impact], for example "Migrated three legacy services to containerized deployment, reducing server costs by 30%." It is better than a task list because it shows what you accomplished rather than just what you were supposed to do, giving employers evidence of your actual impact.
+
+3. What are three elements that make a GitHub profile useful to a potential employer? A useful GitHub profile includes pinned repositories featuring your best work, each with a clear README that explains what the project does and how to run it. It also shows a consistent commit history demonstrating regular development activity, and code that is readable and reflects good practices rather than a one-time upload.
+
+4. What is the STAR method, and what type of interview question is it designed to answer? STAR stands for Situation, Task, Action, Result — a structured way to tell a story about past experience in response to behavioral interview questions like "Tell me about a time when you had to handle a conflict on a team." The method ensures answers are specific and complete rather than vague or meandering.
+
+5. What is the difference between base salary and total compensation? Give two examples of non-salary components. Base salary is the fixed annual amount paid before bonuses or other benefits, while total compensation includes everything of monetary value the employer provides. Two non-salary examples are equity (stock or options that vest over time) and employer 401k matching (retirement contributions that represent additional money beyond salary).
+
+6. What is equity vesting, and why should a job candidate ask about the vesting schedule? Vesting is the process by which an employee earns ownership of promised equity over time rather than receiving it all at once — most schedules vest over four years with a one-year cliff, meaning you receive nothing if you leave before the first year. Candidates should ask about it because unvested equity has no value if they leave or are laid off before it vests, which significantly affects the real value of an offer.
+
+7. Why is it important to get a job offer in writing before accepting, and what should the written offer include? A verbal offer has no binding commitment behind it — details like start date, salary, title, and benefits can change or be misremembered, and the offer can be withdrawn. A written offer letter should include the job title, base salary, start date, benefits summary, and any equity or bonus terms that were discussed.
+
+8. What is the difference between a technical interview and a behavioral interview? How do you prepare differently for each? A technical interview assesses specific skills through coding problems, system design questions, or take-home projects, while a behavioral interview assesses how you have handled past situations using the STAR method. You prepare for technical interviews by practicing problem-solving and explaining your thinking out loud; you prepare for behavioral interviews by preparing and rehearsing specific stories from your own experience.
+
+9. What does "salary transparency" mean in 2026, and how can a candidate use it to their advantage? Salary transparency laws, now in effect in many US states, require employers to post pay ranges in job listings. Candidates can use this to quickly identify whether a role is in their target range before investing time in applying, and to anchor salary negotiations with the posted range rather than guessing or underselling themselves.
+
+10. What are two mistakes people commonly make in cover letters, and how would you fix each one? Opening with "I am writing to apply for..." is generic and wastes the reader's attention — fix it by opening with something specific about the company or role that shows genuine research. Summarizing the resume rather than adding new information wastes the space — fix it by using the cover letter to tell one or two specific stories that demonstrate fit and interest that the resume cannot convey on its own.
+
+Essay Format Questions (No Answers Supplied)
+1. The 2026 tech job market has changed significantly from just a few years ago, with AI screening tools, salary transparency, and high application volumes reshaping how hiring works. How should a job seeker adapt their strategy to this environment? What has become more important, and what old advice no longer applies?
+
+2. A GitHub profile and portfolio are increasingly treated as evidence of skill alongside a resume. For someone who has only academic projects, no open source contributions, and no work experience, what is the most effective way to build a portfolio from scratch? What kinds of projects are worth building, and what should they show?
+
+3. Total compensation packages in tech can be complex, especially when equity is involved. Compare two hypothetical offers: one with a higher base salary and no equity, and one with a lower base and significant equity in a private company. What questions would you ask, what research would you do, and how would you decide which to accept?
+
+4. Negotiation is described as expected in professional hiring, but many people — especially those entering the workforce for the first time or from backgrounds where negotiation is uncomfortable — struggle with it. What specifically makes negotiation feel risky, and what information or framing would help someone negotiate confidently for the first time?
+
+5. Job searching and interview preparation have both become areas where AI tools are now widely used — for resume review, cover letter drafting, mock interviews, and more. What are the legitimate uses of AI in a job search, and where does using AI become a problem? How do you ensure that an AI-assisted application or interview still represents you honestly?
+
+Glossary of Key Terms
+ATS (Applicant Tracking System): Software used by employers to automatically scan, parse, and rank job applications before a human reviewer sees them; resume formatting and keyword matching affect whether a resume passes through.
+
+Base Salary: The fixed annual or hourly pay an employee receives, before bonuses, equity, or benefits.
+
+Behavioral Interview: An interview format focused on past experience, using questions like "Tell me about a time when..." to predict future performance; typically answered using the STAR method.
+
+Cover Letter: A written document accompanying a job application that explains why a candidate is interested in a specific role and company and highlights relevant experience not captured by the resume alone.
+
+Equity: Ownership in a company, typically granted as stock options or RSUs; vests over time and only has real value if the company performs well.
+
+GitHub Profile: A public page on GitHub showing a developer's repositories, commit history, and contributions; used by employers to assess technical skills and coding habits.
+
+LeetCode-style Interview: A technical interview format involving algorithm and data structure problems similar to those on platforms like LeetCode or HackerRank; common in hiring at large tech companies.
+
+Portfolio: A collection of projects, work samples, or demonstrations used to show skills to potential employers; often hosted as a personal website or on GitHub.
+
+RSU (Restricted Stock Unit): A form of equity compensation in which an employee is promised shares of company stock that vest according to a schedule; unlike options, RSUs have value as long as the stock does.
+
+Salary Transparency: Policies or laws requiring employers to disclose the pay range for a job posting; in effect in many US states as of 2026 and useful for candidates to anchor negotiations.
+
+STAR Method: A structured storytelling framework for behavioral interview answers: Situation, Task, Action, Result.
+
+Technical Interview: An interview format assessing specific technical skills through coding problems, system design questions, or take-home projects; requires both correct solutions and clear explanation of thinking.
+
+Total Compensation: The full monetary value of a job offer, including base salary, equity, bonuses, benefits, retirement contributions, and any other financial perks.
+
+Vesting: The process by which an employee earns ownership of promised equity over time rather than all at once; most schedules run 4 years with a 1-year cliff, meaning nothing is received if the employee leaves in the first year.
+
+Vesting Cliff: The point in a vesting schedule at which the first portion of equity becomes owned; typically set at one year, meaning an employee who leaves before that date receives no equity at all.

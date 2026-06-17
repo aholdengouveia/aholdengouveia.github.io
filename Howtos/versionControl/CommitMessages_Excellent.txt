@@ -1,0 +1,82 @@
+EXAMPLE COMMIT MESSAGES: EXCELLENT
+====================================
+These messages follow the Conventional Commits format (type(scope): summary)
+and include a body when the reason behind the change is not obvious from the summary alone.
+This style is common in professional open source and industry projects.
+Format: type(scope): short summary
+        [blank line]
+        Longer explanation of WHY, not just what. What problem does this solve?
+        What would happen if this change were not made?
+
+--------------------------------------------------
+
+What changed:
+  Fixed the bug where logging in with a mixed-case email address failed.
+  User@Email.com and user@email.com were being treated as two different accounts.
+
+Commit message used:
+
+  fix(auth): treat email addresses as case-insensitive during login
+
+  Email addresses are case-insensitive by RFC 5321 standard, but the login
+  query was doing a case-sensitive string match. This caused users to be
+  locked out if they registered with one casing and later typed another.
+  Normalizes all email input to lowercase before querying the database.
+
+--------------------------------------------------
+
+What changed:
+  Added a search bar to the user directory that shows live results as the user types,
+  pulling from the users API with a debounce delay to avoid flooding the server.
+
+Commit message used:
+
+  feat(search): add real-time user directory search with 300ms debounce
+
+  Adds a search input to /users that filters results live as the user types.
+  Debounced at 300ms to prevent an API call on every keystroke. Returns the
+  top 20 matches ranked by relevance. Closes #47.
+
+--------------------------------------------------
+
+What changed:
+  Added platform-specific setup instructions and environment variable documentation to the README.
+
+Commit message used:
+
+  docs(readme): add setup instructions for Mac, Windows, Linux and env var reference
+
+  The README previously had no install steps, which meant new contributors
+  had to ask for help or guess. Adds step-by-step instructions for all three
+  platforms and a table of all required environment variables with descriptions
+  and example values. Removes outdated references to the deprecated jwt-simple library.
+
+--------------------------------------------------
+
+What changed:
+  Fixed a z-index and positioning issue that caused the sticky navbar to overlap page content
+  on small screens.
+
+Commit message used:
+
+  fix(ui): resolve navbar overlap on viewports narrower than 768px
+
+  The sticky navbar was being rendered above the main content on mobile due to
+  a missing z-index on the content container. Added z-index: 1 to .main-content
+  and adjusted top padding to account for the navbar height at each breakpoint.
+
+--------------------------------------------------
+
+What changed:
+  Broke a 400-line database.py into three smaller, focused modules.
+
+Commit message used:
+
+  refactor(db): split database.py into models, queries, and connection modules
+
+  database.py had grown to 400 lines mixing data models, raw SQL, and connection
+  management, making it hard to test any one part in isolation. No behavior changes.
+  Splitting into three modules makes each piece easier to read, test, and update
+  independently. All imports updated across the codebase.
+
+--------------------------------------------------

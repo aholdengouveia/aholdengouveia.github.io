@@ -1,0 +1,55 @@
+EXAMPLE COMMIT MESSAGES: GOOD
+==============================
+These commit messages are specific enough that someone reading the git log
+understands what changed and roughly why, without having to open the diff.
+This is a solid standard for most projects.
+
+--------------------------------------------------
+
+What changed:
+  Fixed the bug where logging in with a mixed-case email address failed.
+  User@Email.com and user@email.com were being treated as two different accounts.
+
+Commit message used:
+  "fix email login failing when address contains uppercase letters"
+
+--------------------------------------------------
+
+What changed:
+  Added a search bar to the user directory page that shows live results
+  as the user types, pulling from the existing users API endpoint,
+  limited to the top 20 matches by relevance score.
+
+Commit message used:
+  "add live search to user directory, returns top 20 results"
+
+--------------------------------------------------
+
+What changed:
+  Added step-by-step installation instructions for Mac, Windows, and Linux to the README,
+  documented all required environment variables with descriptions and example values,
+  and removed outdated references to a library no longer used in the project.
+
+Commit message used:
+  "update README with platform setup instructions and environment variable reference"
+
+--------------------------------------------------
+
+What changed:
+  Fixed a z-index and positioning issue that caused the sticky navbar to overlap
+  the top of the page content on screens smaller than 768px wide.
+
+Commit message used:
+  "fix navbar overlapping page content on screens under 768px"
+
+--------------------------------------------------
+
+What changed:
+  Split the single 400-line database.py file into three separate modules:
+  models.py for data structures, queries.py for SQL logic, and connection.py
+  for managing the database connection pool.
+
+Commit message used:
+  "split database.py into models, queries, and connection modules"
+
+--------------------------------------------------
