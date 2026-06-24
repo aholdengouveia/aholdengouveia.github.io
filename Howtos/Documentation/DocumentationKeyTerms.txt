@@ -1,0 +1,46 @@
+Key Terms: How to do Documentation
+Generated with AI assistance — review for accuracy and compare against your course materials.
+
+---
+
+API DOCUMENTATION
+Documentation that describes how to use a software interface — what functions or endpoints exist, what inputs they expect, and what they return. Written for developers who will integrate with or build on top of your code.
+
+CHANGELOG
+A file that records what changed between versions of a project: new features added, bugs fixed, and things removed or deprecated. Helps users and contributors understand what is different without reading all the code.
+
+CODE COMMENT
+A note written inside source code to explain something that the code itself does not make obvious. Should explain why a decision was made, not just describe what the code does — the code already shows that.
+
+DEPRECATION
+The process of marking a feature, function, or tool as outdated and scheduled for removal in a future version. Deprecated items still work but should not be used in new code.
+
+DOCSTRING
+A structured comment placed at the beginning of a function, class, or module that describes what it does, what parameters it accepts, and what it returns. Many documentation generation tools read docstrings automatically.
+
+INLINE DOCUMENTATION
+Comments and explanations written directly within the source code, as opposed to documentation maintained in a separate file. Most useful for explaining non-obvious logic close to where it appears.
+
+KNOWN LIMITATIONS
+A section of documentation that honestly describes what the project does not handle, what could go wrong, or what assumptions it makes. Missing this section is one of the most common documentation failures.
+
+MARKDOWN
+A lightweight text formatting language used to write documentation, README files, and notes using plain text syntax. A hash symbol creates a heading, asterisks create bold text, and so on. Renders as formatted HTML on most platforms.
+
+README
+The first file a reader sees in a project repository. Should describe what the project does, how to install and run it, how to use it, and who maintains it. The minimum documentation standard for any shareable project.
+
+SEMANTIC VERSIONING
+A versioning system using three numbers: MAJOR.MINOR.PATCH. The major number increments on breaking changes, the minor number on new backward-compatible features, and the patch number on bug fixes.
+
+TECHNICAL DOCUMENTATION
+Documentation written for people who will build on, maintain, or extend a system — developers, contributors, or operators. Focuses on how things work and why decisions were made.
+
+USER DOCUMENTATION
+Documentation written for end users who interact with a finished product. Focuses on how to accomplish tasks rather than on how the system is built internally.
+
+VERSION NUMBER
+A label assigned to a specific release of a project that distinguishes it from earlier and later releases. Allows users and contributors to identify exactly what code they are running and what changes it contains.
+
+VPAT (VOLUNTARY PRODUCT ACCESSIBILITY TEMPLATE)
+A standardized document used to describe how a product meets accessibility standards such as WCAG. Required by many institutions and government organizations when evaluating software for purchase or use.

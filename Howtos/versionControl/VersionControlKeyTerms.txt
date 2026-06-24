@@ -1,0 +1,55 @@
+Key Terms: How to Use Version Control
+Generated with AI assistance — review for accuracy and compare against your course materials.
+
+---
+
+BRANCH
+A parallel version of a repository where changes can be made without affecting the main codebase. Branches allow multiple features or fixes to be developed simultaneously and merged in when ready.
+
+CLONE
+Downloading a full copy of a remote repository to your local machine, including all history and branches. A clone is a complete copy, not just the current state of the files.
+
+COMMIT
+A saved snapshot of changes to one or more files in a repository. Each commit records what changed, who changed it, and when. Commits are the basic unit of version control history.
+
+COMMIT MESSAGE
+A short description written when creating a commit that explains what changed and why. Good commit messages help teammates (and your future self) understand the history of a project without reading every line of code.
+
+DIFF
+A comparison showing exactly what changed between two versions of a file — which lines were added, removed, or modified. Used in code reviews and pull requests to understand what a change actually does.
+
+FEATURE BRANCH
+A branch created specifically to develop a single new feature or fix, separate from the main codebase. When the feature is complete, the branch is merged back in via a pull request.
+
+FORK
+A personal copy of someone else's repository on your own account. Used in open source workflows when you want to propose changes to a project you do not have direct write access to.
+
+.GITIGNORE
+A configuration file that lists files and directories that Git should not track. Used to exclude build artifacts, credentials, operating system files, and other items that should not be committed to a repository.
+
+MAIN / MASTER BRANCH
+The primary branch of a repository, representing the stable, production-ready version of the project. Changes are not committed directly to main on team projects; they go through branches and pull requests first.
+
+MERGE
+Combining changes from one branch into another. A merge integrates the history and changes of both branches and may require resolving conflicts if the same lines were modified in both.
+
+MERGE CONFLICT
+A situation where two branches have made different changes to the same part of a file and Git cannot automatically decide which version to keep. Must be resolved manually before the merge can complete.
+
+OPEN SOURCE
+Software with publicly available source code that anyone can view, use, modify, and distribute, typically under a specific license. Contributing to open source usually involves forking a repository and submitting a pull request.
+
+PULL REQUEST (PR)
+A request to merge changes from one branch (or fork) into another, used as an opportunity for code review and discussion before the changes are integrated. A pull request is a conversation, not just a technical operation.
+
+PUSH AND PULL
+Push sends your local commits to a remote repository. Pull retrieves changes from a remote repository and integrates them into your local copy. Keeping these in sync prevents the divergence that leads to merge conflicts.
+
+REPOSITORY (REPO)
+A project folder tracked by Git, containing all files and the complete history of every change ever made to them. Can be stored locally or hosted remotely on a platform like GitHub.
+
+STAGING AREA (INDEX)
+A preparation zone where you select which changed files to include in your next commit. Allows you to commit a subset of your changes rather than everything at once.
+
+TAG
+A label applied to a specific commit to mark it as significant — typically used to identify release versions. Unlike branches, tags do not move as new commits are added.

@@ -5,25 +5,45 @@ layout: default
 
 <main role="main">
     <!--Jumbotron for the page header -->
-    <div class="jumbotron" style="background: url(DocumentHandwrittenwithKey.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
-        <div class="container image-overlay">
-          <h1 class="jumbotron-heading">How to do Documentation</h1>
+    <section class="jumbotron text-xs-center" style="background: url(DocumentHandwrittenwithKey.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+        <div class="container lt-image-overlay">
+          <h1 class="jumbotron-heading" style="font-weight:bold; font-family: Georgia, serif;">How to do Documentation</h1>
             <p class="lead">A comprehensive guide on the importance and methods of creating various types of documentation, including technical writing, README files, and code comments.</p>
-            </p>
         </div>
-    </div>  
+    </section>
 
     <br><br>
 
 <!--Learning Outcomes for this topic-->
-<p>Learning outcomes:
+<h2>Learning outcomes</h2>
+<ul>
+    <li>Explain why documentation is important for both individual and team work in technical environments</li>
+    <li>Create a well-organized README file that follows documentation best practices</li>
+    <li>Evaluate documentation for clarity, accessibility, and completeness and identify specific areas for improvement</li>
+    <li>Describe strategies for keeping documentation up to date and the consequences of letting it become outdated</li>
+</ul>
+
+<!--NACE Career Competencies-->
+<!--
+<p>Career readiness skills you are building in this module
+    (<a href="https://www.naceweb.org/career-readiness/competencies/career-readiness-defined/">NACE Career Readiness Competencies defined</a>):
     <ul>
-        <li>Explain why documentation is important for both individual and team work in technical environments</li>
-        <li>Create a well-organized README file that follows documentation best practices</li>
-        <li>Evaluate documentation for clarity, accessibility, and completeness and identify specific areas for improvement</li>
-        <li>Describe strategies for keeping documentation up to date and the consequences of letting it become outdated</li>
+        <li>Communication: Writing documentation that someone else can actually use is one of the clearest tests of professional written communication; if your reader cannot follow it, it didn't work</li>
+        <li>Professionalism: Keeping documentation current and complete shows your teammates they can rely on your work even when you're not in the room, which is exactly what professional accountability looks like</li>
+        <li>Technology: Writing README files, code comments, and changelogs are standard expectations in technical roles; employers assume you can do this, so knowing how to do it well sets you apart</li>
     </ul>
 </p>
+-->
+
+<!--Key Takeaways-->
+<h2>Key Takeaways</h2>
+<ul>
+    <li>Write documentation for your future self and for teammates who weren't there; assume they know nothing about your decisions</li>
+    <li>A README explaining what a project does, how to set it up, and how to use it is the minimum expectation in professional work</li>
+    <li>Comments should explain why, not what; the code shows what it does, the comment explains the reasoning behind it</li>
+    <li>Outdated documentation is often worse than no documentation; it sends someone the wrong direction with confidence</li>
+    <li>Technical documentation is professional writing and will be read as a reflection of your work quality</li>
+</ul>
 
 <!--embed Youtube video here-->
 <div class="video-wrapper">
@@ -35,10 +55,8 @@ layout: default
     <a href="How to Write documentation.pptx">Would you like to download my PowerPoint to follow along?</a>
 </p>
 
-
 <!--Outline Of lecture notes/powerpoint for the topic-->
-<p>
-    <ul>
+<ul>
         <li>Why documentation is important</li>
             <ul>
                 <li>Making sure that you have a record for later reference, don't assume you'll remember details</li>
@@ -172,12 +190,11 @@ layout: default
                     </ul>
         </ul>
     </ul>
-</p>
 
 <!--Discussions and activities for the topic-->
-<p>Suggested Activities and Discussion Topics:
+<h2>Suggested Activities and Discussion Topics</h2>
     <ul>
-        <li>Activity: Read through <a href="Game Setup Good.pdf">this first example </a>  and then <a href="Game Setup Bad.pdf">this second example</a> of documentation written by an AI.  And then answer the following questions</li>
+        <li>Activity: Read through <a href="Game Setup Good.pdf">this first example </a>  and then <a href="Game Setup Bad.pdf">this second example</a> of documentation written by an AI.  And then answer the following questions. This should take about 30–45 minutes.</li>
             <ul>
                 <li>Define the Audience and Tone for each</li>
                 <li>Compare how they handle dense material.  WHich one does it better? Why?</li>
@@ -186,21 +203,28 @@ layout: default
                 <li>Evaluate <a href="Game Setup Example3.pdf">this third example</a> where does it fall on the good vs bad scale?</li>
                 <li>What about <a href="Game Setup Example4.pdf">this one</a>?  Is this better? Worse? What's wrong with it? Be specific!</li>
             </ul>
-        <li>Activity: Listen to <a href="Stop_Losing_Time_and_Money_Documentation_Secrets.m4a">This Podcast</a> That was created using AI from these materials.  <a href="HowToDocumentPodcastTranscript.txt"> Transcript for the Podcast</a> What are your thoughts? Did the AI do a good job representing the materials? Did you find any mistakes?  If you happen to speak Spanish, what do you think of the   <a href="HowToDocumentPodcastTranscriptAITranslatedtoSpanish.txt"> AI translation to Spanish</a> version of the Podcast? Did the AI do a good job? Bad job?</li>
-        <li>Go through <a href="HowToDocumentStudyGuide.txt">This AI generated study guide</a>, what do you think? Did it capture the materials well?  Do you know all the vocab used? What do you think is missing?</li>
-        <li>Activity:  Go through either <a href="Game Setup Example3.pdf">Option 1</a> or <a href="Game Setup Example4.pdf">Option 2</a>  and fix it up so it meets best practices and is improved. COnsider some places start that could be fixing the numbered lists, bullet points, and/or appropriate headings, adding in a overview or roadmap, and changing the tone of the documentation to be clear and professional.</li>
-        <li>Activity:  Take <a href="SampleCodeBadComments.txt">this intentionally badly commented code</a> and fix it so that it's well documented.  SOme things to try changing include variable and function names, comments already there, and adding in a header comment.</li>
-        <li>Activity for in person:  Pair up and create documentation for something you're both interested in.  This could be anything from how to play a video game or board game, or instructions for a recipe you both are interested in.  Discuss how you can organize your document, what it should have, how long it should be, what level of detail is required and who the target market it.  Now switch documentation with another pair and take notes on what they did, think of at least 2 specific things you think they did well, and 2 specific suggestions to make their documentation better.</li>
+        <li>Activity: Listen to <a href="Stop_Losing_Time_and_Money_Documentation_Secrets.m4a">This Podcast</a> That was created using AI from these materials.  <a href="HowToDocumentPodcastTranscript.txt"> Transcript for the Podcast</a> What are your thoughts? Did the AI do a good job representing the materials? Did you find any mistakes?  If you happen to speak Spanish, what do you think of the   <a href="HowToDocumentPodcastTranscriptAITranslatedtoSpanish.txt"> AI translation to Spanish</a> version of the Podcast? Did the AI do a good job? Bad job? This should take about 20–25 minutes.</li>
+        <li>Activity: Go through <a href="HowToDocumentStudyGuide.txt">This AI generated study guide</a>, what do you think? Did it capture the materials well?  Do you know all the vocab used? What do you think is missing?</li>
+        <li>Activity: Go through <a href="DocumentationKeyTerms.txt">this AI-generated key terms list</a> for this module. How many of the terms did you already know? Were there any definitions you would update or expand based on the lecture notes? Did the AI miss any important terms? This should take about 10–15 minutes.</li>
+        <li>Activity:  Go through either <a href="Game Setup Example3.pdf">Option 1</a> or <a href="Game Setup Example4.pdf">Option 2</a>  and fix it up so it meets best practices and is improved. COnsider some places start that could be fixing the numbered lists, bullet points, and/or appropriate headings, adding in a overview or roadmap, and changing the tone of the documentation to be clear and professional. This should take about 30–45 minutes.</li>
+        <li>Activity:  Take <a href="SampleCodeBadComments.txt">this intentionally badly commented code</a> and fix it so that it's well documented.  SOme things to try changing include variable and function names, comments already there, and adding in a header comment. This should take about 30–45 minutes.</li>
+        <li>Activity: Pair up and create documentation for something you're both interested in.  This could be anything from how to play a video game or board game, or instructions for a recipe you both are interested in.  Discuss how you can organize your document, what it should have, how long it should be, what level of detail is required and who the target market it.  Now switch documentation with another pair and take notes on what they did, think of at least 2 specific things you think they did well, and 2 specific suggestions to make their documentation better. This should take about 45–60 minutes.</li>
         <li>Activity: Choose an AI tool of your choice such as ChatGPT, Gemini, or Claude. Write a short function of 5–10 lines in any language you have used, intentionally using vague or confusing variable and function names (for example, <code>def x(a, b)</code> or <code>temp2 = stuff * thing</code>). Paste your code into the AI and ask it to suggest better names and add an appropriate comment. Then evaluate the AI's suggestions: Did it correctly understand what your code does? Are the suggested names actually clearer? Did it add any comments that were obvious or unhelpful? What would you change? This should take about 5–10 minutes.</li>
-        <li>Activity: Find an open source project on GitHub — it can be anything from a small personal project to a well-known library. Evaluate its README file using the criteria from this module: Does it explain what the project does? Does it include setup instructions? Is it clear about dependencies and how to run it? Does it assume too much prior knowledge? Write a short evaluation identifying two things it does well and two specific improvements that would make it more useful to someone encountering the project for the first time.</li>
-        <li>Activity: Write a README file for a project you have worked on — a class assignment, a personal script, or even a made-up project. Include at minimum: a description of what it does, how to set it up, how to run it, and any known limitations. Then ask someone who has not seen the project to try to follow the setup instructions without asking you any questions. Observe where they get stuck. What did you leave out that felt obvious to you but was not obvious to them? What would you change?</li>
-        <li>Discussion: Think about a time when bad documentation — or no documentation at all — caused you a real problem. This could be in a class project, at work, or while trying to use software someone else wrote. What specifically was missing? What would good documentation have looked like in that situation, and how much time or frustration would it have saved you?</li>
-        <li>Discussion: Documentation is often described as the part of a project that everyone agrees is important but almost no one wants to do. Why do you think that is? What would need to change — in workflow, tooling, culture, or accountability — to make documentation something that gets done consistently rather than added at the end as an afterthought, or skipped entirely? Have you ever been on a team or in a class where documentation actually happened? What made that different?</li>
-
+        <li>Activity: Find an open source project on GitHub. It can be anything from a small personal project to a well-known library. Evaluate its README file using the criteria from this module: Does it explain what the project does? Does it include setup instructions? Is it clear about dependencies and how to run it? Does it assume too much prior knowledge? Write a short evaluation identifying two things it does well and two specific improvements that would make it more useful to someone encountering the project for the first time. This should take about 20–30 minutes.</li>
+        <li>Activity: Write a README file for a project you have worked on, such as a class assignment, a personal script, or even a made-up project. Include at minimum: a description of what it does, how to set it up, how to run it, and any known limitations. Then ask someone who has not seen the project to try to follow the setup instructions without asking you any questions. Observe where they get stuck. What did you leave out that felt obvious to you but was not obvious to them? What would you change? This should take about 30–45 minutes.</li>
+        <li>Discussion: Think about a time when bad documentation, or no documentation at all, caused you a real problem. This could be in a class project, at work, or while trying to use software someone else wrote. What specifically was missing? What would good documentation have looked like in that situation, and how much time or frustration would it have saved you?</li>
+        <li>Discussion: Documentation is often described as the part of a project that everyone agrees is important but almost no one wants to do. Why do you think that is? What would need to change in workflow, tooling, culture, or accountability to make documentation something that gets done consistently rather than added at the end as an afterthought, or skipped entirely? Have you ever been on a team or in a class where documentation actually happened? What made that different?</li>
     </ul>
-</p>
+
+<!--Related Modules-->
+<h2>Related modules you might find useful</h2>
+<ul>
+    <li><a href="/Howtos/versionControl/githubworkflow.html">How to Use Version Control</a></li>
+    <li><a href="/Howtos/Sourceeval/sourceEvaluation.html">How to Evaluate Sources</a></li>
+    <li><a href="/Howtos/Getatechjob/techjobs.html">How to Get a Tech Job</a></li>
+</ul>
 
 <!--Link to my HowTos page-->
-<p>Would you like to see some more How tos?  
+<p>Would you like to see some more How tos?
     <a href="/HowTo.html">See more How tos </a>
 </p>
