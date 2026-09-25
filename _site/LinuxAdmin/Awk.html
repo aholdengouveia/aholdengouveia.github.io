@@ -33,7 +33,7 @@
     <link href="/fontawesome-free-6.1.1-web/css/all.css" rel="stylesheet">
   </head>
 
-  <body>
+  <body id="top">
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header>
@@ -97,18 +97,16 @@
         How to ...
       </a>
       <div class="dropdown-menu" aria-labelledby="navHowtoDropdown">
-        <a class="dropdown-item" href="/Howtos/Getatechjob/techjobs.html">Get a Tech Job</a>
-        <a class="dropdown-item" href="/Howtos/Sourceeval/sourceEvaluation.html">Evaluate Sources</a>
-        <a class="dropdown-item" href="/Howtos/Study/HowToStudy.html">Take notes/Study</a>
+        <a class="dropdown-item" href="/Howtos/AskForHelp/AskForHelp.html">Ask for Help</a>
+        <a class="dropdown-item" href="/Howtos/ProfessionalCommunication/Communication.html">Communicate Professionally</a>
         <a class="dropdown-item" href="/Howtos/Documentation/HowToDocument.html">Documentation</a>
+        <a class="dropdown-item" href="/Howtos/Getatechjob/techjobs.html">Get a Tech Job</a>
+        <a class="dropdown-item" href="/Howtos/SolveLargeProblems/SolveLargeProblems.html">Solve Large Problems</a>
+        <a class="dropdown-item" href="/Howtos/Sourceeval/sourceEvaluation.html">Evaluate Sources</a>
+        <a class="dropdown-item" href="/Howtos/Study/HowToStudy.html">Take Notes / Study</a>
+        <a class="dropdown-item" href="/Howtos/TeamCollaboration/TeamCollab.html">Team Collaboration</a>
         <a class="dropdown-item" href="/Howtos/ManageTime/HowtoTimeManage.html">Time Management</a>
-        <!--
-        
-        <a class="dropdown-item" href="#">Be your own project manager</a>
-        <a class="dropdown-item" href="#">Manage your time</a>
-        
-        <a class="dropdown-item" href="#">Not cheat</a>
-        -->
+        <a class="dropdown-item" href="/Howtos/versionControl/githubworkflow.html">Version Control</a>
       </div>
     </li>
 <!--Other things I think are Important to learn-->
@@ -124,21 +122,23 @@
     </li> -->
 
 <!--Home Automation Section of NavBar-->
-  <li class="nav-item active">
-    <a class="nav-link" href="/SmartHome/smarthomewelcome.html">Smart Home Project <span class="sr-only">(current)</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="/SmartHome/smarthomewelcome.html">Smart Home Project</a>
   </li>
 
 
 <!--About Me Section of NavBar-->
-    <li class="nav-item active">
-      <a class="nav-link" href="/cv.html">About Me <span class="sr-only">(current)</span></a>
+    <li class="nav-item">
+      <a class="nav-link" href="/cv.html">About Me</a>
     </li>
 <!--Search Bar Section of NavBar-->
          </ul>
+         <!-- Search form removed: no search backend is wired up
          <form class="form-inline mt-2 mt-md-0">
            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
          </form>
+         -->
        </div>
      </nav>
    </header>
@@ -272,19 +272,15 @@
         </footer>
         -->
          <footer class="footer">
-          <div class="container">
-            <p class="float-left"style="font-size:30%;">
-              <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a> <br>
-              This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">CC Attribution-NonCommercial 4.0 International License</a>
-            </p>
+          <div style="display:grid; grid-template-columns:1fr auto 1fr; align-items:center; height:60px; padding:0 15px; line-height:normal;">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a>
+            <!-- <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">CC Attribution-NonCommercial 4.0 International License</a></p> -->
             <span class="text-muted text-center">
               Contact me: <a href="mailto:admin@aholdengouveia.name">Email</a>
-             <!-- <a href="#">Email</a>-->
-              <a href="/cv.html">About me </a>
-              
-            
-              <p class="float-right"><a href="#">Back to top</a></p>
+              &nbsp;&middot;&nbsp;<a href="/cv.html">About me</a>
+              &nbsp;&middot;&nbsp;<a href="/AccessabilityComplianceReportVPAT.html">Accessibility Statement</a>
             </span>
+            <a href="#top" style="text-align:right;">Back to top</a>
           </div>
         </footer>
 

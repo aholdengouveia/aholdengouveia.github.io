@@ -112,7 +112,7 @@ body {
   #wrapper {
     padding-left: 150px;
     transition: all 0.4s ease 0s;
-    background: #5c5269;  /* was #90899a — #fff links give 11.4:1 (WCAG AAA) */
+    background: #b5b0c3;
     padding:15px;
   }
 
@@ -121,12 +121,13 @@ body {
    /* left: 150px;*/
     /*width: 150px;*/
     /*position: fixed;*/
-    background: #5c5269;  /* was #90899a — #fff links give 11.4:1 (WCAG AAA) */
+    background: #b5b0c3;
     height: 100%;
     overflow-y: auto;
     z-index: 1000;
     transition: all 0.4s ease 0s;
-    padding:15px;
+    padding: 15px;
+    margin-left: -15px;
 
   }
 
@@ -144,7 +145,7 @@ body {
     line-height: 40px;
   }
   .sidebar-nav li a {
-    color: #ffffff;  /* was #040404 — white gives 11.4:1 on #5c5269 (WCAG AAA) */
+    color: #040404;
     display: block;
     text-decoration: none;
     font-weight: normal;
@@ -169,7 +170,7 @@ body {
 }
 
 .sidebar-nav > .sidebar-brand a {
-    color: #ffffff;  /* was #040404 — matches sidebar link color update */
+    color: #040404;
 }
 
 /*Change background of paragraphs to make it easier to parse them*/
@@ -207,6 +208,10 @@ figcaption {
   text-align: center;
   text-decoration: underline
 
+}
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 pre > code {
   padding-top: 3rem;
@@ -249,6 +254,18 @@ h4 {
    compliance. h2 needs centring to match the old h3 visual appearance. */
 .smarthome-content h2 {
   text-align: center;
+}
+
+/* HowTo pages: add side padding so content doesn't run to the edges,
+   then pull jumbotrons back to full-width with negative margins */
+main[role="main"] {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+main[role="main"] .jumbotron,
+main[role="main"] section.jumbotron {
+    margin-left: -2rem;
+    margin-right: -2rem;
 }
 
 /*video wrapper to try and get video embed to work on mobile devices*/
@@ -313,10 +330,37 @@ th, td {
   padding: 8px;
 }
 
+/* Definition lists used for paired data (e.g. situation → best method) */
+dt {
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+dd {
+    margin-left: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+/* Example email/letter blocks — white card with a navy left border to distinguish
+   them from surrounding list content */
+.email-example {
+    background-color: #ffffff;
+    border-left: 5px solid #2c365e;
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.5rem;
+    margin: 1rem 0 1rem 1rem;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+}
+.email-example p {
+    margin-bottom: 0.5rem;
+}
+.email-example p:last-child {
+    margin-bottom: 0;
+}
+
 /*Sticky footer*/
 .footer {
     position: fixed;
-    background-color: #4a4e4a;  /* was #aab3aa — #fff links give 8.46:1 (WCAG AAA) */
+    background-color: #aab3aa;
     bottom: 0;
     width: 100%;
     height: 60px; /* Set the fixed height of the footer here */
@@ -324,11 +368,13 @@ th, td {
   }
 
 .footer a, .footer a:link, .footer a:visited {
-    color: #ffffff;  /* dark links invisible on #4a4e4a — white gives 8.46:1 (WCAG AAA) */
+    color: #040404;
 }
 
+/* #6c757d Bootstrap muted on #aab3aa footer = 2.1:1 (fails AA).
+   #222222 on #aab3aa = 7.2:1 (passes WCAG AAA). */
 .footer .text-muted {
-    color: #d4d4d4 !important;  /* Bootstrap muted text was too low contrast on dark footer */
+    color: #222222 !important;
 }
 
 /* Navbar background — moved from inline style on <nav> so pa11y/Puppeteer can compute
