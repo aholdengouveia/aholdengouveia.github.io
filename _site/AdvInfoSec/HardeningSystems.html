@@ -17,7 +17,7 @@
   gtag('config', 'G-Q9SWNFD6DB');
 </script>
 
-    <title>TOPIC</title>
+    <title>Hardening Systems</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
 
@@ -168,11 +168,11 @@
                 </li>
                 <li><a href="/AdvInfoSec/DisasterRecovery.html">Disaster Recovery</a> </li>
                 <li><a href="/AdvInfoSec/SecurityAudit.html">Security Audits</a> </li>
-                <!--
-                <li><a href="/AdvInfoSec/SecurityFrameworks.html">Security Frameworks</a> </li>
+                <li><a href="/AdvInfoSec/SocialEngineering.html">Social Engineering</a></li>
                 <li><a href="/AdvInfoSec/SystemRecoveryCleanUp.html">Incident Recovery</a> </li>
                 <li><a href="/AdvInfoSec/HardeningSystems.html">Hardening</a> </li>
-                <li><a href="/AdvInfoSec/SocialEngineering.html">Social Engineering</a></li>
+                <!--
+                <li><a href="/AdvInfoSec/SecurityFrameworks.html">Security Frameworks</a> </li>
                 <li><a href="/AdvInfoSec/AdvSecNext.html">Where to go next</a></li>
                 -->
                 <li><a href="/AdvInfoSec/Resources.html">Links to other Resources</a></li>
@@ -182,13 +182,14 @@
     <div class="col course-topic">
         <br><br>
         <!--Learning Outcomes for this topic-->
-<h1>TOPIC</h1>
+<h1>Hardening Systems</h1>
 <p>Learning outcomes:
     <ul>
-        <li>Outcome 1</li>
-        <li>Outcome 2</li>
-        <li>Outcome 3</li>
-        <li>Outcome 4</li>
+        <li>Explain how reducing the attack surface makes systems harder to compromise</li>
+        <li>Apply common hardening steps, such as disabling unnecessary services, removing default accounts, and applying least privilege</li>
+        <li>Configure account and password policies that balance security with usability</li>
+        <li>Use industry benchmarks such as the CIS Benchmarks to evaluate and improve a system's configuration</li>
+        <li>Describe how patch management and configuration baselines keep systems hardened over time</li>
     </ul>
 </p>
 
@@ -199,27 +200,112 @@
 
 <!--Download PowerPoint-->
 <p>
-    <a href="#">Would you like to download my PowerPoint to folllow along?</a>
+    <a href="/AdvInfoSec/CIS215 Week 13 - Hardening Systems.pptx">Would you like to download my PowerPoint to folllow along?</a>
 </p>
 <!--Outline Of lecture notes/powerpoint for the topic-->
 <p>
     <ul>
-        <li>Topic subtopic 1</li>
+        <li>What Is the Attack Surface?</li>
             <ul>
-                <li>Thing 1</li>
-                <li>Thing 2</li>
+                <li>Every open port, service, account and app is a way in</li>
+                <li>Less running means less to attack</li>
             </ul>
-        <li>Topic Subtopic 2</li> 
-        <ul>
-            <li>Thing 1</li>
-            <li>Thing 2</li>
-        </ul>
+        <li>Out-of-the-Box Is Not Secure</li>
+            <ul>
+                <li>Default passwords, default accounts, unneeded services</li>
+                <li>Vendors aim for "easy to set up", not "secure"</li>
+                <li>Example: IoT devices with default admin logins</li>
+            </ul>
+        <li>Disabling Unnecessary Services</li>
+            <ul>
+                <li>How to find what's running (netstat, ss, services.msc)</li>
+                <li>If you don't know what it does, research it before turning it off</li>
+                <li>Remove software you don't use</li>
+                <li><a href="https://csrc.nist.gov/pubs/sp/800/123/final">NIST's Guide to General Server Security covers these basics in more depth</a></li>
+            </ul>
+        <li>Accounts and Least Privilege</li>
+            <ul>
+                <li>Remove or disable default and unused accounts</li>
+                <li>Don't use admin accounts for daily work</li>
+                <li>Give people only the access their job needs</li>
+            </ul>
+        <li>Password and Account Policies</li>
+            <ul>
+                <li><a href="https://pages.nist.gov/800-63-4/sp800-63b.html">Length beats complexity</a></li>
+                <li>Lockout policies and MFA</li>
+                <li>Balancing security with usability: too strict and people write passwords on sticky notes</li>
+            </ul>
+        <li>Industry Benchmarks</li>
+            <ul>
+                <li>A benchmark is an expert-agreed checklist of secure settings for a specific system</li>
+                <li>Common sources: CIS Benchmarks, CIS Controls, DISA STIGs, and vendor baselines such as Microsoft's</li>
+                <li>Why use a standard instead of making it up yourself</li>
+                    <ul>
+                        <li>Built and reviewed by experts across the industry</li>
+                        <li>Auditors, insurers and regulations (PCI DSS, HIPAA, CMMC) expect one</li>
+                        <li>Gives you a measurable score to track progress</li>
+                    </ul>
+                <li>Document exceptions when a setting breaks something you need</li>
+            </ul>
+        <li>Industry Benchmarks in Detail</li>
+            <ul>
+                <li><a href="https://www.cisecurity.org/cis-benchmarks">CIS Benchmarks</a></li>
+                    <ul>
+                        <li>Free guides for Windows, Linux, macOS, cloud platforms, browsers and more</li>
+                        <li>Level 1: basic settings with little impact. Level 2: stricter, for high-security systems</li>
+                        <li>Each item explains the reason, how to check it, and how to fix it</li>
+                    </ul>
+                <li><a href="https://www.cisecurity.org/controls">CIS Controls</a></li>
+                    <ul>
+                        <li>18 prioritized practices for the whole organization, not just one system</li>
+                        <li>Implementation Group 1 is the starting point for small organizations</li>
+                    </ul>
+                <li><a href="https://public.cyber.mil/stigs/">DISA STIGs</a></li>
+                    <ul>
+                        <li>Required for US Department of Defense systems and contractors</li>
+                        <li>Findings are rated from Category I (most severe) to Category III</li>
+                    </ul>
+            </ul>
+        <li>Hardening Tools</li>
+            <ul>
+                <li>CIS-CAT, Lynis, Microsoft Security Compliance Toolkit</li>
+                <li>Activity: run <a href="https://cisofy.com/lynis/">Lynis</a> on a Linux system and review the results</li>
+                <li><a href="https://learn.microsoft.com/en-us/windows/security/operating-system-security/device-management/windows-security-configuration-framework/security-compliance-toolkit-10">Microsoft Security Compliance Toolkit for Windows baselines</a></li>
+            </ul>
+        <li>Patch Management</li>
+            <ul>
+                <li>Most attacks use known, already patched vulnerabilities, see <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog">CISA's Known Exploited Vulnerabilities Catalog</a></li>
+                <li><a href="https://csrc.nist.gov/pubs/sp/800/40/r4/final">Test, prioritize and schedule patches</a></li>
+                <li>Plan for systems that can't be patched</li>
+            </ul>
+        <li>Configuration Baselines and Drift</li>
+            <ul>
+                <li>Document what "secure" looks like for each system type</li>
+                <li>Systems drift over time as changes pile up</li>
+                <li>Use automation to check and enforce baselines</li>
+            </ul>
+        <li>Hardening Your Personal Devices</li>
+            <ul>
+                <li>Turn on automatic updates</li>
+                <li><a href="https://media.defense.gov/2023/Feb/22/2003165170/-1/-1/0/CSI_BEST_PRACTICES_FOR_SECURING_YOUR_HOME_NETWORK.PDF">Change router default passwords and update router firmware</a></li>
+                <li>Review app permissions on your phone</li>
+                <li>Turn on device encryption and a screen lock</li>
+            </ul>
+        <li>Hardening Is Ongoing</li>
+            <ul>
+                <li>New vulnerabilities and new software keep appearing</li>
+                <li>Schedule regular reviews</li>
+                <li>Document every change</li>
+            </ul>
     </ul>   
 <!--Discussions and activities for the topic-->
 <p>Suggested Activities and Discussion Topics:
     <ul>
-        <li>Discussion 1</li>
-        <li>Activity 1</li>
+        <li>Activity: compare a fresh VM against a CIS Benchmark and fix three findings</li>
+        <li>Discussion: where should the line be between security and usability in a password policy? Have you seen a policy that went too far?</li>
+        <li>Activity: read the <a href="/AdvInfoSec/Examples/HardeningPostmortem.html">example postmortem</a>. Which hardening steps from this week would have prevented the incident? Which action items would you do first, and why?</li>
+        <li>Discussion: you disable a service to harden a server, and it breaks something the business depends on. Who should decide whether the service gets turned back on? How do you document that decision?</li>
+        <li>Activity: harden your own phone. Go through your app permissions and turn off at least three that the app doesn't need, such as location, microphone or contacts. Share which ones surprised you.</li>
     </ul>
 </p>
 

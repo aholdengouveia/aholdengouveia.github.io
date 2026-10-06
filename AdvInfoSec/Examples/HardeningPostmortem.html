@@ -1,0 +1,74 @@
+---
+title: Example Postmortem
+layout: AdvSec
+---
+<!--Example for the Hardening Systems activities-->
+<h1>Example Postmortem</h1>
+<div class="example-section">
+<p>This postmortem is for a made-up incident at a made-up business. It uses a blameless format, which focuses on what went wrong with systems and processes instead of who to blame.</p>
+<div class="email-example">
+    <h2>Postmortem: Ransomware on the File Server, Riverbend Veterinary Clinic</h2>
+
+    <p><strong>Summary</strong></p>
+    <p>On a Saturday night, an attacker logged in to the clinic's network storage device (NAS) through its web admin page. The page could be reached from the internet and still used the default admin password. The attacker encrypted the shared drive that holds patient records and invoices. The clinic restored its files from a backup that was eight days old.</p>
+
+    <p><strong>Impact</strong></p>
+    <ul>
+        <li>The clinic ran on paper for two days</li>
+        <li>Eight days of records had to be re-entered by hand, about 40 staff hours</li>
+        <li>The clinic paid for emergency help from its IT contractor</li>
+        <li>There was no evidence that data was copied, but it couldn't be ruled out, so clients were notified as required by state law</li>
+    </ul>
+
+    <p><strong>Timeline</strong></p>
+    <ul>
+        <li>Saturday 11:40 PM: attacker logs in to the NAS admin page with the default username and password</li>
+        <li>Sunday 12:15 AM: files on the shared drive start being encrypted</li>
+        <li>Monday 7:30 AM: front desk staff can't open files and find a ransom note</li>
+        <li>Monday 8:00 AM: office manager calls the IT contractor, who says to unplug the NAS from the network</li>
+        <li>Monday 11:00 AM: contractor confirms ransomware and finds the admin login from an unknown overseas IP address in the NAS logs</li>
+        <li>Tuesday: NAS is wiped, firmware is updated, and files are restored from the external backup drive</li>
+        <li>Wednesday: clinic is back to normal, and staff finish re-entering records</li>
+    </ul>
+
+    <p><strong>Root cause and contributing factors</strong></p>
+    <ul>
+        <li>Root cause: the NAS admin page was open to the internet with the default password</li>
+        <li>The NAS was set up three years ago by a previous contractor, who turned on remote access during setup and never turned it off</li>
+        <li>The firmware was two years out of date</li>
+        <li>Nobody was responsible for the device, and it wasn't on any list of equipment</li>
+        <li>Backups were weekly and manual, and depended on one person remembering to do them</li>
+    </ul>
+
+    <p><strong>What went well</strong></p>
+    <ul>
+        <li>Staff reported the problem quickly and the NAS was unplugged within 30 minutes</li>
+        <li>The backup drive was kept unplugged, so it wasn't encrypted</li>
+        <li>The NAS logs showed exactly how the attacker got in</li>
+    </ul>
+
+    <p><strong>What went poorly</strong></p>
+    <ul>
+        <li>No inventory of network devices</li>
+        <li>No alerts for admin logins or for large numbers of files changing</li>
+        <li>The backup schedule relied on memory</li>
+    </ul>
+
+    <p><strong>Action items</strong></p>
+    <table>
+        <thead>
+            <tr><th>Action</th><th>Owner</th><th>Due</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Change the default password on every network device</td><td>IT contractor</td><td>1 week</td></tr>
+            <tr><td>Turn off remote admin access and require the VPN instead</td><td>IT contractor</td><td>1 week</td></tr>
+            <tr><td>Create an inventory of all network devices with an owner for each</td><td>Office manager and IT contractor</td><td>2 weeks</td></tr>
+            <tr><td>Automate daily backups and keep one copy offline</td><td>IT contractor</td><td>2 weeks</td></tr>
+            <tr><td>Turn on automatic firmware updates, or schedule a monthly check</td><td>IT contractor</td><td>1 month</td></tr>
+            <tr><td>Compare the NAS and router settings against the vendors' hardening guides</td><td>IT contractor</td><td>1 month</td></tr>
+        </tbody>
+    </table>
+</div>
+</div>
+
+<p><a href="/AdvInfoSec/HardeningSystems.html">Back to Hardening Systems</a></p>

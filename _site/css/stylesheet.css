@@ -357,6 +357,26 @@ dd {
     margin-bottom: 0;
 }
 
+/* Example sections on AdvInfoSec topic pages (sample messages, postmortem,
+   checklists). Course-topic h2 is shrunk site-wide, so restore a readable
+   heading order here: h2 section title larger than h3 example titles. */
+.example-section h2 {
+    font-size: 1.3em;
+    margin-top: 1.5rem;
+}
+.example-section h3 {
+    font-size: 1.1em;
+    text-align: left;
+    margin-top: 1.25rem;
+}
+.example-section details {
+    margin: 0 0 1rem 1rem;
+}
+.example-section summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
 /*Sticky footer*/
 .footer {
     position: fixed;

@@ -1,15 +1,16 @@
 ---
-title: TOPIC
+title: Social Engineering
 layout: AdvSec
 ---
 <!--Learning Outcomes for this topic-->
-<h1>TOPIC</h1>
+<h1>Social Engineering</h1>
 <p>Learning outcomes:
     <ul>
-        <li>Outcome 1</li>
-        <li>Outcome 2</li>
-        <li>Outcome 3</li>
-        <li>Outcome 4</li>
+        <li>Recognize common social engineering attacks such as phishing, smishing, vishing, pretexting, and tailgating in realistic workplace scenarios</li>
+        <li>Analyze a suspicious email or message and identify the warning signs that it is malicious</li>
+        <li>Describe how attackers use publicly available information to make social engineering attacks more convincing</li>
+        <li>Explain how to plan and run a phishing awareness campaign, including measuring results and following up with staff</li>
+        <li>Describe how to report and respond to a suspected social engineering attempt within an organization</li>
     </ul>
 </p>
 
@@ -20,27 +21,90 @@ layout: AdvSec
 
 <!--Download PowerPoint-->
 <p>
-    <a href="#">Would you like to download my PowerPoint to follow along?</a>
+    <a href="/AdvInfoSec/CIS215 Week 11 Social Engineering.pptx">Would you like to download my PowerPoint to follow along?</a>
 </p>
 <!--Outline Of lecture notes/powerpoint for the topic-->
 <p>
     <ul>
-        <li>Topic subtopic 1</li>
+        <li>Why Attackers Target People</li>
             <ul>
-                <li>Thing 1</li>
-                <li>Thing 2</li>
+                <li>It's easier to trick someone than to break encryption</li>
+                <li><a href="https://www.verizon.com/business/resources/reports/dbir/">Most breaches start with a human element</a></li>
+                <li><a href="https://apwg.org/trendsreports/">Phishing keeps growing every year, see the APWG Phishing Activity Trends Reports</a></li>
+                <li>Everyone is a target: employees, students, family members</li>
             </ul>
-        <li>Topic Subtopic 2</li> 
-        <ul>
-            <li>Thing 1</li>
-            <li>Thing 2</li>
-        </ul>
+        <li>The Psychology Behind It</li>
+            <ul>
+                <li>Urgency ("act now or your account is closed")</li>
+                <li>Authority ("this is IT" or "this is your CEO")</li>
+                <li>Fear, curiosity, helpfulness, trust</li>
+            </ul>
+        <li>Common Attack Types</li>
+            <ul>
+                <li>Phishing, spear phishing, whaling</li>
+                <li>Smishing (text) and vishing (phone)</li>
+                <li>Pretexting and impersonation</li>
+                <li><a href="https://www.social-engineer.org/framework/general-discussion/">The Social Engineering Framework breaks down these attacks and the psychology behind them</a></li>
+            </ul>
+        <li>Physical Social Engineering</li>
+            <ul>
+                <li>Tailgating and piggybacking</li>
+                <li>Fake delivery people, contractors and "new employees"</li>
+                <li>Dropped USB drives</li>
+            </ul>
+        <li>How Attackers Do Their Homework</li>
+            <ul>
+                <li>LinkedIn, company websites, social media</li>
+                <li>Job postings reveal the software and systems in use</li>
+                <li>Personal posts give away answers to security questions</li>
+            </ul>
+        <li>Spotting a Malicious Message</li>
+            <ul>
+                <li>Check the sender's address, not just the display name</li>
+                <li>Hover over links before clicking</li>
+                <li>Unexpected attachments, odd tone, pressure to act fast</li>
+                <li><a href="https://consumer.ftc.gov/articles/how-recognize-and-avoid-phishing-scams">The FTC's guide to recognizing and avoiding phishing scams</a></li>
+                <li>Example: walk through a real phishing email</li>
+            </ul>
+        <li>AI and Modern Social Engineering</li>
+            <ul>
+                <li>Phishing emails with no spelling mistakes</li>
+                <li><a href="https://consumer.ftc.gov/consumer-alerts/2023/03/scammers-use-ai-enhance-their-family-emergency-schemes">Voice cloning and deepfake video calls</a></li>
+                <li>Why "it sounded just like them" is no longer proof</li>
+            </ul>
+        <li>Personal Protection</li>
+            <ul>
+                <li>Lock down social media privacy settings</li>
+                <li>Verify requests through a different channel (call back on a known number)</li>
+                <li>Family code words for emergency calls</li>
+                <li>Use MFA everywhere</li>
+                <li><a href="https://www.cisa.gov/news-events/news/avoiding-social-engineering-and-phishing-attacks">CISA's tips for avoiding social engineering and phishing attacks</a></li>
+            </ul>
+        <li>Running a Phishing Awareness Campaign at Work</li>
+            <ul>
+                <li>Get leadership buy-in and set clear goals</li>
+                <li><a href="https://csrc.nist.gov/pubs/sp/800/50/r1/final">NIST SP 800-50 covers how to build a security awareness and training program</a></li>
+                <li>Send simulated phishing emails</li>
+                <li>Measure click rates and report rates over time</li>
+                <li>Train people instead of shaming them</li>
+                <li><a href="https://www.cisa.gov/resources-tools/resources/phishing-guidance-stopping-attack-cycle-phase-one">CISA's phishing guidance for organizations</a></li>
+            </ul>
+        <li>Reporting and Responding</li>
+            <ul>
+                <li>Make reporting easy (a report-phish button, a clear contact)</li>
+                <li>What to do if you clicked: report quickly, don't hide it</li>
+                <li>How security teams triage and respond to reports</li>
+                <li>Scams can be reported to the <a href="https://www.ic3.gov/">FBI's Internet Crime Complaint Center (IC3)</a>, which also publishes yearly reports on losses</li>
+            </ul>
     </ul>   
 <!--Discussions and activities for the topic-->
 <p>Suggested Activities and Discussion Topics:
     <ul>
-        <li>Discussion 1</li>
-        <li>Activity 1</li>
+        <li>Discussion: share a scam attempt you or someone you know received. What warning signs were there?</li>
+        <li>Activity: take the <a href="https://phishingquiz.withgoogle.com/">Google Phishing Quiz</a>. Which ones fooled you, and why?</li>
+        <li>Activity: look at your own social media from an attacker's point of view. What could someone use to build a convincing pretext against you?</li>
+        <li>Activity: review the <a href="/AdvInfoSec/Examples/SocialEngineeringMessages.html">example emails and text messages</a>. For each one, decide if it is a scam or legitimate and list the warning signs before you open the red flags.</li>
+        <li>Discussion: should companies discipline employees who repeatedly fail phishing tests? What is more effective, consequences or more training?</li>
     </ul>
 </p>
 

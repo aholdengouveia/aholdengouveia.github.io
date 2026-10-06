@@ -1,0 +1,77 @@
+---
+title: Example Recovery Checklists
+layout: AdvSec
+---
+<!--Example for the System Recovery and Clean Up activities-->
+<h1>Example Recovery Checklists</h1>
+<div class="example-section">
+<h2 id="industry">Industry Example: Infected Workstation</h2>
+<p>This is a starting point for a company checklist. A real one should match the company's own incident response plan, tools and contacts.</p>
+<div class="email-example">
+    <p><strong>1. Report and identify</strong></p>
+    <ul>
+        <li>Record who reported the problem, when, and what they saw</li>
+        <li>Assign one person to lead the incident</li>
+        <li>Open an incident ticket and start a timeline</li>
+    </ul>
+    <p><strong>2. Contain</strong></p>
+    <ul>
+        <li>Disconnect the computer from the network (unplug the cable or turn off Wi-Fi) but leave it powered on</li>
+        <li>Disable the user's account or reset their password from a clean computer</li>
+        <li>Block any known bad IP addresses or domains at the firewall</li>
+        <li>Check whether other computers show the same signs</li>
+    </ul>
+    <p><strong>3. Preserve evidence</strong></p>
+    <ul>
+        <li>Photograph the screen, including any ransom note or error message</li>
+        <li>Capture a memory image if you have the tools and training</li>
+        <li>Export the logs (firewall, antivirus or EDR, sign-in logs)</li>
+        <li>Record chain of custody for any drive that is removed</li>
+    </ul>
+    <p><strong>4. Notify</strong></p>
+    <ul>
+        <li>Management, following the incident response plan</li>
+        <li>Legal or compliance staff if sensitive data may be involved</li>
+        <li>The cyber insurance provider, before hiring outside help, since many policies require this</li>
+        <li>Law enforcement, if needed</li>
+    </ul>
+    <p><strong>5. Remove and rebuild</strong></p>
+    <ul>
+        <li>Decide whether to clean or rebuild (rebuild if in doubt)</li>
+        <li>Wipe the computer and reinstall from a current known good image</li>
+        <li>Install all patches before reconnecting it to the network</li>
+        <li>Restore data, not programs, from a backup taken before the infection, and scan it first</li>
+    </ul>
+    <p><strong>6. Verify and return to use</strong></p>
+    <ul>
+        <li>Scan with at least two different tools</li>
+        <li>Monitor the computer's network traffic for 48 to 72 hours</li>
+        <li>Have the user sign in with a new password and MFA</li>
+        <li>Confirm with the user that everything they need works</li>
+    </ul>
+    <p><strong>7. Close out</strong></p>
+    <ul>
+        <li>Finish the incident report and timeline</li>
+        <li>Hold a blameless lessons learned meeting within two weeks</li>
+        <li>Update this checklist and any training</li>
+    </ul>
+</div>
+
+<h2 id="personal">Personal Example: Your Own Computer or Phone</h2>
+<div class="email-example">
+    <ol>
+        <li>Disconnect from Wi-Fi and unplug any network cable</li>
+        <li>Don't pay anything, and don't call any phone number shown in a pop-up</li>
+        <li>From a different device you trust, change your email password first, then banking, then everything else. Turn on MFA as you go</li>
+        <li>Check your email settings for forwarding rules or a changed recovery phone number or email address</li>
+        <li>Check your bank and card statements. If anything looks wrong, call the number on the back of your card</li>
+        <li>Run a full scan with your antivirus, such as Windows Security or the free version of <a href="https://www.malwarebytes.com/">Malwarebytes</a></li>
+        <li>If problems continue, copy your personal files (documents and photos only) to a backup and factory reset the device</li>
+        <li>Restore your files and reinstall apps from official app stores only</li>
+        <li>Tell friends and family if your accounts sent strange messages</li>
+        <li>Report fraud at <a href="https://reportfraud.ftc.gov/">ReportFraud.ftc.gov</a>, and if your identity was stolen, go to <a href="https://www.identitytheft.gov/">IdentityTheft.gov</a></li>
+    </ol>
+</div>
+</div>
+
+<p><a href="/AdvInfoSec/SystemRecoveryCleanUp.html">Back to System Recovery and Clean Up</a></p>

@@ -17,7 +17,7 @@
   gtag('config', 'G-Q9SWNFD6DB');
 </script>
 
-    <title>TOPIC</title>
+    <title>System Recovery and Clean Up</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
 
@@ -168,11 +168,11 @@
                 </li>
                 <li><a href="/AdvInfoSec/DisasterRecovery.html">Disaster Recovery</a> </li>
                 <li><a href="/AdvInfoSec/SecurityAudit.html">Security Audits</a> </li>
-                <!--
-                <li><a href="/AdvInfoSec/SecurityFrameworks.html">Security Frameworks</a> </li>
+                <li><a href="/AdvInfoSec/SocialEngineering.html">Social Engineering</a></li>
                 <li><a href="/AdvInfoSec/SystemRecoveryCleanUp.html">Incident Recovery</a> </li>
                 <li><a href="/AdvInfoSec/HardeningSystems.html">Hardening</a> </li>
-                <li><a href="/AdvInfoSec/SocialEngineering.html">Social Engineering</a></li>
+                <!--
+                <li><a href="/AdvInfoSec/SecurityFrameworks.html">Security Frameworks</a> </li>
                 <li><a href="/AdvInfoSec/AdvSecNext.html">Where to go next</a></li>
                 -->
                 <li><a href="/AdvInfoSec/Resources.html">Links to other Resources</a></li>
@@ -182,13 +182,14 @@
     <div class="col course-topic">
         <br><br>
         <!--Learning Outcomes for this topic-->
-<h1>TOPIC</h1>
+<h1>System Recovery and Clean Up</h1>
 <p>Learning outcomes:
     <ul>
-        <li>Outcome 1</li>
-        <li>Outcome 2</li>
-        <li>Outcome 3</li>
-        <li>Outcome 4</li>
+        <li>Identify common signs that a system has been infected or compromised</li>
+        <li>Describe the steps to contain an infected system and keep malware from spreading</li>
+        <li>Compare cleaning an infected system with rebuilding it from a known good image, and explain when each is the better choice</li>
+        <li>Explain how to preserve evidence and document an incident before cleaning up</li>
+        <li>Describe how to verify that a system is clean and safe to return to production</li>
     </ul>
 </p>
 
@@ -199,27 +200,91 @@
 
 <!--Download PowerPoint-->
 <p>
-    <a href="#">Would you like to download my PowerPoint to folllow along?</a>
+    <a href="/AdvInfoSec/CIS215  Week 12 - Recovery and Clean up after Incident.pptx">Would you like to download my PowerPoint to folllow along?</a>
 </p>
 <!--Outline Of lecture notes/powerpoint for the topic-->
 <p>
     <ul>
-        <li>Topic subtopic 1</li>
+        <li>Signs a System Is Compromised</li>
             <ul>
-                <li>Thing 1</li>
-                <li>Thing 2</li>
+                <li>Slow performance, crashes, high CPU or network use</li>
+                <li>Unknown programs, accounts or scheduled tasks</li>
+                <li>Antivirus disabled, pop-ups, browser redirects</li>
+                <li>Some infections show no signs at all</li>
             </ul>
-        <li>Topic Subtopic 2</li> 
-        <ul>
-            <li>Thing 1</li>
-            <li>Thing 2</li>
-        </ul>
+        <li>Don't Panic, Follow a Plan</li>
+            <ul>
+                <li>Emergencies are when people make mistakes</li>
+                <li>Have a checklist ready before you need it</li>
+                <li><a href="https://csrc.nist.gov/pubs/sp/800/61/r3/final">Follow your incident response plan if one exists</a></li>
+                <li><a href="https://www.sans.org/white-papers/33901/">The SANS Incident Handler's Handbook is a practical place to start</a></li>
+            </ul>
+        <li>Containment</li>
+            <ul>
+                <li>Disconnect from the network, but don't power off yet</li>
+                <li><a href="https://csrc.nist.gov/pubs/sp/800/83/r1/final">Stop the spread to other systems</a></li>
+                <li>Change passwords from a clean device</li>
+            </ul>
+        <li>Preserving Evidence</li>
+            <ul>
+                <li>Why evidence matters: legal, insurance, and finding the root cause</li>
+                <li>Memory disappears when you power off</li>
+                <li>Take screenshots and notes, and record the timeline</li>
+                <li><a href="https://csrc.nist.gov/pubs/sp/800/86/final">Chain of custody basics</a></li>
+            </ul>
+        <li>Documenting the Incident</li>
+            <ul>
+                <li>What happened, when, what was affected, what was done</li>
+                <li>The documentation helps you next time, and auditors will ask for it</li>
+            </ul>
+        <li>Clean or Rebuild?</li>
+            <ul>
+                <li>Cleaning: faster, but you can't be sure it worked</li>
+                <li>Rebuilding: slower, but you know the result is clean</li>
+                <li>Industry rule of thumb: if in doubt, rebuild</li>
+                <li>Rootkits and firmware infections mean rebuild</li>
+            </ul>
+        <li>Rebuilding from a Known Good Image</li>
+            <ul>
+                <li>Golden images and why they need to stay current</li>
+                <li>Restore data from backups, not programs</li>
+                <li>Check that the backups aren't infected too</li>
+                <li><a href="https://www.cisa.gov/stopransomware/ransomware-guide">CISA's #StopRansomware Guide covers backups and recovery checklists</a></li>
+            </ul>
+        <li>Verifying the System Is Clean</li>
+            <ul>
+                <li>Scan with several tools</li>
+                <li>Watch network traffic and logs after reconnecting</li>
+                <li>Patch the hole that let the attacker in before going back to production</li>
+                <li><a href="https://csrc.nist.gov/pubs/sp/800/184/final">NIST's Guide for Cybersecurity Event Recovery</a></li>
+            </ul>
+        <li>Personal Device Recovery</li>
+            <ul>
+                <li><a href="https://consumer.ftc.gov/articles/how-recognize-remove-avoid-malware">What to do if your own computer or phone is infected</a></li>
+                <li>Hit by ransomware? Check <a href="https://www.nomoreransom.org/">No More Ransom</a> for free decryption tools</li>
+                <li>Back up personal files regularly (3-2-1 rule)</li>
+                <li>When to factory reset</li>
+                <li>Check your accounts for unauthorized access afterwards</li>
+            </ul>
+        <li>Lessons Learned</li>
+            <ul>
+                <li>How did they get in, and how do we stop it next time?</li>
+                <li><a href="https://sre.google/sre-book/postmortem-culture/">Blameless reviews: focus on fixing the process</a></li>
+                <li>Update the plan and the training</li>
+            </ul>
     </ul>   
 <!--Discussions and activities for the topic-->
 <p>Suggested Activities and Discussion Topics:
     <ul>
-        <li>Discussion 1</li>
-        <li>Activity 1</li>
+        <li>Activity: given an infection scenario, decide whether to clean or rebuild and justify the decision</li>
+            <ul>
+                <li>Scenario 1: An employee in accounting reports pop-ups and a slow computer. Antivirus finds and removes a trojan, but the firewall logs show the machine has been connecting to an unknown IP address every night for the past two weeks. The employee has access to payroll and the company bank account. Clean or rebuild? What else needs to happen besides fixing the computer?</li>
+                <li>Scenario 2: A student installs a free PDF converter on their personal laptop. Afterwards, the browser homepage has changed and there are ads everywhere. There is no work or school data stored on the laptop, and their files are backed up to the cloud. Clean or rebuild? Would your answer change if this were a work laptop?</li>
+            </ul>
+        <li>Discussion: what is your own backup plan for your personal files? Would it survive ransomware?</li>
+        <li>Activity: use the <a href="/AdvInfoSec/Examples/RecoveryChecklists.html#industry">example industry checklist</a> to work through Scenario 1. Which steps can the company do right away? What would you add to the checklist?</li>
+        <li>Activity: start from the <a href="/AdvInfoSec/Examples/RecoveryChecklists.html#personal">example personal checklist</a> and make your own version for your devices and accounts. Where are your backups? Which account would you secure first?</li>
+        <li>Discussion: should a company ever pay a ransom? Does your answer change if it's a hospital and patient care is affected?</li>
     </ul>
 </p>
 

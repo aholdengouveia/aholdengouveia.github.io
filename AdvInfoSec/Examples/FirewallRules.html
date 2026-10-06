@@ -1,0 +1,32 @@
+---
+title: Example Firewall Rules
+layout: AdvSec
+---
+<!--Example for the Firewalls and Security activities-->
+<h1>Example Firewall Rules</h1>
+<div class="example-section">
+<p>A made-up company has a web server at 10.0.0.10 and an internal server at 10.0.0.20. The staff network is 10.0.1.0/24. Rules are checked from the top down and the first match wins.</p>
+<div class="email-example">
+<table>
+    <thead>
+        <tr><th>Rule</th><th>Action</th><th>Source</th><th>Destination</th><th>Port</th><th>Note</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>1</td><td>Allow</td><td>Any</td><td>10.0.0.10</td><td>TCP 80, 443</td><td>Public website</td></tr>
+        <tr><td>2</td><td>Allow</td><td>Any</td><td>Any</td><td>Any</td><td>Added while troubleshooting</td></tr>
+        <tr><td>3</td><td>Allow</td><td>10.0.1.0/24</td><td>10.0.0.20</td><td>TCP 22</td><td>Staff SSH to internal server</td></tr>
+        <tr><td>4</td><td>Deny</td><td>Any</td><td>Any</td><td>Any</td><td>Default deny</td></tr>
+    </tbody>
+</table>
+</div>
+<details>
+    <summary>The problem (try it yourself first)</summary>
+    <ul>
+        <li>Rule 2 allows everything from everywhere, and because it comes before rules 3 and 4, those rules never get used</li>
+        <li>The result is that the firewall allows all traffic, including SSH to the internal server from the internet</li>
+        <li>"Temporary" troubleshooting rules are a common real-world cause of this. The fix is to remove rule 2 and keep the default deny at the bottom</li>
+    </ul>
+</details>
+</div>
+
+<p><a href="/AdvInfoSec/Firewalls.html">Back to Firewalls and Security</a></p>
