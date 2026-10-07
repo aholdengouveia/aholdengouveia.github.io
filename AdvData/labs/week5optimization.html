@@ -46,7 +46,7 @@
 <h2 id="accessibility-notice">Accessibility Notice</h2>
 <p>This document is also available in HTML format at:</p>
 
-<p><a href="https://aholdengouveia.name/AdvData/labs/week5optimization.html">https://aholdengouveia.name/AdvData/labs/week5optimization.html</a></p>
+<p>Link: <a href="https://aholdengouveia.name/AdvData/labs/week5optimization.html"><strong>https://aholdengouveia.name/AdvData/labs/week5optimization.html</strong></a></p>
 
 <p>The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.</p>
 
@@ -63,12 +63,14 @@
 
 <section role="region" aria-labelledby="complete-the-following-problems">
 <h2 id="complete-the-following-problems">Complete the following problems</h2>
-<p>References, a video, a PowerPoint and some notes are available at my website <a href="https://www.aholdengouveia.name/AdvData/optimization.html">https://www.aholdengouveia.name/AdvData/optimization.html</a></p>
+<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name/AdvData/optimization.html"><strong>https://www.aholdengouveia.name/AdvData/optimization.html</strong></a></p>
 
 </section>
 
 <section role="region" aria-labelledby="query-optimization-practice-on-kaggle">
 <h2 id="query-optimization-practice-on-kaggle">Query optimization practice on Kaggle</h2>
+<p>Go to Link: <a href="https://www.kaggle.com/learn/advanced-sql"><strong>https://www.kaggle.com/learn/advanced-sql</strong></a> and sign up for Kaggle, it's free, use any email you want. If you are unfamiliar with the way kaggle works, there is a tutorial section, and an exercises section for this course.</p>
+
 <ul>
 <li>Go through the Advanced SQL course. Take a screenshot of the completed course in your profile. Make sure to include your name and the term in your screenshot. This should show you completed the tutorials</li>
 <li>Now you'll be doing the exercises. Go through the exercise on Query Optimization, it should be problems related to Pet Costumes International. Take a screenshot of your solution to both problems. Make sure to include your name and term in the screenshot.</li>
@@ -80,14 +82,24 @@
 <h2 id="query-optimization-challenges">Query Optimization Challenges</h2>
 <p>For each query make sure to include a short (1 paragraph or less) explanation of how you optimized it and solved the problem. Each problem should also include your solution typed out, and a screenshot of your solution being run. Make sure all screenshots include your name and the term.</p>
 
-<p>Go to <a href="https://www.sandboxsql.com/">https://www.sandboxsql.com/</a> and load in the database located here <a href="https://github.com/aholdengouveia/aholdengouveia.github.io/blob/main/AdvData/labs/BooksDatabase.sqlite">https://github.com/aholdengouveia/aholdengouveia.github.io/blob/main/AdvData/labs/BooksDatabase.sqlite</a> for the following problems.</p>
+<p>Go to Link: <a href="https://www.sandboxsql.com/"><strong>https://www.sandboxsql.com/</strong></a> and load in the database located here Link: <a href="https://github.com/aholdengouveia/aholdengouveia.github.io/blob/main/AdvData/labs/BooksDatabase.sqlite"><strong>https://github.com/aholdengouveia/aholdengouveia.github.io/blob/main/AdvData/labs/BooksDatabase.sqlite</strong></a> for the following problems.</p>
 
 <p>Note: The queries don't always copy over well, especially symbols like the single quote.</p>
 
+<ol>
+<li>On your database, if I give you the information on a book title, what is the command used to create an index to run the query more efficiently?</li>
+<li>Given the following query, which will select a book with a given title, what command would you use to create an index to make this query more efficient?
 <pre><code lang="sql">SELECT authors.name, books.genre
             FROM books INNER JOIN authors 
             ON books.author_id = authors.author_id
             WHERE books.title = 'Dune'</code></pre>
+</li>
+<li>Given the following query, which selects books from a table, create a command that will add an index based on genre. Then give a new query that will show fantasy books only, making sure to use the index you created.
+<pre><code lang="sql">SELECT authors.name, books.genre
+            FROM books INNER JOIN authors 
+            ON books.author_id = authors.author_id</code></pre>
+</li>
+</ol>
 
 </section>
 

@@ -1,8 +1,8 @@
 %PDF-1.6
 %–‘≈ÿ
-39 0 obj
+42 0 obj
 <<
-/Length 4172      
+/Length 4571      
 >>
 stream
 1 0 0 1 252.586 605.928 cm
@@ -23,34 +23,34 @@ EMC
 /TD <</MCID 2>> BDC
 1 0 0 1 -387.501 -570.436 cm
 BT
-/F31 14.3462 Tf 176.163 552.504 Td [(W)82(ebsite:)]TJ
+/F31 14.3462 Tf 210.661 552.504 Td [(W)82(ebsite:)]TJ
 ET
-1 0 0 1 234.766 552.504 cm
+1 0 0 1 269.264 552.504 cm
 EMC
 /Link <</MCID 3>> BDC
-1 0 0 1 -234.766 -552.504 cm
+1 0 0 1 -269.264 -552.504 cm
 BT
-/F34 14.3462 Tf 234.766 552.504 Td [(https://aholdengouveia.name)]TJ
+/F31 14.3462 Tf 269.264 552.504 Td [(aholdengouv)27(eia.)1(name)]TJ
 ET
-1 0 0 1 434.088 552.504 cm
+1 0 0 1 399.59 552.504 cm
 EMC
 /TD <</MCID 4>> BDC
 EMC
 /TD <</MCID 5>> BDC
-1 0 0 1 -434.088 -552.504 cm
+1 0 0 1 -399.59 -552.504 cm
 BT
-/F35 14.3462 Tf 247.862 534.571 Td [(\207)]TJ/F31 14.3462 Tf 12.295 0 Td [(:)-326(aholdengouv)27(eia)]TJ
+/F34 14.3462 Tf 247.862 534.571 Td [(\207)]TJ/F31 14.3462 Tf 12.295 0 Td [(:)-326(aholdengouv)27(eia)]TJ
 ET
 1 0 0 1 367.071 534.571 cm
 EMC
 /TD <</MCID 6>> BDC
-1 0 0 1 72.995 35.865 cm
+1 0 0 1 38.497 35.865 cm
 EMC
-1 0 0 1 -329.212 -101.477 cm
+1 0 0 1 -294.714 -101.477 cm
 /H <</MCID 7>> BDC
 1 0 0 1 -110.854 -468.959 cm
 BT
-/F37 17.2154 Tf 110.854 468.959 Td [(Accessibilit)31(y)-375(Notice)]TJ
+/F36 17.2154 Tf 110.854 468.959 Td [(Accessibilit)31(y)-375(Notice)]TJ
 ET
 1 0 0 1 110.854 453.772 cm
 EMC
@@ -60,22 +60,30 @@ EMC
 BT
 /F31 11.9552 Tf 110.854 442.674 Td [(This)-326(do)-28(c)1(umen)27(t)-327(is)-326(also)-326(a)27(v)54(ailable)-326(in)-326(HTML)-327(format)-326(at:)]TJ
 ET
-1 0 0 1 110.854 442.674 cm
+1 0 0 1 128.413 428.228 cm
 EMC
-/Link <</MCID 9>> BDC
-1 0 0 1 17.559 -14.446 cm
-EMC
-/Link <</MCID 10>> BDC
+/P <</MCID 9>> BDC
 1 0 0 1 -128.413 -428.228 cm
 BT
-/F34 11.9552 Tf 128.413 428.228 Td [(https://aholdengouveia.name/Linu)1(xAdmin/labexcercises/ServerSetup.)]TJ -17.559 -14.446 Td [(html)]TJ
+/F31 11.9552 Tf 128.413 428.228 Td [(Link:)]TJ
 ET
-1 0 0 1 135.462 413.782 cm
+1 0 0 1 160.821 428.228 cm
 EMC
-/P <</MCID 11>> BDC
-1 0 0 1 -7.049 -14.446 cm
+/Link <</MCID 10>> BDC
 EMC
-/P <</MCID 12>> BDC
+/Link <</MCID 11>> BDC
+1 0 0 1 -160.821 -428.228 cm
+BT
+/F38 11.9552 Tf 160.821 428.228 Td [(h)-10(t)-10(t)-10(p)-10(s)-10(:)-10(/)-10(/)-10(a)-10(h)-10(o)-10(l)-10(d)-11(e)-10(n)-10(g)-10(o)-10(u)-10(v)-10(e)-10(i)-10(a)-10(.)-10(n)-10(a)-10(m)-10(e)-10(/)-10(L)-10(i)-10(n)-10(u)-10(x)-10(A)-10(d)-10(m)-10(i)-10(n)-10(/)-11(l)-10(a)-10(b)-10(e)-10(x)-10(c)-10(e)-10(r)-10(c)-10(i)-10(s)-10(e)-10(s)-10(/)-10(S)]TJ -49.967 -14.446 Td [(erverSetup.html)]TJ
+ET
+1 0 0 1 203.133 413.782 cm
+EMC
+/Link <</MCID 12>> BDC
+EMC
+/Link <</MCID 13>> BDC
+1 0 0 1 -74.72 -14.446 cm
+EMC
+/Link <</MCID 14>> BDC
 1 0 0 1 -128.413 -399.336 cm
 BT
 /F31 11.9552 Tf 128.413 399.336 Td [(The)-222(HTML)-223(v)27(ersion)-222(pro)27(vides)-222(enhanced)-222(accessibilit)27(y)-223(featur)1(es)-223(including)-222(k)27(ey-)]TJ -17.559 -14.445 Td [(b)-27(oard)-340(na)28(vigation,)-343(screen)-339(reader)-340(supp)-27(ort,)-343(resp)-27(onsiv)27(e)-339(design,)-343(dark)-339(mo)-27(de)-340(sup-)]TJ 0 -14.446 Td [(p)-27(ort,)-327(a)1(nd)-327(high)-326(con)27(trast)-326(options.)]TJ
@@ -83,15 +91,15 @@ ET
 1 0 0 1 110.854 368.12 cm
 EMC
 1 0 0 1 0 -37.609 cm
-/H <</MCID 13>> BDC
+/H <</MCID 15>> BDC
 1 0 0 1 -110.854 -330.511 cm
 BT
-/F37 17.2154 Tf 110.854 330.511 Td [(Ob)-63(jectiv)32(es:)]TJ
+/F36 17.2154 Tf 110.854 330.511 Td [(Ob)-63(jectiv)32(es:)]TJ
 ET
 1 0 0 1 110.854 315.325 cm
 EMC
 1 0 0 1 13.659 -11.099 cm
-/Lbl <</MCID 14>> BDC
+/Lbl <</MCID 16>> BDC
 1 0 0 1 -124.513 -304.226 cm
 BT
 /F47 11.9552 Tf 128.415 304.226 Td [(\210)]TJ
@@ -99,21 +107,21 @@ ET
 1 0 0 1 134.266 304.226 cm
 EMC
 1 0 0 1 5.853 0 cm
-/LBody <</MCID 15>> BDC
+/LBody <</MCID 17>> BDC
 1 0 0 1 -140.119 -304.226 cm
 BT
 /F31 11.9552 Tf 140.119 304.226 Td [(The)-379(o)1(b)-55(jectiv)27(e)-378(of)-379(this)-378(lab)-379(is)-378(to)-379(in)27(tro)-27(duce)-378(studen)27(ts)-378(to)-379(the)-379(f)1(undamen)27(tal)]TJ 0 -14.445 Td [(practices)-392(of)-393(Lin)27(ux)-392(serv)27(er)-392(deplo)27(ymen)27(t)-392(and)-392(con\014guration)-393(managemen)28(t.)]TJ 0 -14.446 Td [(Through)-232(hands-on)-233(in)1(s)-1(t)1(allation)-233(of)-232(m)27(ultiple)-232(serv)27(er)-232(distributions,)-251(studen)27(ts)]TJ 0 -14.446 Td [(will)-443(learn)-442(to)-443(set)-443(up)-443(pro)-27(duction-ready)-442(serv)27(er)-443(en)27(vir)1(onmen)27(ts,)-472(con\014gure)]TJ 0 -14.446 Td [(essen)27(tial)-365(services)-366(including)-365(net)27(w)27(ork)-365(connectivit)27(y)-366(and)-365(\014le)-366(sharing,)-375(and)]TJ 0 -14.446 Td [(dev)27(elop)-450(prof)1(ess)-1(i)1(onal)-450(tec)27(hnical)-450(do)-27(cumen)27(tation)-449(skills|establishing)-450(the)]TJ 0 -14.446 Td [(foundational)-288(infrastructure)-289(and)-289(do)-27(cumen)28(tation)-289(practices)-289(that)-288(will)-289(sup-)]TJ 0 -14.445 Td [(p)-27(ort)-271(all)-271(subsequen)27(t)-271(system)-271(administr)1(ation)-271(w)27(ork)-271(throughout)-271(the)-271(course.)]TJ
 ET
 1 0 0 1 110.854 163.172 cm
 EMC
-/H <</MCID 16>> BDC
+/H <</MCID 18>> BDC
 1 0 0 1 -110.854 -163.172 cm
 BT
-/F37 17.2154 Tf 110.854 163.172 Td [(W)94(elcome)-375(to)-375(Acme)-375(Corp)-32(oration!)]TJ
+/F36 17.2154 Tf 110.854 163.172 Td [(W)94(elcome)-375(to)-375(Acme)-375(Corp)-32(oration!)]TJ
 ET
-1 0 0 1 110.854 147.986 cm
+1 0 0 1 110.854 163.172 cm
 EMC
-1 0 0 1 0 -58.123 cm
+1 0 0 1 0 -73.309 cm
 /Artifact <</Type /Pagination>> BDC
 1 0 0 1 -110.854 -89.863 cm
 BT
@@ -124,36 +132,36 @@ EMC
 
 endstream
 endobj
-99 0 obj
+101 0 obj
 <<
-/Length 7167      
+/Length 7343      
 >>
 stream
 1 0 0 1 110.854 654.247 cm
-/H <</MCID 17>> BDC
+/H <</MCID 19>> BDC
 1 0 0 1 -110.854 -654.247 cm
 BT
-/F37 14.3462 Tf 110.854 654.247 Td [(Y)94(ou)-440(ha)31(v)32(e)-440(accepted)-439(the)-440(p)-31(ost)-440(of)-439(Systems)-440(Administrator)]TJ 0 -17.933 Td [(for)-375(Acme)-375(corp)-31(oration.)]TJ
+/F36 14.3462 Tf 110.854 654.247 Td [(Y)94(ou)-440(ha)31(v)32(e)-440(accepted)-439(the)-440(p)-31(ost)-440(of)-439(Systems)-440(Administrator)]TJ 0 -17.933 Td [(for)-375(Acme)-375(corp)-31(oration.)]TJ
 ET
 1 0 0 1 110.854 625.803 cm
 EMC
 1 0 0 1 0 -15.143 cm
-/H <</MCID 18>> BDC
+/H <</MCID 20>> BDC
 1 0 0 1 -110.854 -610.66 cm
 BT
-/F37 14.3462 Tf 110.854 610.66 Td [(Congratulations)-375(on)-375(y)31(our)-375(new)-375(job!)]TJ
+/F36 14.3462 Tf 110.854 610.66 Td [(Congratulations)-375(on)-375(y)31(our)-375(new)-375(job!)]TJ
 ET
 1 0 0 1 110.854 600.149 cm
 EMC
 1 0 0 1 0 -11.656 cm
-/P <</MCID 19>> BDC
+/P <</MCID 21>> BDC
 1 0 0 1 -110.854 -588.493 cm
 BT
 /F31 11.9552 Tf 110.854 588.493 Td [(If)-296(y)28(ou'v)27(e)-296(nev)27(e)1(r)-296(done)-296(tec)28(hnical)-296(do)-27(cumen)27(tation)-295(b)-27(efore,)-302(go)-296(through)-295(the)-296(mo)-27(dule)]TJ 0 -14.446 Td [(on)-326(T)81(ec)28(hnical)-327(do)-27(cumen)27(tatio)1(n)-327(and)-326(p)-27(ortfolios)-327(b)-27(efore)-326(attempting)-326(this)-327(lab.)]TJ
 ET
 1 0 0 1 124.513 559.601 cm
 EMC
-/Lbl <</MCID 20>> BDC
+/Lbl <</MCID 22>> BDC
 1 0 0 1 -124.513 -559.601 cm
 BT
 /F47 11.9552 Tf 128.415 559.601 Td [(\210)]TJ
@@ -161,181 +169,184 @@ ET
 1 0 0 1 134.266 559.601 cm
 EMC
 1 0 0 1 5.853 0 cm
-/LBody <</MCID 21>> BDC
+/LBody <</MCID 23>> BDC
 1 0 0 1 -140.119 -559.601 cm
 BT
 /F31 11.9552 Tf 140.119 559.601 Td [(References)-345(for)-344(an)-345(In)27(tro)-27(duction)-345(to)-345(Serv)28(ers,)-350(a)-345(vid)1(eo)-345(and)-345(some)-345(notes)-345(a)1(re)]TJ 0 -14.445 Td [(a)27(v)55(ailable)-327(at)-326(m)27(y)-326(w)27(ebsite)]TJ
 ET
-1 0 0 1 110.854 542.831 cm
-EMC
-/Link <</MCID 22>> BDC
-1 0 0 1 29.265 -12.121 cm
-EMC
-/Link <</MCID 23>> BDC
-1 0 0 1 -140.119 -530.71 cm
-BT
-/F34 11.9552 Tf 140.119 530.71 Td [(https://www.aholdengouveia.name/)1(LinuxAdmin/IntroServers.html)]TJ
-ET
-1 0 0 1 509.235 530.71 cm
+1 0 0 1 140.119 530.71 cm
 EMC
 /LBody <</MCID 24>> BDC
-1 0 0 1 -384.722 -14.446 cm
-EMC
-/Lbl <</MCID 25>> BDC
-1 0 0 1 -124.513 -516.264 cm
+1 0 0 1 -140.119 -530.71 cm
 BT
-/F47 11.9552 Tf 128.415 516.264 Td [(\210)]TJ
+/F31 11.9552 Tf 140.119 530.71 Td [(Link:)]TJ
 ET
-1 0 0 1 134.266 516.264 cm
+1 0 0 1 172.614 530.71 cm
 EMC
-1 0 0 1 5.853 0 cm
-/LBody <</MCID 26>> BDC
-1 0 0 1 -140.119 -516.264 cm
+/Link <</MCID 25>> BDC
+EMC
+/Link <</MCID 26>> BDC
+1 0 0 1 -172.614 -530.71 cm
 BT
-/F31 11.9552 Tf 140.119 516.264 Td [(I)-326(also)-327(ha)27(v)28(e)-327(a)-326(section)-326(on)-327(ho)28(w)-327(to)-326(do)-326(do)-28(cume)1(n)27(tation)]TJ
+/F38 11.9552 Tf 172.614 530.71 Td [(h)-11(t)-12(t)-11(p)-11(s)-11(:)-12(/)-11(/)-11(w)-11(w)-12(w)-11(.)-11(a)-12(h)-11(o)-11(l)-11(d)-12(e)-11(n)-11(g)-11(o)-12(u)-11(v)-11(e)-12(i)-11(a)-11(.)-11(n)-12(a)-11(m)-11(e)-11(/)-12(L)-11(i)-11(n)-12(u)-11(x)-11(A)-11(d)-12(m)-11(i)-11(n)-11(/)-12(I)-11(n)-11(t)-12(r)-11(o)-11(S)-11(e)-12(r)-11(v)]TJ -32.495 -14.446 Td [(ers.html)]TJ
 ET
-1 0 0 1 110.854 516.264 cm
+1 0 0 1 189.335 516.264 cm
 EMC
 /Link <</MCID 27>> BDC
-1 0 0 1 29.265 -14.446 cm
 EMC
 /Link <</MCID 28>> BDC
-1 0 0 1 -140.119 -501.818 cm
-BT
-/F34 11.9552 Tf 140.119 501.818 Td [(https://www.aholdengouveia.name/)1(LinuxAdmin/Documentation.html)]TJ
-ET
-1 0 0 1 515.387 501.818 cm
+1 0 0 1 -64.822 -14.446 cm
 EMC
-/LBody <</MCID 29>> BDC
-1 0 0 1 -404.533 -39.933 cm
-EMC
-/H <</MCID 30>> BDC
-1 0 0 1 -110.854 -461.885 cm
+/Lbl <</MCID 29>> BDC
+1 0 0 1 -124.513 -501.818 cm
 BT
-/F37 17.2154 Tf 110.854 461.885 Td [(Complete)-375(the)-375(follo)31(wing)-375(problems)]TJ
+/F47 11.9552 Tf 128.415 501.818 Td [(\210)]TJ
 ET
-1 0 0 1 110.854 446.698 cm
-EMC
-1 0 0 1 0 -14.585 cm
-/H <</MCID 31>> BDC
-1 0 0 1 -110.854 -432.113 cm
-BT
-/F37 14.3462 Tf 110.854 432.113 Td [(W)94(e)-467(need)-467(t)31(w)32(o)-467(Lin)31(ux)-467(systems)-466(that)-467(are)-467(serv)31(ers.)-775(Virtual)]TJ 0 -17.933 Td [(mac)31(hines)-375(are)-375(the)-375(recommended)-375(option)]TJ
-ET
-1 0 0 1 110.854 403.67 cm
-EMC
-1 0 0 1 10.406 -11.657 cm
-/Lbl <</MCID 32>> BDC
-1 0 0 1 -121.26 -392.013 cm
-BT
-/F31 11.9552 Tf 125.162 392.013 Td [(1.)]TJ
-ET
-1 0 0 1 134.266 392.013 cm
+1 0 0 1 134.266 501.818 cm
 EMC
 1 0 0 1 5.853 0 cm
-/LBody <</MCID 33>> BDC
-1 0 0 1 -140.119 -392.013 cm
+/LBody <</MCID 30>> BDC
+1 0 0 1 -140.119 -501.818 cm
 BT
-/F31 11.9552 Tf 140.119 392.013 Td [(Y)82(ou)-445(will)-445(need)-445(to)-445(use)-445(2)-445(di\013)1(eren)27(t)-445(Lin)27(ux)-445(Distributions)-444(\050also)-445(kno)27(wn)-445(as)]TJ 0 -14.446 Td [(distros)-326(or)-327(\015a)28(v)27(ours\051,)-327(on)1(e)-327(for)-326(eac)27(h)-326(setup.)]TJ
+/F31 11.9552 Tf 140.119 501.818 Td [(I)-326(also)-327(ha)27(v)28(e)-327(a)-326(section)-326(on)-327(ho)28(w)-327(to)-326(do)-326(do)-28(cume)1(n)27(tation)]TJ
 ET
-1 0 0 1 121.26 363.122 cm
+1 0 0 1 140.119 487.372 cm
 EMC
-/Lbl <</MCID 34>> BDC
+/LBody <</MCID 31>> BDC
+1 0 0 1 -140.119 -487.372 cm
+BT
+/F31 11.9552 Tf 140.119 487.372 Td [(Link:)]TJ
+ET
+1 0 0 1 172.614 487.372 cm
+EMC
+/Link <</MCID 32>> BDC
+EMC
+/Link <</MCID 33>> BDC
+1 0 0 1 -172.614 -487.372 cm
+BT
+/F38 11.9552 Tf 172.614 487.372 Td [(h)-11(t)-12(t)-11(p)-11(s)-11(:)-12(/)-11(/)-11(w)-11(w)-12(w)-11(.)-11(a)-12(h)-11(o)-11(l)-11(d)-12(e)-11(n)-11(g)-11(o)-12(u)-11(v)-11(e)-12(i)-11(a)-11(.)-11(n)-12(a)-11(m)-11(e)-11(/)-12(L)-11(i)-11(n)-12(u)-11(x)-11(A)-11(d)-12(m)-11(i)-11(n)-11(/)-12(D)-11(o)-11(c)-12(u)-11(m)-11(e)-11(n)-12(t)-11(a)]TJ -32.495 -14.445 Td [(tion.html)]TJ
+ET
+1 0 0 1 195.487 472.927 cm
+EMC
+/Link <</MCID 34>> BDC
+EMC
+/Link <</MCID 35>> BDC
+1 0 0 1 -84.633 -39.934 cm
+EMC
+/H <</MCID 36>> BDC
+1 0 0 1 -110.854 -432.993 cm
+BT
+/F36 17.2154 Tf 110.854 432.993 Td [(Complete)-375(the)-375(follo)31(wing)-375(problems)]TJ
+ET
+1 0 0 1 110.854 417.807 cm
+EMC
+1 0 0 1 0 -14.586 cm
+/H <</MCID 37>> BDC
+1 0 0 1 -110.854 -403.221 cm
+BT
+/F36 14.3462 Tf 110.854 403.221 Td [(W)94(e)-467(need)-467(t)31(w)32(o)-467(Lin)31(ux)-467(systems)-466(that)-467(are)-467(serv)31(ers.)-775(Virtual)]TJ 0 -17.933 Td [(mac)31(hines)-375(are)-375(the)-375(recommended)-375(option)]TJ
+ET
+1 0 0 1 110.854 374.778 cm
+EMC
+1 0 0 1 10.406 -11.656 cm
+/Lbl <</MCID 38>> BDC
 1 0 0 1 -121.26 -363.122 cm
 BT
-/F31 11.9552 Tf 125.162 363.122 Td [(2.)]TJ
+/F31 11.9552 Tf 125.162 363.122 Td [(1.)]TJ
 ET
 1 0 0 1 134.266 363.122 cm
 EMC
 1 0 0 1 5.853 0 cm
-/LBody <</MCID 35>> BDC
+/LBody <</MCID 39>> BDC
 1 0 0 1 -140.119 -363.122 cm
 BT
-/F31 11.9552 Tf 140.119 363.122 Td [(One)-384(m)28(ust)-384(b)-27(e)-384(Cen)27(tOS,)-383(the)-384(other)-384(can)-383(b)-28(e)-383(another)-384(serv)27(er)-383(distro)-384(of)-384(y)27(o)1(ur)]TJ 0 -14.446 Td [(c)27(hoice)-331(suc)27(h)-331(as)-331(Ubun)27(tu)-331(Serv)27(er,)-332(Debian,)-333(Op)-27(enSUSE)-331(or)-331(F)81(edora.)-449(Ubun)27(tu)]TJ 0 -14.446 Td [(Serv)27(er)-326(or)-326(Debian)-327(is)-326(strongly)-326(recommended)]TJ
+/F31 11.9552 Tf 140.119 363.122 Td [(Y)82(ou)-445(will)-445(need)-445(to)-445(use)-445(2)-445(di\013)1(eren)27(t)-445(Lin)27(ux)-445(Distributions)-444(\050also)-445(kno)27(wn)-445(as)]TJ 0 -14.446 Td [(distros)-326(or)-327(\015a)28(v)27(ours\051,)-327(on)1(e)-327(for)-326(eac)27(h)-326(setup.)]TJ
 ET
-1 0 0 1 121.26 319.784 cm
+1 0 0 1 121.26 334.23 cm
 EMC
-/Lbl <</MCID 36>> BDC
-1 0 0 1 -121.26 -319.784 cm
+/Lbl <</MCID 40>> BDC
+1 0 0 1 -121.26 -334.23 cm
 BT
-/F31 11.9552 Tf 125.162 319.784 Td [(3.)]TJ
+/F31 11.9552 Tf 125.162 334.23 Td [(2.)]TJ
 ET
-1 0 0 1 134.266 319.784 cm
+1 0 0 1 134.266 334.23 cm
 EMC
 1 0 0 1 5.853 0 cm
-/LBody <</MCID 37>> BDC
-1 0 0 1 -140.119 -319.784 cm
+/LBody <</MCID 41>> BDC
+1 0 0 1 -140.119 -334.23 cm
 BT
-/F31 11.9552 Tf 140.119 319.784 Td [(Y)82(ou)-237(MUST)-237(use)-237(the)-237(serv)27(er)-236(v)27(ersion,)-255(desktop)-237(Op)-27(erating)-237(Systems)-236(are)-237(NOT)]TJ 0 -14.446 Td [(ok)-326(for)-327(this!)]TJ
+/F31 11.9552 Tf 140.119 334.23 Td [(One)-384(m)28(ust)-384(b)-27(e)-384(Cen)27(tOS,)-383(the)-384(other)-384(can)-383(b)-28(e)-383(another)-384(serv)27(er)-383(distro)-384(of)-384(y)27(o)1(ur)]TJ 0 -14.446 Td [(c)27(hoice)-331(suc)27(h)-331(as)-331(Ubun)27(tu)-331(Serv)27(er,)-332(Debian,)-333(Op)-27(enSUSE)-331(or)-331(F)81(edora.)-449(Ubun)27(tu)]TJ 0 -14.446 Td [(Serv)27(er)-326(or)-326(Debian)-327(is)-326(strongly)-326(recommended)]TJ
 ET
 1 0 0 1 121.26 290.892 cm
 EMC
-/Lbl <</MCID 38>> BDC
+/Lbl <</MCID 42>> BDC
 1 0 0 1 -121.26 -290.892 cm
 BT
-/F31 11.9552 Tf 125.162 290.892 Td [(4.)]TJ
+/F31 11.9552 Tf 125.162 290.892 Td [(3.)]TJ
 ET
 1 0 0 1 134.266 290.892 cm
 EMC
 1 0 0 1 5.853 0 cm
-/LBody <</MCID 39>> BDC
+/LBody <</MCID 43>> BDC
 1 0 0 1 -140.119 -290.892 cm
 BT
-/F31 11.9552 Tf 140.119 290.892 Td [(Do)-353(not)-352(use)-353(the)-352(GUI)-353(or)-352(the)-353(minimal)-352(install.)-514(Y)81(o)1(u)-353(can)-353(use)-352(a)-353(GUI)-352(to)-353(do)]TJ 0 -14.445 Td [(the)-269(install,)-280(but)-269(once)-269(the)-269(serv)27(er)-269(is)-269(b)-27(o)-27(oted)-269(it)-269(should)-269(b)-27(e)-269(command)-269(prompt)]TJ 0 -14.446 Td [(only)82(.)]TJ
+/F31 11.9552 Tf 140.119 290.892 Td [(Y)82(ou)-237(MUST)-237(use)-237(the)-237(serv)27(er)-236(v)27(ersion,)-255(desktop)-237(Op)-27(erating)-237(Systems)-236(are)-237(NOT)]TJ 0 -14.445 Td [(ok)-326(for)-327(this!)]TJ
 ET
-1 0 0 1 121.26 247.555 cm
+1 0 0 1 121.26 262.001 cm
 EMC
-/Lbl <</MCID 40>> BDC
-1 0 0 1 -121.26 -247.555 cm
+/Lbl <</MCID 44>> BDC
+1 0 0 1 -121.26 -262.001 cm
 BT
-/F31 11.9552 Tf 125.162 247.555 Td [(5.)]TJ
+/F31 11.9552 Tf 125.162 262.001 Td [(4.)]TJ
 ET
-1 0 0 1 134.266 247.555 cm
+1 0 0 1 134.266 262.001 cm
 EMC
 1 0 0 1 5.853 0 cm
-/LBody <</MCID 41>> BDC
-1 0 0 1 -140.119 -247.555 cm
+/LBody <</MCID 45>> BDC
+1 0 0 1 -140.119 -262.001 cm
 BT
-/F31 11.9552 Tf 140.119 247.555 Td [(Mak)27(e)-335(sure)-335(y)27(ou)-335(turn)-335(on)-335(In)27(ternet)-335(access)-335(for)-335(b)-28(oth)-335(serv)28(ers.)-462(This)-335(needs)-335(to)]TJ 0 -14.446 Td [(b)-27(e)-327(tested)]TJ
+/F31 11.9552 Tf 140.119 262.001 Td [(Do)-353(not)-352(use)-353(the)-352(GUI)-353(or)-352(the)-353(minimal)-352(install.)-514(Y)81(o)1(u)-353(can)-353(use)-352(a)-353(GUI)-352(to)-353(do)]TJ 0 -14.446 Td [(the)-269(install,)-280(but)-269(once)-269(the)-269(serv)27(er)-269(is)-269(b)-27(o)-27(oted)-269(it)-269(should)-269(b)-27(e)-269(command)-269(prompt)]TJ 0 -14.446 Td [(only)82(.)]TJ
 ET
 1 0 0 1 121.26 218.663 cm
 EMC
-/Lbl <</MCID 42>> BDC
+/Lbl <</MCID 46>> BDC
 1 0 0 1 -121.26 -218.663 cm
 BT
-/F31 11.9552 Tf 125.162 218.663 Td [(6.)]TJ
+/F31 11.9552 Tf 125.162 218.663 Td [(5.)]TJ
 ET
 1 0 0 1 134.266 218.663 cm
 EMC
 1 0 0 1 5.853 0 cm
-/LBody <</MCID 43>> BDC
+/LBody <</MCID 47>> BDC
 1 0 0 1 -140.119 -218.663 cm
 BT
-/F31 11.9552 Tf 140.119 218.663 Td [(Include)-326(a)-327(w)28(a)27(y)-327(to)-326(share)-326(\014les)-327(\050suc)28(h)-327(as)-326(SmarTTY)-326(or)-327(SCP\051)]TJ
+/F31 11.9552 Tf 140.119 218.663 Td [(Mak)27(e)-335(sure)-335(y)27(ou)-335(turn)-335(on)-335(In)27(ternet)-335(access)-335(for)-335(b)-28(oth)-335(serv)28(ers.)-462(This)-335(needs)-335(to)]TJ 0 -14.446 Td [(b)-27(e)-327(tested)]TJ
 ET
-1 0 0 1 110.854 178.73 cm
+1 0 0 1 121.26 189.772 cm
 EMC
-/H <</MCID 44>> BDC
-1 0 0 1 -110.854 -178.73 cm
+/Lbl <</MCID 48>> BDC
+1 0 0 1 -121.26 -189.772 cm
 BT
-/F37 17.2154 Tf 110.854 178.73 Td [(Deliv)31(erables)]TJ
+/F31 11.9552 Tf 125.162 189.772 Td [(6.)]TJ
 ET
-1 0 0 1 110.854 166.891 cm
+1 0 0 1 134.266 189.772 cm
 EMC
-1 0 0 1 0 -14.446 cm
-/P <</MCID 45>> BDC
-1 0 0 1 -110.854 -152.445 cm
+1 0 0 1 5.853 0 cm
+/LBody <</MCID 49>> BDC
+1 0 0 1 -140.119 -189.772 cm
 BT
-/F31 11.9552 Tf 110.854 152.445 Td [(T)82(arget)-305(mark)28(et)-305(is)-304(someone)-305(try)1(ing)-305(to)-304(follo)27(w)-304(along)-305(with)-304(y)27(ou)-304(to)-305(mak)28(e)-305(their)-304(o)27(wn)]TJ 0 -14.446 Td [(mac)27(hines,)-326(assume)-326(some)-327(tec)28(hnical)-327(kno)28(wledge)-327(but)-326(not)-326(exp)-27(ertise.)]TJ
+/F31 11.9552 Tf 140.119 189.772 Td [(Include)-326(a)-327(w)28(a)27(y)-327(to)-326(share)-326(\014les)-327(\050suc)28(h)-327(as)-326(SmarTTY)-326(or)-327(SCP\051)]TJ
 ET
-1 0 0 1 128.413 123.553 cm
+1 0 0 1 110.854 149.838 cm
 EMC
-/P <</MCID 46>> BDC
-1 0 0 1 -128.413 -123.553 cm
+/H <</MCID 50>> BDC
+1 0 0 1 -110.854 -149.838 cm
 BT
-/F31 11.9552 Tf 128.413 123.553 Td [(Screenshots)-326(are)-327(help)1(ful)-327(to)-326(go)-327(w)1(ith)-327(y)27(our)-326(descriptions.)]TJ
+/F36 17.2154 Tf 110.854 149.838 Td [(Deliv)31(erables)]TJ
 ET
-1 0 0 1 110.854 89.863 cm
+1 0 0 1 110.854 149.838 cm
+EMC
+1 0 0 1 0 -59.975 cm
 /Artifact <</Type /Pagination>> BDC
 1 0 0 1 -110.854 -89.863 cm
 BT
@@ -350,20 +361,20 @@ endobj
 <<
 /Type /ObjStm
 /N 100
-/First 798
-/Length 11072     
+/First 809
+/Length 11617     
 >>
 stream
 2 0 7 41 11 139 10 242 14 316 13 450 12 594 17 668 16 771 19 845
-18 948 9 1022 8 1119 6 1194 21 1287 22 1389 23 1489 24 1623 26 1732 20 1833
-28 1958 30 2061 29 2166 27 2241 33 2343 35 2446 34 2549 4 2710 15 2852 25 3020
-48 3231 49 3442 40 3653 41 3707 46 3761 50 3815 52 3869 38 3922 37 4047 55 4151
-36 4255 56 4382 58 4483 60 4589 59 4725 57 4876 63 4958 65 5064 62 5200 32 5275
-68 5422 70 5526 71 5630 69 5733 73 5915 74 6021 72 6129 76 6211 77 6317 75 6425
-79 6507 80 6613 78 6721 82 6803 83 6909 81 7017 85 7099 86 7205 84 7313 88 7395
-87 7501 67 7576 91 7740 92 7844 93 7946 90 8050 94 8160 96 8260 54 8366 61 8495
-66 8697 100 8900 101 8956 102 9012 103 9068 104 9124 105 9180 106 9235 107 9291 108 9347
-109 9403 110 9459 111 9515 98 9571 97 9672 95 9780 113 9861 115 9970 112 10081 117 10165
+18 948 9 1022 8 1119 6 1194 21 1287 22 1389 26 1489 27 1624 23 1759 28 1875
+20 1942 30 2067 32 2170 31 2275 29 2350 35 2452 37 2555 36 2659 4 2820 15 2962
+25 3131 51 3342 52 3553 43 3763 44 3817 48 3871 53 3925 55 3979 41 4032 40 4157
+57 4261 39 4365 58 4492 60 4593 64 4699 65 4835 61 4971 59 5130 67 5212 71 5318
+72 5454 66 5590 34 5665 74 5812 76 5916 77 6020 75 6123 79 6305 80 6411 78 6519
+82 6601 83 6707 81 6815 85 6897 86 7003 84 7111 88 7193 89 7299 87 7407 91 7489
+92 7595 90 7703 94 7785 93 7891 73 7966 97 8130 38 8234 63 8397 105 8599 106 8802
+70 9005 107 9208 108 9412 102 9615 103 9671 104 9727 109 9783 110 9839 111 9895 112 9951
+113 10007 114 10063 115 10119 116 10175 117 10231 100 10287 98 10389 118 10491 96 10596 119 10707
 % 2 0 obj
 << /S /GoTo /D [4 0 R /Fit] >>
 % 7 0 obj
@@ -396,299 +407,317 @@ stream
 <</Type /StructElem /P 20 0 R /C /Normal /K [ <</Type /MCR /Pg 4 0 R /MCID 7>>] /S /H   >>
 % 22 0 obj
 <</Type /StructElem /P 20 0 R /C /Normal /K [ <</Type /MCR /Pg 4 0 R /MCID 8>>] /S /P >>
-% 23 0 obj
-<</Type /StructElem /P 24 0 R /C /Normal /K [<</Type /MCR /Pg 4 0 R /MCID 9>> <</Type /OBJR /Obj 25 0 R>>] /S /Reference>>
-% 24 0 obj
-<</Type /StructElem /P 20 0 R /C /Normal /K [23 0 R   <</Type /MCR /Pg 4 0 R /MCID 11>>] /S /P >>
 % 26 0 obj
-<</Type /StructElem /P 20 0 R /C /Normal /K [ <</Type /MCR /Pg 4 0 R /MCID 12>>] /S /P >>
-% 20 0 obj
-<</Type /StructElem /P 5 0 R /T (Accessibility Notice)/C /Normal  /K [ 21 0 R 22 0 R 24 0 R 26 0 R] /S /Section>>
-% 28 0 obj
-<</Type /StructElem /P 27 0 R /C /Normal /K [ <</Type /MCR /Pg 4 0 R /MCID 13>>] /S /H   >>
-% 30 0 obj
-<</Type /StructElem /P 29 0 R /C /Normal /K [ <</Type /MCR /Pg 4 0 R /MCID 14>>] /S /Lbl   >>
-% 29 0 obj
-<</Type /StructElem /P 27 0 R /C /Normal  /K [ 30 0 R] /S /LI>>
+<</Type /StructElem /P 23 0 R /C /Normal /K [<</Type /MCR /Pg 4 0 R /MCID 11>> <</Type /OBJR /Obj 25 0 R>>] /S /Reference>>
 % 27 0 obj
-<</Type /StructElem /P 5 0 R /T (Objectives:)/C /Normal  /K [ 28 0 R 29 0 R] /S /Section>>
-% 33 0 obj
-<</Type /StructElem /P 32 0 R /C /Normal /K [ <</Type /MCR /Pg 4 0 R /MCID 16>>] /S /H   >>
+<</Type /StructElem /P 23 0 R /C /Normal /K [<</Type /MCR /Pg 4 0 R /MCID 11>> <</Type /OBJR /Obj 25 0 R>>] /S /Reference>>
+% 23 0 obj
+<</Type /StructElem /P 20 0 R /C /Normal /K [ <</Type /MCR /Pg 4 0 R /MCID 9>>26 0 R  27 0 R  ] /S /P >>
+% 28 0 obj
+<</Type /StructElem /P 20 0 R /C /Normal /K [] /S /P >>
+% 20 0 obj
+<</Type /StructElem /P 5 0 R /T (Accessibility Notice)/C /Normal  /K [ 21 0 R 22 0 R 23 0 R 28 0 R] /S /Section>>
+% 30 0 obj
+<</Type /StructElem /P 29 0 R /C /Normal /K [ <</Type /MCR /Pg 4 0 R /MCID 15>>] /S /H   >>
+% 32 0 obj
+<</Type /StructElem /P 31 0 R /C /Normal /K [ <</Type /MCR /Pg 4 0 R /MCID 16>>] /S /Lbl   >>
+% 31 0 obj
+<</Type /StructElem /P 29 0 R /C /Normal  /K [ 32 0 R] /S /LI>>
+% 29 0 obj
+<</Type /StructElem /P 5 0 R /T (Objectives:)/C /Normal  /K [ 30 0 R 31 0 R] /S /Section>>
 % 35 0 obj
-<</Type /StructElem /P 34 0 R /C /Normal /K [ <</Type /MCR /Pg 4 0 R /MCID 17>>] /S /H   >>
-% 34 0 obj
-<</Type /StructElem /P 32 0 R /T (You have accepted the post of Systems Administrator for Acme corporation.)/C /Normal  /K [ 35 0 R] /S /Subsection>>
+<</Type /StructElem /P 34 0 R /C /Normal /K [ <</Type /MCR /Pg 4 0 R /MCID 18>>] /S /H   >>
+% 37 0 obj
+<</Type /StructElem /P 36 0 R /C /Normal /K [ <</Type /MCR /Pg 38 0 R /MCID 19>>] /S /H   >>
+% 36 0 obj
+<</Type /StructElem /P 34 0 R /T (You have accepted the post of Systems Administrator for Acme corporation.)/C /Normal  /K [ 37 0 R] /S /Subsection>>
 % 4 0 obj
 <<
 /Type /Page
-/Contents 39 0 R
-/Resources 38 0 R
+/Contents 42 0 R
+/Resources 41 0 R
 /MediaBox [0 0 612 792]
-/Parent 53 0 R
-/Annots [ 15 0 R 25 0 R 48 0 R 49 0 R ]
+/Parent 56 0 R
+/Annots [ 15 0 R 25 0 R 51 0 R 52 0 R ]
 >>
 % 15 0 obj
 <<
 /Type /Annot
 /Border[0 0 0]/H/I/C[0 1 1]
-/Rect [233.77 546.127 435.085 566.053]
+/Rect [268.268 546.127 400.587 566.053]
 /Subtype/Link/A<</Type/Action/S/URI/URI(https://aholdengouveia.name)>>
 >>
 % 25 0 obj
 <<
 /Type /Annot
 /Border[0 0 0]/H/I/C[0 1 1]
-/Rect [127.417 424.575 500.394 437.527]
+/Rect [159.825 424.575 500.394 437.527]
 /Subtype/Link/A<</Type/Action/S/URI/URI(https://aholdengouveia.name/LinuxAdmin/labexcercises/ServerSetup.html)>>
 >>
-% 48 0 obj
+% 51 0 obj
 <<
 /Type /Annot
 /Border[0 0 0]/H/I/C[0 1 1]
 /Rect [109.858 424.575 111.851 429.224]
 /Subtype/Link/A<</Type/Action/S/URI/URI(https://aholdengouveia.name/LinuxAdmin/labexcercises/ServerSetup.html)>>
 >>
-% 49 0 obj
+% 52 0 obj
 <<
 /Type /Annot
 /Border[0 0 0]/H/I/C[0 1 1]
-/Rect [109.858 412.786 136.458 422.084]
+/Rect [109.858 410.129 204.13 422.084]
 /Subtype/Link/A<</Type/Action/S/URI/URI(https://aholdengouveia.name/LinuxAdmin/labexcercises/ServerSetup.html)>>
 >>
-% 40 0 obj
+% 43 0 obj
 <<
 /D [4 0 R /XYZ 109.854 704.063 null]
 >>
-% 41 0 obj
+% 44 0 obj
 <<
 /D [4 0 R /XYZ 110.854 666.202 null]
 >>
-% 46 0 obj
+% 48 0 obj
 <<
 /D [4 0 R /XYZ 110.854 490.877 null]
 >>
-% 50 0 obj
+% 53 0 obj
 <<
 /D [4 0 R /XYZ 110.854 352.429 null]
 >>
-% 52 0 obj
+% 55 0 obj
 <<
 /D [4 0 R /XYZ 110.854 185.09 null]
 >>
-% 38 0 obj
+% 41 0 obj
 <<
-/Font << /F30 42 0 R /F31 43 0 R /F34 44 0 R /F35 45 0 R /F37 47 0 R /F47 51 0 R >>
+/Font << /F30 45 0 R /F31 46 0 R /F34 47 0 R /F36 49 0 R /F38 50 0 R /F47 54 0 R >>
 /ProcSet [ /PDF /Text ]
 >>
-% 37 0 obj
-<</Type /StructElem /P 36 0 R /C /Normal /K [ <</Type /MCR /Pg 54 0 R /MCID 18>>] /S /H   >>
-% 55 0 obj
-<</Type /StructElem /P 36 0 R /C /Normal /K [ <</Type /MCR /Pg 54 0 R /MCID 19>>] /S /P   >>
-% 36 0 obj
-<</Type /StructElem /P 32 0 R /T (Congratulations on your new job!)/C /Normal  /K [ 37 0 R 55 0 R] /S /Subsection>>
-% 56 0 obj
-<</Type /StructElem /P 32 0 R /C /Normal /K [ <</Type /MCR /Pg 54 0 R /MCID 19>>] /S / >>
-% 58 0 obj
-<</Type /StructElem /P 57 0 R /C /Normal /K [ <</Type /MCR /Pg 54 0 R /MCID 20>>] /S /Lbl   >>
-% 60 0 obj
-<</Type /StructElem /P 59 0 R /C /Normal /K [<</Type /MCR /Pg 54 0 R /MCID 22>> <</Type /OBJR /Obj 61 0 R>>] /S /Reference>>
-% 59 0 obj
-<</Type /StructElem /P 57 0 R /C /Normal /K [ <</Type /MCR /Pg 54 0 R /MCID 21>>60 0 R   <</Type /MCR /Pg 54 0 R /MCID 24>>] /S /LBody   >>
+% 40 0 obj
+<</Type /StructElem /P 39 0 R /C /Normal /K [ <</Type /MCR /Pg 38 0 R /MCID 20>>] /S /H   >>
 % 57 0 obj
-<</Type /StructElem /P 32 0 R /C /Normal  /K [ 58 0 R 59 0 R] /S /LI>>
-% 63 0 obj
-<</Type /StructElem /P 62 0 R /C /Normal /K [ <</Type /MCR /Pg 54 0 R /MCID 25>>] /S /Lbl   >>
+<</Type /StructElem /P 39 0 R /C /Normal /K [ <</Type /MCR /Pg 38 0 R /MCID 21>>] /S /P   >>
+% 39 0 obj
+<</Type /StructElem /P 34 0 R /T (Congratulations on your new job!)/C /Normal  /K [ 40 0 R 57 0 R] /S /Subsection>>
+% 58 0 obj
+<</Type /StructElem /P 34 0 R /C /Normal /K [ <</Type /MCR /Pg 38 0 R /MCID 21>>] /S / >>
+% 60 0 obj
+<</Type /StructElem /P 59 0 R /C /Normal /K [ <</Type /MCR /Pg 38 0 R /MCID 22>>] /S /Lbl   >>
+% 64 0 obj
+<</Type /StructElem /P 61 0 R /C /Normal /K [<</Type /MCR /Pg 38 0 R /MCID 26>> <</Type /OBJR /Obj 63 0 R>>] /S /Reference>>
 % 65 0 obj
-<</Type /StructElem /P 64 0 R /C /Normal /K [<</Type /MCR /Pg 54 0 R /MCID 27>> <</Type /OBJR /Obj 66 0 R>>] /S /Reference>>
-% 62 0 obj
-<</Type /StructElem /P 32 0 R /C /Normal  /K [ 63 0 R] /S /LI>>
-% 32 0 obj
-<</Type /StructElem /P 5 0 R /T (Welcome to Acme Corporation!)/C /Normal  /K [ 33 0 R 34 0 R 36 0 R 55 0 R 57 0 R 62 0 R] /S /Section>>
-% 68 0 obj
-<</Type /StructElem /P 67 0 R /C /Normal /K [ <</Type /MCR /Pg 54 0 R /MCID 30>>] /S /H   >>
-% 70 0 obj
-<</Type /StructElem /P 69 0 R /C /Normal /K [ <</Type /MCR /Pg 54 0 R /MCID 31>>] /S /H   >>
-% 71 0 obj
-<</Type /StructElem /P 69 0 R /C /Normal /K [ <</Type /MCR /Pg 54 0 R /MCID 31>>] /S /   >>
-% 69 0 obj
-<</Type /StructElem /P 67 0 R /T (We need two Linux systems that are servers. Virtual machines are the recommended option)/C /Normal  /K [ 70 0 R 70 0 R] /S /Subsection>>
-% 73 0 obj
-<</Type /StructElem /P 72 0 R /C /Normal /K [ <</Type /MCR /Pg 54 0 R /MCID 32>>] /S /Lbl   >>
-% 74 0 obj
-<</Type /StructElem /P 72 0 R /C /Normal /K [ <</Type /MCR /Pg 54 0 R /MCID 33>>] /S /LBody   >>
-% 72 0 obj
-<</Type /StructElem /P 67 0 R /C /Normal  /K [ 73 0 R 74 0 R] /S /LI>>
-% 76 0 obj
-<</Type /StructElem /P 75 0 R /C /Normal /K [ <</Type /MCR /Pg 54 0 R /MCID 34>>] /S /Lbl   >>
-% 77 0 obj
-<</Type /StructElem /P 75 0 R /C /Normal /K [ <</Type /MCR /Pg 54 0 R /MCID 35>>] /S /LBody   >>
-% 75 0 obj
-<</Type /StructElem /P 67 0 R /C /Normal  /K [ 76 0 R 77 0 R] /S /LI>>
-% 79 0 obj
-<</Type /StructElem /P 78 0 R /C /Normal /K [ <</Type /MCR /Pg 54 0 R /MCID 36>>] /S /Lbl   >>
-% 80 0 obj
-<</Type /StructElem /P 78 0 R /C /Normal /K [ <</Type /MCR /Pg 54 0 R /MCID 37>>] /S /LBody   >>
-% 78 0 obj
-<</Type /StructElem /P 67 0 R /C /Normal  /K [ 79 0 R 80 0 R] /S /LI>>
-% 82 0 obj
-<</Type /StructElem /P 81 0 R /C /Normal /K [ <</Type /MCR /Pg 54 0 R /MCID 38>>] /S /Lbl   >>
-% 83 0 obj
-<</Type /StructElem /P 81 0 R /C /Normal /K [ <</Type /MCR /Pg 54 0 R /MCID 39>>] /S /LBody   >>
-% 81 0 obj
-<</Type /StructElem /P 67 0 R /C /Normal  /K [ 82 0 R 83 0 R] /S /LI>>
-% 85 0 obj
-<</Type /StructElem /P 84 0 R /C /Normal /K [ <</Type /MCR /Pg 54 0 R /MCID 40>>] /S /Lbl   >>
-% 86 0 obj
-<</Type /StructElem /P 84 0 R /C /Normal /K [ <</Type /MCR /Pg 54 0 R /MCID 41>>] /S /LBody   >>
-% 84 0 obj
-<</Type /StructElem /P 67 0 R /C /Normal  /K [ 85 0 R 86 0 R] /S /LI>>
-% 88 0 obj
-<</Type /StructElem /P 87 0 R /C /Normal /K [ <</Type /MCR /Pg 54 0 R /MCID 42>>] /S /Lbl   >>
-% 87 0 obj
-<</Type /StructElem /P 67 0 R /C /Normal  /K [ 88 0 R] /S /LI>>
+<</Type /StructElem /P 61 0 R /C /Normal /K [<</Type /MCR /Pg 38 0 R /MCID 26>> <</Type /OBJR /Obj 63 0 R>>] /S /Reference>>
+% 61 0 obj
+<</Type /StructElem /P 59 0 R /C /Normal /K [ <</Type /MCR /Pg 38 0 R /MCID 23>> <</Type /MCR /Pg 38 0 R /MCID 24>>64 0 R  65 0 R  ] /S /LBody   >>
+% 59 0 obj
+<</Type /StructElem /P 34 0 R /C /Normal  /K [ 60 0 R 61 0 R] /S /LI>>
 % 67 0 obj
-<</Type /StructElem /P 5 0 R /T (Complete the following problems)/C /Normal  /K [ 68 0 R 69 0 R 72 0 R 75 0 R 78 0 R 81 0 R 84 0 R 87 0 R] /S /Section>>
+<</Type /StructElem /P 66 0 R /C /Normal /K [ <</Type /MCR /Pg 38 0 R /MCID 29>>] /S /Lbl   >>
+% 71 0 obj
+<</Type /StructElem /P 68 0 R /C /Normal /K [<</Type /MCR /Pg 38 0 R /MCID 33>> <</Type /OBJR /Obj 70 0 R>>] /S /Reference>>
+% 72 0 obj
+<</Type /StructElem /P 68 0 R /C /Normal /K [<</Type /MCR /Pg 38 0 R /MCID 33>> <</Type /OBJR /Obj 70 0 R>>] /S /Reference>>
+% 66 0 obj
+<</Type /StructElem /P 34 0 R /C /Normal  /K [ 67 0 R] /S /LI>>
+% 34 0 obj
+<</Type /StructElem /P 5 0 R /T (Welcome to Acme Corporation!)/C /Normal  /K [ 35 0 R 36 0 R 39 0 R 57 0 R 59 0 R 66 0 R] /S /Section>>
+% 74 0 obj
+<</Type /StructElem /P 73 0 R /C /Normal /K [ <</Type /MCR /Pg 38 0 R /MCID 36>>] /S /H   >>
+% 76 0 obj
+<</Type /StructElem /P 75 0 R /C /Normal /K [ <</Type /MCR /Pg 38 0 R /MCID 37>>] /S /H   >>
+% 77 0 obj
+<</Type /StructElem /P 75 0 R /C /Normal /K [ <</Type /MCR /Pg 38 0 R /MCID 37>>] /S /   >>
+% 75 0 obj
+<</Type /StructElem /P 73 0 R /T (We need two Linux systems that are servers. Virtual machines are the recommended option)/C /Normal  /K [ 76 0 R 76 0 R] /S /Subsection>>
+% 79 0 obj
+<</Type /StructElem /P 78 0 R /C /Normal /K [ <</Type /MCR /Pg 38 0 R /MCID 38>>] /S /Lbl   >>
+% 80 0 obj
+<</Type /StructElem /P 78 0 R /C /Normal /K [ <</Type /MCR /Pg 38 0 R /MCID 39>>] /S /LBody   >>
+% 78 0 obj
+<</Type /StructElem /P 73 0 R /C /Normal  /K [ 79 0 R 80 0 R] /S /LI>>
+% 82 0 obj
+<</Type /StructElem /P 81 0 R /C /Normal /K [ <</Type /MCR /Pg 38 0 R /MCID 40>>] /S /Lbl   >>
+% 83 0 obj
+<</Type /StructElem /P 81 0 R /C /Normal /K [ <</Type /MCR /Pg 38 0 R /MCID 41>>] /S /LBody   >>
+% 81 0 obj
+<</Type /StructElem /P 73 0 R /C /Normal  /K [ 82 0 R 83 0 R] /S /LI>>
+% 85 0 obj
+<</Type /StructElem /P 84 0 R /C /Normal /K [ <</Type /MCR /Pg 38 0 R /MCID 42>>] /S /Lbl   >>
+% 86 0 obj
+<</Type /StructElem /P 84 0 R /C /Normal /K [ <</Type /MCR /Pg 38 0 R /MCID 43>>] /S /LBody   >>
+% 84 0 obj
+<</Type /StructElem /P 73 0 R /C /Normal  /K [ 85 0 R 86 0 R] /S /LI>>
+% 88 0 obj
+<</Type /StructElem /P 87 0 R /C /Normal /K [ <</Type /MCR /Pg 38 0 R /MCID 44>>] /S /Lbl   >>
+% 89 0 obj
+<</Type /StructElem /P 87 0 R /C /Normal /K [ <</Type /MCR /Pg 38 0 R /MCID 45>>] /S /LBody   >>
+% 87 0 obj
+<</Type /StructElem /P 73 0 R /C /Normal  /K [ 88 0 R 89 0 R] /S /LI>>
 % 91 0 obj
-<</Type /StructElem /P 90 0 R /C /Normal /K [ <</Type /MCR /Pg 54 0 R /MCID 44>>] /S /H   >>
+<</Type /StructElem /P 90 0 R /C /Normal /K [ <</Type /MCR /Pg 38 0 R /MCID 46>>] /S /Lbl   >>
 % 92 0 obj
-<</Type /StructElem /P 90 0 R /C /Normal /K [ <</Type /MCR /Pg 54 0 R /MCID 45>>] /S /P >>
-% 93 0 obj
-<</Type /StructElem /P 90 0 R /C /Normal /K [ <</Type /MCR /Pg 54 0 R /MCID 46>>] /S /P   >>
+<</Type /StructElem /P 90 0 R /C /Normal /K [ <</Type /MCR /Pg 38 0 R /MCID 47>>] /S /LBody   >>
 % 90 0 obj
-<</Type /StructElem /P 5 0 R /T (Deliverables)/C /Normal  /K [ 91 0 R 92 0 R 93 0 R] /S /Section>>
+<</Type /StructElem /P 73 0 R /C /Normal  /K [ 91 0 R 92 0 R] /S /LI>>
 % 94 0 obj
-<</Type /StructElem /P 5 0 R /C /Normal /K [ <</Type /MCR /Pg 54 0 R /MCID 46>>] /S / >>
-% 96 0 obj
-<</Type /StructElem /P 95 0 R /C /Normal /K [ <</Type /MCR /Pg 54 0 R /MCID 47>>] /S /Lbl   >>
-% 54 0 obj
+<</Type /StructElem /P 93 0 R /C /Normal /K [ <</Type /MCR /Pg 38 0 R /MCID 48>>] /S /Lbl   >>
+% 93 0 obj
+<</Type /StructElem /P 73 0 R /C /Normal  /K [ 94 0 R] /S /LI>>
+% 73 0 obj
+<</Type /StructElem /P 5 0 R /T (Complete the following problems)/C /Normal  /K [ 74 0 R 75 0 R 78 0 R 81 0 R 84 0 R 87 0 R 90 0 R 93 0 R] /S /Section>>
+% 97 0 obj
+<</Type /StructElem /P 96 0 R /C /Normal /K [ <</Type /MCR /Pg 38 0 R /MCID 50>>] /S /H   >>
+% 38 0 obj
 <<
 /Type /Page
-/Contents 99 0 R
-/Resources 98 0 R
+/Contents 101 0 R
+/Resources 100 0 R
 /MediaBox [0 0 612 792]
-/Parent 53 0 R
-/Annots [ 61 0 R 66 0 R ]
+/Parent 56 0 R
+/Annots [ 63 0 R 105 0 R 106 0 R 70 0 R 107 0 R 108 0 R ]
 >>
-% 61 0 obj
+% 63 0 obj
 <<
 /Type /Annot
 /Border[0 0 0]/H/I/C[0 1 1]
-/Rect [139.123 527.057 510.231 540.008]
+/Rect [171.617 527.057 500.394 540.008]
 /Subtype/Link/A<</Type/Action/S/URI/URI(https://www.aholdengouveia.name/LinuxAdmin/IntroServers.html)>>
->>
-% 66 0 obj
-<<
-/Type /Annot
-/Border[0 0 0]/H/I/C[0 1 1]
-/Rect [139.123 498.165 516.383 511.117]
-/Subtype/Link/A<</Type/Action/S/URI/URI(https://www.aholdengouveia.name/LinuxAdmin/Documentation.html)>>
->>
-% 100 0 obj
-<<
-/D [54 0 R /XYZ 110.851 704.063 null]
->>
-% 101 0 obj
-<<
-/D [54 0 R /XYZ 110.854 672.179 null]
->>
-% 102 0 obj
-<<
-/D [54 0 R /XYZ 110.854 628.593 null]
->>
-% 103 0 obj
-<<
-/D [54 0 R /XYZ 110.854 483.802 null]
->>
-% 104 0 obj
-<<
-/D [54 0 R /XYZ 110.854 450.046 null]
 >>
 % 105 0 obj
 <<
-/D [54 0 R /XYZ 110.854 403.67 null]
+/Type /Annot
+/Border[0 0 0]/H/I/C[0 1 1]
+/Rect [109.858 527.057 111.851 531.706]
+/Subtype/Link/A<</Type/Action/S/URI/URI(https://www.aholdengouveia.name/LinuxAdmin/IntroServers.html)>>
 >>
 % 106 0 obj
 <<
-/D [54 0 R /XYZ 110.854 374.579 null]
+/Type /Annot
+/Border[0 0 0]/H/I/C[0 1 1]
+/Rect [139.123 515.268 190.331 524.566]
+/Subtype/Link/A<</Type/Action/S/URI/URI(https://www.aholdengouveia.name/LinuxAdmin/IntroServers.html)>>
+>>
+% 70 0 obj
+<<
+/Type /Annot
+/Border[0 0 0]/H/I/C[0 1 1]
+/Rect [171.617 483.719 500.394 496.671]
+/Subtype/Link/A<</Type/Action/S/URI/URI(https://www.aholdengouveia.name/LinuxAdmin/Documentation.html)>>
 >>
 % 107 0 obj
 <<
-/D [54 0 R /XYZ 110.854 331.905 null]
+/Type /Annot
+/Border[0 0 0]/H/I/C[0 1 1]
+/Rect [109.858 483.719 111.851 488.369]
+/Subtype/Link/A<</Type/Action/S/URI/URI(https://www.aholdengouveia.name/LinuxAdmin/Documentation.html)>>
 >>
 % 108 0 obj
 <<
-/D [54 0 R /XYZ 110.854 305.338 null]
+/Type /Annot
+/Border[0 0 0]/H/I/C[0 1 1]
+/Rect [139.123 471.93 196.483 481.229]
+/Subtype/Link/A<</Type/Action/S/URI/URI(https://www.aholdengouveia.name/LinuxAdmin/Documentation.html)>>
+>>
+% 102 0 obj
+<<
+/D [38 0 R /XYZ 110.851 704.063 null]
+>>
+% 103 0 obj
+<<
+/D [38 0 R /XYZ 110.854 672.179 null]
+>>
+% 104 0 obj
+<<
+/D [38 0 R /XYZ 110.854 628.593 null]
 >>
 % 109 0 obj
 <<
-/D [54 0 R /XYZ 110.854 259.676 null]
+/D [38 0 R /XYZ 110.854 454.911 null]
 >>
 % 110 0 obj
 <<
-/D [54 0 R /XYZ 110.854 233.109 null]
+/D [38 0 R /XYZ 110.854 421.154 null]
 >>
 % 111 0 obj
 <<
-/D [54 0 R /XYZ 110.854 200.648 null]
+/D [38 0 R /XYZ 110.854 374.778 null]
 >>
-% 98 0 obj
+% 112 0 obj
 <<
-/Font << /F37 47 0 R /F31 43 0 R /F47 51 0 R /F34 44 0 R >>
+/D [38 0 R /XYZ 110.854 345.687 null]
+>>
+% 113 0 obj
+<<
+/D [38 0 R /XYZ 110.854 303.014 null]
+>>
+% 114 0 obj
+<<
+/D [38 0 R /XYZ 110.854 276.447 null]
+>>
+% 115 0 obj
+<<
+/D [38 0 R /XYZ 110.854 230.785 null]
+>>
+% 116 0 obj
+<<
+/D [38 0 R /XYZ 110.854 204.217 null]
+>>
+% 117 0 obj
+<<
+/D [38 0 R /XYZ 110.854 171.756 null]
+>>
+% 100 0 obj
+<<
+/Font << /F36 49 0 R /F31 46 0 R /F47 54 0 R /F38 50 0 R >>
 /ProcSet [ /PDF /Text ]
 >>
-% 97 0 obj
-<</Type /StructElem /P 95 0 R /C /Normal /K [ <</Type /MCR /Pg 54 0 R /MCID 48>>] /S /LBody   >>
-% 95 0 obj
-<</Type /StructElem /P 5 0 R /C /Normal  /K [ 96 0 R 97 0 R] /S /LI>>
-% 113 0 obj
-<</Type /StructElem /P 112 0 R /C /Normal /K [ <</Type /MCR /Pg 114 0 R /MCID 49>>] /S /Lbl   >>
-% 115 0 obj
-<</Type /StructElem /P 112 0 R /C /Normal /K [ <</Type /MCR /Pg 114 0 R /MCID 50>>] /S /LBody   >>
-% 112 0 obj
-<</Type /StructElem /P 5 0 R /C /Normal  /K [ 113 0 R 115 0 R] /S /LI>>
-% 117 0 obj
-<</Type /StructElem /P 116 0 R /C /Normal /K [ <</Type /MCR /Pg 114 0 R /MCID 51>>] /S /Lbl   >>
+% 98 0 obj
+<</Type /StructElem /P 96 0 R /C /Normal /K [ <</Type /MCR /Pg 99 0 R /MCID 51>>] /S /P >>
+% 118 0 obj
+<</Type /StructElem /P 96 0 R /C /Normal /K [ <</Type /MCR /Pg 99 0 R /MCID 52>>] /S /P   >>
+% 96 0 obj
+<</Type /StructElem /P 5 0 R /T (Deliverables)/C /Normal  /K [ 97 0 R 98 0 R 118 0 R] /S /Section>>
+% 119 0 obj
+<</Type /StructElem /P 5 0 R /C /Normal /K [ <</Type /MCR /Pg 99 0 R /MCID 52>>] /S / >>
 
 endstream
 endobj
-123 0 obj
+133 0 obj
 <<
-/Length 1781      
+/Length 2429      
 >>
 stream
-1 0 0 1 124.513 654.247 cm
-EMC
-/Lbl <</MCID 47>> BDC
-1 0 0 1 -124.513 -654.247 cm
+1 0 0 1 110.854 654.247 cm
+/P <</MCID 51>> BDC
+1 0 0 1 -110.854 -654.247 cm
 BT
-/F47 11.9552 Tf 128.415 654.247 Td [(\210)]TJ
+/F31 11.9552 Tf 110.854 654.247 Td [(T)82(arget)-305(mark)28(et)-305(is)-304(someone)-305(try)1(ing)-305(to)-304(follo)27(w)-304(along)-305(with)-304(y)27(ou)-304(to)-305(mak)28(e)-305(their)-304(o)27(wn)]TJ 0 -14.446 Td [(mac)27(hines,)-326(assume)-326(some)-327(tec)28(hnical)-327(kno)28(wledge)-327(but)-326(not)-326(exp)-27(ertise.)]TJ
 ET
-1 0 0 1 134.266 654.247 cm
+1 0 0 1 128.413 625.355 cm
+EMC
+/P <</MCID 52>> BDC
+1 0 0 1 -128.413 -625.355 cm
+BT
+/F31 11.9552 Tf 128.413 625.355 Td [(Screenshots)-326(are)-327(help)1(ful)-327(to)-326(go)-327(w)1(ith)-327(y)27(our)-326(descriptions.)]TJ
+ET
+1 0 0 1 124.513 610.909 cm
+EMC
+/Lbl <</MCID 53>> BDC
+1 0 0 1 -124.513 -610.909 cm
+BT
+/F47 11.9552 Tf 128.415 610.909 Td [(\210)]TJ
+ET
+1 0 0 1 134.266 610.909 cm
 EMC
 1 0 0 1 5.853 0 cm
-/LBody <</MCID 48>> BDC
-1 0 0 1 -140.119 -654.247 cm
+/LBody <</MCID 54>> BDC
+1 0 0 1 -140.119 -610.909 cm
 BT
-/F31 11.9552 Tf 140.119 654.247 Td [(A)-326(short)-327(do)-27(cumen)27(t)-326(sho)27(wing)-326(ho)27(w)-326(y)27(ou)-326(did)-327(insta)1(lls.)]TJ
-ET
-1 0 0 1 124.513 639.801 cm
-EMC
-/Lbl <</MCID 49>> BDC
-1 0 0 1 -124.513 -639.801 cm
-BT
-/F47 11.9552 Tf 128.415 639.801 Td [(\210)]TJ
-ET
-1 0 0 1 134.266 639.801 cm
-EMC
-1 0 0 1 5.853 0 cm
-/LBody <</MCID 50>> BDC
-1 0 0 1 -140.119 -639.801 cm
-BT
-/F31 11.9552 Tf 140.119 639.801 Td [(A)-512(shor)1(t)-512(do)-27(cumen)27(t)-512(sa)28(ying)-512(what)-512(y)28(ou)-512(ha)27(v)27(e)-511(included)-512(in)-511(y)27(our)-512(installs,)]TJ 0 -14.446 Td [(including)-501(an)27(y)-502(soft)28(w)27(are)-502(y)28(ou'v)27(e)-501(added)-502(and)-501(an)27(y)-502(co)1(n\014gurations)-502(y)27(ou')1(v)27(e)]TJ 0 -14.446 Td [(c)27(hanged.)]TJ
+/F31 11.9552 Tf 140.119 610.909 Td [(A)-326(short)-327(do)-27(cumen)27(t)-326(sho)27(wing)-326(ho)27(w)-326(y)27(ou)-326(did)-327(insta)1(lls.)]TJ
 ET
 1 0 0 1 124.513 596.463 cm
 EMC
-/Lbl <</MCID 51>> BDC
+/Lbl <</MCID 55>> BDC
 1 0 0 1 -124.513 -596.463 cm
 BT
 /F47 11.9552 Tf 128.415 596.463 Td [(\210)]TJ
@@ -696,14 +725,29 @@ ET
 1 0 0 1 134.266 596.463 cm
 EMC
 1 0 0 1 5.853 0 cm
-/LBody <</MCID 52>> BDC
+/LBody <</MCID 56>> BDC
 1 0 0 1 -140.119 -596.463 cm
 BT
-/F31 11.9552 Tf 140.119 596.463 Td [(Mak)27(e)-286(sure)-286(to)-287(includ)1(e)-287(do)-27(cumen)27(tation)-286(on)-286(ho)27(w)-286(to)-286(use)-287(y)28(our)-287(y)28(our)-287(\014le)-286(share)]TJ 0 -14.446 Td [(as)-326(w)27(ell)-327(a)1(s)-327(ho)27(w)-326(y)27(ou)-326(setup)-326(y)27(our)-327(\014)1(le)-327(share.)]TJ
+/F31 11.9552 Tf 140.119 596.463 Td [(A)-512(shor)1(t)-512(do)-27(cumen)27(t)-512(sa)28(ying)-512(what)-512(y)28(ou)-512(ha)27(v)27(e)-511(included)-512(in)-511(y)27(our)-512(installs,)]TJ 0 -14.446 Td [(including)-501(an)27(y)-502(soft)28(w)27(are)-502(y)28(ou'v)27(e)-501(added)-502(and)-501(an)27(y)-502(co)1(n\014gurations)-502(y)27(ou')1(v)27(e)]TJ 0 -14.445 Td [(c)27(hanged.)]TJ
 ET
-1 0 0 1 110.854 579.693 cm
+1 0 0 1 124.513 553.126 cm
 EMC
-1 0 0 1 0 -489.83 cm
+/Lbl <</MCID 57>> BDC
+1 0 0 1 -124.513 -553.126 cm
+BT
+/F47 11.9552 Tf 128.415 553.126 Td [(\210)]TJ
+ET
+1 0 0 1 134.266 553.126 cm
+EMC
+1 0 0 1 5.853 0 cm
+/LBody <</MCID 58>> BDC
+1 0 0 1 -140.119 -553.126 cm
+BT
+/F31 11.9552 Tf 140.119 553.126 Td [(Mak)27(e)-286(sure)-286(to)-287(includ)1(e)-287(do)-27(cumen)27(tation)-286(on)-286(ho)27(w)-286(to)-286(use)-287(y)28(our)-287(y)28(our)-287(\014le)-286(share)]TJ 0 -14.446 Td [(as)-326(w)27(ell)-327(a)1(s)-327(ho)27(w)-326(y)27(ou)-326(setup)-326(y)27(our)-327(\014)1(le)-327(share.)]TJ
+ET
+1 0 0 1 110.854 538.68 cm
+EMC
+1 0 0 1 0 -448.817 cm
 /Artifact <</Type /Pagination>> BDC
 1 0 0 1 -110.854 -89.863 cm
 BT
@@ -714,7 +758,7 @@ EMC
 
 endstream
 endobj
-133 0 obj
+144 0 obj
 <<
 /Length1 639
 /Length2 7065
@@ -773,7 +817,7 @@ TsÙ›˛ÿ˙)Î«ƒPÄõ'4˚ÅÖRíß|CA+⁄h Æa˝ÓTπO˘çbá˛	ªF∆òÀå‡ê_’u~˙^úW¢Ò”÷æxŸ//Æö"Ã`
 Øª≤u»”ü`e∞∑Ÿk7Ïäí∆éO∆PÃﬂv£≈S<»/ˆ°Ó‘Ò}·o!5õ<ƒ≈[ª~üÙ/·´4Kl‚:uÆëUÇ¡ﬁLº^fÎ˚:µÅö≈:RÌ5G@5ìk›µÎ≈¯aÃ4œ≈n0üπˇ=î†–ö¸m ß&¢ØDnÇ3≠±ı#4X9©ÀÖ‹¶{M∏ßPùò‡"ÄÍ¡Ì’¯UL}w1E>õXü.OπKÛ {wn«/D|ˇÇﬁ|§;V Ë&¨¶=\µ¢œ%Zzß‘ÛXDFPijÿWÉ1˝$ü%v˘L¶™}]·˘-î'~ïúvvœê¶h¸S˝§‚"¡qı4πñáJÕE?&Úí«ÅP>§u(#√.#ròxNÚñôUcçË©{˘õ@3ı„íˇ≤¨zî˛>làKú ,^ëﬁÆœS_›Hf¬æ≥Ölô;séÅ«^êß1	%t0
 endstream
 endobj
-135 0 obj
+146 0 obj
 <<
 /Length1 1893
 /Length2 12242
@@ -904,7 +948,7 @@ s/U‹"¨√»ÒVñˆøÑ≥Èbø4cëªÑUß7π<rJ‹Ïw÷^∆¯CNÌ÷-Ωæ¨ˇ√9?ﬁëa´Hú!R¢¥¸2_°j∏–èâl…Äœ
 …Èê=õ3fd` ùÛË}DYÁ“{Ê”√¸}4zΩB∏Îº⁄.1Í˚°aË<Í è ›ÇfÇË◊+0n	ïa¨ Í/‰H∏@”oÁè/*3É/¯¶=!WÕéè!§À‚›Û¡ﬂ!kFˇ∞À6Â…Q?ó+/¶¯†´Ï£N)RPFõ"ÍíﬁÀ˘@’]Jä(CI„i)ÿ¶g‚’Ô4Tª)/glÕGà&Z''ö¬1˛°I∑\ª´π(ä„Q/–uâa$x˚	ÿG4yëPSÈ*%'ìòR3†Á7j‡ò-gæXìMgMLy∫ãUK¥∆`ﬂ_geò0ì	7ì"·¿K ΩöÏW 6ªùâlVPsø¨¨’&¬|9˙KyñΩ¥çN˛,∞
 endstream
 endobj
-137 0 obj
+148 0 obj
 <<
 /Length1 2312
 /Length2 17234
@@ -1071,7 +1115,7 @@ a/ î7Ø ìœ˚aÍG£&ıŒ∑ÑË^ã WàP´Ø™RÏ_(ÙYgﬂ(EºZÀ q˝Wˆz@E,læ_¬ıñÿÃÍ7∂N7Aª>Ù…ŸÃ¯h
 …”I0YGùΩiTzõπ≠H
 endstream
 endobj
-139 0 obj
+150 0 obj
 <<
 /Length1 1452
 /Length2 6936
@@ -1156,7 +1200,7 @@ mme§„‹⁄ììI±Îw«b3«2_å∆ä˚êXêÄäQÆfÖÍÛ‰≈î%Ÿ-‚⁄ÔŸµ I/ctTLÎ' :;√aJã§∞A3√4Ñ‡,Ÿq¸ã€
 ók~;Üˆ⁄√
 endstream
 endobj
-141 0 obj
+152 0 obj
 <<
 /Length1 1776
 /Length2 5007
@@ -1253,7 +1297,7 @@ YÚR™f?ñì`›ºWé#Ûà⁄Æ‹^‹ùãØΩZÈ˚«ˆ˘:†å;¯∫≠V$m-?"’'Z˜∆‹«ö{·Ñ¢ÅÅ⁄pE
 ˛‡˘ò©à"©¯BNÍBºÕÿÈ≥dù˘g=tˆ®'äh„
 endstream
 endobj
-143 0 obj
+154 0 obj
 <<
 /Length1 721
 /Length2 5243
@@ -1307,7 +1351,7 @@ nÛ_—ã3ŸôxÀØoÌjße	ì÷‚ã®Üò-m]ÿ¯bÂiYùÓ„Ï–vÔïóÍ<_Ïçø'){J€£D:p:Q%ÃáI∞~):û≥4H
 É¸Ó:É„”Bò2ıüskp ï≥Öjl^∏H∆¬ûú@¬‰Ã…ñ?Å
 endstream
 endobj
-145 0 obj
+156 0 obj
 <<
 /Length 1932      
 >>
@@ -1469,7 +1513,7 @@ end
 
 endstream
 endobj
-146 0 obj
+157 0 obj
 <<
 /Length 1729      
 >>
@@ -1592,7 +1636,7 @@ end
 
 endstream
 endobj
-147 0 obj
+158 0 obj
 <<
 /Length 1724      
 >>
@@ -1715,7 +1759,7 @@ end
 
 endstream
 endobj
-148 0 obj
+159 0 obj
 <<
 /Length 1724      
 >>
@@ -1838,7 +1882,7 @@ end
 
 endstream
 endobj
-149 0 obj
+160 0 obj
 <<
 /Length 1543      
 >>
@@ -1951,7 +1995,7 @@ end
 
 endstream
 endobj
-150 0 obj
+161 0 obj
 <<
 /Length 1568      
 >>
@@ -2062,68 +2106,83 @@ end
 
 endstream
 endobj
-157 0 obj
+168 0 obj
 <<
 /Producer (pdfTeX-1.40.22)
 /Author(\376\377\000A\000d\000r\000i\000a\000n\000n\000a\000\040\000H\000o\000l\000d\000e\000n\000-\000G\000o\000u\000v\000e\000i\000a)/Title(\376\377\000S\000e\000r\000v\000e\000r\000\040\000S\000e\000t\000u\000p\000\040\000L\000a\000b)/Subject(\376\377\000L\000i\000n\000u\000x\000\040\000A\000d\000m\000i\000n\000i\000s\000t\000r\000a\000t\000i\000o\000n\000\040\000-\000\040\000L\000a\000b\000\040\000A\000s\000s\000i\000g\000n\000m\000e\000n\000t)/Creator(LaTeX with hyperref)/Keywords(\376\377\000s\000e\000r\000v\000e\000r\000\040\000s\000e\000t\000u\000p\000,\000\040\000L\000i\000n\000u\000x\000,\000\040\000v\000i\000r\000t\000u\000a\000l\000\040\000m\000a\000c\000h\000i\000n\000e\000s\000,\000\040\000C\000e\000n\000t\000O\000S\000,\000\040\000U\000b\000u\000n\000t\000u\000\040\000S\000e\000r\000v\000e\000r)
-/CreationDate (D:20260416101513-04'00')
-/ModDate (D:20260416101513-04'00')
+/CreationDate (D:20261007102827-04'00')
+/ModDate (D:20261007102827-04'00')
 /Trapped /False
 /PTEX.Fullbanner (This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) kpathsea version 6.3.4/dev)
 >>
 endobj
-119 0 obj
+122 0 obj
 <<
 /Type /ObjStm
-/N 35
-/First 295
-/Length 7027      
+/N 42
+/First 354
+/Length 7797      
 >>
 stream
-116 0 5 76 120 219 1 580 114 720 121 826 124 1094 122 1151 126 1229 127 1249
-129 1763 130 1781 131 2245 132 2864 134 3094 136 3315 138 3615 140 4023 142 4248 144 4528
-125 4744 128 4804 45 4864 47 5045 43 5202 42 5358 44 5514 51 5671 53 5849 151 5917
-152 6079 153 6245 154 6433 155 6518 156 6551
-% 116 0 obj
-<</Type /StructElem /P 5 0 R /C /Normal  /K [ 117 0 R] /S /LI>>
-% 5 0 obj
-<</Type /StructElem /P 1 0 R /C /Normal  /K [ 6 0 R 20 0 R 27 0 R 32 0 R 67 0 R 90 0 R 93 0 R 95 0 R 112 0 R 116 0 R] /S /Document>>
+121 0 123 108 120 218 125 302 126 410 124 520 128 604 127 712 5 788 130 933
+1 1294 99 1434 131 1539 134 1807 132 1863 137 1941 138 1961 139 2425 141 2939 142 2957
+143 3576 145 3806 147 4027 149 4327 151 4735 153 4960 155 5240 136 5456 140 5516 47 5576
+49 5757 46 5914 45 6070 50 6226 54 6383 56 6561 162 6628 163 6790 164 6956 165 7144
+166 7229 167 7262
+% 121 0 obj
+<</Type /StructElem /P 120 0 R /C /Normal /K [ <</Type /MCR /Pg 99 0 R /MCID 53>>] /S /Lbl   >>
+% 123 0 obj
+<</Type /StructElem /P 120 0 R /C /Normal /K [ <</Type /MCR /Pg 99 0 R /MCID 54>>] /S /LBody   >>
 % 120 0 obj
+<</Type /StructElem /P 5 0 R /C /Normal  /K [ 121 0 R 123 0 R] /S /LI>>
+% 125 0 obj
+<</Type /StructElem /P 124 0 R /C /Normal /K [ <</Type /MCR /Pg 99 0 R /MCID 55>>] /S /Lbl   >>
+% 126 0 obj
+<</Type /StructElem /P 124 0 R /C /Normal /K [ <</Type /MCR /Pg 99 0 R /MCID 56>>] /S /LBody   >>
+% 124 0 obj
+<</Type /StructElem /P 5 0 R /C /Normal  /K [ 125 0 R 126 0 R] /S /LI>>
+% 128 0 obj
+<</Type /StructElem /P 127 0 R /C /Normal /K [ <</Type /MCR /Pg 99 0 R /MCID 57>>] /S /Lbl   >>
+% 127 0 obj
+<</Type /StructElem /P 5 0 R /C /Normal  /K [ 128 0 R] /S /LI>>
+% 5 0 obj
+<</Type /StructElem /P 1 0 R /C /Normal  /K [ 6 0 R 20 0 R 29 0 R 34 0 R 73 0 R 96 0 R 118 0 R 120 0 R 124 0 R 127 0 R] /S /Document>>
+% 130 0 obj
 <</Normal <</O /Layout /EndIndent 0.0 /SpaceAfter 0.0 /SpaceBefore 0.0 /StartIndent 0.0 /WritingMode /LrTb /TextAlign /Start>> /CM1 <</O /Layout /TextAlign /Justify>> /CM2 <</O /Layout /TextAlign /Center>> /CM3 <</O /Layout /TextAlign /Start>> /CM4 <</O /Layout /InlineAlign /Center /Placement /Block /SpaceAfter 12.125 /BBox [266 314 329 336]>> >>
 % 1 0 obj
-<</Type /StructTreeRoot /RoleMap 121 0 R /ClassMap 120 0 R /ParentTree <</Nums [0 [ 5 0 R]]>> /ParentTreeNextKey 1 /K [ 5 0 R] >>
-% 114 0 obj
+<</Type /StructTreeRoot /RoleMap 131 0 R /ClassMap 130 0 R /ParentTree <</Nums [0 [ 5 0 R]]>> /ParentTreeNextKey 1 /K [ 5 0 R] >>
+% 99 0 obj
 <<
 /Type /Page
-/Contents 123 0 R
-/Resources 122 0 R
+/Contents 133 0 R
+/Resources 132 0 R
 /MediaBox [0 0 612 792]
-/Parent 53 0 R
+/Parent 56 0 R
 >>
-% 121 0 obj
+% 131 0 obj
 <</IndexItem /Span /TOF /TOC /TOFI /TOCI /TOT /TOC /TOTI /TOCI /Titlepage /Sect /Bibliography /L /BibItem /LI /ParagraphSpan /Span /Footnote /Note /Chapter /Sect/Section /Sect/Subsection /Sect/Subsubsection /Sect/Float /Div/L1 /L/L2 /L/L3 /L/L4 /L/L5 /L>>
-% 124 0 obj
+% 134 0 obj
 <<
-/D [114 0 R /XYZ 109.854 704.063 null]
+/D [99 0 R /XYZ 109.854 704.063 null]
 >>
-% 122 0 obj
+% 132 0 obj
 <<
-/Font << /F47 51 0 R /F31 43 0 R >>
+/Font << /F31 46 0 R /F47 54 0 R >>
 /ProcSet [ /PDF /Text ]
 >>
-% 126 0 obj
+% 137 0 obj
 [489.5]
-% 127 0 obj
-[342.6 581 937.5 562.5 937.5 875 312.5 437.5 437.5 562.5 875 312.5 375 312.5 562.5 562.5 562.5 562.5 562.5 562.5 562.5 562.5 562.5 562.5 562.5 312.5 312.5 342.6 875 531.3 531.3 875 849.5 799.8 812.5 862.3 738.4 707.2 884.3 879.6 419 581 880.8 675.9 1067.1 879.6 844.9 768.5 844.9 839.1 625 782.4 864.6 849.5 1162 849.5 849.5 687.5 312.5 581 312.5 562.5 312.5 312.5 546.9 625 500 625 513.3 343.7 562.5 625 312.5 343.7 593.8 312.5 937.5 625 562.5 625 593.8 459.5 443.8 437.5 625 593.8 812.5 593.8 593.8]
-% 129 0 obj
-[857]
-% 130 0 obj
+% 138 0 obj
 [514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6 514.6]
-% 131 0 obj
+% 139 0 obj
+[342.6 581 937.5 562.5 937.5 875 312.5 437.5 437.5 562.5 875 312.5 375 312.5 562.5 562.5 562.5 562.5 562.5 562.5 562.5 562.5 562.5 562.5 562.5 312.5 312.5 342.6 875 531.3 531.3 875 849.5 799.8 812.5 862.3 738.4 707.2 884.3 879.6 419 581 880.8 675.9 1067.1 879.6 844.9 768.5 844.9 839.1 625 782.4 864.6 849.5 1162 849.5 849.5 687.5 312.5 581 312.5 562.5 312.5 312.5 546.9 625 500 625 513.3 343.7 562.5 625 312.5 343.7 593.8 312.5 937.5 625 562.5 625 593.8 459.5 443.8 437.5 625 593.8 812.5 593.8 593.8]
+% 141 0 obj
+[857]
+% 142 0 obj
 [571.2 544 544 816 816 272 299.2 489.6 489.6 489.6 489.6 489.6 734 435.2 489.6 707.2 761.6 489.6 883.8 992.6 761.6 272 272 489.6 816 489.6 816 761.6 272 380.8 380.8 489.6 761.6 272 326.4 272 489.6 489.6 489.6 489.6 489.6 489.6 489.6 489.6 489.6 489.6 489.6 272 272 272 761.6 462.4 462.4 761.6 734 693.4 707.2 747.8 666.2 639 768.3 734 353.2 503 761.2 611.8 897.2 734 761.6 666.2 761.6 720.6 544 707.2 734 734 1006 734 734 598.4 272 489.6 272 489.6 272 272 489.6 544 435.2 544 435.2 299.2 489.6 544 272 299.2 516.8 272 816 544 489.6 544 516.8 380.8 386.2 380.8 544 516.8 707.2 516.8 516.8 435.2 489.6 979.2]
-% 132 0 obj
+% 143 0 obj
 [510.9 667.6 693.3 693.3 954.5 693.3 693.3 563.1 249.6 458.6 249.6 458.6 249.6 249.6 458.6 510.9 406.4 510.9 406.4 275.8 458.6 510.9 249.6 275.8 484.7 249.6 772.1 510.9 458.6 510.9 484.7 354.1 359.4 354.1 510.9 484.7]
-% 134 0 obj
+% 145 0 obj
 <<
 /Type /FontDescriptor
 /FontName /YXIYMJ+FontAwesome
@@ -2136,9 +2195,9 @@ stream
 /StemV 71
 /XHeight 0
 /CharSet (/github)
-/FontFile 133 0 R
+/FontFile 144 0 R
 >>
-% 136 0 obj
+% 147 0 obj
 <<
 /Type /FontDescriptor
 /FontName /OYZFRZ+CMBX12
@@ -2151,9 +2210,9 @@ stream
 /StemV 109
 /XHeight 444
 /CharSet (/A/C/D/L/N/O/S/V/W/Y/a/b/c/colon/d/e/exclam/f/g/h/i/j/l/m/n/o/p/period/r/s/t/u/v/w/x/y)
-/FontFile 135 0 R
+/FontFile 146 0 R
 >>
-% 138 0 obj
+% 149 0 obj
 <<
 /Type /FontDescriptor
 /FontName /RKEHKX+CMR12
@@ -2166,9 +2225,9 @@ stream
 /StemV 65
 /XHeight 431
 /CharSet (/A/C/D/E/F/G/H/I/L/M/N/O/P/R/S/T/U/W/Y/a/b/c/colon/comma/d/e/emdash/exclam/f/ff/fi/five/fl/four/g/h/hyphen/i/j/k/l/m/n/o/one/p/parenleft/parenright/period/q/quoteright/r/s/six/t/three/two/u/v/w/x/y)
-/FontFile 137 0 R
+/FontFile 148 0 R
 >>
-% 140 0 obj
+% 151 0 obj
 <<
 /Type /FontDescriptor
 /FontName /MPONAC+CMR17
@@ -2181,9 +2240,9 @@ stream
 /StemV 53
 /XHeight 430
 /CharSet (/S/e/p/r/t/u/v)
-/FontFile 139 0 R
+/FontFile 150 0 R
 >>
-% 142 0 obj
+% 153 0 obj
 <<
 /Type /FontDescriptor
 /FontName /RNHCQJ+CMTT12
@@ -2196,9 +2255,9 @@ stream
 /StemV 65
 /XHeight 431
 /CharSet (/A/D/I/L/S/a/b/c/colon/d/e/g/h/i/l/m/n/o/p/period/r/s/slash/t/u/v/w/x)
-/FontFile 141 0 R
+/FontFile 152 0 R
 >>
-% 144 0 obj
+% 155 0 obj
 <<
 /Type /FontDescriptor
 /FontName /TWWQBJ+SFRM1200
@@ -2211,144 +2270,144 @@ stream
 /StemV 50
 /XHeight 430
 /CharSet (/bullet)
-/FontFile 143 0 R
+/FontFile 154 0 R
 >>
-% 125 0 obj
+% 136 0 obj
 <<
 /Type /Encoding
 /Differences [136/bullet]
 >>
-% 128 0 obj
+% 140 0 obj
 <<
 /Type /Encoding
 /Differences [135/github]
->>
-% 45 0 obj
-<<
-/Type /Font
-/Subtype /Type1
-/BaseFont /YXIYMJ+FontAwesome
-/FontDescriptor 134 0 R
-/FirstChar 135
-/LastChar 135
-/Widths 129 0 R
-/Encoding 128 0 R
-/ToUnicode 145 0 R
 >>
 % 47 0 obj
 <<
 /Type /Font
 /Subtype /Type1
+/BaseFont /YXIYMJ+FontAwesome
+/FontDescriptor 145 0 R
+/FirstChar 135
+/LastChar 135
+/Widths 141 0 R
+/Encoding 140 0 R
+/ToUnicode 156 0 R
+>>
+% 49 0 obj
+<<
+/Type /Font
+/Subtype /Type1
 /BaseFont /OYZFRZ+CMBX12
-/FontDescriptor 136 0 R
+/FontDescriptor 147 0 R
 /FirstChar 33
 /LastChar 121
-/Widths 127 0 R
-/ToUnicode 146 0 R
+/Widths 139 0 R
+/ToUnicode 157 0 R
 >>
-% 43 0 obj
+% 46 0 obj
 <<
 /Type /Font
 /Subtype /Type1
 /BaseFont /RKEHKX+CMR12
-/FontDescriptor 138 0 R
+/FontDescriptor 149 0 R
 /FirstChar 11
 /LastChar 124
-/Widths 131 0 R
-/ToUnicode 147 0 R
+/Widths 142 0 R
+/ToUnicode 158 0 R
 >>
-% 42 0 obj
+% 45 0 obj
 <<
 /Type /Font
 /Subtype /Type1
 /BaseFont /MPONAC+CMR17
-/FontDescriptor 140 0 R
+/FontDescriptor 151 0 R
 /FirstChar 83
 /LastChar 118
-/Widths 132 0 R
-/ToUnicode 148 0 R
+/Widths 143 0 R
+/ToUnicode 159 0 R
 >>
-% 44 0 obj
+% 50 0 obj
 <<
 /Type /Font
 /Subtype /Type1
 /BaseFont /RNHCQJ+CMTT12
-/FontDescriptor 142 0 R
+/FontDescriptor 153 0 R
 /FirstChar 46
 /LastChar 120
-/Widths 130 0 R
-/ToUnicode 149 0 R
+/Widths 138 0 R
+/ToUnicode 160 0 R
 >>
-% 51 0 obj
+% 54 0 obj
 <<
 /Type /Font
 /Subtype /Type1
 /BaseFont /TWWQBJ+SFRM1200
-/FontDescriptor 144 0 R
+/FontDescriptor 155 0 R
 /FirstChar 136
 /LastChar 136
-/Widths 126 0 R
-/Encoding 125 0 R
-/ToUnicode 150 0 R
+/Widths 137 0 R
+/Encoding 136 0 R
+/ToUnicode 161 0 R
 >>
-% 53 0 obj
+% 56 0 obj
 <<
 /Type /Pages
 /Count 3
-/Kids [4 0 R 54 0 R 114 0 R]
+/Kids [4 0 R 38 0 R 99 0 R]
 >>
-% 151 0 obj
+% 162 0 obj
 <<
-/Names [(Doc-Start) 41 0 R (Item.1) 105 0 R (Item.2) 106 0 R (Item.3) 107 0 R (Item.4) 108 0 R (Item.5) 109 0 R]
+/Names [(Doc-Start) 44 0 R (Item.1) 111 0 R (Item.2) 112 0 R (Item.3) 113 0 R (Item.4) 114 0 R (Item.5) 115 0 R]
 /Limits [(Doc-Start) (Item.5)]
 >>
-% 152 0 obj
+% 163 0 obj
 <<
-/Names [(Item.6) 110 0 R (page.1) 40 0 R (page.2) 100 0 R (page.3) 124 0 R (section*.1) 46 0 R (section*.2) 50 0 R]
+/Names [(Item.6) 116 0 R (page.1) 43 0 R (page.2) 102 0 R (page.3) 134 0 R (section*.1) 48 0 R (section*.2) 53 0 R]
 /Limits [(Item.6) (section*.2)]
 >>
-% 153 0 obj
+% 164 0 obj
 <<
-/Names [(section*.3) 52 0 R (section*.4) 101 0 R (section*.5) 102 0 R (section*.6) 103 0 R (section*.7) 104 0 R (section*.8) 111 0 R]
+/Names [(section*.3) 55 0 R (section*.4) 103 0 R (section*.5) 104 0 R (section*.6) 109 0 R (section*.7) 110 0 R (section*.8) 117 0 R]
 /Limits [(section*.3) (section*.8)]
 >>
-% 154 0 obj
+% 165 0 obj
 <<
-/Kids [151 0 R 152 0 R 153 0 R]
+/Kids [162 0 R 163 0 R 164 0 R]
 /Limits [(Doc-Start) (section*.8)]
 >>
-% 155 0 obj
+% 166 0 obj
 <<
-/Dests 154 0 R
+/Dests 165 0 R
 >>
-% 156 0 obj
+% 167 0 obj
 <<
 /Type /Catalog
-/Pages 53 0 R
-/Names 155 0 R
+/Pages 56 0 R
+/Names 166 0 R
 /PageMode/UseOutlines/Lang(en-US)/StructTreeRoot 1 0 R/MarkInfo <</Marked true /LetterspaceFlags 0>>
 /OpenAction 2 0 R
 >>
 
 endstream
 endobj
-158 0 obj
+169 0 obj
 <<
 /Type /XRef
-/Index [0 159]
-/Size 159
+/Index [0 170]
+/Size 170
 /W [1 3 1]
-/Root 156 0 R
-/Info 157 0 R
-/ID [<0AAE6003852867B256D94B98328E23FC> <0AAE6003852867B256D94B98328E23FC>]
-/Length 795       
+/Root 167 0 R
+/Info 168 0 R
+/ID [<54D9A62DD6AD387EE12421EC5DC5CD0C> <54D9A62DD6AD387EE12421EC5DC5CD0C>]
+/Length 850       
 >>
 stream
-   ˇ  w    ,–     w                          
-  	                         @ˇ  1        (  &  %        !  w  w  w  w  "  w      #  w  $  w  N  '  )  -  *  ,  +  O  0  .   Yˇ  /  P  G  2  5  3  4  8  6  7  ;  9  :  >  <  =  A  ?  @  D  B  C  F  E   vˇ  K  H  I  J  L  _  M  ^  ] ñ   Q  R  S  T  U  V  W  X  Y  Z  [  \  b  `  w  a  w   c    ˇÉµ   w  w  w Xj   w  w  w  w	  w  w
-  w  w  w _õ   w ~   w µ∞   wn   w#ï   w>w   wV% ]Ì dÍ k‚ r⁄ y   w  w  w  w   w!  w"y üÉ 
+   ˇ  z
+    /     z                          
+  	           !ˇ                   >ˇ  4        L  )  '  &     !  "  z   z  z  #  z  z!       $  z"  %  z#  (  *  /  +  .   Dˇ  M  ,  -  3  0   Eˇ   _ˇ  P  1  2  J  5  8  6  7  ;  9  :  >  <  =  A  ?  @  D  B  C  G  E  F  I  H   Åˇ  b  K  `  z  _ %   S  T  U  N  O  Q  R  V  W  X  Y  Z  [  \  ]  ^  a  c  z  z äû   z  z  z  z  z  z   áˇ  z	  z  z \À   z    ˇ  z  z  z  z  z  z  z  z fÑ   z Ñ˛   z ºô   z	W   z*~   zE`   z] d÷ k” rÀ y√ Ä   z$  z%  z&  z'  z(  z)Üb ©n 
 endstream
 endobj
 startxref
-106371
+108910
 %%EOF

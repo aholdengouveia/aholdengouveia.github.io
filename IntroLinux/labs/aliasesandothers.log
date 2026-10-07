@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.2.2)  19 APR 2026 22:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.2.2)  7 OCT 2026 10:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -319,10 +319,6 @@ LaTeX Info: Redefining \nameref on input line 48.
 Package accessibility Warning: The chosen language (english) is not supported b
 y Adobe Reader 6.0. on input line 48.
 
-
-Package accessibility Warning: Changed paragraphs, rerun to get it right on inp
-ut line 50.
-
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <14.4> on input line 50.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -334,59 +330,32 @@ LaTeX Font Info:    Font shape `U/fontawesomebrands0/solid/n' in size <14.4> no
 t available
 (Font)              Font shape `U/fontawesomebrands0/regular/n' tried instead o
 n input line 50.
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 55.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 55.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 55.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 55.
 
-Overfull \hbox (64.94539pt too wide) in paragraph at lines 55--56
-[][][][]\OT1/cmr/m/n/12 Link: [][][]\OT1/cmr/bx/n/12 https://aholdengouveia.nam
-e/IntroLinux/labs/aliasesandothers.html[][][][] 
- []
+pdfTeX warning (\pdfobj): invalid object number being ignored
 
+pdfTeX warning (\pdfobj): invalid object number being ignored
 
-Overfull \hbox (24.11734pt too wide) in paragraph at lines 71--72
-[]\OT1/cmr/m/n/12 Adrianna's video on how to use tar Link: [][][]\OT1/cmr/bx/n/
-12 https://youtu.be/x0EK6PmKRCU[][][][] 
- []
+pdfTeX warning (\pdfobj): invalid object number being ignored
 
-
-Overfull \hbox (70.73424pt too wide) in paragraph at lines 74--76
-\OT1/cmr/m/n/12 site Link: [][][]\OT1/cmr/bx/n/12 https://www.aholdengouveia.na
-me/IntroLinux/aliasesandothers.html[][][][] 
- []
-
+pdfTeX warning (\pdfobj): invalid object number being ignored
 
 pdfTeX warning (\pdfobj): invalid object number being ignored
 [1.1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (24.87947pt too wide) in paragraph at lines 98--100
-[][][][]\OT1/cmr/m/n/12 Reference: Link: [][][]\OT1/cmr/bx/n/12 http://maketech
-easier.com/8-useful-and-interesting-
- []
-
-
-Overfull \hbox (28.84952pt too wide) in paragraph at lines 101--102
-[][][][]\OT1/cmr/m/n/12 Link: [][][]\OT1/cmr/bx/n/12 https://www.maketecheasier
-.com/more-useful-and-interesting-
- []
-
+pdfTeX warning (\pdfobj): invalid object number being ignored
 
 pdfTeX warning (\pdfobj): invalid object number being ignored
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \let 
-l.106         \item What does your .bash\_
-                                          profile or .profile say?  take a s...
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
 
-
-Overfull \hbox (171.20457pt too wide) in paragraph at lines 106--107
-[][]\OT1/cmr/m/n/12 What does your .bash[]profile
- []
-
+pdfTeX warning (\pdfobj): invalid object number being ignored
 [2.2] (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 )
@@ -395,30 +364,30 @@ File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
 )
 \c@ClassMap=\count297
  [3.3]
-(./aliasesandothers.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+(./aliasesandothers.aux) ) 
 Here is how much of TeX's memory you used:
- 12912 strings out of 478287
- 227290 string characters out of 5849290
- 536938 words of memory out of 5000000
- 30961 multiletter control sequences out of 15000+600000
- 472647 words of font info for 39 fonts, out of 8000000 for 9000
+ 12938 strings out of 478287
+ 227540 string characters out of 5849290
+ 544288 words of memory out of 5000000
+ 30980 multiletter control sequences out of 15000+600000
+ 475254 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,6n,76p,853b,574s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texli
-ve/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands0.enc}</usr/share/texlive/t
-exmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Brands-Regular.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf/fonts/ty
-pe1/public/cm-super/sfrm1200.pfb>
-Output written on aliasesandothers.pdf (3 pages, 122422 bytes).
+ 68i,6n,76p,853b,536s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): Page 4 has been referenced but
+ does not exist!
+
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texlive
+/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands0.enc}</usr/share/texlive/tex
+mf-dist/fonts/type1/public/fontawesome5/FontAwesome5Brands-Regular.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf/fonts/type1/publ
+ic/cm-super/sfrm1200.pfb>
+Output written on aliasesandothers.pdf (3 pages, 133500 bytes).
 PDF statistics:
- 182 PDF objects out of 1000 (max. 8388607)
- 161 compressed objects within 2 object streams
+ 205 PDF objects out of 1000 (max. 8388607)
+ 175 compressed objects within 2 object streams
  25 named destinations out of 1000 (max. 500000)
- 373 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 401 words of extra memory for PDF output out of 10000 (max. 10000000)
 

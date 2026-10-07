@@ -46,7 +46,7 @@
 <h2 id="accessibility-notice">Accessibility Notice</h2>
 <p>This document is also available in HTML format at:</p>
 
-<p><a href="https://aholdengouveia.name/IntroData/labs/dbvocab.html">https://aholdengouveia.name/IntroData/labs/dbvocab.html</a></p>
+<p>Link: <a href="https://aholdengouveia.name/IntroData/labs/dbvocab.html"><strong>https://aholdengouveia.name/IntroData/labs/dbvocab.html</strong></a></p>
 
 <p>The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.</p>
 
@@ -58,7 +58,7 @@
 <li>The objective of this lab is to introduce students to the fundamental concepts of database keys, vocabulary, and normalization without involving programming or mathematical operations. Students will gain a basic understanding of these concepts through hands-on exploration and practical examples.</li>
 </ul>
 
-<p>References, a video, a PowerPoint and some notes are available at my website <a href="https://www.aholdengouveia.name/IntroData/databasekeysandvocab.html">https://www.aholdengouveia.name/IntroData/databasekeysandvocab.html</a></p>
+<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name/IntroData/databasekeysandvocab.html"><strong>https://www.aholdengouveia.name/IntroData/databasekeysandvocab.html</strong></a></p>
 
 </section>
 
@@ -73,13 +73,22 @@
 <p>My examples will be based on the book data I collected previously, 100bestbooks.csv if you have trouble adding your data, make sure to check how many characters are allowed in each field, it's likely the default will be a text[varchar] and only allow 100 characters, but you can change that to whatever you need.</p>
 
 <ul>
-<li>Create a table that has the labels for all your data. You can create this graphic using any program you want. Here is an example of what this should look like based on my book data: figure[h!] [scale=.3]{Table1Example1_100bestbooks.png} This is an image of my single table from the original CSV. Database table diagram showing a single table structure for 100 best books data with column headers and field definitions from the original CSV file figure</li>
-</ul>
-
+<li>Create a table that has the labels for all your data. You can create this graphic using any program you want. Here is an example of what this should look like based on my book data:
+<figure>
+<img src="Table1Example1_100bestbooks.png" alt="Database table diagram showing a single table structure for 100 best books data with column headers and field definitions from the original CSV file">
+<figcaption>This is an image of my single table from the original CSV.</figcaption>
+</figure>
+</li>
+<li>Identify some potential ways you could separate out your data in into other tables, and list at least 3 options including an explanation of why you think those might be good choices. For example with my books data you could have a table for authors, genres, Book format, publishers, or awards.</li>
+<li>Identify potential keys for the different tables, for example with my sample data about books I could use things such as "Book ID" for the Books table and "Author ID" for the Authors table. Submit a list of possible keys for your different tables along with some pros and cons for each option.</li>
+<li>Determine which key(s) should be designated as primary keys and foreign keys based on their uniqueness and relationship with other tables. Make sure to explain why you've chosen what you have, but keep in mind the rules for primary key and foreign key.</li>
+<li>Create an Entity Relationship Diagram (ERD) for your database keeping in mind all of the the above constraints. You need to have at least 3 tables, an identified and labeled Primary key for each table, and each table must have a foreign key labeled as well with the relationship noted.You may use free online ERD makers or something else. It's more important to have the relationships modeled clearly and labeled well then it is to use the standard shapes and lines. An example of what this would look like for my books data is here:
 <figure>
 <img src="TableMapOption3.png" alt="Entity relationship diagram showing three normalized database tables with primary and foreign key relationships for the books database schema">
 <figcaption>This is an image of my 3 tables after choosing how I want to start normalizing my data and planning my database.</figcaption>
 </figure>
+</li>
+</ul>
 
 </section>
 
