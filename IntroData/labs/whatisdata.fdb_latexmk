@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1791383214 "whatisdata.tex" "whatisdata.pdf" "whatisdata" 1791383215
+["pdflatex"] 1791560522 "whatisdata.tex" "whatisdata.pdf" "whatisdata" 1791560523
   "/etc/texmf/web2c/texmf.cnf" 1659374508 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc" 1463430686 2679 32dd8ae231bf4a0752b98f62dc097183 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -53,6 +53,7 @@
   "/usr/share/texlive/texmf-dist/tex/latex/bookmark/bookmark.sty" 1604871679 18237 5cbdfe9ef383a557f780a0a1f45cdb1c ""
   "/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty" 1561238569 51697 f8f08183cd2080d9d18a41432d651dfb ""
   "/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1579991033 13886 d1306dcf79a944f6988e688c1785f9ce ""
+  "/usr/share/texlive/texmf-dist/tex/latex/float/float.sty" 1137110151 6749 16d2656a1984957e674b149555f1ea1d ""
   "/usr/share/texlive/texmf-dist/tex/latex/fontawesome/fontawesome.sty" 1463430686 2757 ee97743276dc242c78f33fd622e260ea ""
   "/usr/share/texlive/texmf-dist/tex/latex/fontawesome/fontawesomesymbols-generic.tex" 1465747999 33234 40b369fd6c8364bdcc88401c4c1db5bf ""
   "/usr/share/texlive/texmf-dist/tex/latex/fontawesome/fontawesomesymbols-pdftex.tex" 1463430686 46429 f7ffa71c62c5257edd5542253d4cea15 ""
@@ -86,8 +87,8 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1659374618 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1770042360 2798855 622813713f24d2dbd083fd3928387d33 ""
   "ExampleScreenshot.png" 1737125996 77022 3b1dec344cd04c14f07ea34366797dca ""
-  "whatisdata.aux" 1791383215 1850 dca739693a74086b69fda92843725bf8 "pdflatex"
-  "whatisdata.tex" 1791383152 5870 918555b6758240d3687f04f7d9f6d64d ""
+  "whatisdata.aux" 1791560523 2136 33a36d1f8eef4a9aadc8fc0f7adbcf59 "pdflatex"
+  "whatisdata.tex" 1791560506 7898 2974ea23809101db27421ca79b2ed6a2 ""
   (generated)
   "whatisdata.aux"
   "whatisdata.log"
