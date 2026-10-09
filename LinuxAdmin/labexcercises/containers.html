@@ -37,8 +37,11 @@
             <ul>
                 <li><a href="#accessibility-notice">Accessibility Notice</a></li>
                 <li><a href="#objectives">Objectives:</a></li>
-                <li><a href="#complete-the-following-problems">Complete the following problems</a></li>
+                <li><a href="#background">Background</a></li>
+                <li><a href="#requirements">Requirements</a></li>
+                <li><a href="#acceptance-criteria">Acceptance Criteria</a></li>
                 <li><a href="#deliverables">Deliverables</a></li>
+                <li><a href="#resources">Resources</a></li>
             </ul>
         </nav>
 
@@ -55,39 +58,65 @@
 <section role="region" aria-labelledby="objectives">
 <h2 id="objectives">Objectives:</h2>
 <ul>
-<li>The objective of this lab is to introduce students to containerization technologies, including Docker and Kubernetes, which are widely used in modern server administration and application deployment. Through hands-on installation and configuration exercises, students will gain practical experience deploying containerized applications, understand the advantages and limitations of containers, and evaluate their use in enterprise environments.</li>
+<li>The objective of this lab is to introduce students to containers, including Docker and Kubernetes, which are widely used in modern server administration and application deployment. Students will install and configure container tools, deploy a containerized web server, and evaluate the pros and cons of containers for a business.</li>
 </ul>
 
 </section>
 
-<section role="region" aria-labelledby="complete-the-following-problems">
-<h2 id="complete-the-following-problems">Complete the following problems</h2>
-<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name/LinuxAdmin/containers.html"><strong>https://www.aholdengouveia.name/LinuxAdmin/containers.html</strong></a></p>
+<section role="region" aria-labelledby="background">
+<h2 id="background">Background</h2>
+<p>Acme Corp is considering containers for future deployments, and your manager wants a proof of concept and a recommendation. You may do this on one of the two servers you set up in the Server Setup lab.</p>
 
 </section>
 
-<section role="region" aria-labelledby="you-may-do-this-on-one-of-your-servers">
-<h2 id="you-may-do-this-on-one-of-your-servers">You may do this on one of your servers.</h2>
+<section role="region" aria-labelledby="requirements">
+<h2 id="requirements">Requirements</h2>
 <ol>
-<li>Install Docker and Kubernetes on your server. You can use Microk8 as your Kubernetes installation method Instructions: Link: <a href="https://microk8s.io/"><strong>https://microk8s.io/</strong></a></li>
-<li>Go through the MiniKube tutorial Tutorial: Link: <a href="https://kubernetes.io/docs/tutorials/hello-minikube/"><strong>https://kubernetes.io/docs/tutorials/hello-minikube/</strong></a></li>
-<li>Get a basic web server working using Docker OR kubernetes on ONE of your servers. You can grab the docker image from Link: <a href="https://hub.docker.com/_/httpd"><strong>https://hub.docker.com/_/httpd</strong></a> I also have some instructions and sample yaml files available for you on my website Link: <a href="https://www.aholdengouveia.name/SmartHome/Virtualizationsetup.html"><strong>https://www.aholdengouveia.name/SmartHome/Virtualizationsetup.html</strong></a> If you would prefer you can substitute another server for Apache such as Home Assistant or ZoneMinder.</li>
+<li>Install Docker and Kubernetes on your server. You can use MicroK8s as your Kubernetes installation method.</li>
+<li>Go through the minikube tutorial.</li>
+<li>Get a basic web server working using Docker or Kubernetes, your choice. You can use the Apache (httpd) Docker image, or if you would prefer, you can substitute another server such as Home Assistant or ZoneMinder. Take a screenshot showing your web server running and its page loading.</li>
+<li>Write an executive summary on what containers are, the pros and cons of containers, and why you think Acme Corp should or shouldn't consider using them going forward.</li>
+<li>Find at least one resource for containers that you found helpful and that I haven't already shared anywhere.</li>
 </ol>
+
+</section>
+
+<section role="region" aria-labelledby="acceptance-criteria">
+<h2 id="acceptance-criteria">Acceptance Criteria</h2>
+<ul>
+<li>The install process is documented with screenshots, explanations of what you're doing, and any troubleshooting that was needed.</li>
+<li>The web server is proven to work with a screenshot.</li>
+<li>The executive summary is less than 1 page.</li>
+<li>Your resource is new, not something I've already shared.</li>
+</ul>
 
 </section>
 
 <section role="region" aria-labelledby="deliverables">
 <h2 id="deliverables">Deliverables</h2>
-</section>
+<p>Audience: someone technically inclined but unfamiliar with virtualization. Include screenshots to walk them through the install process.</p>
 
-<section role="region" aria-labelledby="target-market-is-someone-technically-inclined-but-unfamiliar-with-virtualization-include-screenshots-to-walk-them-through-the-install-process-as-well-as-explanations-of-what-you-re-doing-and-any-troubleshooting-that-was-needed">
-<h2 id="target-market-is-someone-technically-inclined-but-unfamiliar-with-virtualization-include-screenshots-to-walk-them-through-the-install-process-as-well-as-explanations-of-what-you-re-doing-and-any-troubleshooting-that-was-needed">Target Market is someone technically inclined but unfamiliar with virtualization. Include screenshots to walk them through the install process, as well as explanations of what you're doing and any troubleshooting that was needed.</h2>
 <ol>
 <li>A document on how to install Docker and Kubernetes on your server.</li>
-<li>A short document describing how the Minikube tutorial went, what gave you trouble (if anything) and how you fixed it. Include screenshots to show how it went and what steps you did. Include screenshots of Minikube up and running.</li>
-<li>An executive summary on what containers are, pro/cons of containers, and why you think Acme corp should or shouldn't consider using them going forward. Executive summary should be less then 1 page.</li>
-<li>A link to resources for containers that you have found helpful that I haven't already shared anywhere.</li>
+<li>A short document describing how the minikube tutorial went, what gave you trouble (if anything), and how you fixed it. Include screenshots showing the steps you did and minikube up and running.</li>
+<li>A screenshot of your working web server, with a short explanation of how you set it up.</li>
+<li>Your executive summary.</li>
+<li>A link to your container resource.</li>
 </ol>
+
+</section>
+
+<section role="region" aria-labelledby="resources">
+<h2 id="resources">Resources</h2>
+<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name/LinuxAdmin/containers.html"><strong>https://www.aholdengouveia.name/LinuxAdmin/containers.html</strong></a></p>
+
+<p>MicroK8s installation instructions Link: <a href="https://microk8s.io/"><strong>https://microk8s.io/</strong></a></p>
+
+<p>The minikube tutorial Link: <a href="https://kubernetes.io/docs/tutorials/hello-minikube/"><strong>https://kubernetes.io/docs/tutorials/hello-minikube/</strong></a></p>
+
+<p>The Apache (httpd) Docker image Link: <a href="https://hub.docker.com/_/httpd"><strong>https://hub.docker.com/_/httpd</strong></a></p>
+
+<p>My instructions and sample yaml files Link: <a href="https://www.aholdengouveia.name/SmartHome/Virtualizationsetup.html"><strong>https://www.aholdengouveia.name/SmartHome/Virtualizationsetup.html</strong></a></p>
 
 </section>
 

@@ -61,36 +61,49 @@ The HTML version provides enhanced accessibility features including keyboard nav
 
 \section*{Objectives:}
 \begin{itemize}
-    \item The objective of this lab is to introduce students to iptables, Linux's built-in firewall and packet filtering system, which is critical for network security and server protection. Through hands-on exercises, students will learn to configure firewall rules for common services, control network traffic through port management and forwarding, block or allow specific hosts, and understand strategies for preventing network attacks such as DDOS—essential skills for securing Linux servers in production environments.
+    \item The objective of this lab is to introduce students to iptables, Linux's built-in firewall and packet filtering system. Students will configure firewall rules for common services, control network traffic through ports and forwarding, allow or block specific hosts, and plan defenses against attacks such as DDoS. These are core skills for securing Linux servers in production.
 \end{itemize}
-\section*{Complete the following problems}
 
+\section*{Background}
+Acme Corp's two report servers are going into production. Before they do, Security needs firewall rules in place for the services they run. You will be working on the two servers you set up in the Server Setup lab: your CentOS server and your second server.
+
+\section*{Requirements}
+On both servers, write iptables commands, statements, or scripts to do the following:
+\begin{enumerate}
+    \item Web server: open the ports the web server needs, and forward port 80 traffic to port 8080.
+    \item MySQL: open the ports MySQL needs.
+    \item SSH: allow incoming and outgoing SSH, and write a second script that denies SSH.
+    \item Hosts: allow or block specific hosts and MAC addresses.
+    \item Telnet and ping: block telnet with one script or command, and block ping with another.
+    \item DDoS: write the specs for how you could reduce the impact of a DDoS attack using iptables. Then implement one protection from your specs on your web server, such as limiting the number of new connections from a single IP address. Test it from your other server by sending more connections than your limit allows, for example with ApacheBench (ab), and show that the extra connections are dropped. Only run this test against your own servers.
+\end{enumerate}
+Where a requirement leaves room for interpretation, make a reasonable decision and document it as an assumption.
+
+\section*{Acceptance Criteria}
+\begin{itemize}
+    \item \textbf{Everything must be cited.} Every command, statement, and line of code in your scripts and documents must be cited, either with a link to a reference or with a note naming the previous class where you learned it, for example: \texttt{\# Learned in CIS 117 Intro to Linux}. In scripts, put the citation in a comment next to the code. Anything without a citation will not count.
+    \item All rules are applied and tested on both servers.
+    \item Every rule is proven to work with a Wireshark screenshot.
+    \item Each command, statement, or script includes an explanation of why you chose it.
+    \item Any assumptions you made are documented.
+    \item The DDoS protection is tested from your other server. You may test with Wireshark, TShark, or another method, but you must explain in detail how you tested it. Your proof must show connections under your limit getting through, and connections over your limit being dropped or refused.
+    \item The DDoS document cites at least 2 sources.
+\end{itemize}
+
+\section*{Deliverables}
+Audience: someone taking care of your servers who hasn't used iptables before. Assume some technical knowledge but not expertise. Screenshots are helpful to go with your descriptions.
+
+Include documents for both servers, clearly labeled with what the document is and which server it's for.
+\begin{enumerate}
+    \item A text document with your commands, statements, or scripts for each requirement. Include why you chose what you chose, any assumptions you made, and the Wireshark screenshots showing each one works.
+    \item Documentation of the iptables rules on each server. Include a list of the changes you made to the chains, which table you changed, and when each change was made. Include a copy of your original rules and your updated rules at the end.
+    \item A short document with your DDoS specs, the protection you implemented, and how you tested it, including a detailed explanation of your testing method and screenshots of the results. Cite at least 2 sources.
+\end{enumerate}
+
+\section*{Resources}
 References, a video, a PowerPoint and some notes are available at my website
 Link: \href{https://www.aholdengouveia.name/LinuxAdmin/iptables.html}{\textbf{\nolinkurl{https://www.aholdengouveia.name/LinuxAdmin/iptables.html}}}
 
-\subsection*{Go through both servers and complete the following problems.  }
-
-Write scripts or statements to modifying firewall rules (IPtables) for specific purposes, make sure you include wireshark screenshots to prove your command/script/statements work. 
-    \begin{enumerate}
-        \item Deal with web server (open needed ports, and forward port 80 traffic to 8080) 
-        \item Deal with MySQL service (open needed ports)
-        \item Deal with SSH service (allow incoming and outgoing SSH, second script to deny SSH)
-        %\item Deal with Email service (Such as allow or block incoming SMTP,POP3...)
-        \item Script to allow/block specific hosts, MAC addresses
-        \item A script/command to block telnet, and another one to block ping
-    \end{enumerate} 
-
- Write the specs for how you think you could prevent a DDOS attack using IPtables.  Can you write a script for this? Cite your sources!
-\section*{Deliverables}
-Target Market is someone trying to take care of your server that hasn't used IPTables before, assume some technical knowledge but not expertise.  Screenshots are helpful to go with your descriptions. 
-
-Include documents for BOTH servers clearly labeled with what the document is and which server it's for
-
-\begin{itemize}
-    \item  A text document including the answers to each question, (scripts or statements or commands are fine) but explain why you choose what you choose. Include any assumptions made about what you consider "dealing with" as well as the screenshots showing Wireshark to prove your script/statement/command works.  
-    \item Documentation of your IPtables for each of your servers should include a list of changes to the chains you've made including which table you think needs to be changed, when the change was made. Include a copy of your original IPtable and your updated IPtable at the end of this assignment. 
-    \item A short document explaining how you think you could prevent a DDOS attack using IPtables.  Cite at least 2 sources.
-\end{itemize}
-
+Your servers are command line only, so Wireshark can't run on them directly. You can run Wireshark on your host computer to watch your virtual machines' network traffic, or capture the traffic on a server with TShark or tcpdump, save it to a file, and open that file in Wireshark on your host computer.
 
 \end{document}

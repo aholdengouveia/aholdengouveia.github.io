@@ -61,36 +61,76 @@ The HTML version provides enhanced accessibility features including keyboard nav
 
 \section*{Objectives:}
 \begin{itemize}
-    \item The objective of this lab is to introduce students to server hardening practices and security auditing through the use of automated tools and health monitoring systems. Through hands-on exercises, students will learn to use Lynis for comprehensive security audits, analyze and remediate security vulnerabilities, debug and refactor poorly written monitoring scripts, and develop effective server health monitoring systems—building the critical skills needed to maintain secure, well-monitored production servers and respond to real-world code quality challenges.
+    \item The objective of this lab is to introduce students to server hardening and security auditing. Students will run a security audit with Lynis, analyze and fix the issues it finds, and debug and refactor a poorly written health monitoring script. These skills help keep production servers secure and well monitored, and prepare students to work with code of varying quality.
 \end{itemize}
-\section*{Complete the following problems}
- 
-%\subsection*{Please include the command, a screenshot showing it works as intended, cite all sources you used, and give a short explanation of how the command works and why.}
 
-This lab includes a script that was written by me using an AI.  Scripts written by AI can be of varying quality, and it's likely you'll get slop and need to fix it.  This script is slop on purpose and needs to be fixed. Be wary of the comments by previous developers (me!), you never know who you can trust, here be dragons! 
+\section*{Background}
+Acme Corp's report servers need a security audit, and the team's health check script needs work. The script was written by me using an AI. Scripts written by AI can be of varying quality, and it's likely you'll get slop and need to fix it. This script is slop on purpose and needs to be fixed. Be wary of the comments by previous developers (me!), you never know who you can trust, here be dragons! You will be working on the two servers you set up in the Server Setup lab: your CentOS server and your second server.
 
-The script is attached to this lab, it's called "BadServerHealthCheck", there is a bash script version and a Python version.  You make pick which one you want to fix. There are some hints in the comments for things to fix.  Not everything that should be fixed is hinted at, some things that need fixing are included and hidden for extra coding chaos. Let the games begin. 
+\section*{Requirements}
+\begin{enumerate}
+    \item Download and install Lynis on both your servers and run it.
+    \item Create a short report on the findings (one report for each server) and what you'll do to improve your server setup.
+    \item Fix the BadServerHealthCheck script to monitor the health of your server, using the commands from the PowerPoints on Security, DFIR and Backups as your base. There is a bash version and a Python version, and you may pick which one you want to fix. There are some hints in the comments for things to fix. Not everything that should be fixed is hinted at, some things that need fixing are included and hidden for extra coding chaos. Think about what info you care about, and how to make it easier for you to read or upload to your dashboard.  Data is only good if you're using it for something.
+    \item When fixing, debugging, and refactoring the script, add comments for what each thing actually does.
+\end{enumerate}
 
-    \begin{enumerate}
-        \item Download and install Lynis (Link: \href{https://cisofy.com/lynis/)}{\textbf{\nolinkurl{https://cisofy.com/lynis/)}}} on both your servers and run it.
-        \item Create a short report on the findings (one report for each server) and what you'll do to improve your server setup.
-        \item Fix the given script to monitor the health of your server using the commands from the PowerPoints on Security, DFIR and Backups as your base. Think about what info you care about, and how to make it easier for you to read or upload to your dashboard.  Data is only good if you're using it for something. 
-        \item When fixing/debugging/refactoring the script, make sure you also add comments for what each thing actually does. 
-    \end{enumerate}
+\section*{Acceptance Criteria}
+\begin{itemize}
+    \item \textbf{Everything must be cited.} Every command, statement, and line of code in your scripts and documents must be cited, either with a link to a reference or with a note naming the previous class where you learned it, for example: \texttt{\# Learned in CIS 117 Intro to Linux}. In scripts, put the citation in a comment next to the code. Anything without a citation will not count.
+    \item Lynis is run on both servers, with a findings report for each.
+    \item The fixed script is tested on both servers.
+    \item Scripts with no documentation and no commentary will not be accepted.
+    \item The script is uploaded to GitHub.
+    \item The script meets all of the Script Goals below.
+\end{itemize}
 
-
+\subsection*{Script Goals}
+Your fixed script must meet all of these goals:
+\begin{enumerate}
+    \item The report runs once each time the script is run.
+    \item There is no fake or random data in the report.
+    \item There are no pointless delays.
+    \item Every check produces correct results, and none of them error.
+    \item There is no unused code, and no leftover temp files. If you need a temp file, create it safely and delete it when you're done.
+    \item Each run produces one clean report, saved in a sensible location (not /tmp), without repeating old results.
+    \item The network check doesn't depend on a single outside host.
+    \item Thresholds for CPU, memory, and disk are set as variables at the top of the script, so they are easy to change.
+    \item All comments are professional and accurate.
+    \item ShellCheck (for bash) or flake8 (for Python) reports no errors.
+\end{enumerate}
 
 \section*{Deliverables}
-\subsection*{Scripts with no documentation and no commentary will not be accepted.}
-Audience is a new intern at the company who's first set of jobs is to check the health of all our report servers here at Acme Corp
+Audience: a new intern at Acme Corp whose first set of jobs is to check the health of all our report servers.
+\begin{enumerate}
+    \item Your Lynis reports, including any changes you made to each server and why you made those changes.
+    \item Your fixed health check script, well commented, with a link to your GitHub where you've uploaded it.
+    \item Health monitoring documentation, including:
     \begin{enumerate}
-        \item Your Lynis reports, including any changes you made to each server and why you made those changes. 
-        \item Health Monitoring Document(s)
-            \begin{enumerate}
-                \item Documentation for this should include a short text file explaining what you choose to change on your health monitor and why.
-                \item Location for where the health report is saved and instructions for how to run your script remotely.
-                \item Make sure to include information about what you picked/fixed, why you picked those commands and how they are used.
-                \item Answer the following: Are they different for each server? the same for both?  Are the running instructions any different?
-            \end{enumerate}
+        \item A short explanation of what you chose to change on your health monitor and why.
+        \item The location where the health report is saved, and instructions for how to run your script remotely.
+        \item What you picked and fixed, why you picked those commands, and how they are used.
+        \item Answer the following: Are they different for each server or the same for both? Are the running instructions any different?
     \end{enumerate}
+\end{enumerate}
+
+\section*{Resources}
+References, a video, a PowerPoint and some notes are available at my website
+Link: \href{https://www.aholdengouveia.name/LinuxAdmin/serversecurity.html}{\textbf{\nolinkurl{https://www.aholdengouveia.name/LinuxAdmin/serversecurity.html}}}
+
+Lynis
+Link: \href{https://cisofy.com/lynis/}{\textbf{\nolinkurl{https://cisofy.com/lynis/}}}
+
+The BadServerHealthCheck script, bash version
+Link: \href{https://www.aholdengouveia.name/LinuxAdmin/labexcercises/BadServerHealthCheck.sh}{\textbf{\nolinkurl{https://www.aholdengouveia.name/LinuxAdmin/labexcercises/BadServerHealthCheck.sh}}}
+
+ShellCheck, for checking bash scripts
+Link: \href{https://www.shellcheck.net/}{\textbf{\nolinkurl{https://www.shellcheck.net/}}}
+
+flake8, for checking Python scripts
+Link: \href{https://flake8.pycqa.org/}{\textbf{\nolinkurl{https://flake8.pycqa.org/}}}
+
+The BadServerHealthCheck script, Python version
+Link: \href{https://www.aholdengouveia.name/LinuxAdmin/labexcercises/BadServerHealthCheck.py}{\textbf{\nolinkurl{https://www.aholdengouveia.name/LinuxAdmin/labexcercises/BadServerHealthCheck.py}}}
+
 \end{document}

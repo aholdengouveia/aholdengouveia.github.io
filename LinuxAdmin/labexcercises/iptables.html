@@ -37,8 +37,11 @@
             <ul>
                 <li><a href="#accessibility-notice">Accessibility Notice</a></li>
                 <li><a href="#objectives">Objectives:</a></li>
-                <li><a href="#complete-the-following-problems">Complete the following problems</a></li>
+                <li><a href="#background">Background</a></li>
+                <li><a href="#requirements">Requirements</a></li>
+                <li><a href="#acceptance-criteria">Acceptance Criteria</a></li>
                 <li><a href="#deliverables">Deliverables</a></li>
+                <li><a href="#resources">Resources</a></li>
             </ul>
         </nav>
 
@@ -55,44 +58,67 @@
 <section role="region" aria-labelledby="objectives">
 <h2 id="objectives">Objectives:</h2>
 <ul>
-<li>The objective of this lab is to introduce students to iptables, Linux's built-in firewall and packet filtering system, which is critical for network security and server protection. Through hands-on exercises, students will learn to configure firewall rules for common services, control network traffic through port management and forwarding, block or allow specific hosts, and understand strategies for preventing network attacks such as DDOS—essential skills for securing Linux servers in production environments.</li>
+<li>The objective of this lab is to introduce students to iptables, Linux's built-in firewall and packet filtering system. Students will configure firewall rules for common services, control network traffic through ports and forwarding, allow or block specific hosts, and plan defenses against attacks such as DDoS. These are core skills for securing Linux servers in production.</li>
 </ul>
 
 </section>
 
-<section role="region" aria-labelledby="complete-the-following-problems">
-<h2 id="complete-the-following-problems">Complete the following problems</h2>
-<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name/LinuxAdmin/iptables.html"><strong>https://www.aholdengouveia.name/LinuxAdmin/iptables.html</strong></a></p>
+<section role="region" aria-labelledby="background">
+<h2 id="background">Background</h2>
+<p>Acme Corp's two report servers are going into production. Before they do, Security needs firewall rules in place for the services they run. You will be working on the two servers you set up in the Server Setup lab: your CentOS server and your second server.</p>
 
 </section>
 
-<section role="region" aria-labelledby="go-through-both-servers-and-complete-the-following-problems">
-<h2 id="go-through-both-servers-and-complete-the-following-problems">Go through both servers and complete the following problems.  </h2>
-<p>Write scripts or statements to modifying firewall rules (IPtables) for specific purposes, make sure you include wireshark screenshots to prove your command/script/statements work.</p>
+<section role="region" aria-labelledby="requirements">
+<h2 id="requirements">Requirements</h2>
+<p>On both servers, write iptables commands, statements, or scripts to do the following:</p>
 
 <ol>
-<li>Deal with web server (open needed ports, and forward port 80 traffic to 8080)</li>
-<li>Deal with MySQL service (open needed ports)</li>
-<li>Deal with SSH service (allow incoming and outgoing SSH, second script to deny SSH)</li>
-<li>Script to allow/block specific hosts, MAC addresses</li>
-<li>A script/command to block telnet, and another one to block ping</li>
+<li>Web server: open the ports the web server needs, and forward port 80 traffic to port 8080.</li>
+<li>MySQL: open the ports MySQL needs.</li>
+<li>SSH: allow incoming and outgoing SSH, and write a second script that denies SSH.</li>
+<li>Hosts: allow or block specific hosts and MAC addresses.</li>
+<li>Telnet and ping: block telnet with one script or command, and block ping with another.</li>
+<li>DDoS: write the specs for how you could reduce the impact of a DDoS attack using iptables. Then implement one protection from your specs on your web server, such as limiting the number of new connections from a single IP address. Test it from your other server by sending more connections than your limit allows, for example with ApacheBench (ab), and show that the extra connections are dropped. Only run this test against your own servers.</li>
 </ol>
 
-<p>Write the specs for how you think you could prevent a DDOS attack using IPtables. Can you write a script for this? Cite your sources!</p>
+<p>Where a requirement leaves room for interpretation, make a reasonable decision and document it as an assumption.</p>
+
+</section>
+
+<section role="region" aria-labelledby="acceptance-criteria">
+<h2 id="acceptance-criteria">Acceptance Criteria</h2>
+<ul>
+<li><strong>Everything must be cited.</strong> Every command, statement, and line of code in your scripts and documents must be cited, either with a link to a reference or with a note naming the previous class where you learned it, for example: # Learned in CIS 117 Intro to Linux. In scripts, put the citation in a comment next to the code. Anything without a citation will not count.</li>
+<li>All rules are applied and tested on both servers.</li>
+<li>Every rule is proven to work with a Wireshark screenshot.</li>
+<li>Each command, statement, or script includes an explanation of why you chose it.</li>
+<li>Any assumptions you made are documented.</li>
+<li>The DDoS protection is tested from your other server. You may test with Wireshark, TShark, or another method, but you must explain in detail how you tested it. Your proof must show connections under your limit getting through, and connections over your limit being dropped or refused.</li>
+<li>The DDoS document cites at least 2 sources.</li>
+</ul>
 
 </section>
 
 <section role="region" aria-labelledby="deliverables">
 <h2 id="deliverables">Deliverables</h2>
-<p>Target Market is someone trying to take care of your server that hasn't used IPTables before, assume some technical knowledge but not expertise. Screenshots are helpful to go with your descriptions.</p>
+<p>Audience: someone taking care of your servers who hasn't used iptables before. Assume some technical knowledge but not expertise. Screenshots are helpful to go with your descriptions.</p>
 
-<p>Include documents for BOTH servers clearly labeled with what the document is and which server it's for</p>
+<p>Include documents for both servers, clearly labeled with what the document is and which server it's for.</p>
 
-<ul>
-<li>A text document including the answers to each question, (scripts or statements or commands are fine) but explain why you choose what you choose. Include any assumptions made about what you consider "dealing with" as well as the screenshots showing Wireshark to prove your script/statement/command works.</li>
-<li>Documentation of your IPtables for each of your servers should include a list of changes to the chains you've made including which table you think needs to be changed, when the change was made. Include a copy of your original IPtable and your updated IPtable at the end of this assignment.</li>
-<li>A short document explaining how you think you could prevent a DDOS attack using IPtables. Cite at least 2 sources.</li>
-</ul>
+<ol>
+<li>A text document with your commands, statements, or scripts for each requirement. Include why you chose what you chose, any assumptions you made, and the Wireshark screenshots showing each one works.</li>
+<li>Documentation of the iptables rules on each server. Include a list of the changes you made to the chains, which table you changed, and when each change was made. Include a copy of your original rules and your updated rules at the end.</li>
+<li>A short document with your DDoS specs, the protection you implemented, and how you tested it, including a detailed explanation of your testing method and screenshots of the results. Cite at least 2 sources.</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="resources">
+<h2 id="resources">Resources</h2>
+<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name/LinuxAdmin/iptables.html"><strong>https://www.aholdengouveia.name/LinuxAdmin/iptables.html</strong></a></p>
+
+<p>Your servers are command line only, so Wireshark can't run on them directly. You can run Wireshark on your host computer to watch your virtual machines' network traffic, or capture the traffic on a server with TShark or tcpdump, save it to a file, and open that file in Wireshark on your host computer.</p>
 
 </section>
 

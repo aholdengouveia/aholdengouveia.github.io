@@ -37,8 +37,11 @@
             <ul>
                 <li><a href="#accessibility-notice">Accessibility Notice</a></li>
                 <li><a href="#objectives">Objectives:</a></li>
-                <li><a href="#complete-the-following-problems">Complete the following problems</a></li>
+                <li><a href="#background">Background</a></li>
+                <li><a href="#requirements">Requirements</a></li>
+                <li><a href="#acceptance-criteria">Acceptance Criteria</a></li>
                 <li><a href="#deliverables">Deliverables</a></li>
+                <li><a href="#resources">Resources</a></li>
             </ul>
         </nav>
 
@@ -55,45 +58,92 @@
 <section role="region" aria-labelledby="objectives">
 <h2 id="objectives">Objectives:</h2>
 <ul>
-<li>The objective of this lab is to introduce students to server hardening practices and security auditing through the use of automated tools and health monitoring systems. Through hands-on exercises, students will learn to use Lynis for comprehensive security audits, analyze and remediate security vulnerabilities, debug and refactor poorly written monitoring scripts, and develop effective server health monitoring systems—building the critical skills needed to maintain secure, well-monitored production servers and respond to real-world code quality challenges.</li>
+<li>The objective of this lab is to introduce students to server hardening and security auditing. Students will run a security audit with Lynis, analyze and fix the issues it finds, and debug and refactor a poorly written health monitoring script. These skills help keep production servers secure and well monitored, and prepare students to work with code of varying quality.</li>
 </ul>
 
 </section>
 
-<section role="region" aria-labelledby="complete-the-following-problems">
-<h2 id="complete-the-following-problems">Complete the following problems</h2>
-<p>This lab includes a script that was written by me using an AI. Scripts written by AI can be of varying quality, and it's likely you'll get slop and need to fix it. This script is slop on purpose and needs to be fixed. Be wary of the comments by previous developers (me!), you never know who you can trust, here be dragons!</p>
+<section role="region" aria-labelledby="background">
+<h2 id="background">Background</h2>
+<p>Acme Corp's report servers need a security audit, and the team's health check script needs work. The script was written by me using an AI. Scripts written by AI can be of varying quality, and it's likely you'll get slop and need to fix it. This script is slop on purpose and needs to be fixed. Be wary of the comments by previous developers (me!), you never know who you can trust, here be dragons! You will be working on the two servers you set up in the Server Setup lab: your CentOS server and your second server.</p>
 
-<p>The script is attached to this lab, it's called "BadServerHealthCheck", there is a bash script version and a Python version. You make pick which one you want to fix. There are some hints in the comments for things to fix. Not everything that should be fixed is hinted at, some things that need fixing are included and hidden for extra coding chaos. Let the games begin.</p>
+</section>
+
+<section role="region" aria-labelledby="requirements">
+<h2 id="requirements">Requirements</h2>
+<ol>
+<li>Download and install Lynis on both your servers and run it.</li>
+<li>Create a short report on the findings (one report for each server) and what you'll do to improve your server setup.</li>
+<li>Fix the BadServerHealthCheck script to monitor the health of your server, using the commands from the PowerPoints on Security, DFIR and Backups as your base. There is a bash version and a Python version, and you may pick which one you want to fix. There are some hints in the comments for things to fix. Not everything that should be fixed is hinted at, some things that need fixing are included and hidden for extra coding chaos. Think about what info you care about, and how to make it easier for you to read or upload to your dashboard. Data is only good if you're using it for something.</li>
+<li>When fixing, debugging, and refactoring the script, add comments for what each thing actually does.</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="acceptance-criteria">
+<h2 id="acceptance-criteria">Acceptance Criteria</h2>
+<ul>
+<li><strong>Everything must be cited.</strong> Every command, statement, and line of code in your scripts and documents must be cited, either with a link to a reference or with a note naming the previous class where you learned it, for example: # Learned in CIS 117 Intro to Linux. In scripts, put the citation in a comment next to the code. Anything without a citation will not count.</li>
+<li>Lynis is run on both servers, with a findings report for each.</li>
+<li>The fixed script is tested on both servers.</li>
+<li>Scripts with no documentation and no commentary will not be accepted.</li>
+<li>The script is uploaded to GitHub.</li>
+<li>The script meets all of the Script Goals below.</li>
+</ul>
+
+</section>
+
+<section role="region" aria-labelledby="script-goals">
+<h2 id="script-goals">Script Goals</h2>
+<p>Your fixed script must meet all of these goals:</p>
 
 <ol>
-<li>Download and install Lynis (Link: <a href="https://cisofy.com/lynis/)"><strong>https://cisofy.com/lynis/)</strong></a> on both your servers and run it.</li>
-<li>Create a short report on the findings (one report for each server) and what you'll do to improve your server setup.</li>
-<li>Fix the given script to monitor the health of your server using the commands from the PowerPoints on Security, DFIR and Backups as your base. Think about what info you care about, and how to make it easier for you to read or upload to your dashboard. Data is only good if you're using it for something.</li>
-<li>When fixing/debugging/refactoring the script, make sure you also add comments for what each thing actually does.</li>
+<li>The report runs once each time the script is run.</li>
+<li>There is no fake or random data in the report.</li>
+<li>There are no pointless delays.</li>
+<li>Every check produces correct results, and none of them error.</li>
+<li>There is no unused code, and no leftover temp files. If you need a temp file, create it safely and delete it when you're done.</li>
+<li>Each run produces one clean report, saved in a sensible location (not /tmp), without repeating old results.</li>
+<li>The network check doesn't depend on a single outside host.</li>
+<li>Thresholds for CPU, memory, and disk are set as variables at the top of the script, so they are easy to change.</li>
+<li>All comments are professional and accurate.</li>
+<li>ShellCheck (for bash) or flake8 (for Python) reports no errors.</li>
 </ol>
 
 </section>
 
 <section role="region" aria-labelledby="deliverables">
 <h2 id="deliverables">Deliverables</h2>
-</section>
-
-<section role="region" aria-labelledby="scripts-with-no-documentation-and-no-commentary-will-not-be-accepted">
-<h2 id="scripts-with-no-documentation-and-no-commentary-will-not-be-accepted">Scripts with no documentation and no commentary will not be accepted.</h2>
-<p>Audience is a new intern at the company who's first set of jobs is to check the health of all our report servers here at Acme Corp</p>
+<p>Audience: a new intern at Acme Corp whose first set of jobs is to check the health of all our report servers.</p>
 
 <ol>
 <li>Your Lynis reports, including any changes you made to each server and why you made those changes.</li>
-<li>Health Monitoring Document(s)
+<li>Your fixed health check script, well commented, with a link to your GitHub where you've uploaded it.</li>
+<li>Health monitoring documentation, including:
 <ol type="a">
-<li>Documentation for this should include a short text file explaining what you choose to change on your health monitor and why.</li>
-<li>Location for where the health report is saved and instructions for how to run your script remotely.</li>
-<li>Make sure to include information about what you picked/fixed, why you picked those commands and how they are used.</li>
-<li>Answer the following: Are they different for each server? the same for both? Are the running instructions any different?</li>
+<li>A short explanation of what you chose to change on your health monitor and why.</li>
+<li>The location where the health report is saved, and instructions for how to run your script remotely.</li>
+<li>What you picked and fixed, why you picked those commands, and how they are used.</li>
+<li>Answer the following: Are they different for each server or the same for both? Are the running instructions any different?</li>
 </ol>
 </li>
 </ol>
+
+</section>
+
+<section role="region" aria-labelledby="resources">
+<h2 id="resources">Resources</h2>
+<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name/LinuxAdmin/serversecurity.html"><strong>https://www.aholdengouveia.name/LinuxAdmin/serversecurity.html</strong></a></p>
+
+<p>Lynis Link: <a href="https://cisofy.com/lynis/"><strong>https://cisofy.com/lynis/</strong></a></p>
+
+<p>The BadServerHealthCheck script, bash version Link: <a href="https://www.aholdengouveia.name/LinuxAdmin/labexcercises/BadServerHealthCheck.sh"><strong>https://www.aholdengouveia.name/LinuxAdmin/labexcercises/BadServerHealthCheck.sh</strong></a></p>
+
+<p>ShellCheck, for checking bash scripts Link: <a href="https://www.shellcheck.net/"><strong>https://www.shellcheck.net/</strong></a></p>
+
+<p>flake8, for checking Python scripts Link: <a href="https://flake8.pycqa.org/"><strong>https://flake8.pycqa.org/</strong></a></p>
+
+<p>The BadServerHealthCheck script, Python version Link: <a href="https://www.aholdengouveia.name/LinuxAdmin/labexcercises/BadServerHealthCheck.py"><strong>https://www.aholdengouveia.name/LinuxAdmin/labexcercises/BadServerHealthCheck.py</strong></a></p>
 
 </section>
 
