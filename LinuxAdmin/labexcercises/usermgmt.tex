@@ -1,0 +1,129 @@
+\documentclass[12pt]{article}
+
+\usepackage{fontawesome}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage[tagged, highstructure]{accessibility}
+\usepackage{bookmark}
+\usepackage{enumitem}
+
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0},
+    pdftitle={User Management Lab},
+    pdfauthor={Adrianna Holden-Gouveia},
+    pdfsubject={Linux Administration - Lab Assignment},
+    pdflang={en-US},
+    pdfkeywords={user management, groups, sudo, passwords, onboarding}
+}
+
+% Configure PDF bookmarks for navigation
+\bookmarksetup{
+    numbered,
+    open,
+}
+
+% Configure list spacing for better accessibility
+\setlist{nosep}
+
+
+
+\title{User Management}
+\author{
+        Adrianna Holden-Gouveia \\
+        Website: \href{https://aholdengouveia.name}{aholdengouveia.name}\\ 
+        \date{\vspace{-5ex}}
+        %Email: \href{mailto:admin@aholdengouveia.name}{admin@aholdengouveia.name} \\
+%        \faLinkedin{: aholdengouveia} \\
+        \faGithub {: aholdengouveia} \\
+       % \faTwitter {: aholdengouveia} \\
+        }
+
+%S\date{\today}
+
+
+\begin{document}    
+
+\maketitle
+
+%\begin{abstract}
+%This is a template for Linux Administration Lab work
+%\end{abstract}
+%\tableofcontents
+
+
+\section*{Accessibility Notice}
+This document is also available in HTML format at:
+
+Link: \href{https://aholdengouveia.name/LinuxAdmin/labexcercises/usermgmt.html}{\textbf{\nolinkurl{https://aholdengouveia.name/LinuxAdmin/labexcercises/usermgmt.html}}}
+
+The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.
+
+\section*{Objectives:}
+\begin{itemize}
+    \item The objective of this lab is to introduce students to managing users on Linux servers. Students will script adding and removing users, manage groups and admin rights, set password rules, and secure root access. These are everyday tasks for a systems administrator.
+\end{itemize}
+
+\section*{Background}
+HR has sent over a list of new hires, and one employee is leaving. Acme Corp needs a repeatable process for both, because this will happen every week. You will be working on the two servers you set up in the Server Setup lab: your Red Hat based server and your second server.
+
+\section*{Requirements}
+\begin{enumerate}
+    \item Write a script that creates accounts for everyone in the level 1 list of names (linked under Resources) on both servers. Choose a username format, and handle anything in the list that doesn't fit it.
+    \item Run your script on the level 2 list of names.
+    \item New users must change their password the first time they log in.
+    \item Put users into department groups of your choice, and give one user admin rights using sudo, not root.
+    \item Write an offboarding script for a departing user that locks the account, stops their running processes, and archives their home directory before the account is removed.
+    \item Turn off direct root login over SSH.
+\end{enumerate}
+
+\section*{Acceptance Criteria}
+\begin{itemize}
+    \item \textbf{Everything must be cited.} Every command, statement, and line of code in your scripts and documents must be cited, either with a link to a reference or with a note naming the previous class where you learned it, for example: \texttt{\# Learned in CIS 117 Intro to Linux}. In scripts, put the citation in a comment next to the code. Anything without a citation will not count.
+    \item Everything is tested on both servers.
+    \item Screenshots show a new user logging in and being made to change their password, your sudo user using sudo, and a regular user being refused.
+    \item Scripts are well commented and uploaded to GitHub.
+    \item Every terminal screenshot shows your prompt with your username and hostname, and either the output of \texttt{date} or a note beside the terminal with your name and the term. Hostnames must match your server inventory from the Server Setup lab.
+    \item Your GitHub repository shows your work over time: several commits across more than one day, each with a message describing the change, not a single upload of finished code.
+\end{itemize}
+
+\section*{Deliverables}
+Audience: the help desk team, who will use your process every time someone joins or leaves. Assume technical knowledge but not expertise.  Screenshots are helpful to go with your descriptions.
+
+Make sure your deliverables include documents for BOTH servers, clearly labeled with what the document is and which server it's for.
+\begin{itemize}
+    \item Your onboarding and offboarding scripts, with a link to your GitHub where you've uploaded them.
+    \item An onboarding and offboarding procedure document for the help desk.
+    \item A short explanation of your username format, and how it handled the level 2 names.
+    \item Your test screenshots.
+\end{itemize}
+
+\section*{Resources}
+References, a video, a PowerPoint and some notes are available at my website
+Link: \href{https://www.aholdengouveia.name/LinuxAdmin/Usermgmt.html}{\textbf{\nolinkurl{https://www.aholdengouveia.name/LinuxAdmin/Usermgmt.html}}}
+
+Level 1 list of names
+Link: \href{https://www.aholdengouveia.name/LinuxAdmin/UserNamesLvl1.txt}{\textbf{\nolinkurl{https://www.aholdengouveia.name/LinuxAdmin/UserNamesLvl1.txt}}}
+
+Level 2 list of names
+Link: \href{https://www.aholdengouveia.name/LinuxAdmin/UserNamesLvl2.txt}{\textbf{\nolinkurl{https://www.aholdengouveia.name/LinuxAdmin/UserNamesLvl2.txt}}}
+
+% ============================================================
+% EXAMPLE: Accessible Table (if needed)
+% Uncomment and modify the lines below to add a table
+% This ensures proper screen reader support
+% ============================================================
+%\begin{table}[h]
+%\caption{Command Options}
+%\begin{tabular}{|l|l|}
+%\hline
+%\textbf{Option} & \textbf{Description} \\
+%\hline
+%-F & Field separator \\
+%\hline
+%-v & Variable assignment \\
+%\hline
+%\end{tabular}
+%\end{table}
+
+\end{document}

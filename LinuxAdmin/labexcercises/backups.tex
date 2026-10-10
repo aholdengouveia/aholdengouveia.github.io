@@ -1,0 +1,129 @@
+\documentclass[12pt]{article}
+
+\usepackage{fontawesome}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage[tagged, highstructure]{accessibility}
+\usepackage{bookmark}
+\usepackage{enumitem}
+
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0},
+    pdftitle={Backup, Restore, and Post Mortem Lab},
+    pdfauthor={Adrianna Holden-Gouveia},
+    pdfsubject={Linux Administration - Lab Assignment},
+    pdflang={en-US},
+    pdfkeywords={backups, tar, cron, restore, incident response, post mortem}
+}
+
+% Configure PDF bookmarks for navigation
+\bookmarksetup{
+    numbered,
+    open,
+}
+
+% Configure list spacing for better accessibility
+\setlist{nosep}
+
+
+
+\title{Backup, Restore, and Post Mortem}
+\author{
+        Adrianna Holden-Gouveia \\
+        Website: \href{https://aholdengouveia.name}{aholdengouveia.name}\\ 
+        \date{\vspace{-5ex}}
+        %Email: \href{mailto:admin@aholdengouveia.name}{admin@aholdengouveia.name} \\
+%        \faLinkedin{: aholdengouveia} \\
+        \faGithub {: aholdengouveia} \\
+       % \faTwitter {: aholdengouveia} \\
+        }
+
+%S\date{\today}
+
+
+\begin{document}    
+
+\maketitle
+
+%\begin{abstract}
+%This is a template for Linux Administration Lab work
+%\end{abstract}
+%\tableofcontents
+
+
+\section*{Accessibility Notice}
+This document is also available in HTML format at:
+
+Link: \href{https://aholdengouveia.name/LinuxAdmin/labexcercises/backups.html}{\textbf{\nolinkurl{https://aholdengouveia.name/LinuxAdmin/labexcercises/backups.html}}}
+
+The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.
+
+\section*{Objectives:}
+\begin{itemize}
+    \item The objective of this lab is to give students practice with backups, disaster recovery, and incident response. Students will script and schedule backups, store them on a second server, prove they can restore from them, and write a post mortem. A backup is only useful if you know you can restore from it.
+\end{itemize}
+
+\section*{Background}
+After last week's incident, management wants proof that Acme Corp can recover. A backup no one has tested isn't a backup. You will be working on the two servers you set up in the Server Setup lab: your Red Hat based server and your second server.
+
+\section*{Requirements}
+\begin{enumerate}
+    \item Write a backup script using tar that backs up /etc, users' home directories, and your change log, compressed, with the date in the filename.
+    \item Keep only the last 7 backups, deleting older ones automatically.
+    \item Copy each backup to your other server, so it isn't stored only on the machine it came from.
+    \item Schedule your backup script with cron.
+    \item Restore drill: delete something important, such as a config file or a user's home directory, then restore it from your backup. Time how long it takes.
+    \item Write a post mortem for either your restore drill or the B0rk incident from the Scripting for Server Security Part 2 lab. Use the sample report from Google (linked under Resources) as your template.
+\end{enumerate}
+
+\section*{Acceptance Criteria}
+\begin{itemize}
+    \item \textbf{Everything must be cited.} Every command, statement, and line of code in your scripts and documents must be cited, either with a link to a reference or with a note naming the previous class where you learned it, for example: \texttt{\# Learned in CIS 117 Intro to Linux}. In scripts, put the citation in a comment next to the code. Anything without a citation will not count.
+    \item The restore is proven with before and after screenshots.
+    \item The restored files are checked against the originals, for example with \texttt{sha256sum}.
+    \item Your cron schedule is shown working.
+    \item Scripts are well commented and uploaded to GitHub.
+    \item Every terminal screenshot shows your prompt with your username and hostname, and either the output of \texttt{date} or a note beside the terminal with your name and the term. Hostnames must match your server inventory from the Server Setup lab.
+    \item Your GitHub repository shows your work over time: several commits across more than one day, each with a message describing the change, not a single upload of finished code.
+\end{itemize}
+
+\section*{Deliverables}
+Audience: a teammate who has to restore a server during an emergency. Assume technical knowledge but not expertise.  Screenshots are helpful to go with your descriptions.
+
+Make sure your deliverables include documents for BOTH servers, clearly labeled with what the document is and which server it's for.
+\begin{itemize}
+    \item Your backup script, with a link to your GitHub where you've uploaded it.
+    \item A restore procedure someone else could follow during an emergency, including how long your restore drill took.
+    \item Your post mortem.
+\end{itemize}
+
+\section*{Resources}
+References, a video, a PowerPoint and some notes are available at my website
+Link: \href{https://www.aholdengouveia.name/LinuxAdmin/backups.html}{\textbf{\nolinkurl{https://www.aholdengouveia.name/LinuxAdmin/backups.html}}}
+
+My video on how to use tar
+Link: \href{https://www.youtube.com/watch?v=x0EK6PmKRCU}{\textbf{\nolinkurl{https://www.youtube.com/watch?v=x0EK6PmKRCU}}}
+
+Sample post mortem report from Google
+Link: \href{https://web.archive.org/web/20220724194136/https://developers.googleblog.com/2013/05/google-api-infrastructure-outage_3.html}{\textbf{\nolinkurl{https://web.archive.org/web/20220724194136/https://developers.googleblog.com/2013/05/google-api-infrastructure-outage_3.html}}}
+
+% ============================================================
+% EXAMPLE: Accessible Table (if needed)
+% Uncomment and modify the lines below to add a table
+% This ensures proper screen reader support
+% ============================================================
+%\begin{table}[h]
+%\caption{Command Options}
+%\begin{tabular}{|l|l|}
+%\hline
+%\textbf{Option} & \textbf{Description} \\
+%\hline
+%-F & Field separator \\
+%\hline
+%-v & Variable assignment \\
+%\hline
+%\end{tabular}
+%\end{table}
+
+\end{document}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Snapshots and Infrastructure as Code</title>
+    <link href="../../css/accessible-lab.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
+        <h1>Snapshots and Infrastructure as Code</h1>
+        <div class="author">
+            <p>Adrianna Holden-Gouveia</p>
+            <p>Website: <a href="https://aholdengouveia.name">https://aholdengouveia.name</a></p>
+            <p>GitHub: <a href="https://github.com/aholdengouveia" aria-label="GitHub profile">aholdengouveia</a></p>
+        </div>
+    </header>
+
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li><a href="/LinuxAdmin/">Linux Administration</a></li>
+                <li aria-current="page">Snapshots and Infrastructure as Code</li>
+            </ol>
+        </nav>
+
+    <main role="main" id="main-content">
+        <section role="region" aria-labelledby="pdf-version-notice" class="accessibility-notice">
+            <h2 id="pdf-version-notice">PDF Version Available</h2>
+            <p>This document is also available in PDF format: <a href="virtualization.pdf">virtualization.pdf</a></p>
+            <p>The PDF version includes bookmarks for easy navigation and is optimized for printing.</p>
+        </section>
+
+        <nav role="navigation" aria-label="Table of Contents" class="toc">
+            <h2>On this page:</h2>
+            <ul>
+                <li><a href="#accessibility-notice">Accessibility Notice</a></li>
+                <li><a href="#objectives">Objectives:</a></li>
+                <li><a href="#background">Background</a></li>
+                <li><a href="#requirements">Requirements</a></li>
+                <li><a href="#acceptance-criteria">Acceptance Criteria</a></li>
+                <li><a href="#deliverables">Deliverables</a></li>
+                <li><a href="#resources">Resources</a></li>
+            </ul>
+        </nav>
+
+<section role="region" aria-labelledby="accessibility-notice">
+<h2 id="accessibility-notice">Accessibility Notice</h2>
+<p>This document is also available in HTML format at:</p>
+
+<p>Link: <a href="https://aholdengouveia.name/LinuxAdmin/labexcercises/virtualization.html"><strong>https://aholdengouveia.name/LinuxAdmin/labexcercises/virtualization.html</strong></a></p>
+
+<p>The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.</p>
+
+</section>
+
+<section role="region" aria-labelledby="objectives">
+<h2 id="objectives">Objectives:</h2>
+<ul>
+<li>The objective of this lab is to introduce students to the recovery advantages of virtualization and to Infrastructure as Code. Students will use snapshots to recover a server, write an Ansible playbook to configure a server automatically, and recommend whether Acme Corp should adopt these practices.</li>
+</ul>
+
+</section>
+
+<section role="region" aria-labelledby="background">
+<h2 id="background">Background</h2>
+<p>Acme Corp wants faster recovery and fewer hand-built servers. Your manager has asked for two things: proof that snapshots can save you, and a first try at configuring a server with code. You will be working on the two servers you set up in the Server Setup lab: your Red Hat based server and your second server.</p>
+
+</section>
+
+<section role="region" aria-labelledby="requirements">
+<h2 id="requirements">Requirements</h2>
+<ol>
+<li>Take a snapshot of one server, make a breaking change on purpose, then roll back to the snapshot. Document what you broke, how you broke it, and what stopped working. Time the rollback, and compare it to your restore drill from the Backup, Restore, and Post Mortem lab.</li>
+<li>Using Ansible, run from one server against the other, write a playbook that installs the tools from the Installs, Updates, and Documentation lab, creates a user and group from the User Management lab, and deploys a config or text file. Use the sample playbook and inventory (linked under Resources) as a guide for the format. Every task in the samples is an example only, so your playbook needs its own tasks.</li>
+<li>Run your playbook twice, and explain why the second run doesn't change anything. This is called idempotence.</li>
+<li>Write an executive summary for Acme Corp comparing snapshots and backups, and recommending whether to adopt Infrastructure as Code.</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="acceptance-criteria">
+<h2 id="acceptance-criteria">Acceptance Criteria</h2>
+<ul>
+<li><strong>Everything must be cited.</strong> Every command, statement, and line of code in your scripts and documents must be cited, either with a link to a reference or with a note naming the previous class where you learned it, for example: # Learned in CIS 117 Intro to Linux. In scripts, put the citation in a comment next to the code. Anything without a citation will not count.</li>
+<li>Screenshots show the server broken before the rollback, and working again after it.</li>
+<li>Screenshots show both playbook runs: changes on the first run, and none on the second.</li>
+<li>Your playbook is well commented and uploaded to GitHub.</li>
+<li>The executive summary is less than 1 page.</li>
+<li>Every terminal screenshot shows your prompt with your username and hostname, and either the output of date or a note beside the terminal with your name and the term. Hostnames must match your server inventory from the Server Setup lab.</li>
+<li>Your GitHub repository shows your work over time: several commits across more than one day, each with a message describing the change, not a single upload of finished code.</li>
+<li>Your Troubleshooting FAQ covers at least 2 problems you ran into, each with a screenshot of the error and an explanation of how you fixed it.</li>
+</ul>
+
+</section>
+
+<section role="region" aria-labelledby="deliverables">
+<h2 id="deliverables">Deliverables</h2>
+<p>Audience: your manager at Acme Corp, who will decide whether the team adopts these practices. Assume technical knowledge but not expertise. Screenshots are helpful to go with your descriptions.</p>
+
+<ul>
+<li>Your snapshot procedure, including what you broke, how you broke it, your before and after screenshots, your rollback time, and how it compared to your restore drill.</li>
+<li>Your playbook, with a link to your GitHub where you've uploaded it.</li>
+<li>Your screenshots of both playbook runs, with your explanation of idempotence.</li>
+<li>Your executive summary.</li>
+<li>A Troubleshooting FAQ for the next person who does this: at least 2 problems you ran into, written as questions and answers, each with a screenshot of the error and how you fixed it.</li>
+</ul>
+
+</section>
+
+<section role="region" aria-labelledby="resources">
+<h2 id="resources">Resources</h2>
+<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name/LinuxAdmin/virtualization.html"><strong>https://www.aholdengouveia.name/LinuxAdmin/virtualization.html</strong></a></p>
+
+<p>Sample playbook, showing the format to follow Link: <a href="https://www.aholdengouveia.name/LinuxAdmin/labexcercises/SamplePlaybook.yml"><strong>https://www.aholdengouveia.name/LinuxAdmin/labexcercises/SamplePlaybook.yml</strong></a></p>
+
+<p>Sample inventory file Link: <a href="https://www.aholdengouveia.name/LinuxAdmin/labexcercises/SampleInventory.ini"><strong>https://www.aholdengouveia.name/LinuxAdmin/labexcercises/SampleInventory.ini</strong></a></p>
+
+<p>Getting started with Ansible Link: <a href="https://docs.ansible.com/ansible/latest/getting_started/index.html"><strong>https://docs.ansible.com/ansible/latest/getting_started/index.html</strong></a></p>
+
+<p>An introduction to Ansible playbooks Link: <a href="https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_intro.html"><strong>https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_intro.html</strong></a></p>
+
+</section>
+
+    </main>
+</body>
+</html>

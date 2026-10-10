@@ -1,0 +1,56 @@
+SAMPLE CHANGE LOG
+=================
+This shows the FORMAT to follow. Every entry here is an example only.
+Your change log needs your own entries for the changes you actually make.
+
+Add a new entry every time you change a server, newest at the bottom.
+Each entry answers: When? Which server? What changed? How? Why? Who?
+Use dates in YYYY-MM-DD format so entries sort in order.
+
+
+Date:     2026-01-20
+Server:   Red Hat based server (hostname: acme-rh01)
+Change:   Installed htop
+Command:  sudo dnf install htop
+Reason:   The team asked for an easier way to watch running processes.
+By:       Your Name
+
+Date:     2026-01-20
+Server:   Second server (hostname: acme-deb01)
+Change:   Installed htop
+Command:  sudo apt install htop
+Reason:   Same request as above, so both servers have the same tools.
+By:       Your Name
+
+Date:     2026-01-27
+Server:   Both servers
+Change:   Updated all installed packages
+Command:  sudo dnf upgrade (acme-rh01), sudo apt update && sudo apt upgrade (acme-deb01)
+Reason:   Monthly updates, to apply security fixes.
+By:       Your Name
+
+Date:     2026-02-03
+Server:   acme-rh01
+Change:   Created the group "reports" and added the user exampleuser to it
+Command:  sudo groupadd reports
+          sudo usermod -aG reports exampleuser
+Reason:   The reports team needs a group for shared access.
+By:       Your Name
+
+Date:     2026-02-03
+Server:   acme-rh01
+Change:   Changed the owner, group, and permissions of /opt/reports
+          Before: root:root, 755 (rwxr-xr-x)
+          After:  root:reports, 770 (rwxrwx---)
+Command:  sudo chown root:reports /opt/reports
+          sudo chmod 770 /opt/reports
+Reason:   Only the reports team should be able to read or change these files.
+By:       Your Name
+
+
+TIPS
+- For permission changes, record the BEFORE and AFTER, so anyone can
+  undo the change if it causes a problem.
+- Write the reason for the next person, not for yourself. "Fixing stuff"
+  doesn't help anyone six months from now.
+- If a change didn't work and you undid it, log that too.

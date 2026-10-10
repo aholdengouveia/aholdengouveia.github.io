@@ -1,0 +1,124 @@
+\documentclass[12pt]{article}
+
+\usepackage{fontawesome}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage[tagged, highstructure]{accessibility}
+\usepackage{bookmark}
+\usepackage{enumitem}
+
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0},
+    pdftitle={Shared Team Folders Lab},
+    pdfauthor={Adrianna Holden-Gouveia},
+    pdfsubject={Linux Administration - Lab Assignment},
+    pdflang={en-US},
+    pdfkeywords={file permissions, chmod, chown, chgrp, groups, symbolic links}
+}
+
+% Configure PDF bookmarks for navigation
+\bookmarksetup{
+    numbered,
+    open,
+}
+
+% Configure list spacing for better accessibility
+\setlist{nosep}
+
+
+
+\title{Shared Team Folders}
+\author{
+        Adrianna Holden-Gouveia \\
+        Website: \href{https://aholdengouveia.name}{aholdengouveia.name}\\ 
+        \date{\vspace{-5ex}}
+        %Email: \href{mailto:admin@aholdengouveia.name}{admin@aholdengouveia.name} \\
+%        \faLinkedin{: aholdengouveia} \\
+        \faGithub {: aholdengouveia} \\
+       % \faTwitter {: aholdengouveia} \\
+        }
+
+%S\date{\today}
+
+
+\begin{document}    
+
+\maketitle
+
+%\begin{abstract}
+%This is a template for Linux Administration Lab work
+%\end{abstract}
+%\tableofcontents
+
+
+\section*{Accessibility Notice}
+This document is also available in HTML format at:
+
+Link: \href{https://aholdengouveia.name/LinuxAdmin/labexcercises/permissions.html}{\textbf{\nolinkurl{https://aholdengouveia.name/LinuxAdmin/labexcercises/permissions.html}}}
+
+The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.
+
+\section*{Objectives:}
+\begin{itemize}
+    \item The objective of this lab is to give students practice with Linux file and directory permissions. Students will set ownership and permissions for shared team folders, test access as different users, and explain permissions in both octal and rwx form. Getting permissions right is a core part of keeping a server secure.
+\end{itemize}
+
+\section*{Background}
+The Marketing and Development teams each need a shared folder. Each team should be able to work in its own folder, Development needs to read Marketing's files but not change them, and nobody else should get in. You will be working on the two servers you set up in the Server Setup lab: your Red Hat based server and your second server.
+
+\section*{Requirements}
+\begin{enumerate}
+    \item Create a group for each team using users from the User Management lab, and create the two shared directories.
+    \item Set ownership and permissions so each team can read and write its own folder, Development can only read Marketing's folder, and everyone else is blocked.
+    \item Make sure new files created in a shared folder automatically belong to that team's group.
+    \item Create a hidden file in each folder, and a symbolic link from each user's home directory to their team's folder.
+    \item Find any world-writable files on the system, and decide whether each one should stay that way.
+\end{enumerate}
+
+\section*{Acceptance Criteria}
+\begin{itemize}
+    \item If you had to look anything up to figure out a command, cite your source with a link to the reference.
+    \item Access is tested by logging in as a user from each team and as an outsider, with screenshots showing a successful write, a read-only attempt, and a denied attempt.
+    \item Your permissions are explained in both octal and rwx form.
+    \item Every change is recorded in your change log from the Installs, Updates, and Documentation lab, with the date. For permission changes, record the permissions before and after. A sample change log showing the format is linked under Resources.
+    \item Every terminal screenshot shows your prompt with your username and hostname, and either the output of \texttt{date} or a note beside the terminal with your name and the term. Hostnames must match your server inventory from the Server Setup lab.
+\end{itemize}
+
+\section*{Deliverables}
+Audience: another administrator who will maintain these folders after you. Assume technical knowledge but not expertise.  Screenshots are helpful to go with your descriptions.
+
+Make sure your deliverables include documents for BOTH servers, clearly labeled with what the document is and which server it's for.
+\begin{itemize}
+    \item A permissions plan: who can do what in each folder, and why.
+    \item The commands you used, with your test screenshots.
+    \item Your list of world-writable files, and your decision on each one.
+    \item Your updated change log.
+\end{itemize}
+
+\section*{Resources}
+Sample change log, showing the format to follow
+Link: \href{https://www.aholdengouveia.name/LinuxAdmin/labexcercises/SampleChangeLog.txt}{\textbf{\nolinkurl{https://www.aholdengouveia.name/LinuxAdmin/labexcercises/SampleChangeLog.txt}}}
+
+References, a video, a PowerPoint and some notes are available at my website
+Link: \href{https://www.aholdengouveia.name/LinuxAdmin/installs.html}{\textbf{\nolinkurl{https://www.aholdengouveia.name/LinuxAdmin/installs.html}}}
+
+% ============================================================
+% EXAMPLE: Accessible Table (if needed)
+% Uncomment and modify the lines below to add a table
+% This ensures proper screen reader support
+% ============================================================
+%\begin{table}[h]
+%\caption{Command Options}
+%\begin{tabular}{|l|l|}
+%\hline
+%\textbf{Option} & \textbf{Description} \\
+%\hline
+%-F & Field separator \\
+%\hline
+%-v & Variable assignment \\
+%\hline
+%\end{tabular}
+%\end{table}
+
+\end{document}

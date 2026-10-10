@@ -1,0 +1,135 @@
+\documentclass[12pt]{article}
+
+\usepackage{fontawesome}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage[tagged, highstructure]{accessibility}
+\usepackage{bookmark}
+\usepackage{enumitem}
+
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0},
+    pdftitle={Snapshots and Infrastructure as Code Lab},
+    pdfauthor={Adrianna Holden-Gouveia},
+    pdfsubject={Linux Administration - Lab Assignment},
+    pdflang={en-US},
+    pdfkeywords={virtualization, snapshots, Ansible, infrastructure as code}
+}
+
+% Configure PDF bookmarks for navigation
+\bookmarksetup{
+    numbered,
+    open,
+}
+
+% Configure list spacing for better accessibility
+\setlist{nosep}
+
+
+
+\title{Snapshots and Infrastructure as Code}
+\author{
+        Adrianna Holden-Gouveia \\
+        Website: \href{https://aholdengouveia.name}{aholdengouveia.name}\\ 
+        \date{\vspace{-5ex}}
+        %Email: \href{mailto:admin@aholdengouveia.name}{admin@aholdengouveia.name} \\
+%        \faLinkedin{: aholdengouveia} \\
+        \faGithub {: aholdengouveia} \\
+       % \faTwitter {: aholdengouveia} \\
+        }
+
+%S\date{\today}
+
+
+\begin{document}    
+
+\maketitle
+
+%\begin{abstract}
+%This is a template for Linux Administration Lab work
+%\end{abstract}
+%\tableofcontents
+
+
+\section*{Accessibility Notice}
+This document is also available in HTML format at:
+
+Link: \href{https://aholdengouveia.name/LinuxAdmin/labexcercises/virtualization.html}{\textbf{\nolinkurl{https://aholdengouveia.name/LinuxAdmin/labexcercises/virtualization.html}}}
+
+The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.
+
+\section*{Objectives:}
+\begin{itemize}
+    \item The objective of this lab is to introduce students to the recovery advantages of virtualization and to Infrastructure as Code. Students will use snapshots to recover a server, write an Ansible playbook to configure a server automatically, and recommend whether Acme Corp should adopt these practices.
+\end{itemize}
+
+\section*{Background}
+Acme Corp wants faster recovery and fewer hand-built servers. Your manager has asked for two things: proof that snapshots can save you, and a first try at configuring a server with code. You will be working on the two servers you set up in the Server Setup lab: your Red Hat based server and your second server.
+
+\section*{Requirements}
+\begin{enumerate}
+    \item Take a snapshot of one server, make a breaking change on purpose, then roll back to the snapshot. Document what you broke, how you broke it, and what stopped working. Time the rollback, and compare it to your restore drill from the Backup, Restore, and Post Mortem lab.
+    \item Using Ansible, run from one server against the other, write a playbook that installs the tools from the Installs, Updates, and Documentation lab, creates a user and group from the User Management lab, and deploys a config or text file. Use the sample playbook and inventory (linked under Resources) as a guide for the format. Every task in the samples is an example only, so your playbook needs its own tasks.
+    \item Run your playbook twice, and explain why the second run doesn't change anything. This is called idempotence.
+    \item Write an executive summary for Acme Corp comparing snapshots and backups, and recommending whether to adopt Infrastructure as Code.
+\end{enumerate}
+
+\section*{Acceptance Criteria}
+\begin{itemize}
+    \item \textbf{Everything must be cited.} Every command, statement, and line of code in your scripts and documents must be cited, either with a link to a reference or with a note naming the previous class where you learned it, for example: \texttt{\# Learned in CIS 117 Intro to Linux}. In scripts, put the citation in a comment next to the code. Anything without a citation will not count.
+    \item Screenshots show the server broken before the rollback, and working again after it.
+    \item Screenshots show both playbook runs: changes on the first run, and none on the second.
+    \item Your playbook is well commented and uploaded to GitHub.
+    \item The executive summary is less than 1 page.
+    \item Every terminal screenshot shows your prompt with your username and hostname, and either the output of \texttt{date} or a note beside the terminal with your name and the term. Hostnames must match your server inventory from the Server Setup lab.
+    \item Your GitHub repository shows your work over time: several commits across more than one day, each with a message describing the change, not a single upload of finished code.
+    \item Your Troubleshooting FAQ covers at least 2 problems you ran into, each with a screenshot of the error and an explanation of how you fixed it.
+\end{itemize}
+
+\section*{Deliverables}
+Audience: your manager at Acme Corp, who will decide whether the team adopts these practices. Assume technical knowledge but not expertise.  Screenshots are helpful to go with your descriptions.
+
+\begin{itemize}
+    \item Your snapshot procedure, including what you broke, how you broke it, your before and after screenshots, your rollback time, and how it compared to your restore drill.
+    \item Your playbook, with a link to your GitHub where you've uploaded it.
+    \item Your screenshots of both playbook runs, with your explanation of idempotence.
+    \item Your executive summary.
+    \item A Troubleshooting FAQ for the next person who does this: at least 2 problems you ran into, written as questions and answers, each with a screenshot of the error and how you fixed it.
+\end{itemize}
+
+\section*{Resources}
+References, a video, a PowerPoint and some notes are available at my website
+Link: \href{https://www.aholdengouveia.name/LinuxAdmin/virtualization.html}{\textbf{\nolinkurl{https://www.aholdengouveia.name/LinuxAdmin/virtualization.html}}}
+
+Sample playbook, showing the format to follow
+Link: \href{https://www.aholdengouveia.name/LinuxAdmin/labexcercises/SamplePlaybook.yml}{\textbf{\nolinkurl{https://www.aholdengouveia.name/LinuxAdmin/labexcercises/SamplePlaybook.yml}}}
+
+Sample inventory file
+Link: \href{https://www.aholdengouveia.name/LinuxAdmin/labexcercises/SampleInventory.ini}{\textbf{\nolinkurl{https://www.aholdengouveia.name/LinuxAdmin/labexcercises/SampleInventory.ini}}}
+
+Getting started with Ansible
+Link: \href{https://docs.ansible.com/ansible/latest/getting_started/index.html}{\textbf{\nolinkurl{https://docs.ansible.com/ansible/latest/getting_started/index.html}}}
+
+An introduction to Ansible playbooks
+Link: \href{https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_intro.html}{\textbf{\nolinkurl{https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_intro.html}}}
+
+% ============================================================
+% EXAMPLE: Accessible Table (if needed)
+% Uncomment and modify the lines below to add a table
+% This ensures proper screen reader support
+% ============================================================
+%\begin{table}[h]
+%\caption{Command Options}
+%\begin{tabular}{|l|l|}
+%\hline
+%\textbf{Option} & \textbf{Description} \\
+%\hline
+%-F & Field separator \\
+%\hline
+%-v & Variable assignment \\
+%\hline
+%\end{tabular}
+%\end{table}
+
+\end{document}

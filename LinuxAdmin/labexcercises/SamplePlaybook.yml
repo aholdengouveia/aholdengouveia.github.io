@@ -1,0 +1,49 @@
+---
+# ============================================================
+# SAMPLE PLAYBOOK - Snapshots and Infrastructure as Code lab
+# This shows the FORMAT to follow. Every task here is an
+# example only. Your playbook needs its own tasks to meet the
+# lab's requirements.
+#
+# Run it from your control server with:
+#   ansible-playbook -i SampleInventory.ini SamplePlaybook.yml --ask-become-pass
+#
+# Source for playbook structure:
+# https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_intro.html
+# ============================================================
+
+- name: Configure an example server   # A play: what it does, in plain words
+  hosts: servers                      # Which group from the inventory file to run on
+  become: true                        # Run the tasks with sudo
+  # Source for become: https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_privilege_escalation.html
+
+  tasks:
+    # Each task has a name that says what it does, and one module that does it.
+
+    - name: Install an example package
+      # Source: https://docs.ansible.com/ansible/latest/collections/ansible/builtin/package_module.html
+      ansible.builtin.package:        # Works with both dnf and apt
+        name:
+          - htop
+        state: present                # present = install it if it's missing
+
+    - name: Make sure an example group exists
+      # Source: https://docs.ansible.com/ansible/latest/collections/ansible/builtin/group_module.html
+      ansible.builtin.group:
+        name: examplegroup
+        state: present
+
+    - name: Create an example user in that group
+      # Source: https://docs.ansible.com/ansible/latest/collections/ansible/builtin/user_module.html
+      ansible.builtin.user:
+        name: exampleuser
+        groups: examplegroup
+        append: true                  # Add to the group without removing other groups
+        shell: /bin/bash
+
+    - name: Deploy an example text file
+      # Source: https://docs.ansible.com/ansible/latest/collections/ansible/builtin/copy_module.html
+      ansible.builtin.copy:
+        dest: /etc/example.txt
+        content: "This file was deployed by Ansible.\n"
+        mode: "0644"                  # Owner can read and write, everyone else can read

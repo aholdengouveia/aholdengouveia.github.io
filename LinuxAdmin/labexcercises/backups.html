@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Backup, Restore, and Post Mortem</title>
+    <link href="../../css/accessible-lab.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
+        <h1>Backup, Restore, and Post Mortem</h1>
+        <div class="author">
+            <p>Adrianna Holden-Gouveia</p>
+            <p>Website: <a href="https://aholdengouveia.name">https://aholdengouveia.name</a></p>
+            <p>GitHub: <a href="https://github.com/aholdengouveia" aria-label="GitHub profile">aholdengouveia</a></p>
+        </div>
+    </header>
+
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li><a href="/LinuxAdmin/">Linux Administration</a></li>
+                <li aria-current="page">Backup, Restore, and Post Mortem</li>
+            </ol>
+        </nav>
+
+    <main role="main" id="main-content">
+        <section role="region" aria-labelledby="pdf-version-notice" class="accessibility-notice">
+            <h2 id="pdf-version-notice">PDF Version Available</h2>
+            <p>This document is also available in PDF format: <a href="backups.pdf">backups.pdf</a></p>
+            <p>The PDF version includes bookmarks for easy navigation and is optimized for printing.</p>
+        </section>
+
+        <nav role="navigation" aria-label="Table of Contents" class="toc">
+            <h2>On this page:</h2>
+            <ul>
+                <li><a href="#accessibility-notice">Accessibility Notice</a></li>
+                <li><a href="#objectives">Objectives:</a></li>
+                <li><a href="#background">Background</a></li>
+                <li><a href="#requirements">Requirements</a></li>
+                <li><a href="#acceptance-criteria">Acceptance Criteria</a></li>
+                <li><a href="#deliverables">Deliverables</a></li>
+                <li><a href="#resources">Resources</a></li>
+            </ul>
+        </nav>
+
+<section role="region" aria-labelledby="accessibility-notice">
+<h2 id="accessibility-notice">Accessibility Notice</h2>
+<p>This document is also available in HTML format at:</p>
+
+<p>Link: <a href="https://aholdengouveia.name/LinuxAdmin/labexcercises/backups.html"><strong>https://aholdengouveia.name/LinuxAdmin/labexcercises/backups.html</strong></a></p>
+
+<p>The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.</p>
+
+</section>
+
+<section role="region" aria-labelledby="objectives">
+<h2 id="objectives">Objectives:</h2>
+<ul>
+<li>The objective of this lab is to give students practice with backups, disaster recovery, and incident response. Students will script and schedule backups, store them on a second server, prove they can restore from them, and write a post mortem. A backup is only useful if you know you can restore from it.</li>
+</ul>
+
+</section>
+
+<section role="region" aria-labelledby="background">
+<h2 id="background">Background</h2>
+<p>After last week's incident, management wants proof that Acme Corp can recover. A backup no one has tested isn't a backup. You will be working on the two servers you set up in the Server Setup lab: your Red Hat based server and your second server.</p>
+
+</section>
+
+<section role="region" aria-labelledby="requirements">
+<h2 id="requirements">Requirements</h2>
+<ol>
+<li>Write a backup script using tar that backs up /etc, users' home directories, and your change log, compressed, with the date in the filename.</li>
+<li>Keep only the last 7 backups, deleting older ones automatically.</li>
+<li>Copy each backup to your other server, so it isn't stored only on the machine it came from.</li>
+<li>Schedule your backup script with cron.</li>
+<li>Restore drill: delete something important, such as a config file or a user's home directory, then restore it from your backup. Time how long it takes.</li>
+<li>Write a post mortem for either your restore drill or the B0rk incident from the Scripting for Server Security Part 2 lab. Use the sample report from Google (linked under Resources) as your template.</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="acceptance-criteria">
+<h2 id="acceptance-criteria">Acceptance Criteria</h2>
+<ul>
+<li><strong>Everything must be cited.</strong> Every command, statement, and line of code in your scripts and documents must be cited, either with a link to a reference or with a note naming the previous class where you learned it, for example: # Learned in CIS 117 Intro to Linux. In scripts, put the citation in a comment next to the code. Anything without a citation will not count.</li>
+<li>The restore is proven with before and after screenshots.</li>
+<li>The restored files are checked against the originals, for example with sha256sum.</li>
+<li>Your cron schedule is shown working.</li>
+<li>Scripts are well commented and uploaded to GitHub.</li>
+<li>Every terminal screenshot shows your prompt with your username and hostname, and either the output of date or a note beside the terminal with your name and the term. Hostnames must match your server inventory from the Server Setup lab.</li>
+<li>Your GitHub repository shows your work over time: several commits across more than one day, each with a message describing the change, not a single upload of finished code.</li>
+</ul>
+
+</section>
+
+<section role="region" aria-labelledby="deliverables">
+<h2 id="deliverables">Deliverables</h2>
+<p>Audience: a teammate who has to restore a server during an emergency. Assume technical knowledge but not expertise. Screenshots are helpful to go with your descriptions.</p>
+
+<p>Make sure your deliverables include documents for BOTH servers, clearly labeled with what the document is and which server it's for.</p>
+
+<ul>
+<li>Your backup script, with a link to your GitHub where you've uploaded it.</li>
+<li>A restore procedure someone else could follow during an emergency, including how long your restore drill took.</li>
+<li>Your post mortem.</li>
+</ul>
+
+</section>
+
+<section role="region" aria-labelledby="resources">
+<h2 id="resources">Resources</h2>
+<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name/LinuxAdmin/backups.html"><strong>https://www.aholdengouveia.name/LinuxAdmin/backups.html</strong></a></p>
+
+<p>My video on how to use tar Link: <a href="https://www.youtube.com/watch?v=x0EK6PmKRCU"><strong>https://www.youtube.com/watch?v=x0EK6PmKRCU</strong></a></p>
+
+<p>Sample post mortem report from Google Link: <a href="https://web.archive.org/web/20220724194136/<a href="https://developers.googleblog.com/2013/05/google-api-infrastructure-outage_3.html">https://developers.googleblog.com/2013/05/google-api-infrastructure-outage_3.html</a>"><strong>https://web.archive.org/web/20220724194136/<a href="https://developers.googleblog.com/2013/05/google-api-infrastructure-outage_3.html">https://developers.googleblog.com/2013/05/google-api-infrastructure-outage_3.html</a></strong></a></p>
+
+</section>
+
+    </main>
+</body>
+</html>
