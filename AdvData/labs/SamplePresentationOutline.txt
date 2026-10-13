@@ -1,0 +1,93 @@
+SAMPLE PRESENTATION OUTLINE
+===========================
+This shows the FORMAT to follow, using my book data as the EXAMPLE ONLY.
+Your presentation must be about YOUR own company and data.
+
+At work, a data team's update to leadership or stakeholders is short,
+starts with the bottom line, shows evidence, and ends with a clear ask.
+The audience is busy and isn't technical, so every slide answers "why
+should I care?"
+
+Plan your talk slide by slide like this before you make any slides.
+The times add up to about 9 minutes, which leaves room inside the
+7 to 10 minute limit.
+
+
+------------------------------------------------------------------
+SLIDE 1: Title (0:30)
+On the slide:  Inventory Data: What We Built and What It Tells Us
+               Your Name, Data Team, Independent Bookstore, April 2026
+Say:           Who I am, and the bottom line in one sentence: "Our new
+               inventory database shows we're overstocked on Classics
+               and understocked on what customers rate highest, and
+               I'm asking you to approve collecting sales data."
+
+------------------------------------------------------------------
+SLIDE 2: Our data (1:00)
+On the slide:  Where the data comes from, what it covers, and the
+               license, in 3 short bullets
+Say:           Best Books Ever data from Zenodo, 99 books in our
+               working sample, non-commercial license, so we'd need
+               permission before using it to make money.
+
+------------------------------------------------------------------
+SLIDE 3: What we built (1:30)
+On the slide:  The final schema diagram, with the main tables labelled
+Say:           We went from one messy spreadsheet to a database with
+               separate tables for books, authors, and formats. Explain
+               what a table is in one sentence, for anyone who doesn't
+               know.
+
+------------------------------------------------------------------
+SLIDE 4: Live demo (1:00)
+On the screen: SandboxSQL, with my database loaded
+Do:            Run one query live that answers a business question,
+               and read out the answer.
+Say:           "This is the question the store manager asked, and
+               here's the answer straight from the database."
+
+------------------------------------------------------------------
+SLIDE 5: Cleaning up the data (1:00)
+On the slide:  3 problems we fixed, each with a number
+               - 24 fake ISBNs marked as unknown
+               - 31 missing prices left out of calculations
+               - 6 digital books with no shelf section
+Say:           Why each one mattered to the business.
+
+------------------------------------------------------------------
+SLIDE 6: What we found (1:30)
+On the slide:  My best chart from week 13, data visualization
+Say:           Classics are half our catalogue, 50 of 99 books, but
+               Fantasy has the highest average rating, 4.34 stars, and
+               we only stock 12 Fantasy books.
+
+------------------------------------------------------------------
+SLIDE 7: Looking ahead (1:00)
+On the slide:  Our North Star Metric, and the dashboard mock-up
+Say:           Our North Star is books sold per week. We can't measure
+               it yet, because sales aren't in the database. Show what
+               the dashboard would track.
+
+------------------------------------------------------------------
+SLIDE 8: Recommendation and ask (1:00)
+On the slide:  One sentence: Approve collecting till sales data
+               starting next month.
+Say:           What it costs, what we get, and what happens if we
+               don't. About 300 sales a day, and it lets us track our
+               North Star every week.
+
+------------------------------------------------------------------
+SLIDE 9: Questions (0:30)
+On the slide:  The one-sentence summary again, and "Questions?"
+Say:           Thank them, and repeat the ask.
+
+
+TIPS
+- Bottom line first. If leadership only remembers one sentence, make
+  sure you said it in the first 30 seconds.
+- One idea per slide. If you need to read your slide out loud, it has
+  too many words.
+- Use real numbers from your own work, and say what each one means.
+- Explain any technical word the first time you use it, or don't use it.
+- Rehearse with a timer. Running over is like going over your slot in a
+  real meeting: the next person loses time.

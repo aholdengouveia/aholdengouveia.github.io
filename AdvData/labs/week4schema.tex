@@ -11,7 +11,7 @@
 \hypersetup{
     colorlinks=false,
     pdfborder={0 0 0},
-    pdftitle={Database Schema Lab},
+    pdftitle={Database Schema},
     pdfauthor={Adrianna Holden-Gouveia},
     pdfsubject={Advanced Data - Lab Assignment},
     pdflang={en-US},
@@ -60,58 +60,103 @@ Link: \href{https://aholdengouveia.name/AdvData/labs/week4schema.html}{\textbf{\
 
 The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.
 
-\section*{Objectives:}
+\section*{Request}
+\noindent\textbf{Request:} DATA-6243\\
+\textbf{Requested by:} Head of the data team\\
+\textbf{Data:} Your data set from the Introduction to Data lab
+
+\section*{Background}
+Your data is mostly in one big table right now, which makes it hard to keep accurate as it grows. Before the team builds a proper database, your manager wants a design to review: what tables you need, how they connect, and the rules the data must follow. A design that's checked on paper is much cheaper to fix than one that's already built.
+
+\section*{Learning Outcomes}
+By the end of this lab, you will be able to:
 \begin{itemize}
-    \item Learn how to evaluate which schema is appropriate
-    \item Create your own schema
-\end{itemize}
-\section*{Complete the following problems}
-
-References, a video, a PowerPoint and some notes are available at my website
-Link: \href{https://www.aholdengouveia.name/AdvData/databaseschema.html}{\textbf{\nolinkurl{https://www.aholdengouveia.name/AdvData/databaseschema.html}}}
-
-Pick a topic you're interested in.  This could be anything; sports, collectable card games, cars, video games, etc. 
-
-
-
-\subsection*{Decide on a Schema}
-    \begin{itemize}
-        \item Out of the 6 design option, pick 3 to evaluate, list them here
-        \item For each design option, give 2 pros and 2 cons for your data specifically
-        \item List out some potential data options for your dataset
-            For example, books might have authors, publication dates and publishers, genre, sub genres, purchase types such as audio or ebook, part of a series or world, connections to other books, etc.
-        \item Make a list of what you think some potential tables could be, include a primary key for each table
-        \item Make notes on how the tables might relate to each other using example, list out potential foreign keys, if you have no foreign keys, explain why not.
-        \item Pick which one you think would be best for your given topic and explain why you chose it in one paragraph or less. Include your pros and cons.
-    \end{itemize}
-
-\subsection*{Create your schema}
-
-The tool that I used is Link: \href{https://app.diagrams.net/}{\textbf{\nolinkurl{https://app.diagrams.net/}}} 
-You may use other tools of your choice, but make sure everything is clearly labelled and the image includes your name and term somewhere.
-
-See the linked schema examples Link: \href{https://www.aholdengouveia.name/AdvData/labs/cis210schemaexampleV1.png}{\textbf{\nolinkurl{https://www.aholdengouveia.name/AdvData/labs/cis210schemaexampleV1.png}}} and Link: \href{https://www.aholdengouveia.name/AdvData/labs/cis210schemaexampleV2.png}{\textbf{\nolinkurl{https://www.aholdengouveia.name/AdvData/labs/cis210schemaexampleV2.png}}} for an idea of what you should be creating, don't copy it or feel you have to use the same type, pick the one that works best for your data. My example does NOT include all the information you should have, you should have more tables, and a key, maybe some relationship tables instead of short notes, and rules listed out. You are also likely to have more relationship types with your data, I kept my example small so you'd have an idea of what I'm looking for.
-
-\begin{itemize}
-    \item Make sure to include all your tables, there should be at least 4.  
-    \item Each table needs to have a labeled primary key.  
-    \item You may need to include foreign keys, if you do then label them.
+    \item Compare database design options, and choose one that fits your data set
+    \item Create a database schema with tables, labeled primary and foreign keys, and rules for the data
+    \item Map every column in a data set to a table, and check that the design supports your business questions
+    \item Suggest ways to reduce repeated data in a data set before a design is built
 \end{itemize}
 
+\section*{Lab Instructions}
+Use the data set you chose in the Introduction to Data lab. Books are my example data only, so your design must be for your own data set.
 
-\section*{Deliverables}
+If you want to switch to a different data set, email me first. Switching means redoing the work from earlier labs for your new data set, so it adds a lot of work. The switching checklist (linked under Resources) lists what you'd need to redo.
+
+\subsection*{Part 1: Decide on a Design}
+\begin{enumerate}
+    \item The topic page lists 6 schema design options: flat, hierarchical, network, relational, star, and snowflake. Pick 3 to evaluate.
+    \item For each one, give 2 pros and 2 cons for your data specifically.
+    \item Pick the one you think fits your data best, and explain why in one paragraph or less.
+\end{enumerate}
+
+\subsection*{Part 2: Plan Your Tables}
+\begin{enumerate}
+    \item List the tables you think you need, with a primary key for each one. For example, books might have tables for books, authors, publishers, and formats.
+    \item Explain how the tables relate to each other, and list the foreign keys. If you have no foreign keys, explain why not.
+    \item Make a column map: list every column in your data set, the table it goes in, and whether it's a primary key, a foreign key, or neither. Every column must appear. If you would leave a column out of the database, say why. For example, in my data the title column goes in the books table, and the author column becomes an authors table, with an author ID in the books table as a foreign key.
+    \item Write at least 3 rules for your data, based on the quality notes on your data card. For example: title can't be missing, price can be missing, and rating must be between 0 and 5.
+    \item Give at least 2 suggestions for reducing repeated data. Look for values that repeat on many rows, or columns that store a list of things in one cell. For example, in the original version of my data, the genres column stores lists like ``Fantasy, Young Adult, Fiction'', so one suggestion is a separate genres table. You don't need to build these yet. You'll decide which ones to use when you load your data in the Beyond SQL lab.
+    \item For each of your 5 business questions from the SQL Review lab, list which tables a query would need to answer it. If a question needs data your design doesn't have, update your design.
+\end{enumerate}
+
+\subsection*{Part 3: Create Your Schema}
+You can use any diagram tool you like. I used diagrams.net (linked under Resources), which is free and runs in your browser. Your schema needs:
 \begin{itemize}
-        \item Document that includes answers to the above questions for deciding on which schema to use
-        \item Document/image of your schema following the above guidelines.
+    \item At least 4 tables
+    \item A labeled primary key in each table
+    \item Labeled foreign keys, if you have them
+    \item Your rules from Part 2, on the diagram or listed beside it
+    \item A legend that explains any symbols or line types you used
+    \item Your name and the term
 \end{itemize}
 
+Make your schema in two drafts, the way a design gets reviewed at work. Make a first draft, then check it against your column map, rules, and business question check from Part 2, and make a final draft that fixes anything you find. Include both drafts, and explain what you changed between them and why.
+
+My schema examples (linked under Resources) give you an idea of what to create. Don't copy them, or feel you have to use the same design. My examples are kept small, so yours should have more tables, a legend, and your rules.
 
 \begin{figure}[h!]
     \centerline{\includegraphics[scale=.7]{cis210schemaexampleV2.png}}
-    \caption{This is an example of a schema. My example does NOT include all the information you should have, you should have more tables, and a key, maybe some relationship tables instead of short notes, and rules listed out.}
+    \caption{An example schema. Yours should have more tables, a legend, and your rules listed.}
     \alt{Database schema diagram example showing table structures with primary keys, foreign keys, and relationships between tables with explanatory notes}
-    \end{figure} 
+\end{figure}
 
+\section*{Acceptance Criteria}
+This request is done when:
+\begin{itemize}
+    \item 3 design options are compared with pros and cons for your data, and your choice is explained
+    \item Every column in your data set appears in your column map
+    \item Your schema has at least 4 tables, each with a labeled primary key, and any foreign keys are labeled
+    \item At least 3 rules, based on your data card
+    \item At least 2 suggestions for reducing repeated data
+    \item Each of your 5 business questions can be answered with your design
+    \item Your schema image has a legend, and your name and the term
+    \item Both drafts of your schema are included, with an explanation of what changed between them and why
+\end{itemize}
 
+\section*{Deliverables}
+One file that includes:
+\begin{itemize}
+    \item If you switched data sets: the redone work from the switching checklist
+    \item Part 1: your 3 design options with pros and cons, and your choice
+    \item Part 2: your tables, relationships, column map, rules, suggestions for reducing repeated data, and business question check
+    \item Part 3: both drafts of your schema, and your explanation of what changed
+\end{itemize}
+
+Audience: the head of the data team, who will approve your design.
+
+\section*{Resources}
+References, a video, a PowerPoint and some notes are available at my website
+Link: \href{https://www.aholdengouveia.name/AdvData/databaseschema.html}{\textbf{\nolinkurl{https://www.aholdengouveia.name/AdvData/databaseschema.html}}}
+
+diagrams.net, a free diagram tool
+Link: \href{https://app.diagrams.net/}{\textbf{\nolinkurl{https://app.diagrams.net/}}}
+
+Schema examples
+Link: \href{https://www.aholdengouveia.name/AdvData/labs/cis210schemaexampleV1.png}{\textbf{\nolinkurl{https://www.aholdengouveia.name/AdvData/labs/cis210schemaexampleV1.png}}}
+
+Link: \href{https://www.aholdengouveia.name/AdvData/labs/cis210schemaexampleV2.png}{\textbf{\nolinkurl{https://www.aholdengouveia.name/AdvData/labs/cis210schemaexampleV2.png}}}
+
+Switching checklist, if you want to change data sets
+Link: \href{https://www.aholdengouveia.name/AdvData/labs/SwitchingDataSets.txt}{\textbf{\nolinkurl{https://www.aholdengouveia.name/AdvData/labs/SwitchingDataSets.txt}}}
 
 \end{document}

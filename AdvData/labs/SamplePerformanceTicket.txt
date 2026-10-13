@@ -1,0 +1,70 @@
+SAMPLE PERFORMANCE TICKET WRITE-UP
+==================================
+This shows the FORMAT to follow, using my book data as the EXAMPLE ONLY.
+Your write-up must be about a query on YOUR own data set.
+
+On a data team, when someone reports that something is slow, you write
+up what you checked, what you changed, and the evidence that it worked,
+so your team lead can approve the change and anyone can undo it later.
+
+
+Ticket:          DATA-4827
+Reported by:     Store staff, via the help desk
+Audience:        Team lead
+Author:          Your Name
+Date:            2026-02-10
+
+Problem reported
+  Staff say the "books by publisher" search in the inventory system is
+  slow, especially when a sales rep is waiting on the phone.
+
+Query involved
+  SELECT title, publishDate
+  FROM books
+  WHERE publisher = 'Penguin Books';
+
+What I checked
+  I ran EXPLAIN QUERY PLAN in front of the query. The plan said:
+      SCAN books
+  SCAN means the database reads every row in the table to find the
+  matches. With 99 books that's quick, but the full store catalogue is
+  over 50,000 books, and it gets slower as the catalogue grows.
+  (Screenshot 1: the plan before the change)
+
+What I changed
+  CREATE INDEX idx_books_publisher ON books(publisher);
+
+Evidence it worked
+  I ran EXPLAIN QUERY PLAN again. The plan now says:
+      SEARCH books USING INDEX idx_books_publisher (publisher=?)
+  SEARCH means the database uses the index to go straight to the
+  matching rows, instead of reading every row.
+  I also ran the query itself and it still returns the same 5 books,
+  so the results didn't change.
+  (Screenshot 2: the plan after the change)
+  (Screenshot 3: the query results)
+
+Trade-offs
+  - The index takes up extra space.
+  - Adding or changing books is slightly slower, because the index has
+    to be updated too. New books are added a few times a week, so
+    this is a small cost.
+
+How to undo it
+  DROP INDEX idx_books_publisher;
+
+Recommendation
+  Keep the index. Publisher searches happen many times a day, and new
+  books are only added a few times a week, so the faster searches are
+  worth the small cost.
+
+
+TIPS
+- Always show the plan BEFORE and AFTER. The before plan is how you
+  prove there was a problem, and the after plan is how you prove you
+  fixed it.
+- Check that the query still returns the same results after your
+  change. A fast query with the wrong answer isn't a fix.
+- If an index doesn't help, say so. "I checked, and an index isn't
+  worth it, because..." is a useful answer too.
+- Always include how to undo your change.

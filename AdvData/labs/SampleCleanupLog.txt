@@ -1,0 +1,79 @@
+SAMPLE CLEANUP LOG
+==================
+This shows the FORMAT to follow, using my book data as the EXAMPLE ONLY.
+Your cleanup log must be about YOUR own data set.
+
+A cleanup log records every change you make to the data, so anyone can
+see what was changed, why, and how to check it. If someone later asks
+"why is this price empty?", the answer is here.
+
+Log every fix, whether you made it before loading the data into your
+new tables or after. If you checked something and decided NOT to change
+it, log that too, with the reason.
+
+
+Database:  Bookstore inventory
+Author:    Your Name
+
+
+------------------------------------------------------------------
+Entry:          1
+Date:           2026-03-10
+When:           After loading
+Table/column:   books.price
+Problem:        31 books had an empty text value ('') instead of a price.
+Change made:    UPDATE books SET price = NULL WHERE price = '';
+Why:            Empty text isn't a price. NULL means "unknown", and SQL
+                functions like AVG skip NULL values, so the missing
+                prices won't be counted as zero.
+Rows affected:  31
+
+------------------------------------------------------------------
+Entry:          2
+Date:           2026-03-10
+When:           After loading
+Table/column:   books.isbn
+Problem:        24 books had 9999999999999 as the ISBN. That's a
+                placeholder meaning the ISBN is unknown, not a real ISBN.
+Change made:    UPDATE books SET isbn = NULL WHERE isbn = '9999999999999';
+Why:            A fake value looks real. Anyone searching by ISBN would
+                get 24 wrong matches.
+Rows affected:  24
+
+------------------------------------------------------------------
+Entry:          3
+Date:           2026-03-10
+When:           While loading
+Table/column:   books.pages and books.rating
+Problem:        Both were imported from the CSV as TEXT, so comparisons
+                like pages > 500 gave wrong results.
+Change made:    Created the new books table with pages as INTEGER and
+                rating as REAL, and used CAST when copying the data in:
+                CAST(pages AS INTEGER), CAST(rating AS REAL)
+Why:            Numbers stored as numbers sort and compare correctly,
+                with no CAST needed in every query.
+Rows affected:  99
+
+------------------------------------------------------------------
+Entry:          4
+Date:           2026-03-10
+When:           Before loading
+Table/column:   books.publisher
+Problem:        Four publisher names start with Penguin: Penguin,
+                Penguin Books, Penguin Classics, and Penguin Group (USA).
+                They might be the same publisher written different ways.
+Change made:    None.
+Why:            These are different imprints of the same company, so
+                they should stay separate. Added a note to the data
+                dictionary so the next person doesn't merge them.
+Rows affected:  0
+------------------------------------------------------------------
+
+
+TIPS
+- Write down the SQL you ran, so someone could repeat the change or
+  check it.
+- Count the rows before you change anything. Most tools tell you how
+  many rows an UPDATE changed, so record that number.
+- Logging "checked, didn't change, and here's why" shows you thought
+  about it. It also stops someone else from "fixing" it later.

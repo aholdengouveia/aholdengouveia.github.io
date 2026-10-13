@@ -36,9 +36,13 @@
             <h2>On this page:</h2>
             <ul>
                 <li><a href="#accessibility-notice">Accessibility Notice</a></li>
-                <li><a href="#objectives">Objectives:</a></li>
-                <li><a href="#complete-the-following-problems">Complete the following problems</a></li>
+                <li><a href="#request">Request</a></li>
+                <li><a href="#background">Background</a></li>
+                <li><a href="#learning-outcomes">Learning Outcomes</a></li>
+                <li><a href="#lab-instructions">Lab Instructions</a></li>
+                <li><a href="#acceptance-criteria">Acceptance Criteria</a></li>
                 <li><a href="#deliverables">Deliverables</a></li>
+                <li><a href="#resources">Resources</a></li>
             </ul>
         </nav>
 
@@ -52,61 +56,129 @@
 
 </section>
 
-<section role="region" aria-labelledby="objectives">
-<h2 id="objectives">Objectives:</h2>
+<section role="region" aria-labelledby="request">
+<h2 id="request">Request</h2>
+<p><strong>Request:</strong> DATA-6243<br> <strong>Requested by:</strong> Head of the data team<br> <strong>Data:</strong> Your data set from the Introduction to Data lab</p>
+
+</section>
+
+<section role="region" aria-labelledby="background">
+<h2 id="background">Background</h2>
+<p>Your data is mostly in one big table right now, which makes it hard to keep accurate as it grows. Before the team builds a proper database, your manager wants a design to review: what tables you need, how they connect, and the rules the data must follow. A design that's checked on paper is much cheaper to fix than one that's already built.</p>
+
+</section>
+
+<section role="region" aria-labelledby="learning-outcomes">
+<h2 id="learning-outcomes">Learning Outcomes</h2>
+<p>By the end of this lab, you will be able to:</p>
+
 <ul>
-<li>Learn how to evaluate which schema is appropriate</li>
-<li>Create your own schema</li>
+<li>Compare database design options, and choose one that fits your data set</li>
+<li>Create a database schema with tables, labeled primary and foreign keys, and rules for the data</li>
+<li>Map every column in a data set to a table, and check that the design supports your business questions</li>
+<li>Suggest ways to reduce repeated data in a data set before a design is built</li>
 </ul>
 
 </section>
 
-<section role="region" aria-labelledby="complete-the-following-problems">
-<h2 id="complete-the-following-problems">Complete the following problems</h2>
-<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name/AdvData/databaseschema.html"><strong>https://www.aholdengouveia.name/AdvData/databaseschema.html</strong></a></p>
+<section role="region" aria-labelledby="lab-instructions">
+<h2 id="lab-instructions">Lab Instructions</h2>
+<p>Use the data set you chose in the Introduction to Data lab. Books are my example data only, so your design must be for your own data set.</p>
 
-<p>Pick a topic you're interested in. This could be anything; sports, collectable card games, cars, video games, etc.</p>
+<p>If you want to switch to a different data set, email me first. Switching means redoing the work from earlier labs for your new data set, so it adds a lot of work. The switching checklist (linked under Resources) lists what you'd need to redo.</p>
 
 </section>
 
-<section role="region" aria-labelledby="decide-on-a-schema">
-<h2 id="decide-on-a-schema">Decide on a Schema</h2>
+<section role="region" aria-labelledby="part-1-decide-on-a-design">
+<h2 id="part-1-decide-on-a-design">Part 1: Decide on a Design</h2>
+<ol>
+<li>The topic page lists 6 schema design options: flat, hierarchical, network, relational, star, and snowflake. Pick 3 to evaluate.</li>
+<li>For each one, give 2 pros and 2 cons for your data specifically.</li>
+<li>Pick the one you think fits your data best, and explain why in one paragraph or less.</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="part-2-plan-your-tables">
+<h2 id="part-2-plan-your-tables">Part 2: Plan Your Tables</h2>
+<ol>
+<li>List the tables you think you need, with a primary key for each one. For example, books might have tables for books, authors, publishers, and formats.</li>
+<li>Explain how the tables relate to each other, and list the foreign keys. If you have no foreign keys, explain why not.</li>
+<li>Make a column map: list every column in your data set, the table it goes in, and whether it's a primary key, a foreign key, or neither. Every column must appear. If you would leave a column out of the database, say why. For example, in my data the title column goes in the books table, and the author column becomes an authors table, with an author ID in the books table as a foreign key.</li>
+<li>Write at least 3 rules for your data, based on the quality notes on your data card. For example: title can't be missing, price can be missing, and rating must be between 0 and 5.</li>
+<li>Give at least 2 suggestions for reducing repeated data. Look for values that repeat on many rows, or columns that store a list of things in one cell. For example, in the original version of my data, the genres column stores lists like “Fantasy, Young Adult, Fiction”, so one suggestion is a separate genres table. You don't need to build these yet. You'll decide which ones to use when you load your data in the Beyond SQL lab.</li>
+<li>For each of your 5 business questions from the SQL Review lab, list which tables a query would need to answer it. If a question needs data your design doesn't have, update your design.</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="part-3-create-your-schema">
+<h2 id="part-3-create-your-schema">Part 3: Create Your Schema</h2>
+<p>You can use any diagram tool you like. I used diagrams.net (linked under Resources), which is free and runs in your browser. Your schema needs:</p>
+
 <ul>
-<li>Out of the 6 design option, pick 3 to evaluate, list them here</li>
-<li>For each design option, give 2 pros and 2 cons for your data specifically</li>
-<li>List out some potential data options for your dataset For example, books might have authors, publication dates and publishers, genre, sub genres, purchase types such as audio or ebook, part of a series or world, connections to other books, etc.</li>
-<li>Make a list of what you think some potential tables could be, include a primary key for each table</li>
-<li>Make notes on how the tables might relate to each other using example, list out potential foreign keys, if you have no foreign keys, explain why not.</li>
-<li>Pick which one you think would be best for your given topic and explain why you chose it in one paragraph or less. Include your pros and cons.</li>
+<li>At least 4 tables</li>
+<li>A labeled primary key in each table</li>
+<li>Labeled foreign keys, if you have them</li>
+<li>Your rules from Part 2, on the diagram or listed beside it</li>
+<li>A legend that explains any symbols or line types you used</li>
+<li>Your name and the term</li>
 </ul>
 
+<p>Make your schema in two drafts, the way a design gets reviewed at work. Make a first draft, then check it against your column map, rules, and business question check from Part 2, and make a final draft that fixes anything you find. Include both drafts, and explain what you changed between them and why.</p>
+
+<p>My schema examples (linked under Resources) give you an idea of what to create. Don't copy them, or feel you have to use the same design. My examples are kept small, so yours should have more tables, a legend, and your rules.</p>
+
+<figure>
+<img src="cis210schemaexampleV2.png" alt="Database schema diagram example showing table structures with primary keys, foreign keys, and relationships between tables with explanatory notes">
+<figcaption>An example schema. Yours should have more tables, a legend, and your rules listed.</figcaption>
+</figure>
+
 </section>
 
-<section role="region" aria-labelledby="create-your-schema">
-<h2 id="create-your-schema">Create your schema</h2>
-<p>The tool that I used is Link: <a href="https://app.diagrams.net/"><strong>https://app.diagrams.net/</strong></a> You may use other tools of your choice, but make sure everything is clearly labelled and the image includes your name and term somewhere.</p>
-
-<p>See the linked schema examples Link: <a href="https://www.aholdengouveia.name/AdvData/labs/cis210schemaexampleV1.png"><strong>https://www.aholdengouveia.name/AdvData/labs/cis210schemaexampleV1.png</strong></a> and Link: <a href="https://www.aholdengouveia.name/AdvData/labs/cis210schemaexampleV2.png"><strong>https://www.aholdengouveia.name/AdvData/labs/cis210schemaexampleV2.png</strong></a> for an idea of what you should be creating, don't copy it or feel you have to use the same type, pick the one that works best for your data. My example does NOT include all the information you should have, you should have more tables, and a key, maybe some relationship tables instead of short notes, and rules listed out. You are also likely to have more relationship types with your data, I kept my example small so you'd have an idea of what I'm looking for.</p>
+<section role="region" aria-labelledby="acceptance-criteria">
+<h2 id="acceptance-criteria">Acceptance Criteria</h2>
+<p>This request is done when:</p>
 
 <ul>
-<li>Make sure to include all your tables, there should be at least 4.</li>
-<li>Each table needs to have a labeled primary key.</li>
-<li>You may need to include foreign keys, if you do then label them.</li>
+<li>3 design options are compared with pros and cons for your data, and your choice is explained</li>
+<li>Every column in your data set appears in your column map</li>
+<li>Your schema has at least 4 tables, each with a labeled primary key, and any foreign keys are labeled</li>
+<li>At least 3 rules, based on your data card</li>
+<li>At least 2 suggestions for reducing repeated data</li>
+<li>Each of your 5 business questions can be answered with your design</li>
+<li>Your schema image has a legend, and your name and the term</li>
+<li>Both drafts of your schema are included, with an explanation of what changed between them and why</li>
 </ul>
 
 </section>
 
 <section role="region" aria-labelledby="deliverables">
 <h2 id="deliverables">Deliverables</h2>
+<p>One file that includes:</p>
+
 <ul>
-<li>Document that includes answers to the above questions for deciding on which schema to use</li>
-<li>Document/image of your schema following the above guidelines.</li>
+<li>If you switched data sets: the redone work from the switching checklist</li>
+<li>Part 1: your 3 design options with pros and cons, and your choice</li>
+<li>Part 2: your tables, relationships, column map, rules, suggestions for reducing repeated data, and business question check</li>
+<li>Part 3: both drafts of your schema, and your explanation of what changed</li>
 </ul>
 
-<figure>
-<img src="cis210schemaexampleV2.png" alt="Database schema diagram example showing table structures with primary keys, foreign keys, and relationships between tables with explanatory notes">
-<figcaption>This is an example of a schema. My example does NOT include all the information you should have, you should have more tables, and a key, maybe some relationship tables instead of short notes, and rules listed out.</figcaption>
-</figure>
+<p>Audience: the head of the data team, who will approve your design.</p>
+
+</section>
+
+<section role="region" aria-labelledby="resources">
+<h2 id="resources">Resources</h2>
+<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name/AdvData/databaseschema.html"><strong>https://www.aholdengouveia.name/AdvData/databaseschema.html</strong></a></p>
+
+<p>diagrams.net, a free diagram tool Link: <a href="https://app.diagrams.net/"><strong>https://app.diagrams.net/</strong></a></p>
+
+<p>Schema examples Link: <a href="https://www.aholdengouveia.name/AdvData/labs/cis210schemaexampleV1.png"><strong>https://www.aholdengouveia.name/AdvData/labs/cis210schemaexampleV1.png</strong></a></p>
+
+<p>Link: <a href="https://www.aholdengouveia.name/AdvData/labs/cis210schemaexampleV2.png"><strong>https://www.aholdengouveia.name/AdvData/labs/cis210schemaexampleV2.png</strong></a></p>
+
+<p>Switching checklist, if you want to change data sets Link: <a href="https://www.aholdengouveia.name/AdvData/labs/SwitchingDataSets.txt"><strong>https://www.aholdengouveia.name/AdvData/labs/SwitchingDataSets.txt</strong></a></p>
 
 </section>
 

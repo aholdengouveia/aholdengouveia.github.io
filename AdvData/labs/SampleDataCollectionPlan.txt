@@ -1,0 +1,88 @@
+SAMPLE DATA COLLECTION PLAN
+===========================
+This shows the FORMAT to follow, using my book data as the EXAMPLE ONLY.
+Your plan must be about YOUR own company and data set.
+
+Before a company collects new data, someone has to decide what's worth
+collecting, how it will get collected, and how anyone will know it's
+right. Bad data collected fast is still bad data.
+
+
+Company:      Independent bookstore, one shop and a website, about 15 staff
+Current data: About 50,000 books, updated a few times a week. Not big data.
+
+
+------------------------------------------------------------------
+New data 1:     Sales from the till
+What and why:   Every sale: which book, when, the price, and whether it
+                was in the shop or online. This shows what actually
+                sells, so we can restock the right books and stop
+                ordering ones that don't sell.
+How collected:  Automatically by the till system, with every sale.
+                Exported to the database each night.
+How much:       About 300 sales a day, so about 110,000 rows a year.
+How verified:   - Each night, the total sales in the database must match
+                  the till's end-of-day report.
+                - Every sale must match a book in the books table. A
+                  left join finds any that don't, like the data quality
+                  check in the SQL Review Part 2 lab.
+Permission:     No personal information is collected, so no consent is
+                needed. Card numbers stay in the till system only.
+Adds:           Volume and velocity
+
+------------------------------------------------------------------
+New data 2:     Website searches
+What and why:   What customers search for on the website. Searches with
+                no results show books people want that we don't stock.
+How collected:  The website's analytics tool records every search.
+How much:       About 5,000 searches a day, so nearly 2 million rows a
+                year.
+How verified:   - Filter out searches from bots, which can be a large
+                  share of website traffic.
+                - Spot check: run 10 searches ourselves and make sure
+                  they show up correctly.
+Permission:     Visitors must agree to analytics cookies. We only
+                collect the search words, not who searched.
+Adds:           Volume and velocity
+
+------------------------------------------------------------------
+New data 3:     Customer reviews
+What and why:   Written reviews and star ratings from customers. These
+                show which books people love, and help staff recommend
+                books.
+How collected:  A review form on the website, sent to customers a week
+                after they buy a book.
+How much:       About 20 reviews a day.
+How verified:   - Only customers with a matching sale can review a book,
+                  which blocks most fake reviews.
+                - A staff member checks new reviews before they go live.
+Permission:     Customers agree to the review terms. Only their first
+                name is shown.
+Adds:           Variety, since reviews are free text and don't fit
+                neatly into tables
+
+
+------------------------------------------------------------------
+WOULD THIS MAKE IT BIG DATA?
+With all three, the database would grow by about 2 million rows a year,
+mostly from website searches, and add unstructured text from reviews.
+That's a big jump for a small shop, but it still isn't big data by most
+definitions. Volume and velocity are still small enough for one ordinary
+database.
+
+IS IT WORTH IT?
+Sales data is worth it right away, because it directly affects what we
+order. Searches are worth it if someone will actually look at the
+results each week. Reviews are the most work to manage, so they should
+wait until the first two are running well.
+
+
+TIPS
+- Start with the business question. "What and why" should say what
+  decision the data helps someone make.
+- Be specific about how much. A rough estimate with your working is
+  better than "a lot".
+- Every new kind of data needs a way to check it. If you can't verify
+  it, say what the risk is.
+- Check what you're allowed to collect. Personal data usually needs
+  consent, and some kinds have laws about them.

@@ -1,0 +1,161 @@
+\documentclass[12pt]{article}
+
+\usepackage{fontawesome}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[tagged, highstructure]{accessibility}
+\usepackage{bookmark}
+\usepackage{enumitem}
+
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0},
+    pdftitle={Final Presentation},
+    pdfauthor={Adrianna Holden-Gouveia},
+    pdfsubject={Advanced Data - Final Presentation},
+    pdflang={en-US},
+    pdfkeywords={final presentation, stakeholders, data project, video}
+}
+
+% Configure PDF bookmarks for navigation
+\bookmarksetup{
+    numbered,
+    open,
+}
+
+% Configure list spacing for better accessibility
+\setlist{nosep}
+
+
+
+\title{Final Presentation}
+\author{
+        Adrianna Holden-Gouveia \\
+        Website: \href{https://aholdengouveia.name}{aholdengouveia.name}\\ 
+        \date{\vspace{-5ex}}
+        %Email: \href{mailto:admin@aholdengouveia.name}{admin@aholdengouveia.name} \\
+%        \faLinkedin{: aholdengouveia} \\
+        \faGithub {: aholdengouveia} \\
+        %\faTwitter {: aholdengouveia} \\
+        }
+
+%S\date{\today}
+
+
+\begin{document}    
+
+\maketitle
+
+%\begin{abstract}
+%Final presentation for Advanced Data
+%\end{abstract}
+%\tableofcontents
+
+
+\section*{Accessibility Notice}
+This document is also available in HTML format at:
+
+Link: \href{https://aholdengouveia.name/AdvData/labs/finalpresentation.html}{\textbf{\nolinkurl{https://aholdengouveia.name/AdvData/labs/finalpresentation.html}}}
+
+The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.
+
+\section*{Request}
+\noindent\textbf{Request:} DATA-9412\\
+\textbf{Requested by:} Leadership team\\
+\textbf{Data:} Your database, and all your work from this term
+
+\section*{Background}
+The company's quarterly leadership and stakeholder meeting is next week, and the data team has a 7 to 10 minute slot on the agenda. Leadership wants to see what the team built this term, what the data shows, and what the company should do next. The people in the room make decisions about money and staff, but most of them aren't technical, so this is your chance to show your work in a way they can act on.
+
+\section*{Learning Outcomes}
+By the end of this final presentation, you will be able to:
+\begin{itemize}
+    \item Present the results of a data project to leadership and stakeholders, within a time limit
+    \item Explain technical work in plain language for a non-technical audience
+    \item Support a recommendation with evidence from your own data and analysis
+    \item Make a presentation accessible, with captions or a script and slides that are easy to read
+\end{itemize}
+
+\section*{Final Presentation Instructions}
+Record a 7 to 10 minute video presentation about your own data set and company, as if you were presenting at the meeting. Books are my example data only.
+
+Your voice must be in the video, along with your slides. Showing your face is up to you. Record your screen and voice with a screen capture tool, such as OBS Studio (linked under Resources), which is free, or the screen recorder built into your computer. Don't use PowerPoint's Record feature.
+
+Start by planning your talk slide by slide, following the sample presentation outline (linked under Resources). Your executive report from week 14 is a good starting point.
+
+\subsection*{Part 1: What to Cover}
+Cover these, in this order. The times are a guide.
+\begin{enumerate}
+    \item \textbf{Title and bottom line, about 30 seconds.} Who you are, your company, and your main point in one sentence.
+    \item \textbf{Your data, about 1 minute.} Where it comes from, what it covers, and its license, from your data card.
+    \item \textbf{What you built, about 2 minutes.} Your schema, your tables, and how you cleaned up the data, with the numbers from your cleanup log.
+    \item \textbf{Live demo, about 1 minute.} Open your database in SandboxSQL or another tool, run one query that answers a business question, and explain the answer.
+    \item \textbf{What you found, about 2 minutes.} At least 2 findings, with real numbers and at least one chart from your week 13 data visualization work.
+    \item \textbf{Looking ahead, about 1 to 2 minutes.} Pick at least 2 of these to cover: your data collection plan, how your database would scale, your NoSQL or hosting recommendation, or your North Star Metric and dashboard plan.
+    \item \textbf{Recommendation and ask, about 1 minute.} The one thing you want leadership to approve or do, what it costs, and what happens if they don't.
+\end{enumerate}
+
+\subsection*{Part 2: Slides}
+\begin{enumerate}
+    \item Use about 8 to 12 slides, with one main idea on each.
+    \item Keep text short and large enough to read, at least 24 point. If you'd need to read a slide out loud, it has too many words.
+    \item Every chart has a title and labelled axes, and you say its main point out loud.
+    \item Explain any technical word the first time you use it, such as table, query, or schema.
+\end{enumerate}
+
+\subsection*{Part 3: Accessibility}
+Add captions to your video, or turn in a script of what you say. Many recording tools can make captions for you, but check them and fix any mistakes, especially technical words.
+
+\subsection*{Part 4: Rehearse}
+Practise with a timer before you record. Your video must be between 7 and 10 minutes. Going over is like running past your slot in a real meeting, so cut something rather than rush.
+
+\subsection*{Part 5: Watch and Respond}
+In a real company, the meeting doesn't end when the slides do. Once everyone's videos are posted, watch every classmate's presentation, and leave a comment on each one in the class discussion.
+\begin{itemize}
+    \item \textbf{Feedback:} one specific thing that worked well, and one specific thing that could be better. The Acceptance Criteria below are a good guide.
+    \item \textbf{Stakeholder question:} for at least 2 classmates, you must ask a question that someone in the meeting would ask, instead of giving feedback. For example: ``What would collecting the sales data cost, and how soon would we see results?''
+\end{itemize}
+
+\section*{Acceptance Criteria}
+This request is done when:
+\begin{itemize}
+    \item Your video is 7 to 10 minutes long, with your voice and your slides
+    \item You state your main point in the first 30 seconds
+    \item You cover all 7 parts of the outline, in order
+    \item You run at least one live query on your own database
+    \item Your findings use real numbers from your own work, with at least one chart
+    \item You end with one clear recommendation or ask
+    \item Technical words are explained, and your slides are easy to read
+    \item Your video has captions, or you turn in a script
+    \item You've left a comment on every classmate's video, with a stakeholder question on at least 2 of them
+\end{itemize}
+
+\section*{Deliverables}
+\begin{enumerate}
+    \item Your video
+    \item Your slides
+    \item Your script, if your video doesn't have captions
+    \item Your comments on every classmate's video, in the class discussion
+\end{enumerate}
+
+Audience: the company's leadership and stakeholders, who make decisions about money and staff but aren't technical. Your classmates will watch it as if they were in the meeting.
+
+\section*{Resources}
+References, a video, a PowerPoint and some notes about reports and presenting data are available at my website
+Link: \href{https://www.aholdengouveia.name/AdvData/Reporting.html}{\textbf{\nolinkurl{https://www.aholdengouveia.name/AdvData/Reporting.html}}}
+
+Sample presentation outline, for planning your talk
+Link: \href{https://www.aholdengouveia.name/AdvData/labs/SamplePresentationOutline.txt}{\textbf{\nolinkurl{https://www.aholdengouveia.name/AdvData/labs/SamplePresentationOutline.txt}}}
+
+Sample executive report, from week 14
+Link: \href{https://www.aholdengouveia.name/AdvData/labs/SampleExecutiveReport.txt}{\textbf{\nolinkurl{https://www.aholdengouveia.name/AdvData/labs/SampleExecutiveReport.txt}}}
+
+OBS Studio, a free screen capture tool for recording your video
+Link: \href{https://obsproject.com/}{\textbf{\nolinkurl{https://obsproject.com/}}}
+
+SandboxSQL, for your live demo
+Link: \href{https://www.sandboxsql.com/}{\textbf{\nolinkurl{https://www.sandboxsql.com/}}}
+
+\end{document}

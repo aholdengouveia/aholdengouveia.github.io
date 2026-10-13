@@ -1,0 +1,60 @@
+SAMPLE EXECUTIVE REPORT
+=======================
+This shows the FORMAT to follow, using my book data as the EXAMPLE ONLY.
+Your report must be about YOUR own company and data.
+
+An executive report is short and focused. Leaders read it to make a
+decision, so it has a clear purpose, uses real numbers, explains them
+in plain words, and ends with one action they can take.
+
+
+To:       Leadership team
+From:     Your Name, data team
+Date:     2026-04-28
+Re:       Request DATA-7720, end-of-term data report
+
+
+PURPOSE
+This term, the data team built the store's first inventory database.
+This report covers what the data shows, the problems we found and
+fixed, and the one thing we need from you next.
+
+KEY FINDINGS
+- Classics make up half our catalogue: 50 of our 99 books.
+- Customers rate Fantasy highest. Fantasy books average 4.34 stars,
+  compared with 4.05 for Classics, but we only stock 12 Fantasy books.
+- 71 of our 99 books are rated 4 stars or higher.
+
+CHART
+[Insert your chart from the Data Visualization lab here.]
+Alt text: Bar chart of books by genre. Classics is by far the biggest
+group, with 50 of 99 books, about three times as many as Fiction, the
+next biggest.
+
+DATA QUALITY
+- 24 books had a fake placeholder ISBN. These are now marked as
+  unknown, so searches by ISBN give correct results.
+- 31 books have no price. These are left out of price calculations,
+  so averages aren't pulled down by missing values.
+- 6 books are digital formats with no shelf section. We've asked the
+  manager whether to stock print copies.
+
+NORTH STAR METRIC
+Our North Star is books sold per week, since sales are how the store
+makes money. We can't measure it yet, because sales aren't in the
+database. The closest measure we have today is the share of books
+rated 4 stars or higher: 71 of 99, or 72%.
+
+ACTION ITEM
+Approve collecting sales data from the till starting next month,
+about 300 sales a day (see request DATA-2058). This lets us track our
+North Star every week, and see whether stocking more Fantasy books
+pays off.
+
+
+TIPS
+- Lead with why the reader should care. Save how you did it for your
+  other documents.
+- Every finding should have a number, and say what the number means.
+- One clear action item is better than five vague ones.
+- Keep it to about one page.

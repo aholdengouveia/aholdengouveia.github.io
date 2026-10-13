@@ -1,0 +1,54 @@
+SWITCHING DATA SETS
+===================
+The data set you chose in the Introduction to Data lab is meant to be
+the one you use for the rest of the term. Each lab builds on the work
+from the labs before it, so switching means redoing that earlier work
+for your new data set.
+
+If you still want to switch:
+
+1. Email me FIRST, before you start on the new data set, so we can talk
+   about it.
+
+2. Redo the work below for your new data set, for every lab you've
+   already done. Include it at the start of the lab you're working on
+   now, with a heading for each part.
+
+   Introduction to Data
+     - 3 new data cards, following the sample data card
+     - One paragraph explaining which data set you chose and why
+     Books are my example data, so you can't switch to a book data set.
+
+   SQL Review
+     - Your new data set loaded into a database, using my CSV to
+       Database Converter:
+       https://www.aholdengouveia.name/AdvData/labs/csv-to-database.html
+     - 5 new business questions about your new data set
+     - 5 documented queries that answer them
+
+   SQL Review Part 2
+     - A lookup table for your new data set
+     - 3 documented queries that join your tables
+
+   Database Schema
+     - A new schema, following Parts 2 and 3 of that lab
+
+   Query Optimization
+     - 2 of your new queries checked and optimized, following Part 3
+       of that lab
+
+   Database Documentation
+     - A data dictionary for your new data set, following Part 3 of
+       that lab
+
+   Beyond SQL
+     - Your new data set loaded into the tables in your new schema,
+       with a cleanup log
+
+   You only need to redo the labs that come BEFORE the one you're
+   working on now. For example, if you switch during the Database
+   Schema lab, you redo Introduction to Data, SQL Review, and SQL Review
+   Part 2.
+
+3. You don't need to redo the tutorials or challenges (SQLBolt,
+   HackerRank, or Kaggle). Only the parts that use your own data.

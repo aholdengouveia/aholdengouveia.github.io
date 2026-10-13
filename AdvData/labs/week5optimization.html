@@ -36,9 +36,13 @@
             <h2>On this page:</h2>
             <ul>
                 <li><a href="#accessibility-notice">Accessibility Notice</a></li>
-                <li><a href="#objectives">Objectives:</a></li>
-                <li><a href="#complete-the-following-problems">Complete the following problems</a></li>
+                <li><a href="#request">Request</a></li>
+                <li><a href="#background">Background</a></li>
+                <li><a href="#learning-outcomes">Learning Outcomes</a></li>
+                <li><a href="#lab-instructions">Lab Instructions</a></li>
+                <li><a href="#acceptance-criteria">Acceptance Criteria</a></li>
                 <li><a href="#deliverables">Deliverables</a></li>
+                <li><a href="#resources">Resources</a></li>
             </ul>
         </nav>
 
@@ -52,63 +56,184 @@
 
 </section>
 
-<section role="region" aria-labelledby="objectives">
-<h2 id="objectives">Objectives:</h2>
+<section role="region" aria-labelledby="request">
+<h2 id="request">Request</h2>
+<p><strong>Request:</strong> DATA-7391<br> <strong>Requested by:</strong> Help desk<br> <strong>Data:</strong> My book database, then your own database</p>
+
+</section>
+
+<section role="region" aria-labelledby="background">
+<h2 id="background">Background</h2>
+<p>Users have started reporting that some searches are slow. Your manager wants you to learn how to find and fix slow queries by practising on a sample database, then check your own queries and write up a fix so the team can approve it. On a real system with millions of rows, a missing index can turn a search that takes seconds into one that takes minutes.</p>
+
+</section>
+
+<section role="region" aria-labelledby="learning-outcomes">
+<h2 id="learning-outcomes">Learning Outcomes</h2>
+<p>By the end of this lab, you will be able to:</p>
+
 <ul>
-<li>Learn how to work with indexes</li>
-<li>Demonstrate how to add an index to a table to make it more efficient</li>
+<li>Read a query plan, and explain how an index changes it</li>
+<li>Write commands that add an index to a table for a specific query</li>
+<li>Optimize your own SQL queries, and decide whether an index is worth it</li>
+<li>Write up a performance fix with evidence, the way you would for a work ticket</li>
 </ul>
 
 </section>
 
-<section role="region" aria-labelledby="complete-the-following-problems">
-<h2 id="complete-the-following-problems">Complete the following problems</h2>
-<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name/AdvData/optimization.html"><strong>https://www.aholdengouveia.name/AdvData/optimization.html</strong></a></p>
+<section role="region" aria-labelledby="lab-instructions">
+<h2 id="lab-instructions">Lab Instructions</h2>
+<p>Parts 3 and 4 use your own data set and the queries you documented in the SQL Review labs. If you want to switch to a different data set, email me first. Switching means redoing the work from earlier labs for your new data set, so it adds a lot of work. The switching checklist (linked under Resources) lists what you'd need to redo.</p>
 
 </section>
 
-<section role="region" aria-labelledby="query-optimization-practice-on-kaggle">
-<h2 id="query-optimization-practice-on-kaggle">Query optimization practice on Kaggle</h2>
-<p>Go to Link: <a href="https://www.kaggle.com/learn/advanced-sql"><strong>https://www.kaggle.com/learn/advanced-sql</strong></a> and sign up for Kaggle, it's free, use any email you want. If you are unfamiliar with the way kaggle works, there is a tutorial section, and an exercises section for this course.</p>
+<section role="region" aria-labelledby="screenshots">
+<h2 id="screenshots">Screenshots</h2>
+<p>Several parts of this lab ask for a screenshot. Each screenshot should have your name, term, and year. One of the easiest ways to do that is make a text document with your name and term/year on your computer and save it to use all term. Any screenshots that don't include this information won't be counted.</p>
 
-<ul>
-<li>Go through the Advanced SQL course. Take a screenshot of the completed course in your profile. Make sure to include your name and the term in your screenshot. This should show you completed the tutorials</li>
-<li>Now you'll be doing the exercises. Go through the exercise on Query Optimization, it should be problems related to Pet Costumes International. Take a screenshot of your solution to both problems. Make sure to include your name and term in the screenshot.</li>
-</ul>
+<figure>
+<img src="ExampleScreenshot.png" alt="Example screenshot: a web browser showing the Google home page, with a small text editor window in front of it that says YOUR NAME HERE and TERM YEAR">
+<figcaption>This is an image of what each of your screenshots should look like</figcaption>
+</figure>
 
 </section>
 
-<section role="region" aria-labelledby="query-optimization-challenges">
-<h2 id="query-optimization-challenges">Query Optimization Challenges</h2>
-<p>For each query make sure to include a short (1 paragraph or less) explanation of how you optimized it and solved the problem. Each problem should also include your solution typed out, and a screenshot of your solution being run. Make sure all screenshots include your name and the term.</p>
-
-<p>Go to Link: <a href="https://www.sandboxsql.com/"><strong>https://www.sandboxsql.com/</strong></a> and load in the database located here Link: <a href="https://github.com/aholdengouveia/aholdengouveia.github.io/blob/main/AdvData/labs/BooksDatabase.sqlite"><strong>https://github.com/aholdengouveia/aholdengouveia.github.io/blob/main/AdvData/labs/BooksDatabase.sqlite</strong></a> for the following problems.</p>
-
-<p>Note: The queries don't always copy over well, especially symbols like the single quote.</p>
+<section role="region" aria-labelledby="part-1-writing-efficient-queries-on-kaggle">
+<h2 id="part-1-writing-efficient-queries-on-kaggle">Part 1: Writing Efficient Queries on Kaggle</h2>
+<p>Sign up for Kaggle (linked under Resources). It's free, and you can use any email you want. You only need the Writing Efficient Queries lesson from Kaggle's Advanced SQL course, not the whole course.</p>
 
 <ol>
-<li>On your database, if I give you the information on a book title, what is the command used to create an index to run the query more efficiently?</li>
-<li>Given the following query, which will select a book with a given title, what command would you use to create an index to make this query more efficient?
-<pre><code lang="sql">SELECT authors.name, books.genre
-            FROM books INNER JOIN authors 
-            ON books.author_id = authors.author_id
-            WHERE books.title = 'Dune'</code></pre>
-</li>
-<li>Given the following query, which selects books from a table, create a command that will add an index based on genre. Then give a new query that will show fantasy books only, making sure to use the index you created.
-<pre><code lang="sql">SELECT authors.name, books.genre
-            FROM books INNER JOIN authors 
-            ON books.author_id = authors.author_id</code></pre>
-</li>
+<li>Read the Writing Efficient Queries tutorial.</li>
+<li>Do the Writing Efficient Queries exercise. It has problems about Pet Costumes International. Take a screenshot of your solution to both problems.</li>
+<li>In a few sentences, explain one technique from the tutorial that makes a query more efficient, and why it helps.</li>
 </ol>
+
+<p>Kaggle uses BigQuery, which doesn't use indexes the way most databases do, so this part is about writing efficient queries. Parts 2 and 3 are about indexes.</p>
+
+<p><strong>Optional, not required for this class:</strong> if you're interested, the rest of Kaggle's Advanced SQL course covers joins and unions, analytic functions, and nested data.</p>
+
+</section>
+
+<section role="region" aria-labelledby="part-2-indexes-and-query-plans">
+<h2 id="part-2-indexes-and-query-plans">Part 2: Indexes and Query Plans</h2>
+<p>Load my book database (linked under Resources) into any SQLite tool. I suggest SandboxSQL, linked under Resources: use Load a Database, then load the .sqlite file. Queries don't always copy over well from a PDF, especially single quotes, so type them in if you get an error.</p>
+
+<p><strong>How to read a query plan:</strong> put EXPLAIN QUERY PLAN in front of any query, and the database tells you how it will find the rows, without running the query. Look for these two words:</p>
+
+<ul>
+<li>SCAN means the database reads every row in the table. On a big table, this is slow.</li>
+<li>SEARCH ... USING INDEX means the database uses an index to go straight to the rows it needs.</li>
+</ul>
+
+<p>The exact wording can be a little different depending on your tool, but SCAN and SEARCH will be there.</p>
+
+<p><strong>Worked example:</strong> this query finds books by one publisher.</p>
+
+<pre><code lang="sql">EXPLAIN QUERY PLAN
+SELECT title, publishDate FROM books
+WHERE publisher = 'Penguin Books';</code></pre>
+
+<p>Before an index, the plan says SCAN books. Then I create an index on the column in the WHERE:</p>
+
+<pre><code lang="sql">CREATE INDEX idx_books_publisher ON books(publisher);</code></pre>
+
+<p>Running the same EXPLAIN QUERY PLAN again now says SEARCH books USING INDEX idx_books_publisher. Follow the same steps for the questions below.</p>
+
+<ol>
+<li>This query finds the author and genre of a book with a given title.
+<pre><code lang="sql">SELECT authors.name, books.genre
+FROM books INNER JOIN authors
+ON books.author_id = authors.author_id
+WHERE books.title = 'Dune';</code></pre>
+
+<ol type="a">
+<li>Run EXPLAIN QUERY PLAN on it, and take a screenshot of the plan.</li>
+<li>Write and run the command that creates an index to make this query more efficient.</li>
+<li>Run EXPLAIN QUERY PLAN again, and take a screenshot. Explain what changed in the plan and why that makes the query faster.</li>
+</ol>
+</li>
+<li>Create an index on the genre column. Then write a query that shows only Fantasy books, with the author's name and the title. Run EXPLAIN QUERY PLAN on your query and take a screenshot that shows your index being used. If your plan still says SCAN books, check that your WHERE uses = with the indexed column. A LIKE that starts with % can't use an index.</li>
+<li>Indexes aren't free. They take up space, and they make adding or changing rows slower. Pick a column in your own data set that would be a bad choice for an index, and explain why. For example, think about columns that are rarely searched, have only a few different values, or change often.</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="part-3-optimize-your-own-queries">
+<h2 id="part-3-optimize-your-own-queries">Part 3: Optimize Your Own Queries</h2>
+<p>Pick 2 of your documented queries from the SQL Review labs. For each one:</p>
+
+<ol>
+<li>Run EXPLAIN QUERY PLAN on it, and take a screenshot.</li>
+<li>Decide whether an index would help. If it would, create it, run EXPLAIN QUERY PLAN again, and take a screenshot.</li>
+<li>Update the Notes in your query documentation with what the plan showed, any index you created, and whether it was worth it.</li>
+</ol>
+
+<p>Your data set may be small, so you probably won't see a difference in time. The plan is your evidence. If you decide an index isn't worth it, that's a fine answer, as long as you explain why.</p>
+
+</section>
+
+<section role="region" aria-labelledby="part-4-performance-ticket-write-up">
+<h2 id="part-4-performance-ticket-write-up">Part 4: Performance Ticket Write-Up</h2>
+<p>A user reports that one of your queries from Part 3 is slow. Write up the fix for your team lead, following the sample performance ticket (linked under Resources). Include the problem, the query, what you checked, what you changed, your evidence, the trade-offs, how to undo the change, and your recommendation.</p>
+
+</section>
+
+<section role="region" aria-labelledby="acceptance-criteria">
+<h2 id="acceptance-criteria">Acceptance Criteria</h2>
+<p>This request is done when:</p>
+
+<ul>
+<li>Both problems in the Kaggle Writing Efficient Queries exercise are solved, and you've explained one technique from the tutorial</li>
+<li>Every index you create has a query plan from before and after as evidence</li>
+<li>Your genre query plan shows your index being used</li>
+<li>2 of your own queries are checked, with an explanation of whether an index is worth it</li>
+<li>Your performance ticket write-up includes everything in the sample, including how to undo the change</li>
+<li>Every screenshot follows the screenshot rules</li>
+</ul>
 
 </section>
 
 <section role="region" aria-labelledby="deliverables">
 <h2 id="deliverables">Deliverables</h2>
+<p>One file that includes:</p>
+
 <ul>
-<li>Document for the portion of this lab using Kaggle to practice query optimization and review your SQL.</li>
-<li>Document for the challenges. Each challenge should include the solution typed out, an explanation of how you arrived at your solution including any resources used, and a screenshot of the solution being run, each screenshot must include your name and the term.</li>
+<li>Part 1: your 2 Kaggle screenshots and your explanation of one technique</li>
+<li>Part 2: your answers, commands, queries, and plan screenshots</li>
+<li>Part 3: your 2 updated query documentations with plan screenshots</li>
+<li>Part 4: your performance ticket write-up</li>
+<li>If you switched data sets: the redone work from the switching checklist</li>
 </ul>
+
+<p>Audience: your team lead, who has to approve the change.</p>
+
+</section>
+
+<section role="region" aria-labelledby="resources">
+<h2 id="resources">Resources</h2>
+<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name/AdvData/optimization.html"><strong>https://www.aholdengouveia.name/AdvData/optimization.html</strong></a></p>
+
+<p>Kaggle Writing Efficient Queries tutorial Link: <a href="https://www.kaggle.com/code/alexisbcook/writing-efficient-queries"><strong>https://www.kaggle.com/code/alexisbcook/writing-efficient-queries</strong></a></p>
+
+<p>Kaggle Writing Efficient Queries exercise Link: <a href="https://www.kaggle.com/code/alexisbcook/exercise-writing-efficient-queries"><strong>https://www.kaggle.com/code/alexisbcook/exercise-writing-efficient-queries</strong></a></p>
+
+<p>Optional: the full Kaggle Advanced SQL course Link: <a href="https://www.kaggle.com/learn/advanced-sql"><strong>https://www.kaggle.com/learn/advanced-sql</strong></a></p>
+
+<p>My book database for Part 2 Link: <a href="https://www.aholdengouveia.name/AdvData/labs/BooksDatabase.sqlite"><strong>https://www.aholdengouveia.name/AdvData/labs/BooksDatabase.sqlite</strong></a></p>
+
+<p>Suggested tool: SandboxSQL, free, runs in your browser, and saves your database as a .sqlite file with its Export button Link: <a href="https://www.sandboxsql.com/"><strong>https://www.sandboxsql.com/</strong></a></p>
+
+<p>Optional, if you'd rather install a tool: DB Browser for SQLite, which can import a CSV file directly Link: <a href="https://sqlitebrowser.org/"><strong>https://sqlitebrowser.org/</strong></a></p>
+
+<p>SQLite documentation on EXPLAIN QUERY PLAN Link: <a href="https://www.sqlite.org/eqp.html"><strong>https://www.sqlite.org/eqp.html</strong></a></p>
+
+<p>Use The Index, Luke: a guide to indexes for developers Link: <a href="https://use-the-index-luke.com/"><strong>https://use-the-index-luke.com/</strong></a></p>
+
+<p>Sample query documentation Link: <a href="https://www.aholdengouveia.name/AdvData/labs/SampleQueryDocumentation.txt"><strong>https://www.aholdengouveia.name/AdvData/labs/SampleQueryDocumentation.txt</strong></a></p>
+
+<p>Sample performance ticket write-up for Part 4 Link: <a href="https://www.aholdengouveia.name/AdvData/labs/SamplePerformanceTicket.txt"><strong>https://www.aholdengouveia.name/AdvData/labs/SamplePerformanceTicket.txt</strong></a></p>
+
+<p>Switching checklist, if you want to change data sets Link: <a href="https://www.aholdengouveia.name/AdvData/labs/SwitchingDataSets.txt"><strong>https://www.aholdengouveia.name/AdvData/labs/SwitchingDataSets.txt</strong></a></p>
 
 </section>
 

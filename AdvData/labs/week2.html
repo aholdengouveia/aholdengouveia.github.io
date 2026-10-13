@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Week 2 - SQL Review</title>
+    <title>SQL Review</title>
     <link href="../../css/accessible-lab.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <header role="banner">
-        <h1>Week 2 - SQL Review</h1>
+        <h1>SQL Review</h1>
         <div class="author">
             <p>Adrianna Holden-Gouveia</p>
             <p>Website: <a href="https://aholdengouveia.name">https://aholdengouveia.name</a></p>
@@ -21,7 +21,7 @@
             <ol class="breadcrumb">
                 <li><a href="/">Home</a></li>
                 <li><a href="/AdvData/">Advanced Data</a></li>
-                <li aria-current="page">Week 2 - SQL Review</li>
+                <li aria-current="page">SQL Review</li>
             </ol>
         </nav>
 
@@ -36,9 +36,13 @@
             <h2>On this page:</h2>
             <ul>
                 <li><a href="#accessibility-notice">Accessibility Notice</a></li>
-                <li><a href="#objectives">Objectives:</a></li>
-                <li><a href="#complete-the-following-problems">Complete the following problems</a></li>
+                <li><a href="#request">Request</a></li>
+                <li><a href="#background">Background</a></li>
+                <li><a href="#learning-outcomes">Learning Outcomes</a></li>
+                <li><a href="#lab-instructions">Lab Instructions</a></li>
+                <li><a href="#acceptance-criteria">Acceptance Criteria</a></li>
                 <li><a href="#deliverables">Deliverables</a></li>
+                <li><a href="#resources">Resources</a></li>
             </ul>
         </nav>
 
@@ -52,37 +56,133 @@
 
 </section>
 
-<section role="region" aria-labelledby="objectives">
-<h2 id="objectives">Objectives:</h2>
+<section role="region" aria-labelledby="request">
+<h2 id="request">Request</h2>
+<p><strong>Request:</strong> DATA-3172<br> <strong>Requested by:</strong> Operations manager at your company<br> <strong>Data:</strong> Your data set from the Introduction to Data lab</p>
+
+</section>
+
+<section role="region" aria-labelledby="background">
+<h2 id="background">Background</h2>
+<p>Before anyone relies on this data, your manager wants to see that it can answer real business questions, and that your queries are documented so the rest of the team can reuse them. You'll start with a quick SQL refresher as training, then load your data into a database and put it to work.</p>
+
+</section>
+
+<section role="region" aria-labelledby="learning-outcomes">
+<h2 id="learning-outcomes">Learning Outcomes</h2>
+<p>By the end of this lab, you will be able to:</p>
+
 <ul>
-<li>Demonstrate the use of some basic SQL queries</li>
-<li>Explain how SQL queries work, and practice using them</li>
+<li>Write basic SQL queries to select, filter, and sort data</li>
+<li>Explain what each part of a SQL query does</li>
+<li>Turn business questions about your data set into documented SQL queries, with a business justification for each</li>
+<li>Evaluate a SQL tutorial, including where you needed help</li>
 </ul>
 
 </section>
 
-<section role="region" aria-labelledby="complete-the-following-problems">
-<h2 id="complete-the-following-problems">Complete the following problems</h2>
-<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name/AdvData/sqlpt1.html"><strong>https://www.aholdengouveia.name/AdvData/sqlpt1.html</strong></a></p>
+<section role="region" aria-labelledby="lab-instructions">
+<h2 id="lab-instructions">Lab Instructions</h2>
+</section>
 
-<p>The tutorial site we'll be using is Link: <a href="https://sqlbolt.com/"><strong>https://sqlbolt.com/</strong></a> We'll be going through several sections of this tutorial, go through the first 4 sections and the review</p>
+<section role="region" aria-labelledby="screenshots">
+<h2 id="screenshots">Screenshots</h2>
+<p>Several parts of this lab ask for a screenshot. Each screenshot should have your name, term, and year. One of the easiest ways to do that is make a text document with your name and term/year on your computer and save it to use all term. Any screenshots that don't include this information won't be counted.</p>
+
+<figure>
+<img src="ExampleScreenshot.png" alt="Example screenshot: a web browser showing the Google home page, with a small text editor window in front of it that says YOUR NAME HERE and TERM YEAR">
+<figcaption>This is an image of what each of your screenshots should look like</figcaption>
+</figure>
 
 </section>
 
-<section role="region" aria-labelledby="what-to-include">
-<h2 id="what-to-include">What to Include</h2>
+<section role="region" aria-labelledby="part-1-sql-review-tutorial">
+<h2 id="part-1-sql-review-tutorial">Part 1: SQL Review Tutorial</h2>
+<p>Go through these 5 sections of SQLBolt (linked under Resources), and complete the exercises at the end of each one:</p>
+
 <ul>
-<li>Screenshots of each section after you complete the challenges at the end. Make sure you have the green checkmark on each problem.</li>
+<li>SQL Lesson 1: SELECT queries 101</li>
+<li>SQL Lesson 2: Queries with constraints (Pt. 1)</li>
+<li>SQL Lesson 3: Queries with constraints (Pt. 2)</li>
+<li>SQL Lesson 4: Filtering and sorting Query results</li>
+<li>SQL Review: Simple SELECT Queries</li>
+</ul>
+
+<p>Take a screenshot of each section after you complete its exercises. Make sure you have the green checkmark on each problem. Then answer these questions:</p>
+
+<ol>
 <li>Which, if any, questions did you find challenging? Why?</li>
 <li>How many of the questions did you need a hint on? Why?</li>
 <li>What is your review of this tutorial? What would you change or fix?</li>
+<li>Pick one query you wrote and explain what each part does: SELECT, FROM, WHERE, and ORDER BY.</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="part-2-business-questions-about-your-data">
+<h2 id="part-2-business-questions-about-your-data">Part 2: Business Questions About Your Data</h2>
+<p>Now use SQL on your own data set from the Introduction to Data lab. Books are my example data only, so your questions and queries must be about your own data.</p>
+
+<ol>
+<li>Load your data set into a database as a single table. You will organize your data into multiple tables later in the term, so one table is fine for now. Here's the way I suggest, which runs in your browser with nothing to install. The tools are linked under Resources.
+<ol type="a">
+<li>Open my CSV to Database Converter, and choose your CSV file. Keep the first 100 to 1,000 rows, since bigger databases can cause errors in browser tools. Select Convert, check the summary, and download your database.</li>
+<li>Open SandboxSQL, use Load a Database, and choose the file you downloaded.</li>
+<li>Check that it worked by running SELECT COUNT(*) on your table. The count should match the number of rows the converter showed.</li>
+</ol>
+You can use a different tool if you prefer, as long as you turn in a database file, not a CSV file or a spreadsheet.</li>
+<li>Write 5 business questions that someone at the company from your data card might ask about your data.</li>
+<li>Write a query that answers each question. Across your 5 queries, use WHERE, ORDER BY, and at least one WHERE with more than one condition.</li>
+<li>Document each query using the format in the sample query documentation (linked under Resources). Each one needs a header comment with the business question, who is asking, a business justification, and any notes, followed by the query and a short summary of the result. Your result summary must quote specific numbers or values from your results, such as how many rows came back or the top value.</li>
+<li>Take a screenshot of each query and its results.</li>
+<li>Export your database to turn in. In SandboxSQL, use the Export button, which saves it as a .sqlite file. SandboxSQL doesn't always keep your work if you close the page, so export at the end of each session, and use Load a Database to open your .sqlite file next time.</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="acceptance-criteria">
+<h2 id="acceptance-criteria">Acceptance Criteria</h2>
+<p>This request is done when:</p>
+
+<ul>
+<li>All 5 SQLBolt sections are complete, with a green checkmark on every problem</li>
+<li>Your data is loaded into a database as one table, and your database file is turned in</li>
+<li>5 business questions that someone at your company would actually ask</li>
+<li>Each question has a query that runs and returns results that answer it</li>
+<li>Each result summary quotes specific numbers or values from your results</li>
+<li>Every query is documented in the sample format, with a business justification</li>
+<li>Across your queries, you use WHERE, ORDER BY, and at least one WHERE with more than one condition</li>
+<li>Every screenshot follows the screenshot rules</li>
 </ul>
 
 </section>
 
 <section role="region" aria-labelledby="deliverables">
 <h2 id="deliverables">Deliverables</h2>
-<p>A document with the answers to each question and all 5 screenshots. Make sure each screenshot has your name and term on it.</p>
+<p>Two files:</p>
+
+<ol>
+<li>A document that includes Part 1, your 5 SQLBolt screenshots and your answers to the 4 questions, and Part 2, your 5 documented queries with a screenshot of each one and its results</li>
+<li>Your database file</li>
+</ol>
+
+<p>Audience: your manager and the rest of the data team.</p>
+
+</section>
+
+<section role="region" aria-labelledby="resources">
+<h2 id="resources">Resources</h2>
+<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name/AdvData/sqlpt1.html"><strong>https://www.aholdengouveia.name/AdvData/sqlpt1.html</strong></a></p>
+
+<p>SQLBolt, the tutorial for Part 1 Link: <a href="https://sqlbolt.com/"><strong>https://sqlbolt.com/</strong></a></p>
+
+<p>Suggested tool: SandboxSQL, free, runs in your browser, and saves your database as a .sqlite file with its Export button Link: <a href="https://www.sandboxsql.com/"><strong>https://www.sandboxsql.com/</strong></a></p>
+
+<p>My CSV to Database Converter, which makes a database file from your CSV file Link: <a href="https://www.aholdengouveia.name/AdvData/labs/csv-to-database.html"><strong>https://www.aholdengouveia.name/AdvData/labs/csv-to-database.html</strong></a></p>
+
+<p>Optional, if you'd rather install a tool: DB Browser for SQLite, which can import a CSV file directly Link: <a href="https://sqlitebrowser.org/"><strong>https://sqlitebrowser.org/</strong></a></p>
+
+<p>Sample query documentation, showing the format to follow Link: <a href="https://www.aholdengouveia.name/AdvData/labs/SampleQueryDocumentation.txt"><strong>https://www.aholdengouveia.name/AdvData/labs/SampleQueryDocumentation.txt</strong></a></p>
 
 </section>
 

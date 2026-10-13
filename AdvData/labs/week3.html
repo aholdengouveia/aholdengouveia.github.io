@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Week 3 - SQL continues</title>
+    <title>SQL Review Part 2</title>
     <link href="../../css/accessible-lab.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <header role="banner">
-        <h1>Week 3 - SQL continues</h1>
+        <h1>SQL Review Part 2</h1>
         <div class="author">
             <p>Adrianna Holden-Gouveia</p>
             <p>Website: <a href="https://aholdengouveia.name">https://aholdengouveia.name</a></p>
@@ -21,7 +21,7 @@
             <ol class="breadcrumb">
                 <li><a href="/">Home</a></li>
                 <li><a href="/AdvData/">Advanced Data</a></li>
-                <li aria-current="page">Week 3 - SQL continues</li>
+                <li aria-current="page">SQL Review Part 2</li>
             </ol>
         </nav>
 
@@ -36,9 +36,13 @@
             <h2>On this page:</h2>
             <ul>
                 <li><a href="#accessibility-notice">Accessibility Notice</a></li>
-                <li><a href="#objectives">Objectives:</a></li>
-                <li><a href="#complete-the-following-problems">Complete the following problems</a></li>
+                <li><a href="#request">Request</a></li>
+                <li><a href="#background">Background</a></li>
+                <li><a href="#learning-outcomes">Learning Outcomes</a></li>
+                <li><a href="#lab-instructions">Lab Instructions</a></li>
+                <li><a href="#acceptance-criteria">Acceptance Criteria</a></li>
                 <li><a href="#deliverables">Deliverables</a></li>
+                <li><a href="#resources">Resources</a></li>
             </ul>
         </nav>
 
@@ -52,36 +56,127 @@
 
 </section>
 
-<section role="region" aria-labelledby="objectives">
-<h2 id="objectives">Objectives:</h2>
+<section role="region" aria-labelledby="request">
+<h2 id="request">Request</h2>
+<p><strong>Request:</strong> DATA-5809<br> <strong>Requested by:</strong> Inventory lead<br> <strong>Data:</strong> Your database from the SQL Review lab</p>
+
+</section>
+
+<section role="region" aria-labelledby="background">
+<h2 id="background">Background</h2>
+<p>Your manager liked your first queries. Now the inventory lead wants to combine your data with a second table, and to know whether anything in the data doesn't match up. Rows that don't match are a common sign of data problems, and finding them early saves the company time and money. You'll start with join training, then apply it to your own data.</p>
+
+</section>
+
+<section role="region" aria-labelledby="learning-outcomes">
+<h2 id="learning-outcomes">Learning Outcomes</h2>
+<p>By the end of this lab, you will be able to:</p>
+
 <ul>
-<li>Learn about table joins and table relationships</li>
+<li>Write SQL queries that join two tables</li>
+<li>Create a lookup table, and explain how it relates to your data using primary and foreign keys</li>
+<li>Choose between an inner join and a left join, and explain how the results differ</li>
+<li>Use a join to find data quality problems, such as rows with no match</li>
 </ul>
 
 </section>
 
-<section role="region" aria-labelledby="complete-the-following-problems">
-<h2 id="complete-the-following-problems">Complete the following problems</h2>
-<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name/AdvData/sqlpt2.html"><strong>https://www.aholdengouveia.name/AdvData/sqlpt2.html</strong></a></p>
+<section role="region" aria-labelledby="lab-instructions">
+<h2 id="lab-instructions">Lab Instructions</h2>
+</section>
 
-<p>The tutorial you'll be using is at Link: <a href="https://sqlbolt.com/"><strong>https://sqlbolt.com/</strong></a> The challenges are at Link: <a href="https://www.hackerrank.com/domains/sql?filters%5Bsubdomains%5D%5B%5D=join&filters%5Bsubdomains%5D%5B%5D=advanced-join"><strong>https://www.hackerrank.com/domains/sql?filters%5Bsubdomains%5D%5B%5D=join&filters%5Bsubdomains%5D%5B%5D=advanced-join</strong></a></p>
+<section role="region" aria-labelledby="screenshots">
+<h2 id="screenshots">Screenshots</h2>
+<p>Several parts of this lab ask for a screenshot. Each screenshot should have your name, term, and year. One of the easiest ways to do that is make a text document with your name and term/year on your computer and save it to use all term. Any screenshots that don't include this information won't be counted.</p>
 
-<p>Both are free, but HackerRank needs you to register so you'll have a profile to save your work.</p>
+<figure>
+<img src="ExampleScreenshot.png" alt="Example screenshot: a web browser showing the Google home page, with a small text editor window in front of it that says YOUR NAME HERE and TERM YEAR">
+<figcaption>This is an image of what each of your screenshots should look like</figcaption>
+</figure>
+
+</section>
+
+<section role="region" aria-labelledby="part-1-sql-joins-tutorial">
+<h2 id="part-1-sql-joins-tutorial">Part 1: SQL Joins Tutorial</h2>
+<p>Go through these 3 sections of SQLBolt (linked under Resources), and complete the exercises at the end of each one:</p>
+
+<ul>
+<li>SQL Lesson 6: Multi-table queries with JOINs</li>
+<li>SQL Lesson 7: OUTER JOINs</li>
+<li>SQL Lesson 8: A short note on NULLs</li>
+</ul>
+
+<p>Take a screenshot of each section after you complete its exercises. Make sure you have the green checkmark on each problem.</p>
+
+</section>
+
+<section role="region" aria-labelledby="part-2-join-challenges">
+<h2 id="part-2-join-challenges">Part 2: Join Challenges</h2>
+<p>Complete 3 HackerRank challenges that use joins (linked under Resources). You can filter the list by basic and advanced joins. HackerRank is free, but you need to register so your work is saved to your profile.</p>
 
 <ol>
-<li>FromLink: <a href="https://sqlbolt.com/"><strong>https://sqlbolt.com/</strong></a> go through the sections on Table joins and nulls, Sections 6-8. Take screenshots of each challenge at the end after you complete it, making sure each problem has a green checkmark.</li>
-<li>From Link: <a href="https://www.hackerrank.com/domains/sql?filters%5Bsubdomains%5D%5B%5D=join&filters%5Bsubdomains%5D%5B%5D=advanced-join"><strong>https://www.hackerrank.com/domains/sql?filters%5Bsubdomains%5D%5B%5D=join&filters%5Bsubdomains%5D%5B%5D=advanced-join</strong></a> You'll be doing 5 challenges that include table joins. You can sort by simple and more advanced joins. Take screenshots of each solution making sure to include your name and the term in each screenshot.</li>
-<li>Each screenshot from both websites should include a short explanation of how you solved it, and what resources you used. If you needed hints, include that and where you found the hint.</li>
-<li>Screenshot of your HackerRank profile that includes the completed challenges.</li>
+<li>Take a screenshot of each solution.</li>
+<li>With each screenshot, explain how you solved it and what resources you used. If you needed a hint, say where you found it.</li>
+<li>Pick one of your 3 solutions and explain which type of join you used and why. What would change in the results if you used the other type (inner instead of left, or left instead of inner)?</li>
+<li>Take a screenshot of your HackerRank profile showing the completed challenges.</li>
 </ol>
+
+<p><strong>Optional, not required for this class:</strong> if you'd like more practice, try more of the HackerRank join challenges.</p>
+
+</section>
+
+<section role="region" aria-labelledby="part-3-joins-on-your-data">
+<h2 id="part-3-joins-on-your-data">Part 3: Joins on Your Data</h2>
+<p>Your data set from the SQL Review lab is one table, so you'll make a second table to join it to. Books are my example data only, so use your own data set.</p>
+
+<ol>
+<li>Create a small lookup table with 5 to 10 rows that adds information about one column in your main table. For example, my book data has a format column, so I made a table that matches each format to the shelf section where it goes in the store.</li>
+<li>Explain how the two tables relate. Which column links them? What is the primary key of your lookup table, and which column in your main table acts as the foreign key?</li>
+<li>Write 3 queries that join your two tables, documented in the same format as the SQL Review lab. Use at least one inner join and at least one left join.</li>
+<li>Make one of your 3 queries a data quality check: use a left join to find rows in your main table that have no match in your lookup table. In the Notes, explain why those rows don't match and what you would do about it.</li>
+<li>Take a screenshot of each query and its results.</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="acceptance-criteria">
+<h2 id="acceptance-criteria">Acceptance Criteria</h2>
+<p>This request is done when:</p>
+
+<ul>
+<li>All 3 SQLBolt sections are complete, with a green checkmark on every problem</li>
+<li>3 HackerRank join challenges are solved, each with an explanation, and your profile shows them complete</li>
+<li>Your lookup table has 5 to 10 rows and a primary key, and you've explained how it links to your main table</li>
+<li>3 join queries documented in the sample format, with at least one inner join and one left join</li>
+<li>One query is a data quality check, with notes explaining the rows that don't match and what to do about them</li>
+<li>Every screenshot follows the screenshot rules</li>
+</ul>
 
 </section>
 
 <section role="region" aria-labelledby="deliverables">
 <h2 id="deliverables">Deliverables</h2>
+<p>One file that includes:</p>
+
 <ul>
-<li>Document that includes each screenshot with explanations.</li>
+<li>Part 1: your 3 SQLBolt screenshots</li>
+<li>Part 2: your 3 HackerRank screenshots with explanations, your answer about join types, and your profile screenshot</li>
+<li>Part 3: the commands you used to create your lookup table, your explanation of how the tables relate, and your 3 documented queries with a screenshot of each one and its results</li>
 </ul>
+
+<p>Audience: the inventory lead and the rest of the data team.</p>
+
+</section>
+
+<section role="region" aria-labelledby="resources">
+<h2 id="resources">Resources</h2>
+<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name/AdvData/sqlpt2.html"><strong>https://www.aholdengouveia.name/AdvData/sqlpt2.html</strong></a></p>
+
+<p>SQLBolt, the tutorial for Part 1 Link: <a href="https://sqlbolt.com/"><strong>https://sqlbolt.com/</strong></a></p>
+
+<p>HackerRank join challenges for Part 2 Link: <a href="https://www.hackerrank.com/domains/sql?filters%5Bsubdomains%5D%5B%5D=join&filters%5Bsubdomains%5D%5B%5D=advanced-join"><strong>https://www.hackerrank.com/domains/sql?filters%5Bsubdomains%5D%5B%5D=join&filters%5Bsubdomains%5D%5B%5D=advanced-join</strong></a></p>
+
+<p>Sample query documentation, with join examples (Q3 and Q4) Link: <a href="https://www.aholdengouveia.name/AdvData/labs/SampleQueryDocumentation.txt"><strong>https://www.aholdengouveia.name/AdvData/labs/SampleQueryDocumentation.txt</strong></a></p>
 
 </section>
 

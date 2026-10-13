@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reporting</title>
+    <link href="../../css/accessible-lab.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
+        <h1>Reporting</h1>
+        <div class="author">
+            <p>Adrianna Holden-Gouveia</p>
+            <p>Website: <a href="https://aholdengouveia.name">https://aholdengouveia.name</a></p>
+            <p>GitHub: <a href="https://github.com/aholdengouveia" aria-label="GitHub profile">aholdengouveia</a></p>
+        </div>
+    </header>
+
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li><a href="/AdvData/">Advanced Data</a></li>
+                <li aria-current="page">Reporting</li>
+            </ol>
+        </nav>
+
+    <main role="main" id="main-content">
+        <section role="region" aria-labelledby="pdf-version-notice" class="accessibility-notice">
+            <h2 id="pdf-version-notice">PDF Version Available</h2>
+            <p>This document is also available in PDF format: <a href="wk14reporting.pdf">wk14reporting.pdf</a></p>
+            <p>The PDF version includes bookmarks for easy navigation and is optimized for printing.</p>
+        </section>
+
+        <nav role="navigation" aria-label="Table of Contents" class="toc">
+            <h2>On this page:</h2>
+            <ul>
+                <li><a href="#accessibility-notice">Accessibility Notice</a></li>
+                <li><a href="#request">Request</a></li>
+                <li><a href="#background">Background</a></li>
+                <li><a href="#learning-outcomes">Learning Outcomes</a></li>
+                <li><a href="#lab-instructions">Lab Instructions</a></li>
+                <li><a href="#acceptance-criteria">Acceptance Criteria</a></li>
+                <li><a href="#deliverables">Deliverables</a></li>
+                <li><a href="#resources">Resources</a></li>
+            </ul>
+        </nav>
+
+<section role="region" aria-labelledby="accessibility-notice">
+<h2 id="accessibility-notice">Accessibility Notice</h2>
+<p>This document is also available in HTML format at:</p>
+
+<p>Link: <a href="https://aholdengouveia.name/AdvData/labs/wk14reporting.html"><strong>https://aholdengouveia.name/AdvData/labs/wk14reporting.html</strong></a></p>
+
+<p>The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.</p>
+
+</section>
+
+<section role="region" aria-labelledby="request">
+<h2 id="request">Request</h2>
+<p><strong>Request:</strong> DATA-7720<br> <strong>Requested by:</strong> Leadership team<br> <strong>Data:</strong> Your database, and your work from this term</p>
+
+</section>
+
+<section role="region" aria-labelledby="background">
+<h2 id="background">Background</h2>
+<p>It's the end of the term, and the leadership team wants to know what the data team found, and what to keep an eye on from now on. They want a one-page report they can act on, and a plan for a dashboard that shows the most important numbers at a glance.</p>
+
+</section>
+
+<section role="region" aria-labelledby="learning-outcomes">
+<h2 id="learning-outcomes">Learning Outcomes</h2>
+<p>By the end of this lab, you will be able to:</p>
+
+<ul>
+<li>Evaluate dashboards for clarity and focus</li>
+<li>Choose a North Star Metric for a company, and measure it with SQL</li>
+<li>Decide whether a need calls for a report or a dashboard, and plan a dashboard</li>
+<li>Write an executive report with real numbers and a clear action item</li>
+</ul>
+
+</section>
+
+<section role="region" aria-labelledby="lab-instructions">
+<h2 id="lab-instructions">Lab Instructions</h2>
+<p>Use your own data set and company. Books are my example data only.</p>
+
+</section>
+
+<section role="region" aria-labelledby="screenshots">
+<h2 id="screenshots">Screenshots</h2>
+<p>Several parts of this lab ask for a screenshot. Each screenshot should have your name, term, and year. One of the easiest ways to do that is make a text document with your name and term/year on your computer and save it to use all term. Any screenshots that don't include this information won't be counted.</p>
+
+<figure>
+<img src="ExampleScreenshot.png" alt="Example screenshot: a web browser showing the Google home page, with a small text editor window in front of it that says YOUR NAME HERE and TERM YEAR">
+<figcaption>This is an image of what each of your screenshots should look like</figcaption>
+</figure>
+
+</section>
+
+<section role="region" aria-labelledby="part-1-good-and-bad-dashboards">
+<h2 id="part-1-good-and-bad-dashboards">Part 1: Good and Bad Dashboards</h2>
+<p>Look at some real dashboards. I suggest Grafana Play, the live demo of Grafana, a free, open-source dashboard tool. It runs in your browser with no account, so you can click through real dashboards, change the time range, and see how often widgets refresh. The Tableau and Power BI dashboard examples are also good places to look. All are linked under Resources. Pick one example of a good dashboard and one of a bad dashboard, from any of these. In 1 or 2 paragraphs, compare them: what makes each one work or not work? Think about how clear it is, whether it focuses on key numbers, whether the charts suit the data, and whether it avoids common mistakes like clutter or information nobody needs. Include a screenshot of each one.</p>
+
+</section>
+
+<section role="region" aria-labelledby="part-2-your-north-star-metric">
+<h2 id="part-2-your-north-star-metric">Part 2: Your North Star Metric</h2>
+<ol>
+<li>Pick a North Star Metric for your company: the one number that best shows whether it's succeeding. Explain why you chose it.</li>
+<li>Write and run a query on your database that measures it, and take a screenshot of the query and its results. If your database can't measure it yet, measure the closest thing you can, and explain what data you'd need to measure the real one.</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="part-3-report-or-dashboard">
+<h2 id="part-3-report-or-dashboard">Part 3: Report or Dashboard?</h2>
+<p>Pick 3 things someone at your company needs to know, such as daily sales, a summary for a compliance check, or whether the database is running out of space. For each one, decide whether it needs a report, a dashboard, or both, and explain why using the topic page.</p>
+
+</section>
+
+<section role="region" aria-labelledby="part-4-dashboard-plan">
+<h2 id="part-4-dashboard-plan">Part 4: Dashboard Plan</h2>
+<p>Plan a dashboard for your manager with 3 to 5 widgets, including your North Star Metric. For each widget, give:</p>
+
+<ol>
+<li>What it shows, and why your manager needs it</li>
+<li>The query it would use</li>
+<li>How often it should refresh, such as hourly, daily, or weekly, and why</li>
+</ol>
+
+<p>Then make a mock-up, also called a wireframe, of your dashboard, showing how the widgets would be laid out on one screen. Dashboards are usually planned this way before anyone builds them, so you don't need a dashboard tool or account. I suggest diagrams.net (linked under Resources), which you used in the Database Schema lab. It's free, runs in your browser with no account, and has mock-up shapes: select More Shapes at the bottom of the shapes list, and turn on Mockups. If you'd rather not use diagrams.net, you can:</p>
+
+<ul>
+<li>Arrange your charts from the Data Visualization lab, and boxes for the other widgets, on one page of your document or on a slide</li>
+<li>Draw it on paper and include a photo, with your name and the term on the page</li>
+</ul>
+
+<p>Label each widget so it matches your list, and include your name and the term on your mock-up.</p>
+
+</section>
+
+<section role="region" aria-labelledby="part-5-executive-report">
+<h2 id="part-5-executive-report">Part 5: Executive Report</h2>
+<p>Write a report of about one page for the leadership team, following the sample executive report (linked under Resources). Include:</p>
+
+<ol>
+<li>Its purpose, in a sentence or two</li>
+<li>At least 3 key findings from your queries, with real numbers</li>
+<li>One chart from the Data Visualization lab, with its alt text</li>
+<li>The data quality problems you found and fixed this term</li>
+<li>Your North Star Metric</li>
+<li>One clear action item for the leadership team</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="acceptance-criteria">
+<h2 id="acceptance-criteria">Acceptance Criteria</h2>
+<p>This request is done when:</p>
+
+<ul>
+<li>Your dashboard comparison covers a good and a bad example, with a screenshot of each</li>
+<li>Your North Star Metric is explained, and measured with a query on your database</li>
+<li>All 3 needs have a report or dashboard decision, explained using the topic page</li>
+<li>Your dashboard plan has 3 to 5 widgets, each with what it shows, its query, and how often it refreshes, and a labelled mock-up</li>
+<li>Your executive report is about one page, uses real numbers from your queries, and ends with one clear action item</li>
+<li>Every screenshot follows the screenshot rules</li>
+</ul>
+
+</section>
+
+<section role="region" aria-labelledby="deliverables">
+<h2 id="deliverables">Deliverables</h2>
+<p>One file that includes Parts 1 to 5.</p>
+
+<p>Audience: the leadership team, who aren't technical. Parts 1 to 4 can be technical, since the data team will check them.</p>
+
+</section>
+
+<section role="region" aria-labelledby="resources">
+<h2 id="resources">Resources</h2>
+<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name/AdvData/Reporting.html"><strong>https://www.aholdengouveia.name/AdvData/Reporting.html</strong></a></p>
+
+<p>Sample executive report, for Part 5 Link: <a href="https://www.aholdengouveia.name/AdvData/labs/SampleExecutiveReport.txt"><strong>https://www.aholdengouveia.name/AdvData/labs/SampleExecutiveReport.txt</strong></a></p>
+
+<p>Suggested: Grafana Play, live dashboards in your browser with no account Link: <a href="https://play.grafana.org/"><strong>https://play.grafana.org/</strong></a></p>
+
+<p>Tableau dashboard examples Link: <a href="https://www.tableau.com/dashboard/dashboard-examples"><strong>https://www.tableau.com/dashboard/dashboard-examples</strong></a></p>
+
+<p>Power BI sample reports and dashboards Link: <a href="https://learn.microsoft.com/en-us/power-bi/create-reports/sample-datasets"><strong>https://learn.microsoft.com/en-us/power-bi/create-reports/sample-datasets</strong></a></p>
+
+<p>diagrams.net, for your dashboard mock-up Link: <a href="https://app.diagrams.net/"><strong>https://app.diagrams.net/</strong></a></p>
+
+<p>My CSV to Database Converter, for turning query results into a CSV file Link: <a href="https://www.aholdengouveia.name/AdvData/labs/csv-to-database.html"><strong>https://www.aholdengouveia.name/AdvData/labs/csv-to-database.html</strong></a></p>
+
+</section>
+
+    </main>
+</body>
+</html>

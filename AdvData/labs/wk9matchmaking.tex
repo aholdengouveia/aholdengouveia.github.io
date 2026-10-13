@@ -10,7 +10,7 @@
 \hypersetup{
     colorlinks=false,
     pdfborder={0 0 0},
-    pdftitle={Picking a Database Lab},
+    pdftitle={Database Matchmaking},
     pdfauthor={Adrianna Holden-Gouveia},
     pdfsubject={Advanced Data - Lab Assignment},
     pdflang={en-US},
@@ -28,7 +28,7 @@
 
 
 
-\title{Picking a Database}
+\title{Database Matchmaking}
 \author{
         Adrianna Holden-Gouveia \\
         Website: \href{https://aholdengouveia.name}{aholdengouveia.name}\\ 
@@ -59,30 +59,92 @@ Link: \href{https://aholdengouveia.name/AdvData/labs/wk9matchmaking.html}{\textb
 
 The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.
 
-\section*{Objectives:}
-\begin{itemize}
-    \item Learn how to evaluate database choices to pick the right one for a data set
-\end{itemize}
-\section*{Complete the following problems}
+\section*{Request}
+\noindent\textbf{Request:} DATA-1487\\
+\textbf{Requested by:} Finance director\\
+\textbf{Data:} Your database from the Beyond SQL lab
 
+\section*{Background}
+The company is growing and may start collecting new kinds of data. Before spending any money, the finance director wants a recommendation: should the company keep its relational database, or move some or all of its data to a NoSQL database? The director controls the budget but isn't technical, so your recommendation has to be clear about costs, risks, and trade-offs.
+
+\section*{Learning Outcomes}
+By the end of this lab, you will be able to:
+\begin{itemize}
+    \item Evaluate relational and NoSQL database types for a data set using business needs
+    \item Identify new data a company could collect, and how it affects the choice of database
+    \item Compare database vendors, including free and paid options and support
+    \item Recommend a database, and justify it to a non-technical decision maker
+\end{itemize}
+
+\section*{Lab Instructions}
+Use your own data set and the company from your data card or the Database Documentation lab. Books are my example data only.
+
+\subsection*{Part 1: Your Company's Needs}
+Answer these questions for your company. Use the size you gave your company in the Database Documentation lab.
+\begin{enumerate}
+    \item How much data does the company have, and how fast is it growing?
+    \item How many people add data, and how many only look at it?
+    \item What is the budget for the database, including staff time and support?
+    \item How much can the company afford for the database to be down?
+    \item What tools or systems does the database need to work with?
+    \item What skills does the team already have?
+    \item Does the company have to follow any rules about its data, such as privacy laws?
+\end{enumerate}
+
+\subsection*{Part 2: New Data}
+List at least 5 new kinds of data your company could collect in the future. For each one, explain how it would be collected, and whether it would fit neatly into tables or not.
+
+\subsection*{Part 3: Evaluate the Options}
+For each of these 5 options, give at least 3 pros and 3 cons for your company, based on your answers to Parts 1 and 2:
+\begin{enumerate}
+    \item Your current relational database
+    \item Key value store
+    \item Document store
+    \item Graph database
+    \item One other NoSQL type of your choice, such as wide-column, object, tuple store, or triplestore
+\end{enumerate}
+
+\subsection*{Part 4: Compare Vendors}
+For your top 2 options from Part 3, pick a vendor for each, such as PostgreSQL, MongoDB, Redis, or Neo4j. For each vendor, explain:
+\begin{enumerate}
+    \item Whether it's free, paid, or has both a free and a paid version
+    \item What support is available, and whether it costs extra
+    \item Why it would suit your company
+\end{enumerate}
+Cite your sources with links, and check each one with the CRAAP test (linked under Resources). A vendor's own website is fine for facts like prices, but remember it's trying to sell you something.
+
+\subsection*{Part 5: Recommendation Memo}
+Write a memo of about one page to the finance director, following the sample recommendation memo (linked under Resources). Put your recommendation first, then explain why, the cost, the risks, what happens if the company does nothing, and the next step. Use plain words, and save the technical details for Parts 1 to 4.
+
+\section*{Acceptance Criteria}
+This request is done when:
+\begin{itemize}
+    \item All 7 questions about your company's needs are answered
+    \item At least 5 new kinds of data, each with how it would be collected
+    \item All 5 options have at least 3 pros and 3 cons, specific to your company
+    \item 2 vendors are compared, with cited sources that you've checked with the CRAAP test
+    \item Your memo leads with a recommendation, is about one page, and could be understood by someone who isn't technical
+\end{itemize}
+
+\section*{Deliverables}
+One file that includes Parts 1 to 5.
+
+Audience: the finance director, who controls the budget but isn't technical. Parts 1 to 4 can be technical, since the data team will check them.
+
+\section*{Resources}
 References, a video, a PowerPoint and some notes are available at my website
 Link: \href{https://www.aholdengouveia.name/AdvData/Databasematchmaking.html}{\textbf{\nolinkurl{https://www.aholdengouveia.name/AdvData/Databasematchmaking.html}}}
 
-This should use the data set you've been working with.  If you need to change it for any reason, reach out to me.
+NoSQL types, on the Beyond SQL topic page
+Link: \href{https://www.aholdengouveia.name/AdvData/BeyondSQL.html}{\textbf{\nolinkurl{https://www.aholdengouveia.name/AdvData/BeyondSQL.html}}}
 
-You'll be evaluating different options for NoSQL databases for your data set. Each NoSQL option should have a pro/con list or table with at least 3 pros and 3 cons. Each option should also include a suggested vendor with a short paragraph explaining why you picked them. 
+Sample recommendation memo, showing the format to follow
+Link: \href{https://www.aholdengouveia.name/AdvData/labs/SampleRecommendationMemo.txt}{\textbf{\nolinkurl{https://www.aholdengouveia.name/AdvData/labs/SampleRecommendationMemo.txt}}}
 
-\subsection*{What to Include}
-    \begin{itemize}
-        \item Short explanation of your data, what you're collecting or have collected, what other data you may want to collect in future, and any other important notes about your data. 
-        \item Key value store
-        \item Document store
-        \item Graph
-        \item Another NoSQL option of your choice.  Make sure it's not one of the ones you already did, it needs to be a totally different NoSQL type, not just a different vendor for one of the three types listed above. Some ideas if you're feeling stuck could include tuple store, triplestore, object or wide-column.
-    \end{itemize}
+The CRAAP test, for checking your sources
+Link: \href{https://web.archive.org/web/20250814000638/https://guides.lib.uchicago.edu/c.php?g=1241077&p=9082343}{\textbf{\nolinkurl{https://web.archive.org/web/20250814000638/https://guides.lib.uchicago.edu/c.php?g=1241077&p=9082343}}}
 
+My guide to evaluating sources
+Link: \href{https://www.aholdengouveia.name/Howtos/Sourceeval/sourceEvaluation.html}{\textbf{\nolinkurl{https://www.aholdengouveia.name/Howtos/Sourceeval/sourceEvaluation.html}}}
 
-
-\section*{Deliverables}
-A text document that contains your database evaluations and overview of your data set.
 \end{document}

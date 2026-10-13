@@ -1,0 +1,189 @@
+SAMPLE DATA DICTIONARY
+======================
+This shows the FORMAT to follow, using my book data as the EXAMPLE ONLY.
+Your data dictionary must be about YOUR own data set, and include every
+column in every table.
+
+A data dictionary tells anyone using the database what each column
+means, what it holds, and what to watch out for. A new analyst should be
+able to read it and know exactly how to use each column without asking.
+
+For each column, give:
+  Column          the column name, exactly as it is in the database
+  Data type       the type it SHOULD be, and the type it's stored as if
+                  that's different
+  Required?       Yes if it can never be empty, No if it can be missing
+  Key             Primary key, Foreign key (and what it points to), or none
+  Allowed values  the range or list of values that make sense
+  Description     what it means, in plain words
+  Example         one real value from the data
+  Notes           anything the next person needs to know
+
+
+Database:  Bookstore inventory (BooksDatabase.sqlite)
+Source:    Best Books Ever data set, Zenodo record 4265096 (see my data card)
+Version:   1.0, 2026-02-17
+
+
+TABLE: books
+One row per book. 99 rows.
+------------------------------------------------------------------
+Column:          book_id
+Data type:       Whole number (integer)
+Required?        Yes
+Key:             Primary key
+Allowed values:  Unique, no duplicates
+Description:     The ID number for each book
+Example:         44767458
+Notes:           Comes from the Goodreads book ID, so the numbers aren't
+                 in order and have gaps. That's fine for an ID.
+
+Column:          title
+Data type:       Text
+Required?        Yes
+Key:             None
+Allowed values:  Any text
+Description:     The book's title
+Example:         Dune
+Notes:           Some titles contain a single quote, like Ender's Game.
+                 In SQL, type it as two single quotes: 'Ender''s Game'
+
+Column:          author_id
+Data type:       Whole number (integer)
+Required?        Yes
+Key:             Foreign key, points to authors.author_id
+Allowed values:  Must match an author_id in the authors table
+Description:     Who wrote the book
+Example:         63 (Frank Herbert)
+Notes:           Join to the authors table to get the author's name.
+
+Column:          rating
+Data type:       Decimal number. Stored as TEXT.
+Required?        Yes
+Key:             None
+Allowed values:  0 to 5 (this data has 3.60 to 4.62)
+Description:     Average Goodreads reader rating
+Example:         4.23
+Notes:           Use CAST(rating AS REAL) when comparing or sorting by
+                 number, or the results can be wrong with no error.
+
+Column:          pages
+Data type:       Whole number. Stored as TEXT.
+Required?        Yes
+Key:             None
+Allowed values:  Greater than 0
+Description:     Number of pages
+Example:         661
+Notes:           Use CAST(pages AS INTEGER) when comparing. Without it,
+                 '1168' > '500' is false, because text is compared one
+                 character at a time.
+
+Column:          bookFormat
+Data type:       Text
+Required?        Yes
+Key:             Foreign key, points to formats.format_name
+Allowed values:  Paperback, Hardcover, Mass Market Paperback,
+                 Kindle Edition, ebook, Audiobook
+Description:     The format of this edition
+Example:         Hardcover
+Notes:           6 books are digital formats with no match in the formats
+                 table (see query Q4 in my query documentation).
+
+Column:          genre
+Data type:       Text
+Required?        Yes
+Key:             None
+Allowed values:  One main genre per book
+Description:     The book's main genre
+Example:         Science Fiction
+Notes:           The original data set lists several genres per book.
+                 This database has one main genre per book, so a book
+                 that's both Fantasy and Young Adult only shows one.
+
+Column:          price
+Data type:       Decimal number (US dollars). Stored as TEXT.
+Required?        No
+Key:             None
+Allowed values:  Greater than 0, or empty
+Description:     List price when the data was collected in 2020
+Example:         29.34
+Notes:           31 of 99 books have no price. Empty means unknown, NOT
+                 free. Leave these out of any price calculations.
+
+Column:          publishDate
+Data type:       Date. Stored as TEXT in MM/DD/YY format.
+Required?        No
+Key:             None
+Allowed values:  A valid date
+Description:     When this edition was published
+Example:         10/01/19
+Notes:           Two-digit years, so 09/14/08 could be 1908 or 2008.
+                 Check before sorting or filtering by year.
+
+Column:          isbn
+Data type:       Text (13 digits)
+Required?        Yes
+Key:             None
+Allowed values:  13 digits
+Description:     The book's ISBN, the standard ID used by publishers
+Example:         9780593099322
+Notes:           24 books have 9999999999999, which is a placeholder
+                 meaning the ISBN is unknown. Treat it as missing. Keep
+                 it as text, since a number would drop leading zeros.
+
+(The books table has more columns. A real data dictionary lists every
+one. I've only shown some here to keep the example short.)
+
+
+TABLE: authors
+One row per author. 96 rows.
+------------------------------------------------------------------
+Column:          author_id
+Data type:       Whole number (integer)
+Required?        Yes
+Key:             Primary key
+Allowed values:  Unique, no duplicates
+Description:     The ID number for each author
+Example:         63
+Notes:           None
+
+Column:          name
+Data type:       Text
+Required?        Yes
+Key:             None
+Allowed values:  Any text
+Description:     The author's name as shown on the book
+Example:         Frank Herbert
+Notes:           None
+
+
+TABLE: formats
+The lookup table from my query documentation. One row per format. 3 rows.
+------------------------------------------------------------------
+Column:          format_name
+Data type:       Text
+Required?        Yes
+Key:             Primary key
+Allowed values:  Unique, no duplicates
+Description:     A book format sold in the store
+Example:         Paperback
+Notes:           Digital formats aren't in this table, because the store
+                 only shelves print books.
+
+Column:          shelf_section
+Data type:       Text
+Required?        Yes
+Key:             None
+Allowed values:  Main fiction shelves, New and notable table, Spinner racks
+Description:     Where books in this format go in the store
+Example:         Spinner racks
+Notes:           None
+
+
+TIPS
+- Write the Notes for someone who has never seen the data. If something
+  surprised you while working with it, it goes in the Notes.
+- Use the quality notes from your data card. Missing values,
+  placeholders, and odd formats all belong here.
+- If a column is stored as one type but should be another, say both.
+- Update the version and date every time you change the dictionary.

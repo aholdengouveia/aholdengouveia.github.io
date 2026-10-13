@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSV to Database Converter</title>
+    <link href="../../css/accessible-lab.css" rel="stylesheet" type="text/css">
+    <style>
+        .converter-form label { display: block; font-weight: bold; margin-top: 1rem; }
+        .converter-form input[type="text"], .converter-form input[type="number"] { font-size: 1rem; padding: 0.4rem; max-width: 100%; }
+        .converter-form input[type="number"] { width: 7rem; }
+        .converter-form .inline-label { display: inline; font-weight: normal; margin-left: 0.3rem; }
+        .converter-form .hint { margin: 0.2rem 0 0; font-size: 0.95rem; }
+        .converter-form button, .download-button { font-size: 1rem; padding: 0.6rem 1.2rem; margin-top: 1.2rem; cursor: pointer; }
+        .status { padding: 0.8rem; margin-top: 1rem; border-left: 4px solid currentColor; }
+        .status.error { font-weight: bold; }
+        .warnings li { margin-bottom: 0.3rem; }
+        td.cell { max-width: 18rem; overflow-wrap: anywhere; }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
+        <h1>CSV to Database Converter</h1>
+        <div class="author">
+            <p>Adrianna Holden-Gouveia</p>
+            <p>Website: <a href="https://aholdengouveia.name">https://aholdengouveia.name</a></p>
+        </div>
+    </header>
+
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+        <ol class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li><a href="/AdvData/">Advanced Data</a></li>
+            <li aria-current="page">CSV to Database Converter</li>
+        </ol>
+    </nav>
+
+    <main role="main" id="main-content">
+        <section aria-labelledby="how-it-works">
+            <h2 id="how-it-works">How it works</h2>
+            <p>This page does two things:</p>
+            <ul>
+                <li><a href="#convert-heading">Turn a CSV file into a database</a>: makes a SQLite database file with one table, which you can open in SandboxSQL using Load a Database, or in any other SQLite tool.</li>
+                <li><a href="#query-heading">Turn query results into a CSV file</a>: runs a query on your database file and downloads the results as a CSV file, which you can open in any spreadsheet tool, such as Google Sheets or Excel, to make charts.</li>
+            </ul>
+            <p>Everything happens in your browser. Your file isn't uploaded anywhere, and you don't need to install anything or make an account.</p>
+        </section>
+
+        <section aria-labelledby="convert-heading">
+            <h2 id="convert-heading">Turn a CSV file into a database</h2>
+            <ol>
+                <li>Choose your CSV file.</li>
+                <li>Check the table name and the number of rows to keep.</li>
+                <li>Select Convert, check the summary, then download your database.</li>
+            </ol>
+            <form id="converter" class="converter-form">
+                <label for="csv-file">CSV file</label>
+                <input type="file" id="csv-file" accept=".csv,text/csv" required>
+
+                <label for="table-name">Table name</label>
+                <input type="text" id="table-name" autocomplete="off" aria-describedby="table-name-hint">
+                <p class="hint" id="table-name-hint">Filled in from your file name. Letters, numbers, and underscores only.</p>
+
+                <label for="max-rows">Rows to keep</label>
+                <input type="checkbox" id="limit-rows" checked>
+                <label for="limit-rows" class="inline-label">Keep only the first</label>
+                <input type="number" id="max-rows" value="1000" min="1" step="1" aria-describedby="max-rows-hint">
+                <span>rows</span>
+                <p class="hint" id="max-rows-hint">For the labs, use 100 to 1,000 rows. Browser tools like SandboxSQL can slow down or error with more.</p>
+
+                <button type="submit" id="convert-button" disabled>Convert</button>
+            </form>
+            <div id="status" class="status" role="status" aria-live="polite">Loading the converter...</div>
+        </section>
+
+        <section aria-labelledby="results-heading" id="results" hidden>
+            <h2 id="results-heading">Your database</h2>
+            <p id="summary"></p>
+            <button type="button" id="download-button" class="download-button">Download database</button>
+            <p>To check it worked, open the database in SandboxSQL and run this query. The count should match the number of rows above.</p>
+            <pre><code id="check-query"></code></pre>
+
+            <div id="warnings-block" hidden>
+                <h3>Things to check</h3>
+                <ul id="warnings" class="warnings"></ul>
+            </div>
+
+            <h3>Columns</h3>
+            <div class="table-container">
+                <table>
+                    <caption>Each column in your new table, the data type chosen for it, and how many values are empty</caption>
+                    <thead><tr><th scope="col">Column</th><th scope="col">Original heading</th><th scope="col">Data type</th><th scope="col">Empty values</th></tr></thead>
+                    <tbody id="columns-body"></tbody>
+                </table>
+            </div>
+
+            <h3>First 5 rows</h3>
+            <div class="table-container">
+                <table>
+                    <caption>A preview of the first 5 rows in your new table. Long values are shortened.</caption>
+                    <thead><tr id="preview-head"></tr></thead>
+                    <tbody id="preview-body"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section aria-labelledby="query-heading">
+            <h2 id="query-heading">Turn query results into a CSV file</h2>
+            <ol>
+                <li>Choose your database file, such as the .sqlite file you exported from SandboxSQL.</li>
+                <li>Write a query. The tables and columns in your database are listed to help you.</li>
+                <li>Select Run query, check the results, then download them as a CSV file.</li>
+            </ol>
+            <form id="query-form" class="converter-form">
+                <label for="db-file">Database file</label>
+                <input type="file" id="db-file" accept=".sqlite,.sqlite3,.db,.db3" required>
+
+                <div id="db-tables-block" hidden>
+                    <h3>Tables in your database</h3>
+                    <ul id="db-tables"></ul>
+                </div>
+
+                <label for="sql-query">Query</label>
+                <textarea id="sql-query" rows="6" cols="60" spellcheck="false" aria-describedby="sql-query-hint" style="font-family: monospace; font-size: 1rem; max-width: 100%;"></textarea>
+                <p class="hint" id="sql-query-hint">Run one SELECT query. Your database file isn't changed.</p>
+
+                <button type="submit" id="query-button" disabled>Run query</button>
+            </form>
+            <div id="query-status" class="status" role="status" aria-live="polite">Loading...</div>
+
+            <div id="query-results" hidden>
+                <h3 id="query-results-heading" tabindex="-1">Query results</h3>
+                <p id="query-summary"></p>
+                <button type="button" id="csv-button" class="download-button">Download results as CSV</button>
+                <div class="table-container">
+                    <table>
+                        <caption>A preview of your query results, up to the first 20 rows. Long values are shortened.</caption>
+                        <thead><tr id="query-head"></tr></thead>
+                        <tbody id="query-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section aria-labelledby="types-heading">
+            <h2 id="types-heading">How data types are chosen</h2>
+            <ul>
+                <li><strong>INTEGER:</strong> every value in the column is a whole number.</li>
+                <li><strong>REAL:</strong> every value is a number, and some have decimals.</li>
+                <li><strong>TEXT:</strong> anything else. Numbers that start with 0, like ZIP codes, stay as text so the 0 isn't lost.</li>
+            </ul>
+            <p>Empty values become NULL, which means unknown. Column headings are changed to names that work in SQL: spaces and symbols become underscores, and a heading that starts with a number gets col_ in front. A table name that starts with a number gets data_ in front.</p>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/sql-wasm.js"></script>
+
+    <!-- CORE START: turns parsed CSV rows into a SQLite database -->
+    <script>
+    function cleanName(name, fallback, prefix) {
+        var s = String(name == null ? "" : name).replace(/^\uFEFF/, "").trim();
+        s = s.replace(/[^A-Za-z0-9_]+/g, "_").replace(/_+/g, "_").replace(/^_|_$/g, "");
+        if (s === "") s = fallback;
+        if (/^[0-9]/.test(s)) s = (prefix || "col_") + s;
+        return s;
+    }
+
+    function uniqueNames(names) {
+        var seen = {};
+        return names.map(function (n) {
+            var key = n.toLowerCase();
+            if (!seen[key]) { seen[key] = 1; return n; }
+            var i = seen[key] + 1;
+            while (seen[(n + "_" + i).toLowerCase()]) i++;
+            seen[key] = i;
+            seen[(n + "_" + i).toLowerCase()] = 1;
+            return n + "_" + i;
+        });
+    }
+
+    function quoteId(name) { return '"' + name.replace(/"/g, '""') + '"'; }
+
+    var INT_RE = /^-?(0|[1-9][0-9]*)$/;
+    var REAL_RE = /^-?([0-9]+\.?[0-9]*|\.[0-9]+)([eE][-+]?[0-9]+)?$/;
+
+    function detectType(values) {
+        var type = null;
+        for (var i = 0; i < values.length; i++) {
+            var v = values[i];
+            if (v === "") continue;
+            if (INT_RE.test(v) && Math.abs(Number(v)) <= Number.MAX_SAFE_INTEGER) {
+                if (type === null) type = "INTEGER";
+            } else if (REAL_RE.test(v) && !/^-?0[0-9]/.test(v)) {
+                if (type === null || type === "INTEGER") type = "REAL";
+            } else {
+                return "TEXT";
+            }
+        }
+        return type || "TEXT";
+    }
+
+    function convertValue(v, type) {
+        if (v === "") return null;
+        if (type === "INTEGER" || type === "REAL") return Number(v);
+        return v;
+    }
+
+    // rows: array of arrays, first row is the headings
+    function buildDatabase(SQL, rows, options) {
+        options = options || {};
+        var warnings = [];
+        if (!rows.length) throw new Error("The file is empty.");
+        var headings = rows[0].map(function (h) { return String(h == null ? "" : h); });
+        var data = rows.slice(1).filter(function (r) {
+            return !(r.length === 1 && String(r[0]).trim() === "");
+        });
+        if (!data.length) throw new Error("The file has headings but no rows of data.");
+
+        var totalRows = data.length;
+        if (options.maxRows && data.length > options.maxRows) {
+            data = data.slice(0, options.maxRows);
+            warnings.push("Your file has " + totalRows.toLocaleString() + " rows. Only the first " + data.length.toLocaleString() + " were kept.");
+        }
+
+        var width = headings.length;
+        var badRows = 0;
+        data = data.map(function (r) {
+            if (r.length !== width) badRows++;
+            var out = [];
+            for (var i = 0; i < width; i++) out.push(i < r.length && r[i] != null ? String(r[i]).trim() : "");
+            return out;
+        });
+        if (badRows) warnings.push(badRows + " row(s) had a different number of values than there are headings. Missing values were left empty, and extra values were dropped. Check these rows in your CSV file.");
+
+        var names = uniqueNames(headings.map(function (h, i) { return cleanName(h, "column_" + (i + 1)); }));
+        var renamed = 0;
+        names.forEach(function (n, i) { if (n !== headings[i].replace(/^\uFEFF/, "").trim()) renamed++; });
+        if (renamed) warnings.push(renamed + " column heading(s) were changed to names that work in SQL. See the Columns table for the new names.");
+
+        var columns = names.map(function (n, i) {
+            var values = data.map(function (r) { return r[i]; });
+            var empty = values.filter(function (v) { return v === ""; }).length;
+            return { name: n, original: headings[i].replace(/^\uFEFF/, "").trim(), type: detectType(values), empty: empty };
+        });
+        columns.forEach(function (c) {
+            if (c.empty === data.length) warnings.push("The column " + c.name + " is completely empty.");
+        });
+
+        var tableName = cleanName(options.tableName, "my_data", "data_");
+        var db = new SQL.Database();
+        db.run("CREATE TABLE " + quoteId(tableName) + " (" +
+            columns.map(function (c) { return quoteId(c.name) + " " + c.type; }).join(", ") + ");");
+        var stmt = db.prepare("INSERT INTO " + quoteId(tableName) + " VALUES (" +
+            columns.map(function () { return "?"; }).join(", ") + ");");
+        db.run("BEGIN TRANSACTION;");
+        data.forEach(function (r) {
+            stmt.run(r.map(function (v, i) { return convertValue(v, columns[i].type); }));
+        });
+        db.run("COMMIT;");
+        stmt.free();
+
+        return { db: db, tableName: tableName, columns: columns, rowCount: data.length, warnings: warnings };
+    }
+    </script>
+    <!-- CORE END -->
+
+    <script>
+    (function () {
+        var SQL = null, result = null, baseName = "my_data";
+        var form = document.getElementById("converter");
+        var fileInput = document.getElementById("csv-file");
+        var tableInput = document.getElementById("table-name");
+        var limitBox = document.getElementById("limit-rows");
+        var maxRows = document.getElementById("max-rows");
+        var button = document.getElementById("convert-button");
+        var status = document.getElementById("status");
+        var results = document.getElementById("results");
+
+        function setStatus(msg, isError) {
+            status.textContent = msg;
+            status.className = "status" + (isError ? " error" : "");
+        }
+
+        function short(v) {
+            if (v === null) return "NULL";
+            var s = String(v);
+            return s.length > 60 ? s.slice(0, 60) + "..." : s;
+        }
+
+        function cell(tag, text, cls) {
+            var el = document.createElement(tag);
+            el.textContent = text;
+            if (cls) el.className = cls;
+            return el;
+        }
+
+        var queryStatus = document.getElementById("query-status");
+        function setQueryStatus(msg, isError) {
+            queryStatus.textContent = msg;
+            queryStatus.className = "status" + (isError ? " error" : "");
+        }
+
+        if (typeof initSqlJs !== "function" || typeof Papa === "undefined") {
+            setStatus("The converter couldn't load. Check your internet connection and refresh the page.", true);
+            setQueryStatus("The converter couldn't load. Check your internet connection and refresh the page.", true);
+            return;
+        }
+
+        initSqlJs({ locateFile: function (f) { return "https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/" + f; } })
+            .then(function (s) {
+                SQL = s;
+                button.disabled = false;
+                setStatus("Ready. Choose a CSV file to start.");
+                document.getElementById("query-button").disabled = false;
+                setQueryStatus("Ready. Choose a database file to start.");
+            })
+            .catch(function () {
+                setStatus("The converter couldn't load. Check your internet connection and refresh the page.", true);
+                setQueryStatus("The converter couldn't load. Check your internet connection and refresh the page.", true);
+            });
+
+        limitBox.addEventListener("change", function () { maxRows.disabled = !limitBox.checked; });
+
+        fileInput.addEventListener("change", function () {
+            var f = fileInput.files[0];
+            if (!f) return;
+            baseName = f.name.replace(/\.[^.]*$/, "");
+            tableInput.value = cleanName(baseName, "my_data", "data_");
+            results.hidden = true;
+        });
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            var f = fileInput.files[0];
+            if (!SQL) { setStatus("The converter is still loading. Try again in a moment."); return; }
+            if (!f) { setStatus("Choose a CSV file first.", true); fileInput.focus(); return; }
+            if (/\.(xlsx?|ods|numbers)$/i.test(f.name)) {
+                setStatus("That looks like a spreadsheet file. Save or download it as a CSV file first, then choose the CSV file here.", true);
+                return;
+            }
+            var limit = limitBox.checked ? parseInt(maxRows.value, 10) : 0;
+            if (limitBox.checked && !(limit > 0)) { setStatus("Enter the number of rows to keep, or untick the box to keep them all.", true); maxRows.focus(); return; }
+
+            setStatus("Converting...");
+            button.disabled = true;
+            Papa.parse(f, {
+                skipEmptyLines: "greedy",
+                complete: function (parsed) {
+                    button.disabled = false;
+                    try {
+                        if (result) result.db.close();
+                        result = buildDatabase(SQL, parsed.data, { tableName: tableInput.value, maxRows: limit });
+                        if (parsed.errors.length) {
+                            result.warnings.push("The CSV reader found " + parsed.errors.length + " problem(s), such as a missing closing quote mark. Check the preview carefully.");
+                        }
+                        tableInput.value = result.tableName;
+                        show(result);
+                        setStatus("Done. Your database has " + result.rowCount.toLocaleString() + " rows. Download it below.");
+                    } catch (err) {
+                        setStatus("Something went wrong: " + err.message, true);
+                    }
+                },
+                error: function (err) {
+                    button.disabled = false;
+                    setStatus("The file couldn't be read: " + err.message, true);
+                }
+            });
+        });
+
+        function show(r) {
+            document.getElementById("summary").textContent = "Table " + r.tableName + " has " +
+                r.columns.length + " columns and " + r.rowCount.toLocaleString() + " rows.";
+            document.getElementById("check-query").textContent = 'SELECT COUNT(*) FROM "' + r.tableName + '";';
+
+            var wl = document.getElementById("warnings");
+            wl.innerHTML = "";
+            r.warnings.forEach(function (w) { wl.appendChild(cell("li", w)); });
+            document.getElementById("warnings-block").hidden = !r.warnings.length;
+
+            var cb = document.getElementById("columns-body");
+            cb.innerHTML = "";
+            r.columns.forEach(function (c) {
+                var tr = document.createElement("tr");
+                tr.appendChild(cell("td", c.name));
+                tr.appendChild(cell("td", c.original === c.name ? "(same)" : c.original || "(blank)"));
+                tr.appendChild(cell("td", c.type));
+                tr.appendChild(cell("td", String(c.empty)));
+                cb.appendChild(tr);
+            });
+
+            var head = document.getElementById("preview-head");
+            var body = document.getElementById("preview-body");
+            head.innerHTML = ""; body.innerHTML = "";
+            r.columns.forEach(function (c) {
+                var th = cell("th", c.name); th.scope = "col"; head.appendChild(th);
+            });
+            var res = r.db.exec('SELECT * FROM "' + r.tableName + '" LIMIT 5;');
+            if (res.length) {
+                res[0].values.forEach(function (row) {
+                    var tr = document.createElement("tr");
+                    row.forEach(function (v) { tr.appendChild(cell("td", short(v), "cell")); });
+                    body.appendChild(tr);
+                });
+            }
+            results.hidden = false;
+            document.getElementById("results-heading").focus();
+        }
+
+        document.getElementById("results-heading").tabIndex = -1;
+
+        document.getElementById("download-button").addEventListener("click", function () {
+            if (!result) return;
+            var blob = new Blob([result.db.export()], { type: "application/vnd.sqlite3" });
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement("a");
+            a.href = url;
+            a.download = result.tableName + ".sqlite";
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+            setStatus("Downloaded " + result.tableName + ".sqlite. Open it in SandboxSQL with Load a Database.");
+        });
+        // ---- Query results to CSV ----
+        var qdb = null, qresult = null;
+        var dbFile = document.getElementById("db-file");
+        var sqlBox = document.getElementById("sql-query");
+        var queryResults = document.getElementById("query-results");
+
+        dbFile.addEventListener("change", function () {
+            var f = dbFile.files[0];
+            queryResults.hidden = true;
+            if (!f) return;
+            if (!SQL) { setQueryStatus("The converter is still loading. Try again in a moment."); return; }
+            if (/\.(csv|xlsx?|ods)$/i.test(f.name)) {
+                setQueryStatus("That looks like a CSV file or spreadsheet. Choose a database file, such as a .sqlite file. To turn a CSV file into a database, use the section above.", true);
+                return;
+            }
+            var reader = new FileReader();
+            reader.onload = function () {
+                try {
+                    if (qdb) qdb.close();
+                    qdb = new SQL.Database(new Uint8Array(reader.result));
+                    var tables = qdb.exec("SELECT name FROM sqlite_master WHERE type = 'table' AND name NOT LIKE 'sqlite_%' ORDER BY name;");
+                    var list = document.getElementById("db-tables");
+                    list.innerHTML = "";
+                    var names = tables.length ? tables[0].values.map(function (r) { return r[0]; }) : [];
+                    if (!names.length) { setQueryStatus("No tables were found. Make sure you chose a database file, such as the .sqlite file you exported from SandboxSQL, and that it has data in it.", true); return; }
+                    names.forEach(function (t) {
+                        var cols = qdb.exec('PRAGMA table_info("' + t.replace(/"/g, '""') + '");');
+                        var colNames = cols.length ? cols[0].values.map(function (r) { return r[1]; }) : [];
+                        list.appendChild(cell("li", t + ": " + colNames.join(", ")));
+                    });
+                    document.getElementById("db-tables-block").hidden = false;
+                    if (!sqlBox.value.trim()) sqlBox.value = 'SELECT * FROM "' + names[0] + '" LIMIT 100;';
+                    setQueryStatus("Database loaded with " + names.length + " table(s). Write a query, then select Run query.");
+                } catch (err) {
+                    qdb = null;
+                    setQueryStatus("That file couldn't be opened as a database. Make sure it's a SQLite database file, such as one exported from SandboxSQL.", true);
+                }
+            };
+            reader.readAsArrayBuffer(f);
+        });
+
+        document.getElementById("query-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            if (!qdb) { setQueryStatus("Choose a database file first.", true); dbFile.focus(); return; }
+            var sql = sqlBox.value.trim();
+            if (!sql) { setQueryStatus("Write a query first.", true); sqlBox.focus(); return; }
+            try {
+                var res = qdb.exec(sql);
+                if (!res.length) {
+                    queryResults.hidden = true;
+                    setQueryStatus("The query ran, but returned no rows. Check your WHERE conditions, or that your query is a SELECT.", true);
+                    return;
+                }
+                qresult = res[res.length - 1];
+                showQuery(qresult);
+                setQueryStatus("Done. Your query returned " + qresult.values.length.toLocaleString() + " rows. Download them below.");
+            } catch (err) {
+                queryResults.hidden = true;
+                setQueryStatus("SQL error: " + err.message, true);
+            }
+        });
+
+        function showQuery(r) {
+            document.getElementById("query-summary").textContent = r.values.length.toLocaleString() + " rows and " + r.columns.length + " columns.";
+            var head = document.getElementById("query-head");
+            var body = document.getElementById("query-body");
+            head.innerHTML = ""; body.innerHTML = "";
+            r.columns.forEach(function (c) { var th = cell("th", c); th.scope = "col"; head.appendChild(th); });
+            r.values.slice(0, 20).forEach(function (row) {
+                var tr = document.createElement("tr");
+                row.forEach(function (v) { tr.appendChild(cell("td", short(v), "cell")); });
+                body.appendChild(tr);
+            });
+            queryResults.hidden = false;
+            document.getElementById("query-results-heading").focus();
+        }
+
+        document.getElementById("csv-button").addEventListener("click", function () {
+            if (!qresult) return;
+            var csv = Papa.unparse({
+                fields: qresult.columns,
+                data: qresult.values.map(function (row) { return row.map(function (v) { return v === null ? "" : v; }); })
+            });
+            var blob = new Blob([csv], { type: "text/csv" });
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement("a");
+            a.href = url;
+            a.download = "query-results.csv";
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+            setQueryStatus("Downloaded query-results.csv. Open it in your spreadsheet tool, such as Google Sheets or Excel.");
+        });
+    })();
+    </script>
+</body>
+</html>

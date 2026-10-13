@@ -10,7 +10,7 @@
 \hypersetup{
     colorlinks=false,
     pdfborder={0 0 0},
-    pdftitle={Database Documentation Lab},
+    pdftitle={Database Documentation},
     pdfauthor={Adrianna Holden-Gouveia},
     pdfsubject={Advanced Data - Lab Assignment},
     pdflang={en-US},
@@ -59,41 +59,109 @@ Link: \href{https://aholdengouveia.name/AdvData/labs/week6documentation.html}{\t
 
 The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.
 
-\section*{Objectives:}
-\begin{itemize}
-    \item Create some basic documentation for your database
-\end{itemize}
-\section*{Complete the following problems}
+\section*{Request}
+\noindent\textbf{Request:} DATA-8456\\
+\textbf{Requested by:} Head of the data team\\
+\textbf{Data:} Your database from the SQL Review labs, and your schema from the Database Schema lab
 
+\section*{Background}
+A new analyst starts on Monday, and right now everything they would need to know about your data is in your head. Your manager wants documentation that gets them working on their first day, keeps the data safe if something goes wrong, and stays accurate as things change.
+
+\section*{Learning Outcomes}
+By the end of this lab, you will be able to:
+\begin{itemize}
+    \item Create a data dictionary that describes every column in a database
+    \item Write database documentation that a new team member can use to get started
+    \item Plan backups for a database based on research, and justify each choice
+    \item Plan how changes to a database and its documentation will be tracked and kept up to date
+\end{itemize}
+
+\section*{Lab Instructions}
+Keep using the data set you chose in the Introduction to Data lab, and the schema you made for it. Books are my example data only, so your documentation must be for your own data set.
+
+If you want to switch to a different data set, email me first. Switching means redoing the work from earlier labs for your new data set, so it adds a lot of work. The switching checklist (linked under Resources) lists what you'd need to redo.
+
+Write your documentation for a company, as if you were handing it to a new analyst joining the data team on their first day. They have never seen your data before. The company can be the one on your data card, or a real company or volunteer organization of your choice. If you use a real organization, only include information you have permission to share. You can use any tool you like, such as Word or Google Docs.
+
+\subsection*{Part 1: Getting Started}
+\begin{enumerate}
+    \item Describe the company in a few sentences: what it does, how it makes money, and how big it is (roughly how many employees). You'll use its size in Part 4.
+    \item Explain where the data comes from, using the source and license from your data card.
+    \item Explain where the database is, what tool it's in, and how to open it.
+\end{enumerate}
+
+\subsection*{Part 2: Schema and Rules}
+\begin{enumerate}
+    \item Include your schema from the Database Schema lab. Update it with any changes you've made since then. Make your changes easy to spot: put anything new or changed in bold, and add a short note under the schema saying what changed and why. If nothing changed, say so.
+    \item List the rules for your data, including any data types that are required. For example, a year is always a whole number. Start with your rules from the Database Schema lab, and mark any new or changed rules the same way.
+\end{enumerate}
+
+\subsection*{Part 3: Data Dictionary}
+Make a data dictionary with an entry for every column in every table, following the sample data dictionary (linked under Resources). For each column, give the data type, whether it's required, any key, the allowed values, a description, an example, and notes. Use the quality notes from your data card in your notes. Your examples, counts, and missing values must match the data in the database you turned in for the SQL Review lab.
+
+\subsection*{Part 4: Backup Plan}
+Research how companies like yours, of a similar size and type, back up their data. Use at least 2 reliable sources, and cite each one with a link. Check each source with the CRAAP test (linked under Resources), and include a sentence for each one about why it passes. Then, based on your research, answer these questions:
+\begin{enumerate}
+    \item How much data could your company afford to lose? For example, a day's worth, or an hour's worth.
+    \item How quickly does the database need to be working again after a failure?
+    \item How often will you back up the database?
+    \item Where will the backup copies be kept, both onsite and offsite?
+    \item How, and how often, will you test that you can restore from a backup? A backup you've never restored from might not work.
+\end{enumerate}
+For each answer, explain how your research supports it.
+
+\subsection*{Part 5: Tracking Changes}
+\begin{enumerate}
+    \item Add a change log to your documentation, with columns for the version number, the date, what changed, and who made the change. Start it with version 1.0 for this document. See the sample change log (linked under Resources) for an example.
+    \item Suggest a version control tool or system for tracking changes to your schema and queries, and explain why you chose it. You don't need to set it up.
+    \item Make a schedule for reviewing your documentation, such as quarterly or annually, and explain why. List at least 2 events, besides the schedule, that should also cause an update. For example, adding a new column.
+\end{enumerate}
+
+\subsection*{Part 6: Common Queries}
+Add an appendix with your documented queries from the SQL Review labs and the Query Optimization lab. Check that each one still works with your current schema, and update any that don't. These give a new analyst working examples to start from.
+
+\section*{Acceptance Criteria}
+This request is done when:
+\begin{itemize}
+    \item A table of contents
+    \item Every column in every table is in your data dictionary, and its examples and counts match your database
+    \item Changes to your schema and rules since the Database Schema lab are in bold, with a note
+    \item Your backup plan answers all 5 questions, backed by at least 2 sources you've checked with the CRAAP test
+    \item Your change log starts at version 1.0
+    \item Your common queries work with your current schema
+    \item Someone who has never seen your data could get started using only your documentation
+\end{itemize}
+
+\section*{Deliverables}
+One file that includes:
+\begin{itemize}
+    \item A table of contents
+    \item If you switched data sets: the redone work from the switching checklist
+    \item Parts 1 to 6
+\end{itemize}
+
+Audience: a new analyst on their first day, who has never seen your data.
+
+\section*{Resources}
 References, a video, a PowerPoint and some notes are available at my website
 Link: \href{https://www.aholdengouveia.name/AdvData/databasedocumentation.html}{\textbf{\nolinkurl{https://www.aholdengouveia.name/AdvData/databasedocumentation.html}}}
 
-You should continue to use the dataset you've already chosen, that you made the schema for. If you need to pick a new dataset, email me to discuss it
+Sample data dictionary, showing the format to follow
+Link: \href{https://www.aholdengouveia.name/AdvData/labs/SampleDataDictionary.txt}{\textbf{\nolinkurl{https://www.aholdengouveia.name/AdvData/labs/SampleDataDictionary.txt}}}
 
-For this lab, you should start thinking about this data as if it was for an actual company.  What kind of company would want this data? What do they do? How do they make money? What is the size of the company?
+Sample query documentation, for Part 6
+Link: \href{https://www.aholdengouveia.name/AdvData/labs/SampleQueryDocumentation.txt}{\textbf{\nolinkurl{https://www.aholdengouveia.name/AdvData/labs/SampleQueryDocumentation.txt}}}
 
-\subsection*{Create your Documentation}
+Sample change log, for Part 5
+Link: \href{https://www.aholdengouveia.name/AdvData/labs/SampleDocumentationChangeLog.txt}{\textbf{\nolinkurl{https://www.aholdengouveia.name/AdvData/labs/SampleDocumentationChangeLog.txt}}}
 
-Based on the data you picked, come up with a company that might use this data.  This documentation should be for the company.  The company can be any size, just make note of what size you pick. Some of this you may have from previous labs, but you should work on organizing it into your documentation here. 
+The CRAAP test, for checking your sources in Part 4
+Link: \href{https://web.archive.org/web/20250814000638/https://guides.lib.uchicago.edu/c.php?g=1241077&p=9082343}{\textbf{\nolinkurl{https://web.archive.org/web/20250814000638/https://guides.lib.uchicago.edu/c.php?g=1241077&p=9082343}}}
 
-Your documentation can be done in any form you like, but if you're not sure consider using either MS Word or Google so that you can submit a PDF.  
+My guide to evaluating sources
+Link: \href{https://www.aholdengouveia.name/Howtos/Sourceeval/sourceEvaluation.html}{\textbf{\nolinkurl{https://www.aholdengouveia.name/Howtos/Sourceeval/sourceEvaluation.html}}}
 
+Switching checklist, if you want to change data sets
+Link: \href{https://www.aholdengouveia.name/AdvData/labs/SwitchingDataSets.txt}{\textbf{\nolinkurl{https://www.aholdengouveia.name/AdvData/labs/SwitchingDataSets.txt}}}
 
-    \begin{itemize}
-        \item Type of company and a sentence or two about what they might be doing, how they might make money, any other information that might be helpful.
-        \item ER diagram or Schema
-        \item List of rules for the data, including if there are any data types that are preset (i.e. years always being an integer)
-        \item Data dictionary
-        \item Backup plans, including onsite, offsite, validity checks and frequency.
-        \item Version Control plan, including initial suggestion of what to use.
-        \item Documentation update plan including schedule for when you think  your documentation should be checked and why.  Likely to be annually or quarterly
-
-    \end{itemize}
-
-
-
-\section*{Deliverables}
-\begin{enumerate}
-    \item Document that includes answers to all the above questions.  Document is likely to be long enough you'll need some variety of index, or table of contents, or shortcuts to the data.  Your document needs to be sent in, you can also include a live link to a doc, but there must be a document uploaded that is static.  
-\end{enumerate}
 \end{document}

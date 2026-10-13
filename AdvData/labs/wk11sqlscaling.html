@@ -36,9 +36,13 @@
             <h2>On this page:</h2>
             <ul>
                 <li><a href="#accessibility-notice">Accessibility Notice</a></li>
-                <li><a href="#objectives">Objectives:</a></li>
-                <li><a href="#complete-the-following-problems">Complete the following problems</a></li>
+                <li><a href="#request">Request</a></li>
+                <li><a href="#background">Background</a></li>
+                <li><a href="#learning-outcomes">Learning Outcomes</a></li>
+                <li><a href="#lab-instructions">Lab Instructions</a></li>
+                <li><a href="#acceptance-criteria">Acceptance Criteria</a></li>
                 <li><a href="#deliverables">Deliverables</a></li>
+                <li><a href="#resources">Resources</a></li>
             </ul>
         </nav>
 
@@ -52,59 +56,136 @@
 
 </section>
 
-<section role="region" aria-labelledby="objectives">
-<h2 id="objectives">Objectives:</h2>
+<section role="region" aria-labelledby="request">
+<h2 id="request">Request</h2>
+<p><strong>Request:</strong> DATA-4630<br> <strong>Requested by:</strong> Head of the data team<br> <strong>Data:</strong> Your database, and your data collection plan from the Big Data lab</p>
+
+</section>
+
+<section role="region" aria-labelledby="background">
+<h2 id="background">Background</h2>
+<p>If your data collection plan goes ahead, your database is going to grow. Your manager wants to know how it would scale, how the data could be split across servers if needed, and what could go wrong for the business along the way. You'll warm up with a real business case study, then plan for your own company's growth.</p>
+
+</section>
+
+<section role="region" aria-labelledby="learning-outcomes">
+<h2 id="learning-outcomes">Learning Outcomes</h2>
+<p>By the end of this lab, you will be able to:</p>
+
 <ul>
-<li>Learn more about SQL and how it can be used.</li>
-<li>Learn how to evaluate data sets for scalability including business logic</li>
+<li>Write SQL queries to solve a real-world business case study</li>
+<li>Evaluate how a data set would scale, including vertical and horizontal scaling</li>
+<li>Choose a shard key for a data set, using queries on the data to justify it</li>
+<li>Explain how ACID transactions protect a business, and what happens when they fail</li>
 </ul>
 
 </section>
 
-<section role="region" aria-labelledby="complete-the-following-problems">
-<h2 id="complete-the-following-problems">Complete the following problems</h2>
-<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name/AdvData/SQLscaling.html"><strong>https://www.aholdengouveia.name/AdvData/SQLscaling.html</strong></a></p>
+<section role="region" aria-labelledby="lab-instructions">
+<h2 id="lab-instructions">Lab Instructions</h2>
+<p>Use your own data set and company for Parts 2 to 4. Books are my example data only.</p>
 
 </section>
 
-<section role="region" aria-labelledby="sql-challenges-hackerrank">
-<h2 id="sql-challenges-hackerrank">SQL Challenges HackerRank</h2>
-<ul>
-<li>From Link: <a href="https://www.hackerrank.com"><strong>https://www.hackerrank.com</strong></a> You'll be doing 3 challenges that are listed as Medium difficulty or higher. Make sure you pick NEW challenges. Take screenshots of each solution making sure to include your name and the term in each screenshot.</li>
-<li>Each screenshot should include a short explanation of how you solved it, and what resources you used. If you needed hints, include that and where you found the hint.</li>
-<li>Screenshot of your HackerRank profile that includes the completed challenges. Make sure I can see all your completed challenges so I can tell that you have done enough new ones</li>
-</ul>
+<section role="region" aria-labelledby="screenshots">
+<h2 id="screenshots">Screenshots</h2>
+<p>Several parts of this lab ask for a screenshot. Each screenshot should have your name, term, and year. One of the easiest ways to do that is make a text document with your name and term/year on your computer and save it to use all term. Any screenshots that don't include this information won't be counted.</p>
+
+<figure>
+<img src="ExampleScreenshot.png" alt="Example screenshot: a web browser showing the Google home page, with a small text editor window in front of it that says YOUR NAME HERE and TERM YEAR">
+<figcaption>This is an image of what each of your screenshots should look like</figcaption>
+</figure>
 
 </section>
 
-<section role="region" aria-labelledby="sql-challenges">
-<h2 id="sql-challenges">SQL Challenges</h2>
-<p>From Link: <a href="https://8weeksqlchallenge.com/"><strong>https://8weeksqlchallenge.com/</strong></a> you will be doing 2 case studies. You can either use the embedded option in the website, or put the data into another place such as SQL Sandbox or a locally hosted database</p>
+<section role="region" aria-labelledby="part-1-case-study">
+<h2 id="part-1-case-study">Part 1: Case Study</h2>
+<p>Solve all 10 questions in Case Study 1, Danny's Diner, from the 8 Week SQL Challenge (linked under Resources). Each answer should be a single SQL statement. You can use the editor on the case study page, or load the data into SandboxSQL or another tool.</p>
 
-<ul>
-<li>From case study number 1, the diner, you need to solve all 10 questions. Each one should be done with a single SQL statement. Make sure to include a screenshot of your solution, and a short explanation of how you solved it.</li>
-<li>From case study number 2, pizza runner, solve the first 5 problems under Pizza Metrics. Make sure to include a screenshot of your solution, and a short explanation of how you solved it.</li>
-</ul>
+<ol>
+<li>Take a screenshot of each solution and its results.</li>
+<li>With each screenshot, explain how you solved it and what resources you used. If you needed a hint, say where you found it.</li>
+</ol>
+
+<p><strong>Optional, not required for this class:</strong> if you'd like more practice, try the Pizza Metrics questions in Case Study 2, Pizza Runner.</p>
 
 </section>
 
-<section role="region" aria-labelledby="sql-scalability">
-<h2 id="sql-scalability">SQL Scalability</h2>
-<p>Answer the following questions about the scalability of each SQL challenge from the 8 week SQL challenge case studies. For each case study, write a short paragraph explaining how you think this might work at scale. Make sure to answer each of the following.</p>
+<section role="region" aria-labelledby="part-2-how-would-it-scale">
+<h2 id="part-2-how-would-it-scale">Part 2: How Would It Scale?</h2>
+<ol>
+<li>Using the estimates in your data collection plan from the Big Data lab, roughly how many rows would your database have in 1 year, and in 5 years? Show your working.</li>
+<li>The topic page explains vertical scaling, adding more power to one server, and horizontal scaling, adding more servers. Which would your company need first, and why? Think about cost, and about the size of your company.</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="part-3-choose-a-shard-key">
+<h2 id="part-3-choose-a-shard-key">Part 3: Choose a Shard Key</h2>
+<p>If your company ever splits its data across servers, it needs a shard key: the column that decides which server each row goes to. The topic page lists 4 things to check: cardinality, frequency, whether the values keep increasing, and query patterns.</p>
+
+<ol>
+<li>Pick 3 columns in your main table that could be shard keys.</li>
+<li>For each one, run these queries on your own data, replacing the table and column names, and take a screenshot of the results. The first shows the cardinality, how many different values there are. The second shows the frequency, which values appear most often.
+<pre><code lang="sql">SELECT COUNT(DISTINCT genre) FROM books;
+
+SELECT genre, COUNT(*) FROM books
+GROUP BY genre
+ORDER BY COUNT(*) DESC
+LIMIT 5;</code></pre>
+</li>
+<li>For each column, explain whether its values keep increasing, like a date or an ID that goes up by one, and whether it matches the queries your company runs most, such as your documented queries from the SQL Review labs.</li>
+<li>Pick the best shard key, and explain why using your results. What data skew, where one server ends up with much more data than the others, could still happen?</li>
+</ol>
+
+<p>For example, in my book data, genre has only 10 different values, and 50 of my 99 books are Classics. If genre were the shard key, the server holding Classics would get half of all the data, so it would make a poor shard key.</p>
+
+</section>
+
+<section role="region" aria-labelledby="part-4-acid-and-your-business">
+<h2 id="part-4-acid-and-your-business">Part 4: ACID and Your Business</h2>
+<p>Pick one real transaction your company would make, such as a sale that records the payment and updates the stock.</p>
+
+<ol>
+<li>For each of the 4 ACID properties, atomicity, consistency, isolation, and durability, explain what it means for this transaction, and what would go wrong for the business if it failed.</li>
+<li>Which property matters most to your company, and why?</li>
+<li>Would splitting your data across servers make that property harder to keep? Why or why not?</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="acceptance-criteria">
+<h2 id="acceptance-criteria">Acceptance Criteria</h2>
+<p>This request is done when:</p>
 
 <ul>
-<li>How do you think your queries would change?</li>
-<li>Would you continue to use a relational database? Explain why or why not.</li>
-<li>Does the dataset need to stay with SQL because of ACID transactions?</li>
-<li>Would the schema have to change?</li>
-<li>Do you think node consistency would be an issue for the data set? What about the Business?</li>
+<li>All 10 Danny's Diner questions are solved with single SQL statements, each with a screenshot and an explanation</li>
+<li>Your growth estimates for 1 and 5 years show your working, and your choice of vertical or horizontal scaling is explained</li>
+<li>3 possible shard keys are checked with queries on your own data, with screenshots</li>
+<li>Your shard key choice is justified using your results, including any data skew that could still happen</li>
+<li>All 4 ACID properties are explained for a real transaction at your company</li>
+<li>Every screenshot follows the screenshot rules</li>
 </ul>
 
 </section>
 
 <section role="region" aria-labelledby="deliverables">
 <h2 id="deliverables">Deliverables</h2>
-<p>A text document that contains the answers to the above questions, and requested screenshots. Make sure you include both the SQL challenges from HackerRank and the ones from the 8 week SQL challenge</p>
+<p>One file that includes Parts 1 to 4.</p>
+
+<p>Audience: the head of the data team.</p>
+
+</section>
+
+<section role="region" aria-labelledby="resources">
+<h2 id="resources">Resources</h2>
+<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name/AdvData/SQLscaling.html"><strong>https://www.aholdengouveia.name/AdvData/SQLscaling.html</strong></a></p>
+
+<p>Case Study 1, Danny's Diner Link: <a href="https://8weeksqlchallenge.com/case-study-1/"><strong>https://8weeksqlchallenge.com/case-study-1/</strong></a></p>
+
+<p>Optional: Case Study 2, Pizza Runner Link: <a href="https://8weeksqlchallenge.com/case-study-2/"><strong>https://8weeksqlchallenge.com/case-study-2/</strong></a></p>
+
+<p>Suggested tool: SandboxSQL, free, runs in your browser, and saves your database as a file with its Export button Link: <a href="https://www.sandboxsql.com/"><strong>https://www.sandboxsql.com/</strong></a></p>
 
 </section>
 

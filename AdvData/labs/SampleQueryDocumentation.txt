@@ -1,0 +1,129 @@
+SAMPLE QUERY DOCUMENTATION
+==========================
+This shows the FORMAT to follow, using my book data as the EXAMPLE ONLY.
+Books are my example. Your questions and queries must be about YOUR
+own data set from the Introduction to Data lab.
+
+On a data team, every query that answers a business question gets a
+header comment like the ones below, so anyone can tell what it's for,
+who asked, and what to watch out for. In SQL, lines starting with --
+are comments.
+
+
+------------------------------------------------------------------
+-- Request:        Q1
+-- Business question: Which of our books have the highest ratings?
+-- Requested by:   Store manager
+-- Justification:  The manager wants to build a "Staff Picks" display,
+--                 and highly rated books are most likely to sell.
+-- Author:         Your Name
+-- Date:           2026-01-27
+-- Notes:          Shows the top 5 only, since the display has 5 spots.
+------------------------------------------------------------------
+SELECT title, rating, pages
+FROM books
+WHERE rating > 4.4
+ORDER BY rating DESC
+LIMIT 5;
+
+-- Result summary: Harry Potter and the Deathly Hallows (4.62) is the
+-- highest rated. 3 of the top 5 are Harry Potter books, so the display
+-- may need more variety.
+
+
+------------------------------------------------------------------
+-- Request:        Q2
+-- Business question: Which Fantasy books are over 500 pages long?
+-- Requested by:   Events coordinator
+-- Justification:  Planning a "Big Fantasy Reads" book club. Long books
+--                 need a longer reading schedule, so we need to know
+--                 which ones they are.
+-- Author:         Your Name
+-- Date:           2026-01-27
+-- Notes:          The pages column was imported from a CSV as TEXT, so
+--                 it has to be CAST to a number. Without the CAST,
+--                 "1168" counts as less than "500" because text is
+--                 compared one character at a time, and the results
+--                 are wrong without any error message.
+------------------------------------------------------------------
+SELECT title, CAST(pages AS INTEGER) AS pages
+FROM books
+WHERE genre LIKE '%Fantasy%'
+  AND CAST(pages AS INTEGER) > 500
+ORDER BY CAST(pages AS INTEGER) DESC;
+
+-- Result summary: The J.R.R. Tolkien 4-Book Boxed Set is the longest at
+-- 1728 pages. Several books qualify, so the club could run all year.
+
+
+------------------------------------------------------------------
+-- LOOKUP TABLE (for the SQL Review Part 2 lab)
+-- My books table has a bookFormat column, so I made a small table
+-- that tells staff which shelf section each format goes in.
+-- format_name is the primary key. In the books table, bookFormat
+-- acts as the foreign key that points to it.
+------------------------------------------------------------------
+CREATE TABLE formats (
+    format_name   TEXT PRIMARY KEY,
+    shelf_section TEXT
+);
+INSERT INTO formats VALUES
+    ('Paperback', 'Main fiction shelves'),
+    ('Hardcover', 'New and notable table'),
+    ('Mass Market Paperback', 'Spinner racks');
+
+
+------------------------------------------------------------------
+-- Request:        Q3
+-- Business question: Which books go on the new and notable table?
+-- Requested by:   Store manager
+-- Justification:  Staff are setting up the new and notable table this
+--                 week and need a list of what to put on it.
+-- Author:         Your Name
+-- Date:           2026-02-03
+-- Notes:          INNER JOIN, so only books whose format is in the
+--                 formats table are included.
+------------------------------------------------------------------
+SELECT b.title, b.bookFormat, f.shelf_section
+FROM books b
+INNER JOIN formats f ON b.bookFormat = f.format_name
+WHERE f.shelf_section = 'New and notable table'
+ORDER BY b.title;
+
+-- Result summary: 21 books, all hardcovers.
+
+
+------------------------------------------------------------------
+-- Request:        Q4 (data quality check)
+-- Business question: Do any books have a format with no shelf section?
+-- Requested by:   Inventory lead
+-- Justification:  A book with no shelf section never gets shelved, so
+--                 it can't sell. We need to find these before stock
+--                 arrives.
+-- Author:         Your Name
+-- Date:           2026-02-03
+-- Notes:          LEFT JOIN keeps every book, even with no match. Where
+--                 there's no match, the formats columns are NULL, so
+--                 WHERE f.format_name IS NULL shows only the unmatched
+--                 books. An INNER JOIN would hide these rows completely.
+------------------------------------------------------------------
+SELECT b.title, b.bookFormat
+FROM books b
+LEFT JOIN formats f ON b.bookFormat = f.format_name
+WHERE f.format_name IS NULL;
+
+-- Result summary: 6 books have no match: 3 Kindle Edition, 2 ebook,
+-- and 1 Audiobook. These are digital formats, and a physical store
+-- doesn't shelve them. Recommendation: ask the manager whether to
+-- stock print copies of these titles, or add a "Digital" section so
+-- they're tracked.
+
+
+TIPS
+- Write the business question in plain English first, then the query.
+- The justification should say what decision the answer helps someone
+  make, not just "to see the data".
+- Use Notes for anything the next person needs to know: assumptions,
+  data problems, or why you wrote the query the way you did.
+- Check your results make sense. If a number looks wrong, check the
+  data types of your columns.

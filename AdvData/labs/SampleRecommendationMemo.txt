@@ -1,0 +1,63 @@
+SAMPLE RECOMMENDATION MEMO
+==========================
+This shows the FORMAT to follow, using my book data as the EXAMPLE ONLY.
+Your memo must be about YOUR own company and data set.
+
+A recommendation memo is short, and is written for the person who makes
+the decision and controls the budget. They aren't technical, so it
+leads with the answer, explains costs and risks in plain words, and
+keeps the technical details in your evaluation.
+
+
+To:       Finance director
+From:     Your Name, data team
+Date:     2026-03-17
+Re:       Request DATA-1487, which database should we use?
+
+
+RECOMMENDATION
+Keep a relational database, and move it from SQLite to PostgreSQL in
+the next year. Don't move to a NoSQL database now.
+
+WHY
+- Our data is inventory: books, authors, publishers, and formats. It
+  fits neatly into tables, and the relationships between them matter.
+  That's what relational databases are built for.
+- We're a single store with about 15 staff and around 50,000 books.
+  That's small for a database, so we don't need the extra scaling that
+  NoSQL databases are built for.
+- Our team already knows SQL. Switching to NoSQL would mean training
+  or hiring.
+- PostgreSQL lets several staff use the database at the same time,
+  which SQLite doesn't handle well as we grow.
+
+COST
+- PostgreSQL is free and open source, so there's no license cost.
+- The costs are hosting, staff time to move the data, and support.
+  Free versions don't come with a help desk. Paid support is available
+  from several companies if we need it. (Details and sources are in my
+  evaluation.)
+
+RISKS
+- If we start the online review site we've talked about, customer
+  reviews are long, unstructured text. That data might suit a document
+  database better. We should look at this again if the review site
+  goes ahead.
+- Moving the data takes time, and needs a tested backup first.
+
+IF WE DO NOTHING
+SQLite will keep working for now, but as more staff use it at the same
+time, it will get slower and errors become more likely.
+
+NEXT STEP
+Approve a small test move to PostgreSQL next quarter, using a copy of
+the data, before switching for real.
+
+
+TIPS
+- Put the recommendation first. The reader may only read that part.
+- Use the reader's language: cost, risk, time, and what happens if we
+  don't do it. Save the technical words for your evaluation.
+- Every claim about cost or support should be backed up in your
+  evaluation, with a cited source.
+- Keep it to about one page.

@@ -36,9 +36,13 @@
             <h2>On this page:</h2>
             <ul>
                 <li><a href="#accessibility-notice">Accessibility Notice</a></li>
-                <li><a href="#objectives">Objectives:</a></li>
-                <li><a href="#complete-the-following-problems">Complete the following problems</a></li>
+                <li><a href="#request">Request</a></li>
+                <li><a href="#background">Background</a></li>
+                <li><a href="#learning-outcomes">Learning Outcomes</a></li>
+                <li><a href="#lab-instructions">Lab Instructions</a></li>
+                <li><a href="#acceptance-criteria">Acceptance Criteria</a></li>
                 <li><a href="#deliverables">Deliverables</a></li>
+                <li><a href="#resources">Resources</a></li>
             </ul>
         </nav>
 
@@ -52,47 +56,143 @@
 
 </section>
 
-<section role="region" aria-labelledby="objectives">
-<h2 id="objectives">Objectives:</h2>
+<section role="region" aria-labelledby="request">
+<h2 id="request">Request</h2>
+<p><strong>Request:</strong> DATA-8456<br> <strong>Requested by:</strong> Head of the data team<br> <strong>Data:</strong> Your database from the SQL Review labs, and your schema from the Database Schema lab</p>
+
+</section>
+
+<section role="region" aria-labelledby="background">
+<h2 id="background">Background</h2>
+<p>A new analyst starts on Monday, and right now everything they would need to know about your data is in your head. Your manager wants documentation that gets them working on their first day, keeps the data safe if something goes wrong, and stays accurate as things change.</p>
+
+</section>
+
+<section role="region" aria-labelledby="learning-outcomes">
+<h2 id="learning-outcomes">Learning Outcomes</h2>
+<p>By the end of this lab, you will be able to:</p>
+
 <ul>
-<li>Create some basic documentation for your database</li>
+<li>Create a data dictionary that describes every column in a database</li>
+<li>Write database documentation that a new team member can use to get started</li>
+<li>Plan backups for a database based on research, and justify each choice</li>
+<li>Plan how changes to a database and its documentation will be tracked and kept up to date</li>
 </ul>
 
 </section>
 
-<section role="region" aria-labelledby="complete-the-following-problems">
-<h2 id="complete-the-following-problems">Complete the following problems</h2>
-<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name/AdvData/databasedocumentation.html"><strong>https://www.aholdengouveia.name/AdvData/databasedocumentation.html</strong></a></p>
+<section role="region" aria-labelledby="lab-instructions">
+<h2 id="lab-instructions">Lab Instructions</h2>
+<p>Keep using the data set you chose in the Introduction to Data lab, and the schema you made for it. Books are my example data only, so your documentation must be for your own data set.</p>
 
-<p>You should continue to use the dataset you've already chosen, that you made the schema for. If you need to pick a new dataset, email me to discuss it</p>
+<p>If you want to switch to a different data set, email me first. Switching means redoing the work from earlier labs for your new data set, so it adds a lot of work. The switching checklist (linked under Resources) lists what you'd need to redo.</p>
 
-<p>For this lab, you should start thinking about this data as if it was for an actual company. What kind of company would want this data? What do they do? How do they make money? What is the size of the company?</p>
+<p>Write your documentation for a company, as if you were handing it to a new analyst joining the data team on their first day. They have never seen your data before. The company can be the one on your data card, or a real company or volunteer organization of your choice. If you use a real organization, only include information you have permission to share. You can use any tool you like, such as Word or Google Docs.</p>
 
 </section>
 
-<section role="region" aria-labelledby="create-your-documentation">
-<h2 id="create-your-documentation">Create your Documentation</h2>
-<p>Based on the data you picked, come up with a company that might use this data. This documentation should be for the company. The company can be any size, just make note of what size you pick. Some of this you may have from previous labs, but you should work on organizing it into your documentation here.</p>
+<section role="region" aria-labelledby="part-1-getting-started">
+<h2 id="part-1-getting-started">Part 1: Getting Started</h2>
+<ol>
+<li>Describe the company in a few sentences: what it does, how it makes money, and how big it is (roughly how many employees). You'll use its size in Part 4.</li>
+<li>Explain where the data comes from, using the source and license from your data card.</li>
+<li>Explain where the database is, what tool it's in, and how to open it.</li>
+</ol>
 
-<p>Your documentation can be done in any form you like, but if you're not sure consider using either MS Word or Google so that you can submit a PDF.</p>
+</section>
+
+<section role="region" aria-labelledby="part-2-schema-and-rules">
+<h2 id="part-2-schema-and-rules">Part 2: Schema and Rules</h2>
+<ol>
+<li>Include your schema from the Database Schema lab. Update it with any changes you've made since then. Make your changes easy to spot: put anything new or changed in bold, and add a short note under the schema saying what changed and why. If nothing changed, say so.</li>
+<li>List the rules for your data, including any data types that are required. For example, a year is always a whole number. Start with your rules from the Database Schema lab, and mark any new or changed rules the same way.</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="part-3-data-dictionary">
+<h2 id="part-3-data-dictionary">Part 3: Data Dictionary</h2>
+<p>Make a data dictionary with an entry for every column in every table, following the sample data dictionary (linked under Resources). For each column, give the data type, whether it's required, any key, the allowed values, a description, an example, and notes. Use the quality notes from your data card in your notes. Your examples, counts, and missing values must match the data in the database you turned in for the SQL Review lab.</p>
+
+</section>
+
+<section role="region" aria-labelledby="part-4-backup-plan">
+<h2 id="part-4-backup-plan">Part 4: Backup Plan</h2>
+<p>Research how companies like yours, of a similar size and type, back up their data. Use at least 2 reliable sources, and cite each one with a link. Check each source with the CRAAP test (linked under Resources), and include a sentence for each one about why it passes. Then, based on your research, answer these questions:</p>
+
+<ol>
+<li>How much data could your company afford to lose? For example, a day's worth, or an hour's worth.</li>
+<li>How quickly does the database need to be working again after a failure?</li>
+<li>How often will you back up the database?</li>
+<li>Where will the backup copies be kept, both onsite and offsite?</li>
+<li>How, and how often, will you test that you can restore from a backup? A backup you've never restored from might not work.</li>
+</ol>
+
+<p>For each answer, explain how your research supports it.</p>
+
+</section>
+
+<section role="region" aria-labelledby="part-5-tracking-changes">
+<h2 id="part-5-tracking-changes">Part 5: Tracking Changes</h2>
+<ol>
+<li>Add a change log to your documentation, with columns for the version number, the date, what changed, and who made the change. Start it with version 1.0 for this document. See the sample change log (linked under Resources) for an example.</li>
+<li>Suggest a version control tool or system for tracking changes to your schema and queries, and explain why you chose it. You don't need to set it up.</li>
+<li>Make a schedule for reviewing your documentation, such as quarterly or annually, and explain why. List at least 2 events, besides the schedule, that should also cause an update. For example, adding a new column.</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="part-6-common-queries">
+<h2 id="part-6-common-queries">Part 6: Common Queries</h2>
+<p>Add an appendix with your documented queries from the SQL Review labs and the Query Optimization lab. Check that each one still works with your current schema, and update any that don't. These give a new analyst working examples to start from.</p>
+
+</section>
+
+<section role="region" aria-labelledby="acceptance-criteria">
+<h2 id="acceptance-criteria">Acceptance Criteria</h2>
+<p>This request is done when:</p>
 
 <ul>
-<li>Type of company and a sentence or two about what they might be doing, how they might make money, any other information that might be helpful.</li>
-<li>ER diagram or Schema</li>
-<li>List of rules for the data, including if there are any data types that are preset (i.e. years always being an integer)</li>
-<li>Data dictionary</li>
-<li>Backup plans, including onsite, offsite, validity checks and frequency.</li>
-<li>Version Control plan, including initial suggestion of what to use.</li>
-<li>Documentation update plan including schedule for when you think your documentation should be checked and why. Likely to be annually or quarterly</li>
+<li>A table of contents</li>
+<li>Every column in every table is in your data dictionary, and its examples and counts match your database</li>
+<li>Changes to your schema and rules since the Database Schema lab are in bold, with a note</li>
+<li>Your backup plan answers all 5 questions, backed by at least 2 sources you've checked with the CRAAP test</li>
+<li>Your change log starts at version 1.0</li>
+<li>Your common queries work with your current schema</li>
+<li>Someone who has never seen your data could get started using only your documentation</li>
 </ul>
 
 </section>
 
 <section role="region" aria-labelledby="deliverables">
 <h2 id="deliverables">Deliverables</h2>
-<ol>
-<li>Document that includes answers to all the above questions. Document is likely to be long enough you'll need some variety of index, or table of contents, or shortcuts to the data. Your document needs to be sent in, you can also include a live link to a doc, but there must be a document uploaded that is static.</li>
-</ol>
+<p>One file that includes:</p>
+
+<ul>
+<li>A table of contents</li>
+<li>If you switched data sets: the redone work from the switching checklist</li>
+<li>Parts 1 to 6</li>
+</ul>
+
+<p>Audience: a new analyst on their first day, who has never seen your data.</p>
+
+</section>
+
+<section role="region" aria-labelledby="resources">
+<h2 id="resources">Resources</h2>
+<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name/AdvData/databasedocumentation.html"><strong>https://www.aholdengouveia.name/AdvData/databasedocumentation.html</strong></a></p>
+
+<p>Sample data dictionary, showing the format to follow Link: <a href="https://www.aholdengouveia.name/AdvData/labs/SampleDataDictionary.txt"><strong>https://www.aholdengouveia.name/AdvData/labs/SampleDataDictionary.txt</strong></a></p>
+
+<p>Sample query documentation, for Part 6 Link: <a href="https://www.aholdengouveia.name/AdvData/labs/SampleQueryDocumentation.txt"><strong>https://www.aholdengouveia.name/AdvData/labs/SampleQueryDocumentation.txt</strong></a></p>
+
+<p>Sample change log, for Part 5 Link: <a href="https://www.aholdengouveia.name/AdvData/labs/SampleDocumentationChangeLog.txt"><strong>https://www.aholdengouveia.name/AdvData/labs/SampleDocumentationChangeLog.txt</strong></a></p>
+
+<p>The CRAAP test, for checking your sources in Part 4 Link: <a href="https://web.archive.org/web/20250814000638/https://guides.lib.uchicago.edu/c.php?g=1241077&p=9082343"><strong>https://web.archive.org/web/20250814000638/https://guides.lib.uchicago.edu/c.php?g=1241077&p=9082343</strong></a></p>
+
+<p>My guide to evaluating sources Link: <a href="https://www.aholdengouveia.name/Howtos/Sourceeval/sourceEvaluation.html"><strong>https://www.aholdengouveia.name/Howtos/Sourceeval/sourceEvaluation.html</strong></a></p>
+
+<p>Switching checklist, if you want to change data sets Link: <a href="https://www.aholdengouveia.name/AdvData/labs/SwitchingDataSets.txt"><strong>https://www.aholdengouveia.name/AdvData/labs/SwitchingDataSets.txt</strong></a></p>
 
 </section>
 

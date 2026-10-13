@@ -1,0 +1,43 @@
+SAMPLE DOCUMENTATION CHANGE LOG
+===============================
+This shows the FORMAT to follow, using my book data as the EXAMPLE ONLY.
+
+A change log goes near the start of your documentation, so anyone can
+see what changed, when, and who to ask about it. The newest entry goes
+at the top.
+
+Your change log starts with just ONE entry, version 1.0. The other
+entries below show what it looks like after a few updates over the term.
+
+How to number versions:
+  - Small change, such as fixing a note or adding a query: 1.0 to 1.1
+  - Big change, such as adding or removing a table: 1.1 to 2.0
+
+
+CHANGE LOG
+------------------------------------------------------------------
+Version  Date        What changed                          Who
+------------------------------------------------------------------
+2.0      2026-03-10  Added the formats table to the        Your Name
+                     schema and data dictionary.
+                     bookFormat is now a foreign key that
+                     points to it.
+
+1.1      2026-02-24  Data dictionary: price notes now      Your Name
+                     say that an empty price means
+                     unknown, not free. The store manager
+                     asked about this.
+
+1.0      2026-02-17  First version. Includes getting       Your Name
+                     started, schema and rules, data
+                     dictionary, backup plan, tracking
+                     changes, and common queries.
+------------------------------------------------------------------
+
+
+TIPS
+- "What changed" should be specific enough that someone could find the
+  change. "Updated the documentation" doesn't help anyone.
+- If you changed something because someone asked, say who. It explains
+  why the change was made.
+- Never delete old entries. The history is the point.

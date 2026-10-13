@@ -1,0 +1,65 @@
+SAMPLE DATA CARD
+================
+This shows the FORMAT to follow, using my book data as the EXAMPLE ONLY.
+You can't choose a data set about books, since books are my example.
+Make one data card for each of your 3 data sets, with your own details.
+
+
+Name:            Best Books Ever (Goodreads)
+Source / URL:    https://zenodo.org/records/4265096
+Creator / owner: Lorena Casanova Lozano and Sergio Costa Planells (UOC)
+
+License:         Creative Commons Attribution Non Commercial 4.0 (CC BY-NC 4.0)
+Commercial use?  No. Non-commercial use only. A company would need
+                 permission from the creators to use this data to make money.
+
+Published:       2020-11-09 (version 1.0.0)
+Updated how often? Never. It's a one-time snapshot of the Goodreads list.
+
+Format:          CSV
+Size:            52,478 rows, 25 columns, 73.8 MB
+                 (I'm using a 99-row sample, 100bestbooks.csv)
+
+Key columns and data types:
+  bookId        text
+  title         text
+  author        text
+  rating        decimal number (0 to 5)
+  pages         whole number
+  publishDate   date, stored as text in MM/DD/YY format
+  genres        a list, stored as text
+  price         decimal number
+
+Missing values (in my 99-row sample):
+  series             59 of 99 missing (60%)
+  edition            56 of 99 missing (57%)
+  price              31 of 99 missing (31%)
+  firstPublishDate    7 of 99 missing (7%)
+  All other columns are complete.
+
+Quality notes:
+  - Lists (genres, characters, awards) are stored as text, so they will
+    need to be split up before they can go in their own tables.
+  - Dates use two-digit years, so 09/14/08 could be 1908 or 2008.
+  - Many books have no price.
+  - The data is from 2020 and won't change, so newer books are missing.
+
+Pros:
+  - Large, and the 25 columns give a lot to work with
+  - A clear source, with named creators and a DOI
+Cons:
+  - Non-commercial license
+  - Several columns with lots of missing values
+  - No updates since 2020
+
+Business use:
+  Type of company:    An independent bookstore
+  Decision it helps:  Which books to stock and which to feature in the store
+
+
+TIPS
+- Check the license first. If a company can't legally use the data,
+  that's a big con, even if everything else about it is great.
+- Count missing values for the columns you care about most, not just
+  the first few.
+- Write the quality notes for the next person who uses this data.

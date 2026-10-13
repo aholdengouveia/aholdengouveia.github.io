@@ -1,0 +1,93 @@
+SAMPLE NOSQL DOCUMENTS
+======================
+This shows the FORMAT to follow, using my book data as the EXAMPLE ONLY.
+Your documents must come from YOUR own data set.
+
+Copy from this text file, not from the PDF. Quote marks copied from a
+PDF often turn into curly quotes, and MongoDB won't accept them.
+
+
+HOW TO USE MONGO PLAYGROUND
+1. Go to https://mongoplayground.net/
+2. Paste your documents into the Database box (on the left).
+3. Type a query into the Query box, then select Run.
+4. Your results show in the Result box.
+
+
+------------------------------------------------------------------
+PASTE THIS INTO THE DATABASE BOX
+------------------------------------------------------------------
+[
+  {
+    "type": "book",
+    "title": "Dune",
+    "author": { "name": "Frank Herbert" },
+    "genres": ["Science Fiction", "Fiction", "Fantasy", "Classics"],
+    "rating": 4.23,
+    "pages": 661,
+    "format": "Hardcover",
+    "series": "Dune #1"
+  },
+  {
+    "type": "book",
+    "title": "The Hunger Games",
+    "author": { "name": "Suzanne Collins" },
+    "genres": ["Young Adult", "Fiction", "Dystopia", "Fantasy"],
+    "rating": 4.33,
+    "pages": 374,
+    "format": "Hardcover",
+    "series": "The Hunger Games #1"
+  },
+  {
+    "type": "review",
+    "book_title": "Dune",
+    "stars": 5,
+    "reviewer_first_name": "Sam",
+    "text": "Slow start, but the world building is worth it."
+  }
+]
+
+What to notice:
+- author is NESTED inside each book, instead of being in its own table.
+- genres is a LIST, so one book can have many genres in one place.
+- The review has completely different fields from the books. That's
+  fine in a document database, but it would need its own table in a
+  relational database. (This review is made up for the example. It's
+  the kind of new data from my data collection plan.)
+- The "type" field says what kind of document each one is.
+
+
+------------------------------------------------------------------
+QUERIES TO TRY IN THE QUERY BOX
+------------------------------------------------------------------
+Everything:
+  db.collection.find()
+
+Only the reviews:
+  db.collection.find({ "type": "review" })
+
+Books with Fantasy in their list of genres:
+  db.collection.find({ "genres": "Fantasy" })
+
+Books rated higher than 4.3 ($gt means "greater than"):
+  db.collection.find({ "rating": { "$gt": 4.3 } })
+
+Books by one author (a dot reaches inside a nested document):
+  db.collection.find({ "author.name": "Frank Herbert" })
+
+
+What I'd write in my comparison:
+- Easier: all of a book's genres are in one place, so I don't need a
+  genres table and a join to see them.
+- Harder: if an author's name changes, I have to update it in every one
+  of their books, because the name is copied into each document. In my
+  relational database, it's stored once in the authors table.
+
+
+TIPS
+- Every { needs a matching }, and every [ needs a matching ].
+- Put a comma between documents and between fields, but not after the
+  last one.
+- Text goes in double quotes. Numbers don't.
+- If the playground shows an error, check the line it mentions for a
+  missing comma or quote mark.
