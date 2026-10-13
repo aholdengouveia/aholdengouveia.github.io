@@ -27,7 +27,6 @@
 \setlist{nosep}
 
 
-
 \title{Shared Team Folders}
 \author{
         Adrianna Holden-Gouveia \\
@@ -59,13 +58,23 @@ Link: \href{https://aholdengouveia.name/LinuxAdmin/labexcercises/permissions.htm
 
 The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.
 
-\section*{Objectives:}
-\begin{itemize}
-    \item The objective of this lab is to give students practice with Linux file and directory permissions. Students will set ownership and permissions for shared team folders, test access as different users, and explain permissions in both octal and rwx form. Getting permissions right is a core part of keeping a server secure.
-\end{itemize}
+
+\section*{Ticket}
+\noindent\textbf{Ticket:} ACME-3192\\
+\textbf{Requested by:} Marketing and Development teams\\
+\textbf{Systems:} Both report servers
 
 \section*{Background}
 The Marketing and Development teams each need a shared folder. Each team should be able to work in its own folder, Development needs to read Marketing's files but not change them, and nobody else should get in. You will be working on the two servers you set up in the Server Setup lab: your Red Hat based server and your second server.
+
+\section*{Learning Outcomes}
+By the end of this lab, you will be able to:
+\begin{itemize}
+    \item Set file and directory ownership and permissions so each team gets the access it needs
+    \item Configure shared folders, including group inheritance, hidden files, and symbolic links
+    \item Test access as different users, and explain permissions in both octal and rwx form
+    \item Find world-writable files and decide whether each one is safe
+\end{itemize}
 
 \section*{Requirements}
 \begin{enumerate}

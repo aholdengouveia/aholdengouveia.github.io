@@ -27,7 +27,6 @@
 \setlist{nosep}
 
 
-
 \title{IP Tables}
 \author{
         Adrianna Holden-Gouveia \\
@@ -59,13 +58,23 @@ Link: \href{https://aholdengouveia.name/LinuxAdmin/labexcercises/iptables.html}{
 
 The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.
 
-\section*{Objectives:}
-\begin{itemize}
-    \item The objective of this lab is to introduce students to iptables, Linux's built-in firewall and packet filtering system. Students will configure firewall rules for common services, control network traffic through ports and forwarding, allow or block specific hosts, and plan defenses against attacks such as DDoS. These are core skills for securing Linux servers in production.
-\end{itemize}
+
+\section*{Ticket}
+\noindent\textbf{Ticket:} ACME-7219\\
+\textbf{Requested by:} Security team\\
+\textbf{Systems:} Both report servers
 
 \section*{Background}
 Acme Corp's two report servers are going into production. Before they do, Security needs firewall rules in place for the services they run. You will be working on the two servers you set up in the Server Setup lab: your Red Hat based server and your second server.
+
+\section*{Learning Outcomes}
+By the end of this lab, you will be able to:
+\begin{itemize}
+    \item Configure iptables rules to allow, block, and forward traffic for common services
+    \item Allow or block specific hosts and MAC addresses
+    \item Implement and test a defense that reduces the impact of a DDoS attack
+    \item Prove that firewall rules work, and document every change
+\end{itemize}
 
 \section*{Requirements}
 On both servers, write iptables commands, statements, or scripts to do the following:

@@ -27,7 +27,6 @@
 \setlist{nosep}
 
 
-
 \title{Scripting for Server Security Part 2}
 \author{
         Adrianna Holden-Gouveia \\
@@ -59,13 +58,22 @@ Link: \href{https://aholdengouveia.name/LinuxAdmin/labexcercises/securitypt2.htm
 
 The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.
 
-\section*{Objectives:}
-\begin{itemize}
-    \item The objective of this lab is to develop students' troubleshooting skills and security automation. Students will diagnose and fix deliberately broken servers, turn their troubleshooting process into a script, schedule that script with cron, and learn how to boot into emergency mode. These skills are essential for keeping Linux servers running reliably.
-\end{itemize}
+
+\section*{Ticket}
+\noindent\textbf{Ticket:} ACME-6390\\
+\textbf{Requested by:} Monitoring alert (on-call)\\
+\textbf{Systems:} Both report servers
 
 \section*{Background}
 Something has gone wrong on Acme Corp's report servers, and you're on call. A script has broken each server in some way. Your job is to find out what happened, fix it, and make sure the team can catch the problem faster next time. Think of it like a puzzle or mystery. The script picks one of several problems at random, so your servers may not have the same issue as your classmates' servers, or even as each other. You will be working on the two servers you set up in the Server Setup lab: your Red Hat based server and your second server.
+
+\section*{Learning Outcomes}
+By the end of this lab, you will be able to:
+\begin{itemize}
+    \item Diagnose and fix server problems using a systematic troubleshooting process
+    \item Turn a troubleshooting process into a script, and schedule it with cron
+    \item Boot a server into emergency mode, and explain when you would need to
+\end{itemize}
 
 \section*{Requirements}
 \textbf{Before you start:} I STRONGLY recommend that you make a backup copy of your virtual machines before running the script or doing any troubleshooting.  It is very easy for things to go wrong and have to start over.

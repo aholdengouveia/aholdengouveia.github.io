@@ -27,7 +27,6 @@
 \setlist{nosep}
 
 
-
 \title{Snapshots and Infrastructure as Code}
 \author{
         Adrianna Holden-Gouveia \\
@@ -59,13 +58,23 @@ Link: \href{https://aholdengouveia.name/LinuxAdmin/labexcercises/virtualization.
 
 The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.
 
-\section*{Objectives:}
-\begin{itemize}
-    \item The objective of this lab is to introduce students to the recovery advantages of virtualization and to Infrastructure as Code. Students will use snapshots to recover a server, write an Ansible playbook to configure a server automatically, and recommend whether Acme Corp should adopt these practices.
-\end{itemize}
+
+\section*{Ticket}
+\noindent\textbf{Ticket:} ACME-5276\\
+\textbf{Requested by:} IT Manager\\
+\textbf{Systems:} Both report servers
 
 \section*{Background}
 Acme Corp wants faster recovery and fewer hand-built servers. Your manager has asked for two things: proof that snapshots can save you, and a first try at configuring a server with code. You will be working on the two servers you set up in the Server Setup lab: your Red Hat based server and your second server.
+
+\section*{Learning Outcomes}
+By the end of this lab, you will be able to:
+\begin{itemize}
+    \item Use snapshots to recover a server, and compare snapshots with backups
+    \item Write an Ansible playbook that configures a server automatically
+    \item Explain idempotence using the results of your playbook runs
+    \item Recommend whether a business should adopt Infrastructure as Code
+\end{itemize}
 
 \section*{Requirements}
 \begin{enumerate}
