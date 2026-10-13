@@ -10,11 +10,11 @@
 \hypersetup{
     colorlinks=false,
     pdfborder={0 0 0},
-    pdftitle={Lab Template},
+    pdftitle={File Compression and Archives Lab},
     pdfauthor={Adrianna Holden-Gouveia},
     pdfsubject={Introduction to Linux - Lab Assignment},
     pdflang={en-US},
-    pdfkeywords={lab assignment, template}
+    pdfkeywords={compression, archives, tar, gzip}
 }
 
 % Configure PDF bookmarks for navigation
@@ -27,8 +27,7 @@
 \setlist{nosep}
 
 
-
-\title{Lab Template}
+\title{File Compression and Archives}
 \author{
         Adrianna Holden-Gouveia \\
         Website: \href{https://aholdengouveia.name}{aholdengouveia.name}\\ 
@@ -59,29 +58,65 @@ The HTML version provides enhanced accessibility features including keyboard nav
 %\end{abstract}
 %\tableofcontents
 
-\section*{Objectives:}
+\section*{Learning Outcomes}
+By the end of this lab, you will be able to:
 \begin{itemize}
-    \item Objective 1
-    \item Objective 2
+    \item Explain the difference between an archive and a compressed file
+    \item Create, list, and extract tar archives
+    \item Compress and decompress files using gzip
+    \item Compare file sizes before and after compression
 \end{itemize}
-\section*{Complete the following problems}
 
-References, a video, a PowerPoint and some notes are available at my website
-Link: \href{https://www.aholdengouveia.name}{\textbf{\nolinkurl{https://www.aholdengouveia.name}}}
+\section*{Lab Instructions}
+In this lab you will bundle files into an archive, compress them, and compare the results. You can do this on any Linux system.
 
-\subsection*{Please include}
+\subsection*{How to set up for this lab}
+\begin{itemize}
+    \item Create a directory for this lab, and put at least 5 files in it.
+    \item Put some text in each file, so there is something to compress.
+    \item Include at least one larger file. For example, copy /etc/services into your lab directory.
+\end{itemize}
+
+\subsection*{Problems to solve}
     \begin{enumerate}
-        \item 1
-        \item 2
-        \item 3
-        \item 4
-        \item 
-
-
+        \item In your own words, what is the difference between an archive (such as a tar file) and a compressed file (such as a gzip file)?
+        \item Archives
+        \begin{enumerate}
+            \item Use tar to create an archive of your lab directory. Take a screenshot.
+            \item List the contents of your archive without extracting it. Take a screenshot.
+            \item Make a new directory and extract your archive into it. Use ls to show the files are there. Take a screenshot.
+        \end{enumerate}
+        \item Compression
+        \begin{enumerate}
+            \item Use ls -l to check the size of your larger file.
+            \item Compress it with gzip, then check the size again. How much smaller is it? Take a screenshot.
+            \item Decompress it with gunzip. Take a screenshot.
+        \end{enumerate}
+        \item Archive and compress in one step
+        \begin{enumerate}
+            \item Use tar to create a compressed archive (.tar.gz) of your lab directory. Take a screenshot.
+            \item Use ls -l to compare the sizes of your .tar and .tar.gz files. Which is smaller, and by how much? Take a screenshot.
+            \item Extract your .tar.gz into a new directory. Take a screenshot.
+        \end{enumerate}
+        \item Give one example of when you would use an archive, one example of when you would use compression, and one example of when you would use both.
     \end{enumerate}
 
-
-
 \section*{Deliverables}
-A text document 
+One file with the lab title, your name, and the date at the top.
+\begin{itemize}
+    \item Each answer should be numbered to match the question.
+    \item Make sure to list each command and the result.
+    \item Make sure to take a screenshot of each successful command, labeled with which problem it solved. Your screenshots must show your prompt with your username, or a note with your name and the term.
+\end{itemize}
+
+\section*{Resources}
+References, a video, a PowerPoint and some notes are available at my website
+Link: \href{https://www.aholdengouveia.name/IntroLinux/compressionarchive.html}{\textbf{\nolinkurl{https://www.aholdengouveia.name/IntroLinux/compressionarchive.html}}}
+
+My FAQ Linux playlist on YouTube, with demos of many of the commands and scripts in this class
+Link: \href{https://www.youtube.com/playlist?list=PLQOmuLC45eoQlIMH7oCNL6yFP7kWQubBo}{\textbf{\nolinkurl{https://www.youtube.com/playlist?list=PLQOmuLC45eoQlIMH7oCNL6yFP7kWQubBo}}}
+
+My video on how to use tar
+Link: \href{https://www.youtube.com/watch?v=x0EK6PmKRCU}{\textbf{\nolinkurl{https://www.youtube.com/watch?v=x0EK6PmKRCU}}}
+
 \end{document}

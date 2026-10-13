@@ -4,6 +4,8 @@
 \usepackage{hyperxmp}
 \usepackage{hyperref}
 \usepackage{xurl}
+\usepackage{graphicx}
+\usepackage{float}
 \usepackage[tagged, highstructure]{accessibility}
 \usepackage{bookmark}
 \usepackage{enumitem}
@@ -28,7 +30,6 @@
 
 % Configure list spacing for better accessibility
 \setlist{nosep}
-
 
 
 \title{Alias and prompts}
@@ -62,54 +63,68 @@ The HTML version provides enhanced accessibility features including keyboard nav
 %\end{abstract}
 %\tableofcontents
 
-\section*{Objectives:}
+\section*{Learning Outcomes}
+By the end of this lab, you will be able to:
 \begin{itemize}
-    \item  Objective: Learn how to create and use an Alias.  Learn how to modify your command prompt to display helpful information. 
+    \item Look up, create, and use aliases, and explain how to make an alias permanent
+    \item Identify your shell and the files that set up your environment, such as \nolinkurl{.bash_profile}
+    \item Modify your command prompt using environment variables, and restore it after it has been unset
 \end{itemize}
-\section*{Complete the following problems}
-
-Adrianna's video on how to use tar Link: \href{https://youtu.be/x0EK6PmKRCU}{\textbf{\nolinkurl{https://youtu.be/x0EK6PmKRCU}}}  
-
-
-References, a video, a PowerPoint and some notes are available at my website
-Link: \href{https://www.aholdengouveia.name/IntroLinux/aliasesandothers.html}{\textbf{\nolinkurl{https://www.aholdengouveia.name/IntroLinux/aliasesandothers.html}}}
+\section*{Lab Instructions}
 
 \subsection*{Aliases}
- Reference: Link: \href{http://linuxreviews.org/quicktips/alias/}{\textbf{\nolinkurl{http://linuxreviews.org/quicktips/alias/}}}
-
+Reference: Link: \href{https://linuxreviews.org/HOWTO_make_aliases_for_frequently_used_commands}{\textbf{\nolinkurl{https://linuxreviews.org/HOWTO_make_aliases_for_frequently_used_commands}}}
     \begin{enumerate}
-        \item For this part we are going to create and alias that will untar a tarball easily.
+        \item For this part we are going to create an alias that will untar a tarball easily.
             \begin{enumerate}
-                \item Look up the man file on Aliases, take a screenshot.
-                \item Create an alias called untar that will run the command tar -xvf  take a screenshot.
-                \item Create a tarball of your folders. take a screenshot.
-                \item Run untar on that tarball. What happened? take a screenshot.
+                \item Look up alias by running help alias. Take a screenshot.
+                \item Create an alias called untar that will run the command tar -xvf. Take a screenshot.
+                \item Create a tarball of your folders (my video on how to use tar is linked under Resources). Take a screenshot.
+                \item Run untar on that tarball. What happened? Take a screenshot.
                 \item How would you make this a permanent addition to your bash profile? (Don't make it permanent, just tell me how you would do it)
             \end{enumerate}
-        \item Pick one command that you use all the time, create and alias for it. Tell me what the command is, why you chose is and what you called your alias.  take a screenshot.
-        \item The answers to all the questions should be put in a file called Aliases
+        \item Pick one command that you use all the time, and create an alias for it. Tell me what the command is, why you chose it, and what you called your alias. Take a screenshot.
     \end{enumerate}
 
 \subsection*{Environment variables}
-
 This part of the lab is about changing your command prompt. We will be using Environmental Variables to do this.
 
+References:
 
- Reference: 
- Link: \href{http://maketecheasier.com/8-useful-and-interesting-bash-prompts/2009/09/04}{\textbf{\nolinkurl{http://maketecheasier.com/8-useful-and-interesting-bash-prompts/2009/09/04}}}
+Link: \href{https://www.maketecheasier.com/8-useful-and-interesting-bash-prompts/}{\textbf{\nolinkurl{https://www.maketecheasier.com/8-useful-and-interesting-bash-prompts/}}}
 
-Link: \href{https://www.maketecheasier.com/more-useful-and-interesting-bash-prompts/}{\textbf{\nolinkurl{https://www.maketecheasier.com/more-useful-and-interesting-bash-prompts/}}}
-
+Link: \href{https://wiki.archlinux.org/title/Bash/Prompt_customization}{\textbf{\nolinkurl{https://wiki.archlinux.org/title/Bash/Prompt_customization}}}
     \begin{enumerate}
-        \item Run the command echo \$SHELL What happened?  take a screenshot.
-        \item To do this you need to change the variable PS1 and reset it to your desired prompt. Reset this to your full first name. Take a screenshot to pass in
-        \item What does your \nolinkurl{.bash_profile} or .profile say?  take a screenshot.
+        \item Run the command echo \$SHELL. What happened? Take a screenshot.
+        \item To do this you need to change the variable PS1 and reset it to your desired prompt. Reset this to your full first name. Take a screenshot to pass in.
+        \item What does your \nolinkurl{.bash_profile} or .profile say? Take a screenshot.
         \item Go to the man file on Bash. You should be able to find options for your prompt. Try adding in the current time option, any of the 4 choices are fine.
-        \item Run the command unset PS1 What happened? How did you fix it?  take a screenshot.
-        \item Go to the second reference link, read through it and make a command prompt that you think will be most useful to you. What did you do? Take a screenshot.
-        \item The answers to all the questions should be put in a file called EnvironmentVariables
+        \item Run the command unset PS1. What happened? How did you fix it? Take a screenshot.
+        \item Go to the Arch Wiki page on prompt customization (linked above), read through it and make a command prompt that you think will be most useful to you. What did you do? Take a screenshot.
     \end{enumerate}
 
 \section*{Deliverables}
-Two files should be submitted, both should have your name, date and lab title on them. Include screenshots of each of your successful commands and prompt changes.  Make sure to clearly label any screenshots and answers so it's clear what you're solving.
+One file should be submitted, with your name, date and lab title on it. It should have two clearly labeled sections:
+\begin{itemize}
+    \item Aliases: your answers to the Aliases questions.
+    \item Environment variables: your answers to the Environment variables questions.
+\end{itemize}
+Include screenshots of each of your successful commands and prompt changes.  Make sure to clearly label any screenshots and answers so it's clear what you're solving. Since your prompt will change during this lab, every screenshot must include a note with your name and the term. This is an example of what it should look like:
+
+\begin{figure}[H]
+    \centerline{\includegraphics[scale=.2]{ExampleScreenshot.png}}
+    \caption{This is an image of what each of your screenshots should look like}
+    \alt{Example screenshot: a web browser showing the Google home page, with a small text editor window in front of it that says YOUR NAME HERE and TERM YEAR}
+    \end{figure}
+
+\section*{Resources}
+References, a video, a PowerPoint and some notes are available at my website
+Link: \href{https://www.aholdengouveia.name/IntroLinux/aliasesandothers.html}{\textbf{\nolinkurl{https://www.aholdengouveia.name/IntroLinux/aliasesandothers.html}}}
+
+My FAQ Linux playlist on YouTube, with demos of many of the commands and scripts in this class
+Link: \href{https://www.youtube.com/playlist?list=PLQOmuLC45eoQlIMH7oCNL6yFP7kWQubBo}{\textbf{\nolinkurl{https://www.youtube.com/playlist?list=PLQOmuLC45eoQlIMH7oCNL6yFP7kWQubBo}}}
+
+My video on how to use tar
+Link: \href{https://www.youtube.com/watch?v=x0EK6PmKRCU}{\textbf{\nolinkurl{https://www.youtube.com/watch?v=x0EK6PmKRCU}}}
+
 \end{document}

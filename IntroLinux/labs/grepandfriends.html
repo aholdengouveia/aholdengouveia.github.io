@@ -36,9 +36,10 @@
             <h2>On this page:</h2>
             <ul>
                 <li><a href="#accessibility-notice">Accessibility Notice</a></li>
-                <li><a href="#objectives">Objectives:</a></li>
-                <li><a href="#complete-the-following-problems">Complete the following problems</a></li>
+                <li><a href="#learning-outcomes">Learning Outcomes</a></li>
+                <li><a href="#lab-instructions">Lab Instructions</a></li>
                 <li><a href="#deliverables">Deliverables</a></li>
+                <li><a href="#resources">Resources</a></li>
             </ul>
         </nav>
 
@@ -52,30 +53,28 @@
 
 </section>
 
-<section role="region" aria-labelledby="objectives">
-<h2 id="objectives">Objectives:</h2>
+<section role="region" aria-labelledby="learning-outcomes">
+<h2 id="learning-outcomes">Learning Outcomes</h2>
+<p>By the end of this lab, you will be able to:</p>
+
 <ul>
-<li>Learn to use grep to filter text (locate lines with a specific text)</li>
-<li>Use head, tail, and less to display a text file</li>
+<li>Use grep to find lines that contain specific text</li>
+<li>Use grep switches to number, count, and exclude matching lines</li>
+<li>Display all or part of a file in different ways using head, tail, less, more, and od</li>
+<li>Use redirection to save output to a file and to append to it</li>
 </ul>
 
 </section>
 
-<section role="region" aria-labelledby="complete-the-following-problems">
-<h2 id="complete-the-following-problems">Complete the following problems</h2>
-<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name/IntroLinux/grepandfriends.html"><strong>https://www.aholdengouveia.name/IntroLinux/grepandfriends.html</strong></a></p>
-
+<section role="region" aria-labelledby="lab-instructions">
+<h2 id="lab-instructions">Lab Instructions</h2>
 <p>We will use the /etc/passwd file for our example text file.</p>
-
-<p>If you would like to see some examples of what else you can do with grep I have a video on my Linux FAQ playlist on grep, it's called Grep: re-GREPable, ohh so re-GREPable... and can be found at this URL Link: <a href="https://www.youtube.com/embed/Iif-DjWYoWY"><strong>https://www.youtube.com/embed/Iif-DjWYoWY</strong></a></p>
 
 <p>Grep can be used in many ways, but the two ways we'll work with are using a pipe or just passing arguments.</p>
 
-<p>Basic form: \\ !cat /etc/passwd | grep pattern! \\ or \\ |grep pattern file| \\ or with a switch like -n \\ |grep -n pattern file|</p>
+<p>Basic form: <br> <code>cat /etc/passwd | grep pattern</code> <br> or <br> <code>grep pattern file</code> <br> or with a switch like -n <br> <code>grep -n pattern file</code></p>
 
-<p>Use man (or the text) to see what switches are available.</p>
-
-<p>The lab submission will be the command and the output in a text file</p>
+<p>Use man (or the textbook) to see what switches are available.</p>
 
 </section>
 
@@ -83,7 +82,7 @@
 <h2 id="problems-to-solve">Problems to solve</h2>
 <ol>
 <li>Find lines with your name</li>
-<li>Find lines with the name of your teacher (aholdengouveia)</li>
+<li>Find lines with the name of your teacher (aholdengouveia). This one must be done on the CIS server, using the login information you were given.</li>
 <li>Find any lines containing daemon</li>
 <li>Use the -n switch to display the number of the line, and find nologin</li>
 <li>Use the -c switch to count how many times daemon shows up</li>
@@ -95,15 +94,25 @@
 <li>Display the last 20</li>
 <li>Use both more and less to display /etc/passwd</li>
 <li>Use od /etc/passwd | more (to display only one page)</li>
-<li>use the redirect to send the first 10 lines of the /etc/passwd file to a file called file1</li>
-<li>Append the last ten lines of /etc/passwd to file1</li>
+<li>Use the redirect to send the first 10 lines of the /etc/passwd file to a file called file1</li>
+<li>Append the last ten lines of /etc/passwd to file1, then show the contents of file1</li>
 </ol>
 
 </section>
 
 <section role="region" aria-labelledby="deliverables">
 <h2 id="deliverables">Deliverables</h2>
-<p>Turn in one file that includes all answers as text and screenshots for all 15 questions. All clearly labeled and numbered with which question your answer is for. Make sure to include screenshots for each answer, each screenshot should be clearly focused on the solution to the question asked.</p>
+<p>Turn in one file that includes all answers as text and screenshots for all 15 questions. All clearly labeled and numbered with which question your answer is for. Make sure to include screenshots for each answer, each screenshot should be clearly focused on the solution to the question asked. Your screenshots must show your prompt with your username, or a note with your name and the term.</p>
+
+</section>
+
+<section role="region" aria-labelledby="resources">
+<h2 id="resources">Resources</h2>
+<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name/IntroLinux/grepandfriends.html"><strong>https://www.aholdengouveia.name/IntroLinux/grepandfriends.html</strong></a></p>
+
+<p>My FAQ Linux playlist on YouTube, with demos of many of the commands and scripts in this class Link: <a href="https://www.youtube.com/playlist?list=PLQOmuLC45eoQlIMH7oCNL6yFP7kWQubBo"><strong>https://www.youtube.com/playlist?list=PLQOmuLC45eoQlIMH7oCNL6yFP7kWQubBo</strong></a></p>
+
+<p>My video with more examples of what you can do with grep, Grep: re-GREPable, ohh so re-GREPable... Link: <a href="https://www.youtube.com/watch?v=Iif-DjWYoWY"><strong>https://www.youtube.com/watch?v=Iif-DjWYoWY</strong></a></p>
 
 </section>
 

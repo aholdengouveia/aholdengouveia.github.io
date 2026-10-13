@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lab Template</title>
+    <title>File Compression and Archives</title>
     <link href="../../css/accessible-lab.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <header role="banner">
-        <h1>Lab Template</h1>
+        <h1>File Compression and Archives</h1>
         <div class="author">
             <p>Adrianna Holden-Gouveia</p>
             <p>Website: <a href="https://aholdengouveia.name">https://aholdengouveia.name</a></p>
@@ -21,7 +21,7 @@
             <ol class="breadcrumb">
                 <li><a href="/">Home</a></li>
                 <li><a href="/IntroLinux/">Introduction to Linux</a></li>
-                <li aria-current="page">Lab Template</li>
+                <li aria-current="page">File Compression and Archives</li>
             </ol>
         </nav>
 
@@ -36,9 +36,10 @@
             <h2>On this page:</h2>
             <ul>
                 <li><a href="#accessibility-notice">Accessibility Notice</a></li>
-                <li><a href="#objectives">Objectives:</a></li>
-                <li><a href="#complete-the-following-problems">Complete the following problems</a></li>
+                <li><a href="#learning-outcomes">Learning Outcomes</a></li>
+                <li><a href="#lab-instructions">Lab Instructions</a></li>
                 <li><a href="#deliverables">Deliverables</a></li>
+                <li><a href="#resources">Resources</a></li>
             </ul>
         </nav>
 
@@ -52,36 +53,84 @@
 
 </section>
 
-<section role="region" aria-labelledby="objectives">
-<h2 id="objectives">Objectives:</h2>
+<section role="region" aria-labelledby="learning-outcomes">
+<h2 id="learning-outcomes">Learning Outcomes</h2>
+<p>By the end of this lab, you will be able to:</p>
+
 <ul>
-<li>Objective 1</li>
-<li>Objective 2</li>
+<li>Explain the difference between an archive and a compressed file</li>
+<li>Create, list, and extract tar archives</li>
+<li>Compress and decompress files using gzip</li>
+<li>Compare file sizes before and after compression</li>
 </ul>
 
 </section>
 
-<section role="region" aria-labelledby="complete-the-following-problems">
-<h2 id="complete-the-following-problems">Complete the following problems</h2>
-<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name"><strong>https://www.aholdengouveia.name</strong></a></p>
+<section role="region" aria-labelledby="lab-instructions">
+<h2 id="lab-instructions">Lab Instructions</h2>
+<p>In this lab you will bundle files into an archive, compress them, and compare the results. You can do this on any Linux system.</p>
 
 </section>
 
-<section role="region" aria-labelledby="please-include">
-<h2 id="please-include">Please include</h2>
+<section role="region" aria-labelledby="how-to-set-up-for-this-lab">
+<h2 id="how-to-set-up-for-this-lab">How to set up for this lab</h2>
+<ul>
+<li>Create a directory for this lab, and put at least 5 files in it.</li>
+<li>Put some text in each file, so there is something to compress.</li>
+<li>Include at least one larger file. For example, copy /etc/services into your lab directory.</li>
+</ul>
+
+</section>
+
+<section role="region" aria-labelledby="problems-to-solve">
+<h2 id="problems-to-solve">Problems to solve</h2>
 <ol>
-<li>1</li>
-<li>2</li>
-<li>3</li>
-<li>4</li>
-<li></li>
+<li>In your own words, what is the difference between an archive (such as a tar file) and a compressed file (such as a gzip file)?</li>
+<li>Archives
+<ol type="a">
+<li>Use tar to create an archive of your lab directory. Take a screenshot.</li>
+<li>List the contents of your archive without extracting it. Take a screenshot.</li>
+<li>Make a new directory and extract your archive into it. Use ls to show the files are there. Take a screenshot.</li>
+</ol>
+</li>
+<li>Compression
+<ol type="a">
+<li>Use ls -l to check the size of your larger file.</li>
+<li>Compress it with gzip, then check the size again. How much smaller is it? Take a screenshot.</li>
+<li>Decompress it with gunzip. Take a screenshot.</li>
+</ol>
+</li>
+<li>Archive and compress in one step
+<ol type="a">
+<li>Use tar to create a compressed archive (.tar.gz) of your lab directory. Take a screenshot.</li>
+<li>Use ls -l to compare the sizes of your .tar and .tar.gz files. Which is smaller, and by how much? Take a screenshot.</li>
+<li>Extract your .tar.gz into a new directory. Take a screenshot.</li>
+</ol>
+</li>
+<li>Give one example of when you would use an archive, one example of when you would use compression, and one example of when you would use both.</li>
 </ol>
 
 </section>
 
 <section role="region" aria-labelledby="deliverables">
 <h2 id="deliverables">Deliverables</h2>
-<p>A text document</p>
+<p>One file with the lab title, your name, and the date at the top.</p>
+
+<ul>
+<li>Each answer should be numbered to match the question.</li>
+<li>Make sure to list each command and the result.</li>
+<li>Make sure to take a screenshot of each successful command, labeled with which problem it solved. Your screenshots must show your prompt with your username, or a note with your name and the term.</li>
+</ul>
+
+</section>
+
+<section role="region" aria-labelledby="resources">
+<h2 id="resources">Resources</h2>
+<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name/IntroLinux/compressionarchive.html"><strong>https://www.aholdengouveia.name/IntroLinux/compressionarchive.html</strong></a></p>
+
+<p>My FAQ Linux playlist on YouTube, with demos of many of the commands and scripts in this class Link: <a href="https://www.youtube.com/playlist?list=PLQOmuLC45eoQlIMH7oCNL6yFP7kWQubBo"><strong>https://www.youtube.com/playlist?list=PLQOmuLC45eoQlIMH7oCNL6yFP7kWQubBo</strong></a></p>
+
+<p>My video on how to use tar Link: <a href="https://www.youtube.com/watch?v=x0EK6PmKRCU"><strong>https://www.youtube.com/watch?v=x0EK6PmKRCU</strong></a></p>
 
 </section>
 
