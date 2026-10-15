@@ -10,11 +10,11 @@
 \hypersetup{
     colorlinks=false,
     pdfborder={0 0 0},
-    pdftitle={Common commands,logging into a server and sharing files},
+    pdftitle={Common commands, logging into a server, and sharing files},
     pdfauthor={Adrianna Holden-Gouveia},
     pdfsubject={Introduction to Linux - Lab Assignment},
     pdflang={en-US},
-    pdfkeywords={lab assignment, Common commands,logging into a server and sharing files}
+    pdfkeywords={lab assignment, Common commands, logging into a server, and sharing files}
 }
 
 % Configure PDF bookmarks for navigation
@@ -27,8 +27,7 @@
 \setlist{nosep}
 
 
-
-\title{Common commands,logging into a server and sharing files}
+\title{Common commands, logging into a server, and sharing files}
 \author{
         Adrianna Holden-Gouveia \\
         Website: \href{https://aholdengouveia.name}{aholdengouveia.name}\\ 
@@ -59,35 +58,45 @@ The HTML version provides enhanced accessibility features including keyboard nav
 %\end{abstract}
 %\tableofcontents
 
-\section*{Objectives:}
+\section*{Learning Outcomes}
+By the end of this lab, you will be able to:
 \begin{itemize}
-    \item Demonstrate logging on, moving files to and from the local system to the server
+    \item Connect to the CIS server and log in using SSH
+    \item Create files and directories on the server using touch and mkdir
+    \item Transfer files between your computer and the server
+    \item View files and directories using ls and cat
 \end{itemize}
-\section*{Complete the following problems}
+\section*{Lab Instructions}
 
-References, a video, a PowerPoint and some notes are available at my website
-Link: \href{https://www.aholdengouveia.name/IntroLinux/commoncommands.html}{\textbf{\nolinkurl{https://www.aholdengouveia.name/IntroLinux/commoncommands.html}}}
 
-The lab report will include screen shots as evidence of completion.  
+The lab report will include screenshots as evidence of completion.  
 
-If you are my current student, Resources for the server can be found from the menu item "Server Access Information" on your LMS
-
+If you are my current student, Resources for the CIS server can be found from the menu item "Server Access Information" on your LMS
 
 
 \subsection*{Steps for the lab}
     \begin{enumerate}
-        \item Use puTTY or SSH to connect to the server (or do this on you own Linux system)  If you need help using SSH or SCP I made a video on how to do that  on my YouTube channel.  SCP?  SSH-ut the front door! Link: \href{https://youtu.be/w3yOQFZJMTo}{\textbf{\nolinkurl{https://youtu.be/w3yOQFZJMTo}}}
-        \item Login to your account (Information from Instructor posted to LMS)
+        \item Use PuTTY or SSH to connect to the CIS server. You need the CIS server for the file transfer steps in this lab. If you need help using SSH or SCP, my video on how to do that is linked under Resources.
+        \item Log in to your account (Information from Instructor posted to LMS)
         \item Test by  logging off and logging in again
-        \item Use ls and ls -a to see what is in your home directory. Make three empty files called foo1 foo2 and foo3 using touch and use ls again. Take a screen shot.
-        \item Create a sub-directory called Lab0 and cd to the subdirectory and create three more files using touch called bar1 bar2 and bar3.  Use ls and take a screen shot
-        \item Create three text files in the local system using notepad, call them localfoo1, localfoo2 and localfoo3.  Put different texts in each file. Add your name and date to the top of each file
-        \item Using WinSCP, FileZilla or other SCP client of your choice in the local system move the three localfoo files to the server. Take a screen shot.
-        \item Use ls on the server to show that the files are in the server; use cat to display one of the files and take a screen shot.
+        \item Use ls and ls -a to see what is in your home directory. Make three empty files called foo1 foo2 and foo3 using touch and use ls again. Take a screenshot.
+        \item Create a sub-directory called Lab0 and cd to the subdirectory and create three more files using touch called bar1 bar2 and bar3.  Use ls and take a screenshot
+        \item Create three text files in the local system using a text editor such as Notepad or TextEdit, call them localfoo1, localfoo2 and localfoo3.  Put different texts in each file. Add your name and date to the top of each file
+        \item Using WinSCP, FileZilla or other SCP client of your choice in the local system move the three localfoo files to the CIS server. Take a screenshot.
+        \item Use ls on the CIS server to show that the files are on the server; use cat to display one of the files and take a screenshot.
     \end{enumerate}
 
 
-
 \section*{Deliverables}
-One file should be submitted, it should have the lab title, your name and date, and include each of the screen shots with a one sentence description of what is in the screen shot.
+One file should be submitted, it should have the lab title, your name and date, and include each of the screenshots with a one sentence description of what is in the screenshot. Your screenshots must show your prompt with your username, or a note with your name and the term.
+\section*{Resources}
+References, a video, a PowerPoint and some notes are available at my website
+Link: \href{https://www.aholdengouveia.name/IntroLinux/commoncommands.html}{\textbf{\nolinkurl{https://www.aholdengouveia.name/IntroLinux/commoncommands.html}}}
+
+My FAQ Linux playlist on YouTube, with demos of many of the commands and scripts in this class
+Link: \href{https://www.youtube.com/playlist?list=PLQOmuLC45eoQlIMH7oCNL6yFP7kWQubBo}{\textbf{\nolinkurl{https://www.youtube.com/playlist?list=PLQOmuLC45eoQlIMH7oCNL6yFP7kWQubBo}}}
+
+My video on how to use SSH and SCP, SCP? SSH-ut the front door!
+Link: \href{https://www.youtube.com/watch?v=w3yOQFZJMTo}{\textbf{\nolinkurl{https://www.youtube.com/watch?v=w3yOQFZJMTo}}}
+
 \end{document}

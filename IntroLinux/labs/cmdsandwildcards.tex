@@ -27,7 +27,6 @@
 \setlist{nosep}
 
 
-
 \title{More Commands}
 \author{
         Adrianna Holden-Gouveia \\
@@ -59,39 +58,25 @@ The HTML version provides enhanced accessibility features including keyboard nav
 %\end{abstract}
 %\tableofcontents
 
-\section*{Objectives:}
+\section*{Learning Outcomes}
+By the end of this lab, you will be able to:
 \begin{itemize}
-    \item Learn to use wildcards for file pattern matching
-    \item Practice using the ls command with various wildcard patterns
-    \item Understand the difference between ls and find commands
-    \item Develop skills in efficiently locating files in Linux
+    \item Use wildcards with ls to list files that match a pattern, including hidden files
+    \item Use find to locate files
+    \item Explain the difference between ls and find for locating files
 \end{itemize}
-\section*{Complete the following problems}
+\section*{Lab Instructions}
 
-References, a video, a PowerPoint and some notes are available at my website
-Link: \href{https://www.aholdengouveia.name/IntroLinux/cmdsandwildcards.html}{\textbf{\nolinkurl{https://www.aholdengouveia.name/IntroLinux/cmdsandwildcards.html}}}
 
-\subsection*{How to setup for this lab}
-
+\subsection*{How to set up for this lab}
+We are going to create a test directory with files, and then use wildcards and find to locate them.
 \begin{itemize}
-    \item We are going to create a test directory with numerous files and then use find and wildcards to locate files.
-
-    \item Create a test subdirectory for this lab. I do NOT recommend using any spaces in the name of the files or folders.
-    \item Using touch create at least a dozen files with different names with the following characteristics:
-        \begin{enumerate}
-            \item Some start with f
-            \item Some start with F
-            \item Some start with a number
-            \item Some end with a number
-            \item Some do not have an f or F
-            \item Some do not have a number
-            \item At least one starts with a . (hidden file)
-        \end{enumerate}
-
-    \item If you're struggling to think of names, use a naming scheme such as characters from your favorite video game, or locations and characters from favorite books etc.  Make sure your files are full names of at least 5 characters, not just single letters/numbers
-    \item For each of the problems you should start with ls and then figure out the pattern needed to show the requested information, then pick 1 of them to try with find instead.  \item Demo of how to use ls is in the Linux FAQ videos Link: \href{https://youtube.com/playlist?list=PLQOmuLC45eoQlIMH7oCNL6yFP7kWQubBo&si=R1SFWzEPHDDo-VBJ}{\textbf{\nolinkurl{https://youtube.com/playlist?list=PLQOmuLC45eoQlIMH7oCNL6yFP7kWQubBo&si=R1SFWzEPHDDo-VBJ}}}
-
-    \end{itemize}
+    \item Create a test subdirectory for this lab. I do NOT recommend using any spaces in the names of files or folders.
+    \item Using touch, create at least a dozen files. Look at the problems below, and make sure you have files that match each requested pattern and files that don't, so you can see your wildcards working. Include at least one hidden file (a file name that starts with a .).
+    \item If you're struggling to think of names, use a naming scheme such as characters from your favorite video game, or locations and characters from favorite books etc.  Make sure your files are full names of at least 5 characters, not just single letters/numbers.
+    \item For each of the problems you should start with ls and then figure out the pattern needed to show the requested information, then pick 1 of them to try with find instead.
+    \item A demo of how to use ls is in my FAQ Linux playlist, linked under Resources.
+\end{itemize}
 \subsection*{Problems to solve}
 Use wildcards and the ls command to answer the following. 
     \begin{enumerate}
@@ -108,12 +93,18 @@ Use wildcards and the ls command to answer the following.
     \end{enumerate}
 
 
-
 \section*{Deliverables}
 One file that has the lab title, name and date and the answers.  
 \begin{itemize}
     \item Each problem given should be numbered to match the question
     \item Make sure to list each command and the result.  \item Make sure to take a screenshot of each successful command.  
-    \item Don't use one screenshot for everything, make sure each screenshot is labeled with which problem it solved.
+    \item Don't use one screenshot for everything, make sure each screenshot is labeled with which problem it solved. Your screenshots must show your prompt with your username, or a note with your name and the term.
 \end{itemize}
+\section*{Resources}
+References, a video, a PowerPoint and some notes are available at my website
+Link: \href{https://www.aholdengouveia.name/IntroLinux/cmdsandwildcards.html}{\textbf{\nolinkurl{https://www.aholdengouveia.name/IntroLinux/cmdsandwildcards.html}}}
+
+My FAQ Linux playlist on YouTube, with demos of many of the commands and scripts in this class
+Link: \href{https://www.youtube.com/playlist?list=PLQOmuLC45eoQlIMH7oCNL6yFP7kWQubBo}{\textbf{\nolinkurl{https://www.youtube.com/playlist?list=PLQOmuLC45eoQlIMH7oCNL6yFP7kWQubBo}}}
+
 \end{document}

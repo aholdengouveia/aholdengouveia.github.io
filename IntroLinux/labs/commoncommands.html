@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Common commands,logging into a server and sharing files</title>
+    <title>Common commands, logging into a server, and sharing files</title>
     <link href="../../css/accessible-lab.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <header role="banner">
-        <h1>Common commands,logging into a server and sharing files</h1>
+        <h1>Common commands, logging into a server, and sharing files</h1>
         <div class="author">
             <p>Adrianna Holden-Gouveia</p>
             <p>Website: <a href="https://aholdengouveia.name">https://aholdengouveia.name</a></p>
@@ -21,7 +21,7 @@
             <ol class="breadcrumb">
                 <li><a href="/">Home</a></li>
                 <li><a href="/IntroLinux/">Introduction to Linux</a></li>
-                <li aria-current="page">Common commands,logging into a server and sharing files</li>
+                <li aria-current="page">Common commands, logging into a server, and sharing files</li>
             </ol>
         </nav>
 
@@ -36,9 +36,10 @@
             <h2>On this page:</h2>
             <ul>
                 <li><a href="#accessibility-notice">Accessibility Notice</a></li>
-                <li><a href="#objectives">Objectives:</a></li>
-                <li><a href="#complete-the-following-problems">Complete the following problems</a></li>
+                <li><a href="#learning-outcomes">Learning Outcomes</a></li>
+                <li><a href="#lab-instructions">Lab Instructions</a></li>
                 <li><a href="#deliverables">Deliverables</a></li>
+                <li><a href="#resources">Resources</a></li>
             </ul>
         </nav>
 
@@ -52,42 +53,55 @@
 
 </section>
 
-<section role="region" aria-labelledby="objectives">
-<h2 id="objectives">Objectives:</h2>
+<section role="region" aria-labelledby="learning-outcomes">
+<h2 id="learning-outcomes">Learning Outcomes</h2>
+<p>By the end of this lab, you will be able to:</p>
+
 <ul>
-<li>Demonstrate logging on, moving files to and from the local system to the server</li>
+<li>Connect to the CIS server and log in using SSH</li>
+<li>Create files and directories on the server using touch and mkdir</li>
+<li>Transfer files between your computer and the server</li>
+<li>View files and directories using ls and cat</li>
 </ul>
 
 </section>
 
-<section role="region" aria-labelledby="complete-the-following-problems">
-<h2 id="complete-the-following-problems">Complete the following problems</h2>
-<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name/IntroLinux/commoncommands.html"><strong>https://www.aholdengouveia.name/IntroLinux/commoncommands.html</strong></a></p>
+<section role="region" aria-labelledby="lab-instructions">
+<h2 id="lab-instructions">Lab Instructions</h2>
+<p>The lab report will include screenshots as evidence of completion.</p>
 
-<p>The lab report will include screen shots as evidence of completion.</p>
-
-<p>If you are my current student, Resources for the server can be found from the menu item "Server Access Information" on your LMS</p>
+<p>If you are my current student, Resources for the CIS server can be found from the menu item "Server Access Information" on your LMS</p>
 
 </section>
 
 <section role="region" aria-labelledby="steps-for-the-lab">
 <h2 id="steps-for-the-lab">Steps for the lab</h2>
 <ol>
-<li>Use puTTY or SSH to connect to the server (or do this on you own Linux system) If you need help using SSH or SCP I made a video on how to do that on my YouTube channel. SCP? SSH-ut the front door! Link: <a href="https://youtu.be/w3yOQFZJMTo"><strong>https://youtu.be/w3yOQFZJMTo</strong></a></li>
-<li>Login to your account (Information from Instructor posted to LMS)</li>
+<li>Use PuTTY or SSH to connect to the CIS server. You need the CIS server for the file transfer steps in this lab. If you need help using SSH or SCP, my video on how to do that is linked under Resources.</li>
+<li>Log in to your account (Information from Instructor posted to LMS)</li>
 <li>Test by logging off and logging in again</li>
-<li>Use ls and ls -a to see what is in your home directory. Make three empty files called foo1 foo2 and foo3 using touch and use ls again. Take a screen shot.</li>
-<li>Create a sub-directory called Lab0 and cd to the subdirectory and create three more files using touch called bar1 bar2 and bar3. Use ls and take a screen shot</li>
-<li>Create three text files in the local system using notepad, call them localfoo1, localfoo2 and localfoo3. Put different texts in each file. Add your name and date to the top of each file</li>
-<li>Using WinSCP, FileZilla or other SCP client of your choice in the local system move the three localfoo files to the server. Take a screen shot.</li>
-<li>Use ls on the server to show that the files are in the server; use cat to display one of the files and take a screen shot.</li>
+<li>Use ls and ls -a to see what is in your home directory. Make three empty files called foo1 foo2 and foo3 using touch and use ls again. Take a screenshot.</li>
+<li>Create a sub-directory called Lab0 and cd to the subdirectory and create three more files using touch called bar1 bar2 and bar3. Use ls and take a screenshot</li>
+<li>Create three text files in the local system using a text editor such as Notepad or TextEdit, call them localfoo1, localfoo2 and localfoo3. Put different texts in each file. Add your name and date to the top of each file</li>
+<li>Using WinSCP, FileZilla or other SCP client of your choice in the local system move the three localfoo files to the CIS server. Take a screenshot.</li>
+<li>Use ls on the CIS server to show that the files are on the server; use cat to display one of the files and take a screenshot.</li>
 </ol>
 
 </section>
 
 <section role="region" aria-labelledby="deliverables">
 <h2 id="deliverables">Deliverables</h2>
-<p>One file should be submitted, it should have the lab title, your name and date, and include each of the screen shots with a one sentence description of what is in the screen shot.</p>
+<p>One file should be submitted, it should have the lab title, your name and date, and include each of the screenshots with a one sentence description of what is in the screenshot. Your screenshots must show your prompt with your username, or a note with your name and the term.</p>
+
+</section>
+
+<section role="region" aria-labelledby="resources">
+<h2 id="resources">Resources</h2>
+<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name/IntroLinux/commoncommands.html"><strong>https://www.aholdengouveia.name/IntroLinux/commoncommands.html</strong></a></p>
+
+<p>My FAQ Linux playlist on YouTube, with demos of many of the commands and scripts in this class Link: <a href="https://www.youtube.com/playlist?list=PLQOmuLC45eoQlIMH7oCNL6yFP7kWQubBo"><strong>https://www.youtube.com/playlist?list=PLQOmuLC45eoQlIMH7oCNL6yFP7kWQubBo</strong></a></p>
+
+<p>My video on how to use SSH and SCP, SCP? SSH-ut the front door! Link: <a href="https://www.youtube.com/watch?v=w3yOQFZJMTo"><strong>https://www.youtube.com/watch?v=w3yOQFZJMTo</strong></a></p>
 
 </section>
 
