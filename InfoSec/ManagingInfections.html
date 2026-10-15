@@ -1,0 +1,110 @@
+---
+title: Detecting and Managing Infections
+layout: infosec1
+---
+<!--Learning Outcomes for this topic-->
+<h1>Detecting and Managing Infections</h1>
+<p>Learning outcomes:
+    <ul>
+        <li>Identify common signs that a computer is infected</li>
+        <li>Compare how businesses and home users clean up an infection</li>
+        <li>Describe the steps for removing malware from a home computer, using the right tools</li>
+        <li>Explain how to prevent future infections</li>
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/x5RRGw62g_c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="/InfoSec/CIS 115 Week 14.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>How can I tell there's an issue?</li>
+            <ul>
+                <li>Slow computer</li>
+                <li>Pop-ups, and ads where there shouldn't be any</li>
+                <li>Unusual activity</li>
+                <li>Web pages that redirect</li>
+                <li>Excessive CPU usage (check Task Manager)</li>
+                <li>Connections to unknown machines</li>
+            </ul>
+        <li>What is it?</li>
+            <ul>
+                <li>Viruses</li>
+                <li>Trojans</li>
+                <li>Spyware</li>
+                <li>Adware</li>
+                <li>Rootkits</li>
+            </ul>
+        <li>How businesses fix it</li>
+            <ul>
+                <li>Wipe and reimage</li>
+            </ul>
+        <li>Fixing it at home, step 1</li>
+            <ul>
+                <li>Back up before you start!</li>
+                <li>Disconnect from the internet</li>
+                <li>Start in safe mode</li>
+            </ul>
+        <li>Step 2: run a one time scanner, not your normal antivirus</li>
+            <ul>
+                <li><a href="https://www.malwarebytes.com">Malwarebytes</a>, for Windows and Mac</li>
+                <li><a href="https://learn.microsoft.com/en-us/defender-endpoint/safety-scanner-download">Microsoft Safety Scanner</a>, which stops working 10 days after you download it, so you always use a fresh copy</li>
+                <li><a href="https://www.emsisoft.com/en/emergency-kit/">Emsisoft Emergency Kit</a>, which is portable, so it can run from a USB drive without installing</li>
+                <li>Always use a clean, fresh download of the tool</li>
+                <li>You can use more than one tool</li>
+            </ul>
+        <li>Step 3: check for adware</li>
+            <ul>
+                <li><a href="https://www.malwarebytes.com/adwcleaner">Malwarebytes AdwCleaner</a>, for adware, unwanted programs, and browser hijackers</li>
+            </ul>
+        <li>Step 4: check for rootkits with a deep scan</li>
+            <ul>
+                <li><a href="https://support.microsoft.com/en-us/windows/security/threat-malware-protection/virus-and-threat-protection-in-the-windows-security-app">Microsoft Defender Offline scan</a>, built in to Windows. It restarts the computer and scans before Windows loads, so rootkits have a harder time hiding.</li>
+                <li>Why not Kaspersky? Kaspersky's free rootkit tool was a common recommendation, but in June 2024 the US Commerce Department banned Kaspersky software in the US, because of the Russian government's possible control over the company. Kaspersky's updates stopped in the US in September 2024, and Kaspersky denies it's a risk.
+                    <ul>
+                        <li><a href="https://www.bis.gov/press-release/commerce-department-prohibits-russian-kaspersky-software-u.s.-customers">Commerce Department press release</a> (June 2024)</li>
+                        <li><a href="https://www.npr.org/2024/06/21/nx-s1-5013947/u-s-announces-ban-on-antivirus-software-from-a-russia-based-cybersecurity-company">NPR: U.S. announces ban on antivirus software from a Russia-based cybersecurity company</a></li>
+                        <li><a href="https://www.npr.org/2024/06/21/g-s1-5501/cybersecurity-kaspersky-denies-hazard-us-ban">NPR: Security firm Kaspersky denies it's a hazard after the U.S. bans its software</a></li>
+                    </ul>
+                </li>
+            </ul>
+        <li>How do I stop this in the future?</li>
+            <ul>
+                <li>Regular antivirus scans: keep it updated and active</li>
+                <li>Only install one antivirus at a time, more isn't better</li>
+                <li>Regular adware scans</li>
+                <li>Use a firewall</li>
+                <li>Practice safe computing, including off site backups in case of ransomware</li>
+                <li>Keep a portable USB drive for cleaning computers</li>
+                <li>Only download AI apps and models from official sources. A fake OpenAI model on Hugging Face spread password-stealing malware (<a href="https://www.bleepingcomputer.com/news/security/fake-openai-repository-on-hugging-face-pushes-infostealer-malware/">BleepingComputer</a>)</li>
+            </ul>
+        <li>Danger! Advanced tools</li>
+            <ul>
+                <li>Tools such as HijackThis, and deleting files on boot, can break a system if they're used wrong</li>
+                <li>Only use them if you know exactly what you're removing</li>
+            </ul>
+    </ul>
+</p>
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <li>Discussion: why do businesses wipe and reimage instead of cleaning an infected computer?</li>
+        <li>Activity: make a cleanup USB drive with fresh downloads of 2 of the tools above.</li>
+        <li>Discussion: have you ever had an infected computer? What were the signs, and what did you do?</li>
+        <li>Follow the instructions on <a href="/InfoSec/labs/infections.pdf">this PDF</a> (<a href="/InfoSec/labs/infections.html">accessible HTML version</a>)</li>
+        <li>Final presentation: follow the instructions on <a href="/InfoSec/labs/finalpresentation.pdf">this PDF</a> (<a href="/InfoSec/labs/finalpresentation.html">accessible HTML version</a>)</li>
+        <li>Final presentation topics: pick one from <a href="/InfoSec/labs/finalpresentation-topics.pdf">this PDF</a> (<a href="/InfoSec/labs/finalpresentation-topics.html">accessible HTML version</a>)</li>
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">View all classes</a>
+</p>

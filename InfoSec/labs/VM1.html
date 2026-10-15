@@ -28,9 +28,10 @@
             <h2>On this page:</h2>
             <ul>
                 <li><a href="#accessibility-notice">Accessibility Notice</a></li>
-                <li><a href="#objectives">Objectives:</a></li>
-                <li><a href="#complete-the-following-problems">Complete the following problems</a></li>
+                <li><a href="#learning-outcomes">Learning Outcomes</a></li>
+                <li><a href="#lab-instructions">Lab Instructions</a></li>
                 <li><a href="#deliverables">Deliverables</a></li>
+                <li><a href="#resources">Resources</a></li>
             </ul>
         </nav>
 
@@ -44,44 +45,113 @@
 
 </section>
 
-<section role="region" aria-labelledby="objectives">
-<h2 id="objectives">Objectives:</h2>
+<section role="region" aria-labelledby="learning-outcomes">
+<h2 id="learning-outcomes">Learning Outcomes</h2>
+<p>By the end of this lab, you will be able to:</p>
+
 <ul>
-<li>Learn how to create Virtual Machines</li>
+<li>Install virtualization software and create virtual machines</li>
+<li>Install Linux Mint and Kali Linux in virtual machines</li>
+<li>Configure virtual machine settings, such as memory and storage</li>
 </ul>
 
 </section>
 
-<section role="region" aria-labelledby="complete-the-following-problems">
-<h2 id="complete-the-following-problems">Complete the following problems</h2>
-<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name/InfoSec/InfoSecWk1.html"><strong>https://www.aholdengouveia.name/InfoSec/InfoSecWk1.html</strong></a></p>
+<section role="region" aria-labelledby="lab-instructions">
+<h2 id="lab-instructions">Lab Instructions</h2>
+<p>You'll be setting up two virtual machines: Linux Mint, a beginner-friendly desktop Linux, and Kali Linux, which comes with many of the security tools used later in this class. The software and guides are all linked under Resources.</p>
 
+<p><strong>Apple Silicon Macs (M1 or newer):</strong> the regular downloads won't run on these Macs. You'll need the Apple Silicon version of VirtualBox, or UTM, with the ARM64 version of Kali. Linux Mint doesn't have an ARM64 version, so check with me for an alternative.</p>
+
+</section>
+
+<section role="region" aria-labelledby="screenshots">
+<h2 id="screenshots">Screenshots</h2>
+<p>This lab asks for 6 screenshots. Each screenshot should have your name, term, and year. One of the easiest ways to do that is make a text document with your name and term/year on your computer and save it to use all term. Any screenshots that don't include this information won't be counted.</p>
+
+<figure>
+<img src="ExampleScreenshot.png" alt="Example screenshot: a web browser showing the Google home page, with a small text editor window in front of it that says YOUR NAME HERE and TERM YEAR">
+<figcaption>This is an image of what each of your screenshots should look like</figcaption>
+</figure>
+
+</section>
+
+<section role="region" aria-labelledby="set-up-virtualbox">
+<h2 id="set-up-virtualbox">Set up VirtualBox</h2>
 <ol>
-<li>Download and install a virtual machine software such as VirtualBox Link: <a href="https://www.virtualbox.org/"><strong>https://www.virtualbox.org/</strong></a></li>
-<li>Go to Link: <a href="http://www.linuxmint.com/download.php"><strong>http://www.linuxmint.com/download.php</strong></a> and download Mint any desktop environment is fine.</li>
-<li>Go to Link: <a href="http://www.kali.org/downloads/"><strong>http://www.kali.org/downloads/</strong></a> and download Kali.</li>
-<li>Open your Virtual Machine software, create virtual machines and install both Mint and Kali.</li>
-<li>Once you have made your new virtual machine and powered it double click on the "Install Mint" icon. You will need to make a username/password. Do NOT lose! If it's gone it's gone and you will need to re-install the whole machine.</li>
-<li>To install Kali go to Link: <a href="https://www.kali.org/docs/installation/"><strong>https://www.kali.org/docs/installation/</strong></a> and follow the installation procedure. There are also instructions for putting it on a thumb drive and doing a persistent boot. If you don't know what persistent boot is or why you'd want this on a portable drive just install to your virtual machine software.</li>
-<li>You will need screenshots showing you logged in for each virtual machine, showing you can pull up a terminal on each virtual machine,and the properties of each virtual machine.</li>
-<li>If you get an error during the Kali install during the packages and network mirror. Continue the install without the repository or network mirror, once you've finished the install edit your sources /etc/apt/sources.list and add the line "deb <a href="http://http.kali.org/kali">http://http.kali.org/kali</a> kali-rolling main contrib non-free"</li>
+<li>Download and install VirtualBox, or another virtual machine program you prefer.</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="install-linux-mint">
+<h2 id="install-linux-mint">Install Linux Mint</h2>
+<ol start="2">
+<li>Download Linux Mint. Any desktop edition is fine.</li>
+<li>In VirtualBox, create a new virtual machine and use the Mint download to start it.</li>
+<li>When Mint starts, double click the Install Linux Mint icon and follow the steps. The Linux Mint installation guide can help if you get stuck.</li>
+<li>You'll make a username and password during the install. Don't lose them! If you do, you'll need to reinstall the whole virtual machine.</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="install-kali-linux">
+<h2 id="install-kali-linux">Install Kali Linux</h2>
+<p>Choose one of these two ways to set up Kali:</p>
+
+<ol start="6">
+<li><strong>Easier:</strong> download Kali's ready-made VirtualBox image, and import it by following Kali's guide. The default username and password are both kali. Change the password after you log in.</li>
+<li><strong>Full install:</strong> download the Kali installer, and follow Kali's guide to installing it in VirtualBox. You'll create your own username and password during the install.</li>
+</ol>
+
+<p>If the full install shows an error about the network mirror, continue without it. After the install finishes, follow Kali's guide to setting up its package repositories.</p>
+
+<p>Kali no longer uses the root account by default, so log in with your own user. When a command needs admin rights, put sudo in front of it.</p>
+
+</section>
+
+<section role="region" aria-labelledby="check-your-settings">
+<h2 id="check-your-settings">Check your settings</h2>
+<ol start="8">
+<li>Once each install is finished, open the virtual machine's Settings in VirtualBox, and go to Storage. Make sure the installer file (the ISO) has been removed, so the virtual machine starts from its own virtual hard disk. If you imported Kali's ready-made image, there's no ISO to remove.</li>
 </ol>
 
 </section>
 
 <section role="region" aria-labelledby="deliverables">
 <h2 id="deliverables">Deliverables</h2>
+<p>One file that includes these 6 screenshots, clearly labelled. Individual image files aren't accepted, and each screenshot should show what's asked for, not your whole monitor.</p>
+
+<ol>
+<li>Mint, logged in</li>
+<li>Kali, logged in as your user</li>
+<li>A terminal open in Mint</li>
+<li>A terminal open in Kali</li>
+<li>The Storage settings for your Mint virtual machine</li>
+<li>The Storage settings for your Kali virtual machine</li>
+</ol>
+
 </section>
 
-<section role="region" aria-labelledby="make-sure-each-requested-screenshot-is-in-your-single-document-or-pdf-individual-screenshots-are-not-accepted-also-make-sure-your-screenshots-are-clearly-showing-what-s-requested-not-just-your-whole-monitor">
-<h2 id="make-sure-each-requested-screenshot-is-in-your-single-document-or-pdf-individual-screenshots-are-not-accepted-also-make-sure-your-screenshots-are-clearly-showing-what-s-requested-not-just-your-whole-monitor">Make sure each requested screenshot is in your single document or PDF, individual screenshots are not accepted.  Also, make sure your screenshots are clearly showing what's requested, not just your whole monitor</h2>
-<ol>
-<li>Screenshot of Mint logged in</li>
-<li>Screenshot of Kali logged in as root</li>
-<li>Screenshot of Mint Command window (or terminal)</li>
-<li>Screenshot of Kali Command window (or terminal)</li>
-<li>Open the properties on each virtual machine by right-clicking on the Virtual Machine and going to settings, take a screenshot of each one. I'm specifically looking for the HD to be pointed to auto-detect not the ISO</li>
-</ol>
+<section role="region" aria-labelledby="resources">
+<h2 id="resources">Resources</h2>
+<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name/InfoSec/InfoSecWk1.html"><strong>https://www.aholdengouveia.name/InfoSec/InfoSecWk1.html</strong></a></p>
+
+<p>VirtualBox downloads Link: <a href="https://www.virtualbox.org/wiki/Downloads"><strong>https://www.virtualbox.org/wiki/Downloads</strong></a></p>
+
+<p>Linux Mint download Link: <a href="https://www.linuxmint.com/download.php"><strong>https://www.linuxmint.com/download.php</strong></a></p>
+
+<p>Linux Mint installation guide Link: <a href="https://linuxmint-installation-guide.readthedocs.io/en/latest/"><strong>https://linuxmint-installation-guide.readthedocs.io/en/latest/</strong></a></p>
+
+<p>Kali Linux downloads, including the ready-made virtual machine images Link: <a href="https://www.kali.org/get-kali/"><strong>https://www.kali.org/get-kali/</strong></a></p>
+
+<p>Kali guide: importing the ready-made VirtualBox image Link: <a href="https://www.kali.org/docs/virtualization/import-premade-virtualbox/"><strong>https://www.kali.org/docs/virtualization/import-premade-virtualbox/</strong></a></p>
+
+<p>Kali guide: installing Kali in VirtualBox Link: <a href="https://www.kali.org/docs/virtualization/install-virtualbox-guest-vm/"><strong>https://www.kali.org/docs/virtualization/install-virtualbox-guest-vm/</strong></a></p>
+
+<p>Kali guide: setting up the package repositories Link: <a href="https://www.kali.org/docs/general-use/kali-apt-sources/"><strong>https://www.kali.org/docs/general-use/kali-apt-sources/</strong></a></p>
+
+<p>UTM, for Apple Silicon Macs Link: <a href="https://mac.getutm.app/"><strong>https://mac.getutm.app/</strong></a></p>
 
 </section>
 

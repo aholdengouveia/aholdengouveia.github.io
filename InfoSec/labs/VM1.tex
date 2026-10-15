@@ -3,6 +3,8 @@
 \usepackage{fontawesome}
 \usepackage{hyperref}
 \usepackage{xurl}
+\usepackage{graphicx}
+\usepackage{float}
 \usepackage[tagged, highstructure]{accessibility}
 \usepackage{bookmark}
 \usepackage{enumitem}
@@ -10,7 +12,7 @@
 \hypersetup{
     colorlinks=false,
     pdfborder={0 0 0},
-    pdftitle={Virtual Machines Introduction Lab},
+    pdftitle={Virtual Machines Introduction},
     pdfauthor={Adrianna Holden-Gouveia},
     pdfsubject={Information Security - Lab Assignment},
     pdflang={en-US},
@@ -53,49 +55,93 @@ Link: \href{https://aholdengouveia.name/InfoSec/labs/VM1.html}{\textbf{\nolinkur
 The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.
 
 
-%\begin{abstract}
-%This is a template for Linux Administration Lab work
-%\end{abstract}
-%\tableofcontents
-
-\section*{Objectives:}
+\section*{Learning Outcomes}
+By the end of this lab, you will be able to:
 \begin{itemize}
-    \item Learn how to create Virtual Machines
+    \item Install virtualization software and create virtual machines
+    \item Install Linux Mint and Kali Linux in virtual machines
+    \item Configure virtual machine settings, such as memory and storage
 \end{itemize}
-\section*{Complete the following problems}
 
-References, a video, a PowerPoint and some notes are available at my website
-Link: \href{https://www.aholdengouveia.name/InfoSec/InfoSecWk1.html}{\textbf{\nolinkurl{https://www.aholdengouveia.name/InfoSec/InfoSecWk1.html}}}
+\section*{Lab Instructions}
+You'll be setting up two virtual machines: Linux Mint, a beginner-friendly desktop Linux, and Kali Linux, which comes with many of the security tools used later in this class. The software and guides are all linked under Resources.
+
+\textbf{Apple Silicon Macs (M1 or newer):} the regular downloads won't run on these Macs. You'll need the Apple Silicon version of VirtualBox, or UTM, with the ARM64 version of Kali. Linux Mint doesn't have an ARM64 version, so check with me for an alternative.
+
+\subsection*{Screenshots}
+This lab asks for 6 screenshots. Each screenshot should have your name, term, and year.  One of the easiest ways to do that is make a text document with your name and term/year on your computer and save it to use all term. Any screenshots that don't include this information won't be counted.
+
+\begin{figure}[H]
+    \centerline{\includegraphics[scale=.2]{ExampleScreenshot.png}}
+    \caption{This is an image of what each of your screenshots should look like}
+    \alt{Example screenshot: a web browser showing the Google home page, with a small text editor window in front of it that says YOUR NAME HERE and TERM YEAR}
+\end{figure}
+
+\subsection*{Set up VirtualBox}
 \begin{enumerate}
-    \item Download and install a virtual machine software such as VirtualBox Link: \href{https://www.virtualbox.org/}{\textbf{\nolinkurl{https://www.virtualbox.org/}}}
-    \item Go to  Link: \href{http://www.linuxmint.com/download.php}{\textbf{\nolinkurl{http://www.linuxmint.com/download.php}}} and download Mint  any desktop environment is fine.
-    \item Go to Link: \href{http://www.kali.org/downloads/}{\textbf{\nolinkurl{http://www.kali.org/downloads/}}}   and download Kali.
-    \item Open your Virtual Machine software, create virtual machines and install both Mint and Kali.
-    \item Once you have made your new virtual machine and powered it double click on the "Install Mint" icon.  You will need to make a username/password. Do NOT lose! If it's gone it's gone and you will need to re-install the whole machine.
-    \item To install Kali go to Link: \href{https://www.kali.org/docs/installation/}{\textbf{\nolinkurl{https://www.kali.org/docs/installation/}}} and follow the installation procedure.  There are also instructions for putting it on a thumb drive and doing a persistent boot.  If you don't know what persistent boot is or why you'd want this on a portable drive just install to your virtual machine software.
-    \item You will need screenshots showing you logged in for each virtual machine, showing you can pull up a terminal on each virtual machine,and the properties of each virtual machine.
-    \item If you get an error during the Kali install during the packages and network mirror. Continue the install without the repository or network mirror, once you've finished the install edit your sources /etc/apt/sources.list and add the line "deb http://http.kali.org/kali kali-rolling main contrib non-free"  
-
+    \item Download and install VirtualBox, or another virtual machine program you prefer.
 \end{enumerate}
 
+\subsection*{Install Linux Mint}
+\begin{enumerate}[start=2]
+    \item Download Linux Mint. Any desktop edition is fine.
+    \item In VirtualBox, create a new virtual machine and use the Mint download to start it.
+    \item When Mint starts, double click the Install Linux Mint icon and follow the steps. The Linux Mint installation guide can help if you get stuck.
+    \item You'll make a username and password during the install. Don't lose them! If you do, you'll need to reinstall the whole virtual machine.
+\end{enumerate}
 
+\subsection*{Install Kali Linux}
+Choose one of these two ways to set up Kali:
+\begin{enumerate}[start=6]
+    \item \textbf{Easier:} download Kali's ready-made VirtualBox image, and import it by following Kali's guide. The default username and password are both \texttt{kali}. Change the password after you log in.
+    \item \textbf{Full install:} download the Kali installer, and follow Kali's guide to installing it in VirtualBox. You'll create your own username and password during the install.
+\end{enumerate}
+If the full install shows an error about the network mirror, continue without it. After the install finishes, follow Kali's guide to setting up its package repositories.
 
+Kali no longer uses the root account by default, so log in with your own user. When a command needs admin rights, put \texttt{sudo} in front of it.
 
-
-
-
+\subsection*{Check your settings}
+\begin{enumerate}[start=8]
+    \item Once each install is finished, open the virtual machine's Settings in VirtualBox, and go to Storage. Make sure the installer file (the ISO) has been removed, so the virtual machine starts from its own virtual hard disk. If you imported Kali's ready-made image, there's no ISO to remove.
+\end{enumerate}
 
 \section*{Deliverables}
-\subsection*{Make sure each requested screenshot is in your single document or PDF, individual screenshots are not accepted.  Also, make sure your screenshots are clearly showing what's requested, not just your whole monitor}
-    \begin{enumerate}
-        \item Screenshot of Mint logged in
-        \item Screenshot of Kali logged in as root
-        \item Screenshot of Mint Command window (or terminal)
-        \item Screenshot of Kali Command window (or terminal)
-        \item Open the properties on each virtual machine by right-clicking on the Virtual Machine and going to settings, take a screenshot of each one. I'm specifically looking for the HD to be pointed to auto-detect not the ISO
+One file that includes these 6 screenshots, clearly labelled. Individual image files aren't accepted, and each screenshot should show what's asked for, not your whole monitor.
+\begin{enumerate}
+    \item Mint, logged in
+    \item Kali, logged in as your user
+    \item A terminal open in Mint
+    \item A terminal open in Kali
+    \item The Storage settings for your Mint virtual machine
+    \item The Storage settings for your Kali virtual machine
+\end{enumerate}
 
+\section*{Resources}
+References, a video, a PowerPoint and some notes are available at my website
+Link: \href{https://www.aholdengouveia.name/InfoSec/InfoSecWk1.html}{\textbf{\nolinkurl{https://www.aholdengouveia.name/InfoSec/InfoSecWk1.html}}}
 
-    \end{enumerate}
+VirtualBox downloads
+Link: \href{https://www.virtualbox.org/wiki/Downloads}{\textbf{\nolinkurl{https://www.virtualbox.org/wiki/Downloads}}}
 
+Linux Mint download
+Link: \href{https://www.linuxmint.com/download.php}{\textbf{\nolinkurl{https://www.linuxmint.com/download.php}}}
+
+Linux Mint installation guide
+Link: \href{https://linuxmint-installation-guide.readthedocs.io/en/latest/}{\textbf{\nolinkurl{https://linuxmint-installation-guide.readthedocs.io/en/latest/}}}
+
+Kali Linux downloads, including the ready-made virtual machine images
+Link: \href{https://www.kali.org/get-kali/}{\textbf{\nolinkurl{https://www.kali.org/get-kali/}}}
+
+Kali guide: importing the ready-made VirtualBox image
+Link: \href{https://www.kali.org/docs/virtualization/import-premade-virtualbox/}{\textbf{\nolinkurl{https://www.kali.org/docs/virtualization/import-premade-virtualbox/}}}
+
+Kali guide: installing Kali in VirtualBox
+Link: \href{https://www.kali.org/docs/virtualization/install-virtualbox-guest-vm/}{\textbf{\nolinkurl{https://www.kali.org/docs/virtualization/install-virtualbox-guest-vm/}}}
+
+Kali guide: setting up the package repositories
+Link: \href{https://www.kali.org/docs/general-use/kali-apt-sources/}{\textbf{\nolinkurl{https://www.kali.org/docs/general-use/kali-apt-sources/}}}
+
+UTM, for Apple Silicon Macs
+Link: \href{https://mac.getutm.app/}{\textbf{\nolinkurl{https://mac.getutm.app/}}}
 
 \end{document}

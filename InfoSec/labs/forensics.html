@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Digital Forensics</title>
+    <link href="../../css/accessible-lab.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
+        <h1>Digital Forensics</h1>
+        <div class="author">
+            <p>Adrianna Holden-Gouveia</p>
+            <p>Website: <a href="https://aholdengouveia.name">https://aholdengouveia.name</a></p>
+            <p>GitHub: <a href="https://github.com/aholdengouveia" aria-label="GitHub profile">aholdengouveia</a></p>
+        </div>
+    </header>
+
+    <main role="main" id="main-content">
+        <section role="region" aria-labelledby="pdf-version-notice" class="accessibility-notice">
+            <h2 id="pdf-version-notice">PDF Version Available</h2>
+            <p>This document is also available in PDF format: <a href="forensics.pdf">forensics.pdf</a></p>
+            <p>The PDF version includes bookmarks for easy navigation and is optimized for printing.</p>
+        </section>
+
+        <nav role="navigation" aria-label="Table of Contents" class="toc">
+            <h2>On this page:</h2>
+            <ul>
+                <li><a href="#accessibility-notice">Accessibility Notice</a></li>
+                <li><a href="#learning-outcomes">Learning Outcomes</a></li>
+                <li><a href="#lab-instructions">Lab Instructions</a></li>
+                <li><a href="#deliverables">Deliverables</a></li>
+                <li><a href="#resources">Resources</a></li>
+            </ul>
+        </nav>
+
+<section role="region" aria-labelledby="accessibility-notice">
+<h2 id="accessibility-notice">Accessibility Notice</h2>
+<p>This document is also available in HTML format at:</p>
+
+<p>Link: <a href="https://aholdengouveia.name/InfoSec/labs/forensics.html"><strong>https://aholdengouveia.name/InfoSec/labs/forensics.html</strong></a></p>
+
+<p>The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.</p>
+
+</section>
+
+<section role="region" aria-labelledby="learning-outcomes">
+<h2 id="learning-outcomes">Learning Outcomes</h2>
+<p>By the end of this lab, you will be able to:</p>
+
+<ul>
+<li>Use hashes to show whether a file is an exact copy, or has been changed</li>
+<li>Make a forensic copy of a practice disk image, and prove it matches the original</li>
+<li>Identify the hidden evidence stored in a photo, and remove it before sharing</li>
+<li>Describe how an organization investigates and responds to an incident, using a real post-mortem</li>
+</ul>
+
+</section>
+
+<section role="region" aria-labelledby="lab-instructions">
+<h2 id="lab-instructions">Lab Instructions</h2>
+<p>Forensic investigators have to prove that the evidence they show in court is exactly what they collected. In this lab, you'll use hashes to prove files match, make a forensic copy, find hidden evidence in a photo, and read how a real company investigated an attack.</p>
+
+<p><strong>Parts 1 and 2 use the terminal in your Kali or Mint virtual machine from Lab 1.</strong> If you're new to the terminal, my Linux FAQ playlist, linked under Resources, shows how to open one and run commands. A few tips:</p>
+
+<ul>
+<li>Type each command exactly, then press Enter. Spaces and capital letters matter.</li>
+<li>Copy and paste may not work between your computer and the virtual machine, so be ready to type the commands.</li>
+<li>Press the Up arrow to bring back the last command, so you can change it and run it again.</li>
+</ul>
+
+<p>Part 3 uses a photo on your phone, and Part 4 is reading and writing.</p>
+
+</section>
+
+<section role="region" aria-labelledby="screenshots">
+<h2 id="screenshots">Screenshots</h2>
+<p>This lab asks for about 9 screenshots. Each screenshot should have your name, term, and year. One of the easiest ways to do that is make a text document with your name and term/year on your computer and save it to use all term. Any screenshots that don't include this information won't be counted.</p>
+
+<figure>
+<img src="ExampleScreenshot.png" alt="Example screenshot: a web browser showing the Google home page, with a small text editor window in front of it that says YOUR NAME HERE and TERM YEAR">
+<figcaption>This is an image of what each of your screenshots should look like</figcaption>
+</figure>
+
+</section>
+
+<section role="region" aria-labelledby="part-1-hashing">
+<h2 id="part-1-hashing">Part 1: Hashing</h2>
+<p>A hash is like a fingerprint for a file. If even one letter in the file changes, the hash changes completely. Investigators use SHA-256 hashes to prove a copy matches the original. In Linux, the command is sha256sum, followed by the file's name.</p>
+
+<p>In your virtual machine, open the browser, and download my 2 practice evidence files, evidence-a.txt and evidence-b.txt, linked under Resources. They'll save to your Downloads folder. Then open a terminal, and go to that folder:</p>
+
+<pre><code lang="bash">cd Downloads</code></pre>
+
+<ol>
+<li>Make a practice file, and hash it. Put your own name in place of Your Name. Take a screenshot.
+<pre><code lang="bash">echo "Your Name is learning forensics" > myfile.txt
+sha256sum myfile.txt</code></pre>
+</li>
+<li>Press the Up arrow to bring back the echo command, change one letter in the sentence, and run it again. Then hash the file again. Take a screenshot. How much of the hash changed?</li>
+<li>One of my evidence files is the original, and one has been tampered with. The SHA-256 hash of the original is:
+<pre><code lang="text">771da36bd7fd679da3116135250a1f4a84f03bdb49b972522ad8a596e73b8216</code></pre>
+Hash both files, and take a screenshot. Which one is the original?
+<pre><code lang="text">sha256sum evidence-a.txt evidence-b.txt</code></pre>
+</li>
+<li>Show what's inside both files, and take a screenshot. What was changed in the tampered file?
+<pre><code lang="bash">cat evidence-a.txt evidence-b.txt</code></pre>
+</li>
+<li>Why does it matter that an investigator can prove a piece of evidence hasn't been changed? Use the tampered file as an example.</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="part-2-make-a-forensic-copy">
+<h2 id="part-2-make-a-forensic-copy">Part 2: Make a Forensic Copy</h2>
+<p>Investigators never work on the original drive. They make an exact copy, called a forensic image, prove it matches with a hash, and only work on the copy. You'll do the same with a small practice “drive” that you make yourself.</p>
+
+<p><strong>Only run these commands in your virtual machine, and type them exactly.</strong> The dd command copies raw data. If it's pointed at the wrong place, it can erase a real drive.</p>
+
+<p>In the terminal, run these commands one at a time. Here's what each one does:</p>
+
+<ul>
+<li>cd with nothing after it goes back to your home folder, and mkdir forensics makes a new folder called forensics. cd forensics goes into it.</li>
+<li>The first dd command makes a 10 MB practice drive, called evidence.img, filled with random data.</li>
+<li>chmod 444 makes the practice drive read-only, so nothing can change it.</li>
+<li>The second dd command makes a forensic copy, called copy.img.</li>
+<li>sha256sum hashes both, so you can compare them.</li>
+</ul>
+
+<pre><code lang="bash">cd
+mkdir forensics
+cd forensics
+dd if=/dev/urandom of=evidence.img bs=1M count=10
+chmod 444 evidence.img
+dd if=evidence.img of=copy.img bs=1M
+sha256sum evidence.img copy.img</code></pre>
+
+<ol start="6">
+<li>Take a screenshot showing both hashes. Do they match?</li>
+<li>Now change the copy. This command writes the letter X into the middle of the copy, which changes just 1 byte out of about 10 million. Then hash both again, and take a screenshot.
+<pre><code lang="text">printf 'X' | dd of=copy.img bs=1 seek=5000 conv=notrunc
+sha256sum evidence.img copy.img</code></pre>
+</li>
+<li>Explain what happened to the hashes, and why. What would this mean if it happened to real evidence?</li>
+<li>In real investigations, a write blocker stops the computer from changing the original drive. Which command in this lab did something similar, and why does it matter?</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="part-3-hidden-evidence-in-a-photo">
+<h2 id="part-3-hidden-evidence-in-a-photo">Part 3: Hidden Evidence in a Photo</h2>
+<p>Photos you take often have hidden details saved inside them, called metadata or EXIF data. This can include the device, the date and time, and the exact location. This part uses your phone, not the virtual machine. Pick a photo you took with your phone, and look at its details:</p>
+
+<ul>
+<li><strong>iPhone:</strong> open the photo in Photos, and swipe up, or select the information button.</li>
+<li><strong>Android (Google Photos):</strong> open the photo, and swipe up, or select the menu.</li>
+<li><strong>Windows:</strong> right-click the photo, select Properties, then the Details tab.</li>
+<li><strong>Mac:</strong> open the photo in Preview, select Tools, then Show Inspector, and look at the information tab.</li>
+</ul>
+
+<p><strong>If the photo shows where you live, blur the location in your screenshot.</strong></p>
+
+<ol start="10">
+<li>Take a screenshot of the photo's details. List what it shows, such as the device, the date and time, the location, and camera settings.</li>
+<li>How could an investigator use these details as evidence? Give an example.</li>
+<li>How could someone misuse these details if you posted the photo publicly?</li>
+<li>Find out how to remove the location, or all the metadata, on your device before sharing a photo. Do it, and take a screenshot showing it's gone. Explain the steps.</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="part-4-a-real-post-mortem">
+<h2 id="part-4-a-real-post-mortem">Part 4: A Real Post-Mortem</h2>
+<p>After an incident, a post-mortem explains what happened, what was affected, and what's changing. In July 2026, Hugging Face was hacked by an autonomous AI agent. Read Hugging Face's own disclosure, linked under Resources.</p>
+
+<ol start="14">
+<li>The topic page lists 4 steps after an incident: identify and preserve evidence, analysis, reports and documentation, and prevention. For each step, quote one sentence from the disclosure that shows it, and explain how it fits.</li>
+<li>The attacker used many short-lived sandboxes, which existed for a short time and then disappeared. What is volatile data, and why would short-lived machines make an investigation harder?</li>
+<li>If you were on Hugging Face's response team, name 3 pieces of evidence you'd want to preserve first. Why those?</li>
+<li>What's one lesson from this incident that a small business could use?</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="deliverables">
+<h2 id="deliverables">Deliverables</h2>
+<p>One file that includes:</p>
+
+<ul>
+<li>Part 1: your 4 screenshots, and your answers</li>
+<li>Part 2: your 2 screenshots, and your answers</li>
+<li>Part 3: your 2 screenshots, and your answers</li>
+<li>Part 4: your quotes, and your answers</li>
+</ul>
+
+</section>
+
+<section role="region" aria-labelledby="resources">
+<h2 id="resources">Resources</h2>
+<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name/InfoSec/DigitalForensics.html"><strong>https://www.aholdengouveia.name/InfoSec/DigitalForensics.html</strong></a></p>
+
+<p>My Linux FAQ playlist, including how to use the terminal Link: <a href="https://youtube.com/playlist?list=PLQOmuLC45eoQlIMH7oCNL6yFP7kWQubBo"><strong>https://youtube.com/playlist?list=PLQOmuLC45eoQlIMH7oCNL6yFP7kWQubBo</strong></a></p>
+
+<p>Practice evidence file A, for Part 1 Link: <a href="https://www.aholdengouveia.name/InfoSec/labs/evidence-a.txt"><strong>https://www.aholdengouveia.name/InfoSec/labs/evidence-a.txt</strong></a></p>
+
+<p>Practice evidence file B, for Part 1 Link: <a href="https://www.aholdengouveia.name/InfoSec/labs/evidence-b.txt"><strong>https://www.aholdengouveia.name/InfoSec/labs/evidence-b.txt</strong></a></p>
+
+<p>Hugging Face: Security incident disclosure, July 2026, for Part 4 Link: <a href="https://huggingface.co/blog/security-incident-july-2026"><strong>https://huggingface.co/blog/security-incident-july-2026</strong></a></p>
+
+<p>BleepingComputer: news coverage of the Hugging Face breach Link: <a href="https://www.bleepingcomputer.com/news/security/openai-agent-used-exposed-credentials-at-4-services-in-hugging-face-breach/"><strong>https://www.bleepingcomputer.com/news/security/openai-agent-used-exposed-credentials-at-4-services-in-hugging-face-breach/</strong></a></p>
+
+<p>NIST's guide to integrating forensic techniques into incident response Link: <a href="https://csrc.nist.gov/pubs/sp/800/86/final"><strong>https://csrc.nist.gov/pubs/sp/800/86/final</strong></a></p>
+
+</section>
+
+    </main>
+</body>
+</html>

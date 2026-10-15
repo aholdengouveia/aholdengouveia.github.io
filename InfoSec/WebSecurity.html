@@ -1,0 +1,102 @@
+---
+title: Web Security
+layout: infosec1
+---
+<!--Learning Outcomes for this topic-->
+<h1>Web Security</h1>
+<p>Learning outcomes:
+    <ul>
+        <li>Describe common website attacks, such as SQL injection and defacing</li>
+        <li>Explain how websites, and the people using them, can be protected from attacks</li>
+        <li>Explain how HTTPS and certificates work, and what happens when a certificate authority is compromised</li>
+        <li>Compare the benefits and risks of single sign-on and VPNs</li>
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/bK5Js6HySZk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="/InfoSec/CIS 115 Week 9.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>Hacking a website</li>
+            <ul>
+                <li>Injections: SQL, HTML, and JavaScript</li>
+                <li>Leaking data</li>
+                <li>Defacing</li>
+                <li><a href="https://www.youtube.com/watch?v=PB7hWlqTSqs&t=568s">SQL injection video</a></li>
+                <li><a href="https://owasp.org/www-project-top-ten/">The OWASP Top 10 web application security risks</a></li>
+            </ul>
+        <li>Protecting a website</li>
+            <ul>
+                <li>Updating</li>
+                <li>Frameworks</li>
+                <li>Apps and add-ons, such as WordPress plugins</li>
+                <li>Securing pages and uploads</li>
+                <li>Checking inputs and files</li>
+            </ul>
+        <li>Client side attacks</li>
+            <ul>
+                <li>Sniffing</li>
+                <li>Tracking cookies and supercookies</li>
+                <li>Browser fingerprinting</li>
+            </ul>
+        <li>Client side defense</li>
+            <ul>
+                <li>Browser settings and privacy mode</li>
+                <li><a href="https://www.torproject.org/">Tor</a></li>
+                <li>HTTPS always</li>
+                <li>Blocking cookies and JavaScript</li>
+            </ul>
+        <li><a href="https://en.wikipedia.org/wiki/HTTPS">HTTPS and certificates</a></li>
+            <ul>
+                <li>What is HTTPS?</li>
+                <li>What is a certificate?</li>
+                <li>Certificate authorities</li>
+                    <ul>
+                        <li>For profit, and non-profit such as <a href="https://letsencrypt.org/">Let's Encrypt</a></li>
+                        <li>Authenticating users</li>
+                        <li>Trusted certificates</li>
+                        <li>When it goes wrong: <a href="https://en.wikipedia.org/wiki/DigiNotar">DigiNotar</a> and Comodo</li>
+                        <li>Revocation</li>
+                        <li>Entrust (2024): Chrome stopped trusting its certificates after years of compliance failures (<a href="https://security.googleblog.com/2024/06/sustaining-digital-certificate-security.html">Google Security Blog</a>)</li>
+                        <li>Shorter certificate lifetimes: 200 days from March 2026, and 47 days by 2029, so renewals have to be automated (<a href="https://cabforum.org/2025/04/11/ballot-sc081v3-introduce-schedule-of-reducing-validity-and-data-reuse-periods/">CA/Browser Forum</a>)</li>
+                    </ul>
+            </ul>
+        <li><a href="https://en.wikipedia.org/wiki/Single_sign-on">Single sign-on</a></li>
+            <ul>
+                <li>Reduces password fatigue</li>
+                <li>Reduces IT costs and time spent on authentication</li>
+                <li>"Keys to the castle": one stolen login opens everything</li>
+                <li>Should include two factor authentication</li>
+                <li>Censorship in some countries can block the third party</li>
+            </ul>
+        <li><a href="https://en.wikipedia.org/wiki/Virtual_private_network">VPN</a></li>
+            <ul>
+                <li>What is a VPN?</li>
+                <li>Why would a business want one?</li>
+                <li>What about a consumer?</li>
+                <li>What are the risks of a VPN?</li>
+                <li>What are some less known benefits?</li>
+            </ul>
+    </ul>
+</p>
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <li>Discussion: would you use single sign-on for everything? Why or why not?</li>
+        <li>Activity: click the padlock in your browser on a site you use often, and look at its certificate. Who issued it, and when does it expire?</li>
+        <li>Follow the instructions on <a href="/InfoSec/labs/websecurity.pdf">this PDF</a> (<a href="/InfoSec/labs/websecurity.html">accessible HTML version</a>)</li>
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">View all classes</a>
+</p>

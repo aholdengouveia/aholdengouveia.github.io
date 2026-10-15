@@ -3,6 +3,8 @@
 \usepackage{fontawesome}
 \usepackage{hyperref}
 \usepackage{xurl}
+\usepackage{graphicx}
+\usepackage{float}
 \usepackage[tagged, highstructure]{accessibility}
 \usepackage{bookmark}
 \usepackage{enumitem}
@@ -10,7 +12,7 @@
 \hypersetup{
     colorlinks=false,
     pdfborder={0 0 0},
-    pdftitle={Encrypted Communications and Threat Models Lab},
+    pdftitle={Encrypted Communications and Threat Models},
     pdfauthor={Adrianna Holden-Gouveia},
     pdfsubject={Information Security - Lab Assignment},
     pdflang={en-US},
@@ -61,108 +63,135 @@ The HTML version provides enhanced accessibility features including keyboard nav
 
  
 
-\section*{Objectives:}
+\section*{Learning Outcomes}
+By the end of this lab, you will be able to:
 \begin{itemize}
-    \item Learn how to create a threat model including a risk assessment
-    \item Describe how to come up with an encrypted communications plan
-\end{itemize}
-\section*{Complete the following problems}
-
-%References, a video, a PowerPoint and some notes are available at my website
-%Link: \href{https://www.aholdengouveia.name}{\textbf{\nolinkurl{https://www.aholdengouveia.name}}}
-
-Be sure that you are able to assess risks and then prioritize them as part of your threat model. Make sure that you include both written communications such as email as well as the phone and text communication options you should say if you are using a VPN why or why not and some things that you would need to look for if you are going to use one.
-
-You should focus on the technology not the risks that involve dangers of people doing potentially dangerous things.  For example if you are talking about a protest, there are risks of being in person and being pepper sprayed, but remember we're looking at the technology used for organizing the protest so the risks are about the technology used to organize it not dangers of showing up.
-For those that are struggling with how to do this. There are a lot of resources for how to threat model for companies or applications, the research and steps used will be the same here, you're putting yourself in the shoes of one someone in the following scenarios and imagining what you need to do to stay safe. 
-
-Think about the following questions:
-\begin{itemize}
-    \item What's reasonable? what's over the top?
-    \item What avenues have more risks? less?
-    \item Is there anything you're missing?
-\end{itemize}         
-
-Research the scenario of your choice thoroughly to get an idea of what it's like for that group of people and what they might be worried about.  How might their worries and threats be different then yours(You don't need to share this, it's just food for thought)? 
-
-Some references that may be helpful:
-\begin{itemize}
-    \item  Link: \href{https://en.wikipedia.org/wiki/Threat_model}{\textbf{\nolinkurl{https://en.wikipedia.org/wiki/Threat_model}}}
-    \item Link: \href{https://blog.securityinnovation.com/creating-your-own-personal-threat-model}{\textbf{\nolinkurl{https://blog.securityinnovation.com/creating-your-own-personal-threat-model}}}
+    \item Create a threat model for a scenario, using a structured set of questions
+    \item Identify and prioritize risks to communications, from most to least severe
+    \item Plan protections for each risk, including encrypted messaging, VPNs, and phone security
+    \item Evaluate sources with the CRAAP test, and show that each one is real
 \end{itemize}
 
-Don't forget about cell phones almost everyone in one of these scenarios is going to have a cell phone and that needs to be protected as well and you need to talk about how you are going to protect the cell phone.
+\section*{Lab Instructions}
+You'll put yourself in the shoes of someone in a dangerous situation, and plan how they can communicate safely. This is called threat modeling. Companies use the same steps to protect their systems.
 
+\subsection*{Pick ONE scenario}
+\textbf{Content note:} some of these scenarios involve violence, persecution, and people in danger. If any of them are hard for you to work on, check with me, and we'll find another option.
 
+\begin{enumerate}
+    \item You're organizing a protest in a country that doesn't protect peaceful protest, such as Egypt or Hong Kong. You need to organize it and protect yourself and the other protesters.
+    \item You're visiting a country that restricts the internet. You want to communicate safely with friends and family back home, search the web, and use social media. Don't just say ``use a VPN''. Explain what you'd need to know about a VPN and its provider, how it works, and what protection it does and doesn't give you.
+    \item You're part of a minority group that the government is persecuting, such as an LGBTQ+ person in Russia, or a Uyghur Muslim in China. You want to talk to your family, and organize others to protect yourselves.
+    \item You're helping people escape from somewhere they're in danger, as people did on the Underground Railroad or when helping people escape Nazi Germany. You need to communicate with the next places the people you're helping will go, and plan their next steps. Modern examples include people fleeing the conflicts on the Council on Foreign Relations' Global Conflict Tracker.
+    \item You've found that your company's product is dangerous, and you need to tell the government while keeping yourself and your family safe. Or, you work for the government and have dangerous information the public should know, as Edward Snowden did. How do you protect yourself and your family?
+\end{enumerate}
+If none of these appeal to you, you may come up with your own scenario, but check with me first. Background reading for each scenario is linked under Resources. Research your scenario well, so you understand what the people in it worry about.
 
-\subsection*{Pick ONE of the following scenarios to do your threat modeling on.}
-    \begin{enumerate}
-        \item You are organizing a protest in a country that doesn't have peaceful protest protection such as Hong Kong or Egypt. You need to organize a protest and protect yourself and other protesters, what do you do? Read more about the protests and concerns here:
-        \begin{itemize}
-            \item Link: \href{https://www.bbc.com/news/world-middle-east-49800213}{\textbf{\nolinkurl{https://www.bbc.com/news/world-middle-east-49800213}}}
-            \item Link: \href{https://www.bbc.com/news/world-asia-china-53942295}{\textbf{\nolinkurl{https://www.bbc.com/news/world-asia-china-53942295}}}
-        \end{itemize}    
-        
-        \item You vising a country with restrictions on the internet, you want to be able to communicate with your friends and family back home safely, use a Google search and be on social media. What do you do? (Don't just say VPN, there is more to this then that and even a VPN needs more then Google "good vpn" and pick the top result, what questions to you need to know about a VPN? provider? how do they work and what protections do you get?) 
-         \begin{itemize}
-            \item Link: \href{https://hackernoon.com/the-spread-of-internet-censorship-around-the-world-7i1mn3zwb}{\textbf{\nolinkurl{https://hackernoon.com/the-spread-of-internet-censorship-around-the-world-7i1mn3zwb}}}
-            \item Link: \href{https://cyber.harvard.edu/pubrelease/internet-control/}{\textbf{\nolinkurl{https://cyber.harvard.edu/pubrelease/internet-control/}}}
-        \end{itemize} 
-        
-        \item You are a minority in a country that is persecuting you, such as a member of the LGBTA+ community in Russia, or a Uygher muslim in China. You want to talk to your family and organize others to help protect you and others. What do you do? Read more  and 
-         \begin{itemize}
-            \item Link: \href{https://www.cbsnews.com/news/china-puts-uighurs-uyghyrs-muslim-children-in-prison-re-education-internment-camps-vice-news/}{\textbf{\nolinkurl{https://www.cbsnews.com/news/china-puts-uighurs-uyghyrs-muslim-children-in-prison-re-education-internment-camps-vice-news/}}}
-            \item Link: \href{https://www.reuters.com/article/us-russia-activist-court/russian-lgbt-activist-fined-for-gay-propaganda-family-drawings-idUSKBN24B2IY}{\textbf{\nolinkurl{https://www.reuters.com/article/us-russia-activist-court/russian-lgbt-activist-fined-for-gay-propaganda-family-drawings-idUSKBN24B2IY}}}
-        \end{itemize} 
+\subsection*{Build your threat model}
+Answer EFF's six security plan questions (linked under Resources) for your scenario, in your own words:
+\begin{enumerate}
+    \item What do I want to protect?
+    \item Who do I want to protect it from?
+    \item How bad are the consequences if I fail?
+    \item How likely is it that I will need to protect it?
+    \item How much trouble am I willing to go through to try to prevent potential consequences?
+    \item Who are my allies?
+\end{enumerate}
 
-        \item You are part of a conspiracy to try to smuggle persecuted people out of an area they are in danger (such as what happened during the underground railroad or helping people escape Nazi Germany) and you need to find a way to communicate with the next places that the people you are helping are going to go and what their next steps are. Examples in the modern day might include:
-        \begin{itemize}
-            \item Link: \href{https://www.cfr.org/global-conflict-tracker/conflict/israeli-palestinian-conflict}{\textbf{\nolinkurl{https://www.cfr.org/global-conflict-tracker/conflict/israeli-palestinian-conflict}}}
-            \item Link: \href{https://www.amnesty.org/en/countries/middle-east-and-north-africa/israel-and-occupied-palestinian-territories/report-israel-and-occupied-palestinian-territories/}{\textbf{\nolinkurl{https://www.amnesty.org/en/countries/middle-east-and-north-africa/israel-and-occupied-palestinian-territories/report-israel-and-occupied-palestinian-territories/}}}
-            \item Link: \href{https://time.com/5318718/central-american-refugees-crisis/}{\textbf{\nolinkurl{https://time.com/5318718/central-american-refugees-crisis/}}}
-        \end{itemize} 
-        
-        \item You work for the company that is doing research but your research has proved that the company's product is dangerous and you need to communicate this to your government how do you do this while keeping your safety and your family safety in mind. Or alternatively you work for the government and you have information that they do not want to exposed but it is dangerous information that people should know (I.e. Snowden) how do you go about protecting yourself and your family.
-        \begin{itemize}
-            \item Link: \href{https://www.bbc.com/news/technology-54013527}{\textbf{\nolinkurl{https://www.bbc.com/news/technology-54013527}}}
-            \item Link: \href{https://www.washingtonpost.com/news/federal-eye/wp/2014/07/31/5-famous-whistleblowers-from-the-federal-government/}{\textbf{\nolinkurl{https://www.washingtonpost.com/news/federal-eye/wp/2014/07/31/5-famous-whistleblowers-from-the-federal-government/}}}
-        \end{itemize} 
+Then list at least 10 risks, numbered. Focus on the technology, not the physical dangers. For example, at a protest, the risk of being pepper sprayed isn't part of this lab, but the risks of the apps and phones used to organize the protest are. Make sure you cover:
+\begin{itemize}
+    \item Written communication, such as email and messaging apps
+    \item Phone calls and text messages
+    \item The phone itself. Almost everyone in these scenarios will have one, so explain how you'll protect it.
+    \item Whether to use a VPN, why or why not, and what to look for in one
+    \item Tracking, such as location sharing, app permissions, photos that include where they were taken, and hidden trackers like AirTags
+\end{itemize}
 
+As you work, think about: what's reasonable, and what's over the top? Which ways of communicating are riskier? Is there anything you're missing?
 
+Two sample threat models, for scenarios that aren't on the list, are linked under Resources. They're laid out the way a threat model might look in industry, so they don't follow this lab's layout. Use them to see what the parts look like, but don't copy them. Your scenario is different, so your risks and plan should be too.
 
-    \end{enumerate}
+\subsection*{Sources}
+You need at least 5 sources. My guide to evaluating sources, linked under Resources, shows how to do the CRAAP test, with a good and a bad example. For \textbf{each} source, include:
+\begin{enumerate}
+    \item A citation, in APA or MLA style. If you want to use another style, check with me first.
+    \item A CRAAP test checklist or paragraph: Currency, Relevance, Authority, Accuracy, and Purpose.
+    \item A screenshot of the source, showing its title and date.
+    \item One direct quote from the source, and where it appears, such as the paragraph, section, or page.
+\end{enumerate}
+Anything you copy word for word is a quote, so put it in quotation marks and cite it. Anything you reword, or take the ideas from, still needs a citation.
 
-    If none of these appeal to you you may come up with another scenario. However you must check with the teacher before using your scenario to make sure that it works. 
+\subsection*{Screenshots}
+Each screenshot should have your name, term, and year.  One of the easiest ways to do that is make a text document with your name and term/year on your computer and save it to use all term. Any screenshots that don't include this information won't be counted.
 
-\section*{Reference information for CRAP/CRAAP}
-    
-    Turn in your report including your sources, you need at least 5, and a CRAP reliability checklist/paragraph for EACH  source. CRAP or CRAAP is used to define the quality of your sources. 
-    \begin{itemize}
-
-        \item You need at least 5 sources, and a CRAP reliability checklist/paragraph for EACH  source. 
-        \item You may use either APA or MLA for your citations. If you want to use something else, check with me first.
-        \item Do not copy/paste from anywhere without citing your reference. Quoting or paraphrasing from a web site should include a citation.
-        \item If you copy and paste into your paper, it is a quotation. It needs quotes and a link to the information (the link may be cut and paste from the address bar).
-        \item If you use material that is only changed in minor ways (words or phrases omitted, shortened or slightly rearranged) it is a citation. It does not need quotes but does need a link to show from whence it came.
-        \item If you take information from one source and substantially rephrase the material (paraphrase) it should be cited (show a link).
-        \item Material drawn from multiple sources put in your own words does not need a direct citation but the sources would show up in any included bibliography.
-         \item You can find instructions and more explanations for CRAP/CRAAP checklists at the following places
-        \begin{itemize}
-            \item CRAP test explanation 1 Link: \href{https://cccs.libguides.com/CRAPTest}{\textbf{\nolinkurl{https://cccs.libguides.com/CRAPTest}}} or 
-            \item CRAP test explanation 2 Link: \href{https://libguides.butler.edu/c.php?g=117303&p=1940068}{\textbf{\nolinkurl{https://libguides.butler.edu/c.php?g=117303&p=1940068}}} 
-            \item Wikipedia explanation Link: \href{https://en.wikipedia.org/wiki/CRAAP_test}{\textbf{\nolinkurl{https://en.wikipedia.org/wiki/CRAAP_test}}}
-        \end{itemize}
-    \end{itemize}    
-
+\begin{figure}[H]
+    \centerline{\includegraphics[scale=.2]{ExampleScreenshot.png}}
+    \caption{This is an image of what each of your screenshots should look like}
+    \alt{Example screenshot: a web browser showing the Google home page, with a small text editor window in front of it that says YOUR NAME HERE and TERM YEAR}
+\end{figure}
 
 \section*{Deliverables}
+One file that includes:
 \begin{itemize}
-    \item Your threat model 
-    \item Your threat model must include at least 10 risks (number them!)
-    \item Prioritize your threats from severe to mild risk and organized in a table from highest risk to lowest risk including notes  on why you ordered them the way you did.
-    \item A paragraph or two that includes your plan for how to mitigate each of those risks including an explanation of how your plan matches to the risks and how your plan is taking care as much as possible of the threats that the scenario faces.
-    \item You must have at least five resources 
-    \item Your CRAP/CRAAP checklist for EACH of your 5 sources, but they should all be in the same document which can be different then the paper, or at the end of the paper
-\end{itemize}    
+    \item Which scenario you chose
+    \item Your answers to EFF's six security plan questions
+    \item A table of at least 10 numbered risks, ordered from most to least severe, with notes on why you ordered them that way
+    \item A paragraph or two with your plan to reduce each risk, explaining how the plan matches the risks, and how it protects the people in your scenario as much as possible
+    \item Your source list, with a CRAAP check, a screenshot, and a direct quote for each of your 5 or more sources
+\end{itemize}
+
+\section*{Resources}
+References, a video, a PowerPoint and some notes are available at my website
+Link: \href{https://www.aholdengouveia.name/InfoSec/Privacy.html}{\textbf{\nolinkurl{https://www.aholdengouveia.name/InfoSec/Privacy.html}}}
+
+EFF Surveillance Self-Defense: Your Security Plan, with the six questions
+Link: \href{https://ssd.eff.org/module/your-security-plan}{\textbf{\nolinkurl{https://ssd.eff.org/module/your-security-plan}}}
+
+Sample threat model 1: protecting a streamer's identity. Don't copy it.
+Link: \href{https://www.aholdengouveia.name/InfoSec/labs/threatmodel-streamer.html}{\textbf{\nolinkurl{https://www.aholdengouveia.name/InfoSec/labs/threatmodel-streamer.html}}}
+
+Sample threat model 2: staying safe when leaving a controlling partner. Don't copy it. \textbf{Trigger warning:} this sample talks about domestic abuse and stalking. You don't need to read it, since sample 1 shows all the same parts.
+Link: \href{https://www.aholdengouveia.name/InfoSec/labs/threatmodel-leaving.html}{\textbf{\nolinkurl{https://www.aholdengouveia.name/InfoSec/labs/threatmodel-leaving.html}}}
+
+EFF Surveillance Self-Defense, with guides to secure messaging, phones, and VPNs
+Link: \href{https://ssd.eff.org/}{\textbf{\nolinkurl{https://ssd.eff.org/}}}
+
+My guide to evaluating sources
+Link: \href{https://www.aholdengouveia.name/Howtos/Sourceeval/sourceEvaluation.html}{\textbf{\nolinkurl{https://www.aholdengouveia.name/Howtos/Sourceeval/sourceEvaluation.html}}}
+
+The CRAAP test, with questions to ask about each source
+Link: \href{https://web.archive.org/web/20250814000638/https://guides.lib.uchicago.edu/c.php?g=1241077&p=9082343}{\textbf{\nolinkurl{https://web.archive.org/web/20250814000638/https://guides.lib.uchicago.edu/c.php?g=1241077&p=9082343}}}
+
+Another explanation of the CRAAP test
+Link: \href{https://libguides.butler.edu/c.php?g=117303&p=1940068}{\textbf{\nolinkurl{https://libguides.butler.edu/c.php?g=117303&p=1940068}}}
+
+What a threat model is
+Link: \href{https://en.wikipedia.org/wiki/Threat_model}{\textbf{\nolinkurl{https://en.wikipedia.org/wiki/Threat_model}}}
+
+\subsection*{Background for each scenario}
+Scenario 1, protests:
+Link: \href{https://www.bbc.com/news/world-middle-east-49800213}{\textbf{\nolinkurl{https://www.bbc.com/news/world-middle-east-49800213}}}
+
+Link: \href{https://www.bbc.com/news/world-asia-china-53942295}{\textbf{\nolinkurl{https://www.bbc.com/news/world-asia-china-53942295}}}
+
+Scenario 2, internet restrictions:
+Link: \href{https://en.wikipedia.org/wiki/Internet_censorship_and_surveillance_by_country}{\textbf{\nolinkurl{https://en.wikipedia.org/wiki/Internet_censorship_and_surveillance_by_country}}}
+
+Link: \href{https://cyber.harvard.edu/pubrelease/internet-control/}{\textbf{\nolinkurl{https://cyber.harvard.edu/pubrelease/internet-control/}}}
+
+Scenario 3, persecuted minorities:
+Link: \href{https://www.pbs.org/newshour/world/russias-supreme-court-effectively-outlaws-lgbtq-activism-citing-extremist-movement}{\textbf{\nolinkurl{https://www.pbs.org/newshour/world/russias-supreme-court-effectively-outlaws-lgbtq-activism-citing-extremist-movement}}}
+
+Link: \href{https://www.bbc.com/news/world-asia-china-22278037}{\textbf{\nolinkurl{https://www.bbc.com/news/world-asia-china-22278037}}}
+
+Scenario 4, helping people escape danger:
+Link: \href{https://www.nps.gov/subjects/undergroundrailroad/index.htm}{\textbf{\nolinkurl{https://www.nps.gov/subjects/undergroundrailroad/index.htm}}}
+
+Link: \href{https://www.cfr.org/global-conflict-tracker}{\textbf{\nolinkurl{https://www.cfr.org/global-conflict-tracker}}}
+
+Scenario 5, whistleblowers:
+Link: \href{https://www.bbc.com/news/technology-54013527}{\textbf{\nolinkurl{https://www.bbc.com/news/technology-54013527}}}
+
+Link: \href{https://www.whistleblowers.gov/}{\textbf{\nolinkurl{https://www.whistleblowers.gov/}}}
 
 \end{document}

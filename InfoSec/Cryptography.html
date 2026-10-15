@@ -1,0 +1,107 @@
+---
+title: Cryptography
+layout: infosec1
+---
+<!--Learning Outcomes for this topic-->
+<h1>Cryptography</h1>
+<p>Learning outcomes:
+    <ul>
+        <li>Explain the difference between symmetric and asymmetric encryption</li>
+        <li>Describe how public and private keys, hashes, and digital signatures are used</li>
+        <li>Encrypt stored data using a tool such as VeraCrypt</li>
+        <li>Describe legal issues around encryption, such as backdoors and key disclosure laws</li>
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/lWS34XW9o6k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="/InfoSec/CIS 115 Week 8.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>What is encryption?</li>
+            <ul>
+                <li>Encryption and decryption</li>
+                <li>Who cares? Anyone who stores or sends private information</li>
+            </ul>
+        <li>Symmetric and asymmetric encryption</li>
+            <ul>
+                <li><a href="https://en.wikipedia.org/wiki/Symmetric-key_algorithm">Symmetric: one shared key</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Public-key_cryptography">Asymmetric: a public key and a private key</a></li>
+            </ul>
+        <li>Computer encryption history</li>
+            <ul>
+                <li>Enigma machines</li>
+                <li>DES (Data Encryption Standard)</li>
+                    <ul>
+                        <li>Released 1977</li>
+                        <li>Triple DES</li>
+                        <li>Publicly broken in 1999</li>
+                    </ul>
+                <li><a href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard">AES (Advanced Encryption Standard)</a></li>
+                    <ul>
+                        <li>Published 2001</li>
+                        <li>Approved for NSA classified data in 2003</li>
+                    </ul>
+            </ul>
+        <li>Cryptanalysis</li>
+            <ul>
+                <li>How much information is known: ciphertext only, known plaintext, or chosen plaintext</li>
+                <li>Frequency analysis</li>
+            </ul>
+        <li>The love story of Alice and Bob</li>
+            <ul>
+                <li>Public and private keys: what happens if the private key is lost?</li>
+                <li>Digital signatures</li>
+                <li><a href="https://en.wikipedia.org/wiki/Cryptographic_hash_function">One way functions and hash functions</a></li>
+                <li><a href="https://xkcd.com/177/">xkcd: Alice and Bob</a></li>
+            </ul>
+        <li>Encrypting stored data</li>
+            <ul>
+                <li>Mobile data</li>
+                <li>Cloud data</li>
+                <li>Backups</li>
+                <li>Password control and management</li>
+            </ul>
+        <li>Encrypting communications</li>
+            <ul>
+                <li>Email</li>
+                <li>Chat</li>
+                <li>Timed encryptions</li>
+            </ul>
+        <li><a href="https://en.wikipedia.org/wiki/Blockchain">Blockchain</a></li>
+            <ul>
+                <li>A continuously growing list of records</li>
+                <li>Blocks linked and secured using cryptography</li>
+                <li>An example of distributed computing, such as Bitcoin</li>
+            </ul>
+        <li>Legal issues</li>
+            <ul>
+                <li>Backdoors and golden keys</li>
+                <li>The US used to treat encryption as a weapon for export, under the International Traffic in Arms Regulations</li>
+                <li>Key disclosure laws, such as <a href="https://en.wikipedia.org/wiki/In_re_Boucher">In re Boucher</a></li>
+            </ul>
+    </ul>
+</p>
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <li>In class activity: use <a href="https://www.veracrypt.fr/">VeraCrypt</a> to create a 20 MB encrypted container, mount it, add some files, and dismount it. What does the container look like in File Explorer when it's dismounted?</li>
+        <li>Discussion: should governments have a backdoor into encryption? Who benefits, and who is put at risk?</li>
+        <li>Hands-on practice: try the free TryHackMe rooms <a href="https://tryhackme.com/room/cryptographyfordummies">Cryptography for Dummies</a> and <a href="https://tryhackme.com/room/crackthehash">Crack the Hash</a>. They run in safe practice environments built for learning, with a free account.</li>
+        <li>Hands-on practice: try the Cryptography and General Skills challenges in picoCTF, a free practice platform from Carnegie Mellon University, now part of the <a href="https://cylabacademy.org/">CyLab Security Academy</a>.</li>
+        <li>Password cracking: follow the instructions on <a href="/InfoSec/labs/passwordcracking.pdf">this PDF</a> (<a href="/InfoSec/labs/passwordcracking.html">accessible HTML version</a>)</li>
+        <li>Security video review: follow the instructions on <a href="/InfoSec/labs/securityvideo.pdf">this PDF</a> (<a href="/InfoSec/labs/securityvideo.html">accessible HTML version</a>)</li>
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">View all classes</a>
+</p>

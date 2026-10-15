@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Firewall Simulator</title>
+    <link href="../../css/accessible-lab.css" rel="stylesheet" type="text/css">
+    <style>
+        .sim-form label { display: block; font-weight: bold; margin-top: 0.8rem; }
+        .sim-form select, .sim-form input[type="text"] { font-size: 1rem; padding: 0.35rem; max-width: 100%; }
+        .sim-form .hint { margin: 0.2rem 0 0; font-size: 0.95rem; }
+        .sim-row { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-end; }
+        .sim-row > div { min-width: 10rem; }
+        button { font-size: 1rem; padding: 0.45rem 0.9rem; margin: 0.2rem 0.2rem 0.2rem 0; cursor: pointer; }
+        .status { padding: 0.8rem; margin-top: 1rem; border-left: 4px solid currentColor; }
+        .status.error { font-weight: bold; }
+        .decision { font-weight: bold; }
+        td.actions { white-space: nowrap; }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
+        <h1>Firewall Simulator</h1>
+        <div class="author">
+            <p>Adrianna Holden-Gouveia</p>
+            <p>Website: <a href="https://aholdengouveia.name">https://aholdengouveia.name</a></p>
+        </div>
+    </header>
+
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+        <ol class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li><a href="/InfoSec/NetworkSecurity.html">Network Security</a></li>
+            <li aria-current="page">Firewall Simulator</li>
+        </ol>
+    </nav>
+
+    <main role="main" id="main-content">
+        <section aria-labelledby="how-heading">
+            <h2 id="how-heading">How a firewall decides</h2>
+            <p>A firewall checks each piece of traffic against its list of rules, from the top down. The <strong>first rule that matches wins</strong>, and the firewall stops looking. If no rule matches, the <strong>default policy</strong> decides: deny all blocks it, and allow all lets it through.</p>
+            <p>Each rule says what to do (allow or deny), and what traffic it applies to: the protocol (TCP, UDP, or ICMP, which is used by ping), the port (which service, such as 443 for secure websites or 22 for SSH), and the source (who the traffic comes from).</p>
+            <p>Everything runs in your browser. Nothing you enter is sent anywhere. Your rules are saved in this browser, so you can come back to them.</p>
+        </section>
+
+        <section aria-labelledby="policy-heading">
+            <h2 id="policy-heading">1. Default policy</h2>
+            <div class="sim-form">
+                <label for="default-policy">If no rule matches:</label>
+                <select id="default-policy">
+                    <option value="deny">Deny all (block it)</option>
+                    <option value="allow">Allow all (let it through)</option>
+                </select>
+            </div>
+        </section>
+
+        <section aria-labelledby="rules-heading">
+            <h2 id="rules-heading">2. Rules</h2>
+            <form id="rule-form" class="sim-form">
+                <div class="sim-row">
+                    <div>
+                        <label for="r-action">Action</label>
+                        <select id="r-action"><option value="allow">Allow</option><option value="deny">Deny</option></select>
+                    </div>
+                    <div>
+                        <label for="r-protocol">Protocol</label>
+                        <select id="r-protocol"><option value="TCP">TCP</option><option value="UDP">UDP</option><option value="ICMP">ICMP (ping)</option><option value="any">Any</option></select>
+                    </div>
+                    <div>
+                        <label for="r-port">Port</label>
+                        <input type="text" id="r-port" value="any" size="12" aria-describedby="r-port-hint">
+                    </div>
+                    <div>
+                        <label for="r-source">Source</label>
+                        <input type="text" id="r-source" value="any" size="18" aria-describedby="r-source-hint">
+                    </div>
+                    <div>
+                        <label for="r-note">Description</label>
+                        <input type="text" id="r-note" size="24" placeholder="Allow secure web traffic">
+                    </div>
+                </div>
+                <p class="hint" id="r-port-hint">Port: any, one port such as 443, a list such as 80,443, or a range such as 1-1024. Ports don't apply to ICMP.</p>
+                <p class="hint" id="r-source-hint">Source: any, one address such as 198.51.100.7, or a network such as 192.168.1.0/24.</p>
+                <button type="submit">Add rule to the bottom</button>
+            </form>
+
+            <div class="table-container">
+                <table>
+                    <caption>Your rules, checked from the top down. The first rule that matches wins.</caption>
+                    <thead><tr><th scope="col">#</th><th scope="col">Action</th><th scope="col">Protocol</th><th scope="col">Port</th><th scope="col">Source</th><th scope="col">Description</th><th scope="col">Move or delete</th></tr></thead>
+                    <tbody id="rules-body"></tbody>
+                </table>
+            </div>
+            <p>
+                <button type="button" id="clear-rules">Clear all rules</button>
+                <button type="button" id="load-example">Load the rule order example</button>
+            </p>
+        </section>
+
+        <section aria-labelledby="traffic-heading">
+            <h2 id="traffic-heading">3. Test traffic</h2>
+            <p>The office network in these examples is 192.168.1.0/24. Everything else comes from the internet.</p>
+            <form id="packet-form" class="sim-form">
+                <p><strong>Add your own test traffic:</strong></p>
+                <div class="sim-row">
+                    <div>
+                        <label for="p-label">Description</label>
+                        <input type="text" id="p-label" size="24" placeholder="Visitor loads the home page">
+                    </div>
+                    <div>
+                        <label for="p-source">Source address</label>
+                        <input type="text" id="p-source" size="16" placeholder="203.0.113.45">
+                    </div>
+                    <div>
+                        <label for="p-protocol">Protocol</label>
+                        <select id="p-protocol"><option value="TCP">TCP</option><option value="UDP">UDP</option><option value="ICMP">ICMP (ping)</option></select>
+                    </div>
+                    <div>
+                        <label for="p-port">Port</label>
+                        <input type="text" id="p-port" size="8" placeholder="443">
+                    </div>
+                </div>
+                <button type="submit">Add test traffic</button>
+            </form>
+            <p><button type="button" id="run-tests">Test all traffic</button> <button type="button" id="reset-traffic">Reset to the sample traffic</button></p>
+            <div id="status" class="status" role="status" aria-live="polite">Add some rules, then select Test all traffic.</div>
+
+            <div class="table-container">
+                <table>
+                    <caption>Test traffic, and what the firewall decided</caption>
+                    <thead><tr><th scope="col">Traffic</th><th scope="col">Source</th><th scope="col">Protocol</th><th scope="col">Port</th><th scope="col">Decision</th><th scope="col">Why</th><th scope="col">Remove</th></tr></thead>
+                    <tbody id="traffic-body"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script>
+    (function () {
+        var SAMPLE = [
+            { label: "Customer visits the website (HTTPS)", source: "203.0.113.45", protocol: "TCP", port: "443" },
+            { label: "Customer visits the website (HTTP)", source: "203.0.113.45", protocol: "TCP", port: "80" },
+            { label: "Office admin logs in with SSH", source: "192.168.1.10", protocol: "TCP", port: "22" },
+            { label: "Stranger tries to log in with SSH", source: "198.51.100.7", protocol: "TCP", port: "22" },
+            { label: "Stranger tries remote desktop", source: "198.51.100.7", protocol: "TCP", port: "3389" },
+            { label: "Stranger tries to reach the database", source: "198.51.100.7", protocol: "TCP", port: "3306" },
+            { label: "Another server delivers email", source: "203.0.113.80", protocol: "TCP", port: "25" },
+            { label: "Someone pings the server", source: "198.51.100.7", protocol: "ICMP", port: "" },
+            { label: "DNS lookup", source: "203.0.113.53", protocol: "UDP", port: "53" }
+        ];
+        var EXAMPLE = [
+            { action: "deny", protocol: "TCP", port: "22", source: "any", note: "Block SSH from everyone" },
+            { action: "allow", protocol: "TCP", port: "22", source: "192.168.1.0/24", note: "Allow SSH from the office" },
+            { action: "allow", protocol: "TCP", port: "80,443", source: "any", note: "Allow web traffic" }
+        ];
+        var state = { policy: "deny", rules: [], traffic: SAMPLE.slice() };
+        var KEY = "infosec-firewall-sim";
+
+        function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+        function load() {
+            try {
+                var s = JSON.parse(localStorage.getItem(KEY));
+                if (s && Array.isArray(s.rules) && Array.isArray(s.traffic)) state = s;
+            } catch (e) {}
+        }
+
+        var statusEl = document.getElementById("status");
+        function setStatus(msg, isError) { statusEl.textContent = msg; statusEl.className = "status" + (isError ? " error" : ""); }
+
+        function ipToInt(ip) {
+            var m = /^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/.exec(ip);
+            if (!m) return null;
+            var parts = m.slice(1).map(Number);
+            if (parts.some(function (n) { return n > 255; })) return null;
+            return ((parts[0] << 24) >>> 0) + (parts[1] << 16) + (parts[2] << 8) + parts[3];
+        }
+        function validSource(src) {
+            if (src === "any") return true;
+            var p = src.split("/");
+            if (ipToInt(p[0]) === null) return false;
+            if (p.length === 1) return true;
+            var bits = Number(p[1]);
+            return p.length === 2 && /^\d+$/.test(p[1]) && bits >= 0 && bits <= 32;
+        }
+        function sourceMatches(rule, ip) {
+            if (rule === "any") return true;
+            var p = rule.split("/"), base = ipToInt(p[0]), addr = ipToInt(ip);
+            if (addr === null) return false;
+            var bits = p.length === 2 ? Number(p[1]) : 32;
+            var mask = bits === 0 ? 0 : (0xFFFFFFFF << (32 - bits)) >>> 0;
+            return ((base & mask) >>> 0) === ((addr & mask) >>> 0);
+        }
+        function validPort(spec) {
+            if (spec === "any") return true;
+            return spec.split(",").every(function (part) {
+                var r = part.trim().split("-");
+                if (r.length > 2 || r.some(function (x) { return !/^\d+$/.test(x) || Number(x) < 1 || Number(x) > 65535; })) return false;
+                return r.length === 1 || Number(r[0]) <= Number(r[1]);
+            });
+        }
+        function portMatches(spec, port) {
+            if (spec === "any") return true;
+            var n = Number(port);
+            return spec.split(",").some(function (part) {
+                var r = part.trim().split("-");
+                return r.length === 1 ? n === Number(r[0]) : (n >= Number(r[0]) && n <= Number(r[1]));
+            });
+        }
+        function ruleMatches(rule, pkt) {
+            if (rule.protocol !== "any" && rule.protocol !== pkt.protocol) return false;
+            if (pkt.protocol === "ICMP") { if (rule.port !== "any" && rule.protocol !== "ICMP") return false; }
+            else if (!portMatches(rule.port, pkt.port)) return false;
+            return sourceMatches(rule.source, pkt.source);
+        }
+        function decide(pkt) {
+            for (var i = 0; i < state.rules.length; i++) {
+                if (ruleMatches(state.rules[i], pkt)) {
+                    var r = state.rules[i];
+                    return { allowed: r.action === "allow", why: "Matched rule " + (i + 1) + (r.note ? " (" + r.note + ")" : "") + ", so the firewall stopped checking." };
+                }
+            }
+            return { allowed: state.policy === "allow", why: "No rule matched, so the default policy (" + (state.policy === "allow" ? "allow all" : "deny all") + ") decided." };
+        }
+
+        function cell(tag, text) { var el = document.createElement(tag); el.textContent = text; return el; }
+        function btn(text, label, fn) { var b = cell("button", text); b.type = "button"; b.setAttribute("aria-label", label); b.addEventListener("click", fn); return b; }
+
+        function renderRules() {
+            var body = document.getElementById("rules-body"); body.innerHTML = "";
+            if (!state.rules.length) {
+                var tr = document.createElement("tr"), td = cell("td", "No rules yet. Everything follows the default policy.");
+                td.colSpan = 7; tr.appendChild(td); body.appendChild(tr); return;
+            }
+            state.rules.forEach(function (r, i) {
+                var tr = document.createElement("tr");
+                [String(i + 1), r.action === "allow" ? "Allow" : "Deny", r.protocol === "any" ? "Any" : r.protocol, r.protocol === "ICMP" ? "n/a" : r.port, r.source, r.note || ""].forEach(function (t) { tr.appendChild(cell("td", t)); });
+                var td = document.createElement("td"); td.className = "actions";
+                if (i > 0) td.appendChild(btn("Up", "Move rule " + (i + 1) + " up", function () { var t = state.rules[i - 1]; state.rules[i - 1] = state.rules[i]; state.rules[i] = t; changed("Moved rule " + (i + 1) + " up."); }));
+                if (i < state.rules.length - 1) td.appendChild(btn("Down", "Move rule " + (i + 1) + " down", function () { var t = state.rules[i + 1]; state.rules[i + 1] = state.rules[i]; state.rules[i] = t; changed("Moved rule " + (i + 1) + " down."); }));
+                td.appendChild(btn("Delete", "Delete rule " + (i + 1), function () { state.rules.splice(i, 1); changed("Deleted rule " + (i + 1) + "."); }));
+                tr.appendChild(td); body.appendChild(tr);
+            });
+        }
+        function renderTraffic(run) {
+            var body = document.getElementById("traffic-body"); body.innerHTML = "";
+            var allowed = 0;
+            state.traffic.forEach(function (p, i) {
+                var tr = document.createElement("tr");
+                [p.label, p.source, p.protocol, p.protocol === "ICMP" ? "n/a" : p.port].forEach(function (t) { tr.appendChild(cell("td", t)); });
+                if (run) {
+                    var d = decide(p); if (d.allowed) allowed++;
+                    var dc = cell("td", d.allowed ? "Allowed" : "Blocked"); dc.className = "decision"; tr.appendChild(dc);
+                    tr.appendChild(cell("td", d.why));
+                } else { tr.appendChild(cell("td", "Not tested yet")); tr.appendChild(cell("td", "")); }
+                var td = document.createElement("td");
+                td.appendChild(btn("Remove", "Remove " + p.label, function () { state.traffic.splice(i, 1); save(); renderTraffic(false); setStatus("Removed that traffic. Select Test all traffic to test again."); }));
+                tr.appendChild(td); body.appendChild(tr);
+            });
+            if (run) setStatus("Tested " + state.traffic.length + " pieces of traffic: " + allowed + " allowed, " + (state.traffic.length - allowed) + " blocked.");
+        }
+        function changed(msg) { save(); renderRules(); renderTraffic(false); setStatus(msg + " Select Test all traffic to see the effect."); }
+
+        document.getElementById("default-policy").addEventListener("change", function (e) { state.policy = e.target.value; changed("Default policy set to " + (state.policy === "allow" ? "allow all." : "deny all.")); });
+
+        document.getElementById("rule-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            var r = {
+                action: document.getElementById("r-action").value,
+                protocol: document.getElementById("r-protocol").value,
+                port: document.getElementById("r-port").value.trim().toLowerCase() || "any",
+                source: document.getElementById("r-source").value.trim().toLowerCase() || "any",
+                note: document.getElementById("r-note").value.trim()
+            };
+            if (r.protocol === "ICMP") r.port = "any";
+            if (!validPort(r.port)) { setStatus("That port isn't valid. Use any, a number from 1 to 65535, a list such as 80,443, or a range such as 1-1024.", true); return; }
+            if (!validSource(r.source)) { setStatus("That source isn't valid. Use any, an address such as 198.51.100.7, or a network such as 192.168.1.0/24.", true); return; }
+            state.rules.push(r); document.getElementById("r-note").value = "";
+            changed("Added rule " + state.rules.length + ".");
+        });
+
+        document.getElementById("packet-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            var p = {
+                label: document.getElementById("p-label").value.trim() || "My test traffic",
+                source: document.getElementById("p-source").value.trim(),
+                protocol: document.getElementById("p-protocol").value,
+                port: document.getElementById("p-port").value.trim()
+            };
+            if (ipToInt(p.source) === null) { setStatus("Enter a source address, such as 203.0.113.45.", true); return; }
+            if (p.protocol === "ICMP") p.port = "";
+            else if (!/^\d+$/.test(p.port) || Number(p.port) < 1 || Number(p.port) > 65535) { setStatus("Enter a port from 1 to 65535.", true); return; }
+            state.traffic.push(p); save(); renderTraffic(false); setStatus("Added your test traffic. Select Test all traffic.");
+        });
+
+        document.getElementById("run-tests").addEventListener("click", function () { renderTraffic(true); });
+        document.getElementById("reset-traffic").addEventListener("click", function () { state.traffic = SAMPLE.slice(); save(); renderTraffic(false); setStatus("Reset to the sample traffic."); });
+        document.getElementById("clear-rules").addEventListener("click", function () { state.rules = []; changed("Cleared all rules."); });
+        document.getElementById("load-example").addEventListener("click", function () {
+            state.rules = EXAMPLE.map(function (r) { return Object.assign({}, r); }); state.policy = "deny";
+            document.getElementById("default-policy").value = "deny";
+            changed("Loaded the rule order example, with a deny all default.");
+        });
+
+        load();
+        document.getElementById("default-policy").value = state.policy;
+        renderRules(); renderTraffic(false);
+    })();
+    </script>
+</body>
+</html>

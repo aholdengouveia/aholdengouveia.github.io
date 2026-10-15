@@ -1,0 +1,127 @@
+---
+title: Policy, Privacy, and Compliance
+layout: infosec1
+---
+<!--Learning Outcomes for this topic-->
+<h1>Policy, Privacy, and Compliance</h1>
+<p>Learning outcomes:
+    <ul>
+        <li>Describe Massachusetts data privacy laws, and what they define as personal information</li>
+        <li>Explain how combining databases can reveal more than any single source</li>
+        <li>Describe good practices for data backup, data retention, and responding to a breach</li>
+        <li>Compare insider and outsider threats</li>
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/CHJ9g5Bpc4A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="/InfoSec/CIS 115 Week 11.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>Privacy and computers</li>
+            <ul>
+                <li>Business</li>
+                <li>Databases</li>
+                <li>Social media</li>
+            </ul>
+        <li>Massachusetts data privacy laws</li>
+            <ul>
+                <li>M.G.L. 93H</li>
+                    <ul>
+                        <li>Defines personal information</li>
+                        <li>Requires the state and affected people to be notified after a security breach or unauthorized use of personal information</li>
+                        <li>The notice to residents must be sent as soon as practicable, and must say they can get a police report, how to freeze their credit, that a freeze is free, and what help the company is offering</li>
+                        <li>The notice to residents must <em>not</em> say how the breach happened, or how many residents were affected</li>
+                        <li><a href="https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter93H/Section3">Read Section 3 of the law</a>, and see the <a href="https://www.mass.gov/lists/data-breach-notification-reports">breach reports and letters Massachusetts posts</a></li>
+                    </ul>
+                <li>M.G.L. 93I</li>
+                    <ul>
+                        <li>Requires personal information to be destroyed so it can't be recovered</li>
+                        <li>Includes biometric indicators as personal information</li>
+                    </ul>
+                <li>201 CMR 17.00</li>
+                    <ul>
+                        <li>Requires checking that third party vendors with access to personal information don't add risk</li>
+                        <li>Requires limiting the amount of personal information collected</li>
+                    </ul>
+                <li>Personal information is a name combined with a Social Security number, driver's license or state ID number, or financial account, credit, or debit card number</li>
+            </ul>
+        <li>Organizations that protect privacy</li>
+            <ul>
+                <li><a href="https://www.eff.org/">Electronic Frontier Foundation (EFF)</a></li>
+                <li><a href="https://www.privacyguides.org/">Privacy Guides</a></li>
+            </ul>
+        <li>Databases</li>
+            <ul>
+                <li>Inferring from multiple data items</li>
+                <li>Combining sources: what picture can we get from multiple databases?</li>
+                <li>Who gets access, and who gets control?</li>
+            </ul>
+        <li>Data breaches</li>
+            <ul>
+                <li><a href="https://en.wikipedia.org/wiki/Yahoo_data_breaches">Yahoo</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/2017_Equifax_data_breach">Equifax</a></li>
+                <li>TJ Maxx</li>
+                <li>PowerSchool (2024): data on about 62 million students and 9.5 million teachers. The hacker, a Massachusetts college student, was sentenced to 4 years in 2025 (<a href="https://www.bleepingcomputer.com/news/security/powerschool-hacker-gets-sentenced-to-four-years-in-prison/">BleepingComputer</a>)</li>
+                <li>Canvas (2026): data on over 30 million students and staff stolen after voice phishing (<a href="https://techcrunch.com/2026/09/15/the-worst-hacks-and-breaches-of-2026-so-far/">TechCrunch</a>)</li>
+                <li><a href="http://www.informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/">World's biggest data breaches</a></li>
+            </ul>
+        <li>AI and privacy law</li>
+            <ul>
+                <li>Companies want user data to train AI</li>
+                <li>In 2024, Ireland's Data Protection Commission got Meta to pause training AI on EU users' public posts (<a href="https://www.dataprotection.ie/en/news-media/latest-news/dpcs-engagement-meta-ai">Data Protection Commission</a>)</li>
+                <li>Meta's use of AI chats for ads doesn't apply in the EU, UK, and South Korea, because of their privacy laws</li>
+                <li>The US has no federal privacy law requiring opt-in, so many companies make AI training opt-out</li>
+            </ul>
+        <li>Data backup policies</li>
+            <ul>
+                <li>What gets backed up, and on what medium?</li>
+                <li>Where is it stored, and how often does it happen?</li>
+                <li>Is it encrypted, and what kind of backup is it?</li>
+                <li>What are your written policies, and how often are they reviewed?</li>
+            </ul>
+        <li>Data retention</li>
+            <ul>
+                <li>What do you keep, and for how long?</li>
+                <li>What are your legal obligations?</li>
+                <li>What should you not keep?</li>
+            </ul>
+        <li>Breach reaction</li>
+            <ul>
+                <li>Bad examples: almost everyone</li>
+                <li>Best practices for breach disclosure: the FTC's <a href="https://www.ftc.gov/business-guidance/resources/data-breach-response-guide-business">Data Breach Response: A Guide for Business</a></li>
+                    <ul>
+                        <li>Secure your systems, fix what went wrong, then notify people</li>
+                        <li>Tell law enforcement, affected businesses, and the people affected</li>
+                        <li>A good notice says what happened, what information was taken, what the company has done, and what people can do to protect themselves</li>
+                        <li>Offer help, such as free credit monitoring</li>
+                    </ul>
+                <li>If your data is in a breach: check <a href="https://haveibeenpwned.com/">Have I Been Pwned</a>, change passwords, turn on two-factor authentication, and consider a <a href="https://consumer.ftc.gov/articles/what-know-about-credit-freezes-and-fraud-alerts">free credit freeze</a></li>
+            </ul>
+        <li>Threats</li>
+            <ul>
+                <li>Insider threats: people inside the organization, including mistakes as well as people causing harm on purpose</li>
+                <li>Outsider threats: attackers from outside, such as criminals or other countries</li>
+            </ul>
+    </ul>
+</p>
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <li>In class activity: spend 5 minutes on <a href="https://www.privacyguides.org/">Privacy Guides</a> reading about one thing that interests you, then share what it was, why it's interesting, and what you'll do with it.</li>
+        <li>Discussion: which is harder to defend against, insider threats or outsider threats? Why?</li>
+        <li>Follow the instructions on <a href="/InfoSec/labs/breachanalysis.pdf">this PDF</a> (<a href="/InfoSec/labs/breachanalysis.html">accessible HTML version</a>)</li>
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">View all classes</a>
+</p>

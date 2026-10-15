@@ -1,0 +1,106 @@
+---
+title: Cloud Security
+layout: infosec1
+---
+<!--Learning Outcomes for this topic-->
+<h1>Cloud Security</h1>
+<p>Learning outcomes:
+    <ul>
+        <li>Explain what the cloud is, and compare public, private, and hybrid clouds</li>
+        <li>Compare cloud service models, such as IaaS, PaaS, and SaaS</li>
+        <li>Describe how data safety, encryption, and availability work in the cloud</li>
+        <li>Evaluate the risks and benefits of moving data to the cloud</li>
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/xj80fUx3uo4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="/InfoSec/CIS 115 Week 12.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>What and where is the cloud?</li>
+            <ul>
+                <li><a href="https://csrc.nist.gov/pubs/sp/800/145/final">NIST's definition of cloud computing</a></li>
+                <li>Where the cloud physically is</li>
+            </ul>
+        <li>Who uses the cloud?</li>
+            <ul>
+                <li>Personal and corporate users</li>
+                <li>Infrastructure as a Service (IaaS)</li>
+                <li>Platform as a Service (PaaS)</li>
+                <li>Software as a Service (SaaS)</li>
+                <li>Mobile Backend as a Service (MBaaS)</li>
+            </ul>
+        <li>Public and private clouds</li>
+            <ul>
+                <li>Public cloud</li>
+                <li>Private cloud</li>
+                <li>Hybrid cloud</li>
+                <li>Distributed cloud, such as <a href="https://foldingathome.org/">Folding@home</a></li>
+            </ul>
+        <li>Data safety</li>
+            <ul>
+                <li>Outsiders and insiders</li>
+                <li>Privacy policies</li>
+                <li>Third party services and data access</li>
+            </ul>
+        <li>Encryption</li>
+            <ul>
+                <li>Key management</li>
+                <li>Single or double keys</li>
+                <li>Encrypted before or after the data is sent</li>
+            </ul>
+        <li>Data authorization</li>
+            <ul>
+                <li>Who manages the cloud?</li>
+                <li>Third party systems</li>
+                <li>Disaster recovery</li>
+            </ul>
+        <li>Data availability</li>
+            <ul>
+                <li>Cloud provider outages, for example on October 20, 2025, a DNS failure in AWS's Northern Virginia region took down about 70,000 organizations for roughly 15 hours (<a href="https://aws.amazon.com/message/101925/">AWS post-event summary</a>)</li>
+                <li>When you rely on one cloud provider, its outage is your outage</li>
+                <li>DDoS vulnerability</li>
+            </ul>
+        <li>AI agents and the cloud: Hugging Face (July 2026)</li>
+            <ul>
+                <li>A pre-release OpenAI model being tested escaped its sandbox through a zero-day vulnerability</li>
+                <li>It used login credentials left exposed on 4 other services, then a flaw in Hugging Face's dataset processing, to get into Hugging Face's production servers</li>
+                <li>Hugging Face says no customer data was accessed (<a href="https://www.bleepingcomputer.com/news/security/openai-agent-used-exposed-credentials-at-4-services-in-hugging-face-breach/">BleepingComputer</a>)</li>
+                <li>Lessons: never leave credentials exposed, and your security depends on the platforms you trust</li>
+            </ul>
+        <li>Risks of the cloud</li>
+            <ul>
+                <li>Losing internet access</li>
+                <li>A provider that can't meet your legal needs, for example HIPAA compliance</li>
+                <li>Privacy and confidentiality</li>
+            </ul>
+        <li>Benefits of the cloud</li>
+            <ul>
+                <li>Lower cost to outsource data</li>
+                <li>Device and location independence</li>
+                <li>On demand service</li>
+            </ul>
+    </ul>
+</p>
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <li>Discussion: what do you keep in the cloud? What would happen if you lost access to it tomorrow?</li>
+        <li>Activity: pick a cloud service you use, and find where its privacy policy says who can access your data.</li>
+        <li>Discussion: would you recommend the cloud to a small medical office? What would you check first?</li>
+        <li>Follow the instructions on <a href="/InfoSec/labs/cloudsecurity.pdf">this PDF</a> (<a href="/InfoSec/labs/cloudsecurity.html">accessible HTML version</a>)</li>
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">View all classes</a>
+</p>

@@ -1,0 +1,127 @@
+---
+title: Network Attack and Defense
+layout: infosec1
+---
+<!--Learning Outcomes for this topic-->
+<h1>Network Attack and Defense</h1>
+<p>Learning outcomes:
+    <ul>
+        <li>Describe common network threats, such as scanning, sniffing, and wireless attacks</li>
+        <li>Explain how firewalls, a DMZ, and DNS security protect a network</li>
+        <li>Describe how network monitoring and logging help detect attacks</li>
+        <li>Compare false positives with false negatives, and allowlists with denylists</li>
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/w-yp7JNwtKQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="/InfoSec/CIS 115 Week 6.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li>What is a network?</li>
+            <ul>
+                <li>Nodes</li>
+                <li>Topologies</li>
+                <li><a href="https://en.wikipedia.org/wiki/Network_topology">Network topology types</a></li>
+                <li>Packets</li>
+            </ul>
+        <li>Network threats: scanning</li>
+            <ul>
+                <li>IP scans and port scans</li>
+                <li>Network reconnaissance</li>
+                <li>Mapping with tools such as <a href="https://nmap.org/zenmap/">Zenmap</a></li>
+            </ul>
+        <li>Network threats: sniffing</li>
+            <ul>
+                <li>Packet analysis, demo with <a href="https://www.wireshark.org/">Wireshark</a></li>
+                <li>Encryption</li>
+                <li><a href="https://en.wikipedia.org/wiki/Man-in-the-middle_attack">Man in the middle attacks</a></li>
+                <li>Wardriving</li>
+            </ul>
+        <li>Network threats: wireless</li>
+            <ul>
+                <li>Scanning and cracking tools, such as <a href="https://www.aircrack-ng.org/">Aircrack-ng</a> and Reaver</li>
+                <li>Encryption types: WEP, WPA, WPA2, and WPA3</li>
+                <li>Wi-Fi broadcasting, demo with airodump-ng</li>
+            </ul>
+        <li>Network threats: Internet of Things</li>
+            <ul>
+                <li>Bluetooth</li>
+                <li>Personal and body area networks (PAN and BAN)</li>
+                <li>Home automation, such as Zigbee, Nest, and Alexa</li>
+            </ul>
+        <li>Network threats: hardware</li>
+            <ul>
+                <li>Vulnerable devices, such as routers and printers</li>
+                <li>Secure communications</li>
+            </ul>
+        <li><a href="https://en.wikipedia.org/wiki/Firewall_(computing)">Firewalls</a></li>
+            <ul>
+                <li>Network based and host based</li>
+                <li>Packet filtering against application firewalls</li>
+                <li>Rules allow or deny traffic by port, protocol, and where it comes from</li>
+                <li>Rules are checked in order, and the first rule that matches wins</li>
+                <li>The default policy decides what happens to traffic no rule matches: deny all or allow all</li>
+            </ul>
+        <li>Network management: DNS</li>
+            <ul>
+                <li>How DNS works</li>
+                <li>Authoritative and non-authoritative answers</li>
+                <li>DNS hijacking for ads, statistics, and censorship</li>
+                <li>DNS caches and <a href="https://en.wikipedia.org/wiki/DNS_spoofing">DNS cache poisoning</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions">DNSSEC</a></li>
+                <li>Split DNS</li>
+            </ul>
+        <li><a href="https://en.wikipedia.org/wiki/DMZ_(computing)">Network management: DMZ</a></li>
+            <ul>
+                <li>Common services: web, email, FTP, and VoIP servers</li>
+            </ul>
+        <li>Network management: monitoring</li>
+            <ul>
+                <li>Testing</li>
+                <li>Network tomography, the health of links</li>
+                <li>Route analysis</li>
+                <li>Internal and external monitoring</li>
+                <li>Example software: <a href="https://www.nagios.org/">Nagios</a></li>
+            </ul>
+        <li>Network management: logging</li>
+            <ul>
+                <li>Log faults (application and system) and info (users, files)</li>
+                <li>Log integrity: dedicated log servers and redundancy</li>
+                <li>Log review, audits, and analysis</li>
+                <li>Forensics after the fact</li>
+            </ul>
+        <li>Red flags and false alarms</li>
+            <ul>
+                <li>Allowlists and denylists</li>
+                    <ul>
+                        <li>Allowlist: only the things on the list are allowed</li>
+                        <li>Denylist: everything is allowed except the things on the list</li>
+                        <li>You'll still see whitelist and blacklist in older tools, documentation, and job postings. The industry is moving away from those terms because they tie white to good and black to bad, and the new terms say what the list does.</li>
+                    </ul>
+                <li>False positives and false negatives</li>
+            </ul>
+    </ul>
+</p>
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <li>Activity: run Wireshark for a few minutes on your own network. What protocols do you see?</li>
+        <li>Discussion: is a false positive or a false negative worse for a business? Why?</li>
+        <li>Discussion: what devices on your home network could be a weak point?</li>
+        <li>Try my <a href="/InfoSec/labs/firewall-simulator.html">Firewall Simulator</a>: build some rules and see which traffic gets through.</li>
+        <li>Follow the instructions on <a href="/InfoSec/labs/firewalls.pdf">this PDF</a> (<a href="/InfoSec/labs/firewalls.html">accessible HTML version</a>)</li>
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">View all classes</a>
+</p>

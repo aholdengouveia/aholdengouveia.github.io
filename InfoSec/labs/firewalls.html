@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Networking and Firewalls</title>
+    <link href="../../css/accessible-lab.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
+        <h1>Networking and Firewalls</h1>
+        <div class="author">
+            <p>Adrianna Holden-Gouveia</p>
+            <p>Website: <a href="https://aholdengouveia.name">https://aholdengouveia.name</a></p>
+            <p>GitHub: <a href="https://github.com/aholdengouveia" aria-label="GitHub profile">aholdengouveia</a></p>
+        </div>
+    </header>
+
+    <main role="main" id="main-content">
+        <section role="region" aria-labelledby="pdf-version-notice" class="accessibility-notice">
+            <h2 id="pdf-version-notice">PDF Version Available</h2>
+            <p>This document is also available in PDF format: <a href="firewalls.pdf">firewalls.pdf</a></p>
+            <p>The PDF version includes bookmarks for easy navigation and is optimized for printing.</p>
+        </section>
+
+        <nav role="navigation" aria-label="Table of Contents" class="toc">
+            <h2>On this page:</h2>
+            <ul>
+                <li><a href="#accessibility-notice">Accessibility Notice</a></li>
+                <li><a href="#learning-outcomes">Learning Outcomes</a></li>
+                <li><a href="#lab-instructions">Lab Instructions</a></li>
+                <li><a href="#deliverables">Deliverables</a></li>
+                <li><a href="#resources">Resources</a></li>
+            </ul>
+        </nav>
+
+<section role="region" aria-labelledby="accessibility-notice">
+<h2 id="accessibility-notice">Accessibility Notice</h2>
+<p>This document is also available in HTML format at:</p>
+
+<p>Link: <a href="https://aholdengouveia.name/InfoSec/labs/firewalls.html"><strong>https://aholdengouveia.name/InfoSec/labs/firewalls.html</strong></a></p>
+
+<p>The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.</p>
+
+</section>
+
+<section role="region" aria-labelledby="learning-outcomes">
+<h2 id="learning-outcomes">Learning Outcomes</h2>
+<p>By the end of this lab, you will be able to:</p>
+
+<ul>
+<li>Explain what a firewall does, and how allow and deny rules work</li>
+<li>Compare how two different networks look from the internet</li>
+<li>Create and test firewall rules for a scenario</li>
+<li>Explain how rule order and the default policy change what a firewall allows</li>
+</ul>
+
+</section>
+
+<section role="region" aria-labelledby="lab-instructions">
+<h2 id="lab-instructions">Lab Instructions</h2>
+<p>Everything in this lab runs in your web browser, so you don't need to install anything. Both tools are linked under Resources.</p>
+
+</section>
+
+<section role="region" aria-labelledby="screenshots">
+<h2 id="screenshots">Screenshots</h2>
+<p>This lab asks for 6 screenshots. Each screenshot should have your name, term, and year. One of the easiest ways to do that is make a text document with your name and term/year on your computer and save it to use all term. Any screenshots that don't include this information won't be counted.</p>
+
+<figure>
+<img src="ExampleScreenshot.png" alt="Example screenshot: a web browser showing the Google home page, with a small text editor window in front of it that says YOUR NAME HERE and TERM YEAR">
+<figcaption>This is an image of what each of your screenshots should look like</figcaption>
+</figure>
+
+</section>
+
+<section role="region" aria-labelledby="part-1-your-network-from-the-outside">
+<h2 id="part-1-your-network-from-the-outside">Part 1: Your Network from the Outside</h2>
+<p>ShieldsUP! is a free tool from Gibson Research Corporation. It checks your internet connection from the outside, the way an attacker would see it, and shows which common ports are open. This is a port scan, the same kind of scan attackers use during network reconnaissance to find a way in. It only checks the connection you're using, so you're only testing your own network.</p>
+
+<p>Run it from <strong>two different places</strong>, such as home and school, or home and your phone's hotspot. Only use networks you're allowed to use. If your school doesn't allow this kind of test on its network, use home and your phone's hotspot instead.</p>
+
+<p>At each place:</p>
+
+<ol>
+<li>Go to ShieldsUP!, select Proceed, then select Common Ports.</li>
+<li>Take a screenshot of the results. Each port is shown as Open, Closed, or Stealth.</li>
+<li>Write down where you were, such as home Wi-Fi or a phone hotspot, the date, and how many ports were Open, Closed, and Stealth.</li>
+</ol>
+
+<p>Then compare the two places:</p>
+
+<ol start="4">
+<li>What was different between the two results? What was the same?</li>
+<li>Why do you think they were different? Think about who runs each network, and what firewall or router is protecting it.</li>
+<li>Which network looks safer from the outside, and why?</li>
+<li>If any port was Open, what service uses that port? Does it need to be open?</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="part-2-build-firewall-rules">
+<h2 id="part-2-build-firewall-rules">Part 2: Build Firewall Rules</h2>
+<p>Open my Firewall Simulator. You're setting up the firewall for a small office's web server. The office network is 192.168.1.0/24. The server needs to:</p>
+
+<ul>
+<li>Let anyone visit the website, using HTTP (port 80) and HTTPS (port 443)</li>
+<li>Let only the office use SSH (port 22) to manage the server</li>
+<li>Block everything else</li>
+</ul>
+
+<ol start="8">
+<li>Choose a default policy, and add rules to meet these needs.</li>
+<li>Select Test all traffic, and take a screenshot of your rules and the results.</li>
+<li>Explain each of your rules in a sentence, and why you chose your default policy.</li>
+<li>Add one piece of test traffic of your own, and explain what happened to it and why.</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="part-3-rule-order-and-the-default-policy">
+<h2 id="part-3-rule-order-and-the-default-policy">Part 3: Rule Order and the Default Policy</h2>
+<ol start="12">
+<li>Select Load the rule order example, then Test all traffic. Take a screenshot. The office admin can't log in with SSH. Explain why, using what the simulator says.</li>
+<li>Fix it by changing the order of the rules, test again, and take a screenshot. Explain what you changed and why it worked.</li>
+<li>Change the default policy to allow all, and test again. What traffic gets through now that shouldn't? A deny all default works like an allowlist, and allow all works like a denylist. Why is deny all usually the safer default?</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="part-4-what-firewalls-can-t-do">
+<h2 id="part-4-what-firewalls-can-t-do">Part 4: What Firewalls Can't Do</h2>
+<ol start="15">
+<li>A firewall allowed the web traffic in Part 2. Give one way an attacker could still cause harm through allowed traffic.</li>
+<li>Give one threat a firewall can't protect against, such as phishing, and explain why.</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="deliverables">
+<h2 id="deliverables">Deliverables</h2>
+<p>One file that includes:</p>
+
+<ul>
+<li>Part 1: your 2 ShieldsUP! screenshots, where and when you ran each one, and your answers to the comparison questions</li>
+<li>Part 2: your screenshot of your rules and results, and your explanations</li>
+<li>Part 3: your 2 screenshots, and your explanations</li>
+<li>Part 4: your answers</li>
+</ul>
+
+</section>
+
+<section role="region" aria-labelledby="resources">
+<h2 id="resources">Resources</h2>
+<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name/InfoSec/NetworkSecurity.html"><strong>https://www.aholdengouveia.name/InfoSec/NetworkSecurity.html</strong></a></p>
+
+<p>ShieldsUP! from Gibson Research Corporation, for Part 1 Link: <a href="https://www.grc.com/shieldsup"><strong>https://www.grc.com/shieldsup</strong></a></p>
+
+<p>My Firewall Simulator, for Parts 2 and 3 Link: <a href="https://www.aholdengouveia.name/InfoSec/labs/firewall-simulator.html"><strong>https://www.aholdengouveia.name/InfoSec/labs/firewall-simulator.html</strong></a></p>
+
+<p>Common port numbers and the services that use them Link: <a href="https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers"><strong>https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers</strong></a></p>
+
+</section>
+
+    </main>
+</body>
+</html>

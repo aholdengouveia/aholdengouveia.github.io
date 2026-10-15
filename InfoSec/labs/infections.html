@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Detecting and Managing Infections</title>
+    <link href="../../css/accessible-lab.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
+        <h1>Detecting and Managing Infections</h1>
+        <div class="author">
+            <p>Adrianna Holden-Gouveia</p>
+            <p>Website: <a href="https://aholdengouveia.name">https://aholdengouveia.name</a></p>
+            <p>GitHub: <a href="https://github.com/aholdengouveia" aria-label="GitHub profile">aholdengouveia</a></p>
+        </div>
+    </header>
+
+    <main role="main" id="main-content">
+        <section role="region" aria-labelledby="pdf-version-notice" class="accessibility-notice">
+            <h2 id="pdf-version-notice">PDF Version Available</h2>
+            <p>This document is also available in PDF format: <a href="infections.pdf">infections.pdf</a></p>
+            <p>The PDF version includes bookmarks for easy navigation and is optimized for printing.</p>
+        </section>
+
+        <nav role="navigation" aria-label="Table of Contents" class="toc">
+            <h2>On this page:</h2>
+            <ul>
+                <li><a href="#accessibility-notice">Accessibility Notice</a></li>
+                <li><a href="#learning-outcomes">Learning Outcomes</a></li>
+                <li><a href="#lab-instructions">Lab Instructions</a></li>
+                <li><a href="#deliverables">Deliverables</a></li>
+                <li><a href="#resources">Resources</a></li>
+            </ul>
+        </nav>
+
+<section role="region" aria-labelledby="accessibility-notice">
+<h2 id="accessibility-notice">Accessibility Notice</h2>
+<p>This document is also available in HTML format at:</p>
+
+<p>Link: <a href="https://aholdengouveia.name/InfoSec/labs/infections.html"><strong>https://aholdengouveia.name/InfoSec/labs/infections.html</strong></a></p>
+
+<p>The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.</p>
+
+</section>
+
+<section role="region" aria-labelledby="learning-outcomes">
+<h2 id="learning-outcomes">Learning Outcomes</h2>
+<p>By the end of this lab, you will be able to:</p>
+
+<ul>
+<li>Test that antivirus software catches a known threat, using a safe test file</li>
+<li>Identify signs of infection on your own computer</li>
+<li>Build a cleanup kit with current, trusted tools</li>
+<li>Write cleanup steps a home user can follow</li>
+</ul>
+
+</section>
+
+<section role="region" aria-labelledby="lab-instructions">
+<h2 id="lab-instructions">Lab Instructions</h2>
+<p>Everyone eventually gets asked, “can you look at my computer? I think it has a virus.” In this lab, you'll test your antivirus safely, check your own computer for signs of trouble, build a cleanup kit, and write a guide you could actually give to a friend or family member.</p>
+
+</section>
+
+<section role="region" aria-labelledby="screenshots">
+<h2 id="screenshots">Screenshots</h2>
+<p>This lab asks for about 8 screenshots. Each screenshot should have your name, term, and year. One of the easiest ways to do that is make a text document with your name and term/year on your computer and save it to use all term. Any screenshots that don't include this information won't be counted.</p>
+
+<figure>
+<img src="ExampleScreenshot.png" alt="Example screenshot: a web browser showing the Google home page, with a small text editor window in front of it that says YOUR NAME HERE and TERM YEAR">
+<figcaption>This is an image of what each of your screenshots should look like</figcaption>
+</figure>
+
+<p><strong>Blur or cover anything sensitive before you turn in a screenshot</strong>, as long as your name and term note still shows, such as your username, email address, or file names that are private.</p>
+
+</section>
+
+<section role="region" aria-labelledby="part-1-test-your-antivirus-safely">
+<h2 id="part-1-test-your-antivirus-safely">Part 1: Test Your Antivirus Safely</h2>
+<p>The EICAR test file is a harmless file that antivirus programs are built to detect. It isn't a virus, and it doesn't contain any malware. Security teams use it to check that antivirus is working, without using real malware. <strong>Don't turn off your antivirus to get the file</strong>. Seeing it get blocked is the point.</p>
+
+<ol>
+<li>Go to the EICAR download page, linked under Resources, and download eicar.com.txt. Take a screenshot of what your computer does, such as a warning, a blocked download, or nothing at all.</li>
+<li>Find where your antivirus keeps a record of what it caught, and take a screenshot. On Windows, open Windows Security, then Virus &amp; threat protection, then Protection history.</li>
+<li>If nothing happened, that's a result too. Macs and Chromebooks often don't react to the test file. Test it in your Linux virtual machine instead: download eicar.com.txt in the virtual machine's browser, then run these commands. Installing ClamAV can take a few minutes to download its list of known malware. If clamscan says it can't find the database, wait a few minutes, and try again.
+<pre><code lang="bash">sudo apt install clamav
+cd Downloads
+clamscan eicar.com.txt</code></pre>
+Take a screenshot of the result. If your computer did catch it, you can skip this question.</li>
+<li>Why do security teams use a test file instead of real malware? What did your test tell you about your computer's protection?</li>
+</ol>
+
+<p>Delete the test file when you're done.</p>
+
+</section>
+
+<section role="region" aria-labelledby="part-2-check-for-signs-of-infection">
+<h2 id="part-2-check-for-signs-of-infection">Part 2: Check for Signs of Infection</h2>
+<p>Look for the signs from the topic page, such as a slow computer, high CPU use, programs you don't recognize, and browser extensions you didn't add.</p>
+
+<ul>
+<li><strong>Windows:</strong> press Ctrl, Shift, and Esc to open Task Manager. On the Processes page, sort by CPU. Then open the Startup apps page.</li>
+<li><strong>Mac:</strong> open Activity Monitor, and sort by CPU. Then open System Settings, General, then Login Items &amp; Extensions.</li>
+<li><strong>Chromebook:</strong> press Search and Esc to open Task Manager, and sort by CPU.</li>
+<li><strong>Browser extensions:</strong> in Chrome, go to chrome://extensions. In Edge, edge://extensions. In Firefox, about:addons. In Safari, open Settings, then Extensions.</li>
+</ul>
+
+<ol start="5">
+<li>Take a screenshot of your processes sorted by CPU. What are the top 3, and what does each one do?</li>
+<li>Take a screenshot of your startup apps or login items. Do you need all of them to start when your computer starts?</li>
+<li>Take a screenshot of your browser extensions. Do you recognize and use all of them?</li>
+<li>Pick 2 items from your screenshots that you didn't recognize. Look each one up, and say whether it's safe. Give your source, such as the maker's website or Microsoft's or Apple's support pages. Be careful: some websites that explain process names try to sell you cleanup software.</li>
+<li>Based on what you found, does your computer show any signs of infection? Explain.</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="part-3-build-a-cleanup-kit">
+<h2 id="part-3-build-a-cleanup-kit">Part 3: Build a Cleanup Kit</h2>
+<p>Make a folder called Cleanup Kit, on a USB drive if you have one, or on your computer if not. Download at least 2 tools into it, only from the official websites linked under Resources:</p>
+
+<ul>
+<li><strong>Windows:</strong> Microsoft Safety Scanner, Emsisoft Emergency Kit, or Malwarebytes AdwCleaner. Windows also has a built-in deep scan, the Microsoft Defender Offline scan, which you don't need to download.</li>
+<li><strong>Mac:</strong> Malwarebytes for Mac, and one Windows tool, so your kit can help someone else.</li>
+<li><strong>Chromebook:</strong> build a kit for a Windows computer, using 2 of the Windows tools.</li>
+</ul>
+
+<ol start="10">
+<li>Take a screenshot of your Cleanup Kit folder.</li>
+<li>For one Windows tool, check its digital signature, like you did in the Physical and Device Security lab: right-click it, select Properties, then Digital Signatures. Take a screenshot. If you're on a Mac or Chromebook, explain who the signature should be from, and why it matters.</li>
+<li>Microsoft Safety Scanner stops working 10 days after you download it. Why do tools like this need a fresh download each time?</li>
+<li>Why should you only download cleanup tools from official websites? Think about the fake AI model on Hugging Face from the topic page.</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="part-4-your-home-cleanup-guide">
+<h2 id="part-4-your-home-cleanup-guide">Part 4: Your Home Cleanup Guide</h2>
+<ol start="14">
+<li>Write a one-page guide that a friend or family member could follow if they think their home computer is infected. Write it for someone who isn't good with computers, with numbered steps in your own words. Include:
+<ul>
+<li>The signs that something is wrong</li>
+<li>Backing up important files first</li>
+<li>Disconnecting from the internet</li>
+<li>Running the tools from your Cleanup Kit, with where to download each one</li>
+<li>Running a deeper scan, such as the Microsoft Defender Offline scan</li>
+<li>Changing passwords afterwards, from a different, clean device</li>
+<li>When to stop and get help from a professional, or reinstall the computer</li>
+</ul>
+</li>
+</ol>
+
+<p>Make it something you'd actually give someone. You're welcome to share it.</p>
+
+</section>
+
+<section role="region" aria-labelledby="deliverables">
+<h2 id="deliverables">Deliverables</h2>
+<p>One file that includes:</p>
+
+<ul>
+<li>Part 1: your screenshots, and your answers</li>
+<li>Part 2: your 3 screenshots, and your answers</li>
+<li>Part 3: your 2 screenshots, and your answers</li>
+<li>Part 4: your home cleanup guide</li>
+</ul>
+
+</section>
+
+<section role="region" aria-labelledby="resources">
+<h2 id="resources">Resources</h2>
+<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name/InfoSec/ManagingInfections.html"><strong>https://www.aholdengouveia.name/InfoSec/ManagingInfections.html</strong></a></p>
+
+<p>EICAR: the anti-malware test file, for Part 1 Link: <a href="https://www.eicar.org/download-anti-malware-testfile/"><strong>https://www.eicar.org/download-anti-malware-testfile/</strong></a></p>
+
+<p>Microsoft Safety Scanner, for Part 3 Link: <a href="https://learn.microsoft.com/en-us/defender-endpoint/safety-scanner-download"><strong>https://learn.microsoft.com/en-us/defender-endpoint/safety-scanner-download</strong></a></p>
+
+<p>Emsisoft Emergency Kit, a free portable scanner, for Part 3 Link: <a href="https://www.emsisoft.com/en/emergency-kit/"><strong>https://www.emsisoft.com/en/emergency-kit/</strong></a></p>
+
+<p>Malwarebytes AdwCleaner, for adware, for Part 3 Link: <a href="https://www.malwarebytes.com/adwcleaner"><strong>https://www.malwarebytes.com/adwcleaner</strong></a></p>
+
+<p>Malwarebytes, including Malwarebytes for Mac, for Part 3 Link: <a href="https://www.malwarebytes.com/"><strong>https://www.malwarebytes.com/</strong></a></p>
+
+<p>Microsoft: Virus and threat protection in the Windows Security app, including the Microsoft Defender Offline scan Link: <a href="https://support.microsoft.com/en-us/windows/security/threat-malware-protection/virus-and-threat-protection-in-the-windows-security-app"><strong>https://support.microsoft.com/en-us/windows/security/threat-malware-protection/virus-and-threat-protection-in-the-windows-security-app</strong></a></p>
+
+<p>FTC: Malware: how to protect against, detect, and remove it Link: <a href="https://consumer.ftc.gov/articles/malware-how-protect-against-detect-and-remove-it"><strong>https://consumer.ftc.gov/articles/malware-how-protect-against-detect-and-remove-it</strong></a></p>
+
+</section>
+
+    </main>
+</body>
+</html>

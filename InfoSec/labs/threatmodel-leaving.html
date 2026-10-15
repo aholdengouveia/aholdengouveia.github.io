@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Threat Model: Staying Safe When Leaving a Controlling Partner</title>
+    <link href="../../css/accessible-lab.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
+        <h1>Threat Model: Staying Safe When Leaving a Controlling Partner</h1>
+        <div class="author">
+            <p>SAMPLE ONLY. Fictional person. Not for submission.</p>
+            <!-- <p>Website: <a href="https://example.com">https://example.com</a></p> -->
+            <!-- <p>GitHub: <a href="https://github.com/username" aria-label="GitHub profile">username</a></p> -->
+        </div>
+    </header>
+
+    <main role="main" id="main-content">
+        <section role="region" aria-labelledby="pdf-version-notice" class="accessibility-notice">
+            <h2 id="pdf-version-notice">PDF Version Available</h2>
+            <p>This document is also available in PDF format: <a href="threatmodel-leaving.pdf">threatmodel-leaving.pdf</a></p>
+            <p>The PDF version includes bookmarks for easy navigation and is optimized for printing.</p>
+        </section>
+
+        <nav role="navigation" aria-label="Table of Contents" class="toc">
+            <h2>On this page:</h2>
+            <ul>
+                <li><a href="#trigger-warning">Trigger Warning</a></li>
+                <li><a href="#read-this-first">Read This First</a></li>
+                <li><a href="#accessibility-notice">Accessibility Notice</a></li>
+                <li><a href="#document-control">Document Control</a></li>
+                <li><a href="#summary">Summary</a></li>
+                <li><a href="#scope">Scope</a></li>
+                <li><a href="#assets">Assets</a></li>
+                <li><a href="#threat-actors">Threat Actors</a></li>
+                <li><a href="#assumptions">Assumptions</a></li>
+                <li><a href="#entry-points">Entry Points</a></li>
+                <li><a href="#risk-rating">Risk Rating</a></li>
+                <li><a href="#threat-register">Threat Register</a></li>
+                <li><a href="#protections">Protections</a></li>
+                <li><a href="#accepted-risk">Accepted Risk</a></li>
+                <li><a href="#not-covered">Not Covered</a></li>
+                <li><a href="#when-to-review">When to Review</a></li>
+                <li><a href="#references">References</a></li>
+            </ul>
+        </nav>
+
+<section role="region" aria-labelledby="trigger-warning">
+<h2 id="trigger-warning">Trigger Warning</h2>
+<p><strong>This sample talks about domestic abuse, stalking, and controlling relationships.</strong> You don't need to read it to do the lab. The other sample threat model, about a streamer, shows all the same parts. If this topic is hard for you, skip this one, and check with me if you'd like another option.</p>
+
+<p>If any of this is happening to you, you're not alone. The National Domestic Violence Hotline is free and confidential: call 1-800-799-7233, text START to 88788, or chat at thehotline.org. Use a device the other person can't get to.</p>
+
+</section>
+
+<section role="region" aria-labelledby="read-this-first">
+<h2 id="read-this-first">Read This First</h2>
+<ul>
+<li><strong>This is a sample.</strong> It shows what a threat model can look like in industry. Sam is a made-up person, and the details are invented.</li>
+<li><strong>Don't copy it.</strong> Copied wording, risks, or controls get no credit. This scenario isn't one of the lab's choices, so you can't use it.</li>
+<li><strong>Your lab has its own requirements.</strong> Follow the lab instructions, not this layout. Your lab needs EFF's six questions, at least 10 risks, a plan, and at least 5 sources, each with a CRAAP check, a screenshot, and a quote. This sample has no sources section like that.</li>
+<li><strong>Not professional advice.</strong> A real safety plan should be made with a trained advocate. Some steps here, like turning off location sharing, can alert the other person, so an advocate can help you decide what to do, and when.</li>
+</ul>
+
+</section>
+
+<section role="region" aria-labelledby="accessibility-notice">
+<h2 id="accessibility-notice">Accessibility Notice</h2>
+<p>This document is also available in HTML format at:</p>
+
+<p>Link: <a href="https://aholdengouveia.name/InfoSec/labs/threatmodel-leaving.html"><strong>https://aholdengouveia.name/InfoSec/labs/threatmodel-leaving.html</strong></a></p>
+
+</section>
+
+<section role="region" aria-labelledby="document-control">
+<h2 id="document-control">Document Control</h2>
+<div class="table-container">
+<table>
+<caption id="document-control">Document control</caption>
+<thead>
+<tr>
+<th scope="col"><strong>Field</strong></th>
+<th scope="col"><strong>Value</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Document ID</td>
+<td>TM-SAMPLE-02</td>
+</tr>
+<tr>
+<td>Version</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Date</td>
+<td>October 15, 2026</td>
+</tr>
+<tr>
+<td>System owner</td>
+<td>Sam (fictional)</td>
+</tr>
+<tr>
+<td>Prepared by</td>
+<td>Adrianna Holden-Gouveia, for CIS 115</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>SAMPLE. Not for submission.</td>
+</tr>
+<tr>
+<td>Next review</td>
+<td>Weekly while Sam is moving, then every 3 months</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</section>
+
+<section role="region" aria-labelledby="summary">
+<h2 id="summary">Summary</h2>
+<p>Sam is leaving a controlling partner they lived with for 3 years, and is moving in with a friend. They share a phone plan, a laptop, and a car with a connected app, and the partner knows several of Sam's passwords. The biggest risks are the partner finding Sam's new location through their phone, a hidden tracker, or the car, and reading Sam's messages through shared accounts. The most important protections are a new phone in Sam's own name, securing email first, turning off location sharing, and checking for trackers, all planned with an advocate. After these protections, the remaining risk is Medium, mostly because the partner may still try to reach Sam through friends and family.</p>
+
+</section>
+
+<section role="region" aria-labelledby="scope">
+<h2 id="scope">Scope</h2>
+<p><strong>In scope:</strong> Sam's phone, accounts, messages and calls, location, and the shared laptop, phone plan, and car.</p>
+
+<p><strong>Out of scope:</strong> legal protection, such as a protective order, housing, money, and physical safety plans. An advocate and a lawyer cover these.</p>
+
+</section>
+
+<section role="region" aria-labelledby="assets">
+<h2 id="assets">Assets</h2>
+<div class="table-container">
+<table>
+<caption id="assets-to-protect">Assets to protect</caption>
+<thead>
+<tr>
+<th scope="col"><strong>Asset</strong></th>
+<th scope="col"><strong>Why it matters</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sam's new address and location</td>
+<td>If the partner finds it, Sam could be harassed or hurt</td>
+</tr>
+<tr>
+<td>Messages and calls with family, the lawyer, and the advocate</td>
+<td>They show Sam's plans</td>
+</tr>
+<tr>
+<td>Email account</td>
+<td>It can reset the password on almost every other account</td>
+</tr>
+<tr>
+<td>Bank and other accounts</td>
+<td>The partner could take money or lock Sam out</td>
+</tr>
+<tr>
+<td>Phone and phone number</td>
+<td>The phone holds every account, and the number receives some login codes</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</section>
+
+<section role="region" aria-labelledby="threat-actors">
+<h2 id="threat-actors">Threat Actors</h2>
+<div class="table-container">
+<table>
+<caption id="who-might-attack-and-why">Who might attack, and why</caption>
+<thead>
+<tr>
+<th scope="col"><strong>Threat actor</strong></th>
+<th scope="col"><strong>What they want</strong></th>
+<th scope="col"><strong>What they can do</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The ex-partner</td>
+<td>To find Sam, and keep control</td>
+<td>Knows Sam's passwords and habits, has had access to Sam's phone, owns the phone plan</td>
+</tr>
+<tr>
+<td>People the partner asks for help</td>
+<td>To “help” the partner reach Sam</td>
+<td>Ask Sam's friends and family where Sam is</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</section>
+
+<section role="region" aria-labelledby="assumptions">
+<h2 id="assumptions">Assumptions</h2>
+<ul>
+<li>The partner has average tech skills, and is willing to use apps and trackers that are easy to buy.</li>
+<li>Sam's new phone hasn't been touched by the partner.</li>
+<li>The friend Sam is staying with can be trusted.</li>
+</ul>
+
+<p>If any of these stop being true, update this threat model, and talk to the advocate.</p>
+
+</section>
+
+<section role="region" aria-labelledby="entry-points">
+<h2 id="entry-points">Entry Points</h2>
+<p>These are the ways the partner could reach Sam's assets:</p>
+
+<ul>
+<li>Location sharing settings and family locator apps on Sam's phone</li>
+<li>Any app the partner may have installed on Sam's phone</li>
+<li>Sam's bag, car, and belongings, where a tracker could be hidden</li>
+<li>The car's connected app</li>
+<li>Accounts where the partner knows the password, or is still logged in</li>
+<li>The shared phone plan, laptop, and cloud accounts</li>
+<li>Sam's friends, family, and social media</li>
+</ul>
+
+</section>
+
+<section role="region" aria-labelledby="risk-rating">
+<h2 id="risk-rating">Risk Rating</h2>
+<div class="table-container">
+<table>
+<caption id="how-likelihood-and-impact-combine-into-an-overall-risk">How likelihood and impact combine into an overall risk</caption>
+<thead>
+<tr>
+<th scope="col"><strong>Likelihood</strong></th>
+<th scope="col"><strong>Low impact</strong></th>
+<th scope="col"><strong>Medium impact</strong></th>
+<th scope="col"><strong>High impact</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>High</td>
+<td>Medium</td>
+<td>High</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>Low</td>
+<td>Medium</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Low</td>
+<td>Low</td>
+<td>Low</td>
+<td>Medium</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</section>
+
+<section role="region" aria-labelledby="threat-register">
+<h2 id="threat-register">Threat Register</h2>
+<div class="table-container">
+<table>
+<caption id="threat-register">Threat register</caption>
+<thead>
+<tr>
+<th scope="col"><strong>ID</strong></th>
+<th scope="col"><strong>Threat</strong></th>
+<th scope="col"><strong>Likeli\-hood</strong></th>
+<th scope="col"><strong>Impact</strong></th>
+<th scope="col"><strong>Risk</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T1</td>
+<td>Location sharing on Sam's phone, such as Find My, Google Maps, or a family locator app, shows where Sam is</td>
+<td>High</td>
+<td>High</td>
+<td>High</td>
+</tr>
+<tr>
+<td>T2</td>
+<td>Stalkerware, an app that secretly reports texts, calls, and location, is on Sam's phone</td>
+<td>Medium</td>
+<td>High</td>
+<td>High</td>
+</tr>
+<tr>
+<td>T3</td>
+<td>A hidden tracker, such as an AirTag, is in Sam's bag or car</td>
+<td>Medium</td>
+<td>High</td>
+<td>High</td>
+</tr>
+<tr>
+<td>T4</td>
+<td>The car's connected app shows where the car is parked</td>
+<td>Medium</td>
+<td>High</td>
+<td>High</td>
+</tr>
+<tr>
+<td>T5</td>
+<td>The partner logs in to Sam's email with a password they know, and resets Sam's other passwords</td>
+<td>High</td>
+<td>High</td>
+<td>High</td>
+</tr>
+<tr>
+<td>T6</td>
+<td>As owner of the phone plan, the partner sees call and text logs, or moves Sam's number to another SIM card</td>
+<td>High</td>
+<td>Medium</td>
+<td>High</td>
+</tr>
+<tr>
+<td>T7</td>
+<td>Shared cloud accounts sync Sam's photos and messages to the shared laptop or a tablet, and photos can include where they were taken</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>T8</td>
+<td>Friends post or tag photos of Sam, or apps with location permission show where Sam goes</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>T9</td>
+<td>The shared laptop's saved passwords and browser history show Sam's searches for apartments, lawyers, or advocates</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>T10</td>
+<td>The partner contacts Sam's friends and family, pretending it's an emergency, to find out where Sam is</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Medium</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</section>
+
+<section role="region" aria-labelledby="protections">
+<h2 id="protections">Protections</h2>
+<div class="table-container">
+<table>
+<caption id="protections-and-the-threats-each-one-reduces">Protections, and the threats each one reduces</caption>
+<thead>
+<tr>
+<th scope="col"><strong>ID</strong></th>
+<th scope="col"><strong>Protection</strong></th>
+<th scope="col"><strong>Threats</strong></th>
+<th scope="col"><strong>When</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C1</td>
+<td>Get a new phone on a new plan, in Sam's own name, with a new number and a strong passcode. Don't sign in to old shared accounts on it.</td>
+<td>T1, T2, T6</td>
+<td>Before leaving</td>
+</tr>
+<tr>
+<td>C2</td>
+<td>From the new phone, change the email password first, turn on two-factor authentication with an authenticator app, and sign out all other devices</td>
+<td>T5</td>
+<td>Before leaving</td>
+</tr>
+<tr>
+<td>C3</td>
+<td>Change passwords for banking, social media, and cloud accounts, and stop using shared accounts</td>
+<td>T5, T7</td>
+<td>After leaving</td>
+</tr>
+<tr>
+<td>C4</td>
+<td>Ask an advocate to help check the old phone for stalkerware, and decide when to stop using it</td>
+<td>T1, T2</td>
+<td>With an advocate</td>
+</tr>
+<tr>
+<td>C5</td>
+<td>On the new phone, keep location sharing off, and turn off location, camera, and microphone for apps that don't need them</td>
+<td>T1, T8</td>
+<td>Ongoing</td>
+</tr>
+<tr>
+<td>C6</td>
+<td>Keep unknown tracker alerts turned on. Both iPhone and Android can warn about an unknown AirTag, and Android can also run a manual scan. Check bags and the car. If a tracker is found, talk to an advocate or the police before removing it.</td>
+<td>T3</td>
+<td>Ongoing</td>
+</tr>
+<tr>
+<td>C7</td>
+<td>Remove Sam from the car's app, or ask the lawyer about it if the car is in the partner's name</td>
+<td>T4</td>
+<td>With the lawyer</td>
+</tr>
+<tr>
+<td>C8</td>
+<td>Stop using the shared laptop. Use a library computer or the new phone instead.</td>
+<td>T9</td>
+<td>After leaving</td>
+</tr>
+<tr>
+<td>C9</td>
+<td>Ask friends and family not to post, tag, or share Sam's location or new number, even if the partner says it's an emergency</td>
+<td>T8, T10</td>
+<td>Before leaving</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</section>
+
+<section role="region" aria-labelledby="communications">
+<h2 id="communications">Communications</h2>
+<p><strong>Messages and calls with family, the lawyer, and the advocate:</strong> Signal on the new phone, which is end-to-end encrypted, so only the people in the chat can read the messages. Turn on disappearing messages, and Registration Lock, which uses a Signal PIN, so no one else can sign up for Signal with Sam's number. <strong>Regular calls and texts:</strong> these aren't end-to-end encrypted, and the phone company keeps records of them, so use them only for things that aren't sensitive.</p>
+
+</section>
+
+<section role="region" aria-labelledby="vpn-decision">
+<h2 id="vpn-decision">VPN decision</h2>
+<p>A VPN isn't a priority here. The partner isn't watching Sam's network. They have access to Sam's accounts and devices. A VPN hides which websites you visit from the network you're on, but it doesn't stop location sharing, stalkerware, trackers, or someone who knows your password. If Sam ever has to use the old home Wi-Fi, a well-known, paid VPN would hide Sam's browsing from that router.</p>
+
+</section>
+
+<section role="region" aria-labelledby="accepted-risk">
+<h2 id="accepted-risk">Accepted Risk</h2>
+<p>After the protections, the remaining risk is Medium:</p>
+
+<ul>
+<li>The partner may still find out things through mutual friends (T10). Sam can lower this risk, but can't control what other people say.</li>
+<li>The partner may guess Sam's location from Sam's job or usual places. The advocate and lawyer can help with this, and it's outside this model.</li>
+</ul>
+
+</section>
+
+<section role="region" aria-labelledby="not-covered">
+<h2 id="not-covered">Not Covered</h2>
+<p>This model only covers technology. Physical safety, legal protection, and housing need a safety plan made with an advocate.</p>
+
+</section>
+
+<section role="region" aria-labelledby="when-to-review">
+<h2 id="when-to-review">When to Review</h2>
+<p>Review this threat model every week while Sam is moving, then every 3 months, and right away if:</p>
+
+<ul>
+<li>The partner seems to know something they shouldn't, such as where Sam was</li>
+<li>A tracker alert goes off, or an account shows a login Sam doesn't recognize</li>
+<li>Sam moves, changes jobs, or gets a new phone</li>
+</ul>
+
+</section>
+
+<section role="region" aria-labelledby="references">
+<h2 id="references">References</h2>
+<p>The National Domestic Violence Hotline Link: <a href="https://www.thehotline.org/"><strong>https://www.thehotline.org/</strong></a></p>
+
+<p>National Network to End Domestic Violence: Technology Safety Link: <a href="https://www.techsafety.org/"><strong>https://www.techsafety.org/</strong></a></p>
+
+<p>EFF Surveillance Self-Defense: Your Security Plan Link: <a href="https://ssd.eff.org/module/your-security-plan"><strong>https://ssd.eff.org/module/your-security-plan</strong></a></p>
+
+<p>The lab this sample goes with Link: <a href="https://www.aholdengouveia.name/InfoSec/labs/enccomm.html"><strong>https://www.aholdengouveia.name/InfoSec/labs/enccomm.html</strong></a></p>
+
+</section>
+
+    </main>
+</body>
+</html>

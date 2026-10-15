@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Web Security</title>
+    <link href="../../css/accessible-lab.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
+        <h1>Web Security</h1>
+        <div class="author">
+            <p>Adrianna Holden-Gouveia</p>
+            <p>Website: <a href="https://aholdengouveia.name">https://aholdengouveia.name</a></p>
+            <p>GitHub: <a href="https://github.com/aholdengouveia" aria-label="GitHub profile">aholdengouveia</a></p>
+        </div>
+    </header>
+
+    <main role="main" id="main-content">
+        <section role="region" aria-labelledby="pdf-version-notice" class="accessibility-notice">
+            <h2 id="pdf-version-notice">PDF Version Available</h2>
+            <p>This document is also available in PDF format: <a href="websecurity.pdf">websecurity.pdf</a></p>
+            <p>The PDF version includes bookmarks for easy navigation and is optimized for printing.</p>
+        </section>
+
+        <nav role="navigation" aria-label="Table of Contents" class="toc">
+            <h2>On this page:</h2>
+            <ul>
+                <li><a href="#accessibility-notice">Accessibility Notice</a></li>
+                <li><a href="#learning-outcomes">Learning Outcomes</a></li>
+                <li><a href="#lab-instructions">Lab Instructions</a></li>
+                <li><a href="#deliverables">Deliverables</a></li>
+                <li><a href="#resources">Resources</a></li>
+            </ul>
+        </nav>
+
+<section role="region" aria-labelledby="accessibility-notice">
+<h2 id="accessibility-notice">Accessibility Notice</h2>
+<p>This document is also available in HTML format at:</p>
+
+<p>Link: <a href="https://aholdengouveia.name/InfoSec/labs/websecurity.html"><strong>https://aholdengouveia.name/InfoSec/labs/websecurity.html</strong></a></p>
+
+<p>The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.</p>
+
+</section>
+
+<section role="region" aria-labelledby="learning-outcomes">
+<h2 id="learning-outcomes">Learning Outcomes</h2>
+<p>By the end of this lab, you will be able to:</p>
+
+<ul>
+<li>Explain how two common website attacks work, and how website owners can prevent them</li>
+<li>Test how easy your browser is to track, and compare ways to reduce tracking</li>
+<li>Explain what a website's certificate shows, and what browser certificate warnings mean</li>
+<li>Recommend ways people can protect themselves on the web</li>
+</ul>
+
+</section>
+
+<section role="region" aria-labelledby="lab-instructions">
+<h2 id="lab-instructions">Lab Instructions</h2>
+<p>Everything in this lab runs in your web browser, so you don't need to install anything. All the tools are linked under Resources.</p>
+
+<p>You don't need to know how to code. Hacksplaining walks you through each step, and explains what's happening as you go.</p>
+
+<p><strong>Only practice attacks on sites made for practice, like Hacksplaining.</strong> Trying an attack on a real website without permission is illegal, even just to see if it works.</p>
+
+</section>
+
+<section role="region" aria-labelledby="screenshots">
+<h2 id="screenshots">Screenshots</h2>
+<p>This lab asks for 7 screenshots. Each screenshot should have your name, term, and year. One of the easiest ways to do that is make a text document with your name and term/year on your computer and save it to use all term. Any screenshots that don't include this information won't be counted.</p>
+
+<figure>
+<img src="ExampleScreenshot.png" alt="Example screenshot: a web browser showing the Google home page, with a small text editor window in front of it that says YOUR NAME HERE and TERM YEAR">
+<figcaption>This is an image of what each of your screenshots should look like</figcaption>
+</figure>
+
+</section>
+
+<section role="region" aria-labelledby="part-1-attack-a-practice-website">
+<h2 id="part-1-attack-a-practice-website">Part 1: Attack a Practice Website</h2>
+<p>Hacksplaining has short lessons where you attack a pretend website it runs, then learn how to fix it. Sign up for a free account. You can use your school email.</p>
+
+<p>Pick <strong>two</strong> of these lessons:</p>
+
+<ul>
+<li>SQL Injection</li>
+<li>Cross-site Scripting (reflected or stored)</li>
+<li>Password Mismanagement</li>
+<li>SSL Stripping</li>
+<li>Clickjacking</li>
+</ul>
+
+<p>For each lesson:</p>
+
+<ol>
+<li>Finish the lesson and its quiz. Take a screenshot of the end of the lesson, showing it's complete.</li>
+<li>In your own words, explain how the attack works, as if you were telling a friend who doesn't work in IT.</li>
+<li>What could an attacker get or do with this attack? Who gets hurt: the website, its users, or both?</li>
+<li>How can the website's owner prevent it?</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="part-2-how-trackable-is-your-browser">
+<h2 id="part-2-how-trackable-is-your-browser">Part 2: How Trackable Is Your Browser?</h2>
+<p>EFF's Cover Your Tracks tests how websites and advertisers see your browser, and how unique it looks. No account is needed.</p>
+
+<ol start="5">
+<li>Run the test in the browser you use most. Take a screenshot of the results.</li>
+<li>Run it again with a different setup, such as a private window, a different browser, or your phone. Take a screenshot of the results.</li>
+<li>For each test, write down the browser and setup you used, whether it blocked tracking ads and invisible trackers, and whether your fingerprint was unique.</li>
+<li>What changed between the two tests? Which setup protected you better?</li>
+<li>Pick one thing the results showed about your browser, such as your screen size, time zone, or fonts. Why would a tracker want to know this?</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="part-3-certificates-and-browser-warnings">
+<h2 id="part-3-certificates-and-browser-warnings">Part 3: Certificates and Browser Warnings</h2>
+<p>Every HTTPS website has a certificate, which proves the website is who it says it is.</p>
+
+<ol start="10">
+<li>Pick 2 websites you use often. Select the padlock (or the icon next to the address), and find the certificate. Take a screenshot of each one.</li>
+<li>For each website, write down who issued the certificate, when it starts and expires, and how many days it lasts. A calendar or a date calculator website is fine for counting days.</li>
+<li>Were the two certificates from the same issuer? Did they last the same length of time? Why do you think certificates are getting shorter?</li>
+</ol>
+
+<p>badssl.com is a website made for testing. It has pages with broken certificates on purpose, so you can see the warnings safely. Visit each of these pages, and <strong>don't</strong> click through the warnings:</p>
+
+<ul>
+<li><a href="https://expired.badssl.com">https://expired.badssl.com</a></li>
+<li><a href="https://self-signed.badssl.com">https://self-signed.badssl.com</a></li>
+<li><a href="https://wrong.host.badssl.com">https://wrong.host.badssl.com</a></li>
+<li><a href="https://untrusted-root.badssl.com">https://untrusted-root.badssl.com</a></li>
+</ul>
+
+<ol start="13">
+<li>Take a screenshot of one of the warnings.</li>
+<li>For each page, explain in your own words what's wrong with the certificate, and why your browser warned you.</li>
+<li>If you saw a warning like this on your bank's website, what would you do? Why?</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="part-4-your-advice">
+<h2 id="part-4-your-advice">Part 4: Your Advice</h2>
+<ol start="16">
+<li>Based on this lab, write 3 tips to help a friend or family member stay safer on the web. For each tip, explain which part of the lab it came from.</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="deliverables">
+<h2 id="deliverables">Deliverables</h2>
+<p>One file that includes:</p>
+
+<ul>
+<li>Part 1: your 2 Hacksplaining screenshots, and your answers for each lesson</li>
+<li>Part 2: your 2 Cover Your Tracks screenshots, and your answers</li>
+<li>Part 3: your 2 certificate screenshots, your badssl.com warning screenshot, and your answers</li>
+<li>Part 4: your 3 tips</li>
+</ul>
+
+</section>
+
+<section role="region" aria-labelledby="resources">
+<h2 id="resources">Resources</h2>
+<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name/InfoSec/WebSecurity.html"><strong>https://www.aholdengouveia.name/InfoSec/WebSecurity.html</strong></a></p>
+
+<p>Hacksplaining lessons, for Part 1 Link: <a href="https://www.hacksplaining.com/lessons"><strong>https://www.hacksplaining.com/lessons</strong></a></p>
+
+<p>EFF's Cover Your Tracks, for Part 2 Link: <a href="https://coveryourtracks.eff.org/"><strong>https://coveryourtracks.eff.org/</strong></a></p>
+
+<p>badssl.com, for Part 3 Link: <a href="https://badssl.com/"><strong>https://badssl.com/</strong></a></p>
+
+<p>What HTTPS and certificates are Link: <a href="https://en.wikipedia.org/wiki/HTTPS"><strong>https://en.wikipedia.org/wiki/HTTPS</strong></a></p>
+
+<p>The OWASP Top 10 web application security risks Link: <a href="https://owasp.org/www-project-top-ten/"><strong>https://owasp.org/www-project-top-ten/</strong></a></p>
+
+</section>
+
+    </main>
+</body>
+</html>

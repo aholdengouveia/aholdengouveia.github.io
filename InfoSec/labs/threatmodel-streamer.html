@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Threat Model: Protecting a Streamer's Identity</title>
+    <link href="../../css/accessible-lab.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
+        <h1>Threat Model: Protecting a Streamer's Identity</h1>
+        <div class="author">
+            <p>SAMPLE ONLY. Fictional person. Not for submission.</p>
+            <!-- <p>Website: <a href="https://example.com">https://example.com</a></p> -->
+            <!-- <p>GitHub: <a href="https://github.com/username" aria-label="GitHub profile">username</a></p> -->
+        </div>
+    </header>
+
+    <main role="main" id="main-content">
+        <section role="region" aria-labelledby="pdf-version-notice" class="accessibility-notice">
+            <h2 id="pdf-version-notice">PDF Version Available</h2>
+            <p>This document is also available in PDF format: <a href="threatmodel-streamer.pdf">threatmodel-streamer.pdf</a></p>
+            <p>The PDF version includes bookmarks for easy navigation and is optimized for printing.</p>
+        </section>
+
+        <nav role="navigation" aria-label="Table of Contents" class="toc">
+            <h2>On this page:</h2>
+            <ul>
+                <li><a href="#read-this-first">Read This First</a></li>
+                <li><a href="#accessibility-notice">Accessibility Notice</a></li>
+                <li><a href="#document-control">Document Control</a></li>
+                <li><a href="#summary">Summary</a></li>
+                <li><a href="#scope">Scope</a></li>
+                <li><a href="#assets">Assets</a></li>
+                <li><a href="#threat-actors">Threat Actors</a></li>
+                <li><a href="#assumptions">Assumptions</a></li>
+                <li><a href="#entry-points">Entry Points</a></li>
+                <li><a href="#risk-rating">Risk Rating</a></li>
+                <li><a href="#threat-register">Threat Register</a></li>
+                <li><a href="#controls">Controls</a></li>
+                <li><a href="#accepted-risk">Accepted Risk</a></li>
+                <li><a href="#not-covered">Not Covered</a></li>
+                <li><a href="#when-to-review">When to Review</a></li>
+                <li><a href="#references">References</a></li>
+            </ul>
+        </nav>
+
+<section role="region" aria-labelledby="read-this-first">
+<h2 id="read-this-first">Read This First</h2>
+<ul>
+<li><strong>This is a sample.</strong> It shows what a threat model can look like in industry. Riley is a made-up person, and the details are invented.</li>
+<li><strong>Don't copy it.</strong> Copied wording, risks, or controls get no credit. This scenario isn't one of the lab's choices, so you can't use it.</li>
+<li><strong>Your lab has its own requirements.</strong> Follow the lab instructions, not this layout. Your lab needs EFF's six questions, at least 10 risks, a plan, and at least 5 sources, each with a CRAAP check, a screenshot, and a quote. This sample has no sources section like that.</li>
+<li><strong>Not professional advice.</strong> If you have a real security problem, get help from someone who can look at your situation.</li>
+</ul>
+
+</section>
+
+<section role="region" aria-labelledby="accessibility-notice">
+<h2 id="accessibility-notice">Accessibility Notice</h2>
+<p>This document is also available in HTML format at:</p>
+
+<p>Link: <a href="https://aholdengouveia.name/InfoSec/labs/threatmodel-streamer.html"><strong>https://aholdengouveia.name/InfoSec/labs/threatmodel-streamer.html</strong></a></p>
+
+</section>
+
+<section role="region" aria-labelledby="document-control">
+<h2 id="document-control">Document Control</h2>
+<div class="table-container">
+<table>
+<caption id="document-control">Document control</caption>
+<thead>
+<tr>
+<th scope="col"><strong>Field</strong></th>
+<th scope="col"><strong>Value</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Document ID</td>
+<td>TM-SAMPLE-01</td>
+</tr>
+<tr>
+<td>Version</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Date</td>
+<td>October 15, 2026</td>
+</tr>
+<tr>
+<td>System owner</td>
+<td>Riley (fictional)</td>
+</tr>
+<tr>
+<td>Prepared by</td>
+<td>Adrianna Holden-Gouveia, for CIS 115</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>SAMPLE. Not for submission.</td>
+</tr>
+<tr>
+<td>Next review</td>
+<td>April 2027, or sooner if something under When to Review happens</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</section>
+
+<section role="region" aria-labelledby="summary">
+<h2 id="summary">Summary</h2>
+<p>Riley is a college student who streams video games and posts short videos, with a few thousand followers. The biggest risks are someone taking over Riley's email, and then the channel, and viewers working out Riley's real name and home address, which is called doxxing. The most important controls are a password manager, two-factor authentication with an app, separate accounts for the channel and personal life, and checking photos and videos before posting. After these controls, the remaining risk is Low to Medium, which Riley accepts.</p>
+
+</section>
+
+<section role="region" aria-labelledby="scope">
+<h2 id="scope">Scope</h2>
+<p><strong>In scope:</strong> Riley's phone and laptop, their email, streaming, and social media accounts, their messages and calls with friends, family, and sponsors, and anything Riley posts publicly.</p>
+
+<p><strong>Out of scope:</strong> the streaming platform's own security, Riley's school accounts, and physical safety at events. These are someone else's responsibility, or need a separate threat model.</p>
+
+</section>
+
+<section role="region" aria-labelledby="assets">
+<h2 id="assets">Assets</h2>
+<div class="table-container">
+<table>
+<caption id="assets-to-protect">Assets to protect</caption>
+<thead>
+<tr>
+<th scope="col"><strong>Asset</strong></th>
+<th scope="col"><strong>Why it matters</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Real name, home address, and school</td>
+<td>If these become public, strangers could show up in person</td>
+</tr>
+<tr>
+<td>Personal email account</td>
+<td>It can reset the password on almost every other account</td>
+</tr>
+<tr>
+<td>Streaming and social media accounts</td>
+<td>They hold Riley's followers and income</td>
+</tr>
+<tr>
+<td>Private messages</td>
+<td>Friends and family share personal details there</td>
+</tr>
+<tr>
+<td>Phone and phone number</td>
+<td>The phone holds every account, and the number receives some login codes</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</section>
+
+<section role="region" aria-labelledby="threat-actors">
+<h2 id="threat-actors">Threat Actors</h2>
+<div class="table-container">
+<table>
+<caption id="who-might-attack-and-why">Who might attack, and why</caption>
+<thead>
+<tr>
+<th scope="col"><strong>Threat actor</strong></th>
+<th scope="col"><strong>What they want</strong></th>
+<th scope="col"><strong>What they can do</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Overly curious or hostile viewers</td>
+<td>Riley's real identity and location</td>
+<td>Search usernames and photos, send links in chat, ask personal questions</td>
+</tr>
+<tr>
+<td>Account takeover scammers</td>
+<td>The channel, to resell it or run scams from it</td>
+<td>Phishing, password reuse attacks, talking the phone company into moving Riley's number</td>
+</tr>
+<tr>
+<td>Fake sponsors</td>
+<td>Riley's login, or to install malware</td>
+<td>Professional looking emails with “contracts” and links</td>
+</tr>
+<tr>
+<td>Data brokers</td>
+<td>To sell personal data</td>
+<td>List names and addresses on people-search websites</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</section>
+
+<section role="region" aria-labelledby="assumptions">
+<h2 id="assumptions">Assumptions</h2>
+<ul>
+<li>The streaming platform and email provider keep their own systems secure.</li>
+<li>No one who knows Riley in person is trying to harm them.</li>
+<li>Riley's phone and laptop aren't infected with malware today.</li>
+<li>Riley isn't a target of a government or a skilled, well-funded attacker.</li>
+</ul>
+
+<p>If any of these stop being true, update this threat model.</p>
+
+</section>
+
+<section role="region" aria-labelledby="entry-points">
+<h2 id="entry-points">Entry Points</h2>
+<p>These are the ways an attacker could reach Riley's assets:</p>
+
+<ul>
+<li>Login pages for email, streaming, and social media accounts</li>
+<li>Riley's posts: photos, videos, the background on stream, and location tags</li>
+<li>Usernames shared between personal and channel accounts</li>
+<li>Email, direct messages, and links in chat</li>
+<li>The phone company's customer service, for moving a phone number</li>
+<li>Riley's home internet connection, through its IP address</li>
+</ul>
+
+</section>
+
+<section role="region" aria-labelledby="risk-rating">
+<h2 id="risk-rating">Risk Rating</h2>
+<div class="table-container">
+<table>
+<caption id="how-likelihood-and-impact-combine-into-an-overall-risk">How likelihood and impact combine into an overall risk</caption>
+<thead>
+<tr>
+<th scope="col"><strong>Likelihood</strong></th>
+<th scope="col"><strong>Low impact</strong></th>
+<th scope="col"><strong>Medium impact</strong></th>
+<th scope="col"><strong>High impact</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>High</td>
+<td>Medium</td>
+<td>High</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>Low</td>
+<td>Medium</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Low</td>
+<td>Low</td>
+<td>Low</td>
+<td>Medium</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</section>
+
+<section role="region" aria-labelledby="threat-register">
+<h2 id="threat-register">Threat Register</h2>
+<div class="table-container">
+<table>
+<caption id="threat-register">Threat register</caption>
+<thead>
+<tr>
+<th scope="col"><strong>ID</strong></th>
+<th scope="col"><strong>Threat</strong></th>
+<th scope="col"><strong>Likeli\-hood</strong></th>
+<th scope="col"><strong>Impact</strong></th>
+<th scope="col"><strong>Risk</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T1</td>
+<td>Email takeover, because Riley reuses a password and has no two-factor authentication</td>
+<td>High</td>
+<td>High</td>
+<td>High</td>
+</tr>
+<tr>
+<td>T2</td>
+<td>Photos or video reveal Riley's home or school, through location data in the file, or a street sign, school logo, or window view in the background</td>
+<td>Medium</td>
+<td>High</td>
+<td>High</td>
+</tr>
+<tr>
+<td>T3</td>
+<td>Location tags or location sharing, such as Snap Map, show where Riley is or goes often</td>
+<td>Medium</td>
+<td>High</td>
+<td>High</td>
+</tr>
+<tr>
+<td>T4</td>
+<td>The same username on personal and channel accounts links the channel to Riley's real name</td>
+<td>High</td>
+<td>Medium</td>
+<td>High</td>
+</tr>
+<tr>
+<td>T5</td>
+<td>A fake sponsor email delivers malware, or a fake login page steals the channel password</td>
+<td>Medium</td>
+<td>High</td>
+<td>High</td>
+</tr>
+<tr>
+<td>T6</td>
+<td>An attacker talks the phone company into moving Riley's number to a new SIM card, and gets text message login codes</td>
+<td>Low</td>
+<td>High</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>T7</td>
+<td>A link in chat records Riley's IP address, which shows their city and internet provider</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>T8</td>
+<td>People-search websites list the family's address under Riley's real name</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>T9</td>
+<td>Friends tag Riley's real name in comments or posts</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>T10</td>
+<td>Phone apps have permissions they don't need, such as location or contacts, and that data is leaked or sold</td>
+<td>Medium</td>
+<td>Low</td>
+<td>Low</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</section>
+
+<section role="region" aria-labelledby="controls">
+<h2 id="controls">Controls</h2>
+<div class="table-container">
+<table>
+<caption id="controls-and-the-threats-each-one-reduces">Controls, and the threats each one reduces</caption>
+<thead>
+<tr>
+<th scope="col"><strong>ID</strong></th>
+<th scope="col"><strong>Control</strong></th>
+<th scope="col"><strong>Threats</strong></th>
+<th scope="col"><strong>Priority</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C1</td>
+<td>Use a password manager, with a different strong password for every account, starting with email</td>
+<td>T1, T5</td>
+<td>Now</td>
+</tr>
+<tr>
+<td>C2</td>
+<td>Turn on two-factor authentication with an authenticator app, not text messages</td>
+<td>T1, T5, T6</td>
+<td>Now</td>
+</tr>
+<tr>
+<td>C3</td>
+<td>Make a separate email address for the channel and sponsors, and a different username for personal accounts. Make personal accounts private.</td>
+<td>T1, T4, T9</td>
+<td>Now</td>
+</tr>
+<tr>
+<td>C4</td>
+<td>Before posting, check the background for signs, mail, logos, and window views. Turn off location for the camera app, and stop tagging locations.</td>
+<td>T2, T3</td>
+<td>Now</td>
+</tr>
+<tr>
+<td>C5</td>
+<td>Turn off Snap Map and other location sharing. Post about places after leaving them.</td>
+<td>T3</td>
+<td>Now</td>
+</tr>
+<tr>
+<td>C6</td>
+<td>Never open unexpected files. Check that a sponsor is real by finding the company's website yourself, not through the email's link.</td>
+<td>T5</td>
+<td>Now</td>
+</tr>
+<tr>
+<td>C7</td>
+<td>Add a PIN or passcode to the phone account, so the phone company won't move the number without it</td>
+<td>T6</td>
+<td>This month</td>
+</tr>
+<tr>
+<td>C8</td>
+<td>Use a well-known, paid VPN that has had an independent audit of its no-logs promise, especially when opening links from chat or playing online games</td>
+<td>T7</td>
+<td>This month</td>
+</tr>
+<tr>
+<td>C9</td>
+<td>Ask people-search websites to remove the family's listing, and ask friends not to tag Riley's real name</td>
+<td>T8, T9</td>
+<td>This month</td>
+</tr>
+<tr>
+<td>C10</td>
+<td>Review app permissions every few months, and turn off what isn't needed</td>
+<td>T10</td>
+<td>Ongoing</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</section>
+
+<section role="region" aria-labelledby="communications">
+<h2 id="communications">Communications</h2>
+<p><strong>Messages with friends and family:</strong> Signal, which is end-to-end encrypted, so only the people in the chat can read the messages. <strong>Sponsors:</strong> the channel email only. <strong>Phone calls and texts:</strong> regular calls and texts aren't end-to-end encrypted, so Riley gives sponsors a free internet phone number, such as Google Voice, and keeps their real number for people they know.</p>
+
+</section>
+
+<section role="region" aria-labelledby="vpn-decision">
+<h2 id="vpn-decision">VPN decision</h2>
+<p>A VPN is worth it here, for one reason: it hides Riley's home IP address from websites and games (T7). It doesn't protect against stolen passwords, phishing, or a photo that shows Riley's street, so it's a lower priority than C1 to C6.</p>
+
+</section>
+
+<section role="region" aria-labelledby="accepted-risk">
+<h2 id="accepted-risk">Accepted Risk</h2>
+<p>After the controls, every threat is rated Low or Medium. Riley accepts these risks:</p>
+
+<ul>
+<li>Someone could still guess Riley's city from things they mention on stream, such as the weather.</li>
+<li>A platform data breach could leak Riley's channel email. This is why it's separate from their personal email.</li>
+</ul>
+
+<p>Riley decided against Tor and a second phone. They'd be more trouble than they're worth for this threat level.</p>
+
+</section>
+
+<section role="region" aria-labelledby="not-covered">
+<h2 id="not-covered">Not Covered</h2>
+<p>This model doesn't cover a viewer who finds Riley in person, or threats of harm. If that happens, Riley will report it to the platform and the police, and update this model.</p>
+
+</section>
+
+<section role="region" aria-labelledby="when-to-review">
+<h2 id="when-to-review">When to Review</h2>
+<p>Review this threat model every 6 months, and right away if:</p>
+
+<ul>
+<li>The channel grows a lot, or Riley starts showing their face or real name</li>
+<li>An account is taken over, or Riley's address is posted online</li>
+<li>Riley moves, changes schools, or gets a new phone</li>
+</ul>
+
+</section>
+
+<section role="region" aria-labelledby="references">
+<h2 id="references">References</h2>
+<p>EFF Surveillance Self-Defense: Your Security Plan Link: <a href="https://ssd.eff.org/module/your-security-plan"><strong>https://ssd.eff.org/module/your-security-plan</strong></a></p>
+
+<p>EFF Surveillance Self-Defense: Protecting Yourself on Social Networks Link: <a href="https://ssd.eff.org/module/protecting-yourself-social-networks"><strong>https://ssd.eff.org/module/protecting-yourself-social-networks</strong></a></p>
+
+<p>The lab this sample goes with Link: <a href="https://www.aholdengouveia.name/InfoSec/labs/enccomm.html"><strong>https://www.aholdengouveia.name/InfoSec/labs/enccomm.html</strong></a></p>
+
+</section>
+
+    </main>
+</body>
+</html>

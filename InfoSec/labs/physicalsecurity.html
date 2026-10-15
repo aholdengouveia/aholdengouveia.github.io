@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Physical and Device Security</title>
+    <link href="../../css/accessible-lab.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
+        <h1>Physical and Device Security</h1>
+        <div class="author">
+            <p>Adrianna Holden-Gouveia</p>
+            <p>Website: <a href="https://aholdengouveia.name">https://aholdengouveia.name</a></p>
+            <p>GitHub: <a href="https://github.com/aholdengouveia" aria-label="GitHub profile">aholdengouveia</a></p>
+        </div>
+    </header>
+
+    <main role="main" id="main-content">
+        <section role="region" aria-labelledby="pdf-version-notice" class="accessibility-notice">
+            <h2 id="pdf-version-notice">PDF Version Available</h2>
+            <p>This document is also available in PDF format: <a href="physicalsecurity.pdf">physicalsecurity.pdf</a></p>
+            <p>The PDF version includes bookmarks for easy navigation and is optimized for printing.</p>
+        </section>
+
+        <nav role="navigation" aria-label="Table of Contents" class="toc">
+            <h2>On this page:</h2>
+            <ul>
+                <li><a href="#accessibility-notice">Accessibility Notice</a></li>
+                <li><a href="#learning-outcomes">Learning Outcomes</a></li>
+                <li><a href="#lab-instructions">Lab Instructions</a></li>
+                <li><a href="#deliverables">Deliverables</a></li>
+                <li><a href="#resources">Resources</a></li>
+            </ul>
+        </nav>
+
+<section role="region" aria-labelledby="accessibility-notice">
+<h2 id="accessibility-notice">Accessibility Notice</h2>
+<p>This document is also available in HTML format at:</p>
+
+<p>Link: <a href="https://aholdengouveia.name/InfoSec/labs/physicalsecurity.html"><strong>https://aholdengouveia.name/InfoSec/labs/physicalsecurity.html</strong></a></p>
+
+<p>The HTML version provides enhanced accessibility features including keyboard navigation, screen reader support, responsive design, dark mode support, and high contrast options.</p>
+
+</section>
+
+<section role="region" aria-labelledby="learning-outcomes">
+<h2 id="learning-outcomes">Learning Outcomes</h2>
+<p>By the end of this lab, you will be able to:</p>
+
+<ul>
+<li>Identify the connected devices in a home, and the risks each one brings</li>
+<li>Check and improve the update and startup protections on your own computer and phone</li>
+<li>Explain how secure boot, signed apps, and automatic updates protect a device</li>
+<li>Plan how to safely wipe and get rid of old devices, including printers and copiers</li>
+</ul>
+
+</section>
+
+<section role="region" aria-labelledby="lab-instructions">
+<h2 id="lab-instructions">Lab Instructions</h2>
+<p>If someone can touch a device, they can usually get into it. In this lab, you'll look at the devices around you: the connected devices in your home, the protections on your own computer and phone, and what happens to devices when you're done with them.</p>
+
+</section>
+
+<section role="region" aria-labelledby="screenshots">
+<h2 id="screenshots">Screenshots</h2>
+<p>This lab asks for about 10 screenshots. Each screenshot should have your name, term, and year. One of the easiest ways to do that is make a text document with your name and term/year on your computer and save it to use all term. Any screenshots that don't include this information won't be counted.</p>
+
+<figure>
+<img src="ExampleScreenshot.png" alt="Example screenshot: a web browser showing the Google home page, with a small text editor window in front of it that says YOUR NAME HERE and TERM YEAR">
+<figcaption>This is an image of what each of your screenshots should look like</figcaption>
+</figure>
+
+<p><strong>Blur or cover anything sensitive before you turn in a screenshot</strong>, as long as your name and term note still shows. That includes:</p>
+
+<ul>
+<li>Your Wi-Fi network name and password</li>
+<li>IP addresses and MAC addresses (the long codes like A4:83:E7:12:9B:30)</li>
+<li>Serial numbers, and account names or email addresses</li>
+<li>Device names that include someone's name, such as “Jordan's iPhone”</li>
+</ul>
+
+</section>
+
+<section role="region" aria-labelledby="part-1-your-home-s-connected-devices">
+<h2 id="part-1-your-home-s-connected-devices">Part 1: Your Home's Connected Devices</h2>
+<p>Make a list of every device in your home that connects to the internet. Think beyond computers and phones: TVs, streaming sticks, smart speakers, doorbells and cameras, printers, game consoles, smart plugs and lights, thermostats, and the router itself. If you live with other people, only include devices you're allowed to look at.</p>
+
+<ol>
+<li>Make a table with a row for each device, and these columns:
+<ul>
+<li>The device, and who makes it</li>
+<li>Does it update automatically? (Yes, No, or Not sure)</li>
+<li>Does it have a password or PIN, and has the default one been changed?</li>
+<li>Does the maker still release updates for it? Look it up for at least 3 devices.</li>
+</ul>
+</li>
+<li>Find the list of connected devices on your router. You can usually find it in your internet provider's app, or the router's settings page. Take a screenshot. If you can't get to your router, such as in a dorm, say so, and take a screenshot of the Wi-Fi settings on one device instead.</li>
+<li>Pick 2 devices, and find their privacy policies. For each one, quote one thing the policy says the device collects, such as voice recordings, viewing history, or location.</li>
+<li>Which device in your home is the biggest risk? Think about what it can see or hear, whether it still gets updates, and what an attacker could do with it.</li>
+<li>Fix one thing, such as turning on automatic updates, changing a default password, or turning off a microphone or camera feature you don't use. Take a screenshot showing the change, and explain why you chose it.</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="part-2-check-your-computer">
+<h2 id="part-2-check-your-computer">Part 2: Check Your Computer</h2>
+<p>Check your own computer. Follow the steps for the kind you have. Menu names change between versions, so if you can't find something, search the device's help pages for the setting's name.</p>
+
+<p><strong>Windows:</strong></p>
+
+<ul>
+<li><strong>Updates:</strong> open Settings, then Windows Update. Take a screenshot.</li>
+<li><strong>Secure boot:</strong> press the Windows key, type System Information, and open it. In System Summary, find Secure Boot State. Take a screenshot. It will say On, Off, or Unsupported.</li>
+<li><strong>Signed apps:</strong> open File Explorer, and go to the Program Files folder on your C: drive. Find an app's main program file, right-click it, select Properties, then the Digital Signatures tab. Take a screenshot showing who signed it.</li>
+</ul>
+
+<p><strong>Mac:</strong></p>
+
+<ul>
+<li><strong>Updates:</strong> open System Settings, then General, then Software Update. Select the information button next to Automatic Updates, and take a screenshot.</li>
+<li><strong>Secure boot:</strong> hold the Option key, open the Apple menu, and select System Information. Under Hardware, select Controller, and take a screenshot showing Secure Boot. If your Mac is older and doesn't show it, take a screenshot of About This Mac instead, and look up whether your model has secure boot.</li>
+<li><strong>Signed apps:</strong> open System Settings, then Privacy &amp; Security, and scroll to “Allow applications from”. Take a screenshot.</li>
+</ul>
+
+<p><strong>Chromebook:</strong></p>
+
+<ul>
+<li><strong>Updates:</strong> open Settings, then About ChromeOS, and select Check for updates. Take a screenshot.</li>
+<li><strong>When updates end:</strong> in About ChromeOS, select Additional details, and find Update schedule. Take a screenshot showing when your Chromebook gets its last update.</li>
+<li><strong>Secure boot and signed apps:</strong> Chromebooks always check the system when they start, which Google calls Verified Boot, and they only install apps from the Chrome Web Store and Google Play unless you change that. You don't need a screenshot for this one. Explain it in question 8.</li>
+</ul>
+
+</section>
+
+<section role="region" aria-labelledby="part-3-check-your-phone">
+<h2 id="part-3-check-your-phone">Part 3: Check Your Phone</h2>
+<p>Check your own phone. Follow the steps for the kind you have.</p>
+
+<p><strong>iPhone:</strong></p>
+
+<ul>
+<li><strong>Updates:</strong> open Settings, then General, then Software Update, then Automatic Updates. Take a screenshot.</li>
+<li><strong>App updates:</strong> open Settings, then App Store, and take a screenshot of App Updates.</li>
+<li><strong>Secure boot and signed apps:</strong> iPhones always use secure boot, and only install signed apps, usually from the App Store. Explain it in question 8.</li>
+</ul>
+
+<p><strong>Android:</strong></p>
+
+<ul>
+<li><strong>Updates:</strong> open Settings, and find Software update. It's often under System. Take a screenshot showing the last security update date.</li>
+<li><strong>Play Protect:</strong> open the Play Store, select your profile picture, then Play Protect. Take a screenshot.</li>
+<li><strong>Unknown apps:</strong> in Settings, search for “Install unknown apps”. Take a screenshot showing which apps are allowed to install other apps. For most people, the answer should be none, or only the Play Store.</li>
+</ul>
+
+<p>Then answer these questions about both your computer and your phone:</p>
+
+<ol start="6">
+<li>Was anything turned off, out of date, or set in a risky way? If so, fix it if it's your device, take a screenshot, and explain what you changed. If everything was fine, say so.</li>
+<li>Does your computer or phone still get updates? Look up how long the maker supports your model, and give the source.</li>
+<li>Explain in your own words what each protection does: automatic updates, secure boot, and signed apps. For each one, give an example of an attack it helps stop, such as a fake update or malware that loads before the operating system.</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="part-4-getting-rid-of-old-devices">
+<h2 id="part-4-getting-rid-of-old-devices">Part 4: Getting Rid of Old Devices</h2>
+<p>Old devices still have data on them. Printers and copiers often store copies of what they printed or scanned, on a built-in drive.</p>
+
+<ol start="9">
+<li>Pick an old phone, computer, tablet, or printer that you or your family no longer use. If you don't have one, pick a device you use now, and plan for when you replace it.</li>
+<li>Find the maker's instructions for wiping it, such as a factory reset. Take a screenshot of the instructions. If the device is yours, backed up, and no one needs it, you can wipe it, and take a screenshot of the reset screen. Don't wipe a device someone still uses.</li>
+<li>Find a place that takes old electronics for recycling near you, or a trade-in or recycling program from the maker or a store. Give the name and link.</li>
+<li>Write a short policy, of at least 5 rules, for what a small office should do with old devices. Include computers, phones, and printers or copiers. For example: who's responsible, how devices are wiped, how wiping is checked, and where devices go after.</li>
+</ol>
+
+</section>
+
+<section role="region" aria-labelledby="deliverables">
+<h2 id="deliverables">Deliverables</h2>
+<p>One file that includes:</p>
+
+<ul>
+<li>Part 1: your device table, your router or Wi-Fi screenshot, your 2 privacy policy quotes, your answers, and your screenshot of the change you made</li>
+<li>Part 2: your computer screenshots</li>
+<li>Part 3: your phone screenshots, and your answers</li>
+<li>Part 4: your device, your screenshot of the wipe instructions, the recycling place, and your policy</li>
+</ul>
+
+<p>Remember to blur sensitive information in every screenshot.</p>
+
+</section>
+
+<section role="region" aria-labelledby="resources">
+<h2 id="resources">Resources</h2>
+<p>References, a video, a PowerPoint and some notes are available at my website Link: <a href="https://www.aholdengouveia.name/InfoSec/PhysicalSecurity.html"><strong>https://www.aholdengouveia.name/InfoSec/PhysicalSecurity.html</strong></a></p>
+
+<p>Apple: how secure boot works on a Mac with Apple silicon Link: <a href="https://support.apple.com/guide/security/secac71d5623/web"><strong>https://support.apple.com/guide/security/secac71d5623/web</strong></a></p>
+
+<p>Google: check your Chromebook's update schedule Link: <a href="https://support.google.com/chromebook/answer/9367166"><strong>https://support.google.com/chromebook/answer/9367166</strong></a></p>
+
+<p>FTC: how to remove your personal information before you get rid of your phone Link: <a href="https://consumer.ftc.gov/articles/how-remove-your-personal-information-you-get-rid-your-phone"><strong>https://consumer.ftc.gov/articles/how-remove-your-personal-information-you-get-rid-your-phone</strong></a></p>
+
+<p>FTC: how to remove your personal information before you get rid of your computer Link: <a href="https://consumer.ftc.gov/articles/how-remove-your-personal-information-you-get-rid-your-computer"><strong>https://consumer.ftc.gov/articles/how-remove-your-personal-information-you-get-rid-your-computer</strong></a></p>
+
+<p>FTC: digital copier data security, a guide for businesses Link: <a href="https://www.ftc.gov/business-guidance/resources/digital-copier-data-security-guide-businesses"><strong>https://www.ftc.gov/business-guidance/resources/digital-copier-data-security-guide-businesses</strong></a></p>
+
+</section>
+
+    </main>
+</body>
+</html>

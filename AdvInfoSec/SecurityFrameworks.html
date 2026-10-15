@@ -1,15 +1,15 @@
 ---
-title: TOPIC
+title: Security Frameworks
 layout: AdvSec
 ---
 <!--Learning Outcomes for this topic-->
-<h1>TOPIC</h1>
+<h1>Security Frameworks</h1>
 <p>Learning outcomes:
     <ul>
-        <li>Outcome 1</li>
-        <li>Outcome 2</li>
-        <li>Outcome 3</li>
-        <li>Outcome 4</li>
+        <li>Explain what a security framework is, and why organizations use one</li>
+        <li>Compare common frameworks, such as the NIST Cybersecurity Framework, ISO/IEC 27001, the CIS Controls, and MITRE ATT&amp;CK</li>
+        <li>Map an attack or a security task to a framework, such as an attacker's steps to MITRE ATT&amp;CK or a control to the NIST CSF functions</li>
+        <li>Recommend a framework for an organization, based on its size, industry, and compliance needs</li>
     </ul>
 </p>
 
@@ -18,33 +18,89 @@ layout: AdvSec
     <!--Paste youTube embed code here-->
 </div>
 
-<!--Download PowerPoint-->
-<p>
-    <a href="#">Would you like to download my PowerPoint to follow along?</a>
-</p>
 <!--Outline Of lecture notes/powerpoint for the topic-->
 <p>
     <ul>
-        <li>Topic subtopic 1</li>
+        <li>What Is a Security Framework?</li>
             <ul>
-                <li>Thing 1</li>
-                <li>Thing 2</li>
+                <li>A shared set of guidelines and best practices for managing security risk</li>
+                <li>Gives teams a common language, a checklist, and a way to measure progress</li>
+                <li>A framework is guidance. Compliance is what a law or contract requires. They overlap, but they aren't the same thing</li>
             </ul>
-        <li>Topic Subtopic 2</li> 
-        <ul>
-            <li>Thing 1</li>
-            <li>Thing 2</li>
-        </ul>
-    </ul>   
+        <li>Why Use One?</li>
+            <ul>
+                <li>You don't have to invent your own process from scratch</li>
+                <li>Easier to explain security to leadership, auditors, and customers</li>
+                <li>Shows where the gaps are, and what to fix first</li>
+            </ul>
+        <li><a href="https://www.nist.gov/cyberframework">NIST Cybersecurity Framework (CSF) 2.0</a></li>
+            <ul>
+                <li>Free, widely used in the US, and meant for any size of organization</li>
+                <li><a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.29.pdf">6 functions: Govern, Identify, Protect, Detect, Respond, Recover</a></li>
+                <li>Profiles and tiers show where you are now, and where you want to be</li>
+                <li><a href="https://www.nist.gov/cyberframework/quick-start-guides">NIST's quick start guides, including one for small businesses</a></li>
+            </ul>
+        <li><a href="https://www.iso.org/standard/27001">ISO/IEC 27001</a></li>
+            <ul>
+                <li>The international standard for an information security management system</li>
+                <li>Organizations can be certified, which is often needed for international business</li>
+                <li>More process-heavy than the NIST CSF, so it's a bigger commitment</li>
+            </ul>
+        <li><a href="https://www.cisecurity.org/controls">CIS Controls</a></li>
+            <ul>
+                <li>A prioritized list of practical security actions</li>
+                <li><a href="https://www.cisecurity.org/controls/implementation-groups">Implementation Groups (IG1 to IG3)</a> based on an organization's size and resources. IG1 is a good starting point for a small business</li>
+                <li>Links to the <a href="https://www.cisecurity.org/cis-benchmarks">CIS Benchmarks</a> from the Hardening topic</li>
+            </ul>
+        <li><a href="https://attack.mitre.org/">MITRE ATT&amp;CK</a></li>
+            <ul>
+                <li>A knowledge base of real attacker tactics and techniques, based on real attacks</li>
+                <li>Red teams use it to plan tests. Blue teams use it to check what they can detect</li>
+                <li>Connects to the pen testing stages from earlier in the course: reconnaissance maps to the Reconnaissance tactic, enumeration to Discovery, and exploitation to tactics such as Initial Access and Execution</li>
+                <li><a href="https://mitre-attack.github.io/attack-navigator/">ATT&amp;CK Navigator</a> lets you highlight techniques and build your own map</li>
+            </ul>
+        <li><a href="https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html">Lockheed Martin Cyber Kill Chain</a></li>
+            <ul>
+                <li>7 stages of an attack, from reconnaissance to actions on objectives</li>
+                <li>Older and simpler than ATT&amp;CK, but still common in reports and job interviews</li>
+                <li>The idea: break any link in the chain, and the attack fails</li>
+            </ul>
+        <li>Other Frameworks and Regulations You'll See</li>
+            <ul>
+                <li><a href="https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final">NIST SP 800-53</a>: a detailed catalog of security controls, required for US federal systems</li>
+                <li><a href="https://www.pcisecuritystandards.org/">PCI DSS</a>: required for anyone who handles card payments</li>
+                <li>HIPAA: required for US healthcare organizations that handle patient data</li>
+                <li><a href="https://www.aicpa-cima.com/topic/audit-assurance/audit-and-assurance-greater-than-soc-2">SOC 2</a>: an audit report that service providers give their customers to show their security controls work</li>
+            </ul>
+        <li>Choosing a Framework</li>
+            <ul>
+                <li>Industry and laws: healthcare, finance, and government each have their own requirements</li>
+                <li>Size and budget: CIS IG1 for a small business, against full ISO 27001 for a large one</li>
+                <li>Customers: many customers ask for a SOC 2 report or ISO 27001 certification before they'll sign a contract</li>
+                <li>Many organizations use more than one, and map them together. For example, NIST CSF for the big picture, and CIS Controls for the day to day actions</li>
+            </ul>
+        <li>Frameworks and the Rest of This Course</li>
+            <ul>
+                <li>Security audits often check an organization against a framework</li>
+                <li>Hardening uses CIS Benchmarks, which support the CIS Controls</li>
+                <li>Incident response and recovery match the NIST CSF Respond and Recover functions</li>
+            </ul>
+    </ul>
+</p>
+
 <!--Discussions and activities for the topic-->
 <p>Suggested Activities and Discussion Topics:
     <ul>
-        <li>Discussion 1</li>
-        <li>Activity 1</li>
+        <li>Activity: map each stage of a pen test from this course (reconnaissance, enumeration, exploitation, and so on) to a tactic in <a href="https://attack.mitre.org/">MITRE ATT&amp;CK</a>. Which stages map easily, and which don't?</li>
+        <li>Activity: a 10 person accounting office asks which framework to use. Recommend one, and explain why, using its size, industry, and budget.</li>
+        <li>Activity: pick 3 steps from the Incident Recovery topic, and match each one to a NIST CSF function. Which function has the most steps?</li>
+        <li>Discussion: is following a framework the same as being secure? Can an organization be compliant and still get breached?</li>
+        <li>Activity: use the <a href="https://mitre-attack.github.io/attack-navigator/">ATT&amp;CK Navigator</a> to highlight the techniques used in a recent attack in the news. Share your map and one detection idea for it.</li>
+        <li>Discussion: compare the Cyber Kill Chain with MITRE ATT&amp;CK. Which would you use to explain an attack to leadership, and which to a security team? Why?</li>
     </ul>
 </p>
 
 <!--Link to my classes page-->
-<p>Would you like to see some more classes?  
+<p>Would you like to see some more classes?
     <a href="/classes.html">Click here </a>
 </p>

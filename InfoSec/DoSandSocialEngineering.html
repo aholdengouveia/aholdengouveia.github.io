@@ -1,0 +1,133 @@
+---
+title: Denial of Service and Social Engineering
+layout: infosec1
+---
+<!--Learning Outcomes for this topic-->
+<h1>Denial of Service and Social Engineering</h1>
+<p>Learning outcomes:
+    <ul>
+        <li>Explain how denial of service and distributed denial of service attacks affect availability</li>
+        <li>Identify the symptoms of a denial of service attack, and describe ways to defend against one</li>
+        <li>Describe common social engineering vectors and types, such as phishing, vishing, smishing, and pretexting</li>
+        <li>Explain how individuals and businesses can protect themselves against social engineering</li>
+    </ul>
+</p>
+
+<!--embed Youtube video here-->
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/esyFWV4KVf4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+<!--Download PowerPoint-->
+<p>
+    <a href="/InfoSec/CIS 115 Week 4.pptx">Would you like to download my PowerPoint to follow along?</a>
+</p>
+<!--Outline Of lecture notes/powerpoint for the topic-->
+<p>
+    <ul>
+        <li><a href="https://en.wikipedia.org/wiki/Denial-of-service_attack">Denial of Service (DoS)</a></li>
+            <ul>
+                <li>An attack on availability, the A in the CIA triad</li>
+                <li>Example attacks</li>
+                    <ul>
+                        <li>Packet flooding</li>
+                        <li><a href="https://en.wikipedia.org/wiki/Smurf_attack">Smurf attack</a> (ICMP)</li>
+                        <li>Pulsing zombies</li>
+                        <li>Permanent denial of service (PDoS), such as PhlashDance</li>
+                    </ul>
+            </ul>
+        <li>Distributed Denial of Service (DDoS)</li>
+            <ul>
+                <li>Application layer DDoS (the top layer of the OSI model)</li>
+                <li>Advanced persistent DoS by an advanced persistent threat (APT)</li>
+                <li>Denial of service as a service, known as booters or stressers</li>
+                <li><a href="https://en.wikipedia.org/wiki/Mirai_(malware)">Example: the Mirai botnet</a>, made from hacked IoT devices</li>
+            </ul>
+        <li>Symptoms</li>
+            <ul>
+                <li>Slow networks</li>
+                <li>Sites that are unavailable</li>
+                <li>No internet service</li>
+            </ul>
+        <li>What to do</li>
+            <ul>
+                <li>Third party services designed to stop DoS and DDoS</li>
+                <li>Packet filtering, ingress and egress</li>
+                <li>Turn off unused ports</li>
+                <li>Update and patch</li>
+                <li>Watch network traffic, and watch the news</li>
+                <li>Harden your machines</li>
+            </ul>
+        <li>Legality</li>
+            <ul>
+                <li>Denial of service is illegal</li>
+                <li>In the US, it's a federal crime under the <a href="https://en.wikipedia.org/wiki/Computer_Fraud_and_Abuse_Act">Computer Fraud and Abuse Act</a></li>
+                <li>Some activists, such as Anonymous, have argued DDoS should be a legal form of protest</li>
+            </ul>
+        <li>Social Engineering</li>
+            <ul>
+                <li>Targeted against non-specific attacks</li>
+                <li>Vectors</li>
+                    <ul>
+                        <li>Email</li>
+                        <li>Phone</li>
+                        <li>In person</li>
+                        <li>Social media</li>
+                    </ul>
+                <li>Types</li>
+                    <ul>
+                        <li>Phishing and spear phishing</li>
+                        <li>Vishing (voice) and smishing (text messages)</li>
+                        <li>Pretexting</li>
+                        <li><a href="https://en.wikipedia.org/wiki/Typosquatting">Typosquatting</a></li>
+                    </ul>
+            </ul>
+        <li>Deepfakes and AI-powered social engineering</li>
+            <ul>
+                <li>Deepfake video calls: in 2024, an employee at engineering firm Arup sent $25.6 million after a video call where everyone else on the call was a deepfake (<a href="https://www.cnn.com/2024/05/16/tech/arup-deepfake-scam-loss-hong-kong-intl-hnk">CNN</a>)</li>
+                <li>Voice cloning makes vishing calls sound like your boss or a family member</li>
+                <li>Watch: an ethical hacker clones a reporter's voice with AI, and tricks a coworker into giving up a passport number in 5 minutes (<a href="https://www.youtube.com/watch?v=z9zaMw6VLJg">60 Minutes</a>, with a <a href="https://www.cbsnews.com/news/how-con-artists-use-ai-apps-to-steal-60-minutes-transcript/">transcript</a>)</li>
+                <li>Canvas (2026): attackers used voice phishing to steal data on over 30 million students and staff</li>
+                <li>Instagram (2026): attackers abused Meta's AI support chatbot to reset passwords, and thousands of accounts were hijacked (<a href="https://techcrunch.com/2026/09/15/the-worst-hacks-and-breaches-of-2026-so-far/">TechCrunch</a>)</li>
+                <li>Defense: check through a second channel, call back on a number you already know, and agree on a code word with family</li>
+            </ul>
+        <li>How it works</li>
+            <ul>
+                <li>Reconnaissance</li>
+                    <ul>
+                        <li>Searching online: social media, business networking sites, and company websites</li>
+                        <li>Reading people: social engineers watch body language to find out who's in charge, and who's likely to help</li>
+                        <li>Dominance cues: whose hand is on top in a handshake, who takes up space, who talks the most and gets the last word</li>
+                        <li>Comfort and trust cues: eye contact, open hands, and mirroring, which is copying someone's posture or gestures to build trust</li>
+                    </ul>
+                <li>Setting the environment</li>
+                <li>Exfiltration</li>
+            </ul>
+        <li>Inoculation: personal</li>
+            <ul>
+                <li>Awareness</li>
+                <li>Research before you trust</li>
+                <li><a href="https://ssd.eff.org/">EFF's Surveillance Self-Defense</a> has guides on protecting yourself</li>
+            </ul>
+        <li>Inoculation: businesses</li>
+            <ul>
+                <li>Training and awareness</li>
+                <li>Scripted responses, so staff know what to say</li>
+                <li>Test! Test! Test!</li>
+            </ul>
+    </ul>
+</p>
+<!--Discussions and activities for the topic-->
+<p>Suggested Activities and Discussion Topics:
+    <ul>
+        <li>Observation game: watch how people greet each other and who seems to be in charge of a conversation, using my <a href="/InfoSec/labs/bodylanguage.txt">body language checklist</a>. Don't be creepy!</li>
+        <li>Discussion: should DDoS ever be considered a legal form of protest? Why or why not?</li>
+        <li>Discussion: what social engineering attempt have you seen or received? What gave it away?</li>
+        <li>Follow the instructions on <a href="/InfoSec/labs/socialengineering.pdf">this PDF</a> (<a href="/InfoSec/labs/socialengineering.html">accessible HTML version</a>)</li>
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?  
+    <a href="/classes.html">View all classes</a>
+</p>
