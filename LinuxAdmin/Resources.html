@@ -7,8 +7,9 @@ layout: AdvLinux
 <div class="container">
     <h2>General Server FAQ</h2>
         <ul>
-            <li><a href="http://bhami.com/rosetta.html">Sysadmin's Unixersal Translator (ROSETTA STONE) </a></li>
-            <li>Videos: <a href="https://www.youtube.com/playlist?list=PLQOmuLC45eoQlIMH7oCNL6yFP7kWQubBo">Adrianna's TLDR series on YouTube for Linux Administration</a></li>
+            <li><a href="http://bhami.com/rosetta.html">Sysadmin's Universal Translator (ROSETTA STONE) </a></li>
+            <li>Videos: <a href="https://www.youtube.com/playlist?list=PLQOmuLC45eoS1x4owgCvzRU6ZFezMHiyr">Adrianna's TLDR series on YouTube for Linux Administration</a></li>
+            <li>Videos: <a href="https://www.youtube.com/playlist?list=PLQOmuLC45eoQlIMH7oCNL6yFP7kWQubBo">Adrianna's Linux FAQ playlist on YouTube</a></li>
             <li><a href="https://web.archive.org/web/20220804144021/https://www.cs.cmu.edu/~shaoml/linux_quickref.pdf">Linux administration quick reference PDF</a></li>
             <li><a href="https://web.archive.org/web/20220804144222/http://www.yolinux.com/TUTORIALS/LinuxTutorialSysAdmin.html">Linux System Administration and Configuration includes tutorials</a></li>
             <li><a href="https://web.archive.org/web/20220804150708/https://www.networkworld.com/article/3387154/working-with-variables-on-linux.html">Working with variables on Linux machines</a></li>
@@ -43,7 +44,7 @@ layout: AdvLinux
             <li>Video: <a href="https://www.networkworld.com/video/97227/how-to-use-the-wc-command-2-minute-linux-tips">How to use the wc command</a></li>
             <li>Video: <a href="https://www.computerworld.com/video/86896/2-minute-linux-tip-how-to-terminate-processes">How to terminate a process</a></li>
             <li>Video: <a href="https://www.computerworld.com/video/95669/how-to-use-the-nslookup-command-2-minute-linux-tip">How to use the nslookup command</a></li>
-            <li>Video: <a href="https://www.computerworld.com/video/97207/how-to-use-the-groups-command-2-minute-linux-tipsp">How to use the groups command</a></li>
+            <li><a href="https://www.geeksforgeeks.org/linux-unix/groups-command-in-linux-with-examples/">How to use the groups command</a></li>
             <li><a href="https://web.archive.org/web/20220804150150/https://www.networkworld.com/article/3256279/linux-command-history-choosing-what-to-remember-and-how.html">Linux Command line history</a></li>
             <li><a href="https://web.archive.org/web/20220804151016/https://opensource.com/article/19/7/master-ls-command">How to use the ls command</a></li>
             <li><a href="https://web.archive.org/web/20210122041102/https://www.networkworld.com/article/3224897/whats-behind-the-linux-umask.html">How to use umask</a></li>
@@ -56,11 +57,17 @@ layout: AdvLinux
         <ul>
             <li><a href="https://web.archive.org/web/20220804143819/https://www.maketecheasier.com/dev-null-in-linux/">What is /dev/null ? </a></li>
             <li>Video: <a href="https://www.networkworld.com/video/96227/how-to-use-dev-null-2-minute-linux-tips">How to use /dev/null</a></li>
-            <li><a href="https://web.archive.org/web/20220831180300/https://www.geeksforgeeks.org/run-levels-linux/">What are Run Levels in Linux</a></li>
-            <li><a href="https://web.archive.org/web/20220831180448/https://www.networkworld.com/article/3297916/examining-partitions-on-linux-systems.html">Examining partitions on Linux systems</a></li>
+            <li><a href="https://web.archive.org/web/20220831180300/https://www.geeksforgeeks.org/run-levels-linux/">What are Run Levels in Linux</a>, which you'll still see on older systems</li>
+            <li><a href="https://wiki.archlinux.org/title/Systemd#Mapping_between_SysV_runlevels_and_systemd_targets">How systemd targets replaced run levels</a>, with a table matching each run level to its target, from the ArchWiki</li>
+            <li><a href="https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units">How to use systemctl to manage services and targets</a>, from DigitalOcean</li>
             <li><a href="https://web.archive.org/web/20220616055526/https://tldp.org/LDP/sag/html/index.html">The Linux System Administrator's Guide</a></li>
-            <li><a href="https://twitter.com/i/events/1026078161115729920"> Comics by @b0rk to help explain things in a more visual way.</a></li>
+            <li><a href="https://wizardzines.com/">Wizard Zines</a>, comics by Julia Evans (@b0rk) that explain Linux and networking in a visual way</li>
             <li><a href="https://github.com/anordal/shellharden/blob/master/how_to_do_things_safely_in_bash.md">Safe ways to do things in bash</a></li>
+            <li><a href="https://wiki.archlinux.org/">ArchWiki</a>, detailed documentation that's useful for any Linux distribution</li>
+            <li><a href="https://www.digitalocean.com/community/tutorials">DigitalOcean tutorials</a>, practical how-tos for setting up and running servers</li>
+            <li><a href="https://explainshell.com/">explainshell.com</a>, paste in a command and it explains every part</li>
+            <li><a href="https://tldr.sh/">tldr pages</a>, short help for commands, with examples</li>
+            <li><a href="https://gtfobins.github.io/">GTFOBins</a>, how ordinary commands can be misused, useful for hardening servers</li>
         </ul>
 </div>
 
@@ -68,6 +75,7 @@ layout: AdvLinux
     <h2>Linux Challenges</h2>
         <ul>
             <li>Needs free registration: <a href="https://www.hackerrank.com/domains/shell">Hacker Rank Challenges</a></li>
-            <li><a href="https://linuxjourney.com/">Free tutorials and challenges, includes easy to challenging options from Linux Journey</a></li>
+            <li><a href="https://labex.io/linuxjourney">Free tutorials and challenges, includes easy to challenging options from Linux Journey</a></li>
+            <li><a href="https://linuxupskillchallenge.org/">Linux Upskill Challenge</a>, a free month-long sysadmin course on a real server</li>
         </ul>
 </div>
