@@ -1,0 +1,215 @@
+---
+title: Portfolios
+layout: AdvLinux
+---
+<!--Learning Outcomes for this topic-->
+<h1>Portfolios</h1>
+<p>Learning outcomes:
+    <ul>
+        <li>Explain why a portfolio helps you get and keep a job in IT, networking, or security</li>
+        <li>Choose what to include in a portfolio, and what to leave out</li>
+        <li>Write up a project so someone else can see what you did and why it matters</li>
+        <li>Set up a GitHub profile and a GitHub Pages site that look professional</li>
+    </ul>
+</p>
+
+<h2>How to Build a Tech Portfolio</h2>
+
+<!--Outline of notes for the topic-->
+<p>
+    <ul>
+        <li>What is a portfolio?</li>
+            <ul>
+                <li>A collection of your work that shows what you can do, not just what you say you can do</li>
+                <li>A resume says "I know Linux." A portfolio shows the server you set up, the script you wrote, and the documentation you made for it.</li>
+                <li>It can be a website, a GitHub profile, a PDF, a blog, videos, or a mix</li>
+            </ul>
+        <li>Why have one?</li>
+            <ul>
+                <li>Hiring managers get hundreds of applications. A link to real work helps you stand out, especially for your first IT job.</li>
+                <li>It gives you stories for interviews. "Tell me about a time you solved a hard problem" is easy when it's written down.</li>
+                <li>It's useful after you're hired too, for reviews, raises, and promotions. Keep adding to it, along with your accomplishments log.</li>
+                <li>It shows how you communicate. In IT, being able to explain what you did is as important as doing it.</li>
+            </ul>
+        <li>What to include for IT, networking, and security jobs</li>
+            <ul>
+                <li>Server setups and how-to guides, such as your server setup documentation from this class</li>
+                <li>Scripts and automation, such as Bash scripts, Ansible playbooks, or configuration files</li>
+                <li>Network diagrams, with a short explanation of how the network works and why it's built that way</li>
+                <li>A home lab: what you built, what you run on it, and what you learned</li>
+                <li>Troubleshooting stories: what broke, how you figured it out, and how you fixed it</li>
+                <li>Security work, such as CTF writeups, hardening checklists, or a write-up of a practice lab</li>
+                <li>Certifications and courses, with what you actually did to earn them</li>
+                <li>Your resume, and a way to contact you</li>
+            </ul>
+        <li>How to write up a project</li>
+            <ul>
+                <li><strong>The problem:</strong> what needed to be done, and why</li>
+                <li><strong>The setup:</strong> the systems, tools, and versions you used</li>
+                <li><strong>The steps:</strong> what you did, in order, with screenshots or diagrams</li>
+                <li><strong>What went wrong:</strong> the errors you hit, and how you got past them. This is often the most impressive part.</li>
+                <li><strong>The result:</strong> what works now</li>
+                <li><strong>What you learned:</strong> and what you'd do differently next time</li>
+            </ul>
+        <li>What NOT to include</li>
+            <ul>
+                <li>Passwords, private keys, API keys, or tokens, even old ones. Check your files and your GitHub history before you share.</li>
+                <li>Real IP addresses, hostnames, or network details from a job or a school network</li>
+                <li>Anything from an employer or client that isn't yours to share</li>
+                <li>Other people's personal information, such as names in screenshots</li>
+                <li>Your own private details you don't want public, such as your home address or phone number</li>
+            </ul>
+        <li>Choosing a format</li>
+            <ul>
+                <li><strong>GitHub profile:</strong> free, expected for many tech jobs, and great for scripts and configuration files</li>
+                <li><strong>GitHub Pages website:</strong> free hosting for a simple website, built from a GitHub repository</li>
+                <li><strong>Blog:</strong> good for write-ups, troubleshooting stories, and CTF solutions</li>
+                <li><strong>PDF or document:</strong> easy to attach to an application, and easy to print for an interview</li>
+                <li><strong>Videos:</strong> good for showing a lab or a demo, but always include a written summary too</li>
+                <li>Pick the format that fits the jobs you want. Many people use a GitHub profile plus a simple website that links everything together.</li>
+            </ul>
+        <li>Tips that make a portfolio better</li>
+            <ul>
+                <li>Quality over quantity. Three well-documented projects are better than twenty folders with no explanation.</li>
+                <li>Put your best work first</li>
+                <li>Keep it up to date, and remove projects that no longer show your best work</li>
+                <li>Make it accessible: add alt text to images, use headings, and keep text readable</li>
+                <li>Link to it from your resume, your LinkedIn, and your email signature</li>
+                <li>Ask someone to look at it. If they can't tell what a project does in 30 seconds, rewrite the summary.</li>
+            </ul>
+    </ul>
+</p>
+
+<h2>Setting Up a GitHub Pages Site</h2>
+<p>GitHub Pages gives you a free website at <code>username.github.io</code>, built from a GitHub repository. These steps follow GitHub's own quickstart, linked under Suggested Resources.
+    <ol>
+        <li>Sign in to GitHub. If you don't have an account, make one with a professional username, since it'll be part of your website address.</li>
+        <li>In the upper-right corner, select the <strong>+</strong> menu, then <strong>New repository</strong>.</li>
+        <li>Name the repository <code>username.github.io</code>, replacing <code>username</code> with your GitHub username.</li>
+        <li>Make it <strong>Public</strong>, turn on <strong>Add README</strong>, and select <strong>Create repository</strong>.</li>
+        <li>Open the repository's <strong>Settings</strong>, then <strong>Pages</strong> in the sidebar.</li>
+        <li>Under "Build and deployment", set the Source to <strong>Deploy from a branch</strong>, and pick your main branch.</li>
+        <li>Edit <code>README.md</code> to add your content. This becomes your home page.</li>
+        <li>To change the title and theme, create or edit a file called <code>_config.yml</code>, and add lines such as:
+            <pre><code style="display:block; padding:1rem;">theme: jekyll-theme-minimal
+title: Your Name
+description: Linux administration, networking, and security projects</code></pre>
+        </li>
+        <li>Visit <code>username.github.io</code>. Changes can take up to 10 minutes to show up.</li>
+    </ol>
+</p>
+
+<h2>Making Your GitHub Profile Look Professional</h2>
+<p>
+    <ul>
+        <li>Fill in your profile
+            <ul>
+                <li>Add a clear photo, or a simple avatar if you'd rather not show your face</li>
+                <li>Use your real name, or the name you use professionally</li>
+                <li>Write a one-line bio, such as "Linux administration student interested in networking and security"</li>
+                <li>Add links to your website and LinkedIn. Location and pronouns are optional.</li>
+            </ul>
+        </li>
+        <li>Add a profile README
+            <ul>
+                <li>Make a public repository with the same name as your username, with a <code>README.md</code> file. GitHub shows it at the top of your profile.</li>
+                <li>Keep it short: who you are, what you're working on, your skills, and how to contact you</li>
+                <li>Use headings and short lists so it's easy to skim</li>
+                <li>Badges from shields.io can show your skills or certifications, but don't overdo it</li>
+            </ul>
+        </li>
+        <li>Pin your best repositories
+            <ul>
+                <li>You can pin up to 6 repositories to the top of your profile. Pin your best, most complete work.</li>
+            </ul>
+        </li>
+        <li>Make each repository easy to understand
+            <ul>
+                <li>Give every repository a description and a README that explains what it is, how to use it, and what you learned</li>
+                <li>Use clear names, such as <code>server-hardening-scripts</code>, not <code>lab3final2</code></li>
+                <li>Add topics, such as <code>linux</code>, <code>ansible</code>, or <code>networking</code>, so people can find your work</li>
+            </ul>
+        </li>
+        <li>Keep it active
+            <ul>
+                <li>Your contribution graph shows when you've been working. Small, regular updates look better than one big upload.</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+<h2>Sample Portfolios</h2>
+<p>These are real portfolios from people in tech. Look at how each one shows the work, not just job titles. Notice the different formats, and think about which would fit the jobs you want.</p>
+
+<h3>Networking</h3>
+<p>
+    <ul>
+        <li><a href="https://blog.ipspace.net/">Ivan Pepelnjak's ipSpace.net blog</a> and <a href="https://github.com/ipspace">GitHub</a>: years of in-depth writing on network design, plus working code. A blog and a GitHub together show both knowledge and hands-on skill.</li>
+        <li><a href="https://rule11.tech/">Russ White's rule 11 reader</a>: writing, books, and talks on network engineering, all collected in one place.</li>
+        <li><a href="https://pynet.twb-tech.com/">Kirk Byers' Python for Network Engineers</a> and <a href="https://github.com/ktbyers">GitHub</a>: home of Netmiko, a popular tool for automating network devices. Shows how an open source tool can be a portfolio.</li>
+        <li><a href="https://www.networkingwithfish.com/">Denise Fishburne's Networking with FISH</a>: a blog of networking troubleshooting walk-throughs from real lab work. A good model for writing up what broke and how it was fixed.</li>
+        <li><a href="https://github.com/natenka">Nataliia Samoilenko's GitHub</a>: the book, course, exercises, quizzes, and a testing tool for Python for Network Engineers, mostly in Ukrainian. Shows how teaching materials can be a portfolio.</li>
+        <li><a href="https://networkchuck.com/">NetworkChuck</a>: networking and IT content built around videos. An example of a video-first portfolio.</li>
+    </ul>
+</p>
+
+<h3>IT, Systems, and Linux Administration</h3>
+<p>
+    <ul>
+        <li><a href="https://www.jeffgeerling.com/">Jeff Geerling's blog</a> and <a href="https://github.com/geerlingguy">GitHub</a>: home lab, Raspberry Pi, and Ansible automation. The GitHub has many Ansible roles with clear READMEs, a good model for this class.</li>
+        <li><a href="https://technotim.live/">Techno Tim</a>: home lab and self-hosting. Every video has a written guide, so the site works as documentation.</li>
+        <li><a href="https://www.brendangregg.com/">Brendan Gregg's homepage</a>: Linux performance tools, talks, books, and diagrams, all linked from one page. A good model for a portfolio hub.</li>
+        <li><a href="https://www.netmeister.org/">Jan Schaumann's netmeister.org</a> and <a href="https://github.com/jschauma">GitHub</a>: infrastructure security and system administration. A simple, plain site that links to a resume, a blog, and free course videos on system administration.</li>
+        <li><a href="https://blog.alicegoldfuss.com/">Alice Goldfuss' blog</a>: site reliability and operations, with talks, publications, and yearly reviews. The "Hire Alice Goldfuss" post is a great template for presenting yourself to employers.</li>
+        <li><a href="https://github.com/kelseyhightower">Kelsey Hightower's GitHub</a>: infrastructure and Kubernetes, including Kubernetes The Hard Way, a well-known step-by-step guide. Shows how a detailed how-to can become a portfolio piece.</li>
+        <li><a href="https://charity.wtf/">Charity Majors' charity.wtf</a>: writing on operations, observability, and running systems in production, from a co-author of O'Reilly books on database reliability and observability.</li>
+    </ul>
+</p>
+
+<h3>Security</h3>
+<p>
+    <ul>
+        <li><a href="https://grahamhelton.com/">Graham Helton</a>: red teaming. The site lists a job history from grocery store bagger and IT intern to red team engineer, plus open source tools and talks. A great example of showing a career path.</li>
+        <li><a href="https://0xdf.gitlab.io/">0xdf hacks stuff</a>: detailed CTF and Hack The Box writeups, hosted for free on GitLab Pages, which works like GitHub Pages. Shows how writeups can be a portfolio.</li>
+        <li><a href="https://ippsec.rocks/">IppSec</a>: a searchable index of security walkthrough videos. Shows how to make a lot of video content easy to find.</li>
+        <li><a href="https://github.com/JohnHammond">John Hammond's GitHub</a>: security tools, scripts, and CTF material.</li>
+        <li><a href="https://www.troyhunt.com/">Troy Hunt</a>: data breaches and web security, from the creator of Have I Been Pwned. A blog plus a well-known project.</li>
+        <li><a href="https://tisiphone.net/">Lesley Carhart's blog</a>: incident response for industrial control systems, with career advice for people starting out in security.</li>
+        <li><a href="https://shehackspurple.ca/">Tanya Janca's SheHacksPurple</a>: application security books, training, a podcast, and talks, all from one site.</li>
+        <li><a href="https://www.alethedenis.com/">Alethe Denis</a>: social engineering and physical security testing. The site covers career, talks, writing, and resources.</li>
+        <li><a href="https://www.mishaalkhan.com/">Mishaal Khan</a>: open source intelligence (OSINT), privacy, and security leadership, with speaking and writing.</li>
+        <li><a href="https://www.chloemessdaghi.com/">Chlo&eacute; Messdaghi</a>: cybersecurity and AI governance advising, with work experience, talks, and press in one place.</li>
+        <li><a href="https://keatronevans.com/">Keatron Evans</a>: two decades of cybersecurity and AI work, with areas of expertise, publications, and speaking.</li>
+        <li><a href="https://www.ragingrock.com/">Maddie Stone</a>: security research, with speaking engagements, workshops, and tutorials.</li>
+        <li><a href="https://www.youtube.com/@ShannonMorse">Shannon Morse's YouTube channel</a>: security and privacy explained in videos for everyday people. Another example of a video-first portfolio.</li>
+    </ul>
+</p>
+
+<h3>Programming</h3>
+<p>
+    <ul>
+        <li><a href="https://jvns.ca/">Julia Evans</a> and <a href="https://wizardzines.com/">Wizard Zines</a>: Linux, networking, and debugging explained with comics and blog posts. Shows that a portfolio doesn't have to look like everyone else's.</li>
+        <li><a href="https://blog.jessfraz.com/">Jessie Frazelle's blog</a> and <a href="https://github.com/jessfraz">GitHub</a>: systems, containers, and kernels, with published articles and open source projects.</li>
+    </ul>
+</p>
+
+<!--Suggested resources for the topic-->
+<p>Suggested Resources:
+    <ul>
+        <li><a href="https://docs.github.com/en/pages/quickstart">GitHub: Quickstart for GitHub Pages</a></li>
+        <li><a href="https://docs.github.com/en/get-started/start-your-journey/setting-up-your-profile">GitHub: Setting up your profile</a></li>
+        <li><a href="https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme">GitHub: Managing your profile README</a></li>
+        <li><a href="https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/pinning-items-to-your-profile">GitHub: Pinning items to your profile</a></li>
+        <li><a href="https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax">GitHub: Basic writing and formatting syntax</a>, for writing README files in Markdown</li>
+        <li><a href="https://github.com/abhisheknaiidu/awesome-github-profile-readme">Awesome GitHub Profile README</a>, a collection of profile README examples for ideas</li>
+        <li><a href="https://shields.io/">Shields.io</a>, for badges in your README</li>
+        <li><a href="https://www.writethedocs.org/guide/writing/beginners-guide-to-docs/">Write the Docs: A beginner's guide to writing documentation</a></li>
+        <li><a href="/LinuxAdmin/Documentation.html">My Documentation topic</a>, for writing up your projects</li>
+        <li><a href="https://www.cyberseek.org/pathway.html">CyberSeek career pathway</a>, to see which skills different security jobs ask for</li>
+    </ul>
+</p>
+
+<!--Link to my classes page-->
+<p>Would you like to see some more classes?
+    <a href="/classes.html">Click here </a>
+</p>

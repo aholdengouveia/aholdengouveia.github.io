@@ -1,6 +1,6 @@
 body {
     padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-bottom: 4.5rem;
     color: #000000;
     background-color: #e7e6ef;
   }
@@ -395,6 +395,41 @@ dd {
    #222222 on #aab3aa = 7.2:1 (passes WCAG AAA). */
 .footer .text-muted {
     color: #222222 !important;
+}
+
+/* Footer layout: license | contact links | back to top */
+.footer-inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    height: 60px;
+    padding: 0 15px;
+    line-height: normal;
+}
+
+.footer .back-to-top {
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* Phones: let the footer grow so nothing wraps out of it, and keep
+   "Back to top" on one line */
+@media (max-width: 576px) {
+    .footer {
+        height: auto;
+        line-height: normal;
+    }
+    .footer-inner {
+        grid-template-columns: auto 1fr auto;
+        gap: 8px;
+        height: auto;
+        min-height: 60px;
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+    body {
+        padding-bottom: 6rem;
+    }
 }
 
 /* Navbar background — moved from inline style on <nav> so pa11y/Puppeteer can compute
