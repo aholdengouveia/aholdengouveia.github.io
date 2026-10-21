@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Database Explorer</title>
+    <link href="../../css/accessible-lab.css" rel="stylesheet" type="text/css">
+    <style>
+        :root {
+            --box-fill: #ffffff;
+            --box-head: #2c365e;
+            --box-head-text: #ffffff;
+            --box-line: #333333;
+            --link-line: #0050a0;
+            --pick: #ffe08a;
+            --target: #c8f0c8;
+            --panel: #f3f3f6;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --box-fill: #262626;
+                --box-head: #4b5a94;
+                --box-head-text: #ffffff;
+                --box-line: #cccccc;
+                --link-line: #82baff;
+                --pick: #6b5600;
+                --target: #1f5a2a;
+                --panel: #242424;
+            }
+        }
+        body { max-width: 1100px; }
+        .tabs { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 1rem 0; }
+        .tabs button { font-size: 1rem; padding: 0.5rem 1rem; cursor: pointer; }
+        .tabs button[aria-pressed="true"] { font-weight: bold; outline: 3px solid var(--link-line); }
+        .savebar { position: sticky; top: 0; z-index: 5; background: var(--panel); padding: 0.6rem 0.8rem; border-bottom: 2px solid var(--box-line); display: flex; flex-wrap: wrap; gap: 0.8rem; align-items: center; }
+        .savebar .unsaved { font-weight: bold; }
+        button, select, input { font-size: 1rem; }
+        button { padding: 0.45rem 0.9rem; cursor: pointer; }
+        label { font-weight: bold; }
+        .field { margin: 0.6rem 0; }
+        .field label { display: block; }
+        .field input[type="text"], .field select { padding: 0.35rem; max-width: 100%; }
+        .hint { font-size: 0.95rem; margin: 0.2rem 0; }
+        .status { padding: 0.8rem; margin-top: 1rem; border-left: 4px solid currentColor; background: var(--panel); }
+        .status.error { border-left-width: 8px; }
+        .status h3 { margin-top: 0; }
+        table.grid td, table.grid th { padding: 0.3rem 0.5rem; }
+        td.cell { max-width: 16rem; overflow-wrap: anywhere; }
+        .record-form .field input { width: 100%; max-width: 30rem; padding: 0.35rem; }
+        .record-nav { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin: 0.5rem 0; }
+        .keytag { font-size: 0.85rem; font-weight: bold; border: 1px solid currentColor; border-radius: 4px; padding: 0 0.3rem; margin-left: 0.3rem; }
+        #sql-log { max-height: 18rem; overflow: auto; white-space: pre-wrap; }
+        .diagram-wrap { border: 2px solid var(--box-line); overflow: auto; background: var(--panel); }
+        #diagram { display: block; touch-action: none; }
+        #diagram .box rect.body { fill: var(--box-fill); stroke: var(--box-line); stroke-width: 1.5; }
+        #diagram .box rect.head { fill: var(--box-head); }
+        #diagram .box text { fill: var(--box-line); font-size: 14px; font-family: inherit; }
+        #diagram .box text.title { fill: var(--box-head-text); font-weight: bold; }
+        #diagram .box { cursor: move; }
+        #diagram .box:focus { outline: none; }
+        #diagram .box:focus rect.body { stroke-width: 4; }
+        #diagram .colrow { cursor: pointer; }
+        #diagram .colrow rect { fill: transparent; }
+        #diagram .colrow.picked rect { fill: var(--pick); }
+        #diagram .colrow.target rect { fill: var(--target); }
+        #diagram path.link { fill: none; stroke: var(--link-line); stroke-width: 2.5; }
+        .new-cols-row { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: flex-end; margin: 0.4rem 0; }
+        .new-cols-row .field { margin: 0; }
+        fieldset { margin: 1rem 0; padding: 0.8rem 1rem; }
+        legend { font-weight: bold; }
+        [hidden] { display: none !important; }
+        /* database-style panels and cards */
+        .panel { border: 2px solid var(--box-line); border-radius: 8px; background: var(--box-fill); margin: 1rem 0; }
+        .panel-head { background: var(--box-head); color: var(--box-head-text); padding: 0.5rem 0.8rem; border-radius: 5px 5px 0 0; display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; justify-content: space-between; font-weight: bold; }
+        .panel-body { padding: 0.8rem; }
+        .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 0.9rem; }
+        .cards.wide { grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); }
+        .card { border: 2px solid var(--box-line); border-radius: 8px; background: var(--box-fill); }
+        .card.is-key { border: 4px solid var(--link-line); }
+        .card .field { margin: 0.5rem 0; }
+        .card .field input[type="text"], .card .field select { width: 100%; }
+        .sample { font-size: 0.9rem; margin: 0 0 0.4rem; overflow-wrap: anywhere; }
+        .badge { display: inline-block; border-radius: 999px; padding: 0 0.55rem; font-size: 0.85rem; font-weight: bold; border: 1px solid currentColor; margin: 0.1rem 0.25rem 0.1rem 0; white-space: nowrap; }
+        .badge-key { background: var(--pick); }
+        .badge-fk { background: var(--target); }
+        .colline { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.3rem 0.6rem; padding: 0.4rem 0.7rem; border-bottom: 1px solid var(--box-line); }
+        .colline:last-child { border-bottom: none; }
+        .colline .colname { font-weight: bold; }
+        .fieldgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0.7rem; }
+        .fieldbox { border: 1px solid var(--box-line); border-radius: 6px; padding: 0.5rem 0.6rem; background: var(--panel); }
+        .fieldbox label { display: block; }
+        .fieldbox input { width: 100%; padding: 0.35rem; }
+        .button-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.8rem; }
+        ul.card-list { list-style: none; padding: 0; display: grid; gap: 0.6rem; }
+        ul.card-list li { border: 2px solid var(--box-line); border-radius: 8px; padding: 0.5rem 0.7rem; background: var(--box-fill); }
+        ul.card-list li .what { margin: 0.2rem 0 0; }
+        .bottom-nav { margin-top: 2rem; padding-top: 1rem; border-top: 2px solid var(--box-line); }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link" id="top">Skip to main content</a>
+    <header role="banner">
+        <h1>Database Explorer</h1>
+        <div class="author">
+            <p>Adrianna Holden-Gouveia</p>
+            <p>Website: <a href="https://aholdengouveia.name">https://aholdengouveia.name</a></p>
+        </div>
+    </header>
+
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+        <ol class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li><a href="/introdata.html">Introduction to Data</a></li>
+            <li aria-current="page">Database Explorer</li>
+        </ol>
+    </nav>
+
+    <main role="main" id="main-content">
+        <section aria-labelledby="about-heading">
+            <h2 id="about-heading">About this tool</h2>
+            <p>The Database Explorer turns your CSV file into a real database, so you can see how a database is different from a spreadsheet. You choose the rules for each column, work with one record at a time, link tables together, and see the SQL behind everything you do.</p>
+            <p>Everything happens in your browser. Your file isn't uploaded anywhere, and you don't need to install anything or make an account. <strong>Nothing is saved for you.</strong> Use Save database to download your work, and open that file again next time.</p>
+        </section>
+
+        <div class="savebar" id="savebar" hidden>
+            <span id="db-label"></span>
+            <button type="button" id="save-button">Save database</button>
+            <span id="unsaved-note" class="unsaved" hidden>You have unsaved changes. Save your database before you close this page.</span>
+            <span id="save-status" role="status" aria-live="polite"></span>
+        </div>
+
+        <nav class="tabs" aria-label="Database Explorer sections">
+            <button type="button" id="tab-start" aria-controls="panel-start" aria-pressed="true">1. Start</button>
+            <button type="button" id="tab-structure" aria-controls="panel-structure" aria-pressed="false" disabled>2. Structure</button>
+            <button type="button" id="tab-records" aria-controls="panel-records" aria-pressed="false" disabled>3. Records</button>
+            <button type="button" id="tab-relationships" aria-controls="panel-relationships" aria-pressed="false" disabled>4. Relationships</button>
+        </nav>
+
+        <!-- START -->
+        <section id="panel-start" aria-labelledby="tab-start">
+            <h2>Start</h2>
+            <h3>Make a new database from your CSV file</h3>
+            <p>Your CSV needs <strong>100 to 1,000 rows</strong> of data and <strong>at least 7 columns</strong>, with column names in the first row.</p>
+            <div class="field">
+                <label for="csv-file">CSV file</label>
+                <input type="file" id="csv-file" accept=".csv,text/csv">
+            </div>
+            <p class="hint">Don't have a CSV? In Google Sheets, select File, then Download, then Comma Separated Values (.csv). In Excel, select File, then Save As, and choose CSV.</p>
+
+            <details>
+                <summary>Practice files: try the tool with my book data first</summary>
+                <p>Use these to see how the tool works, and what its error messages look like. <strong>For your labs, use your own data.</strong> Download a file, then choose it above.</p>
+                <ul>
+                    <li><a href="books-sample.csv">books-sample.csv</a>: 150 books with 12 columns, and nothing wrong with it. This one becomes a database without any problems.</li>
+                    <li><a href="books-sample-bad-values.csv">books-sample-bad-values.csv</a>: the same books, with values that break the rules, such as N/A for pages, 1,024 with a comma, and $5.09 for a price. The tool will guess Text for those columns. Change them to Whole number or Decimal to see the problems.</li>
+                    <li><a href="books-sample-bad-rows.csv">books-sample-bad-rows.csv</a>: a title with a comma that isn't in quotes, a duplicate book_id, and empty values. Choose book_id as your primary key, and make title required, to see all the problems.</li>
+                    <li><a href="books-sample-too-small.csv">books-sample-too-small.csv</a>: only 60 rows and 6 columns, to see what happens when a file doesn't meet the requirements.</li>
+                </ul>
+                <p class="hint">The book data comes from the <a href="https://zenodo.org/records/4265096">Best Books Ever Dataset</a> by Lorena Casanova Lozano and Sergio Costa Planells, shared under a CC BY-NC 4.0 license. I picked 150 books and 12 columns, and added the mistakes on purpose.</p>
+            </details>
+
+            <div id="setup" hidden>
+                <h3 id="setup-heading" tabindex="-1">Set up your table</h3>
+                <p>A database sets rules for each column before any data goes in. Check each column's name, type, and whether it's required, then choose a primary key. I've made a guess for each one based on your data.</p>
+                <div class="field">
+                    <label for="table-name">Table name</label>
+                    <input type="text" id="table-name">
+                    <p class="hint">Letters, numbers, and underscores only, starting with a letter.</p>
+                </div>
+                <div class="field">
+                    <label for="pk-choice">Primary key</label>
+                    <select id="pk-choice"></select>
+                    <p class="hint">The primary key identifies each record. Every value must be unique, and none can be empty. If none of your columns work, choose an automatic ID number.</p>
+                </div>
+                <div class="field" id="auto-id-field">
+                    <label for="auto-id-name">Name for the automatic ID column</label>
+                    <input type="text" id="auto-id-name">
+                </div>
+                <h4>Your columns</h4>
+                <p class="hint">Each card is one column from your CSV. The highlighted card is your primary key.</p>
+                <div id="setup-body" class="cards"></div>
+                <p class="hint"><strong>Text</strong> is anything. <strong>Whole number</strong> is numbers like 4 or 1200. <strong>Decimal</strong> is numbers like 4.5. Values that start with 0, like ZIP codes, should be Text so the 0 isn't lost.</p>
+                <button type="button" id="create-button">Create database</button>
+            </div>
+            <div id="start-status" role="status" aria-live="polite"></div>
+
+            <h3>Or open a database you saved before</h3>
+            <div class="field">
+                <label for="db-file">Database file (.sqlite)</label>
+                <input type="file" id="db-file" accept=".sqlite,.db,.sqlite3">
+            </div>
+            <div id="open-status" role="status" aria-live="polite"></div>
+        </section>
+
+        <!-- STRUCTURE -->
+        <section id="panel-structure" aria-labelledby="tab-structure" hidden>
+            <h2 tabindex="-1" id="structure-heading">Structure</h2>
+            <p>This is how your database is built: each table, its columns, the type of data each column holds, and its keys. A spreadsheet doesn't have any of these rules.</p>
+            <div id="structure-body"></div>
+        </section>
+
+        <!-- RECORDS -->
+        <section id="panel-records" aria-labelledby="tab-records" hidden>
+            <h2 tabindex="-1" id="records-heading">Records</h2>
+            <p>In a database, you work with one record at a time. Each record follows the rules for its table.</p>
+            <div class="field">
+                <label for="rec-table">Table</label>
+                <select id="rec-table"></select>
+            </div>
+            <div class="panel">
+                <div class="panel-head">
+                    <h3 id="record-form-heading" tabindex="-1" style="margin:0;font-size:1.1em;">Record</h3>
+                    <span id="rec-position" aria-live="polite"></span>
+                </div>
+                <div class="panel-body">
+                    <div class="record-nav">
+                        <button type="button" id="rec-first">First</button>
+                        <button type="button" id="rec-prev">Previous</button>
+                        <button type="button" id="rec-next">Next</button>
+                        <button type="button" id="rec-last">Last</button>
+                        <button type="button" id="rec-new">Add a new record</button>
+                    </div>
+                    <form id="record-form" class="record-form" novalidate>
+                        <div id="record-fields" class="fieldgrid"></div>
+                        <div class="button-row">
+                            <button type="submit" id="rec-save">Save changes</button>
+                            <button type="button" id="rec-delete">Delete this record</button>
+                            <button type="button" id="rec-cancel" hidden>Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="rec-status" role="status" aria-live="polite"></div>
+
+            <h3>Find records</h3>
+            <form id="find-form" class="new-cols-row">
+                <div class="field"><label for="find-col">Column</label><select id="find-col"></select></div>
+                <div class="field"><label for="find-op">Match</label>
+                    <select id="find-op">
+                        <option value="eq">is exactly</option>
+                        <option value="contains">contains</option>
+                        <option value="starts">starts with</option>
+                        <option value="gt">is greater than</option>
+                        <option value="lt">is less than</option>
+                        <option value="empty">is empty</option>
+                    </select></div>
+                <div class="field"><label for="find-val">Value</label><input type="text" id="find-val"></div>
+                <button type="submit">Find</button>
+            </form>
+            <div id="find-results" role="status" aria-live="polite"></div>
+        </section>
+
+        <!-- RELATIONSHIPS -->
+        <section id="panel-relationships" aria-labelledby="tab-relationships" hidden>
+            <h2 tabindex="-1" id="rel-heading">Relationships</h2>
+            <p>Related tables are linked with keys. A <strong>foreign key</strong> is a column in one table that points to the <strong>primary key</strong> of another table.</p>
+
+            <h3>Your diagram</h3>
+            <p class="hint"><strong>Move a table:</strong> drag it, or select it with Tab and use the arrow keys. <strong>Link two tables:</strong> select a column (it turns yellow), then select the primary key it should point to (possible keys turn green). Press Escape to cancel. You can also link tables with the form below the diagram.</p>
+            <div id="diagram-status" role="status" aria-live="polite"></div>
+            <div class="diagram-wrap"><svg id="diagram" width="1050" height="520" role="group" aria-label="Diagram of your tables and the links between them"></svg></div>
+
+
+
+
+            <h3>Add more tables</h3>
+            <p>Your CSV made one table. To build the other tables in your ERD, add them here. There are two ways:</p>
+            <fieldset>
+                <legend>Make a new table from a column that repeats</legend>
+                <p class="hint">If the same values show up again and again in a column, like a team or a publisher, they can go in their own table. The tool makes the new table, gives each value an ID, and links the tables for you.</p>
+                <div class="new-cols-row">
+                    <div class="field"><label for="split-col">Column that repeats</label><select id="split-col"></select></div>
+                    <div class="field"><label for="split-name">New table name</label><input type="text" id="split-name"></div>
+                    <button type="button" id="split-check">Check this column</button>
+                </div>
+                <div id="split-status" role="status" aria-live="polite"></div>
+                <button type="button" id="split-go" hidden>Make the new table</button>
+            </fieldset>
+
+            <fieldset>
+                <legend>Make a new empty table</legend>
+                <div class="field"><label for="nt-name">Table name</label><input type="text" id="nt-name"></div>
+                <div class="field"><label for="nt-key">Primary key name (an automatic ID number)</label><input type="text" id="nt-key"></div>
+                <div id="nt-cols"></div>
+                <button type="button" id="nt-addcol">Add another column</button>
+                <button type="button" id="nt-create">Create table</button>
+                <div id="nt-status" role="status" aria-live="polite"></div>
+            </fieldset>
+
+            <h3>Link two tables</h3>
+            <p>Link tables by selecting them in the diagram above, or with this form.</p>
+            <fieldset>
+                <legend>Link two tables with a foreign key</legend>
+                <div class="new-cols-row">
+                    <div class="field"><label for="fk-from">Foreign key column</label><select id="fk-from"></select></div>
+                    <div class="field"><label for="fk-to">Points to primary key</label><select id="fk-to"></select></div>
+                    <button type="button" id="fk-add">Link these</button>
+                </div>
+                <div id="fk-list"></div>
+            </fieldset>
+
+            <details>
+                <summary>Optional: see your tables in ChartDB, a professional diagram tool</summary>
+                <p>ChartDB is a free tool database professionals use to draw diagrams. Select the button below to copy the SQL that describes your tables. Then in ChartDB:</p>
+                <ol>
+                    <li>Start a new diagram.</li>
+                    <li>When it asks <strong>What is your Database?</strong>, choose <strong>SQLite</strong>, then Continue. <strong>Don't choose Generic.</strong> A Generic diagram can't import SQL, and you'll get an error that says "Unsupported database type: generic".</li>
+                    <li>On <strong>Import your Database</strong>, select <strong>SQL Script</strong>, not Smart Query. You can skip ChartDB's instructions about sqlite3, because this button already did that step for you.</li>
+                    <li>Paste what you copied, and select Import.</li>
+                </ol>
+                <button type="button" id="chartdb-copy">Copy my tables for ChartDB</button>
+                <a href="https://app.chartdb.io/">Open ChartDB</a>
+                <div id="chartdb-status" role="status" aria-live="polite"></div>
+                <label for="chartdb-text" hidden id="chartdb-label">Your tables as SQL</label>
+                <textarea id="chartdb-text" rows="10" style="width:100%" readonly hidden></textarea>
+            </details>
+        </section>
+
+        <section aria-labelledby="sql-heading">
+            <h2 id="sql-heading">The SQL behind it</h2>
+            <p>Every time you change your database, this is the SQL the tool runs for you. You'll write SQL like this yourself in a few weeks.</p>
+            <pre id="sql-log" tabindex="0" aria-label="SQL the tool has run">-- Nothing yet. Start by making or opening a database.</pre>
+        </section>
+
+        <nav class="bottom-nav" aria-label="Go back to a section">
+            <p><strong>Go back to the top of a section:</strong></p>
+            <div class="tabs">
+                <button type="button" class="go-tab" data-tab="start">1. Start</button>
+                <button type="button" class="go-tab" data-tab="structure" disabled>2. Structure</button>
+                <button type="button" class="go-tab" data-tab="records" disabled>3. Records</button>
+                <button type="button" class="go-tab" data-tab="relationships" disabled>4. Relationships</button>
+            </div>
+            <p><a href="#top">Back to the top of the page</a></p>
+        </nav>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/sql-wasm.js"></script>
+    <script>
+    (function () {
+        "use strict";
+        var MIN_ROWS = 100, MAX_ROWS = 1000, MIN_COLS = 7, MAX_PROBLEMS = 25;
+        var TYPE_WORD = { TEXT: "Text", INTEGER: "Whole number", REAL: "Decimal" };
+        var RESERVED = ("abort action add all alter and as asc between by case check collate column commit constraint create cross " +
+            "default delete desc distinct drop else end escape except exists foreign from full group having if in index inner insert " +
+            "intersect into is join key left like limit match natural not null of offset on or order outer primary references right " +
+            "rollback select set table then to transaction union unique update using values when where with").split(" ");
+
+        var SQL = null, db = null, dbFileName = "my_database", dirty = false;
+        var parsed = null;           // { headers, rows }
+        var recState = { table: null, index: 0, count: 0, adding: false };
+        var positions = {};          // table -> {x, y}
+        var pick = null;             // {table, column} while linking in the diagram
+        var splitPlan = null;
+
+        function $(id) { return document.getElementById(id); }
+        function el(tag, attrs, text) {
+            var e = document.createElement(tag);
+            if (attrs) Object.keys(attrs).forEach(function (k) { e.setAttribute(k, attrs[k]); });
+            if (text !== undefined && text !== null) e.textContent = text;
+            return e;
+        }
+        function svgEl(tag, attrs) {
+            var e = document.createElementNS("http://www.w3.org/2000/svg", tag);
+            Object.keys(attrs || {}).forEach(function (k) { e.setAttribute(k, attrs[k]); });
+            return e;
+        }
+        function clear(node) { while (node.firstChild) node.removeChild(node.firstChild); }
+        var TYPE_ICON = { TEXT: "Abc", INTEGER: "123", REAL: "1.5" };
+        function badge(text, cls, icon) {
+            var b = el("span", { "class": "badge" + (cls ? " " + cls : "") });
+            if (icon) { b.appendChild(el("span", { "aria-hidden": "true" }, icon + " ")); }
+            b.appendChild(document.createTextNode(text));
+            return b;
+        }
+        function typeBadge(t) { return badge(TYPE_WORD[t] || t, "", TYPE_ICON[t]); }
+        function keyBadge() { return badge("Primary key", "badge-key", "\uD83D\uDD11"); }
+        function fkBadge(fk) { return badge("Foreign key to " + fk.table, "badge-fk", "\uD83D\uDD17"); }
+
+        // ---------- status messages ----------
+        function showStatus(target, kind, title, lines, extra) {
+            var box = $(target); clear(box);
+            var d = el("div", { "class": "status" + (kind === "error" ? " error" : "") });
+            d.appendChild(el(kind === "error" ? "h3" : "p", null, (kind === "error" ? "Problem: " : "") + title));
+            (lines || []).forEach(function (l) { d.appendChild(el("p", null, l)); });
+            if (extra) d.appendChild(extra);
+            box.appendChild(d);
+        }
+        function clearStatus(target) { clear($(target)); }
+
+        // ---------- SQL log ----------
+        var logStarted = false;
+        function sqlQuote(v) {
+            if (v === null || v === undefined) return "NULL";
+            if (typeof v === "number") return String(v);
+            return "'" + String(v).replace(/'/g, "''") + "'";
+        }
+        function logSQL(comment, statements) {
+            var pre = $("sql-log");
+            if (!logStarted) { pre.textContent = ""; logStarted = true; }
+            var text = (pre.textContent ? "\n" : "") + "-- " + comment + "\n" + statements.join("\n") + "\n";
+            pre.textContent += text;
+            pre.scrollTop = pre.scrollHeight;
+        }
+
+        // ---------- saving ----------
+        function markDirty() { dirty = true; $("unsaved-note").hidden = false; $("save-status").textContent = ""; }
+        function markClean() { dirty = false; $("unsaved-note").hidden = true; }
+        window.addEventListener("beforeunload", function (e) {
+            if (dirty) { e.preventDefault(); e.returnValue = ""; }
+        });
+        $("save-button").addEventListener("click", function () {
+            if (!db) return;
+            var data = db.export();
+            var blob = new Blob([data], { type: "application/x-sqlite3" });
+            var a = el("a", { href: URL.createObjectURL(blob), download: dbFileName + ".sqlite" });
+            document.body.appendChild(a); a.click(); a.remove();
+            markClean();
+            $("save-status").textContent = "Saved as " + dbFileName + ".sqlite. Keep this file, and open it here next time to keep working.";
+        });
+
+        // ---------- tabs ----------
+        var tabs = ["start", "structure", "records", "relationships"];
+        function showTab(name) {
+            tabs.forEach(function (t) {
+                $("tab-" + t).setAttribute("aria-pressed", t === name ? "true" : "false");
+                $("panel-" + t).hidden = t !== name;
+            });
+            if (name === "structure") renderStructure();
+            if (name === "records") { fillTableSelect($("rec-table"), recState.table); loadRecordTable($("rec-table").value); }
+            if (name === "relationships") renderRelationships();
+        }
+        tabs.forEach(function (t) { $("tab-" + t).addEventListener("click", function () { showTab(t); }); });
+        function enableTabs() {
+            tabs.forEach(function (t) { $("tab-" + t).disabled = false; });
+            Array.prototype.forEach.call(document.querySelectorAll(".go-tab"), function (b) { b.disabled = false; });
+            $("savebar").hidden = false; $("db-label").textContent = "Database: " + dbFileName + ".sqlite";
+        }
+        Array.prototype.forEach.call(document.querySelectorAll(".go-tab"), function (b) {
+            b.addEventListener("click", function () {
+                var t = b.getAttribute("data-tab");
+                showTab(t);
+                window.scrollTo(0, 0);
+                $("tab-" + t).focus();
+            });
+        });
+
+        // ---------- database helpers ----------
+        function q(sql, params) {
+            var res = db.exec(sql, params || []);
+            if (!res.length) return [];
+            var cols = res[0].columns;
+            return res[0].values.map(function (row) { var o = {}; cols.forEach(function (c, i) { o[c] = row[i]; }); return o; });
+        }
+        function tableNames() { return q("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%' ORDER BY name").map(function (r) { return r.name; }); }
+        function columnsOf(t) {
+            var fks = q("PRAGMA foreign_key_list(" + t + ")");
+            return q("PRAGMA table_info(" + t + ")").map(function (c) {
+                var fk = fks.filter(function (f) { return f.from === c.name; })[0];
+                return { name: c.name, type: normType(c.type), required: !!c.notnull, pk: c.pk > 0, fk: fk ? { table: fk.table, column: fk.to } : null };
+            });
+        }
+        function normType(t) {
+            // the tool only makes TEXT, INTEGER, and REAL columns. Other databases may use other names for the same types.
+            t = String(t || "").toUpperCase();
+            if (t.indexOf("INT") >= 0) return "INTEGER";
+            if (/REAL|FLOA|DOUB|DEC|NUM/.test(t)) return "REAL";
+            return "TEXT";
+        }
+        function pkOf(t) { var p = columnsOf(t).filter(function (c) { return c.pk; }); return p.length === 1 ? p[0].name : null; }
+        function fillTableSelect(sel, keep) {
+            clear(sel);
+            tableNames().forEach(function (t) { sel.appendChild(el("option", { value: t }, t)); });
+            if (keep && tableNames().indexOf(keep) >= 0) sel.value = keep;
+        }
+
+        function friendlyError(err, action) {
+            var m = String(err && err.message ? err.message : err), r;
+            if ((r = m.match(/cannot store (\w+) value in (\w+) column (\w+)\.(\w+)/))) {
+                return "The " + r[4] + " column only accepts " + (TYPE_WORD[r[2]] || r[2]).toLowerCase() + " values, and what you entered isn't one. A database checks the type of every value. A spreadsheet doesn't.";
+            }
+            if ((r = m.match(/UNIQUE constraint failed: (\w+)\.(\w+)/))) {
+                return "Another record already has that " + r[2] + ". It's a key, so every value must be unique. A spreadsheet would let you have duplicates.";
+            }
+            if ((r = m.match(/NOT NULL constraint failed: (\w+)\.(\w+)/))) {
+                return "The " + r[2] + " column is required, so it can't be empty. A spreadsheet would let you leave it blank.";
+            }
+            if (/FOREIGN KEY constraint failed/.test(m)) {
+                if (action === "delete") return "Other records point to this one with a foreign key, so it can't be deleted. Change or delete those records first. A spreadsheet wouldn't stop you, and you'd be left with records pointing to nothing.";
+                return "A foreign key value has to match a primary key that already exists in the linked table, and this one doesn't. Check the linked table for the right value. A spreadsheet would let you type anything.";
+            }
+            return m;
+        }
+
+        function validName(name, what) {
+            if (!name) return what + " can't be empty.";
+            if (!/^[A-Za-z][A-Za-z0-9_]*$/.test(name)) return what + " \"" + name + "\" can only use letters, numbers, and underscores, and must start with a letter.";
+            if (RESERVED.indexOf(name.toLowerCase()) >= 0) return what + " \"" + name + "\" is a word SQL uses for itself. Try something like " + name + "_name.";
+            return null;
+        }
+        function cleanName(h) {
+            var n = String(h || "").trim().replace(/[^A-Za-z0-9_]+/g, "_").replace(/^_+|_+$/g, "");
+            if (!n) n = "column";
+            if (!/^[A-Za-z]/.test(n)) n = "col_" + n;
+            if (RESERVED.indexOf(n.toLowerCase()) >= 0) n = n + "_value";
+            return n;
+        }
+
+        // ---------- value checks ----------
+        var INT_RE = /^-?\d+$/, DEC_RE = /^-?(\d+\.?\d*|\.\d+)$/;
+        function convert(raw, type) {
+            // returns {ok, value, why}
+            var t = raw === undefined || raw === null ? "" : String(raw).trim();
+            if (t === "") return { ok: true, value: null, empty: true };
+            if (type === "TEXT") return { ok: true, value: String(raw) };
+            if (/^[$£€]\s*-?[\d,]*\.?\d+$/.test(t) || /^-?[\d,]*\.?\d+\s*%$/.test(t)) return { ok: false, why: "has a symbol in it, like $ or %. Remove the symbol in your CSV, so only the number is left, and say what it means in the column name instead, like price_dollars." };
+            if (type === "INTEGER") {
+                if (INT_RE.test(t)) return { ok: true, value: parseInt(t, 10) };
+                if (/^-?[\d,]+$/.test(t)) return { ok: false, why: "has commas in it. Remove the commas in your CSV, so 1,200 becomes 1200." };
+                if (DEC_RE.test(t)) return { ok: false, why: "has a decimal point. Choose Decimal for this column instead of Whole number." };
+                return { ok: false, why: "isn't a number. Fix it in your CSV, or choose Text for this column." };
+            }
+            if (type === "REAL") {
+                if (DEC_RE.test(t)) return { ok: true, value: parseFloat(t) };
+                if (/^-?[\d,]+\.?\d*$/.test(t)) return { ok: false, why: "has commas in it. Remove the commas in your CSV." };
+                return { ok: false, why: "isn't a number. Fix it in your CSV, or choose Text for this column." };
+            }
+            return { ok: true, value: String(raw) };
+        }
+        function guessType(values) {
+            var nonEmpty = values.filter(function (v) { return String(v || "").trim() !== ""; });
+            if (!nonEmpty.length) return "TEXT";
+            if (nonEmpty.some(function (v) { return /^0\d/.test(String(v).trim()); })) return "TEXT";
+            if (nonEmpty.every(function (v) { return INT_RE.test(String(v).trim()); })) return "INTEGER";
+            if (nonEmpty.every(function (v) { return DEC_RE.test(String(v).trim()); })) return "REAL";
+            return "TEXT";
+        }
+
+        // ---------- loading SQL.js ----------
+        var sqlReady = initSqlJs({ locateFile: function (f) { return "https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/" + f; } })
+            .then(function (S) { SQL = S; })
+            .catch(function () { showStatus("start-status", "error", "The database engine didn't load.", ["Check your internet connection, then reload this page."]); });
+
+        // ---------- CSV upload ----------
+        $("csv-file").addEventListener("change", function () {
+            var f = this.files[0];
+            $("setup").hidden = true; clearStatus("start-status");
+            if (!f) return;
+            var ext = (f.name.split(".").pop() || "").toLowerCase();
+            if (ext !== "csv") {
+                var names = { xlsx: "an Excel file", xls: "an Excel file", ods: "a LibreOffice spreadsheet", numbers: "a Numbers file", txt: "a text file", sqlite: "a database file", db: "a database file", json: "a JSON file", pdf: "a PDF", docx: "a Word document" };
+                var what = names[ext] ? "This is " + names[ext] + ", not a CSV file." : "\"" + f.name + "\" isn't a CSV file.";
+                var extra = ext === "sqlite" || ext === "db" ? ["To work on a database you saved before, use Open a database you saved before, further down this page."] : [];
+                showStatus("start-status", "error", "That isn't a CSV file.", [what, "CSV (comma separated values) is one of the most common ways to share data, and almost every tool can make one. In Google Sheets, select File, then Download, then Comma Separated Values (.csv). In Excel, select File, then Save As, and choose CSV. Then choose that file here."].concat(extra));
+                this.value = ""; return;
+            }
+            dbFileName = cleanName(f.name.replace(/\.csv$/i, "")).toLowerCase();
+            Papa.parse(f, {
+                skipEmptyLines: "greedy",
+                complete: function (res) { handleParsed(res, f.name); },
+                error: function () { showStatus("start-status", "error", "The file couldn't be read.", ["Make sure it's a CSV file, and try downloading it again."]); }
+            });
+        });
+
+        function handleParsed(res, fileName) {
+            var data = res.data;
+            if (!data.length) { showStatus("start-status", "error", "The file is empty.", ["Check that you saved your data before downloading the CSV."]); return; }
+            var headers = data[0].map(function (h) { return String(h).trim(); });
+            var rows = data.slice(1);
+            var problems = [];
+            if (headers.length < MIN_COLS) problems.push("Your file has " + headers.length + " column" + (headers.length === 1 ? "" : "s") + ". You need at least " + MIN_COLS + ". If everything is in one column, the file may use semicolons or tabs instead of commas. Download it again as a CSV.");
+            if (rows.length < MIN_ROWS) problems.push("Your file has " + rows.length + " rows of data. You need at least " + MIN_ROWS + ". Add more records to your data in your spreadsheet, then download the CSV again.");
+            if (rows.length > MAX_ROWS) problems.push("Your file has " + rows.length + " rows of data. The most you can use is " + MAX_ROWS + ". Keep the first " + MAX_ROWS + " rows, then download the CSV again.");
+            var blank = headers.map(function (h, i) { return h === "" ? i + 1 : null; }).filter(function (x) { return x; });
+            if (blank.length) problems.push("Column " + blank.join(", ") + " has no name in the first row. Every column needs a name.");
+            if (problems.length) {
+                showStatus("start-status", "error", "Your CSV doesn't meet the requirements yet.", problems.concat(["Reminder: your data needs 100 to 1,000 rows and at least 7 columns, with column names in the first row."]));
+                $("csv-file").value = ""; return;
+            }
+            parsed = { headers: headers, rows: rows, fileName: fileName };
+            buildSetup();
+        }
+
+        function buildSetup() {
+            var box = $("setup-body"); clear(box);
+            var used = {};
+            parsed.headers.forEach(function (h, i) {
+                var colVals = parsed.rows.map(function (r) { return r[i]; });
+                var name = cleanName(h), base = name, n = 2;
+                while (used[name.toLowerCase()]) name = base + "_" + (n++);
+                used[name.toLowerCase()] = true;
+                var type = guessType(colVals);
+                var hasEmpty = colVals.some(function (v) { return String(v === undefined ? "" : v).trim() === ""; });
+                var samples = [];
+                colVals.forEach(function (v) { v = String(v === undefined ? "" : v).trim(); if (v && samples.indexOf(v) < 0 && samples.length < 3) samples.push(v.length > 30 ? v.slice(0, 30) + "..." : v); });
+
+                var card = el("div", { "class": "card", id: "colcard-" + i });
+                var head = el("div", { "class": "panel-head" });
+                head.appendChild(el("span", null, "Column " + (i + 1) + ": " + h));
+                var keySpot = el("span", { id: "colkey-" + i }); head.appendChild(keySpot);
+                card.appendChild(head);
+                var body = el("div", { "class": "panel-body" });
+                body.appendChild(el("p", { "class": "sample" }, "Examples from your data: " + (samples.length ? samples.join(", ") : "(all empty)")));
+                var f1 = el("div", { "class": "field" });
+                f1.appendChild(el("label", { "for": "colname-" + i }, "Name in the database"));
+                var inN = el("input", { type: "text", id: "colname-" + i }); inN.value = name; f1.appendChild(inN); body.appendChild(f1);
+                var f2 = el("div", { "class": "field" });
+                f2.appendChild(el("label", { "for": "coltype-" + i }, "Type"));
+                var sel = el("select", { id: "coltype-" + i });
+                ["TEXT", "INTEGER", "REAL"].forEach(function (t) { var o = el("option", { value: t }, TYPE_ICON[t] + "  " + TYPE_WORD[t]); if (t === type) o.selected = true; sel.appendChild(o); });
+                f2.appendChild(sel); body.appendChild(f2);
+                var f3 = el("div", { "class": "field" });
+                var cb = el("input", { type: "checkbox", id: "colreq-" + i }); cb.checked = !hasEmpty;
+                f3.appendChild(cb); f3.appendChild(el("label", { "for": "colreq-" + i, style: "display:inline; margin-left:0.3rem;" }, "Required (every record must have a value)"));
+                body.appendChild(f3);
+                card.appendChild(body);
+                box.appendChild(card);
+            });
+            $("table-name").value = dbFileName;
+            var pk = $("pk-choice"); clear(pk);
+            pk.appendChild(el("option", { value: "__auto" }, "An automatic ID number (1, 2, 3...)"));
+            parsed.headers.forEach(function (h, i) { pk.appendChild(el("option", { value: String(i) }, h)); });
+            $("auto-id-name").value = dbFileName + "_id";
+            $("auto-id-field").hidden = false;
+            markKeyCard();
+            $("setup").hidden = false;
+            $("setup-heading").focus();
+        }
+        function markKeyCard() {
+            var v = $("pk-choice").value;
+            parsed.headers.forEach(function (h, i) {
+                var card = $("colcard-" + i), spot = $("colkey-" + i);
+                clear(spot);
+                var isKey = v === String(i);
+                card.className = "card" + (isKey ? " is-key" : "");
+                if (isKey) spot.appendChild(keyBadge());
+            });
+        }
+        $("pk-choice").addEventListener("change", function () { $("auto-id-field").hidden = this.value !== "__auto"; markKeyCard(); });
+
+        function okToReplace() {
+            return !(db && dirty) || window.confirm("You have unsaved changes in the database you're working on. Making or opening another database will lose them. Continue anyway?");
+        }
+        $("create-button").addEventListener("click", function () {
+            if (!okToReplace()) return;
+            sqlReady.then(createFromCSV);
+        });
+
+        function createFromCSV() {
+            if (!SQL) return;
+            clearStatus("start-status");
+            var tname = $("table-name").value.trim();
+            var errs = [];
+            var e1 = validName(tname, "The table name"); if (e1) errs.push(e1);
+            var pkSel = $("pk-choice").value, auto = pkSel === "__auto", pkIndex = auto ? -1 : parseInt(pkSel, 10);
+            var autoName = $("auto-id-name").value.trim();
+            if (auto) { var e2 = validName(autoName, "The ID column name"); if (e2) errs.push(e2); }
+            var cols = parsed.headers.map(function (h, i) {
+                return { header: h, name: $("colname-" + i).value.trim(), type: $("coltype-" + i).value, required: $("colreq-" + i).checked || i === pkIndex };
+            });
+            var seen = {};
+            if (auto) seen[autoName.toLowerCase()] = true;
+            cols.forEach(function (c) {
+                var e = validName(c.name, "The column name for \"" + c.header + "\""); if (e) errs.push(e);
+                if (seen[c.name.toLowerCase()]) errs.push("Two columns are both named \"" + c.name + "\". Every column name must be different.");
+                seen[c.name.toLowerCase()] = true;
+            });
+            if (errs.length) { showStatus("start-status", "error", "Some names need fixing.", errs); return; }
+
+            // check every row against the rules
+            var problems = [], counts = {}, keyRows = {};
+            parsed.rows.forEach(function (row, r) {
+                var line = r + 2; // header is line 1
+                if (row.length !== cols.length) {
+                    problems.push({ line: line, col: "(whole row)", value: row.join(","), why: "This row has " + row.length + " values, but your file has " + cols.length + " columns. Look for an extra comma, or a value with a comma that isn't in quotes." });
+                    counts["(whole row)"] = (counts["(whole row)"] || 0) + 1;
+                    return;
+                }
+                cols.forEach(function (c, i) {
+                    var res = convert(row[i], c.type);
+                    var why = null;
+                    if (!res.ok) why = res.why;
+                    else if (res.empty && c.required) why = (i === pkIndex ? "is empty, but it's your primary key, so every record needs one. Fill it in, or choose an automatic ID number as your key." : "is empty, but this column is required. Fill it in, or uncheck Required for this column.");
+                    else if (i === pkIndex) {
+                        var k = String(res.value);
+                        if (keyRows[k]) why = "is the same as row " + keyRows[k] + ". Primary keys must be unique. Choose a different primary key, or use an automatic ID number.";
+                        else keyRows[k] = line;
+                    }
+                    if (why) {
+                        problems.push({ line: line, col: c.header, value: row[i], why: why });
+                        counts[c.header] = (counts[c.header] || 0) + 1;
+                    }
+                });
+            });
+            if (problems.length) { showImportProblems(problems, counts); return; }
+
+            // build the table
+            var defs = [];
+            if (auto) defs.push(autoName + " INTEGER PRIMARY KEY");
+            cols.forEach(function (c, i) {
+                var d = c.name + " " + c.type;
+                if (i === pkIndex) d += " PRIMARY KEY";
+                if (c.required) d += " NOT NULL";
+                defs.push(d);
+            });
+            var create = "CREATE TABLE " + tname + " (\n    " + defs.join(",\n    ") + "\n) STRICT;";
+            var names = cols.map(function (c) { return c.name; });
+            var insert = "INSERT INTO " + tname + " (" + names.join(", ") + ") VALUES (" + names.map(function () { return "?"; }).join(", ") + ")";
+            try {
+                db = new SQL.Database();
+                db.run("PRAGMA foreign_keys = ON;");
+                db.run(create);
+                db.run("BEGIN");
+                var stmt = db.prepare(insert);
+                var firstVals = null;
+                parsed.rows.forEach(function (row) {
+                    var vals = cols.map(function (c, i) { return convert(row[i], c.type).value; });
+                    if (!firstVals) firstVals = vals;
+                    stmt.run(vals);
+                });
+                stmt.free();
+                db.run("COMMIT");
+            } catch (err) {
+                db = null;
+                showStatus("start-status", "error", "Something went wrong making your database.", [friendlyError(err)]);
+                return;
+            }
+            logStarted = false;
+            logSQL("Make the table, with a rule for every column", [create]);
+            logSQL("Add your records (this is the first one, and the same is done for all " + parsed.rows.length + ")", ["INSERT INTO " + tname + " (" + names.join(", ") + ")\nVALUES (" + firstVals.map(sqlQuote).join(", ") + ");"]);
+            positions = {};
+            recState = { table: tname, index: 0, count: 0, adding: false };
+            enableTabs(); markDirty();
+            showStatus("start-status", "ok", "Your database is ready, with " + parsed.rows.length + " records in the " + tname + " table. Look at the Structure tab next. Remember to save your database.");
+        }
+
+        function showImportProblems(problems, counts) {
+            var wrap = el("div");
+            var summary = el("ul");
+            Object.keys(counts).forEach(function (k) { summary.appendChild(el("li", null, k + ": " + counts[k] + " problem" + (counts[k] === 1 ? "" : "s"))); });
+            wrap.appendChild(el("p", null, "Where the problems are:")); wrap.appendChild(summary);
+            wrap.appendChild(el("h4", null, problems.length > MAX_PROBLEMS ? "The first " + MAX_PROBLEMS + " problems" : "Every problem"));
+            var ul = el("ul", { "class": "card-list" });
+            problems.slice(0, MAX_PROBLEMS).forEach(function (p) {
+                var li = el("li");
+                var top = el("p", { style: "margin:0;" });
+                top.appendChild(el("strong", null, "Row " + p.line + " in your spreadsheet"));
+                top.appendChild(document.createTextNode(p.col === "(whole row)" ? ", the whole row" : ", column " + p.col));
+                li.appendChild(top);
+                if (p.col !== "(whole row)") li.appendChild(el("p", { "class": "what" }, "Value: " + (p.value === undefined || String(p.value).trim() === "" ? "(empty)" : String(p.value))));
+                else li.appendChild(el("p", { "class": "what sample" }, String(p.value)));
+                li.appendChild(el("p", { "class": "what" }, p.col === "(whole row)" ? p.why : "The value " + p.why));
+                ul.appendChild(li);
+            });
+            wrap.appendChild(ul);
+            wrap.appendChild(el("p", null, "Row numbers match your spreadsheet: row 1 is your column names, so your first record is row 2."));
+            showStatus("start-status", "error", "Your database wasn't made, because " + problems.length + " value" + (problems.length === 1 ? " breaks" : "s break") + " the rules you set.",
+                ["A database checks every value before it goes in. You can fix the values in your spreadsheet and download the CSV again, or change the rules above (the type, or whether a column is required) and select Create database again."], wrap);
+        }
+
+        // ---------- open saved database ----------
+        $("db-file").addEventListener("change", function () {
+            var f = this.files[0]; clearStatus("open-status");
+            if (!f) return;
+            var ext = (f.name.split(".").pop() || "").toLowerCase();
+            if (["sqlite", "db", "sqlite3"].indexOf(ext) < 0) {
+                var msg = ext === "csv" ? "This is a CSV file. To make a new database from it, use Make a new database from your CSV file, at the top of this page." : "Choose the .sqlite file you saved from this tool.";
+                showStatus("open-status", "error", "That isn't a database file.", [msg]);
+                this.value = ""; return;
+            }
+            var input = this;
+            if (!okToReplace()) { input.value = ""; return; }
+            var reader = new FileReader();
+            reader.onload = function () {
+                sqlReady.then(function () {
+                    try {
+                        var d = new SQL.Database(new Uint8Array(reader.result));
+                        d.exec("SELECT name FROM sqlite_master LIMIT 1");
+                        db = d;
+                        db.run("PRAGMA foreign_keys = ON;");
+                    } catch (err) {
+                        showStatus("open-status", "error", "That file couldn't be opened as a database.", ["Make sure it's the .sqlite file you saved from this tool."]);
+                        input.value = ""; return;
+                    }
+                    if (!tableNames().length) { showStatus("open-status", "error", "That database doesn't have any tables in it.", []); return; }
+                    dbFileName = cleanName(f.name.replace(/\.(sqlite3?|db)$/i, "")).toLowerCase();
+                    positions = {}; recState = { table: tableNames()[0], index: 0, count: 0, adding: false };
+                    logStarted = false; $("sql-log").textContent = "-- Opened " + f.name + "\n";
+                    logStarted = true;
+                    enableTabs(); markClean();
+                    showStatus("open-status", "ok", "Opened " + f.name + ". It has " + tableNames().length + " table" + (tableNames().length === 1 ? "" : "s") + ": " + tableNames().join(", ") + ".");
+                });
+            };
+            reader.readAsArrayBuffer(f);
+        });
+
+        // ---------- structure ----------
+        function renderStructure() {
+            var box = $("structure-body"); clear(box);
+            var grid = el("div", { "class": "cards wide" });
+            tableNames().forEach(function (t) {
+                var cnt = q("SELECT COUNT(*) AS n FROM " + t)[0].n;
+                var card = el("div", { "class": "card" });
+                var head = el("div", { "class": "panel-head" });
+                head.appendChild(el("h3", { style: "margin:0;font-size:1.1em;" }, "Table: " + t));
+                head.appendChild(el("span", null, cnt + " record" + (cnt === 1 ? "" : "s")));
+                card.appendChild(head);
+                columnsOf(t).forEach(function (c) {
+                    var line = el("div", { "class": "colline" });
+                    var left = el("div");
+                    left.appendChild(el("span", { "class": "colname" }, c.name + " "));
+                    if (c.pk) left.appendChild(keyBadge());
+                    if (c.fk) left.appendChild(fkBadge(c.fk));
+                    var right = el("div");
+                    right.appendChild(typeBadge(c.type));
+                    right.appendChild(badge(c.required || c.pk ? "Required" : "Optional"));
+                    line.appendChild(left); line.appendChild(right);
+                    card.appendChild(line);
+                });
+                grid.appendChild(card);
+            });
+            box.appendChild(grid);
+            $("structure-heading").focus();
+        }
+
+        // ---------- records ----------
+        $("rec-table").addEventListener("change", function () { recState.index = 0; loadRecordTable(this.value); });
+        function loadRecordTable(t) {
+            if (!t) return;
+            recState.table = t; recState.adding = false;
+            recState.count = q("SELECT COUNT(*) AS n FROM " + t)[0].n;
+            if (recState.index >= recState.count) recState.index = Math.max(0, recState.count - 1);
+            var fc = $("find-col"); clear(fc);
+            columnsOf(t).forEach(function (c) { fc.appendChild(el("option", { value: c.name }, c.name)); });
+            clear($("find-results")); clearStatus("rec-status");
+            showRecord();
+        }
+        function currentRow() {
+            if (!recState.count) return null;
+            return q("SELECT rowid AS __rowid, * FROM " + recState.table + " ORDER BY rowid LIMIT 1 OFFSET " + recState.index)[0] || null;
+        }
+        function showRecord() {
+            var cols = columnsOf(recState.table), row = recState.adding ? null : currentRow();
+            var box = $("record-fields"); clear(box);
+            $("record-form-heading").textContent = recState.adding ? "New record in " + recState.table : "Record in " + recState.table;
+            cols.forEach(function (c) {
+                var f = el("div", { "class": "fieldbox" });
+                f.appendChild(el("label", { "for": "rf-" + c.name }, c.name));
+                var tags = el("div");
+                tags.appendChild(typeBadge(c.type));
+                if (c.pk) tags.appendChild(keyBadge());
+                if (c.fk) tags.appendChild(fkBadge(c.fk));
+                tags.appendChild(badge(c.required || c.pk ? "Required" : "Optional"));
+                f.appendChild(tags);
+                var inp = el("input", { type: "text", id: "rf-" + c.name, "data-col": c.name });
+                if (row) inp.value = row[c.name] === null ? "" : String(row[c.name]);
+                f.appendChild(inp);
+                if (c.pk && c.type === "INTEGER" && recState.adding) f.appendChild(el("p", { "class": "hint" }, "Leave it empty to get the next ID number automatically."));
+                box.appendChild(f);
+            });
+            $("rec-position").textContent = recState.adding ? "Adding a new record" : (recState.count ? "Record " + (recState.index + 1) + " of " + recState.count : "This table has no records yet");
+            $("rec-save").textContent = recState.adding ? "Add record" : "Save changes";
+            $("rec-delete").hidden = recState.adding || !recState.count;
+            $("rec-cancel").hidden = !recState.adding;
+            ["rec-first", "rec-prev", "rec-next", "rec-last"].forEach(function (b) { $(b).disabled = recState.adding || !recState.count; });
+        }
+        function go(i) { recState.adding = false; recState.index = Math.min(Math.max(0, i), Math.max(0, recState.count - 1)); clearStatus("rec-status"); showRecord(); }
+        $("rec-first").addEventListener("click", function () { go(0); });
+        $("rec-prev").addEventListener("click", function () { go(recState.index - 1); });
+        $("rec-next").addEventListener("click", function () { go(recState.index + 1); });
+        $("rec-last").addEventListener("click", function () { go(recState.count - 1); });
+        $("rec-new").addEventListener("click", function () { recState.adding = true; clearStatus("rec-status"); showRecord(); $("record-form-heading").focus(); });
+        $("rec-cancel").addEventListener("click", function () { recState.adding = false; showRecord(); });
+
+        function formValues(cols) {
+            // values typed in the form. Numbers are converted when they look like numbers, otherwise kept as typed,
+            // so the database itself decides whether to accept them.
+            return cols.map(function (c) {
+                var v = $("rf-" + c.name).value, t = v.trim();
+                if (t === "") return null;
+                if (c.type === "INTEGER" && INT_RE.test(t)) return parseInt(t, 10);
+                if (c.type === "REAL" && DEC_RE.test(t)) return parseFloat(t);
+                return v;
+            });
+        }
+        $("record-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            var t = recState.table, cols = columnsOf(t), vals = formValues(cols), sql, shown;
+            if (recState.adding) {
+                var useCols = [], useVals = [];
+                cols.forEach(function (c, i) { if (!(c.pk && c.type === "INTEGER" && vals[i] === null)) { useCols.push(c.name); useVals.push(vals[i]); } });
+                sql = "INSERT INTO " + t + " (" + useCols.join(", ") + ") VALUES (" + useCols.map(function () { return "?"; }).join(", ") + ")";
+                shown = "INSERT INTO " + t + " (" + useCols.join(", ") + ")\nVALUES (" + useVals.map(sqlQuote).join(", ") + ");";
+                try { db.run(sql, useVals); }
+                catch (err) { logSQL("Tried to add a record, and the database refused", [shown]); showStatus("rec-status", "error", "The record wasn't added.", [friendlyError(err)]); return; }
+                logSQL("Add a record", [shown]); markDirty();
+                recState.adding = false; recState.count++; recState.index = recState.count - 1;
+                showRecord(); showStatus("rec-status", "ok", "Record added.");
+            } else {
+                var row = currentRow(); if (!row) return;
+                var pk = pkOf(t);
+                var where = pk ? pk + " = " + sqlQuote(row[pk]) : "rowid = " + row.__rowid;
+                var sets = [], setVals = [], shownSets = [];
+                cols.forEach(function (c, i) {
+                    var old = row[c.name];
+                    if (old === vals[i] || (old !== null && vals[i] !== null && String(old) === String(vals[i]))) return;
+                    sets.push(c.name + " = ?"); setVals.push(vals[i]); shownSets.push(c.name + " = " + sqlQuote(vals[i]));
+                });
+                if (!sets.length) { showStatus("rec-status", "ok", "Nothing changed, so there was nothing to save."); return; }
+                sql = "UPDATE " + t + " SET " + sets.join(", ") + " WHERE rowid = ?";
+                shown = "UPDATE " + t + "\nSET " + shownSets.join(", ") + "\nWHERE " + where + ";";
+                try { db.run(sql, setVals.concat([row.__rowid])); }
+                catch (err) { logSQL("Tried to change a record, and the database refused", [shown]); showStatus("rec-status", "error", "The change wasn't saved.", [friendlyError(err)]); return; }
+                logSQL("Change a record", [shown]); markDirty();
+                showRecord(); showStatus("rec-status", "ok", "Changes saved.");
+            }
+        });
+        $("rec-delete").addEventListener("click", function () {
+            var row = currentRow(); if (!row) return;
+            if (!window.confirm("Delete this record? This can't be undone, unless you open a copy of your database you saved before.")) return;
+            var t = recState.table, pk = pkOf(t);
+            var shown = "DELETE FROM " + t + "\nWHERE " + (pk ? pk + " = " + sqlQuote(row[pk]) : "rowid = " + row.__rowid) + ";";
+            try { db.run("DELETE FROM " + t + " WHERE rowid = ?", [row.__rowid]); }
+            catch (err) { logSQL("Tried to delete a record, and the database refused", [shown]); showStatus("rec-status", "error", "The record wasn't deleted.", [friendlyError(err, "delete")]); return; }
+            logSQL("Delete a record", [shown]); markDirty();
+            recState.count--; go(recState.index); showStatus("rec-status", "ok", "Record deleted.");
+        });
+
+        // ---------- find ----------
+        $("find-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            var t = recState.table, col = $("find-col").value, op = $("find-op").value, raw = $("find-val").value;
+            var c = columnsOf(t).filter(function (x) { return x.name === col; })[0];
+            var val = raw.trim(), num = (c.type !== "TEXT" && DEC_RE.test(val)) ? parseFloat(val) : val;
+            var cond, params = [], shownCond;
+            if (op === "empty") { cond = col + " IS NULL"; shownCond = cond; }
+            else if (val === "") { showStatus("find-results", "error", "Type something to find.", []); return; }
+            else if (op === "eq") { cond = col + " = ?"; params = [num]; shownCond = col + " = " + sqlQuote(num); }
+            else if (op === "contains") { cond = col + " LIKE ?"; params = ["%" + val + "%"]; shownCond = col + " LIKE " + sqlQuote("%" + val + "%"); }
+            else if (op === "starts") { cond = col + " LIKE ?"; params = [val + "%"]; shownCond = col + " LIKE " + sqlQuote(val + "%"); }
+            else if (op === "gt" || op === "lt") {
+                if (typeof num !== "number") { showStatus("find-results", "error", "Greater than and less than need a number, and a Whole number or Decimal column.", []); return; }
+                cond = col + (op === "gt" ? " > ?" : " < ?"); params = [num]; shownCond = col + (op === "gt" ? " > " : " < ") + num;
+            }
+            var rows = q("SELECT rowid AS __rowid, * FROM " + t + " WHERE " + cond + " ORDER BY rowid LIMIT 50", params);
+            var total = q("SELECT COUNT(*) AS n FROM " + t + " WHERE " + cond, params)[0].n;
+            logSQL("Find records", ["SELECT *\nFROM " + t + "\nWHERE " + shownCond + ";"]);
+            var box = $("find-results"); clear(box);
+            box.appendChild(el("p", null, total === 0 ? "No records matched." : total + " record" + (total === 1 ? "" : "s") + " matched" + (total > 50 ? ". Showing the first 50." : ".")));
+            if (!rows.length) return;
+            var cols = columnsOf(t).map(function (x) { return x.name; });
+            var pk = pkOf(t);
+            var ul = el("ul", { "class": "card-list" });
+            rows.forEach(function (r) {
+                var li = el("li");
+                var title = el("p", { style: "margin:0;" });
+                var first = pk ? pk : cols[0];
+                title.appendChild(el("strong", null, first + " " + (r[first] === null ? "" : String(r[first]))));
+                li.appendChild(title);
+                var others = cols.filter(function (n) { return n !== first; }).slice(0, 4);
+                li.appendChild(el("p", { "class": "what" }, others.map(function (n) { var v = r[n] === null ? "(empty)" : String(r[n]); return n + ": " + (v.length > 40 ? v.slice(0, 40) + "..." : v); }).join("  |  ")));
+                var b = el("button", { type: "button" }, "Open this record");
+                b.addEventListener("click", function () {
+                    var pos = q("SELECT COUNT(*) AS n FROM " + t + " WHERE rowid < ?", [r.__rowid])[0].n;
+                    go(pos); $("record-form-heading").focus();
+                });
+                li.appendChild(b);
+                ul.appendChild(li);
+            });
+            box.appendChild(ul);
+        });
+
+        // ---------- rebuilding a table (SQLite needs this to add or remove a foreign key) ----------
+        function rebuildTable(t, changeCols, extraFKs, removeFK) {
+            // changeCols: function(cols) -> {cols, selectExprs}
+            var cols = columnsOf(t);
+            var plan = changeCols ? changeCols(cols) : { cols: cols, select: cols.map(function (c) { return c.name; }) };
+            var fks = [];
+            plan.cols.forEach(function (c) { if (c.fk && c.name !== removeFK) fks.push(c); });
+            (extraFKs || []).forEach(function (f) { fks = fks.filter(function (x) { return x.name !== f.name; }); fks.push(f); });
+            var defs = plan.cols.map(function (c) {
+                var d = c.name + " " + c.type;
+                if (c.pk) d += " PRIMARY KEY";
+                if (c.required && !c.pk) d += " NOT NULL";
+                return d;
+            });
+            fks.forEach(function (f) { defs.push("FOREIGN KEY (" + f.name + ") REFERENCES " + f.fk.table + " (" + f.fk.column + ")"); });
+            var tmp = t + "_new";
+            var stmts = [
+                "CREATE TABLE " + tmp + " (\n    " + defs.join(",\n    ") + "\n) STRICT;",
+                "INSERT INTO " + tmp + " (" + plan.cols.map(function (c) { return c.name; }).join(", ") + ")\nSELECT " + plan.select.join(", ") + "\nFROM " + t + ";",
+                "DROP TABLE " + t + ";",
+                "ALTER TABLE " + tmp + " RENAME TO " + t + ";"
+            ];
+            db.run("PRAGMA foreign_keys = OFF;");
+            try {
+                db.run("BEGIN");
+                stmts.forEach(function (s) { db.run(s); });
+                var bad = q("PRAGMA foreign_key_check(" + t + ")");
+                if (bad.length) throw new Error("FOREIGN KEY constraint failed");
+                db.run("COMMIT");
+            } catch (err) {
+                try { db.run("ROLLBACK"); } catch (e2) { /* already rolled back */ }
+                db.run("PRAGMA foreign_keys = ON;");
+                throw err;
+            }
+            db.run("PRAGMA foreign_keys = ON;");
+            if (positions[tmp]) delete positions[tmp];
+            return stmts;
+        }
+
+        function tryLink(fromT, fromC, toT, toC) {
+            // returns {ok, message, lines}
+            if (fromT === toT) return { ok: false, message: "A foreign key links two different tables.", lines: ["Choose a column in one table, and the primary key of another table."] };
+            var from = columnsOf(fromT).filter(function (c) { return c.name === fromC; })[0];
+            var to = columnsOf(toT).filter(function (c) { return c.name === toC; })[0];
+            if (!to.pk || pkOf(toT) !== toC) return { ok: false, message: toT + "." + toC + " isn't a primary key.", lines: ["A foreign key has to point to the primary key of the other table, because the primary key is what makes each record unique."] };
+            if (from.pk) return { ok: false, message: fromT + "." + fromC + " is this table's primary key.", lines: ["Choose a different column to be the foreign key. The foreign key is the column that points to the other table."] };
+            if (from.fk) return { ok: false, message: fromT + "." + fromC + " is already a foreign key to " + from.fk.table + ".", lines: ["Remove that link first if you want to change it."] };
+            if (from.type !== to.type) return { ok: false, message: "The types don't match.", lines: [fromT + "." + fromC + " is " + TYPE_WORD[from.type] + ", but " + toT + "." + toC + " is " + TYPE_WORD[to.type] + ". A foreign key needs the same type as the primary key it points to."] };
+            var missing = q("SELECT DISTINCT " + fromC + " AS v FROM " + fromT + " WHERE " + fromC + " IS NOT NULL AND " + fromC + " NOT IN (SELECT " + toC + " FROM " + toT + ") LIMIT 10");
+            if (missing.length) {
+                var n = q("SELECT COUNT(DISTINCT " + fromC + ") AS n FROM " + fromT + " WHERE " + fromC + " IS NOT NULL AND " + fromC + " NOT IN (SELECT " + toC + " FROM " + toT + ")")[0].n;
+                return { ok: false, message: n + " value" + (n === 1 ? " in " : "s in ") + fromT + "." + fromC + (n === 1 ? " doesn't" : " don't") + " match any " + toC + " in " + toT + ".",
+                    lines: ["For example: " + missing.map(function (m) { return String(m.v); }).join(", ") + (n > 10 ? ", and more." : "."),
+                        "Every foreign key value must point to a record that exists. Add records with these values to " + toT + " first, or change the values in " + fromT + "."] };
+            }
+            try {
+                var stmts = rebuildTable(fromT, null, [{ name: fromC, fk: { table: toT, column: toC } }]);
+                logSQL("Link " + fromT + "." + fromC + " to " + toT + "." + toC + ". SQLite rebuilds the table to add a foreign key", stmts);
+                markDirty();
+                return { ok: true, message: "Linked " + fromT + "." + fromC + " to " + toT + "." + toC + ".", lines: ["Now every value in " + fromT + "." + fromC + " must match a " + toC + " in " + toT + ". Try adding a record that breaks this rule on the Records tab, and see what happens."] };
+            } catch (err) {
+                return { ok: false, message: "The link wasn't made.", lines: [friendlyError(err)] };
+            }
+        }
+
+        // ---------- relationships tab ----------
+        function renderRelationships() {
+            fillLinkForm(); fillSplit(); renderNewTableCols(); drawDiagram();
+            $("rel-heading").focus();
+        }
+        function fillLinkForm() {
+            var from = $("fk-from"), to = $("fk-to"); clear(from); clear(to);
+            tableNames().forEach(function (t) {
+                columnsOf(t).forEach(function (c) {
+                    if (!c.pk && !c.fk) from.appendChild(el("option", { value: t + "." + c.name }, t + "." + c.name + " (" + TYPE_WORD[c.type] + ")"));
+                    if (c.pk && pkOf(t) === c.name) to.appendChild(el("option", { value: t + "." + c.name }, t + "." + c.name + " (" + TYPE_WORD[c.type] + ")"));
+                });
+            });
+            var list = $("fk-list"); clear(list);
+            var links = [];
+            tableNames().forEach(function (t) { columnsOf(t).forEach(function (c) { if (c.fk) links.push({ t: t, c: c }); }); });
+            if (!links.length) { list.appendChild(el("p", null, "No links yet.")); return; }
+            list.appendChild(el("p", null, "Your links:"));
+            var ul = el("ul");
+            links.forEach(function (l) {
+                var li = el("li", null, l.t + "." + l.c.name + " points to " + l.c.fk.table + "." + l.c.fk.column + " ");
+                var b = el("button", { type: "button" }, "Remove this link");
+                b.addEventListener("click", function () {
+                    if (!window.confirm("Remove the link from " + l.t + "." + l.c.name + " to " + l.c.fk.table + "?")) return;
+                    try { var stmts = rebuildTable(l.t, null, [], l.c.name); logSQL("Remove the link from " + l.t + "." + l.c.name + ". SQLite rebuilds the table to remove a foreign key", stmts); markDirty(); }
+                    catch (err) { showStatus("diagram-status", "error", "The link wasn't removed.", [friendlyError(err)]); return; }
+                    renderRelationships(); showStatus("diagram-status", "ok", "Link removed.");
+                });
+                li.appendChild(b); ul.appendChild(li);
+            });
+            list.appendChild(ul);
+        }
+        $("fk-add").addEventListener("click", function () {
+            var a = $("fk-from").value, b = $("fk-to").value;
+            if (!a || !b) { showStatus("diagram-status", "error", "Choose a column and a primary key first.", []); return; }
+            var A = a.split("."), B = b.split(".");
+            var r = tryLink(A[0], A[1], B[0], B[1]);
+            renderRelationships();
+            showStatus("diagram-status", r.ok ? "ok" : "error", r.message, r.lines);
+        });
+
+        // ---------- diagram ----------
+        var BOX_W = 230, ROW_H = 22, HEAD_H = 28;
+        function drawDiagram() {
+            var svg = $("diagram"); clear(svg);
+            var names = tableNames();
+            names.forEach(function (t) {
+                if (positions[t]) return;
+                // put a new table in the first empty spot on a 3 column grid
+                for (var k = 0; k < 60; k++) {
+                    var x = 20 + (k % 3) * (BOX_W + 110), y = 20 + Math.floor(k / 3) * 280;
+                    var taken = Object.keys(positions).some(function (o) {
+                        return names.indexOf(o) >= 0 && Math.abs(positions[o].x - x) < BOX_W && Math.abs(positions[o].y - y) < 200;
+                    });
+                    if (!taken) { positions[t] = { x: x, y: y }; break; }
+                }
+            });
+            var rowY = {};
+            var linkLayer = svgEl("g"); svg.appendChild(linkLayer);
+            var maxH = 0;
+            names.forEach(function (t) {
+                var cols = columnsOf(t), p = positions[t];
+                var h = HEAD_H + cols.length * ROW_H + 8;
+                maxH = Math.max(maxH, p.y + h + 20);
+                var g = svgEl("g", { "class": "box", transform: "translate(" + p.x + "," + p.y + ")", tabindex: "0", role: "group", "aria-label": "Table " + t + ". Use the arrow keys to move it." });
+                g.appendChild(svgEl("rect", { "class": "body", width: BOX_W, height: h, rx: 6 }));
+                g.appendChild(svgEl("rect", { "class": "head", width: BOX_W, height: HEAD_H, rx: 6 }));
+                var title = svgEl("text", { "class": "title", x: 10, y: 19 }); title.textContent = t; g.appendChild(title);
+                cols.forEach(function (c, i) {
+                    var y = HEAD_H + 4 + i * ROW_H;
+                    rowY[t + "." + c.name] = { x: p.x, y: p.y + y + ROW_H / 2 };
+                    var rg = svgEl("g", { "class": "colrow", "data-table": t, "data-col": c.name });
+                    if (pick && pick.table === t && pick.column === c.name) rg.setAttribute("class", "colrow picked");
+                    else if (pick && pick.table !== t && c.pk && pkOf(t) === c.name) rg.setAttribute("class", "colrow target");
+                    rg.appendChild(svgEl("rect", { x: 2, y: y, width: BOX_W - 4, height: ROW_H }));
+                    var tx = svgEl("text", { x: 10, y: y + 16 });
+                    tx.textContent = (c.pk ? "PK " : c.fk ? "FK " : "") + c.name + " : " + (TYPE_WORD[c.type] || c.type);
+                    if (c.pk || c.fk) tx.setAttribute("font-weight", "bold");
+                    rg.appendChild(tx);
+                    rg.addEventListener("click", function (ev) { ev.stopPropagation(); columnClicked(t, c.name); });
+                    g.appendChild(rg);
+                });
+                makeDraggable(g, t);
+                svg.appendChild(g);
+            });
+            // links
+            names.forEach(function (t) {
+                columnsOf(t).forEach(function (c) {
+                    if (!c.fk) return;
+                    var a = rowY[t + "." + c.name], b = rowY[c.fk.table + "." + c.fk.column];
+                    if (!a || !b) return;
+                    var ax = a.x + BOX_W, bx = b.x;
+                    if (a.x > b.x) { ax = a.x; bx = b.x + BOX_W; }
+                    var mid = (ax + bx) / 2;
+                    var path = svgEl("path", { "class": "link", d: "M" + ax + "," + a.y + " C" + mid + "," + a.y + " " + mid + "," + b.y + " " + bx + "," + b.y });
+                    var titleEl = svgEl("title"); titleEl.textContent = t + "." + c.name + " points to " + c.fk.table + "." + c.fk.column;
+                    path.appendChild(titleEl);
+                    linkLayer.appendChild(path);
+                    linkLayer.appendChild(svgEl("circle", { cx: bx, cy: b.y, r: 4, fill: "var(--link-line)" }));
+                });
+            });
+            svg.setAttribute("height", Math.max(520, maxH));
+        }
+        function makeDraggable(g, t) {
+            var start = null;
+            g.addEventListener("pointerdown", function (ev) {
+                if (ev.target.closest && ev.target.closest(".colrow")) return;
+                start = { x: ev.clientX, y: ev.clientY, px: positions[t].x, py: positions[t].y };
+                g.setPointerCapture(ev.pointerId);
+            });
+            g.addEventListener("pointermove", function (ev) {
+                if (!start) return;
+                positions[t] = { x: Math.max(0, start.px + ev.clientX - start.x), y: Math.max(0, start.py + ev.clientY - start.y) };
+                g.setAttribute("transform", "translate(" + positions[t].x + "," + positions[t].y + ")");
+            });
+            g.addEventListener("pointerup", function () { if (start) { start = null; drawDiagram(); refocus(t); } });
+            g.addEventListener("keydown", function (ev) {
+                var d = { ArrowLeft: [-15, 0], ArrowRight: [15, 0], ArrowUp: [0, -15], ArrowDown: [0, 15] }[ev.key];
+                if (!d) return;
+                ev.preventDefault();
+                positions[t] = { x: Math.max(0, positions[t].x + d[0]), y: Math.max(0, positions[t].y + d[1]) };
+                drawDiagram(); refocus(t);
+            });
+        }
+        function refocus(t) {
+            var gs = document.querySelectorAll("#diagram .box");
+            for (var i = 0; i < gs.length; i++) if (gs[i].getAttribute("aria-label").indexOf("Table " + t + ".") === 0) { gs[i].focus(); break; }
+        }
+        function columnClicked(t, c) {
+            var col = columnsOf(t).filter(function (x) { return x.name === c; })[0];
+            if (!pick) {
+                if (col.pk) { showStatus("diagram-status", "error", c + " is the primary key of " + t + ".", ["Start with the column that should point to another table, the foreign key. Then select the primary key it points to."]); return; }
+                if (col.fk) { showStatus("diagram-status", "error", c + " is already a foreign key.", ["Remove that link with the form below the diagram if you want to change it."]); return; }
+                pick = { table: t, column: c };
+                drawDiagram();
+                var targets = tableNames().filter(function (x) { return x !== t && pkOf(x); }).map(function (x) { return x + "." + pkOf(x); });
+                showStatus("diagram-status", "ok", "You picked " + t + "." + c + ". Now select the primary key it should point to.",
+                    [targets.length ? "Possible primary keys are green: " + targets.join(", ") + ". Look for one with the same type and the same kind of values." : "There's no other table with a primary key yet. Make a new table first, below the diagram."]);
+                return;
+            }
+            var from = pick; pick = null;
+            if (from.table === t && from.column === c) { drawDiagram(); showStatus("diagram-status", "ok", "Link cancelled.", []); return; }
+            var r = tryLink(from.table, from.column, t, c);
+            renderRelationships();
+            showStatus("diagram-status", r.ok ? "ok" : "error", r.message, r.lines);
+        }
+        document.addEventListener("keydown", function (ev) {
+            if (ev.key === "Escape" && pick) { pick = null; drawDiagram(); showStatus("diagram-status", "ok", "Link cancelled.", []); }
+        });
+
+        // ---------- split a repeating column into its own table ----------
+        function fillSplit() {
+            var s = $("split-col"); clear(s);
+            tableNames().forEach(function (t) {
+                columnsOf(t).forEach(function (c) { if (!c.pk && !c.fk) s.appendChild(el("option", { value: t + "." + c.name }, t + "." + c.name)); });
+            });
+            $("split-go").hidden = true; splitPlan = null; clearStatus("split-status");
+        }
+        $("split-col").addEventListener("change", function () { $("split-go").hidden = true; splitPlan = null; clearStatus("split-status"); });
+        $("split-check").addEventListener("click", function () {
+            $("split-go").hidden = true; splitPlan = null;
+            var v = $("split-col").value; if (!v) return;
+            var p = v.split("."), t = p[0], c = p[1], nt = $("split-name").value.trim();
+            var err = validName(nt, "The new table name");
+            if (!err && tableNames().map(function (x) { return x.toLowerCase(); }).indexOf(nt.toLowerCase()) >= 0) err = "There's already a table called " + nt + ".";
+            if (err) { showStatus("split-status", "error", err, []); return; }
+            var total = q("SELECT COUNT(*) AS n FROM " + t)[0].n;
+            var distinct = q("SELECT COUNT(DISTINCT " + c + ") AS n FROM " + t)[0].n;
+            var empties = q("SELECT COUNT(*) AS n FROM " + t + " WHERE " + c + " IS NULL")[0].n;
+            var top = q("SELECT " + c + " AS v, COUNT(*) AS n FROM " + t + " WHERE " + c + " IS NOT NULL GROUP BY " + c + " ORDER BY n DESC LIMIT 5");
+            var lines = [c + " has " + distinct + " different value" + (distinct === 1 ? "" : "s") + " across " + total + " records."];
+            if (top.length) lines.push("The most common: " + top.map(function (r) { return r.v + " (" + r.n + ")"; }).join(", ") + ".");
+            if (distinct === total - empties) {
+                showStatus("split-status", "error", "Every value in " + c + " is different, so it doesn't repeat.", lines.concat(["A column that's a good fit for its own table has values that show up many times. Try a different column."]));
+                return;
+            }
+            if (distinct > (total - empties) / 2) lines.push("More than half the values are different, so this may not save much. Columns where a few values repeat a lot are usually a better fit.");
+            else lines.push("This looks like a good fit: a few values that repeat a lot.");
+            if (empties) lines.push(empties + " record" + (empties === 1 ? " has" : "s have") + " no value in " + c + ". " + (empties === 1 ? "It" : "They") + " will stay empty.");
+            lines.push("If you go ahead: a new " + nt + " table gets one record for each different value, with an automatic ID. In " + t + ", the " + c + " column is replaced by " + nt + "_id, a foreign key that points to the new table.");
+            splitPlan = { t: t, c: c, nt: nt };
+            showStatus("split-status", "ok", "Here's what this column looks like.", lines);
+            $("split-go").hidden = false;
+        });
+        $("split-go").addEventListener("click", function () {
+            if (!splitPlan) return;
+            var t = splitPlan.t, c = splitPlan.c, nt = splitPlan.nt, idName = nt + "_id";
+            var col = columnsOf(t).filter(function (x) { return x.name === c; })[0];
+            if (columnsOf(t).some(function (x) { return x.name.toLowerCase() === idName.toLowerCase(); })) { showStatus("split-status", "error", t + " already has a column called " + idName + ".", ["Choose a different new table name."]); return; }
+            var create = "CREATE TABLE " + nt + " (\n    " + idName + " INTEGER PRIMARY KEY,\n    " + c + " " + col.type + " NOT NULL UNIQUE\n) STRICT;";
+            var fill = "INSERT INTO " + nt + " (" + c + ")\nSELECT DISTINCT " + c + " FROM " + t + "\nWHERE " + c + " IS NOT NULL\nORDER BY " + c + ";";
+            try {
+                db.run("BEGIN"); db.run(create); db.run(fill); db.run("COMMIT");
+            } catch (err) { try { db.run("ROLLBACK"); } catch (e) { } showStatus("split-status", "error", "The new table wasn't made.", [friendlyError(err)]); return; }
+            var stmts;
+            try {
+                stmts = rebuildTable(t, function (cols) {
+                    var newCols = [], select = [];
+                    cols.forEach(function (x) {
+                        if (x.name === c) {
+                            newCols.push({ name: idName, type: "INTEGER", required: x.required, pk: false, fk: { table: nt, column: idName } });
+                            select.push("(SELECT " + idName + " FROM " + nt + " WHERE " + nt + "." + c + " = " + t + "." + c + ")");
+                        } else { newCols.push(x); select.push(x.name); }
+                    });
+                    return { cols: newCols, select: select };
+                });
+            } catch (err) {
+                db.run("DROP TABLE " + nt);
+                showStatus("split-status", "error", "The tables weren't changed.", [friendlyError(err)]); return;
+            }
+            logSQL("Make a " + nt + " table from the values in " + t + "." + c, [create, fill]);
+            logSQL("Replace " + t + "." + c + " with " + idName + ", a foreign key to " + nt + ". SQLite rebuilds the table to do this", stmts);
+            markDirty();
+            var n = q("SELECT COUNT(*) AS n FROM " + nt)[0].n;
+            renderRelationships();
+            showStatus("diagram-status", "ok", "Made the " + nt + " table with " + n + " records, and linked it to " + t + ".", ["Look at both tables on the Records tab. In " + t + ", the " + c + " values are now ID numbers that point to " + nt + "."]);
+            $("diagram-status").scrollIntoView({ block: "nearest" });
+        });
+
+        // ---------- copy the tables for ChartDB ----------
+        $("chartdb-copy").addEventListener("click", function () {
+            var stmts = q("SELECT sql FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%' ORDER BY name")
+                .map(function (r) { return r.sql.replace(/\)\s*STRICT\s*$/i, ")") + ";"; });
+            var text = stmts.join("\n\n");
+            var box = $("chartdb-text"); box.value = text; box.hidden = false; $("chartdb-label").hidden = false;
+            var done = function () { showStatus("chartdb-status", "ok", "Copied. Paste it into ChartDB. If pasting doesn't work, copy it from the box below."); };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(done, function () { box.select(); showStatus("chartdb-status", "ok", "Select all the text in the box below and copy it, then paste it into ChartDB."); });
+            } else { box.select(); showStatus("chartdb-status", "ok", "Select all the text in the box below and copy it, then paste it into ChartDB."); }
+        });
+
+        // ---------- make a new empty table ----------
+        var ntCols = [{ name: "", type: "TEXT", required: true }];
+        function renderNewTableCols() {
+            var box = $("nt-cols"); clear(box);
+            ntCols.forEach(function (c, i) {
+                var row = el("div", { "class": "new-cols-row" });
+                var f1 = el("div", { "class": "field" }); f1.appendChild(el("label", { "for": "ntc-name-" + i }, "Column " + (i + 1) + " name"));
+                var in1 = el("input", { type: "text", id: "ntc-name-" + i }); in1.value = c.name;
+                in1.addEventListener("input", function () { c.name = this.value; }); f1.appendChild(in1); row.appendChild(f1);
+                var f2 = el("div", { "class": "field" }); f2.appendChild(el("label", { "for": "ntc-type-" + i }, "Type"));
+                var s = el("select", { id: "ntc-type-" + i });
+                ["TEXT", "INTEGER", "REAL"].forEach(function (t) { var o = el("option", { value: t }, TYPE_WORD[t]); if (t === c.type) o.selected = true; s.appendChild(o); });
+                s.addEventListener("change", function () { c.type = this.value; }); f2.appendChild(s); row.appendChild(f2);
+                var f3 = el("div", { "class": "field" });
+                var cb = el("input", { type: "checkbox", id: "ntc-req-" + i }); cb.checked = c.required;
+                cb.addEventListener("change", function () { c.required = this.checked; });
+                var l3 = el("label", { "for": "ntc-req-" + i }, " Required"); f3.appendChild(cb); f3.appendChild(l3); row.appendChild(f3);
+                if (ntCols.length > 1) {
+                    var rm = el("button", { type: "button" }, "Remove column " + (i + 1));
+                    rm.addEventListener("click", function () { ntCols.splice(i, 1); renderNewTableCols(); });
+                    row.appendChild(rm);
+                }
+                box.appendChild(row);
+            });
+        }
+        $("nt-addcol").addEventListener("click", function () { ntCols.push({ name: "", type: "TEXT", required: false }); renderNewTableCols(); $("ntc-name-" + (ntCols.length - 1)).focus(); });
+        $("nt-name").addEventListener("input", function () { var v = this.value.trim(); if (v && !$("nt-key").dataset.touched) $("nt-key").value = v + "_id"; });
+        $("nt-key").addEventListener("input", function () { this.dataset.touched = "1"; });
+        $("nt-create").addEventListener("click", function () {
+            var nt = $("nt-name").value.trim(), key = $("nt-key").value.trim(), errs = [];
+            var e1 = validName(nt, "The table name"); if (e1) errs.push(e1);
+            if (!e1 && tableNames().map(function (x) { return x.toLowerCase(); }).indexOf(nt.toLowerCase()) >= 0) errs.push("There's already a table called " + nt + ".");
+            var e2 = validName(key, "The primary key name"); if (e2) errs.push(e2);
+            var seen = {}; seen[key.toLowerCase()] = true;
+            ntCols.forEach(function (c, i) {
+                var e = validName(c.name.trim(), "Column " + (i + 1) + "'s name"); if (e) errs.push(e);
+                if (seen[c.name.trim().toLowerCase()]) errs.push("Two columns are both named \"" + c.name.trim() + "\".");
+                seen[c.name.trim().toLowerCase()] = true;
+            });
+            if (errs.length) { showStatus("nt-status", "error", "Some names need fixing.", errs); return; }
+            var defs = [key + " INTEGER PRIMARY KEY"].concat(ntCols.map(function (c) { return c.name.trim() + " " + c.type + (c.required ? " NOT NULL" : ""); }));
+            var create = "CREATE TABLE " + nt + " (\n    " + defs.join(",\n    ") + "\n) STRICT;";
+            try { db.run(create); } catch (err) { showStatus("nt-status", "error", "The table wasn't made.", [friendlyError(err)]); return; }
+            logSQL("Make a new table", [create]); markDirty();
+            ntCols = [{ name: "", type: "TEXT", required: true }];
+            $("nt-name").value = ""; $("nt-key").value = ""; delete $("nt-key").dataset.touched;
+            renderRelationships();
+            showStatus("nt-status", "ok", "Made the " + nt + " table. Add its records on the Records tab, then come back here to link it.");
+        });
+    })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+book_id,title,author,rating,language,book_format
+1,The Hunger Games,Suzanne Collins,4.33,English,Hardcover
+2,Harry Potter and the Order of the Phoenix,J.K. Rowling,4.50,English,Paperback
+3,To Kill a Mockingbird,Harper Lee,4.28,English,Paperback
+4,Pride and Prejudice,Jane Austen,4.26,English,Paperback
+5,Twilight,Stephenie Meyer,3.60,English,Paperback
+6,The Book Thief,Markus Zusak,4.37,English,Hardcover
+7,Animal Farm,George Orwell,3.95,English,Mass Market Paperback
+8,The Chronicles of Narnia,C.S. Lewis,4.26,English,Paperback
+9,J.R.R. Tolkien 4-Book Boxed Set: The Hobbit and The Lord of the Rings,J.R.R. Tolkien,4.60,English,Mass Market Paperback
+10,Gone with the Wind,Margaret Mitchell,4.30,English,Mass Market Paperback
+11,The Fault in Our Stars,John Green,4.21,English,Hardcover
+12,The Hitchhiker's Guide to the Galaxy,Douglas Adams,4.22,English,Paperback
+13,The Giving Tree,Shel Silverstein,4.37,English,Hardcover
+14,Wuthering Heights,Emily Brontë,3.86,English,Paperback
+15,The Da Vinci Code,Dan Brown,3.86,English,Paperback
+16,Memoirs of a Geisha,Arthur Golden,4.12,English,Mass Market Paperback
+17,The Picture of Dorian Gray,Oscar Wilde,4.08,English,Paperback
+18,Alice's Adventures in Wonderland & Through the Looking-Glass,Lewis Carroll,4.06,English,Paperback
+19,Jane Eyre,Charlotte Brontë,4.13,English,Paperback
+20,Les Misérables,Victor Hugo,4.18,English,Mass Market Paperback
+21,Fahrenheit 451,Ray Bradbury,3.99,English,Kindle Edition
+22,Divergent,Veronica Roth,4.19,English,Paperback
+23,Lord of the Flies,William Golding,3.69,English,Paperback
+24,Romeo and Juliet,William Shakespeare,3.75,English,Paperback
+25,The Alchemist,Paulo Coelho,3.88,English,Paperback
+26,Crime and Punishment,Fyodor Dostoyevsky,4.22,English,Paperback
+27,The Perks of Being a Wallflower,Stephen Chbosky,4.20,English,Paperback
+28,The Great Gatsby,F. Scott Fitzgerald,3.92,English,Paperback
+29,City of Bones,Cassandra Clare,4.10,English,Hardcover
+30,Ender's Game,Orson Scott Card,4.30,English,Audiobook
+31,The Help,Kathryn Stockett,4.47,English,Hardcover
+32,Anne of Green Gables,L.M. Montgomery,4.26,English,Paperback
+33,Harry Potter and the Sorcerer's Stone,J.K. Rowling,4.47,English,Hardcover
+34,The Little Prince,Antoine de Saint-Exupéry,4.31,English,Paperback
+35,Charlotte's Web,E.B. White,4.17,English,Paperback
+36,Of Mice and Men,John Steinbeck,3.88,English,Paperback
+37,The Time Traveler's Wife,Audrey Niffenegger,3.97,English,ebook
+38,Dracula,Bram Stoker,4.00,English,Paperback
+39,Brave New World,Aldous Huxley,3.99,English,Paperback
+40,One Hundred Years of Solitude,Gabriel García Márquez,4.08,English,Hardcover
+41,The Catcher in the Rye,J.D. Salinger,3.81,English,Paperback
+42,The Princess Bride,William Goldman,4.26,English,Paperback
+43,The Lightning Thief,Rick Riordan,4.26,English,Paperback
+44,The Secret Garden,Frances Hodgson Burnett,4.13,English,Hardcover
+45,A Thousand Splendid Suns,Khaled Hosseini,4.38,English,Hardcover
+46,A Wrinkle in Time,Madeleine L'Engle,4.00,English,Paperback
+47,A Game of Thrones,George R.R. Martin,4.45,English,Mass Market Paperback
+48,The Adventures of Huckleberry Finn,Mark Twain,3.82,English,Paperback
+49,The Lovely Bones,Alice Sebold,3.82,English,Mass Market Paperback
+50,The Outsiders,S.E. Hinton,4.10,English,Mass Market Paperback
+51,Where the Wild Things Are,Maurice Sendak,4.22,English,Paperback
+52,Green Eggs and Ham,Dr. Seuss,4.30,English,Hardcover
+53,The Odyssey,Homer,3.77,English,Paperback
+54,Life of Pi,Yann Martel,3.91,English,Paperback
+55,A Tale of Two Cities,Charles Dickens,3.85,English,Paperback
+56,Water for Elephants,Sara Gruen,4.09,English,Paperback
+57,Lolita,Vladimir Nabokov,3.89,English,Paperback
+58,Slaughterhouse-Five,Kurt Vonnegut Jr.,4.08,English,Paperback
+59,Frankenstein: The 1818 Text,Mary Wollstonecraft Shelley,3.81,English,Paperback
+60,The Kite Runner,Khaled Hosseini,4.30,English,Paperback

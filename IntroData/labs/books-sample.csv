@@ -1,0 +1,151 @@
+book_id,title,author,rating,language,book_format,pages,publisher,publish_date,num_ratings,liked_percent,price
+1,The Hunger Games,Suzanne Collins,4.33,English,Hardcover,374,Scholastic Press,09/14/08,6376780,96,5.09
+2,Harry Potter and the Order of the Phoenix,J.K. Rowling,4.50,English,Paperback,870,Scholastic Inc.,09/28/04,2507623,98,7.38
+3,To Kill a Mockingbird,Harper Lee,4.28,English,Paperback,324,Harper Perennial Modern Classics,05/23/06,4501075,95,
+4,Pride and Prejudice,Jane Austen,4.26,English,Paperback,279,Modern Library,10/10/00,2998241,94,
+5,Twilight,Stephenie Meyer,3.60,English,Paperback,501,"Little, Brown and Company",09/06/06,4964519,78,2.1
+6,The Book Thief,Markus Zusak,4.37,English,Hardcover,552,Alfred A. Knopf,03/14/06,1834276,96,3.8
+7,Animal Farm,George Orwell,3.95,English,Mass Market Paperback,141,Signet Classics,04/28/96,2740713,91,4.42
+8,The Chronicles of Narnia,C.S. Lewis,4.26,English,Paperback,767,HarperCollins,09/16/02,517740,96,
+9,J.R.R. Tolkien 4-Book Boxed Set: The Hobbit and The Lord of the Rings,J.R.R. Tolkien,4.60,English,Mass Market Paperback,1728,Ballantine Books,09/25/12,110146,98,21.15
+10,Gone with the Wind,Margaret Mitchell,4.30,English,Mass Market Paperback,1037,Warner Books,04/01/99,1074620,94,5.58
+11,The Fault in Our Stars,John Green,4.21,English,Hardcover,313,Dutton Books,01/10/12,3550714,93,
+12,The Hitchhiker's Guide to the Galaxy,Douglas Adams,4.22,English,Paperback,193,Del Rey,06/23/07,1436325,94,
+13,The Giving Tree,Shel Silverstein,4.37,English,Hardcover,64,HarperCollins Publishers,10/07/64,905731,94,4.87
+14,Wuthering Heights,Emily Brontë,3.86,English,Paperback,464,Norton,10/28/02,1342664,88,2.73
+15,The Da Vinci Code,Dan Brown,3.86,English,Paperback,489,Anchor,03/28/06,1933446,89,
+16,Memoirs of a Geisha,Arthur Golden,4.12,English,Mass Market Paperback,503,Vintage Books USA,11/22/05,1717312,95,2.76
+17,The Picture of Dorian Gray,Oscar Wilde,4.08,English,Paperback,272,Random House: Modern Library,06/01/04,966196,94,
+18,Alice's Adventures in Wonderland & Through the Looking-Glass,Lewis Carroll,4.06,English,Paperback,239,Penguin Group (USA),12/01/00,458299,94,3.07
+19,Jane Eyre,Charlotte Brontë,4.13,English,Paperback,532,Penguin,02/04/03,1624682,93,5.46
+20,Les Misérables,Victor Hugo,4.18,English,Mass Market Paperback,1463,Signet Classics,03/03/87,682793,93,
+21,Fahrenheit 451,Ray Bradbury,3.99,English,Kindle Edition,194,Simon & Schuster,11/29/11,1680139,92,
+22,Divergent,Veronica Roth,4.19,English,Paperback,487,Katherine Tegen Books,02/28/12,2906258,94,0.88
+23,Lord of the Flies,William Golding,3.69,English,Paperback,182,Penguin Books,10/01/99,2263259,86,1.89
+24,Romeo and Juliet,William Shakespeare,3.75,English,Paperback,301,Simon Schuster,01/01/04,2055102,87,6.79
+25,The Alchemist,Paulo Coelho,3.88,English,Paperback,182,HarperOne,04/15/14,2107732,87,13.22
+26,Crime and Punishment,Fyodor Dostoyevsky,4.22,English,Paperback,671,Penguin,12/31/02,626897,94,18.85
+27,The Perks of Being a Wallflower,Stephen Chbosky,4.20,English,Paperback,213,MTV Books/Pocket Books,02/28/99,1250155,94,
+28,The Great Gatsby,F. Scott Fitzgerald,3.92,English,Paperback,200,Scribner,09/28/04,3775504,90,
+29,City of Bones,Cassandra Clare,4.10,English,Hardcover,485,Margaret K. McElderry Books,03/27/07,1617465,92,6.29
+30,Ender's Game,Orson Scott Card,4.30,English,Audiobook,324,Macmillan Audio,09/30/04,1131303,95,4.6
+31,The Help,Kathryn Stockett,4.47,English,Hardcover,451,Amy Einhorn Books/G.P. Putnam's Sons,02/10/09,2164011,98,
+32,Anne of Green Gables,L.M. Montgomery,4.26,English,Paperback,320,Signet Book,05/06/03,727685,95,6.07
+33,Harry Potter and the Sorcerer's Stone,J.K. Rowling,4.47,English,Hardcover,309,Scholastic Inc,11/01/03,7048471,96,
+34,The Little Prince,Antoine de Saint-Exupéry,4.31,English,Paperback,93,"Harcourt, Inc.",06/29/00,1363048,95,
+35,Charlotte's Web,E.B. White,4.17,English,Paperback,184,HarperCollinsPublishers,10/01/01,1417302,94,6.15
+36,Of Mice and Men,John Steinbeck,3.88,English,Paperback,103,Penguin Books,01/08/02,1942168,90,5.75
+37,The Time Traveler's Wife,Audrey Niffenegger,3.97,English,ebook,500,Zola Books,09/23/13,1573857,91,
+38,Dracula,Bram Stoker,4.00,English,Paperback,488,Norton,05/12/86,938325,93,4.55
+39,Brave New World,Aldous Huxley,3.99,English,Paperback,288,HarperPerennial / Perennial Classics,09/01/98,1441287,92,3.78
+40,One Hundred Years of Solitude,Gabriel García Márquez,4.08,English,Hardcover,417,Harper,06/24/03,753470,90,
+41,The Catcher in the Rye,J.D. Salinger,3.81,English,Paperback,277,Back Bay Books,01/30/01,2736523,86,2.6
+42,The Princess Bride,William Goldman,4.26,English,Paperback,456,Ballantine Books,07/15/03,779597,95,6.23
+43,The Lightning Thief,Rick Riordan,4.26,English,Paperback,375,Disney Hyperion Books,03/01/06,1992300,95,1.79
+44,The Secret Garden,Frances Hodgson Burnett,4.13,English,Hardcover,331,Children's Classics,09/01/98,891374,95,3.33
+45,A Thousand Splendid Suns,Khaled Hosseini,4.38,English,Hardcover,372,Riverhead Books,06/01/07,1151288,97,1.16
+46,A Wrinkle in Time,Madeleine L'Engle,4.00,English,Paperback,218,Square Fish,11/07/17,1051535,91,4.8
+47,A Game of Thrones,George R.R. Martin,4.45,English,Mass Market Paperback,835,Bantam,08/28/05,2003043,96,4.01
+48,The Adventures of Huckleberry Finn,Mark Twain,3.82,English,Paperback,327,Penguin Classics,12/31/02,1151767,90,6.99
+49,The Lovely Bones,Alice Sebold,3.82,English,Mass Market Paperback,372,"Little, Brown and Company",09/01/06,2014401,89,1.91
+50,The Outsiders,S.E. Hinton,4.10,English,Mass Market Paperback,192,Puffin Books (US/CAN),09/01/97,938150,94,
+51,Where the Wild Things Are,Maurice Sendak,4.22,English,Paperback,37,Red Fox,10/28/00,816934,93,3.67
+52,Green Eggs and Ham,Dr. Seuss,4.30,English,Hardcover,62,Random House Books for Young Readers,10/28/88,616631,95,2.98
+53,The Odyssey,Homer,3.77,English,Paperback,541,Penguin Classics,11/30/06,861486,87,3.65
+54,Life of Pi,Yann Martel,3.91,English,Paperback,460,Seal Books,08/29/06,1339076,90,2.86
+55,A Tale of Two Cities,Charles Dickens,3.85,English,Paperback,489,Penguin Books,10/28/03,810000,88,1.12
+56,Water for Elephants,Sara Gruen,4.09,English,Paperback,335,Algonquin Books,05/01/07,1379584,94,3.46
+57,Lolita,Vladimir Nabokov,3.89,English,Paperback,331,Penguin,10/28/95,663069,89,
+58,Slaughterhouse-Five,Kurt Vonnegut Jr.,4.08,English,Paperback,275,Dial Press,01/12/99,1129210,92,8.5
+59,Frankenstein: The 1818 Text,Mary Wollstonecraft Shelley,3.81,English,Paperback,288,Penguin Classics,03/08/18,1162638,89,8.75
+60,The Kite Runner,Khaled Hosseini,4.30,English,Paperback,371,Riverhead Books,05/28/04,2424976,95,
+61,The Handmaid's Tale,Margaret Atwood,4.11,English,Paperback,314,Anchor Books,04/28/98,1459245,93,
+62,The Giver,Lois Lowry,4.13,English,Paperback,208,Ember,01/24/06,1785054,94,7.15
+63,Catch-22,Joseph Heller,3.98,English,Paperback,453,Simon & Schuster,09/04/04,723147,90,3.32
+64,Dune,Frank Herbert,4.23,English,Hardcover,661,Ace Books,10/01/19,765785,94,29.34
+65,The Pillars of the Earth,Ken Follett,4.31,English,Paperback,976,NAL Trade,02/04/02,648793,95,
+66,The Stand,Stephen King,4.34,English,Hardcover,1153,Doubleday Books,05/01/90,616021,96,8.38
+67,The Adventures of Sherlock Holmes,Arthur Conan Doyle,4.30,English,Paperback,389,Oxford University Press,10/22/98,243129,98,
+68,Watership Down,Richard Adams,4.06,English,Mass Market Paperback,478,Avon Books,06/28/75,433754,91,5.25
+69,Great Expectations,Charles Dickens,3.78,English,Paperback,505,Oxford University Press,10/28/98,651506,87,0.85
+70,Little Women,Louisa May Alcott,4.09,English,Paperback,449,Signet Classics,04/06/04,1681583,93,5.51
+71,The Bell Jar,Sylvia Plath,4.01,English,Paperback,294,Harper Perennial Modern Classics,10/28/06,591175,93,
+72,Harry Potter and the Deathly Hallows,J.K. Rowling,4.62,English,Hardcover,759,Arthur A. Levine Books / Scholastic Inc.,07/21/07,2811637,98,2.85
+73,One Flew Over the Cuckoo's Nest,Ken Kesey,4.19,English,Mass Market Paperback,325,Signet,02/01/63,630948,96,
+74,Anna Karenina,Leo Tolstoy,4.05,English,Paperback,964,Vintage,10/16/12,681953,92,
+75,Outlander,Diana Gabaldon,4.23,English,Mass Market Paperback,850,Dell Publishing Company,07/26/05,824014,92,5.98
+76,My Sister's Keeper,Jodi Picoult,4.08,English,Paperback,423,Washington Square Press,02/01/05,1056676,94,2.76
+77,Matilda,Roald Dahl,4.32,English,Paperback,240,Puffin Books,06/01/98,647667,97,6.01
+78,The Fellowship of the Ring,J.R.R. Tolkien,4.36,English,Mass Market Paperback,527,Ballantine Books,03/28/73,2355237,95,
+79,The Girl with the Dragon Tattoo,Stieg Larsson,4.14,English,Hardcover,465,Knopf,09/16/08,2607860,93,
+80,Rebecca,Daphne du Maurier,4.23,English,ebook,449,"Little, Brown and Company",12/17/13,450276,96,
+81,1984,George Orwell,4.19,English,Kindle Edition,237,Houghton Mifflin Harcourt,09/03/13,3140442,94,
+82,The Color Purple,Alice Walker,4.22,English,Paperback,304,Penguin Books,12/10/19,521200,95,13.75
+83,A Tree Grows in Brooklyn,Betty Smith,4.27,English,Paperback,496,HarperCollins Publishers,05/30/06,388454,96,5.01
+84,A Clockwork Orange,Anthony Burgess,3.99,English,Paperback,240,W. W. Norton & Company,05/21/19,601048,92,13.05
+85,The Road,Cormac McCarthy,3.97,English,Hardcover,241,Alfred A. Knopf,10/02/06,716197,90,6.83
+86,The Brothers Karamazov,Fyodor Dostoyevsky,4.32,English,Paperback,796,"Farrar, Straus and Giroux",06/14/02,243271,95,5.51
+87,Angela's Ashes,Frank McCourt,4.11,English,Paperback,452,Harper Perennial,10/03/05,539576,94,2.76
+88,Vampire Academy,Richelle Mead,4.12,English,Paperback,332,Razorbill,08/16/07,548959,92,3.33
+89,Siddhartha,Hermann Hesse,4.03,English,Mass Market Paperback,152,Bantam Books,12/01/81,582674,92,
+90,The Poisonwood Bible,Barbara Kingsolver,4.06,English,Hardcover,546,Harper Perennial Modern Classics,07/05/05,658743,91,4.12
+91,The Golden Compass,Philip Pullman,3.99,English,Hardcover,399,Alfred A. Knopf Books for Young Readers,04/16/96,1284131,91,1.61
+92,Don Quixote,Miguel de Cervantes Saavedra,3.88,English,Paperback,1023,Penguin Books,02/25/03,209688,90,9.04
+93,Atlas Shrugged,Ayn Rand,3.69,English,Paperback,1168,Plume,08/01/99,353814,80,4.41
+94,Harry Potter and the Prisoner of Azkaban,J.K. Rowling,4.57,English,Mass Market Paperback,435,Scholastic Inc.,05/01/04,2806471,99,5.94
+95,The Old Man and the Sea,Ernest Hemingway,3.78,English,Hardcover,96,Scribner,10/28/96,831152,87,15.63
+96,The Notebook,Nicholas Sparks,4.11,English,Kindle Edition,227,Grand Central Publishing,01/05/00,1331152,91,
+97,Winnie-the-Pooh,A.A. Milne,4.34,English,Hardcover,145,Dutton Juvenile,10/01/01,270388,96,5.3
+98,The Complete Stories and Poems,Edgar Allan Poe,4.38,English,Hardcover,821,"Doubleday & Company, Inc.",08/15/84,220153,97,5.27
+99,Interview with the Vampire,Anne Rice,4.00,English,Paperback,342,Ballantine Books,08/31/04,484530,93,2.66
+100,A Prayer for Owen Meany,John Irving,4.23,English,Paperback,637,Black Swan,10/28/90,285954,94,2.86
+101,"Moby-Dick or, the Whale",Herman Melville,3.51,English,Paperback,654,Penguin Classics,02/21/03,479125,79,1.87
+102,The Red Tent,Anita Diamant,4.18,English,Hardcover,324,St. Martin's Press,10/28/97,520252,94,5.26
+103,The Secret Life of Bees,Sue Monk Kidd,4.06,English,Paperback,302,Penguin Books,01/28/03,1116565,94,3.5
+104,Harry Potter and the Goblet of Fire,J.K. Rowling,4.56,English,Paperback,734,Scholastic,09/28/02,2594622,99,
+105,Clockwork Angel,Cassandra Clare,4.32,English,Hardcover,481,"Simon & Schuster, Margaret K. McElderry",08/31/10,666121,95,4.62
+106,Harry Potter and the Half-Blood Prince,J.K. Rowling,4.57,English,Paperback,652,Scholastic Inc.,09/16/06,2437658,98,
+107,And Then There Were None,Agatha Christie,4.26,English,Paperback,264,St. Martin's Press,05/03/04,822061,96,4.82
+108,Middlesex,Jeffrey Eugenides,4.01,English,Paperback,529,Picador USA,09/16/03,581175,91,3.11
+109,The Stranger,Albert Camus,3.98,English,Paperback,123,Vintage International,03/28/89,706396,92,
+110,The Master and Margarita,Mikhail Bulgakov,4.29,English,Paperback,335,Vintage International,03/28/96,242684,94,13.56
+111,The Name of the Wind,Patrick Rothfuss,4.53,English,Hardcover,662,Penguin Group DAW,04/28/07,715936,96,9.36
+112,The Shining,Stephen King,4.23,English,Paperback,659,New English Library (Hodder & Stoughton),07/01/80,1126760,95,7.59
+113,The Adventures of Tom Sawyer,Mark Twain,3.91,English,Paperback,244,Penguin Classics,02/28/06,758171,92,3.36
+114,Eragon,Christopher Paolini,3.90,English,Paperback,503,Alfred A. Knopf,04/28/05,1437124,88,2.86
+115,Charlie and the Chocolate Factory,Roald Dahl,4.14,English,Paperback,176,Puffin Books,06/02/05,664710,95,1.13
+116,On the Road,Jack Kerouac,3.62,English,Paperback,307,Penguin Books,01/01/76,348767,83,1.91
+117,The Metamorphosis,Franz Kafka,3.82,English,Paperback,201,Bantam Classics,03/01/72,643254,89,
+118,Looking for Alaska,John Green,4.02,English,Paperback,221,Speak,12/28/06,1113222,91,
+119,The Shadow of the Wind,Carlos Ruiz Zafón,4.27,English,Paperback,487,Penguin Books,10/28/05,462182,95,
+120,The Curious Incident of the Dog in the Night-Time,Mark Haddon,3.88,English,Paperback,226,Vintage,05/18/04,1191621,92,2.94
+121,The Very Hungry Caterpillar,Eric Carle,4.30,English,Board book,26,Puffin Books,10/28/94,396110,94,2.42
+122,Tuesdays with Morrie,Mitch Albom,4.11,English,Paperback,210,Warner,10/28/00,782188,93,3.27
+123,The Unbearable Lightness of Being,Milan Kundera,4.10,English,Paperback,320,Harper Perennial,10/27/09,341660,93,11.62
+124,The Name of the Rose,Umberto Eco,4.12,English,Paperback,536,Harvest Books,09/28/94,301153,93,4.07
+125,Where the Red Fern Grows,Wilson Rawls,4.08,English,Mass Market Paperback,272,Yearling,05/09/00,342208,93,5.4
+126,Harry Potter and the Chamber of Secrets,J.K. Rowling,4.43,English,Hardcover,341,Arthur A. Levine Books / Scholastic Inc.,06/02/99,2725847,98,4.17
+127,The Godfather,Mario Puzo,4.36,English,Paperback,448,NAL,03/01/02,334837,96,
+128,The Scarlet Letter,Nathaniel Hawthorne,3.41,English,Paperback,279,Penguin Books,02/27/03,706272,80,1.91
+129,In Cold Blood,Truman Capote,4.07,English,Paperback,343,Vintage,10/28/94,529229,93,6.58
+130,Fight Club,Chuck Palahniuk,4.19,English,Paperback,218,W. W. Norton Company,05/01/18,498931,95,10.16
+131,The Five People You Meet in Heaven,Mitch Albom,3.94,English,Paperback,196,Hyperion,09/23/03,578095,91,3.57
+132,"Hush, Hush",Becca Fitzpatrick,3.97,English,Hardcover,391,Simon & Schuster BFYR,10/13/09,573419,88,2.55
+133,The Cat in the Hat,Dr. Seuss,4.17,English,Hardcover,61,Random House Books for Young Readers,10/28/85,427837,93,0.85
+134,American Gods,Neil Gaiman,4.11,English,Kindle Edition,635,William Morrow,06/21/11,758439,93,
+135,The Count of Monte Cristo,Alexandre Dumas,4.25,English,Paperback,1276,Penguin Classics,05/27/03,746424,95,6.13
+136,Lonesome Dove,Larry McMurtry,4.48,English,Paperback,960,Pocket Books,10/01/99,149079,97,4.55
+137,Perfume: The Story of a Murderer,Patrick Süskind,4.02,English,Paperback,263,Penguin Books,10/28/87,328171,92,2.6
+138,Holes,Louis Sachar,3.97,English,Paperback,233,Scholastic,09/02/00,969512,93,3.1
+139,"The Lion, the Witch and the Wardrobe",C.S. Lewis,4.22,English,Paperback,206,HarperCollins Publishers,10/28/05,2127972,95,
+140,Watchmen,Alan Moore,4.36,English,Paperback,416,DC Comics,10/28/05,487212,96,4.85
+141,It,Stephen King,4.24,English,Paperback,1116,New English Library,10/01/87,802411,94,5.71
+142,The Last Olympian,Rick Riordan,4.51,English,Hardcover,381,Disney ● Hyperion Books,05/05/09,668059,98,7.44
+143,The Little House Collection,Laura Ingalls Wilder,4.34,English,Boxed Set,2700,Avon Books,10/07/03,141514,96,
+144,The Divine Comedy,Dante Alighieri,4.05,English,Hardcover,798,Everyman's Library,08/01/95,119745,93,13.66
+145,Peter Pan,J.M. Barrie,4.05,English,Hardcover,176,Henry Holt and Co.,10/01/03,276928,93,5.26
+146,All Quiet on the Western Front,Erich Maria Remarque,3.98,English,Mass Market Paperback,296,Ballantine Books,03/12/87,355188,91,2.32
+147,"The Hobbit, or There and Back Again",J.R.R. Tolkien,4.27,English,Paperback,366,Houghton Mifflin,08/15/02,2896265,95,4.68
+148,The Compleat Works of Wllm Shkspr (abridged),Reduced Shakespeare Company,4.44,English,Hardcover,137,Applause Books,02/01/94,8439,96,3.17
+149,Love in the Time of Cholera,Gabriel García Márquez,3.92,English,Paperback,348,Vintage International,10/05/03,412147,90,3.36
+150,Shadow Kiss,Richelle Mead,4.35,English,Paperback,443,Razorbill,11/13/08,325339,96,2.76
