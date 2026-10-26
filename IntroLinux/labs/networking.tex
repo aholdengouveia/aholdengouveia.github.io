@@ -27,7 +27,6 @@
 \setlist{nosep}
 
 
-
 \title{Networks and permissions}
 \author{
         Adrianna Holden-Gouveia \\
@@ -59,25 +58,24 @@ The HTML version provides enhanced accessibility features including keyboard nav
 %\end{abstract}
 %\tableofcontents
 
-\section*{Objectives:}
+\section*{Learning Outcomes}
+By the end of this lab, you will be able to:
 \begin{itemize}
-    \item Learn basic networking commands (ping, ifconfig/ip)
-    \item Understand how to test network connectivity
-    \item Master Linux file permissions and the chmod command
-    \item Practice setting different permission levels for files
+    \item Use ping to test network connectivity
+    \item View network settings using ip a or ifconfig
+    \item Set file permissions using chmod
+    \item Explain file permissions in your own words
 \end{itemize}
-\section*{Complete the following problems}
+\section*{Lab Instructions}
 
-References, a video, a PowerPoint and some notes are available at my website
-Link: \href{https://www.aholdengouveia.name/IntroLinux/networking.html}{\textbf{\nolinkurl{https://www.aholdengouveia.name/IntroLinux/networking.html}}}
 
 \subsection*{Networking}
-You are going to use two basic commands ping and ifconfig or ip a
+You are going to use two basic commands: ping, and ifconfig or ip a. On Linux, ping keeps running until you stop it, so press Ctrl+C to stop it.
 
     \begin{enumerate}
-        \item ping Google.com Was ping successful? What was the result? Take a screenshot
-        \item ping CNN.com Was ping successful? What was the result? Take a screenshot
-        \item Use ifconfig or ip a What does it show you? Use man to see what other useful things one of those can do
+        \item Run ping Google.com. Was ping successful? What was the result? Take a screenshot.
+        \item Run ping CNN.com. Was ping successful? What was the result? Take a screenshot.
+        \item Use ifconfig or ip a. What does it show you? Use man to see what other useful things one of those can do
     \end{enumerate}
 
 \subsection*{File Permissions}
@@ -91,7 +89,7 @@ Use chmod to create files with the following permissions:
         \item Owner has full permissions but everyone else can only read
         \item No one can do anything including the owner
         \item Owner and group have read and write permission, public only has read
-        \item Owner can read and execute but not write, everyone else can read\\
+        \item Owner can read and execute but not write, everyone else can read
     \end{enumerate}
 
 
@@ -104,6 +102,14 @@ Pick one file and explain the permissions in your own words in the lab report
  One file with your name, date, and lab title at the top and all the answers. 
  \begin{itemize}
         \item You should have screenshots for each ping, your ifconfig or ip a, and showing your file permissions
-        \item Make sure to include labels for each screenshot so it's clear what you're turning in. \item Don't forget to include the answers to each question asked as well. 
+        \item Make sure to include labels for each screenshot so it's clear what you're turning in. Your screenshots must show your prompt with your username, or a note with your name and the term.
+        \item Don't forget to include the answers to each question asked as well. 
 \end{itemize}
+\section*{Resources}
+References, a video, a PowerPoint and some notes are available at my website
+Link: \href{https://www.aholdengouveia.name/IntroLinux/networking.html}{\textbf{\nolinkurl{https://www.aholdengouveia.name/IntroLinux/networking.html}}}
+
+My FAQ Linux playlist on YouTube, with demos of many of the commands and scripts in this class
+Link: \href{https://www.youtube.com/playlist?list=PLQOmuLC45eoQlIMH7oCNL6yFP7kWQubBo}{\textbf{\nolinkurl{https://www.youtube.com/playlist?list=PLQOmuLC45eoQlIMH7oCNL6yFP7kWQubBo}}}
+
 \end{document}
